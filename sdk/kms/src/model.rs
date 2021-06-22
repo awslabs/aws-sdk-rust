@@ -167,21 +167,21 @@ pub mod tag {
     }
     impl Builder {
         /// <p>The key of the tag.</p>
-        pub fn tag_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tag_key = Some(inp.into());
+        pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_key = Some(input.into());
             self
         }
-        pub fn set_tag_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.tag_key = inp;
+        pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tag_key = input;
             self
         }
         /// <p>The value of the tag.</p>
-        pub fn tag_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tag_value = Some(inp.into());
+        pub fn tag_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tag_value = Some(input.into());
             self
         }
-        pub fn set_tag_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.tag_value = inp;
+        pub fn set_tag_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tag_value = input;
             self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
@@ -342,42 +342,42 @@ pub mod grant_list_entry {
     }
     impl Builder {
         /// <p>The unique identifier for the customer master key (CMK) to which the grant applies.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>The unique identifier for the grant.</p>
-        pub fn grant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grant_id = Some(inp.into());
+        pub fn grant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grant_id = Some(input.into());
             self
         }
-        pub fn set_grant_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.grant_id = inp;
+        pub fn set_grant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grant_id = input;
             self
         }
         /// <p>The friendly name that identifies the grant. If a name was provided in the <a>CreateGrant</a> request, that name is returned. Otherwise this value is null.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The date and time when the grant was created.</p>
-        pub fn creation_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_date = Some(inp);
+        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_date = Some(input);
             self
         }
         pub fn set_creation_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_date = inp;
+            self.creation_date = input;
             self
         }
         /// <p>The identity that gets the permissions in the grant.</p>
@@ -386,65 +386,65 @@ pub mod grant_list_entry {
         /// principal in the grant is an AWS service, the <code>GranteePrincipal</code> field contains
         /// the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
         /// principal</a>, which might represent several different grantee principals.</p>
-        pub fn grantee_principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.grantee_principal = Some(inp.into());
+        pub fn grantee_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.grantee_principal = Some(input.into());
             self
         }
         pub fn set_grantee_principal(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.grantee_principal = inp;
+            self.grantee_principal = input;
             self
         }
         /// <p>The principal that can retire the grant.</p>
-        pub fn retiring_principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.retiring_principal = Some(inp.into());
+        pub fn retiring_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.retiring_principal = Some(input.into());
             self
         }
         pub fn set_retiring_principal(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.retiring_principal = inp;
+            self.retiring_principal = input;
             self
         }
         /// <p>The AWS account under which the grant was issued.</p>
-        pub fn issuing_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.issuing_account = Some(inp.into());
+        pub fn issuing_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.issuing_account = Some(input.into());
             self
         }
         pub fn set_issuing_account(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.issuing_account = inp;
+            self.issuing_account = input;
             self
         }
-        pub fn operations(mut self, inp: impl Into<crate::model::GrantOperation>) -> Self {
+        pub fn operations(mut self, input: impl Into<crate::model::GrantOperation>) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.operations = Some(v);
             self
         }
         pub fn set_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GrantOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GrantOperation>>,
         ) -> Self {
-            self.operations = inp;
+            self.operations = input;
             self
         }
         /// <p>A list of key-value pairs that must be present in the encryption context of certain
         /// subsequent operations that the grant allows.</p>
-        pub fn constraints(mut self, inp: crate::model::GrantConstraints) -> Self {
-            self.constraints = Some(inp);
+        pub fn constraints(mut self, input: crate::model::GrantConstraints) -> Self {
+            self.constraints = Some(input);
             self
         }
         pub fn set_constraints(
             mut self,
-            inp: std::option::Option<crate::model::GrantConstraints>,
+            input: std::option::Option<crate::model::GrantConstraints>,
         ) -> Self {
-            self.constraints = inp;
+            self.constraints = input;
             self
         }
         /// Consumes the builder and constructs a [`GrantListEntry`](crate::model::GrantListEntry)
@@ -541,11 +541,11 @@ pub mod grant_constraints {
         }
         pub fn set_encryption_context_subset(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.encryption_context_subset = inp;
+            self.encryption_context_subset = input;
             self
         }
         pub fn encryption_context_equals(
@@ -560,11 +560,11 @@ pub mod grant_constraints {
         }
         pub fn set_encryption_context_equals(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.encryption_context_equals = inp;
+            self.encryption_context_equals = input;
             self
         }
         /// Consumes the builder and constructs a [`GrantConstraints`](crate::model::GrantConstraints)
@@ -711,21 +711,21 @@ pub mod key_list_entry {
     }
     impl Builder {
         /// <p>Unique identifier of the key.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>ARN of the key.</p>
-        pub fn key_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_arn = Some(inp.into());
+        pub fn key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_arn = Some(input.into());
             self
         }
-        pub fn set_key_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_arn = inp;
+        pub fn set_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`KeyListEntry`](crate::model::KeyListEntry)
@@ -798,52 +798,55 @@ pub mod alias_list_entry {
     }
     impl Builder {
         /// <p>String that contains the alias. This value begins with <code>alias/</code>.</p>
-        pub fn alias_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.alias_name = Some(inp.into());
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias_name = Some(input.into());
             self
         }
-        pub fn set_alias_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.alias_name = inp;
+        pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias_name = input;
             self
         }
         /// <p>String that contains the key ARN.</p>
-        pub fn alias_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.alias_arn = Some(inp.into());
+        pub fn alias_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias_arn = Some(input.into());
             self
         }
-        pub fn set_alias_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.alias_arn = inp;
+        pub fn set_alias_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias_arn = input;
             self
         }
         /// <p>String that contains the key identifier referred to by the alias.</p>
-        pub fn target_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_key_id = Some(inp.into());
+        pub fn target_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_key_id = Some(input.into());
             self
         }
-        pub fn set_target_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.target_key_id = inp;
+        pub fn set_target_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_key_id = input;
             self
         }
-        pub fn creation_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_date = Some(inp);
+        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_date = Some(input);
             self
         }
         pub fn set_creation_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_date = inp;
+            self.creation_date = input;
             self
         }
-        pub fn last_updated_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_updated_date = Some(inp);
+        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated_date = Some(input);
             self
         }
         pub fn set_last_updated_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_updated_date = inp;
+            self.last_updated_date = input;
             self
         }
         /// Consumes the builder and constructs a [`AliasListEntry`](crate::model::AliasListEntry)
@@ -1457,110 +1460,113 @@ pub mod key_metadata {
     }
     impl Builder {
         /// <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
-        pub fn aws_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.aws_account_id = Some(inp.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_account_id = Some(input.into());
             self
         }
-        pub fn set_aws_account_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.aws_account_id = inp;
+        pub fn set_aws_account_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.aws_account_id = input;
             self
         }
         /// <p>The globally unique identifier for the CMK.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the CMK. For examples, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key Management Service
         /// (AWS KMS)</a> in the Example ARNs section of the <i>AWS General
         /// Reference</i>.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The date and time when the CMK was created.</p>
-        pub fn creation_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_date = Some(inp);
+        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_date = Some(input);
             self
         }
         pub fn set_creation_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_date = inp;
+            self.creation_date = input;
             self
         }
         /// <p>Specifies whether the CMK is enabled. When <code>KeyState</code> is <code>Enabled</code>
         /// this value is true, otherwise it is false.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
             self
         }
-        pub fn set_enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
             self
         }
         /// <p>The description of the CMK.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the CMK.</p>
-        pub fn key_usage(mut self, inp: crate::model::KeyUsageType) -> Self {
-            self.key_usage = Some(inp);
+        pub fn key_usage(mut self, input: crate::model::KeyUsageType) -> Self {
+            self.key_usage = Some(input);
             self
         }
         pub fn set_key_usage(
             mut self,
-            inp: std::option::Option<crate::model::KeyUsageType>,
+            input: std::option::Option<crate::model::KeyUsageType>,
         ) -> Self {
-            self.key_usage = inp;
+            self.key_usage = input;
             self
         }
         /// <p>The current status of the CMK.</p>
         /// <p>For more information about how key state affects the use of a CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key state: Effect on your CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-        pub fn key_state(mut self, inp: crate::model::KeyState) -> Self {
-            self.key_state = Some(inp);
+        pub fn key_state(mut self, input: crate::model::KeyState) -> Self {
+            self.key_state = Some(input);
             self
         }
-        pub fn set_key_state(mut self, inp: std::option::Option<crate::model::KeyState>) -> Self {
-            self.key_state = inp;
+        pub fn set_key_state(mut self, input: std::option::Option<crate::model::KeyState>) -> Self {
+            self.key_state = input;
             self
         }
         /// <p>The date and time after which AWS KMS deletes the CMK. This value is present only when
         /// <code>KeyState</code> is <code>PendingDeletion</code>.</p>
-        pub fn deletion_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.deletion_date = Some(inp);
+        pub fn deletion_date(mut self, input: smithy_types::Instant) -> Self {
+            self.deletion_date = Some(input);
             self
         }
         pub fn set_deletion_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.deletion_date = inp;
+            self.deletion_date = input;
             self
         }
         /// <p>The time at which the imported key material expires. When the key material expires, AWS KMS
         /// deletes the key material and the CMK becomes unusable. This value is present only for CMKs
         /// whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code> is
         /// <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.</p>
-        pub fn valid_to(mut self, inp: smithy_types::Instant) -> Self {
-            self.valid_to = Some(inp);
+        pub fn valid_to(mut self, input: smithy_types::Instant) -> Self {
+            self.valid_to = Some(input);
             self
         }
-        pub fn set_valid_to(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.valid_to = inp;
+        pub fn set_valid_to(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.valid_to = input;
             self
         }
         /// <p>The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS KMS
@@ -1568,114 +1574,114 @@ pub mod key_metadata {
         /// imported from your existing key management infrastructure or the CMK lacks key material. When
         /// this value is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM cluster
         /// associated with a custom key store.</p>
-        pub fn origin(mut self, inp: crate::model::OriginType) -> Self {
-            self.origin = Some(inp);
+        pub fn origin(mut self, input: crate::model::OriginType) -> Self {
+            self.origin = Some(input);
             self
         }
-        pub fn set_origin(mut self, inp: std::option::Option<crate::model::OriginType>) -> Self {
-            self.origin = inp;
+        pub fn set_origin(mut self, input: std::option::Option<crate::model::OriginType>) -> Self {
+            self.origin = input;
             self
         }
         /// <p>A unique identifier for the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> that contains the CMK. This value is present
         /// only when the CMK is created in a custom key store.</p>
-        pub fn custom_key_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_key_store_id = Some(inp.into());
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_key_store_id = Some(input.into());
             self
         }
         pub fn set_custom_key_store_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_key_store_id = inp;
+            self.custom_key_store_id = input;
             self
         }
         /// <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for the CMK. When you
         /// create a CMK in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>, AWS KMS creates the key material for the CMK in the
         /// associated AWS CloudHSM cluster. This value is present only when the CMK is created in a custom key
         /// store.</p>
-        pub fn cloud_hsm_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cloud_hsm_cluster_id = Some(inp.into());
+        pub fn cloud_hsm_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cloud_hsm_cluster_id = Some(input.into());
             self
         }
         pub fn set_cloud_hsm_cluster_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cloud_hsm_cluster_id = inp;
+            self.cloud_hsm_cluster_id = input;
             self
         }
         /// <p>Specifies whether the CMK's key material expires. This value is present only when
         /// <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.</p>
-        pub fn expiration_model(mut self, inp: crate::model::ExpirationModelType) -> Self {
-            self.expiration_model = Some(inp);
+        pub fn expiration_model(mut self, input: crate::model::ExpirationModelType) -> Self {
+            self.expiration_model = Some(input);
             self
         }
         pub fn set_expiration_model(
             mut self,
-            inp: std::option::Option<crate::model::ExpirationModelType>,
+            input: std::option::Option<crate::model::ExpirationModelType>,
         ) -> Self {
-            self.expiration_model = inp;
+            self.expiration_model = input;
             self
         }
         /// <p>The manager of the CMK. CMKs in your AWS account are either customer managed or AWS
         /// managed. For more information about the difference, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a> in the
         /// <i>AWS Key Management Service Developer Guide</i>.</p>
-        pub fn key_manager(mut self, inp: crate::model::KeyManagerType) -> Self {
-            self.key_manager = Some(inp);
+        pub fn key_manager(mut self, input: crate::model::KeyManagerType) -> Self {
+            self.key_manager = Some(input);
             self
         }
         pub fn set_key_manager(
             mut self,
-            inp: std::option::Option<crate::model::KeyManagerType>,
+            input: std::option::Option<crate::model::KeyManagerType>,
         ) -> Self {
-            self.key_manager = inp;
+            self.key_manager = input;
             self
         }
         /// <p>Describes the type of key material in the CMK.</p>
         pub fn customer_master_key_spec(
             mut self,
-            inp: crate::model::CustomerMasterKeySpec,
+            input: crate::model::CustomerMasterKeySpec,
         ) -> Self {
-            self.customer_master_key_spec = Some(inp);
+            self.customer_master_key_spec = Some(input);
             self
         }
         pub fn set_customer_master_key_spec(
             mut self,
-            inp: std::option::Option<crate::model::CustomerMasterKeySpec>,
+            input: std::option::Option<crate::model::CustomerMasterKeySpec>,
         ) -> Self {
-            self.customer_master_key_spec = inp;
+            self.customer_master_key_spec = input;
             self
         }
         pub fn encryption_algorithms(
             mut self,
-            inp: impl Into<crate::model::EncryptionAlgorithmSpec>,
+            input: impl Into<crate::model::EncryptionAlgorithmSpec>,
         ) -> Self {
             let mut v = self.encryption_algorithms.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.encryption_algorithms = Some(v);
             self
         }
         pub fn set_encryption_algorithms(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithmSpec>>,
         ) -> Self {
-            self.encryption_algorithms = inp;
+            self.encryption_algorithms = input;
             self
         }
         pub fn signing_algorithms(
             mut self,
-            inp: impl Into<crate::model::SigningAlgorithmSpec>,
+            input: impl Into<crate::model::SigningAlgorithmSpec>,
         ) -> Self {
             let mut v = self.signing_algorithms.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.signing_algorithms = Some(v);
             self
         }
         pub fn set_signing_algorithms(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SigningAlgorithmSpec>>,
         ) -> Self {
-            self.signing_algorithms = inp;
+            self.signing_algorithms = input;
             self
         }
         /// Consumes the builder and constructs a [`KeyMetadata`](crate::model::KeyMetadata)
@@ -2027,54 +2033,54 @@ pub mod custom_key_stores_list_entry {
     }
     impl Builder {
         /// <p>A unique identifier for the custom key store.</p>
-        pub fn custom_key_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_key_store_id = Some(inp.into());
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_key_store_id = Some(input.into());
             self
         }
         pub fn set_custom_key_store_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_key_store_id = inp;
+            self.custom_key_store_id = input;
             self
         }
         /// <p>The user-specified friendly name for the custom key store.</p>
-        pub fn custom_key_store_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_key_store_name = Some(inp.into());
+        pub fn custom_key_store_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_key_store_name = Some(input.into());
             self
         }
         pub fn set_custom_key_store_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_key_store_name = inp;
+            self.custom_key_store_name = input;
             self
         }
         /// <p>A unique identifier for the AWS CloudHSM cluster that is associated with the custom key
         /// store.</p>
-        pub fn cloud_hsm_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cloud_hsm_cluster_id = Some(inp.into());
+        pub fn cloud_hsm_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cloud_hsm_cluster_id = Some(input.into());
             self
         }
         pub fn set_cloud_hsm_cluster_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cloud_hsm_cluster_id = inp;
+            self.cloud_hsm_cluster_id = input;
             self
         }
         /// <p>The trust anchor certificate of the associated AWS CloudHSM cluster. When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the
         /// cluster</a>, you create this certificate and save it in the <code>customerCA.crt</code>
         /// file.</p>
-        pub fn trust_anchor_certificate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.trust_anchor_certificate = Some(inp.into());
+        pub fn trust_anchor_certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.trust_anchor_certificate = Some(input.into());
             self
         }
         pub fn set_trust_anchor_certificate(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.trust_anchor_certificate = inp;
+            self.trust_anchor_certificate = input;
             self
         }
         /// <p>Indicates whether the custom key store is connected to its AWS CloudHSM cluster.</p>
@@ -2087,15 +2093,15 @@ pub mod custom_key_stores_list_entry {
         /// <p>A value of <code>FAILED</code> indicates that an attempt to connect was unsuccessful. The <code>ConnectionErrorCode</code> field in the response indicates the cause of the failure. For
         /// help resolving a connection failure, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key Store</a> in the
         /// <i>AWS Key Management Service Developer Guide</i>.</p>
-        pub fn connection_state(mut self, inp: crate::model::ConnectionStateType) -> Self {
-            self.connection_state = Some(inp);
+        pub fn connection_state(mut self, input: crate::model::ConnectionStateType) -> Self {
+            self.connection_state = Some(input);
             self
         }
         pub fn set_connection_state(
             mut self,
-            inp: std::option::Option<crate::model::ConnectionStateType>,
+            input: std::option::Option<crate::model::ConnectionStateType>,
         ) -> Self {
-            self.connection_state = inp;
+            self.connection_state = input;
             self
         }
         /// <p>Describes the connection error. This field appears in the response only when the <code>ConnectionState</code> is <code>FAILED</code>. For help resolving these errors, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-failed">How to Fix a Connection Failure</a> in <i>AWS Key Management Service Developer Guide</i>.</p>
@@ -2158,27 +2164,30 @@ pub mod custom_key_stores_list_entry {
         /// store.</p>
         /// </li>
         /// </ul>
-        pub fn connection_error_code(mut self, inp: crate::model::ConnectionErrorCodeType) -> Self {
-            self.connection_error_code = Some(inp);
+        pub fn connection_error_code(
+            mut self,
+            input: crate::model::ConnectionErrorCodeType,
+        ) -> Self {
+            self.connection_error_code = Some(input);
             self
         }
         pub fn set_connection_error_code(
             mut self,
-            inp: std::option::Option<crate::model::ConnectionErrorCodeType>,
+            input: std::option::Option<crate::model::ConnectionErrorCodeType>,
         ) -> Self {
-            self.connection_error_code = inp;
+            self.connection_error_code = input;
             self
         }
         /// <p>The date and time when the custom key store was created.</p>
-        pub fn creation_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_date = Some(inp);
+        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_date = Some(input);
             self
         }
         pub fn set_creation_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_date = inp;
+            self.creation_date = input;
             self
         }
         /// Consumes the builder and constructs a [`CustomKeyStoresListEntry`](crate::model::CustomKeyStoresListEntry)

@@ -926,14 +926,16 @@ pub fn deser_structure_batch_result_error_entry(
             ,
             s if s.matches("SenderFault") /* SenderFault com.amazonaws.sqs#BatchResultErrorEntry$SenderFault */ =>  {
                 let var_34 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.sqs#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.sqs#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_sender_fault(var_34);
             }

@@ -28,18 +28,18 @@ pub mod human_loop_data_attributes {
     impl Builder {
         pub fn content_classifiers(
             mut self,
-            inp: impl Into<crate::model::ContentClassifier>,
+            input: impl Into<crate::model::ContentClassifier>,
         ) -> Self {
             let mut v = self.content_classifiers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.content_classifiers = Some(v);
             self
         }
         pub fn set_content_classifiers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
         ) -> Self {
-            self.content_classifiers = inp;
+            self.content_classifiers = input;
             self
         }
         /// Consumes the builder and constructs a [`HumanLoopDataAttributes`](crate::model::HumanLoopDataAttributes)
@@ -143,12 +143,15 @@ pub mod human_loop_input {
     }
     impl Builder {
         /// <p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>
-        pub fn input_content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.input_content = Some(inp.into());
+        pub fn input_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_content = Some(input.into());
             self
         }
-        pub fn set_input_content(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.input_content = inp;
+        pub fn set_input_content(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_content = input;
             self
         }
         /// Consumes the builder and constructs a [`HumanLoopInput`](crate::model::HumanLoopInput)
@@ -221,62 +224,65 @@ pub mod human_loop_summary {
     }
     impl Builder {
         /// <p>The name of the human loop.</p>
-        pub fn human_loop_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.human_loop_name = Some(inp.into());
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.human_loop_name = Some(input.into());
             self
         }
         pub fn set_human_loop_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.human_loop_name = inp;
+            self.human_loop_name = input;
             self
         }
         /// <p>The status of the human loop. </p>
-        pub fn human_loop_status(mut self, inp: crate::model::HumanLoopStatus) -> Self {
-            self.human_loop_status = Some(inp);
+        pub fn human_loop_status(mut self, input: crate::model::HumanLoopStatus) -> Self {
+            self.human_loop_status = Some(input);
             self
         }
         pub fn set_human_loop_status(
             mut self,
-            inp: std::option::Option<crate::model::HumanLoopStatus>,
+            input: std::option::Option<crate::model::HumanLoopStatus>,
         ) -> Self {
-            self.human_loop_status = inp;
+            self.human_loop_status = input;
             self
         }
         /// <p>When Amazon Augmented AI created the human loop.</p>
-        pub fn creation_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_time = Some(inp);
+        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time = Some(input);
             self
         }
         pub fn set_creation_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_time = inp;
+            self.creation_time = input;
             self
         }
         /// <p>The reason why the human loop failed. A failure reason is returned when the status of the
         /// human loop is <code>Failed</code>.</p>
-        pub fn failure_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.failure_reason = Some(inp.into());
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
             self
         }
-        pub fn set_failure_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.failure_reason = inp;
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human
         /// loop.</p>
-        pub fn flow_definition_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.flow_definition_arn = Some(inp.into());
+        pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.flow_definition_arn = Some(input.into());
             self
         }
         pub fn set_flow_definition_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.flow_definition_arn = inp;
+            self.flow_definition_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`HumanLoopSummary`](crate::model::HumanLoopSummary)
@@ -445,12 +451,15 @@ pub mod human_loop_output {
     }
     impl Builder {
         /// <p>The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.</p>
-        pub fn output_s3_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_s3_uri = Some(inp.into());
+        pub fn output_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_s3_uri = Some(input.into());
             self
         }
-        pub fn set_output_s3_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.output_s3_uri = inp;
+        pub fn set_output_s3_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.output_s3_uri = input;
             self
         }
         /// Consumes the builder and constructs a [`HumanLoopOutput`](crate::model::HumanLoopOutput)

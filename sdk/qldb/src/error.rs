@@ -70,6 +70,24 @@ impl CancelJournalKinesisStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelJournalKinesisStreamErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelJournalKinesisStreamErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelJournalKinesisStreamErrorKind::ResourcePreconditionNotMetError(_)
+        )
+    }
 }
 impl std::error::Error for CancelJournalKinesisStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -155,6 +173,21 @@ impl CreateLedgerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, CreateLedgerErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateLedgerErrorKind::LimitExceededError(_))
+    }
+    pub fn is_resource_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLedgerErrorKind::ResourceAlreadyExistsError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(&self.kind, CreateLedgerErrorKind::ResourceInUseError(_))
+    }
 }
 impl std::error::Error for CreateLedgerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -238,6 +271,21 @@ impl DeleteLedgerError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, DeleteLedgerErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(&self.kind, DeleteLedgerErrorKind::ResourceInUseError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteLedgerErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLedgerErrorKind::ResourcePreconditionNotMetError(_)
+        )
     }
 }
 impl std::error::Error for DeleteLedgerError {
@@ -323,6 +371,24 @@ impl DescribeJournalKinesisStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeJournalKinesisStreamErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeJournalKinesisStreamErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeJournalKinesisStreamErrorKind::ResourcePreconditionNotMetError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeJournalKinesisStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -402,6 +468,12 @@ impl DescribeJournalS3ExportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeJournalS3ExportErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeJournalS3ExportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -478,6 +550,18 @@ impl DescribeLedgerError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLedgerErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeLedgerErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for DescribeLedgerError {
@@ -556,6 +640,18 @@ impl ExportJournalToS3Error {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportJournalToS3ErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExportJournalToS3ErrorKind::ResourcePreconditionNotMetError(_)
+        )
     }
 }
 impl std::error::Error for ExportJournalToS3Error {
@@ -636,6 +732,18 @@ impl GetBlockError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, GetBlockErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetBlockErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBlockErrorKind::ResourcePreconditionNotMetError(_)
+        )
     }
 }
 impl std::error::Error for GetBlockError {
@@ -718,6 +826,18 @@ impl GetDigestError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, GetDigestErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetDigestErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDigestErrorKind::ResourcePreconditionNotMetError(_)
+        )
+    }
 }
 impl std::error::Error for GetDigestError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -798,6 +918,18 @@ impl GetRevisionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, GetRevisionErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetRevisionErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRevisionErrorKind::ResourcePreconditionNotMetError(_)
+        )
     }
 }
 impl std::error::Error for GetRevisionError {
@@ -888,6 +1020,24 @@ impl ListJournalKinesisStreamsForLedgerError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListJournalKinesisStreamsForLedgerErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListJournalKinesisStreamsForLedgerErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListJournalKinesisStreamsForLedgerErrorKind::ResourcePreconditionNotMetError(_)
+        )
     }
 }
 impl std::error::Error for ListJournalKinesisStreamsForLedgerError {
@@ -1190,6 +1340,18 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1272,6 +1434,24 @@ impl StreamJournalToKinesisError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StreamJournalToKinesisErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StreamJournalToKinesisErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_resource_precondition_not_met_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StreamJournalToKinesisErrorKind::ResourcePreconditionNotMetError(_)
+        )
+    }
 }
 impl std::error::Error for StreamJournalToKinesisError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1353,6 +1533,12 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ResourceNotFoundError(_))
+    }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1430,6 +1616,12 @@ impl UntagResourceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ResourceNotFoundError(_))
     }
 }
 impl std::error::Error for UntagResourceError {
@@ -1509,6 +1701,12 @@ impl UpdateLedgerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, UpdateLedgerErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateLedgerErrorKind::ResourceNotFoundError(_))
+    }
 }
 impl std::error::Error for UpdateLedgerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1587,6 +1785,18 @@ impl UpdateLedgerPermissionsModeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLedgerPermissionsModeErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLedgerPermissionsModeErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateLedgerPermissionsModeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1649,30 +1859,36 @@ pub mod resource_not_found_error {
         pub(crate) resource_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// <p>The type of resource.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>The name of the resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_name = Some(inp.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_name = Some(input.into());
             self
         }
-        pub fn set_resource_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_name = inp;
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
@@ -1737,21 +1953,24 @@ pub mod invalid_parameter_error {
         pub(crate) parameter_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// <p>The name of the invalid parameter.</p>
-        pub fn parameter_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parameter_name = Some(inp.into());
+        pub fn parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parameter_name = Some(input.into());
             self
         }
-        pub fn set_parameter_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.parameter_name = inp;
+        pub fn set_parameter_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.parameter_name = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidParameterError`](crate::error::InvalidParameterError)
@@ -1824,30 +2043,36 @@ pub mod resource_precondition_not_met_error {
         pub(crate) resource_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// <p>The type of resource.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>The name of the resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_name = Some(inp.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_name = Some(input.into());
             self
         }
-        pub fn set_resource_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_name = inp;
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourcePreconditionNotMetError`](crate::error::ResourcePreconditionNotMetError)
@@ -1918,30 +2143,36 @@ pub mod resource_in_use_error {
         pub(crate) resource_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// <p>The type of resource.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>The name of the resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_name = Some(inp.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_name = Some(input.into());
             self
         }
-        pub fn set_resource_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_name = inp;
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceInUseError`](crate::error::ResourceInUseError)
@@ -2015,30 +2246,36 @@ pub mod resource_already_exists_error {
         pub(crate) resource_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// <p>The type of resource.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>The name of the resource.</p>
-        pub fn resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_name = Some(inp.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_name = Some(input.into());
             self
         }
-        pub fn set_resource_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_name = inp;
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceAlreadyExistsError`](crate::error::ResourceAlreadyExistsError)
@@ -2103,21 +2340,24 @@ pub mod limit_exceeded_error {
         pub(crate) resource_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// <p>The type of resource.</p>
-        pub fn resource_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_type = Some(inp.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_type = Some(input.into());
             self
         }
-        pub fn set_resource_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_type = inp;
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)

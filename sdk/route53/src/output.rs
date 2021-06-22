@@ -25,15 +25,18 @@ pub mod update_traffic_policy_instance_output {
     }
     impl Builder {
         /// <p>A complex type that contains settings for the updated traffic policy instance.</p>
-        pub fn traffic_policy_instance(mut self, inp: crate::model::TrafficPolicyInstance) -> Self {
-            self.traffic_policy_instance = Some(inp);
+        pub fn traffic_policy_instance(
+            mut self,
+            input: crate::model::TrafficPolicyInstance,
+        ) -> Self {
+            self.traffic_policy_instance = Some(input);
             self
         }
         pub fn set_traffic_policy_instance(
             mut self,
-            inp: std::option::Option<crate::model::TrafficPolicyInstance>,
+            input: std::option::Option<crate::model::TrafficPolicyInstance>,
         ) -> Self {
-            self.traffic_policy_instance = inp;
+            self.traffic_policy_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateTrafficPolicyInstanceOutput`](crate::output::UpdateTrafficPolicyInstanceOutput)
@@ -75,15 +78,15 @@ pub mod update_traffic_policy_comment_output {
     }
     impl Builder {
         /// <p>A complex type that contains settings for the specified traffic policy.</p>
-        pub fn traffic_policy(mut self, inp: crate::model::TrafficPolicy) -> Self {
-            self.traffic_policy = Some(inp);
+        pub fn traffic_policy(mut self, input: crate::model::TrafficPolicy) -> Self {
+            self.traffic_policy = Some(input);
             self
         }
         pub fn set_traffic_policy(
             mut self,
-            inp: std::option::Option<crate::model::TrafficPolicy>,
+            input: std::option::Option<crate::model::TrafficPolicy>,
         ) -> Self {
-            self.traffic_policy = inp;
+            self.traffic_policy = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateTrafficPolicyCommentOutput`](crate::output::UpdateTrafficPolicyCommentOutput)
@@ -125,15 +128,15 @@ pub mod update_hosted_zone_comment_output {
     }
     impl Builder {
         /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
-        pub fn hosted_zone(mut self, inp: crate::model::HostedZone) -> Self {
-            self.hosted_zone = Some(inp);
+        pub fn hosted_zone(mut self, input: crate::model::HostedZone) -> Self {
+            self.hosted_zone = Some(input);
             self
         }
         pub fn set_hosted_zone(
             mut self,
-            inp: std::option::Option<crate::model::HostedZone>,
+            input: std::option::Option<crate::model::HostedZone>,
         ) -> Self {
-            self.hosted_zone = inp;
+            self.hosted_zone = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateHostedZoneCommentOutput`](crate::output::UpdateHostedZoneCommentOutput)
@@ -175,15 +178,15 @@ pub mod update_health_check_output {
     }
     impl Builder {
         /// <p>A complex type that contains the response to an <code>UpdateHealthCheck</code> request.</p>
-        pub fn health_check(mut self, inp: crate::model::HealthCheck) -> Self {
-            self.health_check = Some(inp);
+        pub fn health_check(mut self, input: crate::model::HealthCheck) -> Self {
+            self.health_check = Some(input);
             self
         }
         pub fn set_health_check(
             mut self,
-            inp: std::option::Option<crate::model::HealthCheck>,
+            input: std::option::Option<crate::model::HealthCheck>,
         ) -> Self {
-            self.health_check = inp;
+            self.health_check = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateHealthCheckOutput`](crate::output::UpdateHealthCheckOutput)
@@ -248,64 +251,67 @@ pub mod test_dns_answer_output {
     }
     impl Builder {
         /// <p>The Amazon Route 53 name server used to respond to the request.</p>
-        pub fn nameserver(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.nameserver = Some(inp.into());
+        pub fn nameserver(mut self, input: impl Into<std::string::String>) -> Self {
+            self.nameserver = Some(input.into());
             self
         }
-        pub fn set_nameserver(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.nameserver = inp;
+        pub fn set_nameserver(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.nameserver = input;
             self
         }
         /// <p>The name of the resource record set that you submitted a request for.</p>
-        pub fn record_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.record_name = Some(inp.into());
+        pub fn record_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.record_name = Some(input.into());
             self
         }
-        pub fn set_record_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.record_name = inp;
+        pub fn set_record_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.record_name = input;
             self
         }
         /// <p>The type of the resource record set that you submitted a request for.</p>
-        pub fn record_type(mut self, inp: crate::model::RrType) -> Self {
-            self.record_type = Some(inp);
+        pub fn record_type(mut self, input: crate::model::RrType) -> Self {
+            self.record_type = Some(input);
             self
         }
-        pub fn set_record_type(mut self, inp: std::option::Option<crate::model::RrType>) -> Self {
-            self.record_type = inp;
+        pub fn set_record_type(mut self, input: std::option::Option<crate::model::RrType>) -> Self {
+            self.record_type = input;
             self
         }
-        pub fn record_data(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn record_data(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.record_data.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.record_data = Some(v);
             self
         }
         pub fn set_record_data(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.record_data = inp;
+            self.record_data = input;
             self
         }
         /// <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that
         /// the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error.
         /// For a list of possible response codes, see
         /// <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website. </p>
-        pub fn response_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.response_code = Some(inp.into());
+        pub fn response_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.response_code = Some(input.into());
             self
         }
-        pub fn set_response_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.response_code = inp;
+        pub fn set_response_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.response_code = input;
             self
         }
         /// <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>. </p>
-        pub fn protocol(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.protocol = Some(inp.into());
+        pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
+            self.protocol = Some(input.into());
             self
         }
-        pub fn set_protocol(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.protocol = inp;
+        pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protocol = input;
             self
         }
         /// Consumes the builder and constructs a [`TestDNSAnswerOutput`](crate::output::TestDNSAnswerOutput)
@@ -362,36 +368,39 @@ pub mod list_vpc_association_authorizations_output {
     }
     impl Builder {
         /// <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated
         /// with the specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request,
         /// and include the value of the <code>NextToken</code> element from the response in the <code>nexttoken</code> request parameter.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
-        pub fn vp_cs(mut self, inp: impl Into<crate::model::VPC>) -> Self {
+        pub fn vp_cs(mut self, input: impl Into<crate::model::VPC>) -> Self {
             let mut v = self.vp_cs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vp_cs = Some(v);
             self
         }
         pub fn set_vp_cs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VPC>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VPC>>,
         ) -> Self {
-            self.vp_cs = inp;
+            self.vp_cs = input;
             self
         }
         /// Consumes the builder and constructs a [`ListVPCAssociationAuthorizationsOutput`](crate::output::ListVPCAssociationAuthorizationsOutput)
@@ -457,28 +466,28 @@ pub mod list_traffic_policy_versions_output {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        pub fn traffic_policies(mut self, inp: impl Into<crate::model::TrafficPolicy>) -> Self {
+        pub fn traffic_policies(mut self, input: impl Into<crate::model::TrafficPolicy>) -> Self {
             let mut v = self.traffic_policies.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.traffic_policies = Some(v);
             self
         }
         pub fn set_traffic_policies(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TrafficPolicy>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TrafficPolicy>>,
         ) -> Self {
-            self.traffic_policies = inp;
+            self.traffic_policies = input;
             self
         }
         /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of
         /// traffic policies by submitting another <code>ListTrafficPolicyVersions</code> request and specifying the value of <code>NextMarker</code>
         /// in the <code>marker</code> parameter.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy
@@ -487,26 +496,26 @@ pub mod list_traffic_policy_versions_output {
         /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
         pub fn traffic_policy_version_marker(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.traffic_policy_version_marker = Some(inp.into());
+            self.traffic_policy_version_marker = Some(input.into());
             self
         }
         pub fn set_traffic_policy_version_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_policy_version_marker = inp;
+            self.traffic_policy_version_marker = input;
             self
         }
         /// <p>The value that you specified for the <code>maxitems</code> parameter in the <code>ListTrafficPolicyVersions</code> request that produced
         /// the current response.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTrafficPolicyVersionsOutput`](crate::output::ListTrafficPolicyVersionsOutput)
@@ -586,81 +595,81 @@ pub mod list_traffic_policy_instances_by_policy_output {
     impl Builder {
         pub fn traffic_policy_instances(
             mut self,
-            inp: impl Into<crate::model::TrafficPolicyInstance>,
+            input: impl Into<crate::model::TrafficPolicyInstance>,
         ) -> Self {
             let mut v = self.traffic_policy_instances.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.traffic_policy_instances = Some(v);
             self
         }
         pub fn set_traffic_policy_instances(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TrafficPolicyInstance>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TrafficPolicyInstance>>,
         ) -> Self {
-            self.traffic_policy_instances = inp;
+            self.traffic_policy_instances = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
         /// traffic policy instance in the next group of traffic policy instances.</p>
-        pub fn hosted_zone_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id_marker = Some(inp.into());
+        pub fn hosted_zone_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id_marker = Some(input.into());
             self
         }
         pub fn set_hosted_zone_id_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.hosted_zone_id_marker = inp;
+            self.hosted_zone_id_marker = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance
         /// in the next group of <code>MaxItems</code> traffic policy instances.</p>
         pub fn traffic_policy_instance_name_marker(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.traffic_policy_instance_name_marker = Some(inp.into());
+            self.traffic_policy_instance_name_marker = Some(input.into());
             self
         }
         pub fn set_traffic_policy_instance_name_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_policy_instance_name_marker = inp;
+            self.traffic_policy_instance_name_marker = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets
         /// that are associated with the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.</p>
-        pub fn traffic_policy_instance_type_marker(mut self, inp: crate::model::RrType) -> Self {
-            self.traffic_policy_instance_type_marker = Some(inp);
+        pub fn traffic_policy_instance_type_marker(mut self, input: crate::model::RrType) -> Self {
+            self.traffic_policy_instance_type_marker = Some(input);
             self
         }
         pub fn set_traffic_policy_instance_type_marker(
             mut self,
-            inp: std::option::Option<crate::model::RrType>,
+            input: std::option::Option<crate::model::RrType>,
         ) -> Self {
-            self.traffic_policy_instance_type_marker = inp;
+            self.traffic_policy_instance_type_marker = input;
             self
         }
         /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get the next group of
         /// traffic policy instances by calling <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values of the <code>HostedZoneIdMarker</code>,
         /// <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>The value that you specified for the <code>MaxItems</code> parameter in the call to <code>ListTrafficPolicyInstancesByPolicy</code> that produced
         /// the current response.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTrafficPolicyInstancesByPolicyOutput`](crate::output::ListTrafficPolicyInstancesByPolicyOutput)
@@ -738,69 +747,69 @@ pub mod list_traffic_policy_instances_by_hosted_zone_output {
     impl Builder {
         pub fn traffic_policy_instances(
             mut self,
-            inp: impl Into<crate::model::TrafficPolicyInstance>,
+            input: impl Into<crate::model::TrafficPolicyInstance>,
         ) -> Self {
             let mut v = self.traffic_policy_instances.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.traffic_policy_instances = Some(v);
             self
         }
         pub fn set_traffic_policy_instances(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TrafficPolicyInstance>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TrafficPolicyInstance>>,
         ) -> Self {
-            self.traffic_policy_instances = inp;
+            self.traffic_policy_instances = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy
         /// instance in the next group of traffic policy instances.</p>
         pub fn traffic_policy_instance_name_marker(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.traffic_policy_instance_name_marker = Some(inp.into());
+            self.traffic_policy_instance_name_marker = Some(input.into());
             self
         }
         pub fn set_traffic_policy_instance_name_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_policy_instance_name_marker = inp;
+            self.traffic_policy_instance_name_marker = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is true, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are
         /// associated with the first traffic policy instance in the next group of traffic policy instances.</p>
-        pub fn traffic_policy_instance_type_marker(mut self, inp: crate::model::RrType) -> Self {
-            self.traffic_policy_instance_type_marker = Some(inp);
+        pub fn traffic_policy_instance_type_marker(mut self, input: crate::model::RrType) -> Self {
+            self.traffic_policy_instance_type_marker = Some(input);
             self
         }
         pub fn set_traffic_policy_instance_type_marker(
             mut self,
-            inp: std::option::Option<crate::model::RrType>,
+            input: std::option::Option<crate::model::RrType>,
         ) -> Self {
-            self.traffic_policy_instance_type_marker = inp;
+            self.traffic_policy_instance_type_marker = input;
             self
         }
         /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get the
         /// next group of traffic policy instances by submitting another <code>ListTrafficPolicyInstancesByHostedZone</code> request and specifying
         /// the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code>
         /// in the corresponding request parameters.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicyInstancesByHostedZone</code> request
         /// that produced the current response.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTrafficPolicyInstancesByHostedZoneOutput`](crate::output::ListTrafficPolicyInstancesByHostedZoneOutput)
@@ -884,82 +893,82 @@ pub mod list_traffic_policy_instances_output {
     impl Builder {
         pub fn traffic_policy_instances(
             mut self,
-            inp: impl Into<crate::model::TrafficPolicyInstance>,
+            input: impl Into<crate::model::TrafficPolicyInstance>,
         ) -> Self {
             let mut v = self.traffic_policy_instances.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.traffic_policy_instances = Some(v);
             self
         }
         pub fn set_traffic_policy_instances(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TrafficPolicyInstance>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TrafficPolicyInstance>>,
         ) -> Self {
-            self.traffic_policy_instances = inp;
+            self.traffic_policy_instances = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
         /// traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
-        pub fn hosted_zone_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id_marker = Some(inp.into());
+        pub fn hosted_zone_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id_marker = Some(input.into());
             self
         }
         pub fn set_hosted_zone_id_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.hosted_zone_id_marker = inp;
+            self.hosted_zone_id_marker = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy
         /// instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
         pub fn traffic_policy_instance_name_marker(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.traffic_policy_instance_name_marker = Some(inp.into());
+            self.traffic_policy_instance_name_marker = Some(input.into());
             self
         }
         pub fn set_traffic_policy_instance_name_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_policy_instance_name_marker = inp;
+            self.traffic_policy_instance_name_marker = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets
         /// that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
-        pub fn traffic_policy_instance_type_marker(mut self, inp: crate::model::RrType) -> Self {
-            self.traffic_policy_instance_type_marker = Some(inp);
+        pub fn traffic_policy_instance_type_marker(mut self, input: crate::model::RrType) -> Self {
+            self.traffic_policy_instance_type_marker = Some(input);
             self
         }
         pub fn set_traffic_policy_instance_type_marker(
             mut self,
-            inp: std::option::Option<crate::model::RrType>,
+            input: std::option::Option<crate::model::RrType>,
         ) -> Self {
-            self.traffic_policy_instance_type_marker = inp;
+            self.traffic_policy_instance_type_marker = input;
             self
         }
         /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get more
         /// traffic policy instances by calling <code>ListTrafficPolicyInstances</code> again and specifying the values of the
         /// <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code>
         /// in the corresponding request parameters.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>The value that you specified for the <code>MaxItems</code> parameter in the call to <code>ListTrafficPolicyInstances</code>
         /// that produced the current response.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTrafficPolicyInstancesOutput`](crate::output::ListTrafficPolicyInstancesOutput)
@@ -1025,52 +1034,52 @@ pub mod list_traffic_policies_output {
     impl Builder {
         pub fn traffic_policy_summaries(
             mut self,
-            inp: impl Into<crate::model::TrafficPolicySummary>,
+            input: impl Into<crate::model::TrafficPolicySummary>,
         ) -> Self {
             let mut v = self.traffic_policy_summaries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.traffic_policy_summaries = Some(v);
             self
         }
         pub fn set_traffic_policy_summaries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TrafficPolicySummary>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TrafficPolicySummary>>,
         ) -> Self {
-            self.traffic_policy_summaries = inp;
+            self.traffic_policy_summaries = input;
             self
         }
         /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of
         /// traffic policies by submitting another <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code>
         /// in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy
         /// in the next group of <code>MaxItems</code> traffic policies.</p>
-        pub fn traffic_policy_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.traffic_policy_id_marker = Some(inp.into());
+        pub fn traffic_policy_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.traffic_policy_id_marker = Some(input.into());
             self
         }
         pub fn set_traffic_policy_id_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_policy_id_marker = inp;
+            self.traffic_policy_id_marker = input;
             self
         }
         /// <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code> request that produced
         /// the current response.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTrafficPoliciesOutput`](crate::output::ListTrafficPoliciesOutput)
@@ -1115,17 +1124,17 @@ pub mod list_tags_for_resources_output {
             std::option::Option<std::vec::Vec<crate::model::ResourceTagSet>>,
     }
     impl Builder {
-        pub fn resource_tag_sets(mut self, inp: impl Into<crate::model::ResourceTagSet>) -> Self {
+        pub fn resource_tag_sets(mut self, input: impl Into<crate::model::ResourceTagSet>) -> Self {
             let mut v = self.resource_tag_sets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resource_tag_sets = Some(v);
             self
         }
         pub fn set_resource_tag_sets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ResourceTagSet>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceTagSet>>,
         ) -> Self {
-            self.resource_tag_sets = inp;
+            self.resource_tag_sets = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourcesOutput`](crate::output::ListTagsForResourcesOutput)
@@ -1167,15 +1176,15 @@ pub mod list_tags_for_resource_output {
     }
     impl Builder {
         /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
-        pub fn resource_tag_set(mut self, inp: crate::model::ResourceTagSet) -> Self {
-            self.resource_tag_set = Some(inp);
+        pub fn resource_tag_set(mut self, input: crate::model::ResourceTagSet) -> Self {
+            self.resource_tag_set = Some(input);
             self
         }
         pub fn set_resource_tag_set(
             mut self,
-            inp: std::option::Option<crate::model::ResourceTagSet>,
+            input: std::option::Option<crate::model::ResourceTagSet>,
         ) -> Self {
-            self.resource_tag_set = inp;
+            self.resource_tag_set = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
@@ -1237,57 +1246,57 @@ pub mod list_reusable_delegation_sets_output {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        pub fn delegation_sets(mut self, inp: impl Into<crate::model::DelegationSet>) -> Self {
+        pub fn delegation_sets(mut self, input: impl Into<crate::model::DelegationSet>) -> Self {
             let mut v = self.delegation_sets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.delegation_sets = Some(v);
             self
         }
         pub fn set_delegation_sets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DelegationSet>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DelegationSet>>,
         ) -> Self {
-            self.delegation_sets = inp;
+            self.delegation_sets = input;
             self
         }
         /// <p>For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that you specified
         /// for the <code>marker</code> parameter in the request that produced the current response.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>A flag that indicates whether there are more reusable delegation sets to be listed.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next reusable delegation set
         /// that Amazon Route 53 will return if you submit another <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code>
         /// in the <code>marker</code> parameter.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_marker = Some(inp.into());
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
             self
         }
-        pub fn set_next_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = inp;
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
             self
         }
         /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListReusableDelegationSets</code> that
         /// produced the current response.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListReusableDelegationSetsOutput`](crate::output::ListReusableDelegationSetsOutput)
@@ -1363,54 +1372,54 @@ pub mod list_resource_record_sets_output {
     impl Builder {
         pub fn resource_record_sets(
             mut self,
-            inp: impl Into<crate::model::ResourceRecordSet>,
+            input: impl Into<crate::model::ResourceRecordSet>,
         ) -> Self {
             let mut v = self.resource_record_sets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resource_record_sets = Some(v);
             self
         }
         pub fn set_resource_record_sets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ResourceRecordSet>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceRecordSet>>,
         ) -> Self {
-            self.resource_record_sets = inp;
+            self.resource_record_sets = input;
             self
         }
         /// <p>A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you can make a
         /// follow-up pagination request by using the <code>NextRecordName</code> element.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>If the results were truncated, the name of the next record in the list.</p>
         /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
-        pub fn next_record_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_record_name = Some(inp.into());
+        pub fn next_record_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_record_name = Some(input.into());
             self
         }
         pub fn set_next_record_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_record_name = inp;
+            self.next_record_name = input;
             self
         }
         /// <p>If the results were truncated, the type of the next record in the list.</p>
         /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
-        pub fn next_record_type(mut self, inp: crate::model::RrType) -> Self {
-            self.next_record_type = Some(inp);
+        pub fn next_record_type(mut self, input: crate::model::RrType) -> Self {
+            self.next_record_type = Some(input);
             self
         }
         pub fn set_next_record_type(
             mut self,
-            inp: std::option::Option<crate::model::RrType>,
+            input: std::option::Option<crate::model::RrType>,
         ) -> Self {
-            self.next_record_type = inp;
+            self.next_record_type = input;
             self
         }
         /// <p>
@@ -1419,24 +1428,24 @@ pub mod list_resource_record_sets_output {
         /// <p>For information about routing policies, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a>
         /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
-        pub fn next_record_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_record_identifier = Some(inp.into());
+        pub fn next_record_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_record_identifier = Some(input.into());
             self
         }
         pub fn set_next_record_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_record_identifier = inp;
+            self.next_record_identifier = input;
             self
         }
         /// <p>The maximum number of records you requested.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListResourceRecordSetsOutput`](crate::output::ListResourceRecordSetsOutput)
@@ -1495,18 +1504,18 @@ pub mod list_query_logging_configs_output {
     impl Builder {
         pub fn query_logging_configs(
             mut self,
-            inp: impl Into<crate::model::QueryLoggingConfig>,
+            input: impl Into<crate::model::QueryLoggingConfig>,
         ) -> Self {
             let mut v = self.query_logging_configs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.query_logging_configs = Some(v);
             self
         }
         pub fn set_query_logging_configs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::QueryLoggingConfig>>,
+            input: std::option::Option<std::vec::Vec<crate::model::QueryLoggingConfig>>,
         ) -> Self {
-            self.query_logging_configs = inp;
+            self.query_logging_configs = input;
             self
         }
         /// <p>If a response includes the last of the query logging configurations that are associated with the current AWS account,
@@ -1515,12 +1524,12 @@ pub mod list_query_logging_configs_output {
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a>
         /// request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in
         /// <code>NextToken</code> in the next request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListQueryLoggingConfigsOutput`](crate::output::ListQueryLoggingConfigsOutput)
@@ -1573,36 +1582,36 @@ pub mod list_hosted_zones_by_vpc_output {
     impl Builder {
         pub fn hosted_zone_summaries(
             mut self,
-            inp: impl Into<crate::model::HostedZoneSummary>,
+            input: impl Into<crate::model::HostedZoneSummary>,
         ) -> Self {
             let mut v = self.hosted_zone_summaries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.hosted_zone_summaries = Some(v);
             self
         }
         pub fn set_hosted_zone_summaries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HostedZoneSummary>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HostedZoneSummary>>,
         ) -> Self {
-            self.hosted_zone_summaries = inp;
+            self.hosted_zone_summaries = input;
             self
         }
         /// <p>The value that you specified for <code>MaxItems</code> in the most recent <code>ListHostedZonesByVPC</code> request.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// <p>The value that you specified for <code>NextToken</code> in the most recent <code>ListHostedZonesByVPC</code> request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListHostedZonesByVPCOutput`](crate::output::ListHostedZonesByVPCOutput)
@@ -1679,84 +1688,90 @@ pub mod list_hosted_zones_by_name_output {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        pub fn hosted_zones(mut self, inp: impl Into<crate::model::HostedZone>) -> Self {
+        pub fn hosted_zones(mut self, input: impl Into<crate::model::HostedZone>) -> Self {
             let mut v = self.hosted_zones.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.hosted_zones = Some(v);
             self
         }
         pub fn set_hosted_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HostedZone>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HostedZone>>,
         ) -> Self {
-            self.hosted_zones = inp;
+            self.hosted_zones = input;
             self
         }
         /// <p>For the second and subsequent calls to <code>ListHostedZonesByName</code>, <code>DNSName</code> is the value that you specified for the
         /// <code>dnsname</code> parameter in the request that produced the current response.</p>
-        pub fn dns_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.dns_name = Some(inp.into());
+        pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dns_name = Some(input.into());
             self
         }
-        pub fn set_dns_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.dns_name = inp;
+        pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dns_name = input;
             self
         }
         /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>A flag that indicates whether there are more hosted zones to be listed. If the response was truncated, you can get the next group of
         /// <code>maxitems</code> hosted zones by calling <code>ListHostedZonesByName</code> again and specifying the values of <code>NextDNSName</code> and
         /// <code>NextHostedZoneId</code> elements in the <code>dnsname</code> and <code>hostedzoneid</code> parameters.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is true, the value of <code>NextDNSName</code> is the name of the first hosted zone in the next group of
         /// <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code>
         /// and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
         /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
-        pub fn next_dns_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_dns_name = Some(inp.into());
+        pub fn next_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_dns_name = Some(input.into());
             self
         }
-        pub fn set_next_dns_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_dns_name = inp;
+        pub fn set_next_dns_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.next_dns_name = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextHostedZoneId</code> identifies the first hosted zone in the
         /// next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code>
         /// and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
         /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
-        pub fn next_hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_hosted_zone_id = Some(inp.into());
+        pub fn next_hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_hosted_zone_id = Some(input.into());
             self
         }
         pub fn set_next_hosted_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_hosted_zone_id = inp;
+            self.next_hosted_zone_id = input;
             self
         }
         /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZonesByName</code> that produced the
         /// current response.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListHostedZonesByNameOutput`](crate::output::ListHostedZonesByNameOutput)
@@ -1825,60 +1840,60 @@ pub mod list_hosted_zones_output {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        pub fn hosted_zones(mut self, inp: impl Into<crate::model::HostedZone>) -> Self {
+        pub fn hosted_zones(mut self, input: impl Into<crate::model::HostedZone>) -> Self {
             let mut v = self.hosted_zones.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.hosted_zones = Some(v);
             self
         }
         pub fn set_hosted_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HostedZone>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HostedZone>>,
         ) -> Self {
-            self.hosted_zones = inp;
+            self.hosted_zones = input;
             self
         }
         /// <p>For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that you specified for the
         /// <code>marker</code> parameter in the request that produced the current response.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you can get more hosted zones
         /// by submitting another <code>ListHostedZones</code> request and specifying the value of <code>NextMarker</code> in the
         /// <code>marker</code> parameter.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first hosted zone in the next group
         /// of hosted zones. Submit another <code>ListHostedZones</code> request, and specify the value of <code>NextMarker</code> from the response in the
         /// <code>marker</code> parameter.</p>
         /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_marker = Some(inp.into());
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
             self
         }
-        pub fn set_next_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = inp;
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
             self
         }
         /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZones</code> that
         /// produced the current response.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListHostedZonesOutput`](crate::output::ListHostedZonesOutput)
@@ -1946,59 +1961,59 @@ pub mod list_health_checks_output {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
-        pub fn health_checks(mut self, inp: impl Into<crate::model::HealthCheck>) -> Self {
+        pub fn health_checks(mut self, input: impl Into<crate::model::HealthCheck>) -> Self {
             let mut v = self.health_checks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.health_checks = Some(v);
             self
         }
         pub fn set_health_checks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HealthCheck>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HealthCheck>>,
         ) -> Self {
-            self.health_checks = inp;
+            self.health_checks = input;
             self
         }
         /// <p>For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value that you specified for the
         /// <code>marker</code> parameter in the previous request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>A flag that indicates whether there are more health checks to be listed. If the response was truncated, you can get the next group of
         /// health checks by submitting another <code>ListHealthChecks</code> request and specifying the value of <code>NextMarker</code> in the
         /// <code>marker</code> parameter.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first health check that Amazon Route 53
         /// returns if you submit another <code>ListHealthChecks</code> request and specify the value of <code>NextMarker</code> in
         /// the <code>marker</code> parameter.</p>
-        pub fn next_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_marker = Some(inp.into());
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
             self
         }
-        pub fn set_next_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = inp;
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
             self
         }
         /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHealthChecks</code> that produced the
         /// current response.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListHealthChecksOutput`](crate::output::ListHealthChecksOutput)
@@ -2073,78 +2088,78 @@ pub mod list_geo_locations_output {
     impl Builder {
         pub fn geo_location_details_list(
             mut self,
-            inp: impl Into<crate::model::GeoLocationDetails>,
+            input: impl Into<crate::model::GeoLocationDetails>,
         ) -> Self {
             let mut v = self.geo_location_details_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.geo_location_details_list = Some(v);
             self
         }
         pub fn set_geo_location_details_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GeoLocationDetails>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GeoLocationDetails>>,
         ) -> Self {
-            self.geo_location_details_list = inp;
+            self.geo_location_details_list = input;
             self
         }
         /// <p>A value that indicates whether more locations remain to be listed after the last location in this response. If so, the value of
         /// <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and include the values of <code>NextContinentCode</code>,
         /// <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and
         /// <code>startsubdivisioncode</code>, as applicable.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of
         /// <code>NextContinentCode</code> in the <code>startcontinentcode</code> parameter in another <code>ListGeoLocations</code> request.</p>
-        pub fn next_continent_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_continent_code = Some(inp.into());
+        pub fn next_continent_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_continent_code = Some(input.into());
             self
         }
         pub fn set_next_continent_code(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_continent_code = inp;
+            self.next_continent_code = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of
         /// <code>NextCountryCode</code> in the <code>startcountrycode</code> parameter in another <code>ListGeoLocations</code> request.</p>
-        pub fn next_country_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_country_code = Some(inp.into());
+        pub fn next_country_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_country_code = Some(input.into());
             self
         }
         pub fn set_next_country_code(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_country_code = inp;
+            self.next_country_code = input;
             self
         }
         /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of
         /// <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code> parameter in another <code>ListGeoLocations</code> request.</p>
-        pub fn next_subdivision_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_subdivision_code = Some(inp.into());
+        pub fn next_subdivision_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_subdivision_code = Some(input.into());
             self
         }
         pub fn set_next_subdivision_code(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.next_subdivision_code = inp;
+            self.next_subdivision_code = input;
             self
         }
         /// <p>The value that you specified for <code>MaxItems</code> in the request.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListGeoLocationsOutput`](crate::output::ListGeoLocationsOutput)
@@ -2194,12 +2209,15 @@ pub mod get_traffic_policy_instance_count_output {
     }
     impl Builder {
         /// <p>The number of traffic policy instances that are associated with the current AWS account.</p>
-        pub fn traffic_policy_instance_count(mut self, inp: i32) -> Self {
-            self.traffic_policy_instance_count = Some(inp);
+        pub fn traffic_policy_instance_count(mut self, input: i32) -> Self {
+            self.traffic_policy_instance_count = Some(input);
             self
         }
-        pub fn set_traffic_policy_instance_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.traffic_policy_instance_count = inp;
+        pub fn set_traffic_policy_instance_count(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.traffic_policy_instance_count = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTrafficPolicyInstanceCountOutput`](crate::output::GetTrafficPolicyInstanceCountOutput)
@@ -2242,15 +2260,18 @@ pub mod get_traffic_policy_instance_output {
     }
     impl Builder {
         /// <p>A complex type that contains settings for the traffic policy instance.</p>
-        pub fn traffic_policy_instance(mut self, inp: crate::model::TrafficPolicyInstance) -> Self {
-            self.traffic_policy_instance = Some(inp);
+        pub fn traffic_policy_instance(
+            mut self,
+            input: crate::model::TrafficPolicyInstance,
+        ) -> Self {
+            self.traffic_policy_instance = Some(input);
             self
         }
         pub fn set_traffic_policy_instance(
             mut self,
-            inp: std::option::Option<crate::model::TrafficPolicyInstance>,
+            input: std::option::Option<crate::model::TrafficPolicyInstance>,
         ) -> Self {
-            self.traffic_policy_instance = inp;
+            self.traffic_policy_instance = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTrafficPolicyInstanceOutput`](crate::output::GetTrafficPolicyInstanceOutput)
@@ -2292,15 +2313,15 @@ pub mod get_traffic_policy_output {
     }
     impl Builder {
         /// <p>A complex type that contains settings for the specified traffic policy.</p>
-        pub fn traffic_policy(mut self, inp: crate::model::TrafficPolicy) -> Self {
-            self.traffic_policy = Some(inp);
+        pub fn traffic_policy(mut self, input: crate::model::TrafficPolicy) -> Self {
+            self.traffic_policy = Some(input);
             self
         }
         pub fn set_traffic_policy(
             mut self,
-            inp: std::option::Option<crate::model::TrafficPolicy>,
+            input: std::option::Option<crate::model::TrafficPolicy>,
         ) -> Self {
-            self.traffic_policy = inp;
+            self.traffic_policy = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTrafficPolicyOutput`](crate::output::GetTrafficPolicyOutput)
@@ -2346,24 +2367,24 @@ pub mod get_reusable_delegation_set_limit_output {
     }
     impl Builder {
         /// <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
-        pub fn limit(mut self, inp: crate::model::ReusableDelegationSetLimit) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: crate::model::ReusableDelegationSetLimit) -> Self {
+            self.limit = Some(input);
             self
         }
         pub fn set_limit(
             mut self,
-            inp: std::option::Option<crate::model::ReusableDelegationSetLimit>,
+            input: std::option::Option<crate::model::ReusableDelegationSetLimit>,
         ) -> Self {
-            self.limit = inp;
+            self.limit = input;
             self
         }
         /// <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
-        pub fn count(mut self, inp: i64) -> Self {
-            self.count = Some(inp);
+        pub fn count(mut self, input: i64) -> Self {
+            self.count = Some(input);
             self
         }
-        pub fn set_count(mut self, inp: i64) -> Self {
-            self.count = Some(inp);
+        pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.count = input;
             self
         }
         /// Consumes the builder and constructs a [`GetReusableDelegationSetLimitOutput`](crate::output::GetReusableDelegationSetLimitOutput)
@@ -2406,15 +2427,15 @@ pub mod get_reusable_delegation_set_output {
     }
     impl Builder {
         /// <p>A complex type that contains information about the reusable delegation set.</p>
-        pub fn delegation_set(mut self, inp: crate::model::DelegationSet) -> Self {
-            self.delegation_set = Some(inp);
+        pub fn delegation_set(mut self, input: crate::model::DelegationSet) -> Self {
+            self.delegation_set = Some(input);
             self
         }
         pub fn set_delegation_set(
             mut self,
-            inp: std::option::Option<crate::model::DelegationSet>,
+            input: std::option::Option<crate::model::DelegationSet>,
         ) -> Self {
-            self.delegation_set = inp;
+            self.delegation_set = input;
             self
         }
         /// Consumes the builder and constructs a [`GetReusableDelegationSetOutput`](crate::output::GetReusableDelegationSetOutput)
@@ -2457,15 +2478,15 @@ pub mod get_query_logging_config_output {
     impl Builder {
         /// <p>A complex type that contains information about the query logging configuration that you specified in a
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a> request.</p>
-        pub fn query_logging_config(mut self, inp: crate::model::QueryLoggingConfig) -> Self {
-            self.query_logging_config = Some(inp);
+        pub fn query_logging_config(mut self, input: crate::model::QueryLoggingConfig) -> Self {
+            self.query_logging_config = Some(input);
             self
         }
         pub fn set_query_logging_config(
             mut self,
-            inp: std::option::Option<crate::model::QueryLoggingConfig>,
+            input: std::option::Option<crate::model::QueryLoggingConfig>,
         ) -> Self {
-            self.query_logging_config = inp;
+            self.query_logging_config = input;
             self
         }
         /// Consumes the builder and constructs a [`GetQueryLoggingConfigOutput`](crate::output::GetQueryLoggingConfigOutput)
@@ -2517,26 +2538,26 @@ pub mod get_hosted_zone_limit_output {
         /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of
         /// <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of records that you can create
         /// in the specified hosted zone.</p>
-        pub fn limit(mut self, inp: crate::model::HostedZoneLimit) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: crate::model::HostedZoneLimit) -> Self {
+            self.limit = Some(input);
             self
         }
         pub fn set_limit(
             mut self,
-            inp: std::option::Option<crate::model::HostedZoneLimit>,
+            input: std::option::Option<crate::model::HostedZoneLimit>,
         ) -> Self {
-            self.limit = inp;
+            self.limit = input;
             self
         }
         /// <p>The current number of entities that you have created of the specified type. For example, if you specified
         /// <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Count</code>
         /// is the current number of records that you have created in the specified hosted zone.</p>
-        pub fn count(mut self, inp: i64) -> Self {
-            self.count = Some(inp);
+        pub fn count(mut self, input: i64) -> Self {
+            self.count = Some(input);
             self
         }
-        pub fn set_count(mut self, inp: i64) -> Self {
-            self.count = Some(inp);
+        pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.count = input;
             self
         }
         /// Consumes the builder and constructs a [`GetHostedZoneLimitOutput`](crate::output::GetHostedZoneLimitOutput)
@@ -2579,12 +2600,12 @@ pub mod get_hosted_zone_count_output {
     }
     impl Builder {
         /// <p>The total number of public and private hosted zones that are associated with the current AWS account.</p>
-        pub fn hosted_zone_count(mut self, inp: i64) -> Self {
-            self.hosted_zone_count = Some(inp);
+        pub fn hosted_zone_count(mut self, input: i64) -> Self {
+            self.hosted_zone_count = Some(input);
             self
         }
-        pub fn set_hosted_zone_count(mut self, inp: std::option::Option<i64>) -> Self {
-            self.hosted_zone_count = inp;
+        pub fn set_hosted_zone_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.hosted_zone_count = input;
             self
         }
         /// Consumes the builder and constructs a [`GetHostedZoneCountOutput`](crate::output::GetHostedZoneCountOutput)
@@ -2634,40 +2655,40 @@ pub mod get_hosted_zone_output {
     }
     impl Builder {
         /// <p>A complex type that contains general information about the specified hosted zone.</p>
-        pub fn hosted_zone(mut self, inp: crate::model::HostedZone) -> Self {
-            self.hosted_zone = Some(inp);
+        pub fn hosted_zone(mut self, input: crate::model::HostedZone) -> Self {
+            self.hosted_zone = Some(input);
             self
         }
         pub fn set_hosted_zone(
             mut self,
-            inp: std::option::Option<crate::model::HostedZone>,
+            input: std::option::Option<crate::model::HostedZone>,
         ) -> Self {
-            self.hosted_zone = inp;
+            self.hosted_zone = input;
             self
         }
         /// <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>
-        pub fn delegation_set(mut self, inp: crate::model::DelegationSet) -> Self {
-            self.delegation_set = Some(inp);
+        pub fn delegation_set(mut self, input: crate::model::DelegationSet) -> Self {
+            self.delegation_set = Some(input);
             self
         }
         pub fn set_delegation_set(
             mut self,
-            inp: std::option::Option<crate::model::DelegationSet>,
+            input: std::option::Option<crate::model::DelegationSet>,
         ) -> Self {
-            self.delegation_set = inp;
+            self.delegation_set = input;
             self
         }
-        pub fn vp_cs(mut self, inp: impl Into<crate::model::VPC>) -> Self {
+        pub fn vp_cs(mut self, input: impl Into<crate::model::VPC>) -> Self {
             let mut v = self.vp_cs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vp_cs = Some(v);
             self
         }
         pub fn set_vp_cs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VPC>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VPC>>,
         ) -> Self {
-            self.vp_cs = inp;
+            self.vp_cs = input;
             self
         }
         /// Consumes the builder and constructs a [`GetHostedZoneOutput`](crate::output::GetHostedZoneOutput)
@@ -2716,18 +2737,18 @@ pub mod get_health_check_status_output {
     impl Builder {
         pub fn health_check_observations(
             mut self,
-            inp: impl Into<crate::model::HealthCheckObservation>,
+            input: impl Into<crate::model::HealthCheckObservation>,
         ) -> Self {
             let mut v = self.health_check_observations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.health_check_observations = Some(v);
             self
         }
         pub fn set_health_check_observations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HealthCheckObservation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HealthCheckObservation>>,
         ) -> Self {
-            self.health_check_observations = inp;
+            self.health_check_observations = input;
             self
         }
         /// Consumes the builder and constructs a [`GetHealthCheckStatusOutput`](crate::output::GetHealthCheckStatusOutput)
@@ -2772,18 +2793,18 @@ pub mod get_health_check_last_failure_reason_output {
     impl Builder {
         pub fn health_check_observations(
             mut self,
-            inp: impl Into<crate::model::HealthCheckObservation>,
+            input: impl Into<crate::model::HealthCheckObservation>,
         ) -> Self {
             let mut v = self.health_check_observations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.health_check_observations = Some(v);
             self
         }
         pub fn set_health_check_observations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HealthCheckObservation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HealthCheckObservation>>,
         ) -> Self {
-            self.health_check_observations = inp;
+            self.health_check_observations = input;
             self
         }
         /// Consumes the builder and constructs a [`GetHealthCheckLastFailureReasonOutput`](crate::output::GetHealthCheckLastFailureReasonOutput)
@@ -2825,12 +2846,12 @@ pub mod get_health_check_count_output {
     }
     impl Builder {
         /// <p>The number of health checks associated with the current AWS account.</p>
-        pub fn health_check_count(mut self, inp: i64) -> Self {
-            self.health_check_count = Some(inp);
+        pub fn health_check_count(mut self, input: i64) -> Self {
+            self.health_check_count = Some(input);
             self
         }
-        pub fn set_health_check_count(mut self, inp: std::option::Option<i64>) -> Self {
-            self.health_check_count = inp;
+        pub fn set_health_check_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.health_check_count = input;
             self
         }
         /// Consumes the builder and constructs a [`GetHealthCheckCountOutput`](crate::output::GetHealthCheckCountOutput)
@@ -2874,15 +2895,15 @@ pub mod get_health_check_output {
     impl Builder {
         /// <p>A complex type that contains information about one health check that is associated with
         /// the current AWS account.</p>
-        pub fn health_check(mut self, inp: crate::model::HealthCheck) -> Self {
-            self.health_check = Some(inp);
+        pub fn health_check(mut self, input: crate::model::HealthCheck) -> Self {
+            self.health_check = Some(input);
             self
         }
         pub fn set_health_check(
             mut self,
-            inp: std::option::Option<crate::model::HealthCheck>,
+            input: std::option::Option<crate::model::HealthCheck>,
         ) -> Self {
-            self.health_check = inp;
+            self.health_check = input;
             self
         }
         /// Consumes the builder and constructs a [`GetHealthCheckOutput`](crate::output::GetHealthCheckOutput)
@@ -2924,15 +2945,15 @@ pub mod get_geo_location_output {
     }
     impl Builder {
         /// <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified geolocation code.</p>
-        pub fn geo_location_details(mut self, inp: crate::model::GeoLocationDetails) -> Self {
-            self.geo_location_details = Some(inp);
+        pub fn geo_location_details(mut self, input: crate::model::GeoLocationDetails) -> Self {
+            self.geo_location_details = Some(input);
             self
         }
         pub fn set_geo_location_details(
             mut self,
-            inp: std::option::Option<crate::model::GeoLocationDetails>,
+            input: std::option::Option<crate::model::GeoLocationDetails>,
         ) -> Self {
-            self.geo_location_details = inp;
+            self.geo_location_details = input;
             self
         }
         /// Consumes the builder and constructs a [`GetGeoLocationOutput`](crate::output::GetGeoLocationOutput)
@@ -2978,25 +2999,28 @@ pub mod get_dnssec_output {
     }
     impl Builder {
         /// <p>A string repesenting the status of DNSSEC.</p>
-        pub fn status(mut self, inp: crate::model::DNSSECStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::DNSSECStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::DNSSECStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::DNSSECStatus>,
+        ) -> Self {
+            self.status = input;
             self
         }
-        pub fn key_signing_keys(mut self, inp: impl Into<crate::model::KeySigningKey>) -> Self {
+        pub fn key_signing_keys(mut self, input: impl Into<crate::model::KeySigningKey>) -> Self {
             let mut v = self.key_signing_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.key_signing_keys = Some(v);
             self
         }
         pub fn set_key_signing_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::KeySigningKey>>,
+            input: std::option::Option<std::vec::Vec<crate::model::KeySigningKey>>,
         ) -> Self {
-            self.key_signing_keys = inp;
+            self.key_signing_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDNSSECOutput`](crate::output::GetDNSSECOutput)
@@ -3039,17 +3063,17 @@ pub mod get_checker_ip_ranges_output {
         pub(crate) checker_ip_ranges: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn checker_ip_ranges(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn checker_ip_ranges(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.checker_ip_ranges.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.checker_ip_ranges = Some(v);
             self
         }
         pub fn set_checker_ip_ranges(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.checker_ip_ranges = inp;
+            self.checker_ip_ranges = input;
             self
         }
         /// Consumes the builder and constructs a [`GetCheckerIpRangesOutput`](crate::output::GetCheckerIpRangesOutput)
@@ -3091,15 +3115,15 @@ pub mod get_change_output {
     }
     impl Builder {
         /// <p>A complex type that contains information about the specified change batch.</p>
-        pub fn change_info(mut self, inp: crate::model::ChangeInfo) -> Self {
-            self.change_info = Some(inp);
+        pub fn change_info(mut self, input: crate::model::ChangeInfo) -> Self {
+            self.change_info = Some(input);
             self
         }
         pub fn set_change_info(
             mut self,
-            inp: std::option::Option<crate::model::ChangeInfo>,
+            input: std::option::Option<crate::model::ChangeInfo>,
         ) -> Self {
-            self.change_info = inp;
+            self.change_info = input;
             self
         }
         /// Consumes the builder and constructs a [`GetChangeOutput`](crate::output::GetChangeOutput)
@@ -3151,23 +3175,23 @@ pub mod get_account_limit_output {
         /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of
         /// <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of health checks that you can create
         /// using the current account.</p>
-        pub fn limit(mut self, inp: crate::model::AccountLimit) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: crate::model::AccountLimit) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<crate::model::AccountLimit>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<crate::model::AccountLimit>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>The current number of entities that you have created of the specified type. For example, if you specified
         /// <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Count</code>
         /// is the current number of health checks that you have created using the current account.</p>
-        pub fn count(mut self, inp: i64) -> Self {
-            self.count = Some(inp);
+        pub fn count(mut self, input: i64) -> Self {
+            self.count = Some(input);
             self
         }
-        pub fn set_count(mut self, inp: i64) -> Self {
-            self.count = Some(inp);
+        pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.count = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAccountLimitOutput`](crate::output::GetAccountLimitOutput)
@@ -3211,15 +3235,15 @@ pub mod enable_hosted_zone_dnssec_output {
     impl Builder {
         /// <p>A complex type that describes change information about changes made to your hosted
         /// zone.</p>
-        pub fn change_info(mut self, inp: crate::model::ChangeInfo) -> Self {
-            self.change_info = Some(inp);
+        pub fn change_info(mut self, input: crate::model::ChangeInfo) -> Self {
+            self.change_info = Some(input);
             self
         }
         pub fn set_change_info(
             mut self,
-            inp: std::option::Option<crate::model::ChangeInfo>,
+            input: std::option::Option<crate::model::ChangeInfo>,
         ) -> Self {
-            self.change_info = inp;
+            self.change_info = input;
             self
         }
         /// Consumes the builder and constructs a [`EnableHostedZoneDNSSECOutput`](crate::output::EnableHostedZoneDNSSECOutput)
@@ -3261,15 +3285,15 @@ pub mod disassociate_vpc_from_hosted_zone_output {
     }
     impl Builder {
         /// <p>A complex type that describes the changes made to the specified private hosted zone.</p>
-        pub fn change_info(mut self, inp: crate::model::ChangeInfo) -> Self {
-            self.change_info = Some(inp);
+        pub fn change_info(mut self, input: crate::model::ChangeInfo) -> Self {
+            self.change_info = Some(input);
             self
         }
         pub fn set_change_info(
             mut self,
-            inp: std::option::Option<crate::model::ChangeInfo>,
+            input: std::option::Option<crate::model::ChangeInfo>,
         ) -> Self {
-            self.change_info = inp;
+            self.change_info = input;
             self
         }
         /// Consumes the builder and constructs a [`DisassociateVPCFromHostedZoneOutput`](crate::output::DisassociateVPCFromHostedZoneOutput)
@@ -3312,15 +3336,15 @@ pub mod disable_hosted_zone_dnssec_output {
     impl Builder {
         /// <p>A complex type that describes change information about changes made to your hosted
         /// zone.</p>
-        pub fn change_info(mut self, inp: crate::model::ChangeInfo) -> Self {
-            self.change_info = Some(inp);
+        pub fn change_info(mut self, input: crate::model::ChangeInfo) -> Self {
+            self.change_info = Some(input);
             self
         }
         pub fn set_change_info(
             mut self,
-            inp: std::option::Option<crate::model::ChangeInfo>,
+            input: std::option::Option<crate::model::ChangeInfo>,
         ) -> Self {
-            self.change_info = inp;
+            self.change_info = input;
             self
         }
         /// Consumes the builder and constructs a [`DisableHostedZoneDNSSECOutput`](crate::output::DisableHostedZoneDNSSECOutput)
@@ -3512,15 +3536,15 @@ pub mod delete_key_signing_key_output {
     impl Builder {
         /// <p>A complex type that describes change information about changes made to your hosted
         /// zone.</p>
-        pub fn change_info(mut self, inp: crate::model::ChangeInfo) -> Self {
-            self.change_info = Some(inp);
+        pub fn change_info(mut self, input: crate::model::ChangeInfo) -> Self {
+            self.change_info = Some(input);
             self
         }
         pub fn set_change_info(
             mut self,
-            inp: std::option::Option<crate::model::ChangeInfo>,
+            input: std::option::Option<crate::model::ChangeInfo>,
         ) -> Self {
-            self.change_info = inp;
+            self.change_info = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteKeySigningKeyOutput`](crate::output::DeleteKeySigningKeyOutput)
@@ -3562,15 +3586,15 @@ pub mod delete_hosted_zone_output {
     }
     impl Builder {
         /// <p>A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.</p>
-        pub fn change_info(mut self, inp: crate::model::ChangeInfo) -> Self {
-            self.change_info = Some(inp);
+        pub fn change_info(mut self, input: crate::model::ChangeInfo) -> Self {
+            self.change_info = Some(input);
             self
         }
         pub fn set_change_info(
             mut self,
-            inp: std::option::Option<crate::model::ChangeInfo>,
+            input: std::option::Option<crate::model::ChangeInfo>,
         ) -> Self {
-            self.change_info = inp;
+            self.change_info = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteHostedZoneOutput`](crate::output::DeleteHostedZoneOutput)
@@ -3643,15 +3667,15 @@ pub mod deactivate_key_signing_key_output {
     impl Builder {
         /// <p>A complex type that describes change information about changes made to your hosted
         /// zone.</p>
-        pub fn change_info(mut self, inp: crate::model::ChangeInfo) -> Self {
-            self.change_info = Some(inp);
+        pub fn change_info(mut self, input: crate::model::ChangeInfo) -> Self {
+            self.change_info = Some(input);
             self
         }
         pub fn set_change_info(
             mut self,
-            inp: std::option::Option<crate::model::ChangeInfo>,
+            input: std::option::Option<crate::model::ChangeInfo>,
         ) -> Self {
-            self.change_info = inp;
+            self.change_info = input;
             self
         }
         /// Consumes the builder and constructs a [`DeactivateKeySigningKeyOutput`](crate::output::DeactivateKeySigningKeyOutput)
@@ -3697,21 +3721,24 @@ pub mod create_vpc_association_authorization_output {
     }
     impl Builder {
         /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>The VPC that you authorized associating with a hosted zone.</p>
-        pub fn vpc(mut self, inp: crate::model::VPC) -> Self {
-            self.vpc = Some(inp);
+        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+            self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<crate::model::VPC>) -> Self {
-            self.vpc = inp;
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+            self.vpc = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateVPCAssociationAuthorizationOutput`](crate::output::CreateVPCAssociationAuthorizationOutput)
@@ -3758,24 +3785,24 @@ pub mod create_traffic_policy_version_output {
     }
     impl Builder {
         /// <p>A complex type that contains settings for the new version of the traffic policy.</p>
-        pub fn traffic_policy(mut self, inp: crate::model::TrafficPolicy) -> Self {
-            self.traffic_policy = Some(inp);
+        pub fn traffic_policy(mut self, input: crate::model::TrafficPolicy) -> Self {
+            self.traffic_policy = Some(input);
             self
         }
         pub fn set_traffic_policy(
             mut self,
-            inp: std::option::Option<crate::model::TrafficPolicy>,
+            input: std::option::Option<crate::model::TrafficPolicy>,
         ) -> Self {
-            self.traffic_policy = inp;
+            self.traffic_policy = input;
             self
         }
         /// <p>A unique URL that represents a new traffic policy version.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.location = Some(inp.into());
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
             self
         }
-        pub fn set_location(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.location = inp;
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTrafficPolicyVersionOutput`](crate::output::CreateTrafficPolicyVersionOutput)
@@ -3823,24 +3850,27 @@ pub mod create_traffic_policy_instance_output {
     }
     impl Builder {
         /// <p>A complex type that contains settings for the new traffic policy instance.</p>
-        pub fn traffic_policy_instance(mut self, inp: crate::model::TrafficPolicyInstance) -> Self {
-            self.traffic_policy_instance = Some(inp);
+        pub fn traffic_policy_instance(
+            mut self,
+            input: crate::model::TrafficPolicyInstance,
+        ) -> Self {
+            self.traffic_policy_instance = Some(input);
             self
         }
         pub fn set_traffic_policy_instance(
             mut self,
-            inp: std::option::Option<crate::model::TrafficPolicyInstance>,
+            input: std::option::Option<crate::model::TrafficPolicyInstance>,
         ) -> Self {
-            self.traffic_policy_instance = inp;
+            self.traffic_policy_instance = input;
             self
         }
         /// <p>A unique URL that represents a new traffic policy instance.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.location = Some(inp.into());
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
             self
         }
-        pub fn set_location(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.location = inp;
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTrafficPolicyInstanceOutput`](crate::output::CreateTrafficPolicyInstanceOutput)
@@ -3887,24 +3917,24 @@ pub mod create_traffic_policy_output {
     }
     impl Builder {
         /// <p>A complex type that contains settings for the new traffic policy.</p>
-        pub fn traffic_policy(mut self, inp: crate::model::TrafficPolicy) -> Self {
-            self.traffic_policy = Some(inp);
+        pub fn traffic_policy(mut self, input: crate::model::TrafficPolicy) -> Self {
+            self.traffic_policy = Some(input);
             self
         }
         pub fn set_traffic_policy(
             mut self,
-            inp: std::option::Option<crate::model::TrafficPolicy>,
+            input: std::option::Option<crate::model::TrafficPolicy>,
         ) -> Self {
-            self.traffic_policy = inp;
+            self.traffic_policy = input;
             self
         }
         /// <p>A unique URL that represents a new traffic policy.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.location = Some(inp.into());
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
             self
         }
-        pub fn set_location(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.location = inp;
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTrafficPolicyOutput`](crate::output::CreateTrafficPolicyOutput)
@@ -3950,24 +3980,24 @@ pub mod create_reusable_delegation_set_output {
     }
     impl Builder {
         /// <p>A complex type that contains name server information.</p>
-        pub fn delegation_set(mut self, inp: crate::model::DelegationSet) -> Self {
-            self.delegation_set = Some(inp);
+        pub fn delegation_set(mut self, input: crate::model::DelegationSet) -> Self {
+            self.delegation_set = Some(input);
             self
         }
         pub fn set_delegation_set(
             mut self,
-            inp: std::option::Option<crate::model::DelegationSet>,
+            input: std::option::Option<crate::model::DelegationSet>,
         ) -> Self {
-            self.delegation_set = inp;
+            self.delegation_set = input;
             self
         }
         /// <p>The unique URL representing the new reusable delegation set.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.location = Some(inp.into());
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
             self
         }
-        pub fn set_location(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.location = inp;
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateReusableDelegationSetOutput`](crate::output::CreateReusableDelegationSetOutput)
@@ -4015,24 +4045,24 @@ pub mod create_query_logging_config_output {
     impl Builder {
         /// <p>A complex type that contains the ID for a query logging configuration, the ID of the hosted zone that you want to
         /// log queries for, and the ARN for the log group that you want Amazon Route 53 to send query logs to.</p>
-        pub fn query_logging_config(mut self, inp: crate::model::QueryLoggingConfig) -> Self {
-            self.query_logging_config = Some(inp);
+        pub fn query_logging_config(mut self, input: crate::model::QueryLoggingConfig) -> Self {
+            self.query_logging_config = Some(input);
             self
         }
         pub fn set_query_logging_config(
             mut self,
-            inp: std::option::Option<crate::model::QueryLoggingConfig>,
+            input: std::option::Option<crate::model::QueryLoggingConfig>,
         ) -> Self {
-            self.query_logging_config = inp;
+            self.query_logging_config = input;
             self
         }
         /// <p>The unique URL representing the new query logging configuration.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.location = Some(inp.into());
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
             self
         }
-        pub fn set_location(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.location = inp;
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateQueryLoggingConfigOutput`](crate::output::CreateQueryLoggingConfigOutput)
@@ -4084,36 +4114,36 @@ pub mod create_key_signing_key_output {
     impl Builder {
         /// <p>A complex type that describes change information about changes made to your hosted
         /// zone.</p>
-        pub fn change_info(mut self, inp: crate::model::ChangeInfo) -> Self {
-            self.change_info = Some(inp);
+        pub fn change_info(mut self, input: crate::model::ChangeInfo) -> Self {
+            self.change_info = Some(input);
             self
         }
         pub fn set_change_info(
             mut self,
-            inp: std::option::Option<crate::model::ChangeInfo>,
+            input: std::option::Option<crate::model::ChangeInfo>,
         ) -> Self {
-            self.change_info = inp;
+            self.change_info = input;
             self
         }
         /// <p>The key-signing key (KSK) that the request creates.</p>
-        pub fn key_signing_key(mut self, inp: crate::model::KeySigningKey) -> Self {
-            self.key_signing_key = Some(inp);
+        pub fn key_signing_key(mut self, input: crate::model::KeySigningKey) -> Self {
+            self.key_signing_key = Some(input);
             self
         }
         pub fn set_key_signing_key(
             mut self,
-            inp: std::option::Option<crate::model::KeySigningKey>,
+            input: std::option::Option<crate::model::KeySigningKey>,
         ) -> Self {
-            self.key_signing_key = inp;
+            self.key_signing_key = input;
             self
         }
         /// <p>The unique URL representing the new key-signing key (KSK).</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.location = Some(inp.into());
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
             self
         }
-        pub fn set_location(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.location = inp;
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateKeySigningKeyOutput`](crate::output::CreateKeySigningKeyOutput)
@@ -4173,57 +4203,57 @@ pub mod create_hosted_zone_output {
     }
     impl Builder {
         /// <p>A complex type that contains general information about the hosted zone.</p>
-        pub fn hosted_zone(mut self, inp: crate::model::HostedZone) -> Self {
-            self.hosted_zone = Some(inp);
+        pub fn hosted_zone(mut self, input: crate::model::HostedZone) -> Self {
+            self.hosted_zone = Some(input);
             self
         }
         pub fn set_hosted_zone(
             mut self,
-            inp: std::option::Option<crate::model::HostedZone>,
+            input: std::option::Option<crate::model::HostedZone>,
         ) -> Self {
-            self.hosted_zone = inp;
+            self.hosted_zone = input;
             self
         }
         /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
-        pub fn change_info(mut self, inp: crate::model::ChangeInfo) -> Self {
-            self.change_info = Some(inp);
+        pub fn change_info(mut self, input: crate::model::ChangeInfo) -> Self {
+            self.change_info = Some(input);
             self
         }
         pub fn set_change_info(
             mut self,
-            inp: std::option::Option<crate::model::ChangeInfo>,
+            input: std::option::Option<crate::model::ChangeInfo>,
         ) -> Self {
-            self.change_info = inp;
+            self.change_info = input;
             self
         }
         /// <p>A complex type that describes the name servers for this hosted zone.</p>
-        pub fn delegation_set(mut self, inp: crate::model::DelegationSet) -> Self {
-            self.delegation_set = Some(inp);
+        pub fn delegation_set(mut self, input: crate::model::DelegationSet) -> Self {
+            self.delegation_set = Some(input);
             self
         }
         pub fn set_delegation_set(
             mut self,
-            inp: std::option::Option<crate::model::DelegationSet>,
+            input: std::option::Option<crate::model::DelegationSet>,
         ) -> Self {
-            self.delegation_set = inp;
+            self.delegation_set = input;
             self
         }
         /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
-        pub fn vpc(mut self, inp: crate::model::VPC) -> Self {
-            self.vpc = Some(inp);
+        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+            self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<crate::model::VPC>) -> Self {
-            self.vpc = inp;
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+            self.vpc = input;
             self
         }
         /// <p>The unique URL representing the new hosted zone.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.location = Some(inp.into());
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
             self
         }
-        pub fn set_location(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.location = inp;
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateHostedZoneOutput`](crate::output::CreateHostedZoneOutput)
@@ -4273,24 +4303,24 @@ pub mod create_health_check_output {
     }
     impl Builder {
         /// <p>A complex type that contains identifying information about the health check.</p>
-        pub fn health_check(mut self, inp: crate::model::HealthCheck) -> Self {
-            self.health_check = Some(inp);
+        pub fn health_check(mut self, input: crate::model::HealthCheck) -> Self {
+            self.health_check = Some(input);
             self
         }
         pub fn set_health_check(
             mut self,
-            inp: std::option::Option<crate::model::HealthCheck>,
+            input: std::option::Option<crate::model::HealthCheck>,
         ) -> Self {
-            self.health_check = inp;
+            self.health_check = input;
             self
         }
         /// <p>The unique URL representing the new health check.</p>
-        pub fn location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.location = Some(inp.into());
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.location = Some(input.into());
             self
         }
-        pub fn set_location(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.location = inp;
+        pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateHealthCheckOutput`](crate::output::CreateHealthCheckOutput)
@@ -4369,15 +4399,15 @@ pub mod change_resource_record_sets_output {
         /// <p>This element contains an ID that you use when performing a
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>
         /// action to get detailed information about the change.</p>
-        pub fn change_info(mut self, inp: crate::model::ChangeInfo) -> Self {
-            self.change_info = Some(inp);
+        pub fn change_info(mut self, input: crate::model::ChangeInfo) -> Self {
+            self.change_info = Some(input);
             self
         }
         pub fn set_change_info(
             mut self,
-            inp: std::option::Option<crate::model::ChangeInfo>,
+            input: std::option::Option<crate::model::ChangeInfo>,
         ) -> Self {
-            self.change_info = inp;
+            self.change_info = input;
             self
         }
         /// Consumes the builder and constructs a [`ChangeResourceRecordSetsOutput`](crate::output::ChangeResourceRecordSetsOutput)
@@ -4419,15 +4449,15 @@ pub mod associate_vpc_with_hosted_zone_output {
     }
     impl Builder {
         /// <p>A complex type that describes the changes made to your hosted zone.</p>
-        pub fn change_info(mut self, inp: crate::model::ChangeInfo) -> Self {
-            self.change_info = Some(inp);
+        pub fn change_info(mut self, input: crate::model::ChangeInfo) -> Self {
+            self.change_info = Some(input);
             self
         }
         pub fn set_change_info(
             mut self,
-            inp: std::option::Option<crate::model::ChangeInfo>,
+            input: std::option::Option<crate::model::ChangeInfo>,
         ) -> Self {
-            self.change_info = inp;
+            self.change_info = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociateVPCWithHostedZoneOutput`](crate::output::AssociateVPCWithHostedZoneOutput)
@@ -4470,15 +4500,15 @@ pub mod activate_key_signing_key_output {
     impl Builder {
         /// <p>A complex type that describes change information about changes made to your hosted
         /// zone.</p>
-        pub fn change_info(mut self, inp: crate::model::ChangeInfo) -> Self {
-            self.change_info = Some(inp);
+        pub fn change_info(mut self, input: crate::model::ChangeInfo) -> Self {
+            self.change_info = Some(input);
             self
         }
         pub fn set_change_info(
             mut self,
-            inp: std::option::Option<crate::model::ChangeInfo>,
+            input: std::option::Option<crate::model::ChangeInfo>,
         ) -> Self {
-            self.change_info = inp;
+            self.change_info = input;
             self
         }
         /// Consumes the builder and constructs a [`ActivateKeySigningKeyOutput`](crate::output::ActivateKeySigningKeyOutput)

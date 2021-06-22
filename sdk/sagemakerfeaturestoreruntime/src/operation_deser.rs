@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_batch_get_record_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::BatchGetRecordOutput, crate::error::BatchGetRecordError> {
+) -> std::result::Result<crate::output::BatchGetRecordOutput, crate::error::BatchGetRecordError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::BatchGetRecordError::unhandled)?;
     let error_code = match generic.code() {
@@ -61,7 +61,7 @@ pub fn parse_batch_get_record_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_batch_get_record_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::BatchGetRecordOutput, crate::error::BatchGetRecordError> {
+) -> std::result::Result<crate::output::BatchGetRecordOutput, crate::error::BatchGetRecordError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::batch_get_record_output::Builder::default();
@@ -76,7 +76,7 @@ pub fn parse_batch_get_record_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_record_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteRecordOutput, crate::error::DeleteRecordError> {
+) -> std::result::Result<crate::output::DeleteRecordOutput, crate::error::DeleteRecordError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteRecordError::unhandled)?;
     let error_code = match generic.code() {
@@ -135,7 +135,7 @@ pub fn parse_delete_record_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_record_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteRecordOutput, crate::error::DeleteRecordError> {
+) -> std::result::Result<crate::output::DeleteRecordOutput, crate::error::DeleteRecordError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_record_output::Builder::default();
@@ -147,7 +147,7 @@ pub fn parse_delete_record_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_record_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetRecordOutput, crate::error::GetRecordError> {
+) -> std::result::Result<crate::output::GetRecordOutput, crate::error::GetRecordError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetRecordError::unhandled)?;
     let error_code = match generic.code() {
@@ -217,7 +217,7 @@ pub fn parse_get_record_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_record_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetRecordOutput, crate::error::GetRecordError> {
+) -> std::result::Result<crate::output::GetRecordOutput, crate::error::GetRecordError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_record_output::Builder::default();
@@ -231,7 +231,7 @@ pub fn parse_get_record_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_record_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutRecordOutput, crate::error::PutRecordError> {
+) -> std::result::Result<crate::output::PutRecordOutput, crate::error::PutRecordError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::PutRecordError::unhandled)?;
     let error_code = match generic.code() {
@@ -290,7 +290,7 @@ pub fn parse_put_record_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_record_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutRecordOutput, crate::error::PutRecordError> {
+) -> std::result::Result<crate::output::PutRecordOutput, crate::error::PutRecordError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_record_output::Builder::default();

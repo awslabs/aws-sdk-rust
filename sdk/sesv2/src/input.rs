@@ -16,100 +16,102 @@ pub mod create_configuration_set_input {
     }
     impl Builder {
         /// <p>The name of the configuration set.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
         pub fn set_configuration_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.configuration_set_name = inp;
+            self.configuration_set_name = input;
             self
         }
         /// <p>An object that defines the open and click tracking options for emails that you send
         /// using the configuration set.</p>
-        pub fn tracking_options(mut self, inp: crate::model::TrackingOptions) -> Self {
-            self.tracking_options = Some(inp);
+        pub fn tracking_options(mut self, input: crate::model::TrackingOptions) -> Self {
+            self.tracking_options = Some(input);
             self
         }
         pub fn set_tracking_options(
             mut self,
-            inp: std::option::Option<crate::model::TrackingOptions>,
+            input: std::option::Option<crate::model::TrackingOptions>,
         ) -> Self {
-            self.tracking_options = inp;
+            self.tracking_options = input;
             self
         }
         /// <p>An object that defines the dedicated IP pool that is used to send emails that you send
         /// using the configuration set.</p>
-        pub fn delivery_options(mut self, inp: crate::model::DeliveryOptions) -> Self {
-            self.delivery_options = Some(inp);
+        pub fn delivery_options(mut self, input: crate::model::DeliveryOptions) -> Self {
+            self.delivery_options = Some(input);
             self
         }
         pub fn set_delivery_options(
             mut self,
-            inp: std::option::Option<crate::model::DeliveryOptions>,
+            input: std::option::Option<crate::model::DeliveryOptions>,
         ) -> Self {
-            self.delivery_options = inp;
+            self.delivery_options = input;
             self
         }
         /// <p>An object that defines whether or not Amazon SES collects reputation metrics for the emails
         /// that you send that use the configuration set.</p>
-        pub fn reputation_options(mut self, inp: crate::model::ReputationOptions) -> Self {
-            self.reputation_options = Some(inp);
+        pub fn reputation_options(mut self, input: crate::model::ReputationOptions) -> Self {
+            self.reputation_options = Some(input);
             self
         }
         pub fn set_reputation_options(
             mut self,
-            inp: std::option::Option<crate::model::ReputationOptions>,
+            input: std::option::Option<crate::model::ReputationOptions>,
         ) -> Self {
-            self.reputation_options = inp;
+            self.reputation_options = input;
             self
         }
         /// <p>An object that defines whether or not Amazon SES can send email that you send using the
         /// configuration set.</p>
-        pub fn sending_options(mut self, inp: crate::model::SendingOptions) -> Self {
-            self.sending_options = Some(inp);
+        pub fn sending_options(mut self, input: crate::model::SendingOptions) -> Self {
+            self.sending_options = Some(input);
             self
         }
         pub fn set_sending_options(
             mut self,
-            inp: std::option::Option<crate::model::SendingOptions>,
+            input: std::option::Option<crate::model::SendingOptions>,
         ) -> Self {
-            self.sending_options = inp;
+            self.sending_options = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>An object that contains information about the suppression list preferences for your
         /// account.</p>
-        pub fn suppression_options(mut self, inp: crate::model::SuppressionOptions) -> Self {
-            self.suppression_options = Some(inp);
+        pub fn suppression_options(mut self, input: crate::model::SuppressionOptions) -> Self {
+            self.suppression_options = Some(input);
             self
         }
         pub fn set_suppression_options(
             mut self,
-            inp: std::option::Option<crate::model::SuppressionOptions>,
+            input: std::option::Option<crate::model::SuppressionOptions>,
         ) -> Self {
-            self.suppression_options = inp;
+            self.suppression_options = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::input::CreateConfigurationSetInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateConfigurationSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateConfigurationSetInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateConfigurationSetInput {
                 configuration_set_name: self.configuration_set_name,
                 tracking_options: self.tracking_options,
@@ -132,7 +134,7 @@ impl CreateConfigurationSetInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateConfigurationSet,
             aws_http::AwsErrorRetryPolicy,
@@ -192,7 +194,7 @@ impl CreateConfigurationSetInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -200,7 +202,7 @@ impl CreateConfigurationSetInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -232,42 +234,48 @@ pub mod create_configuration_set_event_destination_input {
     }
     impl Builder {
         /// <p>The name of the configuration set that you want to add an event destination to.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.configuration_set_name = Some(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
             self
         }
         /// <p>A name that identifies the event destination within the configuration set.</p>
-        pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.event_destination_name = Some(inp.into());
+        pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_destination_name = Some(input.into());
             self
         }
         pub fn set_event_destination_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.event_destination_name = inp;
+            self.event_destination_name = input;
             self
         }
         /// <p>An object that defines the event destination.</p>
-        pub fn event_destination(mut self, inp: crate::model::EventDestinationDefinition) -> Self {
-            self.event_destination = Some(inp);
+        pub fn event_destination(
+            mut self,
+            input: crate::model::EventDestinationDefinition,
+        ) -> Self {
+            self.event_destination = Some(input);
             self
         }
         pub fn set_event_destination(
             mut self,
-            inp: std::option::Option<crate::model::EventDestinationDefinition>,
+            input: std::option::Option<crate::model::EventDestinationDefinition>,
         ) -> Self {
-            self.event_destination = inp;
+            self.event_destination = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateConfigurationSetEventDestinationInput`](crate::input::CreateConfigurationSetEventDestinationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::CreateConfigurationSetEventDestinationInput,
             smithy_http::operation::BuildError,
         > {
@@ -291,7 +299,7 @@ impl CreateConfigurationSetEventDestinationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateConfigurationSetEventDestination,
             aws_http::AwsErrorRetryPolicy,
@@ -356,7 +364,7 @@ impl CreateConfigurationSetEventDestinationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -364,7 +372,7 @@ impl CreateConfigurationSetEventDestinationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -399,62 +407,72 @@ pub mod create_contact_input {
     }
     impl Builder {
         /// <p>The name of the contact list to which the contact should be added.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.contact_list_name = Some(inp.into());
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_list_name = Some(input.into());
             self
         }
-        pub fn set_contact_list_name(mut self, inp: std::string::String) -> Self {
-            self.contact_list_name = Some(inp);
+        pub fn set_contact_list_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.contact_list_name = input;
             self
         }
         /// <p>The contact's email address.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_address = Some(inp.into());
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_address = Some(input.into());
             self
         }
-        pub fn set_email_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.email_address = inp;
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_address = input;
             self
         }
-        pub fn topic_preferences(mut self, inp: impl Into<crate::model::TopicPreference>) -> Self {
+        pub fn topic_preferences(
+            mut self,
+            input: impl Into<crate::model::TopicPreference>,
+        ) -> Self {
             let mut v = self.topic_preferences.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.topic_preferences = Some(v);
             self
         }
         pub fn set_topic_preferences(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
         ) -> Self {
-            self.topic_preferences = inp;
+            self.topic_preferences = input;
             self
         }
         /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
         /// topics.</p>
-        pub fn unsubscribe_all(mut self, inp: bool) -> Self {
-            self.unsubscribe_all = Some(inp);
+        pub fn unsubscribe_all(mut self, input: bool) -> Self {
+            self.unsubscribe_all = Some(input);
             self
         }
-        pub fn set_unsubscribe_all(mut self, inp: bool) -> Self {
-            self.unsubscribe_all = Some(inp);
+        pub fn set_unsubscribe_all(mut self, input: std::option::Option<bool>) -> Self {
+            self.unsubscribe_all = input;
             self
         }
         /// <p>The attribute data attached to a contact.</p>
-        pub fn attributes_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.attributes_data = Some(inp.into());
+        pub fn attributes_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attributes_data = Some(input.into());
             self
         }
         pub fn set_attributes_data(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.attributes_data = inp;
+            self.attributes_data = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateContactInput`](crate::input::CreateContactInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateContactInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateContactInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateContactInput {
                 contact_list_name: self.contact_list_name.unwrap_or_default(),
                 email_address: self.email_address,
@@ -475,7 +493,7 @@ impl CreateContactInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateContact,
             aws_http::AwsErrorRetryPolicy,
@@ -540,7 +558,7 @@ impl CreateContactInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -548,7 +566,7 @@ impl CreateContactInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -581,57 +599,59 @@ pub mod create_contact_list_input {
     }
     impl Builder {
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.contact_list_name = Some(inp.into());
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_list_name = Some(input.into());
             self
         }
         pub fn set_contact_list_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.contact_list_name = inp;
+            self.contact_list_name = input;
             self
         }
-        pub fn topics(mut self, inp: impl Into<crate::model::Topic>) -> Self {
+        pub fn topics(mut self, input: impl Into<crate::model::Topic>) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.topics = Some(v);
             self
         }
         pub fn set_topics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Topic>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Topic>>,
         ) -> Self {
-            self.topics = inp;
+            self.topics = input;
             self
         }
         /// <p>A description of what the contact list is about.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateContactListInput`](crate::input::CreateContactListInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateContactListInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateContactListInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateContactListInput {
                 contact_list_name: self.contact_list_name,
                 topics: self.topics,
@@ -651,7 +671,7 @@ impl CreateContactListInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateContactList,
             aws_http::AwsErrorRetryPolicy,
@@ -711,7 +731,7 @@ impl CreateContactListInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -719,7 +739,7 @@ impl CreateContactListInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -754,83 +774,86 @@ pub mod create_custom_verification_email_template_input {
     }
     impl Builder {
         /// <p>The name of the custom verification email template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_name = Some(inp.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
             self
         }
-        pub fn set_template_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_name = inp;
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
             self
         }
         /// <p>The email address that the custom verification email is sent from.</p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.from_email_address = Some(inp.into());
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.from_email_address = Some(input.into());
             self
         }
         pub fn set_from_email_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.from_email_address = inp;
+            self.from_email_address = input;
             self
         }
         /// <p>The subject line of the custom verification email.</p>
-        pub fn template_subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_subject = Some(inp.into());
+        pub fn template_subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_subject = Some(input.into());
             self
         }
         pub fn set_template_subject(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.template_subject = inp;
+            self.template_subject = input;
             self
         }
         /// <p>The content of the custom verification email. The total size of the email must be less
         /// than 10 MB. The message body may contain HTML, with some limitations. For more
         /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
         /// Developer Guide</i>.</p>
-        pub fn template_content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_content = Some(inp.into());
+        pub fn template_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_content = Some(input.into());
             self
         }
         pub fn set_template_content(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.template_content = inp;
+            self.template_content = input;
             self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
         /// is successfully verified.</p>
-        pub fn success_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.success_redirection_url = Some(inp.into());
+        pub fn success_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.success_redirection_url = Some(input.into());
             self
         }
         pub fn set_success_redirection_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.success_redirection_url = inp;
+            self.success_redirection_url = input;
             self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
         /// is not successfully verified.</p>
-        pub fn failure_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.failure_redirection_url = Some(inp.into());
+        pub fn failure_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_redirection_url = Some(input.into());
             self
         }
         pub fn set_failure_redirection_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.failure_redirection_url = inp;
+            self.failure_redirection_url = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateCustomVerificationEmailTemplateInput`](crate::input::CreateCustomVerificationEmailTemplateInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::CreateCustomVerificationEmailTemplateInput,
             smithy_http::operation::BuildError,
         > {
@@ -857,7 +880,7 @@ impl CreateCustomVerificationEmailTemplateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateCustomVerificationEmailTemplate,
             aws_http::AwsErrorRetryPolicy,
@@ -917,7 +940,7 @@ impl CreateCustomVerificationEmailTemplateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -925,7 +948,7 @@ impl CreateCustomVerificationEmailTemplateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -956,32 +979,34 @@ pub mod create_dedicated_ip_pool_input {
     }
     impl Builder {
         /// <p>The name of the dedicated IP pool.</p>
-        pub fn pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pool_name = Some(inp.into());
+        pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pool_name = Some(input.into());
             self
         }
-        pub fn set_pool_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.pool_name = inp;
+        pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pool_name = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDedicatedIpPoolInput`](crate::input::CreateDedicatedIpPoolInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateDedicatedIpPoolInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateDedicatedIpPoolInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateDedicatedIpPoolInput {
                 pool_name: self.pool_name,
                 tags: self.tags,
@@ -999,7 +1024,7 @@ impl CreateDedicatedIpPoolInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDedicatedIpPool,
             aws_http::AwsErrorRetryPolicy,
@@ -1059,7 +1084,7 @@ impl CreateDedicatedIpPoolInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1067,7 +1092,7 @@ impl CreateDedicatedIpPoolInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1101,52 +1126,55 @@ pub mod create_deliverability_test_report_input {
     impl Builder {
         /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the
         /// results.</p>
-        pub fn report_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.report_name = Some(inp.into());
+        pub fn report_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.report_name = Some(input.into());
             self
         }
-        pub fn set_report_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.report_name = inp;
+        pub fn set_report_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.report_name = input;
             self
         }
         /// <p>The email address that the predictive inbox placement test email was sent from.</p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.from_email_address = Some(inp.into());
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.from_email_address = Some(input.into());
             self
         }
         pub fn set_from_email_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.from_email_address = inp;
+            self.from_email_address = input;
             self
         }
         /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
-        pub fn content(mut self, inp: crate::model::EmailContent) -> Self {
-            self.content = Some(inp);
+        pub fn content(mut self, input: crate::model::EmailContent) -> Self {
+            self.content = Some(input);
             self
         }
-        pub fn set_content(mut self, inp: std::option::Option<crate::model::EmailContent>) -> Self {
-            self.content = inp;
+        pub fn set_content(
+            mut self,
+            input: std::option::Option<crate::model::EmailContent>,
+        ) -> Self {
+            self.content = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDeliverabilityTestReportInput`](crate::input::CreateDeliverabilityTestReportInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::CreateDeliverabilityTestReportInput,
             smithy_http::operation::BuildError,
         > {
@@ -1170,7 +1198,7 @@ impl CreateDeliverabilityTestReportInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateDeliverabilityTestReport,
             aws_http::AwsErrorRetryPolicy,
@@ -1232,7 +1260,7 @@ impl CreateDeliverabilityTestReportInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1240,7 +1268,7 @@ impl CreateDeliverabilityTestReportInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1274,25 +1302,28 @@ pub mod create_email_identity_input {
     }
     impl Builder {
         /// <p>The email address or domain that you want to verify.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_identity = Some(inp.into());
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_identity = Some(input.into());
             self
         }
-        pub fn set_email_identity(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.email_identity = inp;
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_identity = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>If your request includes this object, Amazon SES configures the identity to use Bring Your
@@ -1301,36 +1332,41 @@ pub mod create_email_identity_input {
         /// DKIM</a>.</p>
         /// <p>You can only specify this object if the email identity is a domain, as opposed to an
         /// address.</p>
-        pub fn dkim_signing_attributes(mut self, inp: crate::model::DkimSigningAttributes) -> Self {
-            self.dkim_signing_attributes = Some(inp);
+        pub fn dkim_signing_attributes(
+            mut self,
+            input: crate::model::DkimSigningAttributes,
+        ) -> Self {
+            self.dkim_signing_attributes = Some(input);
             self
         }
         pub fn set_dkim_signing_attributes(
             mut self,
-            inp: std::option::Option<crate::model::DkimSigningAttributes>,
+            input: std::option::Option<crate::model::DkimSigningAttributes>,
         ) -> Self {
-            self.dkim_signing_attributes = inp;
+            self.dkim_signing_attributes = input;
             self
         }
         /// <p>The configuration set to use by default when sending from this identity.
         /// Note that any configuration set defined in the email sending request takes precedence.
         /// </p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
         pub fn set_configuration_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.configuration_set_name = inp;
+            self.configuration_set_name = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateEmailIdentityInput`](crate::input::CreateEmailIdentityInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateEmailIdentityInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateEmailIdentityInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateEmailIdentityInput {
                 email_identity: self.email_identity,
                 tags: self.tags,
@@ -1350,7 +1386,7 @@ impl CreateEmailIdentityInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateEmailIdentity,
             aws_http::AwsErrorRetryPolicy,
@@ -1410,7 +1446,7 @@ impl CreateEmailIdentityInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1418,7 +1454,7 @@ impl CreateEmailIdentityInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1450,41 +1486,46 @@ pub mod create_email_identity_policy_input {
     }
     impl Builder {
         /// <p>The email identity for which you want to create a policy.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_identity = Some(inp.into());
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_identity = Some(input.into());
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.email_identity = Some(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_identity = input;
             self
         }
         /// <p>The name of the policy.</p>
         /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
         /// characters, dashes, and underscores.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::string::String) -> Self {
-            self.policy_name = Some(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
         /// <p>For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
         /// Guide</a>.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateEmailIdentityPolicyInput`](crate::input::CreateEmailIdentityPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateEmailIdentityPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateEmailIdentityPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateEmailIdentityPolicyInput {
                 email_identity: self.email_identity.unwrap_or_default(),
                 policy_name: self.policy_name.unwrap_or_default(),
@@ -1504,7 +1545,7 @@ impl CreateEmailIdentityPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateEmailIdentityPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -1571,7 +1612,7 @@ impl CreateEmailIdentityPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1579,7 +1620,7 @@ impl CreateEmailIdentityPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1610,32 +1651,37 @@ pub mod create_email_template_input {
     }
     impl Builder {
         /// <p>The name of the template you want to create.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_name = Some(inp.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
             self
         }
-        pub fn set_template_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_name = inp;
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
             self
         }
         /// <p>The content of the email template, composed of a subject line, an HTML part, and a
         /// text-only part.</p>
-        pub fn template_content(mut self, inp: crate::model::EmailTemplateContent) -> Self {
-            self.template_content = Some(inp);
+        pub fn template_content(mut self, input: crate::model::EmailTemplateContent) -> Self {
+            self.template_content = Some(input);
             self
         }
         pub fn set_template_content(
             mut self,
-            inp: std::option::Option<crate::model::EmailTemplateContent>,
+            input: std::option::Option<crate::model::EmailTemplateContent>,
         ) -> Self {
-            self.template_content = inp;
+            self.template_content = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateEmailTemplateInput`](crate::input::CreateEmailTemplateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateEmailTemplateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateEmailTemplateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateEmailTemplateInput {
                 template_name: self.template_name,
                 template_content: self.template_content,
@@ -1653,7 +1699,7 @@ impl CreateEmailTemplateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateEmailTemplate,
             aws_http::AwsErrorRetryPolicy,
@@ -1713,7 +1759,7 @@ impl CreateEmailTemplateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1721,7 +1767,7 @@ impl CreateEmailTemplateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1752,34 +1798,36 @@ pub mod create_import_job_input {
     }
     impl Builder {
         /// <p>The destination for the import job.</p>
-        pub fn import_destination(mut self, inp: crate::model::ImportDestination) -> Self {
-            self.import_destination = Some(inp);
+        pub fn import_destination(mut self, input: crate::model::ImportDestination) -> Self {
+            self.import_destination = Some(input);
             self
         }
         pub fn set_import_destination(
             mut self,
-            inp: std::option::Option<crate::model::ImportDestination>,
+            input: std::option::Option<crate::model::ImportDestination>,
         ) -> Self {
-            self.import_destination = inp;
+            self.import_destination = input;
             self
         }
         /// <p>The data source for the import job.</p>
-        pub fn import_data_source(mut self, inp: crate::model::ImportDataSource) -> Self {
-            self.import_data_source = Some(inp);
+        pub fn import_data_source(mut self, input: crate::model::ImportDataSource) -> Self {
+            self.import_data_source = Some(input);
             self
         }
         pub fn set_import_data_source(
             mut self,
-            inp: std::option::Option<crate::model::ImportDataSource>,
+            input: std::option::Option<crate::model::ImportDataSource>,
         ) -> Self {
-            self.import_data_source = inp;
+            self.import_data_source = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateImportJobInput`](crate::input::CreateImportJobInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateImportJobInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateImportJobInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateImportJobInput {
                 import_destination: self.import_destination,
                 import_data_source: self.import_data_source,
@@ -1797,7 +1845,7 @@ impl CreateImportJobInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateImportJob,
             aws_http::AwsErrorRetryPolicy,
@@ -1856,7 +1904,7 @@ impl CreateImportJobInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1864,7 +1912,7 @@ impl CreateImportJobInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1894,19 +1942,24 @@ pub mod delete_configuration_set_input {
     }
     impl Builder {
         /// <p>The name of the configuration set that you want to delete.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.configuration_set_name = Some(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteConfigurationSetInput`](crate::input::DeleteConfigurationSetInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteConfigurationSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteConfigurationSetInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteConfigurationSetInput {
                 configuration_set_name: self.configuration_set_name.unwrap_or_default(),
             })
@@ -1923,7 +1976,7 @@ impl DeleteConfigurationSetInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationSet,
             aws_http::AwsErrorRetryPolicy,
@@ -1986,7 +2039,7 @@ impl DeleteConfigurationSetInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -1994,7 +2047,7 @@ impl DeleteConfigurationSetInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2026,27 +2079,33 @@ pub mod delete_configuration_set_event_destination_input {
     impl Builder {
         /// <p>The name of the configuration set that contains the event destination that you want to
         /// delete.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.configuration_set_name = Some(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
             self
         }
         /// <p>The name of the event destination that you want to delete.</p>
-        pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.event_destination_name = Some(inp.into());
+        pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_destination_name = Some(input.into());
             self
         }
-        pub fn set_event_destination_name(mut self, inp: std::string::String) -> Self {
-            self.event_destination_name = Some(inp);
+        pub fn set_event_destination_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_destination_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteConfigurationSetEventDestinationInput`](crate::input::DeleteConfigurationSetEventDestinationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteConfigurationSetEventDestinationInput,
             smithy_http::operation::BuildError,
         > {
@@ -2069,7 +2128,7 @@ impl DeleteConfigurationSetEventDestinationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteConfigurationSetEventDestination,
             aws_http::AwsErrorRetryPolicy,
@@ -2126,7 +2185,7 @@ impl DeleteConfigurationSetEventDestinationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2134,7 +2193,7 @@ impl DeleteConfigurationSetEventDestinationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2165,27 +2224,34 @@ pub mod delete_contact_input {
     }
     impl Builder {
         /// <p>The name of the contact list from which the contact should be removed.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.contact_list_name = Some(inp.into());
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_list_name = Some(input.into());
             self
         }
-        pub fn set_contact_list_name(mut self, inp: std::string::String) -> Self {
-            self.contact_list_name = Some(inp);
+        pub fn set_contact_list_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.contact_list_name = input;
             self
         }
         /// <p>The contact's email address.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_address = Some(inp.into());
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_address = Some(input.into());
             self
         }
-        pub fn set_email_address(mut self, inp: std::string::String) -> Self {
-            self.email_address = Some(inp);
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_address = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteContactInput`](crate::input::DeleteContactInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteContactInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteContactInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteContactInput {
                 contact_list_name: self.contact_list_name.unwrap_or_default(),
                 email_address: self.email_address.unwrap_or_default(),
@@ -2203,7 +2269,7 @@ impl DeleteContactInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteContact,
             aws_http::AwsErrorRetryPolicy,
@@ -2266,7 +2332,7 @@ impl DeleteContactInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2274,7 +2340,7 @@ impl DeleteContactInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2304,19 +2370,24 @@ pub mod delete_contact_list_input {
     }
     impl Builder {
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.contact_list_name = Some(inp.into());
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_list_name = Some(input.into());
             self
         }
-        pub fn set_contact_list_name(mut self, inp: std::string::String) -> Self {
-            self.contact_list_name = Some(inp);
+        pub fn set_contact_list_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.contact_list_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteContactListInput`](crate::input::DeleteContactListInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteContactListInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteContactListInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteContactListInput {
                 contact_list_name: self.contact_list_name.unwrap_or_default(),
             })
@@ -2333,7 +2404,7 @@ impl DeleteContactListInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteContactList,
             aws_http::AwsErrorRetryPolicy,
@@ -2395,7 +2466,7 @@ impl DeleteContactListInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2403,7 +2474,7 @@ impl DeleteContactListInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2433,18 +2504,21 @@ pub mod delete_custom_verification_email_template_input {
     }
     impl Builder {
         /// <p>The name of the custom verification email template that you want to delete.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_name = Some(inp.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
             self
         }
-        pub fn set_template_name(mut self, inp: std::string::String) -> Self {
-            self.template_name = Some(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteCustomVerificationEmailTemplateInput`](crate::input::DeleteCustomVerificationEmailTemplateInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteCustomVerificationEmailTemplateInput,
             smithy_http::operation::BuildError,
         > {
@@ -2466,7 +2540,7 @@ impl DeleteCustomVerificationEmailTemplateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteCustomVerificationEmailTemplate,
             aws_http::AwsErrorRetryPolicy,
@@ -2528,7 +2602,7 @@ impl DeleteCustomVerificationEmailTemplateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2536,7 +2610,7 @@ impl DeleteCustomVerificationEmailTemplateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2566,19 +2640,21 @@ pub mod delete_dedicated_ip_pool_input {
     }
     impl Builder {
         /// <p>The name of the dedicated IP pool that you want to delete.</p>
-        pub fn pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pool_name = Some(inp.into());
+        pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pool_name = Some(input.into());
             self
         }
-        pub fn set_pool_name(mut self, inp: std::string::String) -> Self {
-            self.pool_name = Some(inp);
+        pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pool_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteDedicatedIpPoolInput`](crate::input::DeleteDedicatedIpPoolInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteDedicatedIpPoolInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteDedicatedIpPoolInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteDedicatedIpPoolInput {
                 pool_name: self.pool_name.unwrap_or_default(),
             })
@@ -2595,7 +2671,7 @@ impl DeleteDedicatedIpPoolInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteDedicatedIpPool,
             aws_http::AwsErrorRetryPolicy,
@@ -2657,7 +2733,7 @@ impl DeleteDedicatedIpPoolInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2665,7 +2741,7 @@ impl DeleteDedicatedIpPoolInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2695,19 +2771,24 @@ pub mod delete_email_identity_input {
     }
     impl Builder {
         /// <p>The identity (that is, the email address or domain) that you want to delete.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_identity = Some(inp.into());
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_identity = Some(input.into());
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.email_identity = Some(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_identity = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteEmailIdentityInput`](crate::input::DeleteEmailIdentityInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteEmailIdentityInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteEmailIdentityInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteEmailIdentityInput {
                 email_identity: self.email_identity.unwrap_or_default(),
             })
@@ -2724,7 +2805,7 @@ impl DeleteEmailIdentityInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteEmailIdentity,
             aws_http::AwsErrorRetryPolicy,
@@ -2786,7 +2867,7 @@ impl DeleteEmailIdentityInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2794,7 +2875,7 @@ impl DeleteEmailIdentityInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2825,30 +2906,35 @@ pub mod delete_email_identity_policy_input {
     }
     impl Builder {
         /// <p>The email identity for which you want to delete a policy.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_identity = Some(inp.into());
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_identity = Some(input.into());
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.email_identity = Some(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_identity = input;
             self
         }
         /// <p>The name of the policy.</p>
         /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
         /// characters, dashes, and underscores.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::string::String) -> Self {
-            self.policy_name = Some(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteEmailIdentityPolicyInput`](crate::input::DeleteEmailIdentityPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteEmailIdentityPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteEmailIdentityPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteEmailIdentityPolicyInput {
                 email_identity: self.email_identity.unwrap_or_default(),
                 policy_name: self.policy_name.unwrap_or_default(),
@@ -2867,7 +2953,7 @@ impl DeleteEmailIdentityPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteEmailIdentityPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -2930,7 +3016,7 @@ impl DeleteEmailIdentityPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2938,7 +3024,7 @@ impl DeleteEmailIdentityPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -2968,19 +3054,24 @@ pub mod delete_email_template_input {
     }
     impl Builder {
         /// <p>The name of the template to be deleted.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_name = Some(inp.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
             self
         }
-        pub fn set_template_name(mut self, inp: std::string::String) -> Self {
-            self.template_name = Some(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteEmailTemplateInput`](crate::input::DeleteEmailTemplateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteEmailTemplateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteEmailTemplateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteEmailTemplateInput {
                 template_name: self.template_name.unwrap_or_default(),
             })
@@ -2997,7 +3088,7 @@ impl DeleteEmailTemplateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteEmailTemplate,
             aws_http::AwsErrorRetryPolicy,
@@ -3059,7 +3150,7 @@ impl DeleteEmailTemplateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -3067,7 +3158,7 @@ impl DeleteEmailTemplateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3097,18 +3188,21 @@ pub mod delete_suppressed_destination_input {
     }
     impl Builder {
         /// <p>The suppressed email destination to remove from the account suppression list.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_address = Some(inp.into());
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_address = Some(input.into());
             self
         }
-        pub fn set_email_address(mut self, inp: std::string::String) -> Self {
-            self.email_address = Some(inp);
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_address = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteSuppressedDestinationInput`](crate::input::DeleteSuppressedDestinationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteSuppressedDestinationInput,
             smithy_http::operation::BuildError,
         > {
@@ -3129,7 +3223,7 @@ impl DeleteSuppressedDestinationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteSuppressedDestination,
             aws_http::AwsErrorRetryPolicy,
@@ -3191,7 +3285,7 @@ impl DeleteSuppressedDestinationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -3199,7 +3293,7 @@ impl DeleteSuppressedDestinationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3229,7 +3323,8 @@ pub mod get_account_input {
         /// Consumes the builder and constructs a [`GetAccountInput`](crate::input::GetAccountInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAccountInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetAccountInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetAccountInput {})
         }
     }
@@ -3244,7 +3339,7 @@ impl GetAccountInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetAccount,
             aws_http::AwsErrorRetryPolicy,
@@ -3298,7 +3393,7 @@ impl GetAccountInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -3306,7 +3401,7 @@ impl GetAccountInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3335,24 +3430,26 @@ pub mod get_blacklist_reports_input {
         pub(crate) blacklist_item_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn blacklist_item_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn blacklist_item_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.blacklist_item_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.blacklist_item_names = Some(v);
             self
         }
         pub fn set_blacklist_item_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.blacklist_item_names = inp;
+            self.blacklist_item_names = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBlacklistReportsInput`](crate::input::GetBlacklistReportsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetBlacklistReportsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetBlacklistReportsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetBlacklistReportsInput {
                 blacklist_item_names: self.blacklist_item_names,
             })
@@ -3369,7 +3466,7 @@ impl GetBlacklistReportsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetBlacklistReports,
             aws_http::AwsErrorRetryPolicy,
@@ -3441,7 +3538,7 @@ impl GetBlacklistReportsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -3450,7 +3547,7 @@ impl GetBlacklistReportsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3481,19 +3578,24 @@ pub mod get_configuration_set_input {
     impl Builder {
         /// <p>The name of the configuration set that you want to obtain more information
         /// about.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.configuration_set_name = Some(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetConfigurationSetInput`](crate::input::GetConfigurationSetInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetConfigurationSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetConfigurationSetInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetConfigurationSetInput {
                 configuration_set_name: self.configuration_set_name.unwrap_or_default(),
             })
@@ -3510,7 +3612,7 @@ impl GetConfigurationSetInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetConfigurationSet,
             aws_http::AwsErrorRetryPolicy,
@@ -3573,7 +3675,7 @@ impl GetConfigurationSetInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -3581,7 +3683,7 @@ impl GetConfigurationSetInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3611,18 +3713,21 @@ pub mod get_configuration_set_event_destinations_input {
     }
     impl Builder {
         /// <p>The name of the configuration set that contains the event destination.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.configuration_set_name = Some(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetConfigurationSetEventDestinationsInput`](crate::input::GetConfigurationSetEventDestinationsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetConfigurationSetEventDestinationsInput,
             smithy_http::operation::BuildError,
         > {
@@ -3644,7 +3749,7 @@ impl GetConfigurationSetEventDestinationsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetConfigurationSetEventDestinations,
             aws_http::AwsErrorRetryPolicy,
@@ -3707,7 +3812,7 @@ impl GetConfigurationSetEventDestinationsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -3715,7 +3820,7 @@ impl GetConfigurationSetEventDestinationsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3746,27 +3851,34 @@ pub mod get_contact_input {
     }
     impl Builder {
         /// <p>The name of the contact list to which the contact belongs.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.contact_list_name = Some(inp.into());
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_list_name = Some(input.into());
             self
         }
-        pub fn set_contact_list_name(mut self, inp: std::string::String) -> Self {
-            self.contact_list_name = Some(inp);
+        pub fn set_contact_list_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.contact_list_name = input;
             self
         }
         /// <p>The contact's email addres.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_address = Some(inp.into());
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_address = Some(input.into());
             self
         }
-        pub fn set_email_address(mut self, inp: std::string::String) -> Self {
-            self.email_address = Some(inp);
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_address = input;
             self
         }
         /// Consumes the builder and constructs a [`GetContactInput`](crate::input::GetContactInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetContactInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetContactInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetContactInput {
                 contact_list_name: self.contact_list_name.unwrap_or_default(),
                 email_address: self.email_address.unwrap_or_default(),
@@ -3784,7 +3896,7 @@ impl GetContactInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetContact,
             aws_http::AwsErrorRetryPolicy,
@@ -3844,7 +3956,7 @@ impl GetContactInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -3852,7 +3964,7 @@ impl GetContactInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -3882,18 +3994,24 @@ pub mod get_contact_list_input {
     }
     impl Builder {
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.contact_list_name = Some(inp.into());
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_list_name = Some(input.into());
             self
         }
-        pub fn set_contact_list_name(mut self, inp: std::string::String) -> Self {
-            self.contact_list_name = Some(inp);
+        pub fn set_contact_list_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.contact_list_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetContactListInput`](crate::input::GetContactListInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetContactListInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::GetContactListInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetContactListInput {
                 contact_list_name: self.contact_list_name.unwrap_or_default(),
             })
@@ -3910,7 +4028,7 @@ impl GetContactListInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetContactList,
             aws_http::AwsErrorRetryPolicy,
@@ -3972,7 +4090,7 @@ impl GetContactListInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -3980,7 +4098,7 @@ impl GetContactListInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4010,18 +4128,21 @@ pub mod get_custom_verification_email_template_input {
     }
     impl Builder {
         /// <p>The name of the custom verification email template that you want to retrieve.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_name = Some(inp.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
             self
         }
-        pub fn set_template_name(mut self, inp: std::string::String) -> Self {
-            self.template_name = Some(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetCustomVerificationEmailTemplateInput`](crate::input::GetCustomVerificationEmailTemplateInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetCustomVerificationEmailTemplateInput,
             smithy_http::operation::BuildError,
         > {
@@ -4042,7 +4163,7 @@ impl GetCustomVerificationEmailTemplateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetCustomVerificationEmailTemplate,
             aws_http::AwsErrorRetryPolicy,
@@ -4104,7 +4225,7 @@ impl GetCustomVerificationEmailTemplateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -4112,7 +4233,7 @@ impl GetCustomVerificationEmailTemplateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4143,18 +4264,21 @@ pub mod get_dedicated_ip_input {
     impl Builder {
         /// <p>The IP address that you want to obtain more information about. The value you specify
         /// has to be a dedicated IP address that's assocaited with your AWS account.</p>
-        pub fn ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ip = Some(inp.into());
+        pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip = Some(input.into());
             self
         }
-        pub fn set_ip(mut self, inp: std::string::String) -> Self {
-            self.ip = Some(inp);
+        pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDedicatedIpInput`](crate::input::GetDedicatedIpInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDedicatedIpInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::GetDedicatedIpInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetDedicatedIpInput {
                 ip: self.ip.unwrap_or_default(),
             })
@@ -4171,7 +4295,7 @@ impl GetDedicatedIpInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetDedicatedIp,
             aws_http::AwsErrorRetryPolicy,
@@ -4233,7 +4357,7 @@ impl GetDedicatedIpInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -4241,7 +4365,7 @@ impl GetDedicatedIpInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4273,41 +4397,43 @@ pub mod get_dedicated_ips_input {
     }
     impl Builder {
         /// <p>The name of the IP pool that the dedicated IP address is associated with.</p>
-        pub fn pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pool_name = Some(inp.into());
+        pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pool_name = Some(input.into());
             self
         }
-        pub fn set_pool_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.pool_name = inp;
+        pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pool_name = input;
             self
         }
         /// <p>A token returned from a previous call to <code>GetDedicatedIps</code> to indicate the
         /// position of the dedicated IP pool in the list of IP pools.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>.
         /// If the number of results is larger than the number you specified in this parameter, then
         /// the response includes a <code>NextToken</code> element, which you can use to obtain
         /// additional results.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.page_size = Some(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.page_size = Some(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.page_size = inp;
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.page_size = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDedicatedIpsInput`](crate::input::GetDedicatedIpsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDedicatedIpsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetDedicatedIpsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetDedicatedIpsInput {
                 pool_name: self.pool_name,
                 next_token: self.next_token,
@@ -4326,7 +4452,7 @@ impl GetDedicatedIpsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetDedicatedIps,
             aws_http::AwsErrorRetryPolicy,
@@ -4395,7 +4521,7 @@ impl GetDedicatedIpsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -4404,7 +4530,7 @@ impl GetDedicatedIpsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4434,7 +4560,7 @@ pub mod get_deliverability_dashboard_options_input {
         /// Consumes the builder and constructs a [`GetDeliverabilityDashboardOptionsInput`](crate::input::GetDeliverabilityDashboardOptionsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetDeliverabilityDashboardOptionsInput,
             smithy_http::operation::BuildError,
         > {
@@ -4453,7 +4579,7 @@ impl GetDeliverabilityDashboardOptionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetDeliverabilityDashboardOptions,
             aws_http::AwsErrorRetryPolicy,
@@ -4510,7 +4636,7 @@ impl GetDeliverabilityDashboardOptionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -4518,7 +4644,7 @@ impl GetDeliverabilityDashboardOptionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4548,18 +4674,18 @@ pub mod get_deliverability_test_report_input {
     }
     impl Builder {
         /// <p>A unique string that identifies the predictive inbox placement test.</p>
-        pub fn report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.report_id = Some(inp.into());
+        pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.report_id = Some(input.into());
             self
         }
-        pub fn set_report_id(mut self, inp: std::string::String) -> Self {
-            self.report_id = Some(inp);
+        pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.report_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDeliverabilityTestReportInput`](crate::input::GetDeliverabilityTestReportInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetDeliverabilityTestReportInput,
             smithy_http::operation::BuildError,
         > {
@@ -4580,7 +4706,7 @@ impl GetDeliverabilityTestReportInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetDeliverabilityTestReport,
             aws_http::AwsErrorRetryPolicy,
@@ -4642,7 +4768,7 @@ impl GetDeliverabilityTestReportInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -4650,7 +4776,7 @@ impl GetDeliverabilityTestReportInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4681,18 +4807,18 @@ pub mod get_domain_deliverability_campaign_input {
     impl Builder {
         /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates
         /// and assigns this identifier to a campaign.</p>
-        pub fn campaign_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.campaign_id = Some(inp.into());
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.campaign_id = Some(input.into());
             self
         }
-        pub fn set_campaign_id(mut self, inp: std::string::String) -> Self {
-            self.campaign_id = Some(inp);
+        pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.campaign_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDomainDeliverabilityCampaignInput`](crate::input::GetDomainDeliverabilityCampaignInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetDomainDeliverabilityCampaignInput,
             smithy_http::operation::BuildError,
         > {
@@ -4713,7 +4839,7 @@ impl GetDomainDeliverabilityCampaignInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetDomainDeliverabilityCampaign,
             aws_http::AwsErrorRetryPolicy,
@@ -4775,7 +4901,7 @@ impl GetDomainDeliverabilityCampaignInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -4783,7 +4909,7 @@ impl GetDomainDeliverabilityCampaignInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4815,40 +4941,42 @@ pub mod get_domain_statistics_report_input {
     }
     impl Builder {
         /// <p>The domain that you want to obtain deliverability metrics for.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain = Some(inp.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
             self
         }
-        pub fn set_domain(mut self, inp: std::string::String) -> Self {
-            self.domain = Some(inp);
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
             self
         }
         /// <p>The first day (in Unix time) that you want to obtain domain deliverability metrics
         /// for.</p>
-        pub fn start_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.start_date = Some(inp);
+        pub fn start_date(mut self, input: smithy_types::Instant) -> Self {
+            self.start_date = Some(input);
             self
         }
-        pub fn set_start_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.start_date = inp;
+        pub fn set_start_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_date = input;
             self
         }
         /// <p>The last day (in Unix time) that you want to obtain domain deliverability metrics for.
         /// The <code>EndDate</code> that you specify has to be less than or equal to 30 days after
         /// the <code>StartDate</code>.</p>
-        pub fn end_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.end_date = Some(inp);
+        pub fn end_date(mut self, input: smithy_types::Instant) -> Self {
+            self.end_date = Some(input);
             self
         }
-        pub fn set_end_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.end_date = inp;
+        pub fn set_end_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.end_date = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDomainStatisticsReportInput`](crate::input::GetDomainStatisticsReportInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDomainStatisticsReportInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetDomainStatisticsReportInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetDomainStatisticsReportInput {
                 domain: self.domain.unwrap_or_default(),
                 start_date: self.start_date,
@@ -4868,7 +4996,7 @@ impl GetDomainStatisticsReportInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetDomainStatisticsReport,
             aws_http::AwsErrorRetryPolicy,
@@ -4951,7 +5079,7 @@ impl GetDomainStatisticsReportInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -4960,7 +5088,7 @@ impl GetDomainStatisticsReportInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -4990,19 +5118,24 @@ pub mod get_email_identity_input {
     }
     impl Builder {
         /// <p>The email identity that you want to retrieve details for.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_identity = Some(inp.into());
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_identity = Some(input.into());
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.email_identity = Some(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_identity = input;
             self
         }
         /// Consumes the builder and constructs a [`GetEmailIdentityInput`](crate::input::GetEmailIdentityInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetEmailIdentityInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetEmailIdentityInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetEmailIdentityInput {
                 email_identity: self.email_identity.unwrap_or_default(),
             })
@@ -5019,7 +5152,7 @@ impl GetEmailIdentityInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetEmailIdentity,
             aws_http::AwsErrorRetryPolicy,
@@ -5081,7 +5214,7 @@ impl GetEmailIdentityInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -5089,7 +5222,7 @@ impl GetEmailIdentityInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5119,19 +5252,24 @@ pub mod get_email_identity_policies_input {
     }
     impl Builder {
         /// <p>The email identity that you want to retrieve policies for.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_identity = Some(inp.into());
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_identity = Some(input.into());
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.email_identity = Some(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_identity = input;
             self
         }
         /// Consumes the builder and constructs a [`GetEmailIdentityPoliciesInput`](crate::input::GetEmailIdentityPoliciesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetEmailIdentityPoliciesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetEmailIdentityPoliciesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetEmailIdentityPoliciesInput {
                 email_identity: self.email_identity.unwrap_or_default(),
             })
@@ -5149,7 +5287,7 @@ impl GetEmailIdentityPoliciesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetEmailIdentityPolicies,
             aws_http::AwsErrorRetryPolicy,
@@ -5211,7 +5349,7 @@ impl GetEmailIdentityPoliciesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -5219,7 +5357,7 @@ impl GetEmailIdentityPoliciesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5249,19 +5387,24 @@ pub mod get_email_template_input {
     }
     impl Builder {
         /// <p>The name of the template you want to retrieve.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_name = Some(inp.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
             self
         }
-        pub fn set_template_name(mut self, inp: std::string::String) -> Self {
-            self.template_name = Some(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetEmailTemplateInput`](crate::input::GetEmailTemplateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetEmailTemplateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetEmailTemplateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetEmailTemplateInput {
                 template_name: self.template_name.unwrap_or_default(),
             })
@@ -5278,7 +5421,7 @@ impl GetEmailTemplateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetEmailTemplate,
             aws_http::AwsErrorRetryPolicy,
@@ -5340,7 +5483,7 @@ impl GetEmailTemplateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -5348,7 +5491,7 @@ impl GetEmailTemplateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5378,18 +5521,19 @@ pub mod get_import_job_input {
     }
     impl Builder {
         /// <p>The ID of the import job.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.job_id = Some(inp.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
             self
         }
-        pub fn set_job_id(mut self, inp: std::string::String) -> Self {
-            self.job_id = Some(inp);
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetImportJobInput`](crate::input::GetImportJobInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetImportJobInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetImportJobInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetImportJobInput {
                 job_id: self.job_id.unwrap_or_default(),
             })
@@ -5406,7 +5550,7 @@ impl GetImportJobInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetImportJob,
             aws_http::AwsErrorRetryPolicy,
@@ -5468,7 +5612,7 @@ impl GetImportJobInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -5476,7 +5620,7 @@ impl GetImportJobInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5506,19 +5650,24 @@ pub mod get_suppressed_destination_input {
     }
     impl Builder {
         /// <p>The email address that's on the account suppression list.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_address = Some(inp.into());
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_address = Some(input.into());
             self
         }
-        pub fn set_email_address(mut self, inp: std::string::String) -> Self {
-            self.email_address = Some(inp);
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_address = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSuppressedDestinationInput`](crate::input::GetSuppressedDestinationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSuppressedDestinationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetSuppressedDestinationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetSuppressedDestinationInput {
                 email_address: self.email_address.unwrap_or_default(),
             })
@@ -5536,7 +5685,7 @@ impl GetSuppressedDestinationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetSuppressedDestination,
             aws_http::AwsErrorRetryPolicy,
@@ -5598,7 +5747,7 @@ impl GetSuppressedDestinationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -5606,7 +5755,7 @@ impl GetSuppressedDestinationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5638,31 +5787,33 @@ pub mod list_configuration_sets_input {
     impl Builder {
         /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to
         /// indicate the position in the list of configuration sets.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The number of results to show in a single call to <code>ListConfigurationSets</code>.
         /// If the number of results is larger than the number you specified in this parameter, then
         /// the response includes a <code>NextToken</code> element, which you can use to obtain
         /// additional results.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.page_size = Some(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.page_size = Some(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.page_size = inp;
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.page_size = input;
             self
         }
         /// Consumes the builder and constructs a [`ListConfigurationSetsInput`](crate::input::ListConfigurationSetsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListConfigurationSetsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListConfigurationSetsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListConfigurationSetsInput {
                 next_token: self.next_token,
                 page_size: self.page_size,
@@ -5680,7 +5831,7 @@ impl ListConfigurationSetsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListConfigurationSets,
             aws_http::AwsErrorRetryPolicy,
@@ -5746,7 +5897,7 @@ impl ListConfigurationSetsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -5755,7 +5906,7 @@ impl ListConfigurationSetsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5790,31 +5941,33 @@ pub mod list_contact_lists_input {
         /// <code>NextToken</code> element is sent in the response. Use the
         /// <code>NextToken</code> value in subsequent requests to retrieve additional
         /// lists.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.page_size = Some(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.page_size = Some(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.page_size = inp;
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.page_size = input;
             self
         }
         /// <p>A string token indicating that there might be additional contact lists available to be
         /// listed. Use the token provided in the Response to use in the subsequent call to
         /// ListContactLists with the same parameters to retrieve the next page of contact
         /// lists.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListContactListsInput`](crate::input::ListContactListsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListContactListsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListContactListsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListContactListsInput {
                 page_size: self.page_size,
                 next_token: self.next_token,
@@ -5832,7 +5985,7 @@ impl ListContactListsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListContactLists,
             aws_http::AwsErrorRetryPolicy,
@@ -5898,7 +6051,7 @@ impl ListContactListsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -5907,7 +6060,7 @@ impl ListContactListsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -5940,24 +6093,27 @@ pub mod list_contacts_input {
     }
     impl Builder {
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.contact_list_name = Some(inp.into());
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_list_name = Some(input.into());
             self
         }
-        pub fn set_contact_list_name(mut self, inp: std::string::String) -> Self {
-            self.contact_list_name = Some(inp);
+        pub fn set_contact_list_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.contact_list_name = input;
             self
         }
         /// <p>A filter that can be applied to a list of contacts.</p>
-        pub fn filter(mut self, inp: crate::model::ListContactsFilter) -> Self {
-            self.filter = Some(inp);
+        pub fn filter(mut self, input: crate::model::ListContactsFilter) -> Self {
+            self.filter = Some(input);
             self
         }
         pub fn set_filter(
             mut self,
-            inp: std::option::Option<crate::model::ListContactsFilter>,
+            input: std::option::Option<crate::model::ListContactsFilter>,
         ) -> Self {
-            self.filter = inp;
+            self.filter = input;
             self
         }
         /// <p>The number of contacts that may be returned at once, which is dependent on if there
@@ -5966,29 +6122,30 @@ pub mod list_contacts_input {
         /// <code>NextToken</code> element is sent in the response. Use the
         /// <code>NextToken</code> value in subsequent requests to retrieve additional
         /// contacts.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.page_size = Some(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.page_size = Some(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.page_size = inp;
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.page_size = input;
             self
         }
         /// <p>A string token indicating that there might be additional contacts available to be
         /// listed. Use the token provided in the Response to use in the subsequent call to
         /// ListContacts with the same parameters to retrieve the next page of contacts.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListContactsInput`](crate::input::ListContactsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListContactsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListContactsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListContactsInput {
                 contact_list_name: self.contact_list_name.unwrap_or_default(),
                 filter: self.filter,
@@ -6008,7 +6165,7 @@ impl ListContactsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListContacts,
             aws_http::AwsErrorRetryPolicy,
@@ -6082,7 +6239,7 @@ impl ListContactsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6091,7 +6248,7 @@ impl ListContactsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6124,12 +6281,12 @@ pub mod list_custom_verification_email_templates_input {
         /// <p>A token returned from a previous call to
         /// <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the
         /// list of custom verification email templates.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The number of results to show in a single call to
@@ -6138,18 +6295,18 @@ pub mod list_custom_verification_email_templates_input {
         /// <code>NextToken</code> element, which you can use to obtain additional
         /// results.</p>
         /// <p>The value you specify has to be at least 1, and can be no more than 50.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.page_size = Some(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.page_size = Some(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.page_size = inp;
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.page_size = input;
             self
         }
         /// Consumes the builder and constructs a [`ListCustomVerificationEmailTemplatesInput`](crate::input::ListCustomVerificationEmailTemplatesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListCustomVerificationEmailTemplatesInput,
             smithy_http::operation::BuildError,
         > {
@@ -6172,7 +6329,7 @@ impl ListCustomVerificationEmailTemplatesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListCustomVerificationEmailTemplates,
             aws_http::AwsErrorRetryPolicy,
@@ -6239,7 +6396,7 @@ impl ListCustomVerificationEmailTemplatesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6248,7 +6405,7 @@ impl ListCustomVerificationEmailTemplatesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6280,31 +6437,33 @@ pub mod list_dedicated_ip_pools_input {
     impl Builder {
         /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate
         /// the position in the list of dedicated IP pools.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>.
         /// If the number of results is larger than the number you specified in this parameter, then
         /// the response includes a <code>NextToken</code> element, which you can use to obtain
         /// additional results.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.page_size = Some(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.page_size = Some(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.page_size = inp;
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.page_size = input;
             self
         }
         /// Consumes the builder and constructs a [`ListDedicatedIpPoolsInput`](crate::input::ListDedicatedIpPoolsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListDedicatedIpPoolsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListDedicatedIpPoolsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListDedicatedIpPoolsInput {
                 next_token: self.next_token,
                 page_size: self.page_size,
@@ -6322,7 +6481,7 @@ impl ListDedicatedIpPoolsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListDedicatedIpPools,
             aws_http::AwsErrorRetryPolicy,
@@ -6388,7 +6547,7 @@ impl ListDedicatedIpPoolsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6397,7 +6556,7 @@ impl ListDedicatedIpPoolsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6429,12 +6588,12 @@ pub mod list_deliverability_test_reports_input {
     impl Builder {
         /// <p>A token returned from a previous call to <code>ListDeliverabilityTestReports</code> to
         /// indicate the position in the list of predictive inbox placement tests.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The number of results to show in a single call to
@@ -6443,18 +6602,18 @@ pub mod list_deliverability_test_reports_input {
         /// <code>NextToken</code> element, which you can use to obtain additional
         /// results.</p>
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.page_size = Some(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.page_size = Some(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.page_size = inp;
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.page_size = input;
             self
         }
         /// Consumes the builder and constructs a [`ListDeliverabilityTestReportsInput`](crate::input::ListDeliverabilityTestReportsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListDeliverabilityTestReportsInput,
             smithy_http::operation::BuildError,
         > {
@@ -6476,7 +6635,7 @@ impl ListDeliverabilityTestReportsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListDeliverabilityTestReports,
             aws_http::AwsErrorRetryPolicy,
@@ -6543,7 +6702,7 @@ impl ListDeliverabilityTestReportsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6552,7 +6711,7 @@ impl ListDeliverabilityTestReportsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6587,43 +6746,46 @@ pub mod list_domain_deliverability_campaigns_input {
     impl Builder {
         /// <p>The first day, in Unix time format, that you want to obtain deliverability data
         /// for.</p>
-        pub fn start_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.start_date = Some(inp);
+        pub fn start_date(mut self, input: smithy_types::Instant) -> Self {
+            self.start_date = Some(input);
             self
         }
-        pub fn set_start_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.start_date = inp;
+        pub fn set_start_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_date = input;
             self
         }
         /// <p>The last day, in Unix time format, that you want to obtain deliverability data for.
         /// This value has to be less than or equal to 30 days after the value of the
         /// <code>StartDate</code> parameter.</p>
-        pub fn end_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.end_date = Some(inp);
+        pub fn end_date(mut self, input: smithy_types::Instant) -> Self {
+            self.end_date = Some(input);
             self
         }
-        pub fn set_end_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.end_date = inp;
+        pub fn set_end_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.end_date = input;
             self
         }
         /// <p>The domain to obtain deliverability data for.</p>
-        pub fn subscribed_domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subscribed_domain = Some(inp.into());
+        pub fn subscribed_domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subscribed_domain = Some(input.into());
             self
         }
-        pub fn set_subscribed_domain(mut self, inp: std::string::String) -> Self {
-            self.subscribed_domain = Some(inp);
+        pub fn set_subscribed_domain(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.subscribed_domain = input;
             self
         }
         /// <p>A token that’s returned from a previous call to the
         /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
         /// position of a campaign in the list of campaigns.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The maximum number of results to include in response to a single call to the
@@ -6631,18 +6793,18 @@ pub mod list_domain_deliverability_campaigns_input {
         /// is larger than the number that you specify in this parameter, the response includes a
         /// <code>NextToken</code> element, which you can use to obtain additional
         /// results.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.page_size = Some(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.page_size = Some(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.page_size = inp;
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.page_size = input;
             self
         }
         /// Consumes the builder and constructs a [`ListDomainDeliverabilityCampaignsInput`](crate::input::ListDomainDeliverabilityCampaignsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListDomainDeliverabilityCampaignsInput,
             smithy_http::operation::BuildError,
         > {
@@ -6667,7 +6829,7 @@ impl ListDomainDeliverabilityCampaignsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListDomainDeliverabilityCampaigns,
             aws_http::AwsErrorRetryPolicy,
@@ -6756,7 +6918,7 @@ impl ListDomainDeliverabilityCampaignsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6765,7 +6927,7 @@ impl ListDomainDeliverabilityCampaignsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6797,12 +6959,12 @@ pub mod list_email_identities_input {
     impl Builder {
         /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate
         /// the position in the list of identities.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The number of results to show in a single call to <code>ListEmailIdentities</code>. If
@@ -6810,19 +6972,21 @@ pub mod list_email_identities_input {
         /// the response includes a <code>NextToken</code> element, which you can use to obtain
         /// additional results.</p>
         /// <p>The value you specify has to be at least 0, and can be no more than 1000.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.page_size = Some(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.page_size = Some(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.page_size = inp;
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.page_size = input;
             self
         }
         /// Consumes the builder and constructs a [`ListEmailIdentitiesInput`](crate::input::ListEmailIdentitiesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListEmailIdentitiesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListEmailIdentitiesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListEmailIdentitiesInput {
                 next_token: self.next_token,
                 page_size: self.page_size,
@@ -6840,7 +7004,7 @@ impl ListEmailIdentitiesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListEmailIdentities,
             aws_http::AwsErrorRetryPolicy,
@@ -6906,7 +7070,7 @@ impl ListEmailIdentitiesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6915,7 +7079,7 @@ impl ListEmailIdentitiesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -6947,31 +7111,33 @@ pub mod list_email_templates_input {
     impl Builder {
         /// <p>A token returned from a previous call to <code>ListEmailTemplates</code> to indicate
         /// the position in the list of email templates.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The number of results to show in a single call to <code>ListEmailTemplates</code>. If the number of
         /// results is larger than the number you specified in this parameter, then the response
         /// includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
         /// <p>The value you specify has to be at least 1, and can be no more than 10.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.page_size = Some(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.page_size = Some(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.page_size = inp;
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.page_size = input;
             self
         }
         /// Consumes the builder and constructs a [`ListEmailTemplatesInput`](crate::input::ListEmailTemplatesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListEmailTemplatesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListEmailTemplatesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListEmailTemplatesInput {
                 next_token: self.next_token,
                 page_size: self.page_size,
@@ -6989,7 +7155,7 @@ impl ListEmailTemplatesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListEmailTemplates,
             aws_http::AwsErrorRetryPolicy,
@@ -7055,7 +7221,7 @@ impl ListEmailTemplatesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7064,7 +7230,7 @@ impl ListEmailTemplatesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7098,26 +7264,29 @@ pub mod list_import_jobs_input {
     impl Builder {
         /// <p>The destination of the import job, which can be used to list import jobs that have a
         /// certain <code>ImportDestinationType</code>.</p>
-        pub fn import_destination_type(mut self, inp: crate::model::ImportDestinationType) -> Self {
-            self.import_destination_type = Some(inp);
+        pub fn import_destination_type(
+            mut self,
+            input: crate::model::ImportDestinationType,
+        ) -> Self {
+            self.import_destination_type = Some(input);
             self
         }
         pub fn set_import_destination_type(
             mut self,
-            inp: std::option::Option<crate::model::ImportDestinationType>,
+            input: std::option::Option<crate::model::ImportDestinationType>,
         ) -> Self {
-            self.import_destination_type = inp;
+            self.import_destination_type = input;
             self
         }
         /// <p>A string token indicating that there might be additional import jobs available to be
         /// listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the
         /// same parameters to retrieve the next page of import jobs.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate
@@ -7125,18 +7294,21 @@ pub mod list_import_jobs_input {
         /// <code>NextToken</code> element is sent in the response. Use the
         /// <code>NextToken</code> value in subsequent requests to retrieve additional
         /// addresses.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.page_size = Some(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.page_size = Some(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.page_size = inp;
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.page_size = input;
             self
         }
         /// Consumes the builder and constructs a [`ListImportJobsInput`](crate::input::ListImportJobsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListImportJobsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::ListImportJobsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListImportJobsInput {
                 import_destination_type: self.import_destination_type,
                 next_token: self.next_token,
@@ -7155,7 +7327,7 @@ impl ListImportJobsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListImportJobs,
             aws_http::AwsErrorRetryPolicy,
@@ -7223,7 +7395,7 @@ impl ListImportJobsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7232,7 +7404,7 @@ impl ListImportJobsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7265,49 +7437,49 @@ pub mod list_suppressed_destinations_input {
         pub(crate) page_size: std::option::Option<i32>,
     }
     impl Builder {
-        pub fn reasons(mut self, inp: impl Into<crate::model::SuppressionListReason>) -> Self {
+        pub fn reasons(mut self, input: impl Into<crate::model::SuppressionListReason>) -> Self {
             let mut v = self.reasons.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.reasons = Some(v);
             self
         }
         pub fn set_reasons(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
         ) -> Self {
-            self.reasons = inp;
+            self.reasons = input;
             self
         }
         /// <p>Used to filter the list of suppressed email destinations so that it only includes
         /// addresses that were added to the list after a specific date. The date that you specify
         /// should be in Unix time format.</p>
-        pub fn start_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.start_date = Some(inp);
+        pub fn start_date(mut self, input: smithy_types::Instant) -> Self {
+            self.start_date = Some(input);
             self
         }
-        pub fn set_start_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.start_date = inp;
+        pub fn set_start_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_date = input;
             self
         }
         /// <p>Used to filter the list of suppressed email destinations so that it only includes
         /// addresses that were added to the list before a specific date. The date that you specify
         /// should be in Unix time format.</p>
-        pub fn end_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.end_date = Some(inp);
+        pub fn end_date(mut self, input: smithy_types::Instant) -> Self {
+            self.end_date = Some(input);
             self
         }
-        pub fn set_end_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.end_date = inp;
+        pub fn set_end_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.end_date = input;
             self
         }
         /// <p>A token returned from a previous call to <code>ListSuppressedDestinations</code> to
         /// indicate the position in the list of suppressed email addresses.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The number of results to show in a single call to
@@ -7315,19 +7487,21 @@ pub mod list_suppressed_destinations_input {
         /// number you specified in this parameter, then the response includes a
         /// <code>NextToken</code> element, which you can use to obtain additional
         /// results.</p>
-        pub fn page_size(mut self, inp: i32) -> Self {
-            self.page_size = Some(inp);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.page_size = Some(input);
             self
         }
-        pub fn set_page_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.page_size = inp;
+        pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.page_size = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSuppressedDestinationsInput`](crate::input::ListSuppressedDestinationsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSuppressedDestinationsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListSuppressedDestinationsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListSuppressedDestinationsInput {
                 reasons: self.reasons,
                 start_date: self.start_date,
@@ -7349,7 +7523,7 @@ impl ListSuppressedDestinationsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListSuppressedDestinations,
             aws_http::AwsErrorRetryPolicy,
@@ -7438,7 +7612,7 @@ impl ListSuppressedDestinationsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7447,7 +7621,7 @@ impl ListSuppressedDestinationsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7478,19 +7652,21 @@ pub mod list_tags_for_resource_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tag
         /// information for.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = inp;
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTagsForResourceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -7507,7 +7683,7 @@ impl ListTagsForResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
@@ -7570,7 +7746,7 @@ impl ListTagsForResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7579,7 +7755,7 @@ impl ListTagsForResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7612,18 +7788,18 @@ pub mod put_account_dedicated_ip_warmup_attributes_input {
         /// associated with your Amazon SES account in the current AWS Region. Set to <code>true</code>
         /// to enable the automatic warm-up feature, or set to <code>false</code> to disable
         /// it.</p>
-        pub fn auto_warmup_enabled(mut self, inp: bool) -> Self {
-            self.auto_warmup_enabled = Some(inp);
+        pub fn auto_warmup_enabled(mut self, input: bool) -> Self {
+            self.auto_warmup_enabled = Some(input);
             self
         }
-        pub fn set_auto_warmup_enabled(mut self, inp: bool) -> Self {
-            self.auto_warmup_enabled = Some(inp);
+        pub fn set_auto_warmup_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_warmup_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`PutAccountDedicatedIpWarmupAttributesInput`](crate::input::PutAccountDedicatedIpWarmupAttributesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutAccountDedicatedIpWarmupAttributesInput,
             smithy_http::operation::BuildError,
         > {
@@ -7645,7 +7821,7 @@ impl PutAccountDedicatedIpWarmupAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutAccountDedicatedIpWarmupAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -7704,7 +7880,7 @@ impl PutAccountDedicatedIpWarmupAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -7712,7 +7888,7 @@ impl PutAccountDedicatedIpWarmupAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7748,62 +7924,62 @@ pub mod put_account_details_input {
     }
     impl Builder {
         /// <p>The type of email your account will send.</p>
-        pub fn mail_type(mut self, inp: crate::model::MailType) -> Self {
-            self.mail_type = Some(inp);
+        pub fn mail_type(mut self, input: crate::model::MailType) -> Self {
+            self.mail_type = Some(input);
             self
         }
-        pub fn set_mail_type(mut self, inp: std::option::Option<crate::model::MailType>) -> Self {
-            self.mail_type = inp;
+        pub fn set_mail_type(mut self, input: std::option::Option<crate::model::MailType>) -> Self {
+            self.mail_type = input;
             self
         }
         /// <p>The URL of your website. This information helps us better understand the type of
         /// content that you plan to send.</p>
-        pub fn website_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.website_url = Some(inp.into());
+        pub fn website_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.website_url = Some(input.into());
             self
         }
-        pub fn set_website_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.website_url = inp;
+        pub fn set_website_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.website_url = input;
             self
         }
         /// <p>The language you would prefer to be contacted with.</p>
-        pub fn contact_language(mut self, inp: crate::model::ContactLanguage) -> Self {
-            self.contact_language = Some(inp);
+        pub fn contact_language(mut self, input: crate::model::ContactLanguage) -> Self {
+            self.contact_language = Some(input);
             self
         }
         pub fn set_contact_language(
             mut self,
-            inp: std::option::Option<crate::model::ContactLanguage>,
+            input: std::option::Option<crate::model::ContactLanguage>,
         ) -> Self {
-            self.contact_language = inp;
+            self.contact_language = input;
             self
         }
         /// <p>A description of the types of email that you plan to send.</p>
-        pub fn use_case_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.use_case_description = Some(inp.into());
+        pub fn use_case_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.use_case_description = Some(input.into());
             self
         }
         pub fn set_use_case_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.use_case_description = inp;
+            self.use_case_description = input;
             self
         }
         pub fn additional_contact_email_addresses(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.additional_contact_email_addresses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.additional_contact_email_addresses = Some(v);
             self
         }
         pub fn set_additional_contact_email_addresses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.additional_contact_email_addresses = inp;
+            self.additional_contact_email_addresses = input;
             self
         }
         /// <p>Indicates whether or not your account should have production access in the current
@@ -7816,19 +7992,21 @@ pub mod put_account_details_input {
         /// <p>If the value is <code>true</code>, then your account has production access. When your
         /// account has production access, you can send email to any address. The sending quota and
         /// maximum sending rate for your account vary based on your specific use case.</p>
-        pub fn production_access_enabled(mut self, inp: bool) -> Self {
-            self.production_access_enabled = Some(inp);
+        pub fn production_access_enabled(mut self, input: bool) -> Self {
+            self.production_access_enabled = Some(input);
             self
         }
-        pub fn set_production_access_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.production_access_enabled = inp;
+        pub fn set_production_access_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.production_access_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`PutAccountDetailsInput`](crate::input::PutAccountDetailsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutAccountDetailsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutAccountDetailsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutAccountDetailsInput {
                 mail_type: self.mail_type,
                 website_url: self.website_url,
@@ -7850,7 +8028,7 @@ impl PutAccountDetailsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutAccountDetails,
             aws_http::AwsErrorRetryPolicy,
@@ -7910,7 +8088,7 @@ impl PutAccountDetailsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7918,7 +8096,7 @@ impl PutAccountDetailsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -7953,18 +8131,18 @@ pub mod put_account_sending_attributes_input {
         /// <p>If AWS paused your account's ability to send email, you can't use this operation
         /// to resume your account's ability to send email.</p>
         /// </note>
-        pub fn sending_enabled(mut self, inp: bool) -> Self {
-            self.sending_enabled = Some(inp);
+        pub fn sending_enabled(mut self, input: bool) -> Self {
+            self.sending_enabled = Some(input);
             self
         }
-        pub fn set_sending_enabled(mut self, inp: bool) -> Self {
-            self.sending_enabled = Some(inp);
+        pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.sending_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`PutAccountSendingAttributesInput`](crate::input::PutAccountSendingAttributesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutAccountSendingAttributesInput,
             smithy_http::operation::BuildError,
         > {
@@ -7985,7 +8163,7 @@ impl PutAccountSendingAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutAccountSendingAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -8046,7 +8224,7 @@ impl PutAccountSendingAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -8054,7 +8232,7 @@ impl PutAccountSendingAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8086,24 +8264,24 @@ pub mod put_account_suppression_attributes_input {
     impl Builder {
         pub fn suppressed_reasons(
             mut self,
-            inp: impl Into<crate::model::SuppressionListReason>,
+            input: impl Into<crate::model::SuppressionListReason>,
         ) -> Self {
             let mut v = self.suppressed_reasons.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.suppressed_reasons = Some(v);
             self
         }
         pub fn set_suppressed_reasons(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
         ) -> Self {
-            self.suppressed_reasons = inp;
+            self.suppressed_reasons = input;
             self
         }
         /// Consumes the builder and constructs a [`PutAccountSuppressionAttributesInput`](crate::input::PutAccountSuppressionAttributesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutAccountSuppressionAttributesInput,
             smithy_http::operation::BuildError,
         > {
@@ -8124,7 +8302,7 @@ impl PutAccountSuppressionAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutAccountSuppressionAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -8185,7 +8363,7 @@ impl PutAccountSuppressionAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -8193,7 +8371,7 @@ impl PutAccountSuppressionAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8226,43 +8404,49 @@ pub mod put_configuration_set_delivery_options_input {
     impl Builder {
         /// <p>The name of the configuration set that you want to associate with a dedicated IP
         /// pool.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.configuration_set_name = Some(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
             self
         }
         /// <p>Specifies whether messages that use the configuration set are required to use
         /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
         /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
         /// messages can be delivered in plain text if a TLS connection can't be established.</p>
-        pub fn tls_policy(mut self, inp: crate::model::TlsPolicy) -> Self {
-            self.tls_policy = Some(inp);
+        pub fn tls_policy(mut self, input: crate::model::TlsPolicy) -> Self {
+            self.tls_policy = Some(input);
             self
         }
-        pub fn set_tls_policy(mut self, inp: std::option::Option<crate::model::TlsPolicy>) -> Self {
-            self.tls_policy = inp;
+        pub fn set_tls_policy(
+            mut self,
+            input: std::option::Option<crate::model::TlsPolicy>,
+        ) -> Self {
+            self.tls_policy = input;
             self
         }
         /// <p>The name of the dedicated IP pool that you want to associate with the configuration
         /// set.</p>
-        pub fn sending_pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sending_pool_name = Some(inp.into());
+        pub fn sending_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sending_pool_name = Some(input.into());
             self
         }
         pub fn set_sending_pool_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sending_pool_name = inp;
+            self.sending_pool_name = input;
             self
         }
         /// Consumes the builder and constructs a [`PutConfigurationSetDeliveryOptionsInput`](crate::input::PutConfigurationSetDeliveryOptionsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutConfigurationSetDeliveryOptionsInput,
             smithy_http::operation::BuildError,
         > {
@@ -8285,7 +8469,7 @@ impl PutConfigurationSetDeliveryOptionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutConfigurationSetDeliveryOptions,
             aws_http::AwsErrorRetryPolicy,
@@ -8354,7 +8538,7 @@ impl PutConfigurationSetDeliveryOptionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -8362,7 +8546,7 @@ impl PutConfigurationSetDeliveryOptionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8394,29 +8578,32 @@ pub mod put_configuration_set_reputation_options_input {
     impl Builder {
         /// <p>The name of the configuration set that you want to enable or disable reputation metric
         /// tracking for.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.configuration_set_name = Some(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
             self
         }
         /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
         /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
         /// configuration set.</p>
-        pub fn reputation_metrics_enabled(mut self, inp: bool) -> Self {
-            self.reputation_metrics_enabled = Some(inp);
+        pub fn reputation_metrics_enabled(mut self, input: bool) -> Self {
+            self.reputation_metrics_enabled = Some(input);
             self
         }
-        pub fn set_reputation_metrics_enabled(mut self, inp: bool) -> Self {
-            self.reputation_metrics_enabled = Some(inp);
+        pub fn set_reputation_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.reputation_metrics_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`PutConfigurationSetReputationOptionsInput`](crate::input::PutConfigurationSetReputationOptionsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutConfigurationSetReputationOptionsInput,
             smithy_http::operation::BuildError,
         > {
@@ -8439,7 +8626,7 @@ impl PutConfigurationSetReputationOptionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutConfigurationSetReputationOptions,
             aws_http::AwsErrorRetryPolicy,
@@ -8508,7 +8695,7 @@ impl PutConfigurationSetReputationOptionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -8516,7 +8703,7 @@ impl PutConfigurationSetReputationOptionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8548,28 +8735,31 @@ pub mod put_configuration_set_sending_options_input {
     impl Builder {
         /// <p>The name of the configuration set that you want to enable or disable email sending
         /// for.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.configuration_set_name = Some(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
             self
         }
         /// <p>If <code>true</code>, email sending is enabled for the configuration set. If
         /// <code>false</code>, email sending is disabled for the configuration set.</p>
-        pub fn sending_enabled(mut self, inp: bool) -> Self {
-            self.sending_enabled = Some(inp);
+        pub fn sending_enabled(mut self, input: bool) -> Self {
+            self.sending_enabled = Some(input);
             self
         }
-        pub fn set_sending_enabled(mut self, inp: bool) -> Self {
-            self.sending_enabled = Some(inp);
+        pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.sending_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`PutConfigurationSetSendingOptionsInput`](crate::input::PutConfigurationSetSendingOptionsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutConfigurationSetSendingOptionsInput,
             smithy_http::operation::BuildError,
         > {
@@ -8591,7 +8781,7 @@ impl PutConfigurationSetSendingOptionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutConfigurationSetSendingOptions,
             aws_http::AwsErrorRetryPolicy,
@@ -8660,7 +8850,7 @@ impl PutConfigurationSetSendingOptionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -8668,7 +8858,7 @@ impl PutConfigurationSetSendingOptionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8701,34 +8891,37 @@ pub mod put_configuration_set_suppression_options_input {
     impl Builder {
         /// <p>The name of the configuration set that you want to change the suppression list
         /// preferences for.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.configuration_set_name = Some(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
             self
         }
         pub fn suppressed_reasons(
             mut self,
-            inp: impl Into<crate::model::SuppressionListReason>,
+            input: impl Into<crate::model::SuppressionListReason>,
         ) -> Self {
             let mut v = self.suppressed_reasons.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.suppressed_reasons = Some(v);
             self
         }
         pub fn set_suppressed_reasons(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
         ) -> Self {
-            self.suppressed_reasons = inp;
+            self.suppressed_reasons = input;
             self
         }
         /// Consumes the builder and constructs a [`PutConfigurationSetSuppressionOptionsInput`](crate::input::PutConfigurationSetSuppressionOptionsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutConfigurationSetSuppressionOptionsInput,
             smithy_http::operation::BuildError,
         > {
@@ -8751,7 +8944,7 @@ impl PutConfigurationSetSuppressionOptionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutConfigurationSetSuppressionOptions,
             aws_http::AwsErrorRetryPolicy,
@@ -8816,7 +9009,7 @@ impl PutConfigurationSetSuppressionOptionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -8824,7 +9017,7 @@ impl PutConfigurationSetSuppressionOptionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -8856,30 +9049,33 @@ pub mod put_configuration_set_tracking_options_input {
     impl Builder {
         /// <p>The name of the configuration set that you want to add a custom tracking domain
         /// to.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.configuration_set_name = Some(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
             self
         }
         /// <p>The domain that you want to use to track open and click events.</p>
-        pub fn custom_redirect_domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_redirect_domain = Some(inp.into());
+        pub fn custom_redirect_domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_redirect_domain = Some(input.into());
             self
         }
         pub fn set_custom_redirect_domain(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_redirect_domain = inp;
+            self.custom_redirect_domain = input;
             self
         }
         /// Consumes the builder and constructs a [`PutConfigurationSetTrackingOptionsInput`](crate::input::PutConfigurationSetTrackingOptionsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutConfigurationSetTrackingOptionsInput,
             smithy_http::operation::BuildError,
         > {
@@ -8901,7 +9097,7 @@ impl PutConfigurationSetTrackingOptionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutConfigurationSetTrackingOptions,
             aws_http::AwsErrorRetryPolicy,
@@ -8970,7 +9166,7 @@ impl PutConfigurationSetTrackingOptionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -8978,7 +9174,7 @@ impl PutConfigurationSetTrackingOptionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -9010,32 +9206,34 @@ pub mod put_dedicated_ip_in_pool_input {
     impl Builder {
         /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify
         /// has to be a dedicated IP address that's associated with your AWS account.</p>
-        pub fn ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ip = Some(inp.into());
+        pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip = Some(input.into());
             self
         }
-        pub fn set_ip(mut self, inp: std::string::String) -> Self {
-            self.ip = Some(inp);
+        pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip = input;
             self
         }
         /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to
         /// specify an IP pool that already exists.</p>
-        pub fn destination_pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.destination_pool_name = Some(inp.into());
+        pub fn destination_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.destination_pool_name = Some(input.into());
             self
         }
         pub fn set_destination_pool_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.destination_pool_name = inp;
+            self.destination_pool_name = input;
             self
         }
         /// Consumes the builder and constructs a [`PutDedicatedIpInPoolInput`](crate::input::PutDedicatedIpInPoolInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutDedicatedIpInPoolInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutDedicatedIpInPoolInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutDedicatedIpInPoolInput {
                 ip: self.ip.unwrap_or_default(),
                 destination_pool_name: self.destination_pool_name,
@@ -9053,7 +9251,7 @@ impl PutDedicatedIpInPoolInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutDedicatedIpInPool,
             aws_http::AwsErrorRetryPolicy,
@@ -9118,7 +9316,7 @@ impl PutDedicatedIpInPoolInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -9126,7 +9324,7 @@ impl PutDedicatedIpInPoolInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -9157,28 +9355,28 @@ pub mod put_dedicated_ip_warmup_attributes_input {
     }
     impl Builder {
         /// <p>The dedicated IP address that you want to update the warm-up attributes for.</p>
-        pub fn ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ip = Some(inp.into());
+        pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip = Some(input.into());
             self
         }
-        pub fn set_ip(mut self, inp: std::string::String) -> Self {
-            self.ip = Some(inp);
+        pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip = input;
             self
         }
         /// <p>The warm-up percentage that you want to associate with the dedicated IP
         /// address.</p>
-        pub fn warmup_percentage(mut self, inp: i32) -> Self {
-            self.warmup_percentage = Some(inp);
+        pub fn warmup_percentage(mut self, input: i32) -> Self {
+            self.warmup_percentage = Some(input);
             self
         }
-        pub fn set_warmup_percentage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.warmup_percentage = inp;
+        pub fn set_warmup_percentage(mut self, input: std::option::Option<i32>) -> Self {
+            self.warmup_percentage = input;
             self
         }
         /// Consumes the builder and constructs a [`PutDedicatedIpWarmupAttributesInput`](crate::input::PutDedicatedIpWarmupAttributesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutDedicatedIpWarmupAttributesInput,
             smithy_http::operation::BuildError,
         > {
@@ -9200,7 +9398,7 @@ impl PutDedicatedIpWarmupAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutDedicatedIpWarmupAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -9266,7 +9464,7 @@ impl PutDedicatedIpWarmupAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -9274,7 +9472,7 @@ impl PutDedicatedIpWarmupAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -9307,36 +9505,36 @@ pub mod put_deliverability_dashboard_option_input {
     impl Builder {
         /// <p>Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this
         /// value to <code>true</code>.</p>
-        pub fn dashboard_enabled(mut self, inp: bool) -> Self {
-            self.dashboard_enabled = Some(inp);
+        pub fn dashboard_enabled(mut self, input: bool) -> Self {
+            self.dashboard_enabled = Some(input);
             self
         }
-        pub fn set_dashboard_enabled(mut self, inp: bool) -> Self {
-            self.dashboard_enabled = Some(inp);
+        pub fn set_dashboard_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.dashboard_enabled = input;
             self
         }
         pub fn subscribed_domains(
             mut self,
-            inp: impl Into<crate::model::DomainDeliverabilityTrackingOption>,
+            input: impl Into<crate::model::DomainDeliverabilityTrackingOption>,
         ) -> Self {
             let mut v = self.subscribed_domains.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.subscribed_domains = Some(v);
             self
         }
         pub fn set_subscribed_domains(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>,
             >,
         ) -> Self {
-            self.subscribed_domains = inp;
+            self.subscribed_domains = input;
             self
         }
         /// Consumes the builder and constructs a [`PutDeliverabilityDashboardOptionInput`](crate::input::PutDeliverabilityDashboardOptionInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutDeliverabilityDashboardOptionInput,
             smithy_http::operation::BuildError,
         > {
@@ -9358,7 +9556,7 @@ impl PutDeliverabilityDashboardOptionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutDeliverabilityDashboardOption,
             aws_http::AwsErrorRetryPolicy,
@@ -9421,7 +9619,7 @@ impl PutDeliverabilityDashboardOptionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -9429,7 +9627,7 @@ impl PutDeliverabilityDashboardOptionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -9460,30 +9658,33 @@ pub mod put_email_identity_configuration_set_attributes_input {
     }
     impl Builder {
         /// <p>The email address or domain that you want to associate with a configuration set.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_identity = Some(inp.into());
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_identity = Some(input.into());
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.email_identity = Some(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_identity = input;
             self
         }
         /// <p>The configuration set that you want to associate with an email identity.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
         pub fn set_configuration_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.configuration_set_name = inp;
+            self.configuration_set_name = input;
             self
         }
         /// Consumes the builder and constructs a [`PutEmailIdentityConfigurationSetAttributesInput`](crate::input::PutEmailIdentityConfigurationSetAttributesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutEmailIdentityConfigurationSetAttributesInput,
             smithy_http::operation::BuildError,
         > {
@@ -9508,7 +9709,7 @@ impl PutEmailIdentityConfigurationSetAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutEmailIdentityConfigurationSetAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -9572,7 +9773,7 @@ impl PutEmailIdentityConfigurationSetAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -9580,7 +9781,7 @@ impl PutEmailIdentityConfigurationSetAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -9612,30 +9813,33 @@ pub mod put_email_identity_dkim_attributes_input {
     }
     impl Builder {
         /// <p>The email identity that you want to change the DKIM settings for.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_identity = Some(inp.into());
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_identity = Some(input.into());
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.email_identity = Some(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_identity = input;
             self
         }
         /// <p>Sets the DKIM signing configuration for the identity.</p>
         /// <p>When you set this value <code>true</code>, then the messages that are sent from the
         /// identity are signed using DKIM. If you set this value to <code>false</code>, your
         /// messages are sent without DKIM signing.</p>
-        pub fn signing_enabled(mut self, inp: bool) -> Self {
-            self.signing_enabled = Some(inp);
+        pub fn signing_enabled(mut self, input: bool) -> Self {
+            self.signing_enabled = Some(input);
             self
         }
-        pub fn set_signing_enabled(mut self, inp: bool) -> Self {
-            self.signing_enabled = Some(inp);
+        pub fn set_signing_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.signing_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`PutEmailIdentityDkimAttributesInput`](crate::input::PutEmailIdentityDkimAttributesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutEmailIdentityDkimAttributesInput,
             smithy_http::operation::BuildError,
         > {
@@ -9657,7 +9861,7 @@ impl PutEmailIdentityDkimAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutEmailIdentityDkimAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -9723,7 +9927,7 @@ impl PutEmailIdentityDkimAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -9731,7 +9935,7 @@ impl PutEmailIdentityDkimAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -9764,12 +9968,15 @@ pub mod put_email_identity_dkim_signing_attributes_input {
     }
     impl Builder {
         /// <p>The email identity that you want to configure DKIM for.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_identity = Some(inp.into());
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_identity = Some(input.into());
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.email_identity = Some(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_identity = input;
             self
         }
         /// <p>The method that you want to use to configure DKIM for the identity. There are two
@@ -9788,36 +9995,36 @@ pub mod put_email_identity_dkim_signing_attributes_input {
         /// </ul>
         pub fn signing_attributes_origin(
             mut self,
-            inp: crate::model::DkimSigningAttributesOrigin,
+            input: crate::model::DkimSigningAttributesOrigin,
         ) -> Self {
-            self.signing_attributes_origin = Some(inp);
+            self.signing_attributes_origin = Some(input);
             self
         }
         pub fn set_signing_attributes_origin(
             mut self,
-            inp: std::option::Option<crate::model::DkimSigningAttributesOrigin>,
+            input: std::option::Option<crate::model::DkimSigningAttributesOrigin>,
         ) -> Self {
-            self.signing_attributes_origin = inp;
+            self.signing_attributes_origin = input;
             self
         }
         /// <p>An object that contains information about the private key and selector that you want
         /// to use to configure DKIM for the identity. This object is only required if you want to
         /// configure Bring Your Own DKIM (BYODKIM) for the identity.</p>
-        pub fn signing_attributes(mut self, inp: crate::model::DkimSigningAttributes) -> Self {
-            self.signing_attributes = Some(inp);
+        pub fn signing_attributes(mut self, input: crate::model::DkimSigningAttributes) -> Self {
+            self.signing_attributes = Some(input);
             self
         }
         pub fn set_signing_attributes(
             mut self,
-            inp: std::option::Option<crate::model::DkimSigningAttributes>,
+            input: std::option::Option<crate::model::DkimSigningAttributes>,
         ) -> Self {
-            self.signing_attributes = inp;
+            self.signing_attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`PutEmailIdentityDkimSigningAttributesInput`](crate::input::PutEmailIdentityDkimSigningAttributesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutEmailIdentityDkimSigningAttributesInput,
             smithy_http::operation::BuildError,
         > {
@@ -9841,7 +10048,7 @@ impl PutEmailIdentityDkimSigningAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutEmailIdentityDkimSigningAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -9905,7 +10112,7 @@ impl PutEmailIdentityDkimSigningAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -9913,7 +10120,7 @@ impl PutEmailIdentityDkimSigningAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -9945,12 +10152,15 @@ pub mod put_email_identity_feedback_attributes_input {
     impl Builder {
         /// <p>The email identity that you want to configure bounce and complaint feedback forwarding
         /// for.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_identity = Some(inp.into());
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_identity = Some(input.into());
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.email_identity = Some(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_identity = input;
             self
         }
         /// <p>Sets the feedback forwarding configuration for the identity.</p>
@@ -9961,18 +10171,18 @@ pub mod put_email_identity_feedback_attributes_input {
         /// set up another mechanism for receiving bounce or complaint notifications (for example,
         /// by setting up an event destination), you receive an email notification when these events
         /// occur (even if this setting is disabled).</p>
-        pub fn email_forwarding_enabled(mut self, inp: bool) -> Self {
-            self.email_forwarding_enabled = Some(inp);
+        pub fn email_forwarding_enabled(mut self, input: bool) -> Self {
+            self.email_forwarding_enabled = Some(input);
             self
         }
-        pub fn set_email_forwarding_enabled(mut self, inp: bool) -> Self {
-            self.email_forwarding_enabled = Some(inp);
+        pub fn set_email_forwarding_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.email_forwarding_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`PutEmailIdentityFeedbackAttributesInput`](crate::input::PutEmailIdentityFeedbackAttributesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutEmailIdentityFeedbackAttributesInput,
             smithy_http::operation::BuildError,
         > {
@@ -9994,7 +10204,7 @@ impl PutEmailIdentityFeedbackAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutEmailIdentityFeedbackAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -10062,7 +10272,7 @@ impl PutEmailIdentityFeedbackAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -10070,7 +10280,7 @@ impl PutEmailIdentityFeedbackAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -10103,12 +10313,15 @@ pub mod put_email_identity_mail_from_attributes_input {
     impl Builder {
         /// <p>The verified email identity that you want to set up the custom MAIL FROM domain
         /// for.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_identity = Some(inp.into());
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_identity = Some(input.into());
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.email_identity = Some(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_identity = input;
             self
         }
         /// <p> The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM
@@ -10125,15 +10338,15 @@ pub mod put_email_identity_mail_from_attributes_input {
         /// for feedback forwarding emails.</p>
         /// </li>
         /// </ul>
-        pub fn mail_from_domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.mail_from_domain = Some(inp.into());
+        pub fn mail_from_domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.mail_from_domain = Some(input.into());
             self
         }
         pub fn set_mail_from_domain(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.mail_from_domain = inp;
+            self.mail_from_domain = input;
             self
         }
         /// <p>The action that you want to take if the required MX record isn't found when you send
@@ -10145,21 +10358,21 @@ pub mod put_email_identity_mail_from_attributes_input {
         /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
         /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
         /// states.</p>
-        pub fn behavior_on_mx_failure(mut self, inp: crate::model::BehaviorOnMxFailure) -> Self {
-            self.behavior_on_mx_failure = Some(inp);
+        pub fn behavior_on_mx_failure(mut self, input: crate::model::BehaviorOnMxFailure) -> Self {
+            self.behavior_on_mx_failure = Some(input);
             self
         }
         pub fn set_behavior_on_mx_failure(
             mut self,
-            inp: std::option::Option<crate::model::BehaviorOnMxFailure>,
+            input: std::option::Option<crate::model::BehaviorOnMxFailure>,
         ) -> Self {
-            self.behavior_on_mx_failure = inp;
+            self.behavior_on_mx_failure = input;
             self
         }
         /// Consumes the builder and constructs a [`PutEmailIdentityMailFromAttributesInput`](crate::input::PutEmailIdentityMailFromAttributesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::PutEmailIdentityMailFromAttributesInput,
             smithy_http::operation::BuildError,
         > {
@@ -10182,7 +10395,7 @@ impl PutEmailIdentityMailFromAttributesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutEmailIdentityMailFromAttributes,
             aws_http::AwsErrorRetryPolicy,
@@ -10250,7 +10463,7 @@ impl PutEmailIdentityMailFromAttributesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -10258,7 +10471,7 @@ impl PutEmailIdentityMailFromAttributesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -10290,32 +10503,37 @@ pub mod put_suppressed_destination_input {
     impl Builder {
         /// <p>The email address that should be added to the suppression list for your
         /// account.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_address = Some(inp.into());
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_address = Some(input.into());
             self
         }
-        pub fn set_email_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.email_address = inp;
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_address = input;
             self
         }
         /// <p>The factors that should cause the email address to be added to the suppression list
         /// for your account.</p>
-        pub fn reason(mut self, inp: crate::model::SuppressionListReason) -> Self {
-            self.reason = Some(inp);
+        pub fn reason(mut self, input: crate::model::SuppressionListReason) -> Self {
+            self.reason = Some(input);
             self
         }
         pub fn set_reason(
             mut self,
-            inp: std::option::Option<crate::model::SuppressionListReason>,
+            input: std::option::Option<crate::model::SuppressionListReason>,
         ) -> Self {
-            self.reason = inp;
+            self.reason = input;
             self
         }
         /// Consumes the builder and constructs a [`PutSuppressedDestinationInput`](crate::input::PutSuppressedDestinationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutSuppressedDestinationInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutSuppressedDestinationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutSuppressedDestinationInput {
                 email_address: self.email_address,
                 reason: self.reason,
@@ -10334,7 +10552,7 @@ impl PutSuppressedDestinationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutSuppressedDestination,
             aws_http::AwsErrorRetryPolicy,
@@ -10394,7 +10612,7 @@ impl PutSuppressedDestinationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -10402,7 +10620,7 @@ impl PutSuppressedDestinationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -10443,15 +10661,15 @@ pub mod send_bulk_email_input {
     impl Builder {
         /// <p>The email address that you want to use as the "From" address for the email. The
         /// address that you specify has to be verified.</p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.from_email_address = Some(inp.into());
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.from_email_address = Some(input.into());
             self
         }
         pub fn set_from_email_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.from_email_address = inp;
+            self.from_email_address = input;
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -10467,44 +10685,44 @@ pub mod send_bulk_email_input {
         /// Guide</a>.</p>
         pub fn from_email_address_identity_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.from_email_address_identity_arn = Some(inp.into());
+            self.from_email_address_identity_arn = Some(input.into());
             self
         }
         pub fn set_from_email_address_identity_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.from_email_address_identity_arn = inp;
+            self.from_email_address_identity_arn = input;
             self
         }
-        pub fn reply_to_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reply_to_addresses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.reply_to_addresses = Some(v);
             self
         }
         pub fn set_reply_to_addresses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.reply_to_addresses = inp;
+            self.reply_to_addresses = input;
             self
         }
         /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
         pub fn feedback_forwarding_email_address(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.feedback_forwarding_email_address = Some(inp.into());
+            self.feedback_forwarding_email_address = Some(input.into());
             self
         }
         pub fn set_feedback_forwarding_email_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.feedback_forwarding_email_address = inp;
+            self.feedback_forwarding_email_address = input;
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -10521,73 +10739,77 @@ pub mod send_bulk_email_input {
         /// Guide</a>.</p>
         pub fn feedback_forwarding_email_address_identity_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.feedback_forwarding_email_address_identity_arn = Some(inp.into());
+            self.feedback_forwarding_email_address_identity_arn = Some(input.into());
             self
         }
         pub fn set_feedback_forwarding_email_address_identity_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.feedback_forwarding_email_address_identity_arn = inp;
+            self.feedback_forwarding_email_address_identity_arn = input;
             self
         }
-        pub fn default_email_tags(mut self, inp: impl Into<crate::model::MessageTag>) -> Self {
+        pub fn default_email_tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
             let mut v = self.default_email_tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.default_email_tags = Some(v);
             self
         }
         pub fn set_default_email_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
         ) -> Self {
-            self.default_email_tags = inp;
+            self.default_email_tags = input;
             self
         }
         /// <p>An object that contains the body of the message. You can specify a template
         /// message.</p>
-        pub fn default_content(mut self, inp: crate::model::BulkEmailContent) -> Self {
-            self.default_content = Some(inp);
+        pub fn default_content(mut self, input: crate::model::BulkEmailContent) -> Self {
+            self.default_content = Some(input);
             self
         }
         pub fn set_default_content(
             mut self,
-            inp: std::option::Option<crate::model::BulkEmailContent>,
+            input: std::option::Option<crate::model::BulkEmailContent>,
         ) -> Self {
-            self.default_content = inp;
+            self.default_content = input;
             self
         }
-        pub fn bulk_email_entries(mut self, inp: impl Into<crate::model::BulkEmailEntry>) -> Self {
+        pub fn bulk_email_entries(
+            mut self,
+            input: impl Into<crate::model::BulkEmailEntry>,
+        ) -> Self {
             let mut v = self.bulk_email_entries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.bulk_email_entries = Some(v);
             self
         }
         pub fn set_bulk_email_entries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::BulkEmailEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::BulkEmailEntry>>,
         ) -> Self {
-            self.bulk_email_entries = inp;
+            self.bulk_email_entries = input;
             self
         }
         /// <p>The name of the configuration set that you want to use when sending the email.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
         pub fn set_configuration_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.configuration_set_name = inp;
+            self.configuration_set_name = input;
             self
         }
         /// Consumes the builder and constructs a [`SendBulkEmailInput`](crate::input::SendBulkEmailInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SendBulkEmailInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::SendBulkEmailInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::SendBulkEmailInput {
                 from_email_address: self.from_email_address,
                 from_email_address_identity_arn: self.from_email_address_identity_arn,
@@ -10613,7 +10835,7 @@ impl SendBulkEmailInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SendBulkEmail,
             aws_http::AwsErrorRetryPolicy,
@@ -10672,7 +10894,7 @@ impl SendBulkEmailInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10680,7 +10902,7 @@ impl SendBulkEmailInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -10712,40 +10934,46 @@ pub mod send_custom_verification_email_input {
     }
     impl Builder {
         /// <p>The email address to verify.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_address = Some(inp.into());
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_address = Some(input.into());
             self
         }
-        pub fn set_email_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.email_address = inp;
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_address = input;
             self
         }
         /// <p>The name of the custom verification email template to use when sending the
         /// verification email.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_name = Some(inp.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
             self
         }
-        pub fn set_template_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_name = inp;
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
             self
         }
         /// <p>Name of a configuration set to use when sending the verification email.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
         pub fn set_configuration_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.configuration_set_name = inp;
+            self.configuration_set_name = input;
             self
         }
         /// Consumes the builder and constructs a [`SendCustomVerificationEmailInput`](crate::input::SendCustomVerificationEmailInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::SendCustomVerificationEmailInput,
             smithy_http::operation::BuildError,
         > {
@@ -10768,7 +10996,7 @@ impl SendCustomVerificationEmailInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SendCustomVerificationEmail,
             aws_http::AwsErrorRetryPolicy,
@@ -10830,7 +11058,7 @@ impl SendCustomVerificationEmailInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10838,7 +11066,7 @@ impl SendCustomVerificationEmailInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -10881,15 +11109,15 @@ pub mod send_email_input {
         /// <p>The email address that you want to use as the "From" address for the email. The
         /// address that you specify has to be verified.
         /// </p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.from_email_address = Some(inp.into());
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.from_email_address = Some(input.into());
             self
         }
         pub fn set_from_email_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.from_email_address = inp;
+            self.from_email_address = input;
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -10908,56 +11136,56 @@ pub mod send_email_input {
         /// content.</p>
         pub fn from_email_address_identity_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.from_email_address_identity_arn = Some(inp.into());
+            self.from_email_address_identity_arn = Some(input.into());
             self
         }
         pub fn set_from_email_address_identity_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.from_email_address_identity_arn = inp;
+            self.from_email_address_identity_arn = input;
             self
         }
         /// <p>An object that contains the recipients of the email message.</p>
-        pub fn destination(mut self, inp: crate::model::Destination) -> Self {
-            self.destination = Some(inp);
+        pub fn destination(mut self, input: crate::model::Destination) -> Self {
+            self.destination = Some(input);
             self
         }
         pub fn set_destination(
             mut self,
-            inp: std::option::Option<crate::model::Destination>,
+            input: std::option::Option<crate::model::Destination>,
         ) -> Self {
-            self.destination = inp;
+            self.destination = input;
             self
         }
-        pub fn reply_to_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reply_to_addresses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.reply_to_addresses = Some(v);
             self
         }
         pub fn set_reply_to_addresses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.reply_to_addresses = inp;
+            self.reply_to_addresses = input;
             self
         }
         /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
         pub fn feedback_forwarding_email_address(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.feedback_forwarding_email_address = Some(inp.into());
+            self.feedback_forwarding_email_address = Some(input.into());
             self
         }
         pub fn set_feedback_forwarding_email_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.feedback_forwarding_email_address = inp;
+            self.feedback_forwarding_email_address = input;
             self
         }
         /// <p>This parameter is used only for sending authorization. It is the ARN of the identity
@@ -10974,70 +11202,77 @@ pub mod send_email_input {
         /// Guide</a>.</p>
         pub fn feedback_forwarding_email_address_identity_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.feedback_forwarding_email_address_identity_arn = Some(inp.into());
+            self.feedback_forwarding_email_address_identity_arn = Some(input.into());
             self
         }
         pub fn set_feedback_forwarding_email_address_identity_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.feedback_forwarding_email_address_identity_arn = inp;
+            self.feedback_forwarding_email_address_identity_arn = input;
             self
         }
         /// <p>An object that contains the body of the message. You can send either a Simple message
         /// Raw message or a template Message.</p>
-        pub fn content(mut self, inp: crate::model::EmailContent) -> Self {
-            self.content = Some(inp);
+        pub fn content(mut self, input: crate::model::EmailContent) -> Self {
+            self.content = Some(input);
             self
         }
-        pub fn set_content(mut self, inp: std::option::Option<crate::model::EmailContent>) -> Self {
-            self.content = inp;
+        pub fn set_content(
+            mut self,
+            input: std::option::Option<crate::model::EmailContent>,
+        ) -> Self {
+            self.content = input;
             self
         }
-        pub fn email_tags(mut self, inp: impl Into<crate::model::MessageTag>) -> Self {
+        pub fn email_tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
             let mut v = self.email_tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.email_tags = Some(v);
             self
         }
         pub fn set_email_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
         ) -> Self {
-            self.email_tags = inp;
+            self.email_tags = input;
             self
         }
         /// <p>The name of the configuration set that you want to use when sending the email.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
         pub fn set_configuration_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.configuration_set_name = inp;
+            self.configuration_set_name = input;
             self
         }
         /// <p>An object used to specify a list or topic to which an email belongs, which will be
         /// used when a contact chooses to unsubscribe.</p>
-        pub fn list_management_options(mut self, inp: crate::model::ListManagementOptions) -> Self {
-            self.list_management_options = Some(inp);
+        pub fn list_management_options(
+            mut self,
+            input: crate::model::ListManagementOptions,
+        ) -> Self {
+            self.list_management_options = Some(input);
             self
         }
         pub fn set_list_management_options(
             mut self,
-            inp: std::option::Option<crate::model::ListManagementOptions>,
+            input: std::option::Option<crate::model::ListManagementOptions>,
         ) -> Self {
-            self.list_management_options = inp;
+            self.list_management_options = input;
             self
         }
         /// Consumes the builder and constructs a [`SendEmailInput`](crate::input::SendEmailInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SendEmailInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::SendEmailInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::SendEmailInput {
                 from_email_address: self.from_email_address,
                 from_email_address_identity_arn: self.from_email_address_identity_arn,
@@ -11064,7 +11299,7 @@ impl SendEmailInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SendEmail,
             aws_http::AwsErrorRetryPolicy,
@@ -11119,7 +11354,7 @@ impl SendEmailInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -11127,7 +11362,7 @@ impl SendEmailInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -11159,31 +11394,32 @@ pub mod tag_resource_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to add one or more tags
         /// to.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = inp;
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -11201,7 +11437,7 @@ impl TagResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
@@ -11261,7 +11497,7 @@ impl TagResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -11269,7 +11505,7 @@ impl TagResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -11300,30 +11536,38 @@ pub mod test_render_email_template_input {
     }
     impl Builder {
         /// <p>The name of the template that you want to render.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_name = Some(inp.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
             self
         }
-        pub fn set_template_name(mut self, inp: std::string::String) -> Self {
-            self.template_name = Some(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
             self
         }
         /// <p>A list of replacement values to apply to the template. This parameter is a JSON
         /// object, typically consisting of key-value pairs in which the keys correspond to
         /// replacement tags in the email template.</p>
-        pub fn template_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_data = Some(inp.into());
+        pub fn template_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_data = Some(input.into());
             self
         }
-        pub fn set_template_data(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_data = inp;
+        pub fn set_template_data(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_data = input;
             self
         }
         /// Consumes the builder and constructs a [`TestRenderEmailTemplateInput`](crate::input::TestRenderEmailTemplateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TestRenderEmailTemplateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TestRenderEmailTemplateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TestRenderEmailTemplateInput {
                 template_name: self.template_name.unwrap_or_default(),
                 template_data: self.template_data,
@@ -11342,7 +11586,7 @@ impl TestRenderEmailTemplateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TestRenderEmailTemplate,
             aws_http::AwsErrorRetryPolicy,
@@ -11407,7 +11651,7 @@ impl TestRenderEmailTemplateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -11415,7 +11659,7 @@ impl TestRenderEmailTemplateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -11447,31 +11691,32 @@ pub mod untag_resource_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove one or more
         /// tags from.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = inp;
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -11489,7 +11734,7 @@ impl UntagResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
@@ -11557,7 +11802,7 @@ impl UntagResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -11566,7 +11811,7 @@ impl UntagResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -11599,39 +11844,48 @@ pub mod update_configuration_set_event_destination_input {
     impl Builder {
         /// <p>The name of the configuration set that contains the event destination that you want to
         /// modify.</p>
-        pub fn configuration_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.configuration_set_name = Some(inp.into());
+        pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.configuration_set_name = Some(input.into());
             self
         }
-        pub fn set_configuration_set_name(mut self, inp: std::string::String) -> Self {
-            self.configuration_set_name = Some(inp);
+        pub fn set_configuration_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.configuration_set_name = input;
             self
         }
         /// <p>The name of the event destination that you want to modify.</p>
-        pub fn event_destination_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.event_destination_name = Some(inp.into());
+        pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_destination_name = Some(input.into());
             self
         }
-        pub fn set_event_destination_name(mut self, inp: std::string::String) -> Self {
-            self.event_destination_name = Some(inp);
+        pub fn set_event_destination_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_destination_name = input;
             self
         }
         /// <p>An object that defines the event destination.</p>
-        pub fn event_destination(mut self, inp: crate::model::EventDestinationDefinition) -> Self {
-            self.event_destination = Some(inp);
+        pub fn event_destination(
+            mut self,
+            input: crate::model::EventDestinationDefinition,
+        ) -> Self {
+            self.event_destination = Some(input);
             self
         }
         pub fn set_event_destination(
             mut self,
-            inp: std::option::Option<crate::model::EventDestinationDefinition>,
+            input: std::option::Option<crate::model::EventDestinationDefinition>,
         ) -> Self {
-            self.event_destination = inp;
+            self.event_destination = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateConfigurationSetEventDestinationInput`](crate::input::UpdateConfigurationSetEventDestinationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::UpdateConfigurationSetEventDestinationInput,
             smithy_http::operation::BuildError,
         > {
@@ -11655,7 +11909,7 @@ impl UpdateConfigurationSetEventDestinationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateConfigurationSetEventDestination,
             aws_http::AwsErrorRetryPolicy,
@@ -11714,7 +11968,7 @@ impl UpdateConfigurationSetEventDestinationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -11722,7 +11976,7 @@ impl UpdateConfigurationSetEventDestinationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -11757,62 +12011,72 @@ pub mod update_contact_input {
     }
     impl Builder {
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.contact_list_name = Some(inp.into());
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_list_name = Some(input.into());
             self
         }
-        pub fn set_contact_list_name(mut self, inp: std::string::String) -> Self {
-            self.contact_list_name = Some(inp);
+        pub fn set_contact_list_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.contact_list_name = input;
             self
         }
         /// <p>The contact's email addres.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_address = Some(inp.into());
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_address = Some(input.into());
             self
         }
-        pub fn set_email_address(mut self, inp: std::string::String) -> Self {
-            self.email_address = Some(inp);
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_address = input;
             self
         }
-        pub fn topic_preferences(mut self, inp: impl Into<crate::model::TopicPreference>) -> Self {
+        pub fn topic_preferences(
+            mut self,
+            input: impl Into<crate::model::TopicPreference>,
+        ) -> Self {
             let mut v = self.topic_preferences.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.topic_preferences = Some(v);
             self
         }
         pub fn set_topic_preferences(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
         ) -> Self {
-            self.topic_preferences = inp;
+            self.topic_preferences = input;
             self
         }
         /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
         /// topics.</p>
-        pub fn unsubscribe_all(mut self, inp: bool) -> Self {
-            self.unsubscribe_all = Some(inp);
+        pub fn unsubscribe_all(mut self, input: bool) -> Self {
+            self.unsubscribe_all = Some(input);
             self
         }
-        pub fn set_unsubscribe_all(mut self, inp: bool) -> Self {
-            self.unsubscribe_all = Some(inp);
+        pub fn set_unsubscribe_all(mut self, input: std::option::Option<bool>) -> Self {
+            self.unsubscribe_all = input;
             self
         }
         /// <p>The attribute data attached to a contact.</p>
-        pub fn attributes_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.attributes_data = Some(inp.into());
+        pub fn attributes_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attributes_data = Some(input.into());
             self
         }
         pub fn set_attributes_data(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.attributes_data = inp;
+            self.attributes_data = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateContactInput`](crate::input::UpdateContactInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateContactInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateContactInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateContactInput {
                 contact_list_name: self.contact_list_name.unwrap_or_default(),
                 email_address: self.email_address.unwrap_or_default(),
@@ -11833,7 +12097,7 @@ impl UpdateContactInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateContact,
             aws_http::AwsErrorRetryPolicy,
@@ -11899,7 +12163,7 @@ impl UpdateContactInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -11907,7 +12171,7 @@ impl UpdateContactInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -11939,41 +12203,46 @@ pub mod update_contact_list_input {
     }
     impl Builder {
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.contact_list_name = Some(inp.into());
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_list_name = Some(input.into());
             self
         }
-        pub fn set_contact_list_name(mut self, inp: std::string::String) -> Self {
-            self.contact_list_name = Some(inp);
+        pub fn set_contact_list_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.contact_list_name = input;
             self
         }
-        pub fn topics(mut self, inp: impl Into<crate::model::Topic>) -> Self {
+        pub fn topics(mut self, input: impl Into<crate::model::Topic>) -> Self {
             let mut v = self.topics.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.topics = Some(v);
             self
         }
         pub fn set_topics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Topic>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Topic>>,
         ) -> Self {
-            self.topics = inp;
+            self.topics = input;
             self
         }
         /// <p>A description of what the contact list is about.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateContactListInput`](crate::input::UpdateContactListInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateContactListInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateContactListInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateContactListInput {
                 contact_list_name: self.contact_list_name.unwrap_or_default(),
                 topics: self.topics,
@@ -11992,7 +12261,7 @@ impl UpdateContactListInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateContactList,
             aws_http::AwsErrorRetryPolicy,
@@ -12057,7 +12326,7 @@ impl UpdateContactListInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -12065,7 +12334,7 @@ impl UpdateContactListInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -12100,83 +12369,86 @@ pub mod update_custom_verification_email_template_input {
     }
     impl Builder {
         /// <p>The name of the custom verification email template that you want to update.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_name = Some(inp.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
             self
         }
-        pub fn set_template_name(mut self, inp: std::string::String) -> Self {
-            self.template_name = Some(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
             self
         }
         /// <p>The email address that the custom verification email is sent from.</p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.from_email_address = Some(inp.into());
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.from_email_address = Some(input.into());
             self
         }
         pub fn set_from_email_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.from_email_address = inp;
+            self.from_email_address = input;
             self
         }
         /// <p>The subject line of the custom verification email.</p>
-        pub fn template_subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_subject = Some(inp.into());
+        pub fn template_subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_subject = Some(input.into());
             self
         }
         pub fn set_template_subject(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.template_subject = inp;
+            self.template_subject = input;
             self
         }
         /// <p>The content of the custom verification email. The total size of the email must be less
         /// than 10 MB. The message body may contain HTML, with some limitations. For more
         /// information, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq">Custom Verification Email Frequently Asked Questions</a> in the <i>Amazon SES
         /// Developer Guide</i>.</p>
-        pub fn template_content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_content = Some(inp.into());
+        pub fn template_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_content = Some(input.into());
             self
         }
         pub fn set_template_content(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.template_content = inp;
+            self.template_content = input;
             self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
         /// is successfully verified.</p>
-        pub fn success_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.success_redirection_url = Some(inp.into());
+        pub fn success_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.success_redirection_url = Some(input.into());
             self
         }
         pub fn set_success_redirection_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.success_redirection_url = inp;
+            self.success_redirection_url = input;
             self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
         /// is not successfully verified.</p>
-        pub fn failure_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.failure_redirection_url = Some(inp.into());
+        pub fn failure_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_redirection_url = Some(input.into());
             self
         }
         pub fn set_failure_redirection_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.failure_redirection_url = inp;
+            self.failure_redirection_url = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateCustomVerificationEmailTemplateInput`](crate::input::UpdateCustomVerificationEmailTemplateInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::UpdateCustomVerificationEmailTemplateInput,
             smithy_http::operation::BuildError,
         > {
@@ -12203,7 +12475,7 @@ impl UpdateCustomVerificationEmailTemplateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateCustomVerificationEmailTemplate,
             aws_http::AwsErrorRetryPolicy,
@@ -12267,7 +12539,7 @@ impl UpdateCustomVerificationEmailTemplateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -12275,7 +12547,7 @@ impl UpdateCustomVerificationEmailTemplateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -12307,41 +12579,46 @@ pub mod update_email_identity_policy_input {
     }
     impl Builder {
         /// <p>The email identity for which you want to update policy.</p>
-        pub fn email_identity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_identity = Some(inp.into());
+        pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_identity = Some(input.into());
             self
         }
-        pub fn set_email_identity(mut self, inp: std::string::String) -> Self {
-            self.email_identity = Some(inp);
+        pub fn set_email_identity(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_identity = input;
             self
         }
         /// <p>The name of the policy.</p>
         /// <p>The policy name cannot exceed 64 characters and can only include alphanumeric
         /// characters, dashes, and underscores.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::string::String) -> Self {
-            self.policy_name = Some(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// <p>The text of the policy in JSON format. The policy cannot exceed 4 KB.</p>
         /// <p> For information about the syntax of sending authorization policies, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html">Amazon SES Developer
         /// Guide</a>.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateEmailIdentityPolicyInput`](crate::input::UpdateEmailIdentityPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateEmailIdentityPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateEmailIdentityPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateEmailIdentityPolicyInput {
                 email_identity: self.email_identity.unwrap_or_default(),
                 policy_name: self.policy_name.unwrap_or_default(),
@@ -12361,7 +12638,7 @@ impl UpdateEmailIdentityPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateEmailIdentityPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -12428,7 +12705,7 @@ impl UpdateEmailIdentityPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -12436,7 +12713,7 @@ impl UpdateEmailIdentityPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -12467,32 +12744,37 @@ pub mod update_email_template_input {
     }
     impl Builder {
         /// <p>The name of the template you want to update.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_name = Some(inp.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
             self
         }
-        pub fn set_template_name(mut self, inp: std::string::String) -> Self {
-            self.template_name = Some(inp);
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
             self
         }
         /// <p>The content of the email template, composed of a subject line, an HTML part, and a
         /// text-only part.</p>
-        pub fn template_content(mut self, inp: crate::model::EmailTemplateContent) -> Self {
-            self.template_content = Some(inp);
+        pub fn template_content(mut self, input: crate::model::EmailTemplateContent) -> Self {
+            self.template_content = Some(input);
             self
         }
         pub fn set_template_content(
             mut self,
-            inp: std::option::Option<crate::model::EmailTemplateContent>,
+            input: std::option::Option<crate::model::EmailTemplateContent>,
         ) -> Self {
-            self.template_content = inp;
+            self.template_content = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateEmailTemplateInput`](crate::input::UpdateEmailTemplateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateEmailTemplateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateEmailTemplateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateEmailTemplateInput {
                 template_name: self.template_name.unwrap_or_default(),
                 template_content: self.template_content,
@@ -12510,7 +12792,7 @@ impl UpdateEmailTemplateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateEmailTemplate,
             aws_http::AwsErrorRetryPolicy,
@@ -12575,7 +12857,7 @@ impl UpdateEmailTemplateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -12583,7 +12865,7 @@ impl UpdateEmailTemplateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)

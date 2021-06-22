@@ -53,61 +53,67 @@ pub mod update_vpc_link_output {
     }
     impl Builder {
         /// <p>The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The name used to label and identify the VPC link.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The description of the VPC link.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn target_arns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn target_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_arns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.target_arns = Some(v);
             self
         }
         pub fn set_target_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.target_arns = inp;
+            self.target_arns = input;
             self
         }
         /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
-        pub fn status(mut self, inp: crate::model::VpcLinkStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::VpcLinkStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::VpcLinkStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::VpcLinkStatus>,
+        ) -> Self {
+            self.status = input;
             self
         }
         /// <p>A description about the VPC link status.</p>
-        pub fn status_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_message = Some(inp.into());
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
             self
         }
-        pub fn set_status_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_message = inp;
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
             self
         }
         pub fn tags(
@@ -122,11 +128,11 @@ pub mod update_vpc_link_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateVpcLinkOutput`](crate::output::UpdateVpcLinkOutput)
@@ -211,73 +217,76 @@ pub mod update_usage_plan_output {
     }
     impl Builder {
         /// <p>The identifier of a <a>UsagePlan</a> resource.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The name of a usage plan.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The description of a usage plan.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn api_stages(mut self, inp: impl Into<crate::model::ApiStage>) -> Self {
+        pub fn api_stages(mut self, input: impl Into<crate::model::ApiStage>) -> Self {
             let mut v = self.api_stages.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.api_stages = Some(v);
             self
         }
         pub fn set_api_stages(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
         ) -> Self {
-            self.api_stages = inp;
+            self.api_stages = input;
             self
         }
         /// <p>The request throttle limits of a usage plan.</p>
-        pub fn throttle(mut self, inp: crate::model::ThrottleSettings) -> Self {
-            self.throttle = Some(inp);
+        pub fn throttle(mut self, input: crate::model::ThrottleSettings) -> Self {
+            self.throttle = Some(input);
             self
         }
         pub fn set_throttle(
             mut self,
-            inp: std::option::Option<crate::model::ThrottleSettings>,
+            input: std::option::Option<crate::model::ThrottleSettings>,
         ) -> Self {
-            self.throttle = inp;
+            self.throttle = input;
             self
         }
         /// <p>The maximum number of permitted requests per a given unit time interval.</p>
-        pub fn quota(mut self, inp: crate::model::QuotaSettings) -> Self {
-            self.quota = Some(inp);
+        pub fn quota(mut self, input: crate::model::QuotaSettings) -> Self {
+            self.quota = Some(input);
             self
         }
-        pub fn set_quota(mut self, inp: std::option::Option<crate::model::QuotaSettings>) -> Self {
-            self.quota = inp;
+        pub fn set_quota(
+            mut self,
+            input: std::option::Option<crate::model::QuotaSettings>,
+        ) -> Self {
+            self.quota = input;
             self
         }
         /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
-        pub fn product_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.product_code = Some(inp.into());
+        pub fn product_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.product_code = Some(input.into());
             self
         }
-        pub fn set_product_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.product_code = inp;
+        pub fn set_product_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.product_code = input;
             self
         }
         pub fn tags(
@@ -292,11 +301,11 @@ pub mod update_usage_plan_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateUsagePlanOutput`](crate::output::UpdateUsagePlanOutput)
@@ -370,30 +379,33 @@ pub mod update_usage_output {
     }
     impl Builder {
         /// <p>The plan Id associated with this usage data.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.usage_plan_id = Some(inp.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.usage_plan_id = Some(input.into());
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.usage_plan_id = inp;
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.usage_plan_id = input;
             self
         }
         /// <p>The starting date of the usage data.</p>
-        pub fn start_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.start_date = Some(inp.into());
+        pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_date = Some(input.into());
             self
         }
-        pub fn set_start_date(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.start_date = inp;
+        pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start_date = input;
             self
         }
         /// <p>The ending date of the usage data.</p>
-        pub fn end_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.end_date = Some(inp.into());
+        pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.end_date = Some(input.into());
             self
         }
-        pub fn set_end_date(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.end_date = inp;
+        pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end_date = input;
             self
         }
         pub fn items(
@@ -408,20 +420,20 @@ pub mod update_usage_output {
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::vec::Vec<i64>>>,
             >,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateUsageOutput`](crate::output::UpdateUsageOutput)
@@ -545,75 +557,78 @@ pub mod update_stage_output {
     }
     impl Builder {
         /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.deployment_id = Some(inp.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.deployment_id = Some(input.into());
             self
         }
-        pub fn set_deployment_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.deployment_id = inp;
+        pub fn set_deployment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.deployment_id = input;
             self
         }
         /// <p>The identifier of a client certificate for an API stage.</p>
-        pub fn client_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_certificate_id = Some(inp.into());
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_certificate_id = Some(input.into());
             self
         }
         pub fn set_client_certificate_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_certificate_id = inp;
+            self.client_certificate_id = input;
             self
         }
         /// <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage_name = Some(inp.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
             self
         }
-        pub fn set_stage_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = inp;
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
             self
         }
         /// <p>The stage's description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
-        pub fn cache_cluster_enabled(mut self, inp: bool) -> Self {
-            self.cache_cluster_enabled = Some(inp);
+        pub fn cache_cluster_enabled(mut self, input: bool) -> Self {
+            self.cache_cluster_enabled = Some(input);
             self
         }
-        pub fn set_cache_cluster_enabled(mut self, inp: bool) -> Self {
-            self.cache_cluster_enabled = Some(inp);
+        pub fn set_cache_cluster_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.cache_cluster_enabled = input;
             self
         }
         /// <p>The size of the cache cluster for the stage, if enabled.</p>
-        pub fn cache_cluster_size(mut self, inp: crate::model::CacheClusterSize) -> Self {
-            self.cache_cluster_size = Some(inp);
+        pub fn cache_cluster_size(mut self, input: crate::model::CacheClusterSize) -> Self {
+            self.cache_cluster_size = Some(input);
             self
         }
         pub fn set_cache_cluster_size(
             mut self,
-            inp: std::option::Option<crate::model::CacheClusterSize>,
+            input: std::option::Option<crate::model::CacheClusterSize>,
         ) -> Self {
-            self.cache_cluster_size = inp;
+            self.cache_cluster_size = input;
             self
         }
         /// <p>The status of the cache cluster for the stage, if enabled.</p>
-        pub fn cache_cluster_status(mut self, inp: crate::model::CacheClusterStatus) -> Self {
-            self.cache_cluster_status = Some(inp);
+        pub fn cache_cluster_status(mut self, input: crate::model::CacheClusterStatus) -> Self {
+            self.cache_cluster_status = Some(input);
             self
         }
         pub fn set_cache_cluster_status(
             mut self,
-            inp: std::option::Option<crate::model::CacheClusterStatus>,
+            input: std::option::Option<crate::model::CacheClusterStatus>,
         ) -> Self {
-            self.cache_cluster_status = inp;
+            self.cache_cluster_status = input;
             self
         }
         pub fn method_settings(
@@ -628,11 +643,11 @@ pub mod update_stage_output {
         }
         pub fn set_method_settings(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::MethodSetting>,
             >,
         ) -> Self {
-            self.method_settings = inp;
+            self.method_settings = input;
             self
         }
         pub fn variables(
@@ -647,65 +662,65 @@ pub mod update_stage_output {
         }
         pub fn set_variables(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.variables = inp;
+            self.variables = input;
             self
         }
         /// <p>The version of the associated API documentation.</p>
-        pub fn documentation_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.documentation_version = Some(inp.into());
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.documentation_version = Some(input.into());
             self
         }
         pub fn set_documentation_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.documentation_version = inp;
+            self.documentation_version = input;
             self
         }
         /// <p>Settings for logging access in this stage.</p>
-        pub fn access_log_settings(mut self, inp: crate::model::AccessLogSettings) -> Self {
-            self.access_log_settings = Some(inp);
+        pub fn access_log_settings(mut self, input: crate::model::AccessLogSettings) -> Self {
+            self.access_log_settings = Some(input);
             self
         }
         pub fn set_access_log_settings(
             mut self,
-            inp: std::option::Option<crate::model::AccessLogSettings>,
+            input: std::option::Option<crate::model::AccessLogSettings>,
         ) -> Self {
-            self.access_log_settings = inp;
+            self.access_log_settings = input;
             self
         }
         /// <p>Settings for the canary deployment in this stage.</p>
-        pub fn canary_settings(mut self, inp: crate::model::CanarySettings) -> Self {
-            self.canary_settings = Some(inp);
+        pub fn canary_settings(mut self, input: crate::model::CanarySettings) -> Self {
+            self.canary_settings = Some(input);
             self
         }
         pub fn set_canary_settings(
             mut self,
-            inp: std::option::Option<crate::model::CanarySettings>,
+            input: std::option::Option<crate::model::CanarySettings>,
         ) -> Self {
-            self.canary_settings = inp;
+            self.canary_settings = input;
             self
         }
         /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
-        pub fn tracing_enabled(mut self, inp: bool) -> Self {
-            self.tracing_enabled = Some(inp);
+        pub fn tracing_enabled(mut self, input: bool) -> Self {
+            self.tracing_enabled = Some(input);
             self
         }
-        pub fn set_tracing_enabled(mut self, inp: bool) -> Self {
-            self.tracing_enabled = Some(inp);
+        pub fn set_tracing_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.tracing_enabled = input;
             self
         }
         /// <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
-        pub fn web_acl_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.web_acl_arn = Some(inp.into());
+        pub fn web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.web_acl_arn = Some(input.into());
             self
         }
-        pub fn set_web_acl_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.web_acl_arn = inp;
+        pub fn set_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.web_acl_arn = input;
             self
         }
         pub fn tags(
@@ -720,32 +735,35 @@ pub mod update_stage_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The timestamp when the stage was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The timestamp when the stage last updated.</p>
-        pub fn last_updated_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_updated_date = Some(inp);
+        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated_date = Some(input);
             self
         }
         pub fn set_last_updated_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_updated_date = inp;
+            self.last_updated_date = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateStageOutput`](crate::output::UpdateStageOutput)
@@ -860,116 +878,122 @@ pub mod update_rest_api_output {
     }
     impl Builder {
         /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The API's name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The API's description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>A version identifier for the API.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
-        pub fn warnings(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.warnings = Some(v);
             self
         }
         pub fn set_warnings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.warnings = inp;
+            self.warnings = input;
             self
         }
-        pub fn binary_media_types(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn binary_media_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.binary_media_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.binary_media_types = Some(v);
             self
         }
         pub fn set_binary_media_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.binary_media_types = inp;
+            self.binary_media_types = input;
             self
         }
         /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
-        pub fn minimum_compression_size(mut self, inp: i32) -> Self {
-            self.minimum_compression_size = Some(inp);
+        pub fn minimum_compression_size(mut self, input: i32) -> Self {
+            self.minimum_compression_size = Some(input);
             self
         }
-        pub fn set_minimum_compression_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.minimum_compression_size = inp;
+        pub fn set_minimum_compression_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.minimum_compression_size = input;
             self
         }
         /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
-        pub fn api_key_source(mut self, inp: crate::model::ApiKeySourceType) -> Self {
-            self.api_key_source = Some(inp);
+        pub fn api_key_source(mut self, input: crate::model::ApiKeySourceType) -> Self {
+            self.api_key_source = Some(input);
             self
         }
         pub fn set_api_key_source(
             mut self,
-            inp: std::option::Option<crate::model::ApiKeySourceType>,
+            input: std::option::Option<crate::model::ApiKeySourceType>,
         ) -> Self {
-            self.api_key_source = inp;
+            self.api_key_source = input;
             self
         }
         /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
-        pub fn endpoint_configuration(mut self, inp: crate::model::EndpointConfiguration) -> Self {
-            self.endpoint_configuration = Some(inp);
+        pub fn endpoint_configuration(
+            mut self,
+            input: crate::model::EndpointConfiguration,
+        ) -> Self {
+            self.endpoint_configuration = Some(input);
             self
         }
         pub fn set_endpoint_configuration(
             mut self,
-            inp: std::option::Option<crate::model::EndpointConfiguration>,
+            input: std::option::Option<crate::model::EndpointConfiguration>,
         ) -> Self {
-            self.endpoint_configuration = inp;
+            self.endpoint_configuration = input;
             self
         }
         /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         pub fn tags(
@@ -984,20 +1008,23 @@ pub mod update_rest_api_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-        pub fn disable_execute_api_endpoint(mut self, inp: bool) -> Self {
-            self.disable_execute_api_endpoint = Some(inp);
+        pub fn disable_execute_api_endpoint(mut self, input: bool) -> Self {
+            self.disable_execute_api_endpoint = Some(input);
             self
         }
-        pub fn set_disable_execute_api_endpoint(mut self, inp: bool) -> Self {
-            self.disable_execute_api_endpoint = Some(inp);
+        pub fn set_disable_execute_api_endpoint(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.disable_execute_api_endpoint = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateRestApiOutput`](crate::output::UpdateRestApiOutput)
@@ -1225,39 +1252,39 @@ pub mod update_resource_output {
     }
     impl Builder {
         /// <p>The resource's identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The parent resource's identifier.</p>
-        pub fn parent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parent_id = Some(inp.into());
+        pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parent_id = Some(input.into());
             self
         }
-        pub fn set_parent_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.parent_id = inp;
+        pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_id = input;
             self
         }
         /// <p>The last path segment for this resource.</p>
-        pub fn path_part(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path_part = Some(inp.into());
+        pub fn path_part(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_part = Some(input.into());
             self
         }
-        pub fn set_path_part(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path_part = inp;
+        pub fn set_path_part(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path_part = input;
             self
         }
         /// <p>The full path for this resource.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         pub fn resource_methods(
@@ -1272,11 +1299,11 @@ pub mod update_resource_output {
         }
         pub fn set_resource_methods(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::Method>,
             >,
         ) -> Self {
-            self.resource_methods = inp;
+            self.resource_methods = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateResourceOutput`](crate::output::UpdateResourceOutput)
@@ -1341,39 +1368,39 @@ pub mod update_request_validator_output {
     }
     impl Builder {
         /// <p>The identifier of this <a>RequestValidator</a>.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The name of this <a>RequestValidator</a></p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.</p>
-        pub fn validate_request_body(mut self, inp: bool) -> Self {
-            self.validate_request_body = Some(inp);
+        pub fn validate_request_body(mut self, input: bool) -> Self {
+            self.validate_request_body = Some(input);
             self
         }
-        pub fn set_validate_request_body(mut self, inp: bool) -> Self {
-            self.validate_request_body = Some(inp);
+        pub fn set_validate_request_body(mut self, input: std::option::Option<bool>) -> Self {
+            self.validate_request_body = input;
             self
         }
         /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
-        pub fn validate_request_parameters(mut self, inp: bool) -> Self {
-            self.validate_request_parameters = Some(inp);
+        pub fn validate_request_parameters(mut self, input: bool) -> Self {
+            self.validate_request_parameters = Some(input);
             self
         }
-        pub fn set_validate_request_parameters(mut self, inp: bool) -> Self {
-            self.validate_request_parameters = Some(inp);
+        pub fn set_validate_request_parameters(mut self, input: std::option::Option<bool>) -> Self {
+            self.validate_request_parameters = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateRequestValidatorOutput`](crate::output::UpdateRequestValidatorOutput)
@@ -1441,48 +1468,48 @@ pub mod update_model_output {
     }
     impl Builder {
         /// <p>The identifier for the model resource.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The name of the model. Must be an alphanumeric string.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The description of the model.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model. Do not include "\*/" characters in the description of any properties because such "\*/" characters may be interpreted as the closing marker for comments in some languages, such as Java or JavaScript, causing the installation of your API's SDK generated by API Gateway to fail.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schema = Some(inp.into());
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema = Some(input.into());
             self
         }
-        pub fn set_schema(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.schema = inp;
+        pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema = input;
             self
         }
         /// <p>The content-type for the model.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(inp.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_type = inp;
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateModelOutput`](crate::output::UpdateModelOutput)
@@ -1585,12 +1612,12 @@ pub mod update_method_response_output {
     }
     impl Builder {
         /// <p>The method response's status code.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_code = inp;
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
         pub fn response_parameters(
@@ -1605,9 +1632,9 @@ pub mod update_method_response_output {
         }
         pub fn set_response_parameters(
             mut self,
-            inp: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+            input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
         ) -> Self {
-            self.response_parameters = inp;
+            self.response_parameters = input;
             self
         }
         pub fn response_models(
@@ -1622,11 +1649,11 @@ pub mod update_method_response_output {
         }
         pub fn set_response_models(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_models = inp;
+            self.response_models = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateMethodResponseOutput`](crate::output::UpdateMethodResponseOutput)
@@ -2017,63 +2044,69 @@ pub mod update_method_output {
     }
     impl Builder {
         /// <p>The method's HTTP verb.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.http_method = inp;
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
-        pub fn authorization_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorization_type = Some(inp.into());
+        pub fn authorization_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorization_type = Some(input.into());
             self
         }
         pub fn set_authorization_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.authorization_type = inp;
+            self.authorization_type = input;
             self
         }
         /// <p>The identifier of an <a>Authorizer</a> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorizer_id = Some(inp.into());
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_id = Some(input.into());
             self
         }
-        pub fn set_authorizer_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.authorizer_id = inp;
+        pub fn set_authorizer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authorizer_id = input;
             self
         }
         /// <p>A boolean flag specifying whether a valid <a>ApiKey</a> is required to invoke this method.</p>
-        pub fn api_key_required(mut self, inp: bool) -> Self {
-            self.api_key_required = Some(inp);
+        pub fn api_key_required(mut self, input: bool) -> Self {
+            self.api_key_required = Some(input);
             self
         }
-        pub fn set_api_key_required(mut self, inp: std::option::Option<bool>) -> Self {
-            self.api_key_required = inp;
+        pub fn set_api_key_required(mut self, input: std::option::Option<bool>) -> Self {
+            self.api_key_required = input;
             self
         }
         /// <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
-        pub fn request_validator_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.request_validator_id = Some(inp.into());
+        pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_validator_id = Some(input.into());
             self
         }
         pub fn set_request_validator_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.request_validator_id = inp;
+            self.request_validator_id = input;
             self
         }
         /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
-        pub fn operation_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_name = Some(inp.into());
+        pub fn operation_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_name = Some(input.into());
             self
         }
-        pub fn set_operation_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_name = inp;
+        pub fn set_operation_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.operation_name = input;
             self
         }
         pub fn request_parameters(
@@ -2088,9 +2121,9 @@ pub mod update_method_output {
         }
         pub fn set_request_parameters(
             mut self,
-            inp: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+            input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
         ) -> Self {
-            self.request_parameters = inp;
+            self.request_parameters = input;
             self
         }
         pub fn request_models(
@@ -2105,11 +2138,11 @@ pub mod update_method_output {
         }
         pub fn set_request_models(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.request_models = inp;
+            self.request_models = input;
             self
         }
         pub fn method_responses(
@@ -2124,11 +2157,11 @@ pub mod update_method_output {
         }
         pub fn set_method_responses(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::MethodResponse>,
             >,
         ) -> Self {
-            self.method_responses = inp;
+            self.method_responses = input;
             self
         }
         /// <p>Gets the method's integration responsible for passing the client-submitted request to the back end and performing necessary transformations to make the request compliant with the back end.</p>
@@ -2221,28 +2254,28 @@ pub mod update_method_output {
         /// <div class="seeAlso">
         /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
         /// </div>
-        pub fn method_integration(mut self, inp: crate::model::Integration) -> Self {
-            self.method_integration = Some(inp);
+        pub fn method_integration(mut self, input: crate::model::Integration) -> Self {
+            self.method_integration = Some(input);
             self
         }
         pub fn set_method_integration(
             mut self,
-            inp: std::option::Option<crate::model::Integration>,
+            input: std::option::Option<crate::model::Integration>,
         ) -> Self {
-            self.method_integration = inp;
+            self.method_integration = input;
             self
         }
-        pub fn authorization_scopes(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn authorization_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.authorization_scopes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.authorization_scopes = Some(v);
             self
         }
         pub fn set_authorization_scopes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.authorization_scopes = inp;
+            self.authorization_scopes = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateMethodOutput`](crate::output::UpdateMethodOutput)
@@ -2325,24 +2358,24 @@ pub mod update_integration_response_output {
     }
     impl Builder {
         /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_code = inp;
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
         /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status code is matched.</p>
-        pub fn selection_pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.selection_pattern = Some(inp.into());
+        pub fn selection_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.selection_pattern = Some(input.into());
             self
         }
         pub fn set_selection_pattern(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.selection_pattern = inp;
+            self.selection_pattern = input;
             self
         }
         pub fn response_parameters(
@@ -2357,11 +2390,11 @@ pub mod update_integration_response_output {
         }
         pub fn set_response_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_parameters = inp;
+            self.response_parameters = input;
             self
         }
         pub fn response_templates(
@@ -2376,11 +2409,11 @@ pub mod update_integration_response_output {
         }
         pub fn set_response_templates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_templates = inp;
+            self.response_templates = input;
             self
         }
         /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
@@ -2389,15 +2422,15 @@ pub mod update_integration_response_output {
         /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
         /// </ul>
         /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
-        pub fn content_handling(mut self, inp: crate::model::ContentHandlingStrategy) -> Self {
-            self.content_handling = Some(inp);
+        pub fn content_handling(mut self, input: crate::model::ContentHandlingStrategy) -> Self {
+            self.content_handling = Some(input);
             self
         }
         pub fn set_content_handling(
             mut self,
-            inp: std::option::Option<crate::model::ContentHandlingStrategy>,
+            input: std::option::Option<crate::model::ContentHandlingStrategy>,
         ) -> Self {
-            self.content_handling = inp;
+            self.content_handling = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateIntegrationResponseOutput`](crate::output::UpdateIntegrationResponseOutput)
@@ -2606,21 +2639,24 @@ pub mod update_integration_output {
         /// <li><code>MOCK</code>: for integrating the API method request with API Gateway as a "loop-back" endpoint without invoking any backend.</li>
         /// </ul>
         /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <a>VpcLink</a> to connect API Gateway to a network load balancer of a VPC.</p>
-        pub fn r#type(mut self, inp: crate::model::IntegrationType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::IntegrationType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::IntegrationType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::IntegrationType>,
+        ) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>Specifies the integration's HTTP method type.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.http_method = inp;
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
@@ -2629,42 +2665,45 @@ pub mod update_integration_output {
         /// </li>
         /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
         /// </li></ul>
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.uri = Some(inp.into());
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uri = Some(input.into());
             self
         }
-        pub fn set_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.uri = inp;
+        pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uri = input;
             self
         }
         /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
-        pub fn connection_type(mut self, inp: crate::model::ConnectionType) -> Self {
-            self.connection_type = Some(inp);
+        pub fn connection_type(mut self, input: crate::model::ConnectionType) -> Self {
+            self.connection_type = Some(input);
             self
         }
         pub fn set_connection_type(
             mut self,
-            inp: std::option::Option<crate::model::ConnectionType>,
+            input: std::option::Option<crate::model::ConnectionType>,
         ) -> Self {
-            self.connection_type = inp;
+            self.connection_type = input;
             self
         }
         /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.connection_id = Some(inp.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_id = Some(input.into());
             self
         }
-        pub fn set_connection_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.connection_id = inp;
+        pub fn set_connection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_id = input;
             self
         }
         /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported AWS services, specify null.</p>
-        pub fn credentials(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.credentials = Some(inp.into());
+        pub fn credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.credentials = Some(input.into());
             self
         }
-        pub fn set_credentials(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.credentials = inp;
+        pub fn set_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.credentials = input;
             self
         }
         pub fn request_parameters(
@@ -2679,11 +2718,11 @@ pub mod update_integration_output {
         }
         pub fn set_request_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.request_parameters = inp;
+            self.request_parameters = input;
             self
         }
         pub fn request_templates(
@@ -2698,11 +2737,11 @@ pub mod update_integration_output {
         }
         pub fn set_request_templates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.request_templates = inp;
+            self.request_templates = input;
             self
         }
         /// <div>
@@ -2729,15 +2768,15 @@ pub mod update_integration_output {
         /// </li>
         /// </ul>
         /// </div>
-        pub fn passthrough_behavior(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.passthrough_behavior = Some(inp.into());
+        pub fn passthrough_behavior(mut self, input: impl Into<std::string::String>) -> Self {
+            self.passthrough_behavior = Some(input.into());
             self
         }
         pub fn set_passthrough_behavior(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.passthrough_behavior = inp;
+            self.passthrough_behavior = input;
             self
         }
         /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
@@ -2746,49 +2785,49 @@ pub mod update_integration_output {
         /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
         /// </ul>
         /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
-        pub fn content_handling(mut self, inp: crate::model::ContentHandlingStrategy) -> Self {
-            self.content_handling = Some(inp);
+        pub fn content_handling(mut self, input: crate::model::ContentHandlingStrategy) -> Self {
+            self.content_handling = Some(input);
             self
         }
         pub fn set_content_handling(
             mut self,
-            inp: std::option::Option<crate::model::ContentHandlingStrategy>,
+            input: std::option::Option<crate::model::ContentHandlingStrategy>,
         ) -> Self {
-            self.content_handling = inp;
+            self.content_handling = input;
             self
         }
         /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
-        pub fn timeout_in_millis(mut self, inp: i32) -> Self {
-            self.timeout_in_millis = Some(inp);
+        pub fn timeout_in_millis(mut self, input: i32) -> Self {
+            self.timeout_in_millis = Some(input);
             self
         }
-        pub fn set_timeout_in_millis(mut self, inp: i32) -> Self {
-            self.timeout_in_millis = Some(inp);
+        pub fn set_timeout_in_millis(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout_in_millis = input;
             self
         }
         /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
-        pub fn cache_namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cache_namespace = Some(inp.into());
+        pub fn cache_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cache_namespace = Some(input.into());
             self
         }
         pub fn set_cache_namespace(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cache_namespace = inp;
+            self.cache_namespace = input;
             self
         }
-        pub fn cache_key_parameters(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn cache_key_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_key_parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.cache_key_parameters = Some(v);
             self
         }
         pub fn set_cache_key_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.cache_key_parameters = inp;
+            self.cache_key_parameters = input;
             self
         }
         pub fn integration_responses(
@@ -2803,20 +2842,23 @@ pub mod update_integration_output {
         }
         pub fn set_integration_responses(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::IntegrationResponse>,
             >,
         ) -> Self {
-            self.integration_responses = inp;
+            self.integration_responses = input;
             self
         }
         /// <p>Specifies the TLS configuration for an integration.</p>
-        pub fn tls_config(mut self, inp: crate::model::TlsConfig) -> Self {
-            self.tls_config = Some(inp);
+        pub fn tls_config(mut self, input: crate::model::TlsConfig) -> Self {
+            self.tls_config = Some(input);
             self
         }
-        pub fn set_tls_config(mut self, inp: std::option::Option<crate::model::TlsConfig>) -> Self {
-            self.tls_config = inp;
+        pub fn set_tls_config(
+            mut self,
+            input: std::option::Option<crate::model::TlsConfig>,
+        ) -> Self {
+            self.tls_config = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateIntegrationOutput`](crate::output::UpdateIntegrationOutput)
@@ -2951,24 +2993,24 @@ pub mod update_gateway_response_output {
     }
     impl Builder {
         /// <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p>
-        pub fn response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.response_type = Some(inp);
+        pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
+            self.response_type = Some(input);
             self
         }
         pub fn set_response_type(
             mut self,
-            inp: std::option::Option<crate::model::GatewayResponseType>,
+            input: std::option::Option<crate::model::GatewayResponseType>,
         ) -> Self {
-            self.response_type = inp;
+            self.response_type = input;
             self
         }
         /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_code = inp;
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
         pub fn response_parameters(
@@ -2983,11 +3025,11 @@ pub mod update_gateway_response_output {
         }
         pub fn set_response_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_parameters = inp;
+            self.response_parameters = input;
             self
         }
         pub fn response_templates(
@@ -3002,20 +3044,20 @@ pub mod update_gateway_response_output {
         }
         pub fn set_response_templates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_templates = inp;
+            self.response_templates = input;
             self
         }
         /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
-        pub fn default_response(mut self, inp: bool) -> Self {
-            self.default_response = Some(inp);
+        pub fn default_response(mut self, input: bool) -> Self {
+            self.default_response = Some(input);
             self
         }
-        pub fn set_default_response(mut self, inp: bool) -> Self {
-            self.default_response = Some(inp);
+        pub fn set_default_response(mut self, input: std::option::Option<bool>) -> Self {
+            self.default_response = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateGatewayResponseOutput`](crate::output::UpdateGatewayResponseOutput)
@@ -3138,168 +3180,174 @@ pub mod update_domain_name_output {
     }
     impl Builder {
         /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_name = Some(inp.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
             self
         }
-        pub fn set_domain_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = inp;
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
             self
         }
         /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
-        pub fn certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_name = Some(inp.into());
+        pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_name = Some(input.into());
             self
         }
         pub fn set_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_name = inp;
+            self.certificate_name = input;
             self
         }
         /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_arn = Some(inp.into());
+        pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_arn = Some(input.into());
             self
         }
         pub fn set_certificate_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_arn = inp;
+            self.certificate_arn = input;
             self
         }
         /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-        pub fn certificate_upload_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.certificate_upload_date = Some(inp);
+        pub fn certificate_upload_date(mut self, input: smithy_types::Instant) -> Self {
+            self.certificate_upload_date = Some(input);
             self
         }
         pub fn set_certificate_upload_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.certificate_upload_date = inp;
+            self.certificate_upload_date = input;
             self
         }
         /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
-        pub fn regional_domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.regional_domain_name = Some(inp.into());
+        pub fn regional_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regional_domain_name = Some(input.into());
             self
         }
         pub fn set_regional_domain_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.regional_domain_name = inp;
+            self.regional_domain_name = input;
             self
         }
         /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
-        pub fn regional_hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.regional_hosted_zone_id = Some(inp.into());
+        pub fn regional_hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regional_hosted_zone_id = Some(input.into());
             self
         }
         pub fn set_regional_hosted_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.regional_hosted_zone_id = inp;
+            self.regional_hosted_zone_id = input;
             self
         }
         /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
-        pub fn regional_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.regional_certificate_name = Some(inp.into());
+        pub fn regional_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regional_certificate_name = Some(input.into());
             self
         }
         pub fn set_regional_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.regional_certificate_name = inp;
+            self.regional_certificate_name = input;
             self
         }
         /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
-        pub fn regional_certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.regional_certificate_arn = Some(inp.into());
+        pub fn regional_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regional_certificate_arn = Some(input.into());
             self
         }
         pub fn set_regional_certificate_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.regional_certificate_arn = inp;
+            self.regional_certificate_arn = input;
             self
         }
         /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the <a target="_blank" href="https://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront documentation</a>.</p>
-        pub fn distribution_domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.distribution_domain_name = Some(inp.into());
+        pub fn distribution_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.distribution_domain_name = Some(input.into());
             self
         }
         pub fn set_distribution_domain_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.distribution_domain_name = inp;
+            self.distribution_domain_name = input;
             self
         }
         /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
-        pub fn distribution_hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.distribution_hosted_zone_id = Some(inp.into());
+        pub fn distribution_hosted_zone_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.distribution_hosted_zone_id = Some(input.into());
             self
         }
         pub fn set_distribution_hosted_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.distribution_hosted_zone_id = inp;
+            self.distribution_hosted_zone_id = input;
             self
         }
         /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
-        pub fn endpoint_configuration(mut self, inp: crate::model::EndpointConfiguration) -> Self {
-            self.endpoint_configuration = Some(inp);
+        pub fn endpoint_configuration(
+            mut self,
+            input: crate::model::EndpointConfiguration,
+        ) -> Self {
+            self.endpoint_configuration = Some(input);
             self
         }
         pub fn set_endpoint_configuration(
             mut self,
-            inp: std::option::Option<crate::model::EndpointConfiguration>,
+            input: std::option::Option<crate::model::EndpointConfiguration>,
         ) -> Self {
-            self.endpoint_configuration = inp;
+            self.endpoint_configuration = input;
             self
         }
         /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
-        pub fn domain_name_status(mut self, inp: crate::model::DomainNameStatus) -> Self {
-            self.domain_name_status = Some(inp);
+        pub fn domain_name_status(mut self, input: crate::model::DomainNameStatus) -> Self {
+            self.domain_name_status = Some(input);
             self
         }
         pub fn set_domain_name_status(
             mut self,
-            inp: std::option::Option<crate::model::DomainNameStatus>,
+            input: std::option::Option<crate::model::DomainNameStatus>,
         ) -> Self {
-            self.domain_name_status = inp;
+            self.domain_name_status = input;
             self
         }
         /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
-        pub fn domain_name_status_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_name_status_message = Some(inp.into());
+        pub fn domain_name_status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name_status_message = Some(input.into());
             self
         }
         pub fn set_domain_name_status_message(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.domain_name_status_message = inp;
+            self.domain_name_status_message = input;
             self
         }
         /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
-        pub fn security_policy(mut self, inp: crate::model::SecurityPolicy) -> Self {
-            self.security_policy = Some(inp);
+        pub fn security_policy(mut self, input: crate::model::SecurityPolicy) -> Self {
+            self.security_policy = Some(input);
             self
         }
         pub fn set_security_policy(
             mut self,
-            inp: std::option::Option<crate::model::SecurityPolicy>,
+            input: std::option::Option<crate::model::SecurityPolicy>,
         ) -> Self {
-            self.security_policy = inp;
+            self.security_policy = input;
             self
         }
         pub fn tags(
@@ -3314,26 +3362,26 @@ pub mod update_domain_name_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
         pub fn mutual_tls_authentication(
             mut self,
-            inp: crate::model::MutualTlsAuthentication,
+            input: crate::model::MutualTlsAuthentication,
         ) -> Self {
-            self.mutual_tls_authentication = Some(inp);
+            self.mutual_tls_authentication = Some(input);
             self
         }
         pub fn set_mutual_tls_authentication(
             mut self,
-            inp: std::option::Option<crate::model::MutualTlsAuthentication>,
+            input: std::option::Option<crate::model::MutualTlsAuthentication>,
         ) -> Self {
-            self.mutual_tls_authentication = inp;
+            self.mutual_tls_authentication = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput)
@@ -3402,30 +3450,33 @@ pub mod update_documentation_version_output {
     }
     impl Builder {
         /// <p>The version identifier of the API documentation snapshot.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
         /// <p>The date when the API documentation snapshot is created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The description of the API documentation snapshot.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateDocumentationVersionOutput`](crate::output::UpdateDocumentationVersionOutput)
@@ -3483,33 +3534,33 @@ pub mod update_documentation_part_output {
     }
     impl Builder {
         /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The location of the API entity to which the documentation applies. Valid fields depend on the targeted API entity type. All the valid location fields are not required. If not explicitly specified, a valid location field is treated as a wildcard and associated documentation content may be inherited by matching entities, unless overridden.</p>
-        pub fn location(mut self, inp: crate::model::DocumentationPartLocation) -> Self {
-            self.location = Some(inp);
+        pub fn location(mut self, input: crate::model::DocumentationPartLocation) -> Self {
+            self.location = Some(input);
             self
         }
         pub fn set_location(
             mut self,
-            inp: std::option::Option<crate::model::DocumentationPartLocation>,
+            input: std::option::Option<crate::model::DocumentationPartLocation>,
         ) -> Self {
-            self.location = inp;
+            self.location = input;
             self
         }
         /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
-        pub fn properties(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.properties = Some(inp.into());
+        pub fn properties(mut self, input: impl Into<std::string::String>) -> Self {
+            self.properties = Some(input.into());
             self
         }
-        pub fn set_properties(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.properties = inp;
+        pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.properties = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateDocumentationPartOutput`](crate::output::UpdateDocumentationPartOutput)
@@ -3581,30 +3632,33 @@ pub mod update_deployment_output {
     }
     impl Builder {
         /// <p>The identifier for the deployment resource.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The description for the deployment resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The date and time that the deployment resource was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         pub fn api_summary(
@@ -3619,14 +3673,14 @@ pub mod update_deployment_output {
         }
         pub fn set_api_summary(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>,
                 >,
             >,
         ) -> Self {
-            self.api_summary = inp;
+            self.api_summary = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateDeploymentOutput`](crate::output::UpdateDeploymentOutput)
@@ -3698,57 +3752,60 @@ pub mod update_client_certificate_output {
     }
     impl Builder {
         /// <p>The identifier of the client certificate.</p>
-        pub fn client_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_certificate_id = Some(inp.into());
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_certificate_id = Some(input.into());
             self
         }
         pub fn set_client_certificate_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_certificate_id = inp;
+            self.client_certificate_id = input;
             self
         }
         /// <p>The description of the client certificate.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
-        pub fn pem_encoded_certificate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pem_encoded_certificate = Some(inp.into());
+        pub fn pem_encoded_certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pem_encoded_certificate = Some(input.into());
             self
         }
         pub fn set_pem_encoded_certificate(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.pem_encoded_certificate = inp;
+            self.pem_encoded_certificate = input;
             self
         }
         /// <p>The timestamp when the client certificate was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The timestamp when the client certificate will expire.</p>
-        pub fn expiration_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.expiration_date = Some(inp);
+        pub fn expiration_date(mut self, input: smithy_types::Instant) -> Self {
+            self.expiration_date = Some(input);
             self
         }
         pub fn set_expiration_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.expiration_date = inp;
+            self.expiration_date = input;
             self
         }
         pub fn tags(
@@ -3763,11 +3820,11 @@ pub mod update_client_certificate_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateClientCertificateOutput`](crate::output::UpdateClientCertificateOutput)
@@ -3826,30 +3883,30 @@ pub mod update_base_path_mapping_output {
     }
     impl Builder {
         /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
-        pub fn base_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.base_path = Some(inp.into());
+        pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.base_path = Some(input.into());
             self
         }
-        pub fn set_base_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.base_path = inp;
+        pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.base_path = input;
             self
         }
         /// <p>The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.rest_api_id = inp;
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The name of the associated stage.</p>
-        pub fn stage(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage = Some(inp.into());
+        pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage = Some(input.into());
             self
         }
-        pub fn set_stage(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stage = inp;
+        pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateBasePathMappingOutput`](crate::output::UpdateBasePathMappingOutput)
@@ -3939,112 +3996,118 @@ pub mod update_authorizer_output {
     }
     impl Builder {
         /// <p>The identifier for the authorizer resource.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>[Required] The name of the authorizer.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
-        pub fn r#type(mut self, inp: crate::model::AuthorizerType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::AuthorizerType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::AuthorizerType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::AuthorizerType>,
+        ) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn provider_ar_ns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.provider_ar_ns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.provider_ar_ns = Some(v);
             self
         }
         pub fn set_provider_ar_ns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.provider_ar_ns = inp;
+            self.provider_ar_ns = input;
             self
         }
         /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
-        pub fn auth_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.auth_type = Some(inp.into());
+        pub fn auth_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.auth_type = Some(input.into());
             self
         }
-        pub fn set_auth_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.auth_type = inp;
+        pub fn set_auth_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auth_type = input;
             self
         }
         /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
-        pub fn authorizer_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorizer_uri = Some(inp.into());
+        pub fn authorizer_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_uri = Some(input.into());
             self
         }
-        pub fn set_authorizer_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.authorizer_uri = inp;
+        pub fn set_authorizer_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authorizer_uri = input;
             self
         }
         /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
-        pub fn authorizer_credentials(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorizer_credentials = Some(inp.into());
+        pub fn authorizer_credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_credentials = Some(input.into());
             self
         }
         pub fn set_authorizer_credentials(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.authorizer_credentials = inp;
+            self.authorizer_credentials = input;
             self
         }
         /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
-        pub fn identity_source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.identity_source = Some(inp.into());
+        pub fn identity_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identity_source = Some(input.into());
             self
         }
         pub fn set_identity_source(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.identity_source = inp;
+            self.identity_source = input;
             self
         }
         /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
         pub fn identity_validation_expression(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.identity_validation_expression = Some(inp.into());
+            self.identity_validation_expression = Some(input.into());
             self
         }
         pub fn set_identity_validation_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.identity_validation_expression = inp;
+            self.identity_validation_expression = input;
             self
         }
         /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
-        pub fn authorizer_result_ttl_in_seconds(mut self, inp: i32) -> Self {
-            self.authorizer_result_ttl_in_seconds = Some(inp);
+        pub fn authorizer_result_ttl_in_seconds(mut self, input: i32) -> Self {
+            self.authorizer_result_ttl_in_seconds = Some(input);
             self
         }
         pub fn set_authorizer_result_ttl_in_seconds(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.authorizer_result_ttl_in_seconds = inp;
+            self.authorizer_result_ttl_in_seconds = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateAuthorizerOutput`](crate::output::UpdateAuthorizerOutput)
@@ -4137,91 +4200,94 @@ pub mod update_api_key_output {
     }
     impl Builder {
         /// <p>The identifier of the API Key.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The value of the API Key.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// <p>The name of the API Key.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
-        pub fn customer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.customer_id = Some(inp.into());
+        pub fn customer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.customer_id = Some(input.into());
             self
         }
-        pub fn set_customer_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.customer_id = inp;
+        pub fn set_customer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_id = input;
             self
         }
         /// <p>The description of the API Key.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Specifies whether the API Key can be used by callers.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
             self
         }
-        pub fn set_enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
             self
         }
         /// <p>The timestamp when the API Key was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The timestamp when the API Key was last updated.</p>
-        pub fn last_updated_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_updated_date = Some(inp);
+        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated_date = Some(input);
             self
         }
         pub fn set_last_updated_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_updated_date = inp;
+            self.last_updated_date = input;
             self
         }
-        pub fn stage_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn stage_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stage_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.stage_keys = Some(v);
             self
         }
         pub fn set_stage_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.stage_keys = inp;
+            self.stage_keys = input;
             self
         }
         pub fn tags(
@@ -4236,11 +4302,11 @@ pub mod update_api_key_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateApiKeyOutput`](crate::output::UpdateApiKeyOutput)
@@ -4351,52 +4417,52 @@ pub mod update_account_output {
     }
     impl Builder {
         /// <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
-        pub fn cloudwatch_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cloudwatch_role_arn = Some(inp.into());
+        pub fn cloudwatch_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cloudwatch_role_arn = Some(input.into());
             self
         }
         pub fn set_cloudwatch_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cloudwatch_role_arn = inp;
+            self.cloudwatch_role_arn = input;
             self
         }
         /// <p>Specifies the API request limits configured for the current <a>Account</a>.</p>
-        pub fn throttle_settings(mut self, inp: crate::model::ThrottleSettings) -> Self {
-            self.throttle_settings = Some(inp);
+        pub fn throttle_settings(mut self, input: crate::model::ThrottleSettings) -> Self {
+            self.throttle_settings = Some(input);
             self
         }
         pub fn set_throttle_settings(
             mut self,
-            inp: std::option::Option<crate::model::ThrottleSettings>,
+            input: std::option::Option<crate::model::ThrottleSettings>,
         ) -> Self {
-            self.throttle_settings = inp;
+            self.throttle_settings = input;
             self
         }
-        pub fn features(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn features(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.features.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.features = Some(v);
             self
         }
         pub fn set_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.features = inp;
+            self.features = input;
             self
         }
         /// <p>The version of the API keys used for the account.</p>
-        pub fn api_key_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.api_key_version = Some(inp.into());
+        pub fn api_key_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_key_version = Some(input.into());
             self
         }
         pub fn set_api_key_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.api_key_version = inp;
+            self.api_key_version = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateAccountOutput`](crate::output::UpdateAccountOutput)
@@ -4500,21 +4566,21 @@ pub mod test_invoke_method_output {
     }
     impl Builder {
         /// <p>The HTTP status code.</p>
-        pub fn status(mut self, inp: i32) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: i32) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: i32) -> Self {
-            self.status = Some(inp);
+        pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The body of the HTTP response.</p>
-        pub fn body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.body = Some(inp.into());
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.body = Some(input.into());
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.body = inp;
+        pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.body = input;
             self
         }
         pub fn headers(
@@ -4529,11 +4595,11 @@ pub mod test_invoke_method_output {
         }
         pub fn set_headers(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.headers = inp;
+            self.headers = input;
             self
         }
         pub fn multi_value_headers(
@@ -4548,29 +4614,29 @@ pub mod test_invoke_method_output {
         }
         pub fn set_multi_value_headers(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.multi_value_headers = inp;
+            self.multi_value_headers = input;
             self
         }
         /// <p>The API Gateway execution log for the test invoke request.</p>
-        pub fn log(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.log = Some(inp.into());
+        pub fn log(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log = Some(input.into());
             self
         }
-        pub fn set_log(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.log = inp;
+        pub fn set_log(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log = input;
             self
         }
         /// <p>The execution latency of the test invoke request.</p>
-        pub fn latency(mut self, inp: i64) -> Self {
-            self.latency = Some(inp);
+        pub fn latency(mut self, input: i64) -> Self {
+            self.latency = Some(input);
             self
         }
-        pub fn set_latency(mut self, inp: i64) -> Self {
-            self.latency = Some(inp);
+        pub fn set_latency(mut self, input: std::option::Option<i64>) -> Self {
+            self.latency = input;
             self
         }
         /// Consumes the builder and constructs a [`TestInvokeMethodOutput`](crate::output::TestInvokeMethodOutput)
@@ -4647,48 +4713,48 @@ pub mod test_invoke_authorizer_output {
     }
     impl Builder {
         /// <p>The HTTP status code that the client would have received. Value is 0 if the authorizer succeeded.</p>
-        pub fn client_status(mut self, inp: i32) -> Self {
-            self.client_status = Some(inp);
+        pub fn client_status(mut self, input: i32) -> Self {
+            self.client_status = Some(input);
             self
         }
-        pub fn set_client_status(mut self, inp: i32) -> Self {
-            self.client_status = Some(inp);
+        pub fn set_client_status(mut self, input: std::option::Option<i32>) -> Self {
+            self.client_status = input;
             self
         }
         /// <p>The API Gateway execution log for the test authorizer request.</p>
-        pub fn log(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.log = Some(inp.into());
+        pub fn log(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log = Some(input.into());
             self
         }
-        pub fn set_log(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.log = inp;
+        pub fn set_log(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log = input;
             self
         }
         /// <p>The execution latency of the test authorizer request.</p>
-        pub fn latency(mut self, inp: i64) -> Self {
-            self.latency = Some(inp);
+        pub fn latency(mut self, input: i64) -> Self {
+            self.latency = Some(input);
             self
         }
-        pub fn set_latency(mut self, inp: i64) -> Self {
-            self.latency = Some(inp);
+        pub fn set_latency(mut self, input: std::option::Option<i64>) -> Self {
+            self.latency = input;
             self
         }
         /// <p>The principal identity returned by the <a>Authorizer</a></p>
-        pub fn principal_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.principal_id = Some(inp.into());
+        pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.principal_id = Some(input.into());
             self
         }
-        pub fn set_principal_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.principal_id = inp;
+        pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.principal_id = input;
             self
         }
         /// <p>The JSON policy document returned by the <a>Authorizer</a></p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         pub fn authorization(
@@ -4703,11 +4769,11 @@ pub mod test_invoke_authorizer_output {
         }
         pub fn set_authorization(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
             >,
         ) -> Self {
-            self.authorization = inp;
+            self.authorization = input;
             self
         }
         pub fn claims(
@@ -4722,11 +4788,11 @@ pub mod test_invoke_authorizer_output {
         }
         pub fn set_claims(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.claims = inp;
+            self.claims = input;
             self
         }
         /// Consumes the builder and constructs a [`TestInvokeAuthorizerOutput`](crate::output::TestInvokeAuthorizerOutput)
@@ -4860,116 +4926,122 @@ pub mod put_rest_api_output {
     }
     impl Builder {
         /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The API's name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The API's description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>A version identifier for the API.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
-        pub fn warnings(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.warnings = Some(v);
             self
         }
         pub fn set_warnings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.warnings = inp;
+            self.warnings = input;
             self
         }
-        pub fn binary_media_types(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn binary_media_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.binary_media_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.binary_media_types = Some(v);
             self
         }
         pub fn set_binary_media_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.binary_media_types = inp;
+            self.binary_media_types = input;
             self
         }
         /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
-        pub fn minimum_compression_size(mut self, inp: i32) -> Self {
-            self.minimum_compression_size = Some(inp);
+        pub fn minimum_compression_size(mut self, input: i32) -> Self {
+            self.minimum_compression_size = Some(input);
             self
         }
-        pub fn set_minimum_compression_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.minimum_compression_size = inp;
+        pub fn set_minimum_compression_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.minimum_compression_size = input;
             self
         }
         /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
-        pub fn api_key_source(mut self, inp: crate::model::ApiKeySourceType) -> Self {
-            self.api_key_source = Some(inp);
+        pub fn api_key_source(mut self, input: crate::model::ApiKeySourceType) -> Self {
+            self.api_key_source = Some(input);
             self
         }
         pub fn set_api_key_source(
             mut self,
-            inp: std::option::Option<crate::model::ApiKeySourceType>,
+            input: std::option::Option<crate::model::ApiKeySourceType>,
         ) -> Self {
-            self.api_key_source = inp;
+            self.api_key_source = input;
             self
         }
         /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
-        pub fn endpoint_configuration(mut self, inp: crate::model::EndpointConfiguration) -> Self {
-            self.endpoint_configuration = Some(inp);
+        pub fn endpoint_configuration(
+            mut self,
+            input: crate::model::EndpointConfiguration,
+        ) -> Self {
+            self.endpoint_configuration = Some(input);
             self
         }
         pub fn set_endpoint_configuration(
             mut self,
-            inp: std::option::Option<crate::model::EndpointConfiguration>,
+            input: std::option::Option<crate::model::EndpointConfiguration>,
         ) -> Self {
-            self.endpoint_configuration = inp;
+            self.endpoint_configuration = input;
             self
         }
         /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         pub fn tags(
@@ -4984,20 +5056,23 @@ pub mod put_rest_api_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-        pub fn disable_execute_api_endpoint(mut self, inp: bool) -> Self {
-            self.disable_execute_api_endpoint = Some(inp);
+        pub fn disable_execute_api_endpoint(mut self, input: bool) -> Self {
+            self.disable_execute_api_endpoint = Some(input);
             self
         }
-        pub fn set_disable_execute_api_endpoint(mut self, inp: bool) -> Self {
-            self.disable_execute_api_endpoint = Some(inp);
+        pub fn set_disable_execute_api_endpoint(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.disable_execute_api_endpoint = input;
             self
         }
         /// Consumes the builder and constructs a [`PutRestApiOutput`](crate::output::PutRestApiOutput)
@@ -5108,12 +5183,12 @@ pub mod put_method_response_output {
     }
     impl Builder {
         /// <p>The method response's status code.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_code = inp;
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
         pub fn response_parameters(
@@ -5128,9 +5203,9 @@ pub mod put_method_response_output {
         }
         pub fn set_response_parameters(
             mut self,
-            inp: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+            input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
         ) -> Self {
-            self.response_parameters = inp;
+            self.response_parameters = input;
             self
         }
         pub fn response_models(
@@ -5145,11 +5220,11 @@ pub mod put_method_response_output {
         }
         pub fn set_response_models(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_models = inp;
+            self.response_models = input;
             self
         }
         /// Consumes the builder and constructs a [`PutMethodResponseOutput`](crate::output::PutMethodResponseOutput)
@@ -5540,63 +5615,69 @@ pub mod put_method_output {
     }
     impl Builder {
         /// <p>The method's HTTP verb.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.http_method = inp;
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
-        pub fn authorization_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorization_type = Some(inp.into());
+        pub fn authorization_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorization_type = Some(input.into());
             self
         }
         pub fn set_authorization_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.authorization_type = inp;
+            self.authorization_type = input;
             self
         }
         /// <p>The identifier of an <a>Authorizer</a> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorizer_id = Some(inp.into());
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_id = Some(input.into());
             self
         }
-        pub fn set_authorizer_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.authorizer_id = inp;
+        pub fn set_authorizer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authorizer_id = input;
             self
         }
         /// <p>A boolean flag specifying whether a valid <a>ApiKey</a> is required to invoke this method.</p>
-        pub fn api_key_required(mut self, inp: bool) -> Self {
-            self.api_key_required = Some(inp);
+        pub fn api_key_required(mut self, input: bool) -> Self {
+            self.api_key_required = Some(input);
             self
         }
-        pub fn set_api_key_required(mut self, inp: std::option::Option<bool>) -> Self {
-            self.api_key_required = inp;
+        pub fn set_api_key_required(mut self, input: std::option::Option<bool>) -> Self {
+            self.api_key_required = input;
             self
         }
         /// <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
-        pub fn request_validator_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.request_validator_id = Some(inp.into());
+        pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_validator_id = Some(input.into());
             self
         }
         pub fn set_request_validator_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.request_validator_id = inp;
+            self.request_validator_id = input;
             self
         }
         /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
-        pub fn operation_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_name = Some(inp.into());
+        pub fn operation_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_name = Some(input.into());
             self
         }
-        pub fn set_operation_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_name = inp;
+        pub fn set_operation_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.operation_name = input;
             self
         }
         pub fn request_parameters(
@@ -5611,9 +5692,9 @@ pub mod put_method_output {
         }
         pub fn set_request_parameters(
             mut self,
-            inp: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+            input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
         ) -> Self {
-            self.request_parameters = inp;
+            self.request_parameters = input;
             self
         }
         pub fn request_models(
@@ -5628,11 +5709,11 @@ pub mod put_method_output {
         }
         pub fn set_request_models(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.request_models = inp;
+            self.request_models = input;
             self
         }
         pub fn method_responses(
@@ -5647,11 +5728,11 @@ pub mod put_method_output {
         }
         pub fn set_method_responses(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::MethodResponse>,
             >,
         ) -> Self {
-            self.method_responses = inp;
+            self.method_responses = input;
             self
         }
         /// <p>Gets the method's integration responsible for passing the client-submitted request to the back end and performing necessary transformations to make the request compliant with the back end.</p>
@@ -5744,28 +5825,28 @@ pub mod put_method_output {
         /// <div class="seeAlso">
         /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
         /// </div>
-        pub fn method_integration(mut self, inp: crate::model::Integration) -> Self {
-            self.method_integration = Some(inp);
+        pub fn method_integration(mut self, input: crate::model::Integration) -> Self {
+            self.method_integration = Some(input);
             self
         }
         pub fn set_method_integration(
             mut self,
-            inp: std::option::Option<crate::model::Integration>,
+            input: std::option::Option<crate::model::Integration>,
         ) -> Self {
-            self.method_integration = inp;
+            self.method_integration = input;
             self
         }
-        pub fn authorization_scopes(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn authorization_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.authorization_scopes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.authorization_scopes = Some(v);
             self
         }
         pub fn set_authorization_scopes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.authorization_scopes = inp;
+            self.authorization_scopes = input;
             self
         }
         /// Consumes the builder and constructs a [`PutMethodOutput`](crate::output::PutMethodOutput)
@@ -5848,24 +5929,24 @@ pub mod put_integration_response_output {
     }
     impl Builder {
         /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_code = inp;
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
         /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status code is matched.</p>
-        pub fn selection_pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.selection_pattern = Some(inp.into());
+        pub fn selection_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.selection_pattern = Some(input.into());
             self
         }
         pub fn set_selection_pattern(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.selection_pattern = inp;
+            self.selection_pattern = input;
             self
         }
         pub fn response_parameters(
@@ -5880,11 +5961,11 @@ pub mod put_integration_response_output {
         }
         pub fn set_response_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_parameters = inp;
+            self.response_parameters = input;
             self
         }
         pub fn response_templates(
@@ -5899,11 +5980,11 @@ pub mod put_integration_response_output {
         }
         pub fn set_response_templates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_templates = inp;
+            self.response_templates = input;
             self
         }
         /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
@@ -5912,15 +5993,15 @@ pub mod put_integration_response_output {
         /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
         /// </ul>
         /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
-        pub fn content_handling(mut self, inp: crate::model::ContentHandlingStrategy) -> Self {
-            self.content_handling = Some(inp);
+        pub fn content_handling(mut self, input: crate::model::ContentHandlingStrategy) -> Self {
+            self.content_handling = Some(input);
             self
         }
         pub fn set_content_handling(
             mut self,
-            inp: std::option::Option<crate::model::ContentHandlingStrategy>,
+            input: std::option::Option<crate::model::ContentHandlingStrategy>,
         ) -> Self {
-            self.content_handling = inp;
+            self.content_handling = input;
             self
         }
         /// Consumes the builder and constructs a [`PutIntegrationResponseOutput`](crate::output::PutIntegrationResponseOutput)
@@ -6129,21 +6210,24 @@ pub mod put_integration_output {
         /// <li><code>MOCK</code>: for integrating the API method request with API Gateway as a "loop-back" endpoint without invoking any backend.</li>
         /// </ul>
         /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <a>VpcLink</a> to connect API Gateway to a network load balancer of a VPC.</p>
-        pub fn r#type(mut self, inp: crate::model::IntegrationType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::IntegrationType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::IntegrationType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::IntegrationType>,
+        ) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>Specifies the integration's HTTP method type.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.http_method = inp;
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
@@ -6152,42 +6236,45 @@ pub mod put_integration_output {
         /// </li>
         /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
         /// </li></ul>
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.uri = Some(inp.into());
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uri = Some(input.into());
             self
         }
-        pub fn set_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.uri = inp;
+        pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uri = input;
             self
         }
         /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
-        pub fn connection_type(mut self, inp: crate::model::ConnectionType) -> Self {
-            self.connection_type = Some(inp);
+        pub fn connection_type(mut self, input: crate::model::ConnectionType) -> Self {
+            self.connection_type = Some(input);
             self
         }
         pub fn set_connection_type(
             mut self,
-            inp: std::option::Option<crate::model::ConnectionType>,
+            input: std::option::Option<crate::model::ConnectionType>,
         ) -> Self {
-            self.connection_type = inp;
+            self.connection_type = input;
             self
         }
         /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.connection_id = Some(inp.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_id = Some(input.into());
             self
         }
-        pub fn set_connection_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.connection_id = inp;
+        pub fn set_connection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_id = input;
             self
         }
         /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported AWS services, specify null.</p>
-        pub fn credentials(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.credentials = Some(inp.into());
+        pub fn credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.credentials = Some(input.into());
             self
         }
-        pub fn set_credentials(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.credentials = inp;
+        pub fn set_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.credentials = input;
             self
         }
         pub fn request_parameters(
@@ -6202,11 +6289,11 @@ pub mod put_integration_output {
         }
         pub fn set_request_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.request_parameters = inp;
+            self.request_parameters = input;
             self
         }
         pub fn request_templates(
@@ -6221,11 +6308,11 @@ pub mod put_integration_output {
         }
         pub fn set_request_templates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.request_templates = inp;
+            self.request_templates = input;
             self
         }
         /// <div>
@@ -6252,15 +6339,15 @@ pub mod put_integration_output {
         /// </li>
         /// </ul>
         /// </div>
-        pub fn passthrough_behavior(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.passthrough_behavior = Some(inp.into());
+        pub fn passthrough_behavior(mut self, input: impl Into<std::string::String>) -> Self {
+            self.passthrough_behavior = Some(input.into());
             self
         }
         pub fn set_passthrough_behavior(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.passthrough_behavior = inp;
+            self.passthrough_behavior = input;
             self
         }
         /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
@@ -6269,49 +6356,49 @@ pub mod put_integration_output {
         /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
         /// </ul>
         /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
-        pub fn content_handling(mut self, inp: crate::model::ContentHandlingStrategy) -> Self {
-            self.content_handling = Some(inp);
+        pub fn content_handling(mut self, input: crate::model::ContentHandlingStrategy) -> Self {
+            self.content_handling = Some(input);
             self
         }
         pub fn set_content_handling(
             mut self,
-            inp: std::option::Option<crate::model::ContentHandlingStrategy>,
+            input: std::option::Option<crate::model::ContentHandlingStrategy>,
         ) -> Self {
-            self.content_handling = inp;
+            self.content_handling = input;
             self
         }
         /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
-        pub fn timeout_in_millis(mut self, inp: i32) -> Self {
-            self.timeout_in_millis = Some(inp);
+        pub fn timeout_in_millis(mut self, input: i32) -> Self {
+            self.timeout_in_millis = Some(input);
             self
         }
-        pub fn set_timeout_in_millis(mut self, inp: i32) -> Self {
-            self.timeout_in_millis = Some(inp);
+        pub fn set_timeout_in_millis(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout_in_millis = input;
             self
         }
         /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
-        pub fn cache_namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cache_namespace = Some(inp.into());
+        pub fn cache_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cache_namespace = Some(input.into());
             self
         }
         pub fn set_cache_namespace(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cache_namespace = inp;
+            self.cache_namespace = input;
             self
         }
-        pub fn cache_key_parameters(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn cache_key_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_key_parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.cache_key_parameters = Some(v);
             self
         }
         pub fn set_cache_key_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.cache_key_parameters = inp;
+            self.cache_key_parameters = input;
             self
         }
         pub fn integration_responses(
@@ -6326,20 +6413,23 @@ pub mod put_integration_output {
         }
         pub fn set_integration_responses(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::IntegrationResponse>,
             >,
         ) -> Self {
-            self.integration_responses = inp;
+            self.integration_responses = input;
             self
         }
         /// <p>Specifies the TLS configuration for an integration.</p>
-        pub fn tls_config(mut self, inp: crate::model::TlsConfig) -> Self {
-            self.tls_config = Some(inp);
+        pub fn tls_config(mut self, input: crate::model::TlsConfig) -> Self {
+            self.tls_config = Some(input);
             self
         }
-        pub fn set_tls_config(mut self, inp: std::option::Option<crate::model::TlsConfig>) -> Self {
-            self.tls_config = inp;
+        pub fn set_tls_config(
+            mut self,
+            input: std::option::Option<crate::model::TlsConfig>,
+        ) -> Self {
+            self.tls_config = input;
             self
         }
         /// Consumes the builder and constructs a [`PutIntegrationOutput`](crate::output::PutIntegrationOutput)
@@ -6474,24 +6564,24 @@ pub mod put_gateway_response_output {
     }
     impl Builder {
         /// <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p>
-        pub fn response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.response_type = Some(inp);
+        pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
+            self.response_type = Some(input);
             self
         }
         pub fn set_response_type(
             mut self,
-            inp: std::option::Option<crate::model::GatewayResponseType>,
+            input: std::option::Option<crate::model::GatewayResponseType>,
         ) -> Self {
-            self.response_type = inp;
+            self.response_type = input;
             self
         }
         /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_code = inp;
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
         pub fn response_parameters(
@@ -6506,11 +6596,11 @@ pub mod put_gateway_response_output {
         }
         pub fn set_response_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_parameters = inp;
+            self.response_parameters = input;
             self
         }
         pub fn response_templates(
@@ -6525,20 +6615,20 @@ pub mod put_gateway_response_output {
         }
         pub fn set_response_templates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_templates = inp;
+            self.response_templates = input;
             self
         }
         /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
-        pub fn default_response(mut self, inp: bool) -> Self {
-            self.default_response = Some(inp);
+        pub fn default_response(mut self, input: bool) -> Self {
+            self.default_response = Some(input);
             self
         }
-        pub fn set_default_response(mut self, inp: bool) -> Self {
-            self.default_response = Some(inp);
+        pub fn set_default_response(mut self, input: std::option::Option<bool>) -> Self {
+            self.default_response = input;
             self
         }
         /// Consumes the builder and constructs a [`PutGatewayResponseOutput`](crate::output::PutGatewayResponseOutput)
@@ -6641,116 +6731,122 @@ pub mod import_rest_api_output {
     }
     impl Builder {
         /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The API's name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The API's description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>A version identifier for the API.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
-        pub fn warnings(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.warnings = Some(v);
             self
         }
         pub fn set_warnings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.warnings = inp;
+            self.warnings = input;
             self
         }
-        pub fn binary_media_types(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn binary_media_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.binary_media_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.binary_media_types = Some(v);
             self
         }
         pub fn set_binary_media_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.binary_media_types = inp;
+            self.binary_media_types = input;
             self
         }
         /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
-        pub fn minimum_compression_size(mut self, inp: i32) -> Self {
-            self.minimum_compression_size = Some(inp);
+        pub fn minimum_compression_size(mut self, input: i32) -> Self {
+            self.minimum_compression_size = Some(input);
             self
         }
-        pub fn set_minimum_compression_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.minimum_compression_size = inp;
+        pub fn set_minimum_compression_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.minimum_compression_size = input;
             self
         }
         /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
-        pub fn api_key_source(mut self, inp: crate::model::ApiKeySourceType) -> Self {
-            self.api_key_source = Some(inp);
+        pub fn api_key_source(mut self, input: crate::model::ApiKeySourceType) -> Self {
+            self.api_key_source = Some(input);
             self
         }
         pub fn set_api_key_source(
             mut self,
-            inp: std::option::Option<crate::model::ApiKeySourceType>,
+            input: std::option::Option<crate::model::ApiKeySourceType>,
         ) -> Self {
-            self.api_key_source = inp;
+            self.api_key_source = input;
             self
         }
         /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
-        pub fn endpoint_configuration(mut self, inp: crate::model::EndpointConfiguration) -> Self {
-            self.endpoint_configuration = Some(inp);
+        pub fn endpoint_configuration(
+            mut self,
+            input: crate::model::EndpointConfiguration,
+        ) -> Self {
+            self.endpoint_configuration = Some(input);
             self
         }
         pub fn set_endpoint_configuration(
             mut self,
-            inp: std::option::Option<crate::model::EndpointConfiguration>,
+            input: std::option::Option<crate::model::EndpointConfiguration>,
         ) -> Self {
-            self.endpoint_configuration = inp;
+            self.endpoint_configuration = input;
             self
         }
         /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         pub fn tags(
@@ -6765,20 +6861,23 @@ pub mod import_rest_api_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-        pub fn disable_execute_api_endpoint(mut self, inp: bool) -> Self {
-            self.disable_execute_api_endpoint = Some(inp);
+        pub fn disable_execute_api_endpoint(mut self, input: bool) -> Self {
+            self.disable_execute_api_endpoint = Some(input);
             self
         }
-        pub fn set_disable_execute_api_endpoint(mut self, inp: bool) -> Self {
-            self.disable_execute_api_endpoint = Some(inp);
+        pub fn set_disable_execute_api_endpoint(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.disable_execute_api_endpoint = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportRestApiOutput`](crate::output::ImportRestApiOutput)
@@ -6839,30 +6938,30 @@ pub mod import_documentation_parts_output {
         pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.ids = Some(v);
             self
         }
         pub fn set_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.ids = inp;
+            self.ids = input;
             self
         }
-        pub fn warnings(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.warnings = Some(v);
             self
         }
         pub fn set_warnings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.warnings = inp;
+            self.warnings = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportDocumentationPartsOutput`](crate::output::ImportDocumentationPartsOutput)
@@ -6908,30 +7007,30 @@ pub mod import_api_keys_output {
         pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.ids = Some(v);
             self
         }
         pub fn set_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.ids = inp;
+            self.ids = input;
             self
         }
-        pub fn warnings(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.warnings = Some(v);
             self
         }
         pub fn set_warnings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.warnings = inp;
+            self.warnings = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportApiKeysOutput`](crate::output::ImportApiKeysOutput)
@@ -6981,26 +7080,26 @@ pub mod get_vpc_links_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn items(mut self, inp: impl Into<crate::model::VpcLink>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::VpcLink>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VpcLink>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcLink>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetVpcLinksOutput`](crate::output::GetVpcLinksOutput)
@@ -7073,61 +7172,67 @@ pub mod get_vpc_link_output {
     }
     impl Builder {
         /// <p>The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The name used to label and identify the VPC link.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The description of the VPC link.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn target_arns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn target_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_arns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.target_arns = Some(v);
             self
         }
         pub fn set_target_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.target_arns = inp;
+            self.target_arns = input;
             self
         }
         /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
-        pub fn status(mut self, inp: crate::model::VpcLinkStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::VpcLinkStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::VpcLinkStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::VpcLinkStatus>,
+        ) -> Self {
+            self.status = input;
             self
         }
         /// <p>A description about the VPC link status.</p>
-        pub fn status_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_message = Some(inp.into());
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
             self
         }
-        pub fn set_status_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_message = inp;
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
             self
         }
         pub fn tags(
@@ -7142,11 +7247,11 @@ pub mod get_vpc_link_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`GetVpcLinkOutput`](crate::output::GetVpcLinkOutput)
@@ -7200,26 +7305,26 @@ pub mod get_usage_plans_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn items(mut self, inp: impl Into<crate::model::UsagePlan>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::UsagePlan>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UsagePlan>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UsagePlan>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetUsagePlansOutput`](crate::output::GetUsagePlansOutput)
@@ -7268,26 +7373,26 @@ pub mod get_usage_plan_keys_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn items(mut self, inp: impl Into<crate::model::UsagePlanKey>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::UsagePlanKey>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UsagePlanKey>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UsagePlanKey>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetUsagePlanKeysOutput`](crate::output::GetUsagePlanKeysOutput)
@@ -7348,39 +7453,39 @@ pub mod get_usage_plan_key_output {
     }
     impl Builder {
         /// <p>The Id of a usage plan key.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The type of a usage plan key. Currently, the valid key type is <code>API_KEY</code>.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The value of a usage plan key.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// <p>The name of a usage plan key.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetUsagePlanKeyOutput`](crate::output::GetUsagePlanKeyOutput)
@@ -7462,73 +7567,76 @@ pub mod get_usage_plan_output {
     }
     impl Builder {
         /// <p>The identifier of a <a>UsagePlan</a> resource.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The name of a usage plan.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The description of a usage plan.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn api_stages(mut self, inp: impl Into<crate::model::ApiStage>) -> Self {
+        pub fn api_stages(mut self, input: impl Into<crate::model::ApiStage>) -> Self {
             let mut v = self.api_stages.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.api_stages = Some(v);
             self
         }
         pub fn set_api_stages(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
         ) -> Self {
-            self.api_stages = inp;
+            self.api_stages = input;
             self
         }
         /// <p>The request throttle limits of a usage plan.</p>
-        pub fn throttle(mut self, inp: crate::model::ThrottleSettings) -> Self {
-            self.throttle = Some(inp);
+        pub fn throttle(mut self, input: crate::model::ThrottleSettings) -> Self {
+            self.throttle = Some(input);
             self
         }
         pub fn set_throttle(
             mut self,
-            inp: std::option::Option<crate::model::ThrottleSettings>,
+            input: std::option::Option<crate::model::ThrottleSettings>,
         ) -> Self {
-            self.throttle = inp;
+            self.throttle = input;
             self
         }
         /// <p>The maximum number of permitted requests per a given unit time interval.</p>
-        pub fn quota(mut self, inp: crate::model::QuotaSettings) -> Self {
-            self.quota = Some(inp);
+        pub fn quota(mut self, input: crate::model::QuotaSettings) -> Self {
+            self.quota = Some(input);
             self
         }
-        pub fn set_quota(mut self, inp: std::option::Option<crate::model::QuotaSettings>) -> Self {
-            self.quota = inp;
+        pub fn set_quota(
+            mut self,
+            input: std::option::Option<crate::model::QuotaSettings>,
+        ) -> Self {
+            self.quota = input;
             self
         }
         /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
-        pub fn product_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.product_code = Some(inp.into());
+        pub fn product_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.product_code = Some(input.into());
             self
         }
-        pub fn set_product_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.product_code = inp;
+        pub fn set_product_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.product_code = input;
             self
         }
         pub fn tags(
@@ -7543,11 +7651,11 @@ pub mod get_usage_plan_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`GetUsagePlanOutput`](crate::output::GetUsagePlanOutput)
@@ -7621,30 +7729,33 @@ pub mod get_usage_output {
     }
     impl Builder {
         /// <p>The plan Id associated with this usage data.</p>
-        pub fn usage_plan_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.usage_plan_id = Some(inp.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.usage_plan_id = Some(input.into());
             self
         }
-        pub fn set_usage_plan_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.usage_plan_id = inp;
+        pub fn set_usage_plan_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.usage_plan_id = input;
             self
         }
         /// <p>The starting date of the usage data.</p>
-        pub fn start_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.start_date = Some(inp.into());
+        pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_date = Some(input.into());
             self
         }
-        pub fn set_start_date(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.start_date = inp;
+        pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start_date = input;
             self
         }
         /// <p>The ending date of the usage data.</p>
-        pub fn end_date(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.end_date = Some(inp.into());
+        pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.end_date = Some(input.into());
             self
         }
-        pub fn set_end_date(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.end_date = inp;
+        pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end_date = input;
             self
         }
         pub fn items(
@@ -7659,20 +7770,20 @@ pub mod get_usage_output {
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::vec::Vec<std::vec::Vec<i64>>>,
             >,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetUsageOutput`](crate::output::GetUsageOutput)
@@ -7732,11 +7843,11 @@ pub mod get_tags_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTagsOutput`](crate::output::GetTagsOutput)
@@ -7776,17 +7887,17 @@ pub mod get_stages_output {
         pub(crate) item: std::option::Option<std::vec::Vec<crate::model::Stage>>,
     }
     impl Builder {
-        pub fn item(mut self, inp: impl Into<crate::model::Stage>) -> Self {
+        pub fn item(mut self, input: impl Into<crate::model::Stage>) -> Self {
             let mut v = self.item.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.item = Some(v);
             self
         }
         pub fn set_item(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Stage>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Stage>>,
         ) -> Self {
-            self.item = inp;
+            self.item = input;
             self
         }
         /// Consumes the builder and constructs a [`GetStagesOutput`](crate::output::GetStagesOutput)
@@ -7904,75 +8015,78 @@ pub mod get_stage_output {
     }
     impl Builder {
         /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.deployment_id = Some(inp.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.deployment_id = Some(input.into());
             self
         }
-        pub fn set_deployment_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.deployment_id = inp;
+        pub fn set_deployment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.deployment_id = input;
             self
         }
         /// <p>The identifier of a client certificate for an API stage.</p>
-        pub fn client_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_certificate_id = Some(inp.into());
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_certificate_id = Some(input.into());
             self
         }
         pub fn set_client_certificate_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_certificate_id = inp;
+            self.client_certificate_id = input;
             self
         }
         /// <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage_name = Some(inp.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
             self
         }
-        pub fn set_stage_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = inp;
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
             self
         }
         /// <p>The stage's description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
-        pub fn cache_cluster_enabled(mut self, inp: bool) -> Self {
-            self.cache_cluster_enabled = Some(inp);
+        pub fn cache_cluster_enabled(mut self, input: bool) -> Self {
+            self.cache_cluster_enabled = Some(input);
             self
         }
-        pub fn set_cache_cluster_enabled(mut self, inp: bool) -> Self {
-            self.cache_cluster_enabled = Some(inp);
+        pub fn set_cache_cluster_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.cache_cluster_enabled = input;
             self
         }
         /// <p>The size of the cache cluster for the stage, if enabled.</p>
-        pub fn cache_cluster_size(mut self, inp: crate::model::CacheClusterSize) -> Self {
-            self.cache_cluster_size = Some(inp);
+        pub fn cache_cluster_size(mut self, input: crate::model::CacheClusterSize) -> Self {
+            self.cache_cluster_size = Some(input);
             self
         }
         pub fn set_cache_cluster_size(
             mut self,
-            inp: std::option::Option<crate::model::CacheClusterSize>,
+            input: std::option::Option<crate::model::CacheClusterSize>,
         ) -> Self {
-            self.cache_cluster_size = inp;
+            self.cache_cluster_size = input;
             self
         }
         /// <p>The status of the cache cluster for the stage, if enabled.</p>
-        pub fn cache_cluster_status(mut self, inp: crate::model::CacheClusterStatus) -> Self {
-            self.cache_cluster_status = Some(inp);
+        pub fn cache_cluster_status(mut self, input: crate::model::CacheClusterStatus) -> Self {
+            self.cache_cluster_status = Some(input);
             self
         }
         pub fn set_cache_cluster_status(
             mut self,
-            inp: std::option::Option<crate::model::CacheClusterStatus>,
+            input: std::option::Option<crate::model::CacheClusterStatus>,
         ) -> Self {
-            self.cache_cluster_status = inp;
+            self.cache_cluster_status = input;
             self
         }
         pub fn method_settings(
@@ -7987,11 +8101,11 @@ pub mod get_stage_output {
         }
         pub fn set_method_settings(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::MethodSetting>,
             >,
         ) -> Self {
-            self.method_settings = inp;
+            self.method_settings = input;
             self
         }
         pub fn variables(
@@ -8006,65 +8120,65 @@ pub mod get_stage_output {
         }
         pub fn set_variables(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.variables = inp;
+            self.variables = input;
             self
         }
         /// <p>The version of the associated API documentation.</p>
-        pub fn documentation_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.documentation_version = Some(inp.into());
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.documentation_version = Some(input.into());
             self
         }
         pub fn set_documentation_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.documentation_version = inp;
+            self.documentation_version = input;
             self
         }
         /// <p>Settings for logging access in this stage.</p>
-        pub fn access_log_settings(mut self, inp: crate::model::AccessLogSettings) -> Self {
-            self.access_log_settings = Some(inp);
+        pub fn access_log_settings(mut self, input: crate::model::AccessLogSettings) -> Self {
+            self.access_log_settings = Some(input);
             self
         }
         pub fn set_access_log_settings(
             mut self,
-            inp: std::option::Option<crate::model::AccessLogSettings>,
+            input: std::option::Option<crate::model::AccessLogSettings>,
         ) -> Self {
-            self.access_log_settings = inp;
+            self.access_log_settings = input;
             self
         }
         /// <p>Settings for the canary deployment in this stage.</p>
-        pub fn canary_settings(mut self, inp: crate::model::CanarySettings) -> Self {
-            self.canary_settings = Some(inp);
+        pub fn canary_settings(mut self, input: crate::model::CanarySettings) -> Self {
+            self.canary_settings = Some(input);
             self
         }
         pub fn set_canary_settings(
             mut self,
-            inp: std::option::Option<crate::model::CanarySettings>,
+            input: std::option::Option<crate::model::CanarySettings>,
         ) -> Self {
-            self.canary_settings = inp;
+            self.canary_settings = input;
             self
         }
         /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
-        pub fn tracing_enabled(mut self, inp: bool) -> Self {
-            self.tracing_enabled = Some(inp);
+        pub fn tracing_enabled(mut self, input: bool) -> Self {
+            self.tracing_enabled = Some(input);
             self
         }
-        pub fn set_tracing_enabled(mut self, inp: bool) -> Self {
-            self.tracing_enabled = Some(inp);
+        pub fn set_tracing_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.tracing_enabled = input;
             self
         }
         /// <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
-        pub fn web_acl_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.web_acl_arn = Some(inp.into());
+        pub fn web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.web_acl_arn = Some(input.into());
             self
         }
-        pub fn set_web_acl_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.web_acl_arn = inp;
+        pub fn set_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.web_acl_arn = input;
             self
         }
         pub fn tags(
@@ -8079,32 +8193,35 @@ pub mod get_stage_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The timestamp when the stage was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The timestamp when the stage last updated.</p>
-        pub fn last_updated_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_updated_date = Some(inp);
+        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated_date = Some(input);
             self
         }
         pub fn set_last_updated_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_updated_date = inp;
+            self.last_updated_date = input;
             self
         }
         /// Consumes the builder and constructs a [`GetStageOutput`](crate::output::GetStageOutput)
@@ -8161,17 +8278,17 @@ pub mod get_sdk_types_output {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::SdkType>>,
     }
     impl Builder {
-        pub fn items(mut self, inp: impl Into<crate::model::SdkType>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::SdkType>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SdkType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SdkType>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSdkTypesOutput`](crate::output::GetSdkTypesOutput)
@@ -8225,46 +8342,49 @@ pub mod get_sdk_type_output {
     }
     impl Builder {
         /// <p>The identifier of an <a>SdkType</a> instance.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The user-friendly name of an <a>SdkType</a> instance.</p>
-        pub fn friendly_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.friendly_name = Some(inp.into());
+        pub fn friendly_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.friendly_name = Some(input.into());
             self
         }
-        pub fn set_friendly_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.friendly_name = inp;
+        pub fn set_friendly_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.friendly_name = input;
             self
         }
         /// <p>The description of an <a>SdkType</a>.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         pub fn configuration_properties(
             mut self,
-            inp: impl Into<crate::model::SdkConfigurationProperty>,
+            input: impl Into<crate::model::SdkConfigurationProperty>,
         ) -> Self {
             let mut v = self.configuration_properties.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.configuration_properties = Some(v);
             self
         }
         pub fn set_configuration_properties(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SdkConfigurationProperty>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SdkConfigurationProperty>>,
         ) -> Self {
-            self.configuration_properties = inp;
+            self.configuration_properties = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSdkTypeOutput`](crate::output::GetSdkTypeOutput)
@@ -8317,33 +8437,33 @@ pub mod get_sdk_output {
     }
     impl Builder {
         /// <p>The content-type header value in the HTTP response.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(inp.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_type = inp;
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
             self
         }
         /// <p>The content-disposition header value in the HTTP response.</p>
-        pub fn content_disposition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_disposition = Some(inp.into());
+        pub fn content_disposition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_disposition = Some(input.into());
             self
         }
         pub fn set_content_disposition(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_disposition = inp;
+            self.content_disposition = input;
             self
         }
         /// <p>The binary blob response to <a>GetSdk</a>, which contains the generated SDK.</p>
-        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
-            self.body = Some(inp);
+        pub fn body(mut self, input: smithy_types::Blob) -> Self {
+            self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.body = inp;
+        pub fn set_body(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.body = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSdkOutput`](crate::output::GetSdkOutput)
@@ -8393,26 +8513,26 @@ pub mod get_rest_apis_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn items(mut self, inp: impl Into<crate::model::RestApi>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::RestApi>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::RestApi>>,
+            input: std::option::Option<std::vec::Vec<crate::model::RestApi>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRestApisOutput`](crate::output::GetRestApisOutput)
@@ -8512,116 +8632,122 @@ pub mod get_rest_api_output {
     }
     impl Builder {
         /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The API's name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The API's description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>A version identifier for the API.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
-        pub fn warnings(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.warnings = Some(v);
             self
         }
         pub fn set_warnings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.warnings = inp;
+            self.warnings = input;
             self
         }
-        pub fn binary_media_types(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn binary_media_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.binary_media_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.binary_media_types = Some(v);
             self
         }
         pub fn set_binary_media_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.binary_media_types = inp;
+            self.binary_media_types = input;
             self
         }
         /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
-        pub fn minimum_compression_size(mut self, inp: i32) -> Self {
-            self.minimum_compression_size = Some(inp);
+        pub fn minimum_compression_size(mut self, input: i32) -> Self {
+            self.minimum_compression_size = Some(input);
             self
         }
-        pub fn set_minimum_compression_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.minimum_compression_size = inp;
+        pub fn set_minimum_compression_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.minimum_compression_size = input;
             self
         }
         /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
-        pub fn api_key_source(mut self, inp: crate::model::ApiKeySourceType) -> Self {
-            self.api_key_source = Some(inp);
+        pub fn api_key_source(mut self, input: crate::model::ApiKeySourceType) -> Self {
+            self.api_key_source = Some(input);
             self
         }
         pub fn set_api_key_source(
             mut self,
-            inp: std::option::Option<crate::model::ApiKeySourceType>,
+            input: std::option::Option<crate::model::ApiKeySourceType>,
         ) -> Self {
-            self.api_key_source = inp;
+            self.api_key_source = input;
             self
         }
         /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
-        pub fn endpoint_configuration(mut self, inp: crate::model::EndpointConfiguration) -> Self {
-            self.endpoint_configuration = Some(inp);
+        pub fn endpoint_configuration(
+            mut self,
+            input: crate::model::EndpointConfiguration,
+        ) -> Self {
+            self.endpoint_configuration = Some(input);
             self
         }
         pub fn set_endpoint_configuration(
             mut self,
-            inp: std::option::Option<crate::model::EndpointConfiguration>,
+            input: std::option::Option<crate::model::EndpointConfiguration>,
         ) -> Self {
-            self.endpoint_configuration = inp;
+            self.endpoint_configuration = input;
             self
         }
         /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         pub fn tags(
@@ -8636,20 +8762,23 @@ pub mod get_rest_api_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-        pub fn disable_execute_api_endpoint(mut self, inp: bool) -> Self {
-            self.disable_execute_api_endpoint = Some(inp);
+        pub fn disable_execute_api_endpoint(mut self, input: bool) -> Self {
+            self.disable_execute_api_endpoint = Some(input);
             self
         }
-        pub fn set_disable_execute_api_endpoint(mut self, inp: bool) -> Self {
-            self.disable_execute_api_endpoint = Some(inp);
+        pub fn set_disable_execute_api_endpoint(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.disable_execute_api_endpoint = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRestApiOutput`](crate::output::GetRestApiOutput)
@@ -8709,26 +8838,26 @@ pub mod get_resources_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn items(mut self, inp: impl Into<crate::model::Resource>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::Resource>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Resource>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetResourcesOutput`](crate::output::GetResourcesOutput)
@@ -8945,39 +9074,39 @@ pub mod get_resource_output {
     }
     impl Builder {
         /// <p>The resource's identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The parent resource's identifier.</p>
-        pub fn parent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parent_id = Some(inp.into());
+        pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parent_id = Some(input.into());
             self
         }
-        pub fn set_parent_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.parent_id = inp;
+        pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_id = input;
             self
         }
         /// <p>The last path segment for this resource.</p>
-        pub fn path_part(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path_part = Some(inp.into());
+        pub fn path_part(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_part = Some(input.into());
             self
         }
-        pub fn set_path_part(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path_part = inp;
+        pub fn set_path_part(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path_part = input;
             self
         }
         /// <p>The full path for this resource.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         pub fn resource_methods(
@@ -8992,11 +9121,11 @@ pub mod get_resource_output {
         }
         pub fn set_resource_methods(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::Method>,
             >,
         ) -> Self {
-            self.resource_methods = inp;
+            self.resource_methods = input;
             self
         }
         /// Consumes the builder and constructs a [`GetResourceOutput`](crate::output::GetResourceOutput)
@@ -9049,26 +9178,26 @@ pub mod get_request_validators_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn items(mut self, inp: impl Into<crate::model::RequestValidator>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::RequestValidator>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::RequestValidator>>,
+            input: std::option::Option<std::vec::Vec<crate::model::RequestValidator>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRequestValidatorsOutput`](crate::output::GetRequestValidatorsOutput)
@@ -9130,39 +9259,39 @@ pub mod get_request_validator_output {
     }
     impl Builder {
         /// <p>The identifier of this <a>RequestValidator</a>.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The name of this <a>RequestValidator</a></p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.</p>
-        pub fn validate_request_body(mut self, inp: bool) -> Self {
-            self.validate_request_body = Some(inp);
+        pub fn validate_request_body(mut self, input: bool) -> Self {
+            self.validate_request_body = Some(input);
             self
         }
-        pub fn set_validate_request_body(mut self, inp: bool) -> Self {
-            self.validate_request_body = Some(inp);
+        pub fn set_validate_request_body(mut self, input: std::option::Option<bool>) -> Self {
+            self.validate_request_body = input;
             self
         }
         /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
-        pub fn validate_request_parameters(mut self, inp: bool) -> Self {
-            self.validate_request_parameters = Some(inp);
+        pub fn validate_request_parameters(mut self, input: bool) -> Self {
+            self.validate_request_parameters = Some(input);
             self
         }
-        pub fn set_validate_request_parameters(mut self, inp: bool) -> Self {
-            self.validate_request_parameters = Some(inp);
+        pub fn set_validate_request_parameters(mut self, input: std::option::Option<bool>) -> Self {
+            self.validate_request_parameters = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRequestValidatorOutput`](crate::output::GetRequestValidatorOutput)
@@ -9210,12 +9339,12 @@ pub mod get_model_template_output {
     }
     impl Builder {
         /// <p>The Apache <a target="_blank" href="https://velocity.apache.org/engine/devel/vtl-reference.html">Velocity Template Language (VTL)</a> template content used for the template resource.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`GetModelTemplateOutput`](crate::output::GetModelTemplateOutput)
@@ -9261,26 +9390,26 @@ pub mod get_models_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn items(mut self, inp: impl Into<crate::model::Model>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::Model>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Model>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Model>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetModelsOutput`](crate::output::GetModelsOutput)
@@ -9346,48 +9475,48 @@ pub mod get_model_output {
     }
     impl Builder {
         /// <p>The identifier for the model resource.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The name of the model. Must be an alphanumeric string.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The description of the model.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model. Do not include "\*/" characters in the description of any properties because such "\*/" characters may be interpreted as the closing marker for comments in some languages, such as Java or JavaScript, causing the installation of your API's SDK generated by API Gateway to fail.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schema = Some(inp.into());
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema = Some(input.into());
             self
         }
-        pub fn set_schema(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.schema = inp;
+        pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema = input;
             self
         }
         /// <p>The content-type for the model.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(inp.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_type = inp;
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
             self
         }
         /// Consumes the builder and constructs a [`GetModelOutput`](crate::output::GetModelOutput)
@@ -9490,12 +9619,12 @@ pub mod get_method_response_output {
     }
     impl Builder {
         /// <p>The method response's status code.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_code = inp;
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
         pub fn response_parameters(
@@ -9510,9 +9639,9 @@ pub mod get_method_response_output {
         }
         pub fn set_response_parameters(
             mut self,
-            inp: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+            input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
         ) -> Self {
-            self.response_parameters = inp;
+            self.response_parameters = input;
             self
         }
         pub fn response_models(
@@ -9527,11 +9656,11 @@ pub mod get_method_response_output {
         }
         pub fn set_response_models(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_models = inp;
+            self.response_models = input;
             self
         }
         /// Consumes the builder and constructs a [`GetMethodResponseOutput`](crate::output::GetMethodResponseOutput)
@@ -9922,63 +10051,69 @@ pub mod get_method_output {
     }
     impl Builder {
         /// <p>The method's HTTP verb.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.http_method = inp;
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
-        pub fn authorization_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorization_type = Some(inp.into());
+        pub fn authorization_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorization_type = Some(input.into());
             self
         }
         pub fn set_authorization_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.authorization_type = inp;
+            self.authorization_type = input;
             self
         }
         /// <p>The identifier of an <a>Authorizer</a> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
-        pub fn authorizer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorizer_id = Some(inp.into());
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_id = Some(input.into());
             self
         }
-        pub fn set_authorizer_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.authorizer_id = inp;
+        pub fn set_authorizer_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authorizer_id = input;
             self
         }
         /// <p>A boolean flag specifying whether a valid <a>ApiKey</a> is required to invoke this method.</p>
-        pub fn api_key_required(mut self, inp: bool) -> Self {
-            self.api_key_required = Some(inp);
+        pub fn api_key_required(mut self, input: bool) -> Self {
+            self.api_key_required = Some(input);
             self
         }
-        pub fn set_api_key_required(mut self, inp: std::option::Option<bool>) -> Self {
-            self.api_key_required = inp;
+        pub fn set_api_key_required(mut self, input: std::option::Option<bool>) -> Self {
+            self.api_key_required = input;
             self
         }
         /// <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
-        pub fn request_validator_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.request_validator_id = Some(inp.into());
+        pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.request_validator_id = Some(input.into());
             self
         }
         pub fn set_request_validator_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.request_validator_id = inp;
+            self.request_validator_id = input;
             self
         }
         /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
-        pub fn operation_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.operation_name = Some(inp.into());
+        pub fn operation_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_name = Some(input.into());
             self
         }
-        pub fn set_operation_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.operation_name = inp;
+        pub fn set_operation_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.operation_name = input;
             self
         }
         pub fn request_parameters(
@@ -9993,9 +10128,9 @@ pub mod get_method_output {
         }
         pub fn set_request_parameters(
             mut self,
-            inp: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+            input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
         ) -> Self {
-            self.request_parameters = inp;
+            self.request_parameters = input;
             self
         }
         pub fn request_models(
@@ -10010,11 +10145,11 @@ pub mod get_method_output {
         }
         pub fn set_request_models(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.request_models = inp;
+            self.request_models = input;
             self
         }
         pub fn method_responses(
@@ -10029,11 +10164,11 @@ pub mod get_method_output {
         }
         pub fn set_method_responses(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::MethodResponse>,
             >,
         ) -> Self {
-            self.method_responses = inp;
+            self.method_responses = input;
             self
         }
         /// <p>Gets the method's integration responsible for passing the client-submitted request to the back end and performing necessary transformations to make the request compliant with the back end.</p>
@@ -10126,28 +10261,28 @@ pub mod get_method_output {
         /// <div class="seeAlso">
         /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
         /// </div>
-        pub fn method_integration(mut self, inp: crate::model::Integration) -> Self {
-            self.method_integration = Some(inp);
+        pub fn method_integration(mut self, input: crate::model::Integration) -> Self {
+            self.method_integration = Some(input);
             self
         }
         pub fn set_method_integration(
             mut self,
-            inp: std::option::Option<crate::model::Integration>,
+            input: std::option::Option<crate::model::Integration>,
         ) -> Self {
-            self.method_integration = inp;
+            self.method_integration = input;
             self
         }
-        pub fn authorization_scopes(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn authorization_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.authorization_scopes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.authorization_scopes = Some(v);
             self
         }
         pub fn set_authorization_scopes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.authorization_scopes = inp;
+            self.authorization_scopes = input;
             self
         }
         /// Consumes the builder and constructs a [`GetMethodOutput`](crate::output::GetMethodOutput)
@@ -10230,24 +10365,24 @@ pub mod get_integration_response_output {
     }
     impl Builder {
         /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_code = inp;
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
         /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status code is matched.</p>
-        pub fn selection_pattern(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.selection_pattern = Some(inp.into());
+        pub fn selection_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.selection_pattern = Some(input.into());
             self
         }
         pub fn set_selection_pattern(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.selection_pattern = inp;
+            self.selection_pattern = input;
             self
         }
         pub fn response_parameters(
@@ -10262,11 +10397,11 @@ pub mod get_integration_response_output {
         }
         pub fn set_response_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_parameters = inp;
+            self.response_parameters = input;
             self
         }
         pub fn response_templates(
@@ -10281,11 +10416,11 @@ pub mod get_integration_response_output {
         }
         pub fn set_response_templates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_templates = inp;
+            self.response_templates = input;
             self
         }
         /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
@@ -10294,15 +10429,15 @@ pub mod get_integration_response_output {
         /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
         /// </ul>
         /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
-        pub fn content_handling(mut self, inp: crate::model::ContentHandlingStrategy) -> Self {
-            self.content_handling = Some(inp);
+        pub fn content_handling(mut self, input: crate::model::ContentHandlingStrategy) -> Self {
+            self.content_handling = Some(input);
             self
         }
         pub fn set_content_handling(
             mut self,
-            inp: std::option::Option<crate::model::ContentHandlingStrategy>,
+            input: std::option::Option<crate::model::ContentHandlingStrategy>,
         ) -> Self {
-            self.content_handling = inp;
+            self.content_handling = input;
             self
         }
         /// Consumes the builder and constructs a [`GetIntegrationResponseOutput`](crate::output::GetIntegrationResponseOutput)
@@ -10511,21 +10646,24 @@ pub mod get_integration_output {
         /// <li><code>MOCK</code>: for integrating the API method request with API Gateway as a "loop-back" endpoint without invoking any backend.</li>
         /// </ul>
         /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <a>VpcLink</a> to connect API Gateway to a network load balancer of a VPC.</p>
-        pub fn r#type(mut self, inp: crate::model::IntegrationType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::IntegrationType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::IntegrationType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::IntegrationType>,
+        ) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>Specifies the integration's HTTP method type.</p>
-        pub fn http_method(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_method = Some(inp.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_method = Some(input.into());
             self
         }
-        pub fn set_http_method(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.http_method = inp;
+        pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.http_method = input;
             self
         }
         /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
@@ -10534,42 +10672,45 @@ pub mod get_integration_output {
         /// </li>
         /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
         /// </li></ul>
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.uri = Some(inp.into());
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uri = Some(input.into());
             self
         }
-        pub fn set_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.uri = inp;
+        pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uri = input;
             self
         }
         /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
-        pub fn connection_type(mut self, inp: crate::model::ConnectionType) -> Self {
-            self.connection_type = Some(inp);
+        pub fn connection_type(mut self, input: crate::model::ConnectionType) -> Self {
+            self.connection_type = Some(input);
             self
         }
         pub fn set_connection_type(
             mut self,
-            inp: std::option::Option<crate::model::ConnectionType>,
+            input: std::option::Option<crate::model::ConnectionType>,
         ) -> Self {
-            self.connection_type = inp;
+            self.connection_type = input;
             self
         }
         /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
-        pub fn connection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.connection_id = Some(inp.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.connection_id = Some(input.into());
             self
         }
-        pub fn set_connection_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.connection_id = inp;
+        pub fn set_connection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.connection_id = input;
             self
         }
         /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported AWS services, specify null.</p>
-        pub fn credentials(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.credentials = Some(inp.into());
+        pub fn credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.credentials = Some(input.into());
             self
         }
-        pub fn set_credentials(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.credentials = inp;
+        pub fn set_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.credentials = input;
             self
         }
         pub fn request_parameters(
@@ -10584,11 +10725,11 @@ pub mod get_integration_output {
         }
         pub fn set_request_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.request_parameters = inp;
+            self.request_parameters = input;
             self
         }
         pub fn request_templates(
@@ -10603,11 +10744,11 @@ pub mod get_integration_output {
         }
         pub fn set_request_templates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.request_templates = inp;
+            self.request_templates = input;
             self
         }
         /// <div>
@@ -10634,15 +10775,15 @@ pub mod get_integration_output {
         /// </li>
         /// </ul>
         /// </div>
-        pub fn passthrough_behavior(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.passthrough_behavior = Some(inp.into());
+        pub fn passthrough_behavior(mut self, input: impl Into<std::string::String>) -> Self {
+            self.passthrough_behavior = Some(input.into());
             self
         }
         pub fn set_passthrough_behavior(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.passthrough_behavior = inp;
+            self.passthrough_behavior = input;
             self
         }
         /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
@@ -10651,49 +10792,49 @@ pub mod get_integration_output {
         /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
         /// </ul>
         /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
-        pub fn content_handling(mut self, inp: crate::model::ContentHandlingStrategy) -> Self {
-            self.content_handling = Some(inp);
+        pub fn content_handling(mut self, input: crate::model::ContentHandlingStrategy) -> Self {
+            self.content_handling = Some(input);
             self
         }
         pub fn set_content_handling(
             mut self,
-            inp: std::option::Option<crate::model::ContentHandlingStrategy>,
+            input: std::option::Option<crate::model::ContentHandlingStrategy>,
         ) -> Self {
-            self.content_handling = inp;
+            self.content_handling = input;
             self
         }
         /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
-        pub fn timeout_in_millis(mut self, inp: i32) -> Self {
-            self.timeout_in_millis = Some(inp);
+        pub fn timeout_in_millis(mut self, input: i32) -> Self {
+            self.timeout_in_millis = Some(input);
             self
         }
-        pub fn set_timeout_in_millis(mut self, inp: i32) -> Self {
-            self.timeout_in_millis = Some(inp);
+        pub fn set_timeout_in_millis(mut self, input: std::option::Option<i32>) -> Self {
+            self.timeout_in_millis = input;
             self
         }
         /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
-        pub fn cache_namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cache_namespace = Some(inp.into());
+        pub fn cache_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cache_namespace = Some(input.into());
             self
         }
         pub fn set_cache_namespace(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cache_namespace = inp;
+            self.cache_namespace = input;
             self
         }
-        pub fn cache_key_parameters(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn cache_key_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_key_parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.cache_key_parameters = Some(v);
             self
         }
         pub fn set_cache_key_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.cache_key_parameters = inp;
+            self.cache_key_parameters = input;
             self
         }
         pub fn integration_responses(
@@ -10708,20 +10849,23 @@ pub mod get_integration_output {
         }
         pub fn set_integration_responses(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::IntegrationResponse>,
             >,
         ) -> Self {
-            self.integration_responses = inp;
+            self.integration_responses = input;
             self
         }
         /// <p>Specifies the TLS configuration for an integration.</p>
-        pub fn tls_config(mut self, inp: crate::model::TlsConfig) -> Self {
-            self.tls_config = Some(inp);
+        pub fn tls_config(mut self, input: crate::model::TlsConfig) -> Self {
+            self.tls_config = Some(input);
             self
         }
-        pub fn set_tls_config(mut self, inp: std::option::Option<crate::model::TlsConfig>) -> Self {
-            self.tls_config = inp;
+        pub fn set_tls_config(
+            mut self,
+            input: std::option::Option<crate::model::TlsConfig>,
+        ) -> Self {
+            self.tls_config = input;
             self
         }
         /// Consumes the builder and constructs a [`GetIntegrationOutput`](crate::output::GetIntegrationOutput)
@@ -11306,26 +11450,26 @@ pub mod get_gateway_responses_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn items(mut self, inp: impl Into<crate::model::GatewayResponse>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::GatewayResponse>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GatewayResponse>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GatewayResponse>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not support pagination and the position does not apply here.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetGatewayResponsesOutput`](crate::output::GetGatewayResponsesOutput)
@@ -11447,24 +11591,24 @@ pub mod get_gateway_response_output {
     }
     impl Builder {
         /// <p>The response type of the associated <a>GatewayResponse</a>. Valid values are <ul><li>ACCESS_DENIED</li><li>API_CONFIGURATION_ERROR</li><li>AUTHORIZER_FAILURE</li><li> AUTHORIZER_CONFIGURATION_ERROR</li><li>BAD_REQUEST_PARAMETERS</li><li>BAD_REQUEST_BODY</li><li>DEFAULT_4XX</li><li>DEFAULT_5XX</li><li>EXPIRED_TOKEN</li><li>INVALID_SIGNATURE</li><li>INTEGRATION_FAILURE</li><li>INTEGRATION_TIMEOUT</li><li>INVALID_API_KEY</li><li>MISSING_AUTHENTICATION_TOKEN</li><li> QUOTA_EXCEEDED</li><li>REQUEST_TOO_LARGE</li><li>RESOURCE_NOT_FOUND</li><li>THROTTLED</li><li>UNAUTHORIZED</li><li>UNSUPPORTED_MEDIA_TYPE</li></ul> </p>
-        pub fn response_type(mut self, inp: crate::model::GatewayResponseType) -> Self {
-            self.response_type = Some(inp);
+        pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
+            self.response_type = Some(input);
             self
         }
         pub fn set_response_type(
             mut self,
-            inp: std::option::Option<crate::model::GatewayResponseType>,
+            input: std::option::Option<crate::model::GatewayResponseType>,
         ) -> Self {
-            self.response_type = inp;
+            self.response_type = input;
             self
         }
         /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
-        pub fn status_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_code = Some(inp.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_code = Some(input.into());
             self
         }
-        pub fn set_status_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_code = inp;
+        pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_code = input;
             self
         }
         pub fn response_parameters(
@@ -11479,11 +11623,11 @@ pub mod get_gateway_response_output {
         }
         pub fn set_response_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_parameters = inp;
+            self.response_parameters = input;
             self
         }
         pub fn response_templates(
@@ -11498,20 +11642,20 @@ pub mod get_gateway_response_output {
         }
         pub fn set_response_templates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.response_templates = inp;
+            self.response_templates = input;
             self
         }
         /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
-        pub fn default_response(mut self, inp: bool) -> Self {
-            self.default_response = Some(inp);
+        pub fn default_response(mut self, input: bool) -> Self {
+            self.default_response = Some(input);
             self
         }
-        pub fn set_default_response(mut self, inp: bool) -> Self {
-            self.default_response = Some(inp);
+        pub fn set_default_response(mut self, input: std::option::Option<bool>) -> Self {
+            self.default_response = input;
             self
         }
         /// Consumes the builder and constructs a [`GetGatewayResponseOutput`](crate::output::GetGatewayResponseOutput)
@@ -11565,33 +11709,33 @@ pub mod get_export_output {
     }
     impl Builder {
         /// <p>The content-type header value in the HTTP response. This will correspond to a valid 'accept' type in the request.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(inp.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_type = inp;
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
             self
         }
         /// <p>The content-disposition header value in the HTTP response.</p>
-        pub fn content_disposition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_disposition = Some(inp.into());
+        pub fn content_disposition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_disposition = Some(input.into());
             self
         }
         pub fn set_content_disposition(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.content_disposition = inp;
+            self.content_disposition = input;
             self
         }
         /// <p>The binary blob response to <a>GetExport</a>, which contains the export.</p>
-        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
-            self.body = Some(inp);
+        pub fn body(mut self, input: smithy_types::Blob) -> Self {
+            self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.body = inp;
+        pub fn set_body(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.body = input;
             self
         }
         /// Consumes the builder and constructs a [`GetExportOutput`](crate::output::GetExportOutput)
@@ -11641,26 +11785,26 @@ pub mod get_domain_names_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn items(mut self, inp: impl Into<crate::model::DomainName>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::DomainName>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DomainName>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DomainName>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDomainNamesOutput`](crate::output::GetDomainNamesOutput)
@@ -11780,168 +11924,174 @@ pub mod get_domain_name_output {
     }
     impl Builder {
         /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_name = Some(inp.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
             self
         }
-        pub fn set_domain_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = inp;
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
             self
         }
         /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
-        pub fn certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_name = Some(inp.into());
+        pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_name = Some(input.into());
             self
         }
         pub fn set_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_name = inp;
+            self.certificate_name = input;
             self
         }
         /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_arn = Some(inp.into());
+        pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_arn = Some(input.into());
             self
         }
         pub fn set_certificate_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_arn = inp;
+            self.certificate_arn = input;
             self
         }
         /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-        pub fn certificate_upload_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.certificate_upload_date = Some(inp);
+        pub fn certificate_upload_date(mut self, input: smithy_types::Instant) -> Self {
+            self.certificate_upload_date = Some(input);
             self
         }
         pub fn set_certificate_upload_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.certificate_upload_date = inp;
+            self.certificate_upload_date = input;
             self
         }
         /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
-        pub fn regional_domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.regional_domain_name = Some(inp.into());
+        pub fn regional_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regional_domain_name = Some(input.into());
             self
         }
         pub fn set_regional_domain_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.regional_domain_name = inp;
+            self.regional_domain_name = input;
             self
         }
         /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
-        pub fn regional_hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.regional_hosted_zone_id = Some(inp.into());
+        pub fn regional_hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regional_hosted_zone_id = Some(input.into());
             self
         }
         pub fn set_regional_hosted_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.regional_hosted_zone_id = inp;
+            self.regional_hosted_zone_id = input;
             self
         }
         /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
-        pub fn regional_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.regional_certificate_name = Some(inp.into());
+        pub fn regional_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regional_certificate_name = Some(input.into());
             self
         }
         pub fn set_regional_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.regional_certificate_name = inp;
+            self.regional_certificate_name = input;
             self
         }
         /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
-        pub fn regional_certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.regional_certificate_arn = Some(inp.into());
+        pub fn regional_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regional_certificate_arn = Some(input.into());
             self
         }
         pub fn set_regional_certificate_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.regional_certificate_arn = inp;
+            self.regional_certificate_arn = input;
             self
         }
         /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the <a target="_blank" href="https://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront documentation</a>.</p>
-        pub fn distribution_domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.distribution_domain_name = Some(inp.into());
+        pub fn distribution_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.distribution_domain_name = Some(input.into());
             self
         }
         pub fn set_distribution_domain_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.distribution_domain_name = inp;
+            self.distribution_domain_name = input;
             self
         }
         /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
-        pub fn distribution_hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.distribution_hosted_zone_id = Some(inp.into());
+        pub fn distribution_hosted_zone_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.distribution_hosted_zone_id = Some(input.into());
             self
         }
         pub fn set_distribution_hosted_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.distribution_hosted_zone_id = inp;
+            self.distribution_hosted_zone_id = input;
             self
         }
         /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
-        pub fn endpoint_configuration(mut self, inp: crate::model::EndpointConfiguration) -> Self {
-            self.endpoint_configuration = Some(inp);
+        pub fn endpoint_configuration(
+            mut self,
+            input: crate::model::EndpointConfiguration,
+        ) -> Self {
+            self.endpoint_configuration = Some(input);
             self
         }
         pub fn set_endpoint_configuration(
             mut self,
-            inp: std::option::Option<crate::model::EndpointConfiguration>,
+            input: std::option::Option<crate::model::EndpointConfiguration>,
         ) -> Self {
-            self.endpoint_configuration = inp;
+            self.endpoint_configuration = input;
             self
         }
         /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
-        pub fn domain_name_status(mut self, inp: crate::model::DomainNameStatus) -> Self {
-            self.domain_name_status = Some(inp);
+        pub fn domain_name_status(mut self, input: crate::model::DomainNameStatus) -> Self {
+            self.domain_name_status = Some(input);
             self
         }
         pub fn set_domain_name_status(
             mut self,
-            inp: std::option::Option<crate::model::DomainNameStatus>,
+            input: std::option::Option<crate::model::DomainNameStatus>,
         ) -> Self {
-            self.domain_name_status = inp;
+            self.domain_name_status = input;
             self
         }
         /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
-        pub fn domain_name_status_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_name_status_message = Some(inp.into());
+        pub fn domain_name_status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name_status_message = Some(input.into());
             self
         }
         pub fn set_domain_name_status_message(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.domain_name_status_message = inp;
+            self.domain_name_status_message = input;
             self
         }
         /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
-        pub fn security_policy(mut self, inp: crate::model::SecurityPolicy) -> Self {
-            self.security_policy = Some(inp);
+        pub fn security_policy(mut self, input: crate::model::SecurityPolicy) -> Self {
+            self.security_policy = Some(input);
             self
         }
         pub fn set_security_policy(
             mut self,
-            inp: std::option::Option<crate::model::SecurityPolicy>,
+            input: std::option::Option<crate::model::SecurityPolicy>,
         ) -> Self {
-            self.security_policy = inp;
+            self.security_policy = input;
             self
         }
         pub fn tags(
@@ -11956,26 +12106,26 @@ pub mod get_domain_name_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
         pub fn mutual_tls_authentication(
             mut self,
-            inp: crate::model::MutualTlsAuthentication,
+            input: crate::model::MutualTlsAuthentication,
         ) -> Self {
-            self.mutual_tls_authentication = Some(inp);
+            self.mutual_tls_authentication = Some(input);
             self
         }
         pub fn set_mutual_tls_authentication(
             mut self,
-            inp: std::option::Option<crate::model::MutualTlsAuthentication>,
+            input: std::option::Option<crate::model::MutualTlsAuthentication>,
         ) -> Self {
-            self.mutual_tls_authentication = inp;
+            self.mutual_tls_authentication = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDomainNameOutput`](crate::output::GetDomainNameOutput)
@@ -12039,26 +12189,26 @@ pub mod get_documentation_versions_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn items(mut self, inp: impl Into<crate::model::DocumentationVersion>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::DocumentationVersion>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DocumentationVersion>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DocumentationVersion>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDocumentationVersionsOutput`](crate::output::GetDocumentationVersionsOutput)
@@ -12113,30 +12263,33 @@ pub mod get_documentation_version_output {
     }
     impl Builder {
         /// <p>The version identifier of the API documentation snapshot.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
         /// <p>The date when the API documentation snapshot is created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The description of the API documentation snapshot.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDocumentationVersionOutput`](crate::output::GetDocumentationVersionOutput)
@@ -12187,26 +12340,26 @@ pub mod get_documentation_parts_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn items(mut self, inp: impl Into<crate::model::DocumentationPart>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::DocumentationPart>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DocumentationPart>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DocumentationPart>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDocumentationPartsOutput`](crate::output::GetDocumentationPartsOutput)
@@ -12263,33 +12416,33 @@ pub mod get_documentation_part_output {
     }
     impl Builder {
         /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The location of the API entity to which the documentation applies. Valid fields depend on the targeted API entity type. All the valid location fields are not required. If not explicitly specified, a valid location field is treated as a wildcard and associated documentation content may be inherited by matching entities, unless overridden.</p>
-        pub fn location(mut self, inp: crate::model::DocumentationPartLocation) -> Self {
-            self.location = Some(inp);
+        pub fn location(mut self, input: crate::model::DocumentationPartLocation) -> Self {
+            self.location = Some(input);
             self
         }
         pub fn set_location(
             mut self,
-            inp: std::option::Option<crate::model::DocumentationPartLocation>,
+            input: std::option::Option<crate::model::DocumentationPartLocation>,
         ) -> Self {
-            self.location = inp;
+            self.location = input;
             self
         }
         /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
-        pub fn properties(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.properties = Some(inp.into());
+        pub fn properties(mut self, input: impl Into<std::string::String>) -> Self {
+            self.properties = Some(input.into());
             self
         }
-        pub fn set_properties(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.properties = inp;
+        pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.properties = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDocumentationPartOutput`](crate::output::GetDocumentationPartOutput)
@@ -12343,26 +12496,26 @@ pub mod get_deployments_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn items(mut self, inp: impl Into<crate::model::Deployment>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::Deployment>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput)
@@ -12433,30 +12586,33 @@ pub mod get_deployment_output {
     }
     impl Builder {
         /// <p>The identifier for the deployment resource.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The description for the deployment resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The date and time that the deployment resource was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         pub fn api_summary(
@@ -12471,14 +12627,14 @@ pub mod get_deployment_output {
         }
         pub fn set_api_summary(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>,
                 >,
             >,
         ) -> Self {
-            self.api_summary = inp;
+            self.api_summary = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDeploymentOutput`](crate::output::GetDeploymentOutput)
@@ -12529,26 +12685,26 @@ pub mod get_client_certificates_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn items(mut self, inp: impl Into<crate::model::ClientCertificate>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::ClientCertificate>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ClientCertificate>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ClientCertificate>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetClientCertificatesOutput`](crate::output::GetClientCertificatesOutput)
@@ -12618,57 +12774,60 @@ pub mod get_client_certificate_output {
     }
     impl Builder {
         /// <p>The identifier of the client certificate.</p>
-        pub fn client_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_certificate_id = Some(inp.into());
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_certificate_id = Some(input.into());
             self
         }
         pub fn set_client_certificate_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_certificate_id = inp;
+            self.client_certificate_id = input;
             self
         }
         /// <p>The description of the client certificate.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
-        pub fn pem_encoded_certificate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pem_encoded_certificate = Some(inp.into());
+        pub fn pem_encoded_certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pem_encoded_certificate = Some(input.into());
             self
         }
         pub fn set_pem_encoded_certificate(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.pem_encoded_certificate = inp;
+            self.pem_encoded_certificate = input;
             self
         }
         /// <p>The timestamp when the client certificate was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The timestamp when the client certificate will expire.</p>
-        pub fn expiration_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.expiration_date = Some(inp);
+        pub fn expiration_date(mut self, input: smithy_types::Instant) -> Self {
+            self.expiration_date = Some(input);
             self
         }
         pub fn set_expiration_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.expiration_date = inp;
+            self.expiration_date = input;
             self
         }
         pub fn tags(
@@ -12683,11 +12842,11 @@ pub mod get_client_certificate_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`GetClientCertificateOutput`](crate::output::GetClientCertificateOutput)
@@ -12740,26 +12899,26 @@ pub mod get_base_path_mappings_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn items(mut self, inp: impl Into<crate::model::BasePathMapping>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::BasePathMapping>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::BasePathMapping>>,
+            input: std::option::Option<std::vec::Vec<crate::model::BasePathMapping>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBasePathMappingsOutput`](crate::output::GetBasePathMappingsOutput)
@@ -12814,30 +12973,30 @@ pub mod get_base_path_mapping_output {
     }
     impl Builder {
         /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
-        pub fn base_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.base_path = Some(inp.into());
+        pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.base_path = Some(input.into());
             self
         }
-        pub fn set_base_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.base_path = inp;
+        pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.base_path = input;
             self
         }
         /// <p>The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.rest_api_id = inp;
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The name of the associated stage.</p>
-        pub fn stage(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage = Some(inp.into());
+        pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage = Some(input.into());
             self
         }
-        pub fn set_stage(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stage = inp;
+        pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBasePathMappingOutput`](crate::output::GetBasePathMappingOutput)
@@ -12888,26 +13047,26 @@ pub mod get_authorizers_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn items(mut self, inp: impl Into<crate::model::Authorizer>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::Authorizer>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Authorizer>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Authorizer>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAuthorizersOutput`](crate::output::GetAuthorizersOutput)
@@ -12996,112 +13155,118 @@ pub mod get_authorizer_output {
     }
     impl Builder {
         /// <p>The identifier for the authorizer resource.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>[Required] The name of the authorizer.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
-        pub fn r#type(mut self, inp: crate::model::AuthorizerType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::AuthorizerType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::AuthorizerType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::AuthorizerType>,
+        ) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn provider_ar_ns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.provider_ar_ns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.provider_ar_ns = Some(v);
             self
         }
         pub fn set_provider_ar_ns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.provider_ar_ns = inp;
+            self.provider_ar_ns = input;
             self
         }
         /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
-        pub fn auth_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.auth_type = Some(inp.into());
+        pub fn auth_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.auth_type = Some(input.into());
             self
         }
-        pub fn set_auth_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.auth_type = inp;
+        pub fn set_auth_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auth_type = input;
             self
         }
         /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
-        pub fn authorizer_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorizer_uri = Some(inp.into());
+        pub fn authorizer_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_uri = Some(input.into());
             self
         }
-        pub fn set_authorizer_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.authorizer_uri = inp;
+        pub fn set_authorizer_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authorizer_uri = input;
             self
         }
         /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
-        pub fn authorizer_credentials(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorizer_credentials = Some(inp.into());
+        pub fn authorizer_credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_credentials = Some(input.into());
             self
         }
         pub fn set_authorizer_credentials(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.authorizer_credentials = inp;
+            self.authorizer_credentials = input;
             self
         }
         /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
-        pub fn identity_source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.identity_source = Some(inp.into());
+        pub fn identity_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identity_source = Some(input.into());
             self
         }
         pub fn set_identity_source(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.identity_source = inp;
+            self.identity_source = input;
             self
         }
         /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
         pub fn identity_validation_expression(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.identity_validation_expression = Some(inp.into());
+            self.identity_validation_expression = Some(input.into());
             self
         }
         pub fn set_identity_validation_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.identity_validation_expression = inp;
+            self.identity_validation_expression = input;
             self
         }
         /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
-        pub fn authorizer_result_ttl_in_seconds(mut self, inp: i32) -> Self {
-            self.authorizer_result_ttl_in_seconds = Some(inp);
+        pub fn authorizer_result_ttl_in_seconds(mut self, input: i32) -> Self {
+            self.authorizer_result_ttl_in_seconds = Some(input);
             self
         }
         pub fn set_authorizer_result_ttl_in_seconds(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.authorizer_result_ttl_in_seconds = inp;
+            self.authorizer_result_ttl_in_seconds = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAuthorizerOutput`](crate::output::GetAuthorizerOutput)
@@ -13162,39 +13327,39 @@ pub mod get_api_keys_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn warnings(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.warnings = Some(v);
             self
         }
         pub fn set_warnings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.warnings = inp;
+            self.warnings = input;
             self
         }
-        pub fn items(mut self, inp: impl Into<crate::model::ApiKey>) -> Self {
+        pub fn items(mut self, input: impl Into<crate::model::ApiKey>) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.items = Some(v);
             self
         }
         pub fn set_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ApiKey>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ApiKey>>,
         ) -> Self {
-            self.items = inp;
+            self.items = input;
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.position = Some(inp.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.position = Some(input.into());
             self
         }
-        pub fn set_position(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.position = inp;
+        pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.position = input;
             self
         }
         /// Consumes the builder and constructs a [`GetApiKeysOutput`](crate::output::GetApiKeysOutput)
@@ -13280,91 +13445,94 @@ pub mod get_api_key_output {
     }
     impl Builder {
         /// <p>The identifier of the API Key.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The value of the API Key.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// <p>The name of the API Key.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
-        pub fn customer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.customer_id = Some(inp.into());
+        pub fn customer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.customer_id = Some(input.into());
             self
         }
-        pub fn set_customer_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.customer_id = inp;
+        pub fn set_customer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_id = input;
             self
         }
         /// <p>The description of the API Key.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Specifies whether the API Key can be used by callers.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
             self
         }
-        pub fn set_enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
             self
         }
         /// <p>The timestamp when the API Key was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The timestamp when the API Key was last updated.</p>
-        pub fn last_updated_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_updated_date = Some(inp);
+        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated_date = Some(input);
             self
         }
         pub fn set_last_updated_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_updated_date = inp;
+            self.last_updated_date = input;
             self
         }
-        pub fn stage_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn stage_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stage_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.stage_keys = Some(v);
             self
         }
         pub fn set_stage_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.stage_keys = inp;
+            self.stage_keys = input;
             self
         }
         pub fn tags(
@@ -13379,11 +13547,11 @@ pub mod get_api_key_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`GetApiKeyOutput`](crate::output::GetApiKeyOutput)
@@ -13494,52 +13662,52 @@ pub mod get_account_output {
     }
     impl Builder {
         /// <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>. </p>
-        pub fn cloudwatch_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cloudwatch_role_arn = Some(inp.into());
+        pub fn cloudwatch_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cloudwatch_role_arn = Some(input.into());
             self
         }
         pub fn set_cloudwatch_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cloudwatch_role_arn = inp;
+            self.cloudwatch_role_arn = input;
             self
         }
         /// <p>Specifies the API request limits configured for the current <a>Account</a>.</p>
-        pub fn throttle_settings(mut self, inp: crate::model::ThrottleSettings) -> Self {
-            self.throttle_settings = Some(inp);
+        pub fn throttle_settings(mut self, input: crate::model::ThrottleSettings) -> Self {
+            self.throttle_settings = Some(input);
             self
         }
         pub fn set_throttle_settings(
             mut self,
-            inp: std::option::Option<crate::model::ThrottleSettings>,
+            input: std::option::Option<crate::model::ThrottleSettings>,
         ) -> Self {
-            self.throttle_settings = inp;
+            self.throttle_settings = input;
             self
         }
-        pub fn features(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn features(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.features.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.features = Some(v);
             self
         }
         pub fn set_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.features = inp;
+            self.features = input;
             self
         }
         /// <p>The version of the API keys used for the account.</p>
-        pub fn api_key_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.api_key_version = Some(inp.into());
+        pub fn api_key_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.api_key_version = Some(input.into());
             self
         }
         pub fn set_api_key_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.api_key_version = inp;
+            self.api_key_version = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAccountOutput`](crate::output::GetAccountOutput)
@@ -13611,57 +13779,60 @@ pub mod generate_client_certificate_output {
     }
     impl Builder {
         /// <p>The identifier of the client certificate.</p>
-        pub fn client_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_certificate_id = Some(inp.into());
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_certificate_id = Some(input.into());
             self
         }
         pub fn set_client_certificate_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_certificate_id = inp;
+            self.client_certificate_id = input;
             self
         }
         /// <p>The description of the client certificate.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
-        pub fn pem_encoded_certificate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pem_encoded_certificate = Some(inp.into());
+        pub fn pem_encoded_certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pem_encoded_certificate = Some(input.into());
             self
         }
         pub fn set_pem_encoded_certificate(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.pem_encoded_certificate = inp;
+            self.pem_encoded_certificate = input;
             self
         }
         /// <p>The timestamp when the client certificate was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The timestamp when the client certificate will expire.</p>
-        pub fn expiration_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.expiration_date = Some(inp);
+        pub fn expiration_date(mut self, input: smithy_types::Instant) -> Self {
+            self.expiration_date = Some(input);
             self
         }
         pub fn set_expiration_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.expiration_date = inp;
+            self.expiration_date = input;
             self
         }
         pub fn tags(
@@ -13676,11 +13847,11 @@ pub mod generate_client_certificate_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`GenerateClientCertificateOutput`](crate::output::GenerateClientCertificateOutput)
@@ -14424,61 +14595,67 @@ pub mod create_vpc_link_output {
     }
     impl Builder {
         /// <p>The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The name used to label and identify the VPC link.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The description of the VPC link.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn target_arns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn target_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_arns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.target_arns = Some(v);
             self
         }
         pub fn set_target_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.target_arns = inp;
+            self.target_arns = input;
             self
         }
         /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
-        pub fn status(mut self, inp: crate::model::VpcLinkStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::VpcLinkStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::VpcLinkStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::VpcLinkStatus>,
+        ) -> Self {
+            self.status = input;
             self
         }
         /// <p>A description about the VPC link status.</p>
-        pub fn status_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_message = Some(inp.into());
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
             self
         }
-        pub fn set_status_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_message = inp;
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
             self
         }
         pub fn tags(
@@ -14493,11 +14670,11 @@ pub mod create_vpc_link_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateVpcLinkOutput`](crate::output::CreateVpcLinkOutput)
@@ -14563,39 +14740,39 @@ pub mod create_usage_plan_key_output {
     }
     impl Builder {
         /// <p>The Id of a usage plan key.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The type of a usage plan key. Currently, the valid key type is <code>API_KEY</code>.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The value of a usage plan key.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// <p>The name of a usage plan key.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateUsagePlanKeyOutput`](crate::output::CreateUsagePlanKeyOutput)
@@ -14677,73 +14854,76 @@ pub mod create_usage_plan_output {
     }
     impl Builder {
         /// <p>The identifier of a <a>UsagePlan</a> resource.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The name of a usage plan.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The description of a usage plan.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn api_stages(mut self, inp: impl Into<crate::model::ApiStage>) -> Self {
+        pub fn api_stages(mut self, input: impl Into<crate::model::ApiStage>) -> Self {
             let mut v = self.api_stages.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.api_stages = Some(v);
             self
         }
         pub fn set_api_stages(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
         ) -> Self {
-            self.api_stages = inp;
+            self.api_stages = input;
             self
         }
         /// <p>The request throttle limits of a usage plan.</p>
-        pub fn throttle(mut self, inp: crate::model::ThrottleSettings) -> Self {
-            self.throttle = Some(inp);
+        pub fn throttle(mut self, input: crate::model::ThrottleSettings) -> Self {
+            self.throttle = Some(input);
             self
         }
         pub fn set_throttle(
             mut self,
-            inp: std::option::Option<crate::model::ThrottleSettings>,
+            input: std::option::Option<crate::model::ThrottleSettings>,
         ) -> Self {
-            self.throttle = inp;
+            self.throttle = input;
             self
         }
         /// <p>The maximum number of permitted requests per a given unit time interval.</p>
-        pub fn quota(mut self, inp: crate::model::QuotaSettings) -> Self {
-            self.quota = Some(inp);
+        pub fn quota(mut self, input: crate::model::QuotaSettings) -> Self {
+            self.quota = Some(input);
             self
         }
-        pub fn set_quota(mut self, inp: std::option::Option<crate::model::QuotaSettings>) -> Self {
-            self.quota = inp;
+        pub fn set_quota(
+            mut self,
+            input: std::option::Option<crate::model::QuotaSettings>,
+        ) -> Self {
+            self.quota = input;
             self
         }
         /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
-        pub fn product_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.product_code = Some(inp.into());
+        pub fn product_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.product_code = Some(input.into());
             self
         }
-        pub fn set_product_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.product_code = inp;
+        pub fn set_product_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.product_code = input;
             self
         }
         pub fn tags(
@@ -14758,11 +14938,11 @@ pub mod create_usage_plan_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateUsagePlanOutput`](crate::output::CreateUsagePlanOutput)
@@ -14889,75 +15069,78 @@ pub mod create_stage_output {
     }
     impl Builder {
         /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
-        pub fn deployment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.deployment_id = Some(inp.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.deployment_id = Some(input.into());
             self
         }
-        pub fn set_deployment_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.deployment_id = inp;
+        pub fn set_deployment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.deployment_id = input;
             self
         }
         /// <p>The identifier of a client certificate for an API stage.</p>
-        pub fn client_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_certificate_id = Some(inp.into());
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_certificate_id = Some(input.into());
             self
         }
         pub fn set_client_certificate_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_certificate_id = inp;
+            self.client_certificate_id = input;
             self
         }
         /// <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
-        pub fn stage_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage_name = Some(inp.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage_name = Some(input.into());
             self
         }
-        pub fn set_stage_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = inp;
+        pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage_name = input;
             self
         }
         /// <p>The stage's description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
-        pub fn cache_cluster_enabled(mut self, inp: bool) -> Self {
-            self.cache_cluster_enabled = Some(inp);
+        pub fn cache_cluster_enabled(mut self, input: bool) -> Self {
+            self.cache_cluster_enabled = Some(input);
             self
         }
-        pub fn set_cache_cluster_enabled(mut self, inp: bool) -> Self {
-            self.cache_cluster_enabled = Some(inp);
+        pub fn set_cache_cluster_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.cache_cluster_enabled = input;
             self
         }
         /// <p>The size of the cache cluster for the stage, if enabled.</p>
-        pub fn cache_cluster_size(mut self, inp: crate::model::CacheClusterSize) -> Self {
-            self.cache_cluster_size = Some(inp);
+        pub fn cache_cluster_size(mut self, input: crate::model::CacheClusterSize) -> Self {
+            self.cache_cluster_size = Some(input);
             self
         }
         pub fn set_cache_cluster_size(
             mut self,
-            inp: std::option::Option<crate::model::CacheClusterSize>,
+            input: std::option::Option<crate::model::CacheClusterSize>,
         ) -> Self {
-            self.cache_cluster_size = inp;
+            self.cache_cluster_size = input;
             self
         }
         /// <p>The status of the cache cluster for the stage, if enabled.</p>
-        pub fn cache_cluster_status(mut self, inp: crate::model::CacheClusterStatus) -> Self {
-            self.cache_cluster_status = Some(inp);
+        pub fn cache_cluster_status(mut self, input: crate::model::CacheClusterStatus) -> Self {
+            self.cache_cluster_status = Some(input);
             self
         }
         pub fn set_cache_cluster_status(
             mut self,
-            inp: std::option::Option<crate::model::CacheClusterStatus>,
+            input: std::option::Option<crate::model::CacheClusterStatus>,
         ) -> Self {
-            self.cache_cluster_status = inp;
+            self.cache_cluster_status = input;
             self
         }
         pub fn method_settings(
@@ -14972,11 +15155,11 @@ pub mod create_stage_output {
         }
         pub fn set_method_settings(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::MethodSetting>,
             >,
         ) -> Self {
-            self.method_settings = inp;
+            self.method_settings = input;
             self
         }
         pub fn variables(
@@ -14991,65 +15174,65 @@ pub mod create_stage_output {
         }
         pub fn set_variables(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.variables = inp;
+            self.variables = input;
             self
         }
         /// <p>The version of the associated API documentation.</p>
-        pub fn documentation_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.documentation_version = Some(inp.into());
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.documentation_version = Some(input.into());
             self
         }
         pub fn set_documentation_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.documentation_version = inp;
+            self.documentation_version = input;
             self
         }
         /// <p>Settings for logging access in this stage.</p>
-        pub fn access_log_settings(mut self, inp: crate::model::AccessLogSettings) -> Self {
-            self.access_log_settings = Some(inp);
+        pub fn access_log_settings(mut self, input: crate::model::AccessLogSettings) -> Self {
+            self.access_log_settings = Some(input);
             self
         }
         pub fn set_access_log_settings(
             mut self,
-            inp: std::option::Option<crate::model::AccessLogSettings>,
+            input: std::option::Option<crate::model::AccessLogSettings>,
         ) -> Self {
-            self.access_log_settings = inp;
+            self.access_log_settings = input;
             self
         }
         /// <p>Settings for the canary deployment in this stage.</p>
-        pub fn canary_settings(mut self, inp: crate::model::CanarySettings) -> Self {
-            self.canary_settings = Some(inp);
+        pub fn canary_settings(mut self, input: crate::model::CanarySettings) -> Self {
+            self.canary_settings = Some(input);
             self
         }
         pub fn set_canary_settings(
             mut self,
-            inp: std::option::Option<crate::model::CanarySettings>,
+            input: std::option::Option<crate::model::CanarySettings>,
         ) -> Self {
-            self.canary_settings = inp;
+            self.canary_settings = input;
             self
         }
         /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
-        pub fn tracing_enabled(mut self, inp: bool) -> Self {
-            self.tracing_enabled = Some(inp);
+        pub fn tracing_enabled(mut self, input: bool) -> Self {
+            self.tracing_enabled = Some(input);
             self
         }
-        pub fn set_tracing_enabled(mut self, inp: bool) -> Self {
-            self.tracing_enabled = Some(inp);
+        pub fn set_tracing_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.tracing_enabled = input;
             self
         }
         /// <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
-        pub fn web_acl_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.web_acl_arn = Some(inp.into());
+        pub fn web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.web_acl_arn = Some(input.into());
             self
         }
-        pub fn set_web_acl_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.web_acl_arn = inp;
+        pub fn set_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.web_acl_arn = input;
             self
         }
         pub fn tags(
@@ -15064,32 +15247,35 @@ pub mod create_stage_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The timestamp when the stage was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The timestamp when the stage last updated.</p>
-        pub fn last_updated_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_updated_date = Some(inp);
+        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated_date = Some(input);
             self
         }
         pub fn set_last_updated_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_updated_date = inp;
+            self.last_updated_date = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateStageOutput`](crate::output::CreateStageOutput)
@@ -15204,116 +15390,122 @@ pub mod create_rest_api_output {
     }
     impl Builder {
         /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The API's name.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The API's description.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>A version identifier for the API.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
-        pub fn warnings(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.warnings = Some(v);
             self
         }
         pub fn set_warnings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.warnings = inp;
+            self.warnings = input;
             self
         }
-        pub fn binary_media_types(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn binary_media_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.binary_media_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.binary_media_types = Some(v);
             self
         }
         pub fn set_binary_media_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.binary_media_types = inp;
+            self.binary_media_types = input;
             self
         }
         /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
-        pub fn minimum_compression_size(mut self, inp: i32) -> Self {
-            self.minimum_compression_size = Some(inp);
+        pub fn minimum_compression_size(mut self, input: i32) -> Self {
+            self.minimum_compression_size = Some(input);
             self
         }
-        pub fn set_minimum_compression_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.minimum_compression_size = inp;
+        pub fn set_minimum_compression_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.minimum_compression_size = input;
             self
         }
         /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
-        pub fn api_key_source(mut self, inp: crate::model::ApiKeySourceType) -> Self {
-            self.api_key_source = Some(inp);
+        pub fn api_key_source(mut self, input: crate::model::ApiKeySourceType) -> Self {
+            self.api_key_source = Some(input);
             self
         }
         pub fn set_api_key_source(
             mut self,
-            inp: std::option::Option<crate::model::ApiKeySourceType>,
+            input: std::option::Option<crate::model::ApiKeySourceType>,
         ) -> Self {
-            self.api_key_source = inp;
+            self.api_key_source = input;
             self
         }
         /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
-        pub fn endpoint_configuration(mut self, inp: crate::model::EndpointConfiguration) -> Self {
-            self.endpoint_configuration = Some(inp);
+        pub fn endpoint_configuration(
+            mut self,
+            input: crate::model::EndpointConfiguration,
+        ) -> Self {
+            self.endpoint_configuration = Some(input);
             self
         }
         pub fn set_endpoint_configuration(
             mut self,
-            inp: std::option::Option<crate::model::EndpointConfiguration>,
+            input: std::option::Option<crate::model::EndpointConfiguration>,
         ) -> Self {
-            self.endpoint_configuration = inp;
+            self.endpoint_configuration = input;
             self
         }
         /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy = Some(inp.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy = Some(input.into());
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy = input;
             self
         }
         pub fn tags(
@@ -15328,20 +15520,23 @@ pub mod create_rest_api_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-        pub fn disable_execute_api_endpoint(mut self, inp: bool) -> Self {
-            self.disable_execute_api_endpoint = Some(inp);
+        pub fn disable_execute_api_endpoint(mut self, input: bool) -> Self {
+            self.disable_execute_api_endpoint = Some(input);
             self
         }
-        pub fn set_disable_execute_api_endpoint(mut self, inp: bool) -> Self {
-            self.disable_execute_api_endpoint = Some(inp);
+        pub fn set_disable_execute_api_endpoint(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.disable_execute_api_endpoint = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateRestApiOutput`](crate::output::CreateRestApiOutput)
@@ -15569,39 +15764,39 @@ pub mod create_resource_output {
     }
     impl Builder {
         /// <p>The resource's identifier.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The parent resource's identifier.</p>
-        pub fn parent_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parent_id = Some(inp.into());
+        pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parent_id = Some(input.into());
             self
         }
-        pub fn set_parent_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.parent_id = inp;
+        pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_id = input;
             self
         }
         /// <p>The last path segment for this resource.</p>
-        pub fn path_part(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path_part = Some(inp.into());
+        pub fn path_part(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_part = Some(input.into());
             self
         }
-        pub fn set_path_part(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path_part = inp;
+        pub fn set_path_part(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path_part = input;
             self
         }
         /// <p>The full path for this resource.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         pub fn resource_methods(
@@ -15616,11 +15811,11 @@ pub mod create_resource_output {
         }
         pub fn set_resource_methods(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::Method>,
             >,
         ) -> Self {
-            self.resource_methods = inp;
+            self.resource_methods = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateResourceOutput`](crate::output::CreateResourceOutput)
@@ -15685,39 +15880,39 @@ pub mod create_request_validator_output {
     }
     impl Builder {
         /// <p>The identifier of this <a>RequestValidator</a>.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The name of this <a>RequestValidator</a></p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.</p>
-        pub fn validate_request_body(mut self, inp: bool) -> Self {
-            self.validate_request_body = Some(inp);
+        pub fn validate_request_body(mut self, input: bool) -> Self {
+            self.validate_request_body = Some(input);
             self
         }
-        pub fn set_validate_request_body(mut self, inp: bool) -> Self {
-            self.validate_request_body = Some(inp);
+        pub fn set_validate_request_body(mut self, input: std::option::Option<bool>) -> Self {
+            self.validate_request_body = input;
             self
         }
         /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
-        pub fn validate_request_parameters(mut self, inp: bool) -> Self {
-            self.validate_request_parameters = Some(inp);
+        pub fn validate_request_parameters(mut self, input: bool) -> Self {
+            self.validate_request_parameters = Some(input);
             self
         }
-        pub fn set_validate_request_parameters(mut self, inp: bool) -> Self {
-            self.validate_request_parameters = Some(inp);
+        pub fn set_validate_request_parameters(mut self, input: std::option::Option<bool>) -> Self {
+            self.validate_request_parameters = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateRequestValidatorOutput`](crate::output::CreateRequestValidatorOutput)
@@ -15785,48 +15980,48 @@ pub mod create_model_output {
     }
     impl Builder {
         /// <p>The identifier for the model resource.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The name of the model. Must be an alphanumeric string.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The description of the model.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model. Do not include "\*/" characters in the description of any properties because such "\*/" characters may be interpreted as the closing marker for comments in some languages, such as Java or JavaScript, causing the installation of your API's SDK generated by API Gateway to fail.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schema = Some(inp.into());
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema = Some(input.into());
             self
         }
-        pub fn set_schema(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.schema = inp;
+        pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema = input;
             self
         }
         /// <p>The content-type for the model.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(inp.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_type = inp;
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateModelOutput`](crate::output::CreateModelOutput)
@@ -15949,168 +16144,174 @@ pub mod create_domain_name_output {
     }
     impl Builder {
         /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
-        pub fn domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_name = Some(inp.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name = Some(input.into());
             self
         }
-        pub fn set_domain_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = inp;
+        pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain_name = input;
             self
         }
         /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
-        pub fn certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_name = Some(inp.into());
+        pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_name = Some(input.into());
             self
         }
         pub fn set_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_name = inp;
+            self.certificate_name = input;
             self
         }
         /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_arn = Some(inp.into());
+        pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_arn = Some(input.into());
             self
         }
         pub fn set_certificate_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_arn = inp;
+            self.certificate_arn = input;
             self
         }
         /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-        pub fn certificate_upload_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.certificate_upload_date = Some(inp);
+        pub fn certificate_upload_date(mut self, input: smithy_types::Instant) -> Self {
+            self.certificate_upload_date = Some(input);
             self
         }
         pub fn set_certificate_upload_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.certificate_upload_date = inp;
+            self.certificate_upload_date = input;
             self
         }
         /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
-        pub fn regional_domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.regional_domain_name = Some(inp.into());
+        pub fn regional_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regional_domain_name = Some(input.into());
             self
         }
         pub fn set_regional_domain_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.regional_domain_name = inp;
+            self.regional_domain_name = input;
             self
         }
         /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
-        pub fn regional_hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.regional_hosted_zone_id = Some(inp.into());
+        pub fn regional_hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regional_hosted_zone_id = Some(input.into());
             self
         }
         pub fn set_regional_hosted_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.regional_hosted_zone_id = inp;
+            self.regional_hosted_zone_id = input;
             self
         }
         /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
-        pub fn regional_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.regional_certificate_name = Some(inp.into());
+        pub fn regional_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regional_certificate_name = Some(input.into());
             self
         }
         pub fn set_regional_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.regional_certificate_name = inp;
+            self.regional_certificate_name = input;
             self
         }
         /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
-        pub fn regional_certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.regional_certificate_arn = Some(inp.into());
+        pub fn regional_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.regional_certificate_arn = Some(input.into());
             self
         }
         pub fn set_regional_certificate_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.regional_certificate_arn = inp;
+            self.regional_certificate_arn = input;
             self
         }
         /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the <a target="_blank" href="https://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront documentation</a>.</p>
-        pub fn distribution_domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.distribution_domain_name = Some(inp.into());
+        pub fn distribution_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.distribution_domain_name = Some(input.into());
             self
         }
         pub fn set_distribution_domain_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.distribution_domain_name = inp;
+            self.distribution_domain_name = input;
             self
         }
         /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>. </p>
-        pub fn distribution_hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.distribution_hosted_zone_id = Some(inp.into());
+        pub fn distribution_hosted_zone_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.distribution_hosted_zone_id = Some(input.into());
             self
         }
         pub fn set_distribution_hosted_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.distribution_hosted_zone_id = inp;
+            self.distribution_hosted_zone_id = input;
             self
         }
         /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
-        pub fn endpoint_configuration(mut self, inp: crate::model::EndpointConfiguration) -> Self {
-            self.endpoint_configuration = Some(inp);
+        pub fn endpoint_configuration(
+            mut self,
+            input: crate::model::EndpointConfiguration,
+        ) -> Self {
+            self.endpoint_configuration = Some(input);
             self
         }
         pub fn set_endpoint_configuration(
             mut self,
-            inp: std::option::Option<crate::model::EndpointConfiguration>,
+            input: std::option::Option<crate::model::EndpointConfiguration>,
         ) -> Self {
-            self.endpoint_configuration = inp;
+            self.endpoint_configuration = input;
             self
         }
         /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
-        pub fn domain_name_status(mut self, inp: crate::model::DomainNameStatus) -> Self {
-            self.domain_name_status = Some(inp);
+        pub fn domain_name_status(mut self, input: crate::model::DomainNameStatus) -> Self {
+            self.domain_name_status = Some(input);
             self
         }
         pub fn set_domain_name_status(
             mut self,
-            inp: std::option::Option<crate::model::DomainNameStatus>,
+            input: std::option::Option<crate::model::DomainNameStatus>,
         ) -> Self {
-            self.domain_name_status = inp;
+            self.domain_name_status = input;
             self
         }
         /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
-        pub fn domain_name_status_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_name_status_message = Some(inp.into());
+        pub fn domain_name_status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_name_status_message = Some(input.into());
             self
         }
         pub fn set_domain_name_status_message(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.domain_name_status_message = inp;
+            self.domain_name_status_message = input;
             self
         }
         /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
-        pub fn security_policy(mut self, inp: crate::model::SecurityPolicy) -> Self {
-            self.security_policy = Some(inp);
+        pub fn security_policy(mut self, input: crate::model::SecurityPolicy) -> Self {
+            self.security_policy = Some(input);
             self
         }
         pub fn set_security_policy(
             mut self,
-            inp: std::option::Option<crate::model::SecurityPolicy>,
+            input: std::option::Option<crate::model::SecurityPolicy>,
         ) -> Self {
-            self.security_policy = inp;
+            self.security_policy = input;
             self
         }
         pub fn tags(
@@ -16125,26 +16326,26 @@ pub mod create_domain_name_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
         pub fn mutual_tls_authentication(
             mut self,
-            inp: crate::model::MutualTlsAuthentication,
+            input: crate::model::MutualTlsAuthentication,
         ) -> Self {
-            self.mutual_tls_authentication = Some(inp);
+            self.mutual_tls_authentication = Some(input);
             self
         }
         pub fn set_mutual_tls_authentication(
             mut self,
-            inp: std::option::Option<crate::model::MutualTlsAuthentication>,
+            input: std::option::Option<crate::model::MutualTlsAuthentication>,
         ) -> Self {
-            self.mutual_tls_authentication = inp;
+            self.mutual_tls_authentication = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput)
@@ -16213,30 +16414,33 @@ pub mod create_documentation_version_output {
     }
     impl Builder {
         /// <p>The version identifier of the API documentation snapshot.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
         /// <p>The date when the API documentation snapshot is created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The description of the API documentation snapshot.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDocumentationVersionOutput`](crate::output::CreateDocumentationVersionOutput)
@@ -16294,33 +16498,33 @@ pub mod create_documentation_part_output {
     }
     impl Builder {
         /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The location of the API entity to which the documentation applies. Valid fields depend on the targeted API entity type. All the valid location fields are not required. If not explicitly specified, a valid location field is treated as a wildcard and associated documentation content may be inherited by matching entities, unless overridden.</p>
-        pub fn location(mut self, inp: crate::model::DocumentationPartLocation) -> Self {
-            self.location = Some(inp);
+        pub fn location(mut self, input: crate::model::DocumentationPartLocation) -> Self {
+            self.location = Some(input);
             self
         }
         pub fn set_location(
             mut self,
-            inp: std::option::Option<crate::model::DocumentationPartLocation>,
+            input: std::option::Option<crate::model::DocumentationPartLocation>,
         ) -> Self {
-            self.location = inp;
+            self.location = input;
             self
         }
         /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
-        pub fn properties(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.properties = Some(inp.into());
+        pub fn properties(mut self, input: impl Into<std::string::String>) -> Self {
+            self.properties = Some(input.into());
             self
         }
-        pub fn set_properties(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.properties = inp;
+        pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.properties = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDocumentationPartOutput`](crate::output::CreateDocumentationPartOutput)
@@ -16392,30 +16596,33 @@ pub mod create_deployment_output {
     }
     impl Builder {
         /// <p>The identifier for the deployment resource.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The description for the deployment resource.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The date and time that the deployment resource was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         pub fn api_summary(
@@ -16430,14 +16637,14 @@ pub mod create_deployment_output {
         }
         pub fn set_api_summary(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     std::collections::HashMap<std::string::String, crate::model::MethodSnapshot>,
                 >,
             >,
         ) -> Self {
-            self.api_summary = inp;
+            self.api_summary = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput)
@@ -16494,30 +16701,30 @@ pub mod create_base_path_mapping_output {
     }
     impl Builder {
         /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
-        pub fn base_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.base_path = Some(inp.into());
+        pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.base_path = Some(input.into());
             self
         }
-        pub fn set_base_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.base_path = inp;
+        pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.base_path = input;
             self
         }
         /// <p>The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rest_api_id = Some(inp.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rest_api_id = Some(input.into());
             self
         }
-        pub fn set_rest_api_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.rest_api_id = inp;
+        pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rest_api_id = input;
             self
         }
         /// <p>The name of the associated stage.</p>
-        pub fn stage(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stage = Some(inp.into());
+        pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stage = Some(input.into());
             self
         }
-        pub fn set_stage(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stage = inp;
+        pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stage = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateBasePathMappingOutput`](crate::output::CreateBasePathMappingOutput)
@@ -16607,112 +16814,118 @@ pub mod create_authorizer_output {
     }
     impl Builder {
         /// <p>The identifier for the authorizer resource.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>[Required] The name of the authorizer.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
-        pub fn r#type(mut self, inp: crate::model::AuthorizerType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::AuthorizerType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::AuthorizerType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::AuthorizerType>,
+        ) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn provider_ar_ns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.provider_ar_ns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.provider_ar_ns = Some(v);
             self
         }
         pub fn set_provider_ar_ns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.provider_ar_ns = inp;
+            self.provider_ar_ns = input;
             self
         }
         /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
-        pub fn auth_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.auth_type = Some(inp.into());
+        pub fn auth_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.auth_type = Some(input.into());
             self
         }
-        pub fn set_auth_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.auth_type = inp;
+        pub fn set_auth_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auth_type = input;
             self
         }
         /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
-        pub fn authorizer_uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorizer_uri = Some(inp.into());
+        pub fn authorizer_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_uri = Some(input.into());
             self
         }
-        pub fn set_authorizer_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.authorizer_uri = inp;
+        pub fn set_authorizer_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authorizer_uri = input;
             self
         }
         /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
-        pub fn authorizer_credentials(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authorizer_credentials = Some(inp.into());
+        pub fn authorizer_credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_credentials = Some(input.into());
             self
         }
         pub fn set_authorizer_credentials(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.authorizer_credentials = inp;
+            self.authorizer_credentials = input;
             self
         }
         /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
-        pub fn identity_source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.identity_source = Some(inp.into());
+        pub fn identity_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identity_source = Some(input.into());
             self
         }
         pub fn set_identity_source(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.identity_source = inp;
+            self.identity_source = input;
             self
         }
         /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
         pub fn identity_validation_expression(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.identity_validation_expression = Some(inp.into());
+            self.identity_validation_expression = Some(input.into());
             self
         }
         pub fn set_identity_validation_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.identity_validation_expression = inp;
+            self.identity_validation_expression = input;
             self
         }
         /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
-        pub fn authorizer_result_ttl_in_seconds(mut self, inp: i32) -> Self {
-            self.authorizer_result_ttl_in_seconds = Some(inp);
+        pub fn authorizer_result_ttl_in_seconds(mut self, input: i32) -> Self {
+            self.authorizer_result_ttl_in_seconds = Some(input);
             self
         }
         pub fn set_authorizer_result_ttl_in_seconds(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.authorizer_result_ttl_in_seconds = inp;
+            self.authorizer_result_ttl_in_seconds = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateAuthorizerOutput`](crate::output::CreateAuthorizerOutput)
@@ -16805,91 +17018,94 @@ pub mod create_api_key_output {
     }
     impl Builder {
         /// <p>The identifier of the API Key.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The value of the API Key.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// <p>The name of the API Key.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
-        pub fn customer_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.customer_id = Some(inp.into());
+        pub fn customer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.customer_id = Some(input.into());
             self
         }
-        pub fn set_customer_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.customer_id = inp;
+        pub fn set_customer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_id = input;
             self
         }
         /// <p>The description of the API Key.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Specifies whether the API Key can be used by callers.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
             self
         }
-        pub fn set_enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
             self
         }
         /// <p>The timestamp when the API Key was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The timestamp when the API Key was last updated.</p>
-        pub fn last_updated_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_updated_date = Some(inp);
+        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated_date = Some(input);
             self
         }
         pub fn set_last_updated_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_updated_date = inp;
+            self.last_updated_date = input;
             self
         }
-        pub fn stage_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn stage_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stage_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.stage_keys = Some(v);
             self
         }
         pub fn set_stage_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.stage_keys = inp;
+            self.stage_keys = input;
             self
         }
         pub fn tags(
@@ -16904,11 +17120,11 @@ pub mod create_api_key_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateApiKeyOutput`](crate::output::CreateApiKeyOutput)

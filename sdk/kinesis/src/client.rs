@@ -141,7 +141,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::AddTagsToStreamOutput,
             smithy_http::result::SdkError<crate::error::AddTagsToStreamError>,
         >
@@ -158,12 +158,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>A set of up to 10 key-value pairs to use to create the tags.</p>
@@ -177,11 +177,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -200,7 +200,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateStreamOutput,
             smithy_http::result::SdkError<crate::error::CreateStreamError>,
         >
@@ -220,23 +220,23 @@ pub mod fluent_builders {
         /// the application that creates the stream. It is also scoped by AWS Region. That is, two
         /// streams in two different AWS accounts can have the same name. Two streams in the same
         /// AWS account but in two different Regions can also have the same name.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>The number of shards that the stream will use. The throughput of the stream is a
         /// function of the number of shards; more shards are required for greater provisioned
         /// throughput.</p>
-        pub fn shard_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.shard_count(inp);
+        pub fn shard_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.shard_count(input);
             self
         }
-        pub fn set_shard_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_shard_count(inp);
+        pub fn set_shard_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_shard_count(input);
             self
         }
     }
@@ -255,7 +255,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DecreaseStreamRetentionPeriodOutput,
             smithy_http::result::SdkError<crate::error::DecreaseStreamRetentionPeriodError>,
         >
@@ -272,22 +272,22 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream to modify.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>The new retention period of the stream, in hours. Must be less than the current
         /// retention period.</p>
-        pub fn retention_period_hours(mut self, inp: i32) -> Self {
-            self.inner = self.inner.retention_period_hours(inp);
+        pub fn retention_period_hours(mut self, input: i32) -> Self {
+            self.inner = self.inner.retention_period_hours(input);
             self
         }
-        pub fn set_retention_period_hours(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_retention_period_hours(inp);
+        pub fn set_retention_period_hours(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_retention_period_hours(input);
             self
         }
     }
@@ -306,7 +306,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteStreamOutput,
             smithy_http::result::SdkError<crate::error::DeleteStreamError>,
         >
@@ -323,23 +323,23 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream to delete.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>,
         /// and the stream has registered consumers, the call to <code>DeleteStream</code> fails
         /// with a <code>ResourceInUseException</code>. </p>
-        pub fn enforce_consumer_deletion(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enforce_consumer_deletion(inp);
+        pub fn enforce_consumer_deletion(mut self, input: bool) -> Self {
+            self.inner = self.inner.enforce_consumer_deletion(input);
             self
         }
-        pub fn set_enforce_consumer_deletion(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enforce_consumer_deletion(inp);
+        pub fn set_enforce_consumer_deletion(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enforce_consumer_deletion(input);
             self
         }
     }
@@ -358,7 +358,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeregisterStreamConsumerOutput,
             smithy_http::result::SdkError<crate::error::DeregisterStreamConsumerError>,
         >
@@ -376,21 +376,24 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
         /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input);
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_arn(inp);
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
             self
         }
         /// <p>The name that you gave to the consumer.</p>
-        pub fn consumer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_name(inp);
+        pub fn consumer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_name(input);
             self
         }
-        pub fn set_consumer_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_consumer_name(inp);
+        pub fn set_consumer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_consumer_name(input);
             self
         }
         /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer. If you
@@ -398,12 +401,12 @@ pub mod fluent_builders {
         /// ListStreamConsumers operation to get a list of the descriptions of all the consumers
         /// that are currently registered with a given data stream. The description of a consumer
         /// contains its ARN.</p>
-        pub fn consumer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_arn(inp);
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_arn(input);
             self
         }
-        pub fn set_consumer_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_consumer_arn(inp);
+        pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_consumer_arn(input);
             self
         }
     }
@@ -422,7 +425,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeLimitsOutput,
             smithy_http::result::SdkError<crate::error::DescribeLimitsError>,
         >
@@ -454,7 +457,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeStreamOutput,
             smithy_http::result::SdkError<crate::error::DescribeStreamError>,
         >
@@ -471,34 +474,34 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream to describe.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>The maximum number of shards to return in a single call. The default value is 100.
         /// If you specify a value greater than 100, at most 100 shards are returned.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>The shard ID of the shard to start with.</p>
-        pub fn exclusive_start_shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.exclusive_start_shard_id(inp);
+        pub fn exclusive_start_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclusive_start_shard_id(input);
             self
         }
         pub fn set_exclusive_start_shard_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_exclusive_start_shard_id(inp);
+            self.inner = self.inner.set_exclusive_start_shard_id(input);
             self
         }
     }
@@ -517,7 +520,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeStreamConsumerOutput,
             smithy_http::result::SdkError<crate::error::DescribeStreamConsumerError>,
         >
@@ -535,30 +538,33 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
         /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input);
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_arn(inp);
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
             self
         }
         /// <p>The name that you gave to the consumer.</p>
-        pub fn consumer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_name(inp);
+        pub fn consumer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_name(input);
             self
         }
-        pub fn set_consumer_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_consumer_name(inp);
+        pub fn set_consumer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_consumer_name(input);
             self
         }
         /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer.</p>
-        pub fn consumer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_arn(inp);
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_arn(input);
             self
         }
-        pub fn set_consumer_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_consumer_arn(inp);
+        pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_consumer_arn(input);
             self
         }
     }
@@ -577,7 +583,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeStreamSummaryOutput,
             smithy_http::result::SdkError<crate::error::DescribeStreamSummaryError>,
         >
@@ -594,12 +600,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream to describe.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
     }
@@ -618,7 +624,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DisableEnhancedMonitoringOutput,
             smithy_http::result::SdkError<crate::error::DisableEnhancedMonitoringError>,
         >
@@ -636,12 +642,12 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Kinesis data stream for which to disable enhanced
         /// monitoring.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>List of shard-level metrics to disable.</p>
@@ -698,9 +704,9 @@ pub mod fluent_builders {
         }
         pub fn set_shard_level_metrics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
         ) -> Self {
-            self.inner = self.inner.set_shard_level_metrics(inp);
+            self.inner = self.inner.set_shard_level_metrics(input);
             self
         }
     }
@@ -719,7 +725,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::EnableEnhancedMonitoringOutput,
             smithy_http::result::SdkError<crate::error::EnableEnhancedMonitoringError>,
         >
@@ -736,12 +742,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream for which to enable enhanced monitoring.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>List of shard-level metrics to enable.</p>
@@ -798,9 +804,9 @@ pub mod fluent_builders {
         }
         pub fn set_shard_level_metrics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
         ) -> Self {
-            self.inner = self.inner.set_shard_level_metrics(inp);
+            self.inner = self.inner.set_shard_level_metrics(input);
             self
         }
     }
@@ -819,7 +825,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetRecordsOutput,
             smithy_http::result::SdkError<crate::error::GetRecordsError>,
         >
@@ -838,23 +844,26 @@ pub mod fluent_builders {
         /// <p>The position in the shard from which you want to start sequentially reading data
         /// records. A shard iterator specifies this position using the sequence number of a data
         /// record in the shard.</p>
-        pub fn shard_iterator(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shard_iterator(inp);
+        pub fn shard_iterator(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shard_iterator(input);
             self
         }
-        pub fn set_shard_iterator(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_shard_iterator(inp);
+        pub fn set_shard_iterator(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_shard_iterator(input);
             self
         }
         /// <p>The maximum number of records to return. Specify a value of up to 10,000. If you
         /// specify a value that is greater than 10,000, <a>GetRecords</a> throws
         /// <code>InvalidArgumentException</code>. The default value is 10,000.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -873,7 +882,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetShardIteratorOutput,
             smithy_http::result::SdkError<crate::error::GetShardIteratorError>,
         >
@@ -890,21 +899,21 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon Kinesis data stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
-        pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shard_id(inp);
+        pub fn shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shard_id(input);
             self
         }
-        pub fn set_shard_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_shard_id(inp);
+        pub fn set_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_shard_id(input);
             self
         }
         /// <p>Determines how the shard iterator is used to start reading data records from the
@@ -934,28 +943,28 @@ pub mod fluent_builders {
         /// that you always read the most recent data in the shard.</p>
         /// </li>
         /// </ul>
-        pub fn shard_iterator_type(mut self, inp: crate::model::ShardIteratorType) -> Self {
-            self.inner = self.inner.shard_iterator_type(inp);
+        pub fn shard_iterator_type(mut self, input: crate::model::ShardIteratorType) -> Self {
+            self.inner = self.inner.shard_iterator_type(input);
             self
         }
         pub fn set_shard_iterator_type(
             mut self,
-            inp: std::option::Option<crate::model::ShardIteratorType>,
+            input: std::option::Option<crate::model::ShardIteratorType>,
         ) -> Self {
-            self.inner = self.inner.set_shard_iterator_type(inp);
+            self.inner = self.inner.set_shard_iterator_type(input);
             self
         }
         /// <p>The sequence number of the data record in the shard from which to start reading.
         /// Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
-        pub fn starting_sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.starting_sequence_number(inp);
+        pub fn starting_sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.starting_sequence_number(input);
             self
         }
         pub fn set_starting_sequence_number(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_starting_sequence_number(inp);
+            self.inner = self.inner.set_starting_sequence_number(input);
             self
         }
         /// <p>The time stamp of the data record from which to start reading. Used with shard
@@ -965,12 +974,12 @@ pub mod fluent_builders {
         /// the iterator returned is for the next (later) record. If the time stamp is older than
         /// the current trim horizon, the iterator returned is for the oldest untrimmed data record
         /// (TRIM_HORIZON).</p>
-        pub fn timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.timestamp(inp);
+        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.timestamp(input);
             self
         }
-        pub fn set_timestamp(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_timestamp(inp);
+        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_timestamp(input);
             self
         }
     }
@@ -989,7 +998,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::IncreaseStreamRetentionPeriodOutput,
             smithy_http::result::SdkError<crate::error::IncreaseStreamRetentionPeriodError>,
         >
@@ -1006,22 +1015,22 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream to modify.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>The new retention period of the stream, in hours. Must be more than the current
         /// retention period.</p>
-        pub fn retention_period_hours(mut self, inp: i32) -> Self {
-            self.inner = self.inner.retention_period_hours(inp);
+        pub fn retention_period_hours(mut self, input: i32) -> Self {
+            self.inner = self.inner.retention_period_hours(input);
             self
         }
-        pub fn set_retention_period_hours(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_retention_period_hours(inp);
+        pub fn set_retention_period_hours(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_retention_period_hours(input);
             self
         }
     }
@@ -1040,7 +1049,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListShardsOutput,
             smithy_http::result::SdkError<crate::error::ListShardsError>,
         >
@@ -1059,12 +1068,12 @@ pub mod fluent_builders {
         /// <p>The name of the data stream whose shards you want to list. </p>
         /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
         /// parameter.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>When the number of shards in the data stream is greater than the default value for
@@ -1089,12 +1098,12 @@ pub mod fluent_builders {
         /// <code>ListShards</code>, you get
         /// <code>ExpiredNextTokenException</code>.</p>
         /// </important>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Specify this parameter to indicate that you want to list the shards starting with
@@ -1103,15 +1112,15 @@ pub mod fluent_builders {
         /// <code>ListShards</code> to list the shards starting with the first one in the
         /// stream.</p>
         /// <p>You cannot specify this parameter if you specify <code>NextToken</code>.</p>
-        pub fn exclusive_start_shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.exclusive_start_shard_id(inp);
+        pub fn exclusive_start_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclusive_start_shard_id(input);
             self
         }
         pub fn set_exclusive_start_shard_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_exclusive_start_shard_id(inp);
+            self.inner = self.inner.set_exclusive_start_shard_id(input);
             self
         }
         /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
@@ -1121,12 +1130,12 @@ pub mod fluent_builders {
         /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
         /// you can use in a subsequent call to <code>ListShards</code> to list the next set of
         /// shards.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>Specify this input parameter to distinguish data streams that have the same name.
@@ -1135,26 +1144,26 @@ pub mod fluent_builders {
         /// which of the two streams you want to list the shards for.</p>
         /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
         /// parameter.</p>
-        pub fn stream_creation_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.stream_creation_timestamp(inp);
+        pub fn stream_creation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.stream_creation_timestamp(input);
             self
         }
         pub fn set_stream_creation_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_stream_creation_timestamp(inp);
+            self.inner = self.inner.set_stream_creation_timestamp(input);
             self
         }
-        pub fn shard_filter(mut self, inp: crate::model::ShardFilter) -> Self {
-            self.inner = self.inner.shard_filter(inp);
+        pub fn shard_filter(mut self, input: crate::model::ShardFilter) -> Self {
+            self.inner = self.inner.shard_filter(input);
             self
         }
         pub fn set_shard_filter(
             mut self,
-            inp: std::option::Option<crate::model::ShardFilter>,
+            input: std::option::Option<crate::model::ShardFilter>,
         ) -> Self {
-            self.inner = self.inner.set_shard_filter(inp);
+            self.inner = self.inner.set_shard_filter(input);
             self
         }
     }
@@ -1173,7 +1182,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListStreamConsumersOutput,
             smithy_http::result::SdkError<crate::error::ListStreamConsumersError>,
         >
@@ -1191,12 +1200,12 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Kinesis data stream for which you want to list the registered
         /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input);
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_arn(inp);
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
             self
         }
         /// <p>When the number of consumers that are registered with the data stream is greater than
@@ -1222,22 +1231,22 @@ pub mod fluent_builders {
         /// specify an expired token in a call to <code>ListStreamConsumers</code>, you get
         /// <code>ExpiredNextTokenException</code>.</p>
         /// </important>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of consumers that you want a single call of
         /// <code>ListStreamConsumers</code> to return.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>Specify this input parameter to distinguish data streams that have the same name. For
@@ -1245,15 +1254,15 @@ pub mod fluent_builders {
         /// data stream with the same name, you can use this input parameter to specify which of the
         /// two streams you want to list the consumers for. </p>
         /// <p>You can't specify this parameter if you specify the NextToken parameter. </p>
-        pub fn stream_creation_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.stream_creation_timestamp(inp);
+        pub fn stream_creation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.stream_creation_timestamp(input);
             self
         }
         pub fn set_stream_creation_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_stream_creation_timestamp(inp);
+            self.inner = self.inner.set_stream_creation_timestamp(input);
             self
         }
     }
@@ -1272,7 +1281,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListStreamsOutput,
             smithy_http::result::SdkError<crate::error::ListStreamsError>,
         >
@@ -1289,24 +1298,27 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of streams to list.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>The name of the stream to start the list with.</p>
-        pub fn exclusive_start_stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.exclusive_start_stream_name(inp);
+        pub fn exclusive_start_stream_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.exclusive_start_stream_name(input);
             self
         }
         pub fn set_exclusive_start_stream_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_exclusive_start_stream_name(inp);
+            self.inner = self.inner.set_exclusive_start_stream_name(input);
             self
         }
     }
@@ -1325,7 +1337,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTagsForStreamOutput,
             smithy_http::result::SdkError<crate::error::ListTagsForStreamError>,
         >
@@ -1342,38 +1354,38 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>The key to use as the starting point for the list of tags. If this parameter is
         /// set, <code>ListTagsForStream</code> gets all tags that occur after
         /// <code>ExclusiveStartTagKey</code>. </p>
-        pub fn exclusive_start_tag_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.exclusive_start_tag_key(inp);
+        pub fn exclusive_start_tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclusive_start_tag_key(input);
             self
         }
         pub fn set_exclusive_start_tag_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_exclusive_start_tag_key(inp);
+            self.inner = self.inner.set_exclusive_start_tag_key(input);
             self
         }
         /// <p>The number of tags to return. If this number is less than the total number of tags
         /// associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To
         /// list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the
         /// response.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
     }
@@ -1392,7 +1404,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::MergeShardsOutput,
             smithy_http::result::SdkError<crate::error::MergeShardsError>,
         >
@@ -1409,34 +1421,37 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream for the merge.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>The shard ID of the shard to combine with the adjacent shard for the
         /// merge.</p>
-        pub fn shard_to_merge(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shard_to_merge(inp);
+        pub fn shard_to_merge(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shard_to_merge(input);
             self
         }
-        pub fn set_shard_to_merge(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_shard_to_merge(inp);
+        pub fn set_shard_to_merge(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_shard_to_merge(input);
             self
         }
         /// <p>The shard ID of the adjacent shard for the merge.</p>
-        pub fn adjacent_shard_to_merge(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.adjacent_shard_to_merge(inp);
+        pub fn adjacent_shard_to_merge(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.adjacent_shard_to_merge(input);
             self
         }
         pub fn set_adjacent_shard_to_merge(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_adjacent_shard_to_merge(inp);
+            self.inner = self.inner.set_adjacent_shard_to_merge(input);
             self
         }
     }
@@ -1455,7 +1470,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutRecordOutput,
             smithy_http::result::SdkError<crate::error::PutRecordError>,
         >
@@ -1472,24 +1487,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream to put the data record into.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>The data blob to put into the record, which is base64-encoded when the blob is
         /// serialized. When the data blob (the payload before base64-encoding) is added to the
         /// partition key size, the total size must not exceed the maximum record size (1
         /// MiB).</p>
-        pub fn data(mut self, inp: smithy_types::Blob) -> Self {
-            self.inner = self.inner.data(inp);
+        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+            self.inner = self.inner.data(input);
             self
         }
-        pub fn set_data(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_data(inp);
+        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_data(input);
             self
         }
         /// <p>Determines which shard in the stream the data record is assigned to. Partition keys
@@ -1499,25 +1514,28 @@ pub mod fluent_builders {
         /// function is used to map partition keys to 128-bit integer values and to map associated
         /// data records to shards. As a result of this hashing mechanism, all data records with the
         /// same partition key map to the same shard within the stream.</p>
-        pub fn partition_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partition_key(inp);
+        pub fn partition_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partition_key(input);
             self
         }
-        pub fn set_partition_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_partition_key(inp);
+        pub fn set_partition_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_partition_key(input);
             self
         }
         /// <p>The hash value used to explicitly determine the shard the data record is assigned
         /// to by overriding the partition key hash.</p>
-        pub fn explicit_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.explicit_hash_key(inp);
+        pub fn explicit_hash_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explicit_hash_key(input);
             self
         }
         pub fn set_explicit_hash_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_explicit_hash_key(inp);
+            self.inner = self.inner.set_explicit_hash_key(input);
             self
         }
         /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and
@@ -1525,15 +1543,18 @@ pub mod fluent_builders {
         /// record <i>n</i> to the sequence number of record <i>n-1</i>
         /// (as returned in the result when putting record <i>n-1</i>). If this
         /// parameter is not set, records are coarsely ordered based on arrival time.</p>
-        pub fn sequence_number_for_ordering(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sequence_number_for_ordering(inp);
+        pub fn sequence_number_for_ordering(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.sequence_number_for_ordering(input);
             self
         }
         pub fn set_sequence_number_for_ordering(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_sequence_number_for_ordering(inp);
+            self.inner = self.inner.set_sequence_number_for_ordering(input);
             self
         }
     }
@@ -1552,7 +1573,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutRecordsOutput,
             smithy_http::result::SdkError<crate::error::PutRecordsError>,
         >
@@ -1575,18 +1596,18 @@ pub mod fluent_builders {
         }
         pub fn set_records(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PutRecordsRequestEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PutRecordsRequestEntry>>,
         ) -> Self {
-            self.inner = self.inner.set_records(inp);
+            self.inner = self.inner.set_records(input);
             self
         }
         /// <p>The stream name associated with the request.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
     }
@@ -1605,7 +1626,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RegisterStreamConsumerOutput,
             smithy_http::result::SdkError<crate::error::RegisterStreamConsumerError>,
         >
@@ -1623,22 +1644,25 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For
         /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(inp);
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input);
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_arn(inp);
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_arn(input);
             self
         }
         /// <p>For a given Kinesis data stream, each consumer must have a unique name. However,
         /// consumer names don't have to be unique across data streams.</p>
-        pub fn consumer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_name(inp);
+        pub fn consumer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_name(input);
             self
         }
-        pub fn set_consumer_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_consumer_name(inp);
+        pub fn set_consumer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_consumer_name(input);
             self
         }
     }
@@ -1657,7 +1681,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RemoveTagsFromStreamOutput,
             smithy_http::result::SdkError<crate::error::RemoveTagsFromStreamError>,
         >
@@ -1674,12 +1698,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
@@ -1689,9 +1713,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -1710,7 +1734,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SplitShardOutput,
             smithy_http::result::SdkError<crate::error::SplitShardError>,
         >
@@ -1727,21 +1751,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream for the shard split.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>The shard ID of the shard to split.</p>
-        pub fn shard_to_split(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shard_to_split(inp);
+        pub fn shard_to_split(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shard_to_split(input);
             self
         }
-        pub fn set_shard_to_split(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_shard_to_split(inp);
+        pub fn set_shard_to_split(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_shard_to_split(input);
             self
         }
         /// <p>A hash key value for the starting hash key of one of the child shards created by
@@ -1751,15 +1778,15 @@ pub mod fluent_builders {
         /// value and all higher hash key values in hash key range are distributed to one of the
         /// child shards. All the lower hash key values in the range are distributed to the other
         /// child shard.</p>
-        pub fn new_starting_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_starting_hash_key(inp);
+        pub fn new_starting_hash_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_starting_hash_key(input);
             self
         }
         pub fn set_new_starting_hash_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_new_starting_hash_key(inp);
+            self.inner = self.inner.set_new_starting_hash_key(input);
             self
         }
     }
@@ -1778,7 +1805,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StartStreamEncryptionOutput,
             smithy_http::result::SdkError<crate::error::StartStreamEncryptionError>,
         >
@@ -1795,24 +1822,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream for which to start encrypting records.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
-        pub fn encryption_type(mut self, inp: crate::model::EncryptionType) -> Self {
-            self.inner = self.inner.encryption_type(inp);
+        pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
+            self.inner = self.inner.encryption_type(input);
             self
         }
         pub fn set_encryption_type(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionType>,
+            input: std::option::Option<crate::model::EncryptionType>,
         ) -> Self {
-            self.inner = self.inner.set_encryption_type(inp);
+            self.inner = self.inner.set_encryption_type(input);
             self
         }
         /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
@@ -1846,12 +1873,12 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
     }
@@ -1870,7 +1897,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopStreamEncryptionOutput,
             smithy_http::result::SdkError<crate::error::StopStreamEncryptionError>,
         >
@@ -1887,24 +1914,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream on which to stop encrypting records.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>The encryption type. The only valid value is <code>KMS</code>.</p>
-        pub fn encryption_type(mut self, inp: crate::model::EncryptionType) -> Self {
-            self.inner = self.inner.encryption_type(inp);
+        pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
+            self.inner = self.inner.encryption_type(input);
             self
         }
         pub fn set_encryption_type(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionType>,
+            input: std::option::Option<crate::model::EncryptionType>,
         ) -> Self {
-            self.inner = self.inner.set_encryption_type(inp);
+            self.inner = self.inner.set_encryption_type(input);
             self
         }
         /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
@@ -1938,12 +1965,12 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
     }
@@ -1962,7 +1989,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateShardCountOutput,
             smithy_http::result::SdkError<crate::error::UpdateShardCountError>,
         >
@@ -1979,12 +2006,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
         /// <p>The new number of shards. This value has the following default limits. By default,
@@ -2007,24 +2034,24 @@ pub mod fluent_builders {
         /// less than 500 shards.</p>
         /// </li>
         /// </ul>
-        pub fn target_shard_count(mut self, inp: i32) -> Self {
-            self.inner = self.inner.target_shard_count(inp);
+        pub fn target_shard_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.target_shard_count(input);
             self
         }
-        pub fn set_target_shard_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_target_shard_count(inp);
+        pub fn set_target_shard_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_target_shard_count(input);
             self
         }
         /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
-        pub fn scaling_type(mut self, inp: crate::model::ScalingType) -> Self {
-            self.inner = self.inner.scaling_type(inp);
+        pub fn scaling_type(mut self, input: crate::model::ScalingType) -> Self {
+            self.inner = self.inner.scaling_type(input);
             self
         }
         pub fn set_scaling_type(
             mut self,
-            inp: std::option::Option<crate::model::ScalingType>,
+            input: std::option::Option<crate::model::ScalingType>,
         ) -> Self {
-            self.inner = self.inner.set_scaling_type(inp);
+            self.inner = self.inner.set_scaling_type(input);
             self
         }
     }

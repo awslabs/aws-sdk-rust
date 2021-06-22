@@ -437,30 +437,22 @@ pub fn deser_operation_get_bucket_location(
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
-    if !(start_el.matches("LocationConstraint")) {
-        return Err(smithy_xml::decode::XmlError::custom(format!(
-            "invalid root, expected LocationConstraint got {:?}",
-            start_el
-        )));
-    }
-    while let Some(mut tag) = decoder.next_tag() {
-        match tag.start_el() {
-            s if s.matches("LocationConstraint") /* LocationConstraint com.amazonaws.s3#GetBucketLocationOutput$LocationConstraint */ =>  {
-                let var_19 =
-                    Some(
-                        Result::<crate::model::BucketLocationConstraint, smithy_xml::decode::XmlError>::Ok(
-                            crate::model::BucketLocationConstraint::from(
-                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
+    match start_el {
+        s if s.matches("LocationConstraint") /* LocationConstraint com.amazonaws.s3#GetBucketLocationOutput$LocationConstraint */ =>  {
+            let var_19 =
+                Some(
+                    Result::<crate::model::BucketLocationConstraint, smithy_xml::decode::XmlError>::Ok(
+                        crate::model::BucketLocationConstraint::from(
+                            smithy_xml::decode::try_data(&mut decoder)?.as_ref()
                         )
-                        ?
                     )
-                ;
-                builder = builder.set_location_constraint(var_19);
-            }
-            ,
-            _ => {}
+                    ?
+                )
+            ;
+            builder = builder.set_location_constraint(var_19);
         }
+        ,
+        _ => return Err(smithy_xml::decode::XmlError::custom("expected LocationConstraint tag"))
     }
     Ok(builder)
 }
@@ -965,14 +957,16 @@ pub fn deser_operation_list_bucket_analytics_configurations(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListBucketAnalyticsConfigurationsOutput$IsTruncated */ =>  {
                 let var_42 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_42);
             }
@@ -1067,14 +1061,16 @@ pub fn deser_operation_list_bucket_intelligent_tiering_configurations(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListBucketIntelligentTieringConfigurationsOutput$IsTruncated */ =>  {
                 let var_49 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_49);
             }
@@ -1135,14 +1131,16 @@ pub fn deser_operation_list_bucket_inventory_configurations(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListBucketInventoryConfigurationsOutput$IsTruncated */ =>  {
                 let var_52 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_52);
             }
@@ -1237,14 +1235,16 @@ pub fn deser_operation_list_bucket_metrics_configurations(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListBucketMetricsConfigurationsOutput$IsTruncated */ =>  {
                 let var_59 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_59);
             }
@@ -1420,14 +1420,16 @@ pub fn deser_operation_list_multipart_uploads(
             ,
             s if s.matches("MaxUploads") /* MaxUploads com.amazonaws.s3#ListMultipartUploadsOutput$MaxUploads */ =>  {
                 let var_71 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#MaxUploads`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#MaxUploads`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_max_uploads(var_71);
             }
@@ -1448,14 +1450,16 @@ pub fn deser_operation_list_multipart_uploads(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListMultipartUploadsOutput$IsTruncated */ =>  {
                 let var_73 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_73);
             }
@@ -1583,14 +1587,16 @@ pub fn deser_operation_list_objects(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListObjectsOutput$IsTruncated */ =>  {
                 let var_82 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_82);
             }
@@ -1636,14 +1642,16 @@ pub fn deser_operation_list_objects(
             ,
             s if s.matches("MaxKeys") /* MaxKeys com.amazonaws.s3#ListObjectsOutput$MaxKeys */ =>  {
                 let var_86 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#MaxKeys`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#MaxKeys`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_max_keys(var_86);
             }
@@ -1775,14 +1783,16 @@ pub fn deser_operation_list_objects_v2(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListObjectsV2Output$IsTruncated */ =>  {
                 let var_96 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_96);
             }
@@ -1815,28 +1825,32 @@ pub fn deser_operation_list_objects_v2(
             ,
             s if s.matches("MaxKeys") /* MaxKeys com.amazonaws.s3#ListObjectsV2Output$MaxKeys */ =>  {
                 let var_99 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#MaxKeys`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#MaxKeys`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_max_keys(var_99);
             }
             ,
             s if s.matches("KeyCount") /* KeyCount com.amazonaws.s3#ListObjectsV2Output$KeyCount */ =>  {
                 let var_100 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#KeyCount`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#KeyCount`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_key_count(var_100);
             }
@@ -1938,14 +1952,16 @@ pub fn deser_operation_list_object_versions(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListObjectVersionsOutput$IsTruncated */ =>  {
                 let var_107 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_107);
             }
@@ -2021,14 +2037,16 @@ pub fn deser_operation_list_object_versions(
             ,
             s if s.matches("MaxKeys") /* MaxKeys com.amazonaws.s3#ListObjectVersionsOutput$MaxKeys */ =>  {
                 let var_114 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#MaxKeys`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#MaxKeys`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_max_keys(var_114);
             }
@@ -2127,28 +2145,32 @@ pub fn deser_operation_list_parts(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.s3#ListPartsOutput$IsTruncated */ =>  {
                 let var_121 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsTruncated`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_121);
             }
             ,
             s if s.matches("MaxParts") /* MaxParts com.amazonaws.s3#ListPartsOutput$MaxParts */ =>  {
                 let var_122 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#MaxParts`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#MaxParts`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_max_parts(var_122);
             }
@@ -2586,14 +2608,16 @@ pub fn deser_structure_deleted_object(
             ,
             s if s.matches("DeleteMarker") /* DeleteMarker com.amazonaws.s3#DeletedObject$DeleteMarker */ =>  {
                 let var_136 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#DeleteMarker`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#DeleteMarker`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_delete_marker(var_136);
             }
@@ -2777,14 +2801,16 @@ pub fn deser_structure_cors_rule(
             ,
             s if s.matches("MaxAgeSeconds") /* MaxAgeSeconds com.amazonaws.s3#CORSRule$MaxAgeSeconds */ =>  {
                 let var_149 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#MaxAgeSeconds`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#MaxAgeSeconds`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_max_age_seconds(var_149);
             }
@@ -3443,14 +3469,16 @@ pub fn deser_structure_inventory_configuration(
             ,
             s if s.matches("IsEnabled") /* IsEnabled com.amazonaws.s3#InventoryConfiguration$IsEnabled */ =>  {
                 let var_192 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsEnabled`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsEnabled`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_enabled(var_192);
             }
@@ -3735,14 +3763,16 @@ pub fn deser_structure_object(
             ,
             s if s.matches("Size") /* Size com.amazonaws.s3#Object$Size */ =>  {
                 let var_210 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Size`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Size`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_size(var_210);
             }
@@ -3799,14 +3829,16 @@ pub fn deser_structure_object_version(
             ,
             s if s.matches("Size") /* Size com.amazonaws.s3#ObjectVersion$Size */ =>  {
                 let var_214 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Size`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Size`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_size(var_214);
             }
@@ -3853,14 +3885,16 @@ pub fn deser_structure_object_version(
             ,
             s if s.matches("IsLatest") /* IsLatest com.amazonaws.s3#ObjectVersion$IsLatest */ =>  {
                 let var_218 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsLatest`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsLatest`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_latest(var_218);
             }
@@ -3940,14 +3974,16 @@ pub fn deser_structure_delete_marker_entry(
             ,
             s if s.matches("IsLatest") /* IsLatest com.amazonaws.s3#DeleteMarkerEntry$IsLatest */ =>  {
                 let var_224 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsLatest`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsLatest`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_latest(var_224);
             }
@@ -3981,14 +4017,16 @@ pub fn deser_structure_part(
         match tag.start_el() {
             s if s.matches("PartNumber") /* PartNumber com.amazonaws.s3#Part$PartNumber */ =>  {
                 let var_226 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#PartNumber`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#PartNumber`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_part_number(var_226);
             }
@@ -4022,14 +4060,16 @@ pub fn deser_structure_part(
             ,
             s if s.matches("Size") /* Size com.amazonaws.s3#Part$Size */ =>  {
                 let var_229 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Size`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Size`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_size(var_229);
             }
@@ -4188,14 +4228,16 @@ pub fn deser_structure_policy_status(
         match tag.start_el() {
             s if s.matches("IsPublic") /* IsPublic com.amazonaws.s3#PolicyStatus$IsPublic */ =>  {
                 let var_238 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsPublic`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#IsPublic`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_public(var_238);
             }
@@ -4363,56 +4405,64 @@ pub fn deser_structure_public_access_block_configuration(
         match tag.start_el() {
             s if s.matches("BlockPublicAcls") /* BlockPublicAcls com.amazonaws.s3#PublicAccessBlockConfiguration$BlockPublicAcls */ =>  {
                 let var_247 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#Setting`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#Setting`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_block_public_acls(var_247);
             }
             ,
             s if s.matches("IgnorePublicAcls") /* IgnorePublicAcls com.amazonaws.s3#PublicAccessBlockConfiguration$IgnorePublicAcls */ =>  {
                 let var_248 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#Setting`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#Setting`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_ignore_public_acls(var_248);
             }
             ,
             s if s.matches("BlockPublicPolicy") /* BlockPublicPolicy com.amazonaws.s3#PublicAccessBlockConfiguration$BlockPublicPolicy */ =>  {
                 let var_249 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#Setting`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#Setting`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_block_public_policy(var_249);
             }
             ,
             s if s.matches("RestrictPublicBuckets") /* RestrictPublicBuckets com.amazonaws.s3#PublicAccessBlockConfiguration$RestrictPublicBuckets */ =>  {
                 let var_250 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#Setting`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#Setting`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_restrict_public_buckets(var_250);
             }
@@ -4523,28 +4573,32 @@ pub fn deser_structure_lifecycle_expiration(
             ,
             s if s.matches("Days") /* Days com.amazonaws.s3#LifecycleExpiration$Days */ =>  {
                 let var_256 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Days`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Days`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_days(var_256);
             }
             ,
             s if s.matches("ExpiredObjectDeleteMarker") /* ExpiredObjectDeleteMarker com.amazonaws.s3#LifecycleExpiration$ExpiredObjectDeleteMarker */ =>  {
                 let var_257 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#ExpiredObjectDeleteMarker`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#ExpiredObjectDeleteMarker`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_expired_object_delete_marker(var_257);
             }
@@ -4617,14 +4671,16 @@ pub fn deser_structure_transition(
             ,
             s if s.matches("Days") /* Days com.amazonaws.s3#Transition$Days */ =>  {
                 let var_259 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Days`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Days`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_days(var_259);
             }
@@ -4658,14 +4714,16 @@ pub fn deser_structure_noncurrent_version_transition(
         match tag.start_el() {
             s if s.matches("NoncurrentDays") /* NoncurrentDays com.amazonaws.s3#NoncurrentVersionTransition$NoncurrentDays */ =>  {
                 let var_261 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Days`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Days`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_noncurrent_days(var_261);
             }
@@ -4699,14 +4757,16 @@ pub fn deser_structure_noncurrent_version_expiration(
         match tag.start_el() {
             s if s.matches("NoncurrentDays") /* NoncurrentDays com.amazonaws.s3#NoncurrentVersionExpiration$NoncurrentDays */ =>  {
                 let var_263 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Days`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Days`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_noncurrent_days(var_263);
             }
@@ -4726,14 +4786,16 @@ pub fn deser_structure_abort_incomplete_multipart_upload(
         match tag.start_el() {
             s if s.matches("DaysAfterInitiation") /* DaysAfterInitiation com.amazonaws.s3#AbortIncompleteMultipartUpload$DaysAfterInitiation */ =>  {
                 let var_264 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#DaysAfterInitiation`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#DaysAfterInitiation`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_days_after_initiation(var_264);
             }
@@ -4975,14 +5037,16 @@ pub fn deser_structure_tiering(
         match tag.start_el() {
             s if s.matches("Days") /* Days com.amazonaws.s3#Tiering$Days */ =>  {
                 let var_274 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#IntelligentTieringDays`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#IntelligentTieringDays`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_days(var_274);
             }
@@ -5204,14 +5268,16 @@ pub fn deser_structure_server_side_encryption_rule(
             ,
             s if s.matches("BucketKeyEnabled") /* BucketKeyEnabled com.amazonaws.s3#ServerSideEncryptionRule$BucketKeyEnabled */ =>  {
                 let var_282 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#BucketKeyEnabled`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.s3#BucketKeyEnabled`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_bucket_key_enabled(var_282);
             }
@@ -5271,14 +5337,16 @@ pub fn deser_structure_replication_rule(
             ,
             s if s.matches("Priority") /* Priority com.amazonaws.s3#ReplicationRule$Priority */ =>  {
                 let var_285 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Priority`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Priority`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_priority(var_285);
             }
@@ -6218,28 +6286,32 @@ pub fn deser_structure_default_retention(
             ,
             s if s.matches("Days") /* Days com.amazonaws.s3#DefaultRetention$Days */ =>  {
                 let var_343 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Days`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Days`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_days(var_343);
             }
             ,
             s if s.matches("Years") /* Years com.amazonaws.s3#DefaultRetention$Years */ =>  {
                 let var_344 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Years`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Years`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_years(var_344);
             }
@@ -6680,14 +6752,16 @@ pub fn deser_structure_replication_time_value(
         match tag.start_el() {
             s if s.matches("Minutes") /* Minutes com.amazonaws.s3#ReplicationTimeValue$Minutes */ =>  {
                 let var_366 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Minutes`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.s3#Minutes`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_minutes(var_366);
             }

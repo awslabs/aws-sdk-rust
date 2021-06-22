@@ -71,7 +71,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteHumanLoopOutput,
             smithy_http::result::SdkError<crate::error::DeleteHumanLoopError>,
         >
@@ -88,12 +88,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the human loop that you want to delete.</p>
-        pub fn human_loop_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_loop_name(inp);
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_loop_name(input);
             self
         }
-        pub fn set_human_loop_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_human_loop_name(inp);
+        pub fn set_human_loop_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_human_loop_name(input);
             self
         }
     }
@@ -112,7 +115,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeHumanLoopOutput,
             smithy_http::result::SdkError<crate::error::DescribeHumanLoopError>,
         >
@@ -129,12 +132,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the human loop that you want information about.</p>
-        pub fn human_loop_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_loop_name(inp);
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_loop_name(input);
             self
         }
-        pub fn set_human_loop_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_human_loop_name(inp);
+        pub fn set_human_loop_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_human_loop_name(input);
             self
         }
     }
@@ -153,7 +159,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListHumanLoopsOutput,
             smithy_http::result::SdkError<crate::error::ListHumanLoopsError>,
         >
@@ -170,69 +176,72 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_after(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_after(inp);
+            self.inner = self.inner.set_creation_time_after(input);
             self
         }
         /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.creation_time_before(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_creation_time_before(inp);
+            self.inner = self.inner.set_creation_time_before(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
-        pub fn flow_definition_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_definition_arn(inp);
+        pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_definition_arn(input);
             self
         }
         pub fn set_flow_definition_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_flow_definition_arn(inp);
+            self.inner = self.inner.set_flow_definition_arn(input);
             self
         }
         /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
         /// <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.inner = self.inner.set_sort_order(inp);
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_order(input);
             self
         }
         /// <p>A token to display the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The total number of items to return. If the total number of available items is more than
         /// the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in
         /// the output. You can use this token to display the next page of results. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -251,7 +260,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StartHumanLoopOutput,
             smithy_http::result::SdkError<crate::error::StartHumanLoopError>,
         >
@@ -268,53 +277,53 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the human loop.</p>
-        pub fn human_loop_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_loop_name(inp);
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_loop_name(input);
             self
         }
         pub fn set_human_loop_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_human_loop_name(inp);
+            self.inner = self.inner.set_human_loop_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human
         /// loop.</p>
-        pub fn flow_definition_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_definition_arn(inp);
+        pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_definition_arn(input);
             self
         }
         pub fn set_flow_definition_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_flow_definition_arn(inp);
+            self.inner = self.inner.set_flow_definition_arn(input);
             self
         }
         /// <p>An object that contains information about the human loop.</p>
-        pub fn human_loop_input(mut self, inp: crate::model::HumanLoopInput) -> Self {
-            self.inner = self.inner.human_loop_input(inp);
+        pub fn human_loop_input(mut self, input: crate::model::HumanLoopInput) -> Self {
+            self.inner = self.inner.human_loop_input(input);
             self
         }
         pub fn set_human_loop_input(
             mut self,
-            inp: std::option::Option<crate::model::HumanLoopInput>,
+            input: std::option::Option<crate::model::HumanLoopInput>,
         ) -> Self {
-            self.inner = self.inner.set_human_loop_input(inp);
+            self.inner = self.inner.set_human_loop_input(input);
             self
         }
         /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data
         /// is free of personally identifiable information and/or free of adult content.</p>
-        pub fn data_attributes(mut self, inp: crate::model::HumanLoopDataAttributes) -> Self {
-            self.inner = self.inner.data_attributes(inp);
+        pub fn data_attributes(mut self, input: crate::model::HumanLoopDataAttributes) -> Self {
+            self.inner = self.inner.data_attributes(input);
             self
         }
         pub fn set_data_attributes(
             mut self,
-            inp: std::option::Option<crate::model::HumanLoopDataAttributes>,
+            input: std::option::Option<crate::model::HumanLoopDataAttributes>,
         ) -> Self {
-            self.inner = self.inner.set_data_attributes(inp);
+            self.inner = self.inner.set_data_attributes(input);
             self
         }
     }
@@ -333,7 +342,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopHumanLoopOutput,
             smithy_http::result::SdkError<crate::error::StopHumanLoopError>,
         >
@@ -350,15 +359,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the human loop that you want to stop.</p>
-        pub fn human_loop_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_loop_name(inp);
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_loop_name(input);
             self
         }
         pub fn set_human_loop_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_human_loop_name(inp);
+            self.inner = self.inner.set_human_loop_name(input);
             self
         }
     }

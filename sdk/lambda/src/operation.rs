@@ -19,7 +19,7 @@ impl AddLayerVersionPermission {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AddLayerVersionPermission {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::AddLayerVersionPermissionOutput,
         crate::error::AddLayerVersionPermissionError,
     >;
@@ -56,7 +56,8 @@ impl AddPermission {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AddPermission {
-    type Output = Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError>;
+    type Output =
+        std::result::Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
             crate::operation_deser::parse_add_permission_error(response)
@@ -86,7 +87,8 @@ impl CreateAlias {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateAlias {
-    type Output = Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError>;
+    type Output =
+        std::result::Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
             crate::operation_deser::parse_create_alias_error(response)
@@ -113,7 +115,7 @@ impl CreateCodeSigningConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateCodeSigningConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateCodeSigningConfigOutput,
         crate::error::CreateCodeSigningConfigError,
     >;
@@ -202,7 +204,7 @@ impl CreateEventSourceMapping {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateEventSourceMapping {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateEventSourceMappingOutput,
         crate::error::CreateEventSourceMappingError,
     >;
@@ -258,7 +260,8 @@ impl CreateFunction {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateFunction {
-    type Output = Result<crate::output::CreateFunctionOutput, crate::error::CreateFunctionError>;
+    type Output =
+        std::result::Result<crate::output::CreateFunctionOutput, crate::error::CreateFunctionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
             crate::operation_deser::parse_create_function_error(response)
@@ -283,7 +286,8 @@ impl DeleteAlias {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteAlias {
-    type Output = Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError>;
+    type Output =
+        std::result::Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_alias_error(response)
@@ -309,7 +313,7 @@ impl DeleteCodeSigningConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteCodeSigningConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteCodeSigningConfigOutput,
         crate::error::DeleteCodeSigningConfigError,
     >;
@@ -339,7 +343,7 @@ impl DeleteEventSourceMapping {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteEventSourceMapping {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteEventSourceMappingOutput,
         crate::error::DeleteEventSourceMappingError,
     >;
@@ -371,7 +375,8 @@ impl DeleteFunction {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteFunction {
-    type Output = Result<crate::output::DeleteFunctionOutput, crate::error::DeleteFunctionError>;
+    type Output =
+        std::result::Result<crate::output::DeleteFunctionOutput, crate::error::DeleteFunctionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_function_error(response)
@@ -396,7 +401,7 @@ impl DeleteFunctionCodeSigningConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteFunctionCodeSigningConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteFunctionCodeSigningConfigOutput,
         crate::error::DeleteFunctionCodeSigningConfigError,
     >;
@@ -424,7 +429,7 @@ impl DeleteFunctionConcurrency {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteFunctionConcurrency {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteFunctionConcurrencyOutput,
         crate::error::DeleteFunctionConcurrencyError,
     >;
@@ -453,7 +458,7 @@ impl DeleteFunctionEventInvokeConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteFunctionEventInvokeConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteFunctionEventInvokeConfigOutput,
         crate::error::DeleteFunctionEventInvokeConfigError,
     >;
@@ -483,8 +488,10 @@ impl DeleteLayerVersion {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteLayerVersion {
-    type Output =
-        Result<crate::output::DeleteLayerVersionOutput, crate::error::DeleteLayerVersionError>;
+    type Output = std::result::Result<
+        crate::output::DeleteLayerVersionOutput,
+        crate::error::DeleteLayerVersionError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_layer_version_error(response)
@@ -509,7 +516,7 @@ impl DeleteProvisionedConcurrencyConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteProvisionedConcurrencyConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteProvisionedConcurrencyConfigOutput,
         crate::error::DeleteProvisionedConcurrencyConfigError,
     >;
@@ -537,8 +544,10 @@ impl GetAccountSettings {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetAccountSettings {
-    type Output =
-        Result<crate::output::GetAccountSettingsOutput, crate::error::GetAccountSettingsError>;
+    type Output = std::result::Result<
+        crate::output::GetAccountSettingsOutput,
+        crate::error::GetAccountSettingsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_account_settings_error(response)
@@ -563,7 +572,7 @@ impl GetAlias {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetAlias {
-    type Output = Result<crate::output::GetAliasOutput, crate::error::GetAliasError>;
+    type Output = std::result::Result<crate::output::GetAliasOutput, crate::error::GetAliasError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_alias_error(response)
@@ -588,8 +597,10 @@ impl GetCodeSigningConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetCodeSigningConfig {
-    type Output =
-        Result<crate::output::GetCodeSigningConfigOutput, crate::error::GetCodeSigningConfigError>;
+    type Output = std::result::Result<
+        crate::output::GetCodeSigningConfigOutput,
+        crate::error::GetCodeSigningConfigError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_code_signing_config_error(response)
@@ -614,7 +625,7 @@ impl GetEventSourceMapping {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetEventSourceMapping {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetEventSourceMappingOutput,
         crate::error::GetEventSourceMappingError,
     >;
@@ -644,7 +655,8 @@ impl GetFunction {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetFunction {
-    type Output = Result<crate::output::GetFunctionOutput, crate::error::GetFunctionError>;
+    type Output =
+        std::result::Result<crate::output::GetFunctionOutput, crate::error::GetFunctionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_function_error(response)
@@ -669,7 +681,7 @@ impl GetFunctionCodeSigningConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetFunctionCodeSigningConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetFunctionCodeSigningConfigOutput,
         crate::error::GetFunctionCodeSigningConfigError,
     >;
@@ -698,7 +710,7 @@ impl GetFunctionConcurrency {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetFunctionConcurrency {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetFunctionConcurrencyOutput,
         crate::error::GetFunctionConcurrencyError,
     >;
@@ -728,7 +740,7 @@ impl GetFunctionConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetFunctionConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetFunctionConfigurationOutput,
         crate::error::GetFunctionConfigurationError,
     >;
@@ -757,7 +769,7 @@ impl GetFunctionEventInvokeConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetFunctionEventInvokeConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetFunctionEventInvokeConfigOutput,
         crate::error::GetFunctionEventInvokeConfigError,
     >;
@@ -787,7 +799,10 @@ impl GetLayerVersion {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetLayerVersion {
-    type Output = Result<crate::output::GetLayerVersionOutput, crate::error::GetLayerVersionError>;
+    type Output = std::result::Result<
+        crate::output::GetLayerVersionOutput,
+        crate::error::GetLayerVersionError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_layer_version_error(response)
@@ -814,8 +829,10 @@ impl GetLayerVersionByArn {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetLayerVersionByArn {
-    type Output =
-        Result<crate::output::GetLayerVersionByArnOutput, crate::error::GetLayerVersionByArnError>;
+    type Output = std::result::Result<
+        crate::output::GetLayerVersionByArnOutput,
+        crate::error::GetLayerVersionByArnError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_layer_version_by_arn_error(response)
@@ -841,7 +858,7 @@ impl GetLayerVersionPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetLayerVersionPolicy {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetLayerVersionPolicyOutput,
         crate::error::GetLayerVersionPolicyError,
     >;
@@ -869,7 +886,7 @@ impl GetPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetPolicy {
-    type Output = Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError>;
+    type Output = std::result::Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_policy_error(response)
@@ -894,7 +911,7 @@ impl GetProvisionedConcurrencyConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetProvisionedConcurrencyConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetProvisionedConcurrencyConfigOutput,
         crate::error::GetProvisionedConcurrencyConfigError,
     >;
@@ -942,7 +959,7 @@ impl Invoke {
     }
 }
 impl smithy_http::response::ParseStrictResponse for Invoke {
-    type Output = Result<crate::output::InvokeOutput, crate::error::InvokeError>;
+    type Output = std::result::Result<crate::output::InvokeOutput, crate::error::InvokeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_invoke_error(response)
@@ -970,7 +987,8 @@ impl InvokeAsync {
     }
 }
 impl smithy_http::response::ParseStrictResponse for InvokeAsync {
-    type Output = Result<crate::output::InvokeAsyncOutput, crate::error::InvokeAsyncError>;
+    type Output =
+        std::result::Result<crate::output::InvokeAsyncOutput, crate::error::InvokeAsyncError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 202 {
             crate::operation_deser::parse_invoke_async_error(response)
@@ -996,7 +1014,8 @@ impl ListAliases {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListAliases {
-    type Output = Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError>;
+    type Output =
+        std::result::Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_aliases_error(response)
@@ -1023,7 +1042,7 @@ impl ListCodeSigningConfigs {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListCodeSigningConfigs {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListCodeSigningConfigsOutput,
         crate::error::ListCodeSigningConfigsError,
     >;
@@ -1052,7 +1071,7 @@ impl ListEventSourceMappings {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListEventSourceMappings {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListEventSourceMappingsOutput,
         crate::error::ListEventSourceMappingsError,
     >;
@@ -1081,7 +1100,7 @@ impl ListFunctionEventInvokeConfigs {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListFunctionEventInvokeConfigs {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListFunctionEventInvokeConfigsOutput,
         crate::error::ListFunctionEventInvokeConfigsError,
     >;
@@ -1117,7 +1136,8 @@ impl ListFunctions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListFunctions {
-    type Output = Result<crate::output::ListFunctionsOutput, crate::error::ListFunctionsError>;
+    type Output =
+        std::result::Result<crate::output::ListFunctionsOutput, crate::error::ListFunctionsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_functions_error(response)
@@ -1143,7 +1163,7 @@ impl ListFunctionsByCodeSigningConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListFunctionsByCodeSigningConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListFunctionsByCodeSigningConfigOutput,
         crate::error::ListFunctionsByCodeSigningConfigError,
     >;
@@ -1173,7 +1193,8 @@ impl ListLayers {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListLayers {
-    type Output = Result<crate::output::ListLayersOutput, crate::error::ListLayersError>;
+    type Output =
+        std::result::Result<crate::output::ListLayersOutput, crate::error::ListLayersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_layers_error(response)
@@ -1200,8 +1221,10 @@ impl ListLayerVersions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListLayerVersions {
-    type Output =
-        Result<crate::output::ListLayerVersionsOutput, crate::error::ListLayerVersionsError>;
+    type Output = std::result::Result<
+        crate::output::ListLayerVersionsOutput,
+        crate::error::ListLayerVersionsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_layer_versions_error(response)
@@ -1226,7 +1249,7 @@ impl ListProvisionedConcurrencyConfigs {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListProvisionedConcurrencyConfigs {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListProvisionedConcurrencyConfigsOutput,
         crate::error::ListProvisionedConcurrencyConfigsError,
     >;
@@ -1255,7 +1278,7 @@ impl ListTags {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTags {
-    type Output = Result<crate::output::ListTagsOutput, crate::error::ListTagsError>;
+    type Output = std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_tags_error(response)
@@ -1281,7 +1304,7 @@ impl ListVersionsByFunction {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListVersionsByFunction {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListVersionsByFunctionOutput,
         crate::error::ListVersionsByFunctionError,
     >;
@@ -1312,8 +1335,10 @@ impl PublishLayerVersion {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PublishLayerVersion {
-    type Output =
-        Result<crate::output::PublishLayerVersionOutput, crate::error::PublishLayerVersionError>;
+    type Output = std::result::Result<
+        crate::output::PublishLayerVersionOutput,
+        crate::error::PublishLayerVersionError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
             crate::operation_deser::parse_publish_layer_version_error(response)
@@ -1344,7 +1369,8 @@ impl PublishVersion {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PublishVersion {
-    type Output = Result<crate::output::PublishVersionOutput, crate::error::PublishVersionError>;
+    type Output =
+        std::result::Result<crate::output::PublishVersionOutput, crate::error::PublishVersionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 201 {
             crate::operation_deser::parse_publish_version_error(response)
@@ -1370,7 +1396,7 @@ impl PutFunctionCodeSigningConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutFunctionCodeSigningConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutFunctionCodeSigningConfigOutput,
         crate::error::PutFunctionCodeSigningConfigError,
     >;
@@ -1406,7 +1432,7 @@ impl PutFunctionConcurrency {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutFunctionConcurrency {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutFunctionConcurrencyOutput,
         crate::error::PutFunctionConcurrencyError,
     >;
@@ -1444,7 +1470,7 @@ impl PutFunctionEventInvokeConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutFunctionEventInvokeConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutFunctionEventInvokeConfigOutput,
         crate::error::PutFunctionEventInvokeConfigError,
     >;
@@ -1472,7 +1498,7 @@ impl PutProvisionedConcurrencyConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutProvisionedConcurrencyConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutProvisionedConcurrencyConfigOutput,
         crate::error::PutProvisionedConcurrencyConfigError,
     >;
@@ -1502,7 +1528,7 @@ impl RemoveLayerVersionPermission {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RemoveLayerVersionPermission {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::RemoveLayerVersionPermissionOutput,
         crate::error::RemoveLayerVersionPermissionError,
     >;
@@ -1531,8 +1557,10 @@ impl RemovePermission {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RemovePermission {
-    type Output =
-        Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError>;
+    type Output = std::result::Result<
+        crate::output::RemovePermissionOutput,
+        crate::error::RemovePermissionError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_remove_permission_error(response)
@@ -1557,7 +1585,8 @@ impl TagResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TagResource {
-    type Output = Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
+    type Output =
+        std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_tag_resource_error(response)
@@ -1582,7 +1611,8 @@ impl UntagResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UntagResource {
-    type Output = Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
+    type Output =
+        std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_untag_resource_error(response)
@@ -1607,7 +1637,8 @@ impl UpdateAlias {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateAlias {
-    type Output = Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError>;
+    type Output =
+        std::result::Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_alias_error(response)
@@ -1633,7 +1664,7 @@ impl UpdateCodeSigningConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateCodeSigningConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateCodeSigningConfigOutput,
         crate::error::UpdateCodeSigningConfigError,
     >;
@@ -1684,7 +1715,7 @@ impl UpdateEventSourceMapping {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateEventSourceMapping {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateEventSourceMappingOutput,
         crate::error::UpdateEventSourceMappingError,
     >;
@@ -1719,8 +1750,10 @@ impl UpdateFunctionCode {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateFunctionCode {
-    type Output =
-        Result<crate::output::UpdateFunctionCodeOutput, crate::error::UpdateFunctionCodeError>;
+    type Output = std::result::Result<
+        crate::output::UpdateFunctionCodeOutput,
+        crate::error::UpdateFunctionCodeError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_function_code_error(response)
@@ -1756,7 +1789,7 @@ impl UpdateFunctionConfiguration {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateFunctionConfiguration {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateFunctionConfigurationOutput,
         crate::error::UpdateFunctionConfigurationError,
     >;
@@ -1785,7 +1818,7 @@ impl UpdateFunctionEventInvokeConfig {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateFunctionEventInvokeConfig {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateFunctionEventInvokeConfigOutput,
         crate::error::UpdateFunctionEventInvokeConfigError,
     >;

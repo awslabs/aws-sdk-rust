@@ -74,6 +74,24 @@ impl CreateApiKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateApiKeyErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, CreateApiKeyErrorKind::ConflictError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateApiKeyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateApiKeyErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, CreateApiKeyErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, CreateApiKeyErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for CreateApiKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -162,6 +180,24 @@ impl CreateAuthorizerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateAuthorizerErrorKind::BadRequestError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateAuthorizerErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateAuthorizerErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAuthorizerErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, CreateAuthorizerErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for CreateAuthorizerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -248,6 +284,30 @@ impl CreateBasePathMappingError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBasePathMappingErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, CreateBasePathMappingErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateBasePathMappingErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBasePathMappingErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBasePathMappingErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for CreateBasePathMappingError {
@@ -340,6 +400,33 @@ impl CreateDeploymentError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateDeploymentErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, CreateDeploymentErrorKind::ConflictError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateDeploymentErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateDeploymentErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeploymentErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeploymentErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, CreateDeploymentErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for CreateDeploymentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -431,6 +518,42 @@ impl CreateDocumentationPartError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentationPartErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentationPartErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentationPartErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentationPartErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentationPartErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentationPartErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for CreateDocumentationPartError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -521,6 +644,42 @@ impl CreateDocumentationVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentationVersionErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentationVersionErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentationVersionErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentationVersionErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentationVersionErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDocumentationVersionErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for CreateDocumentationVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -606,6 +765,21 @@ impl CreateDomainNameError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateDomainNameErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, CreateDomainNameErrorKind::ConflictError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDomainNameErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, CreateDomainNameErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for CreateDomainNameError {
@@ -695,6 +869,24 @@ impl CreateModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateModelErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, CreateModelErrorKind::ConflictError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateModelErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateModelErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, CreateModelErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, CreateModelErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for CreateModelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -782,6 +974,36 @@ impl CreateRequestValidatorError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRequestValidatorErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRequestValidatorErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRequestValidatorErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRequestValidatorErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRequestValidatorErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for CreateRequestValidatorError {
@@ -872,6 +1094,24 @@ impl CreateResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateResourceErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, CreateResourceErrorKind::ConflictError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateResourceErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateResourceErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, CreateResourceErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, CreateResourceErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for CreateResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -957,6 +1197,18 @@ impl CreateRestApiError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateRestApiErrorKind::BadRequestError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateRestApiErrorKind::LimitExceededError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, CreateRestApiErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, CreateRestApiErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for CreateRestApiError {
@@ -1045,6 +1297,24 @@ impl CreateStageError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateStageErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, CreateStageErrorKind::ConflictError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateStageErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateStageErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, CreateStageErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, CreateStageErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for CreateStageError {
@@ -1136,6 +1406,27 @@ impl CreateUsagePlanError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateUsagePlanErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, CreateUsagePlanErrorKind::ConflictError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateUsagePlanErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateUsagePlanErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUsagePlanErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, CreateUsagePlanErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for CreateUsagePlanError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1224,6 +1515,27 @@ impl CreateUsagePlanKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateUsagePlanKeyErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, CreateUsagePlanKeyErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateUsagePlanKeyErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUsagePlanKeyErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUsagePlanKeyErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for CreateUsagePlanKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1307,6 +1619,15 @@ impl CreateVpcLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateVpcLinkErrorKind::BadRequestError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, CreateVpcLinkErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, CreateVpcLinkErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for CreateVpcLinkError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1387,6 +1708,15 @@ impl DeleteApiKeyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteApiKeyErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, DeleteApiKeyErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, DeleteApiKeyErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for DeleteApiKeyError {
@@ -1472,6 +1802,24 @@ impl DeleteAuthorizerError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteAuthorizerErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteAuthorizerErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteAuthorizerErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAuthorizerErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, DeleteAuthorizerErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for DeleteAuthorizerError {
@@ -1560,6 +1908,30 @@ impl DeleteBasePathMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBasePathMappingErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteBasePathMappingErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteBasePathMappingErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBasePathMappingErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteBasePathMappingErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteBasePathMappingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1645,6 +2017,30 @@ impl DeleteClientCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteClientCertificateErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteClientCertificateErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteClientCertificateErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteClientCertificateErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteClientCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1728,6 +2124,21 @@ impl DeleteDeploymentError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteDeploymentErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteDeploymentErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDeploymentErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, DeleteDeploymentErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for DeleteDeploymentError {
@@ -1814,6 +2225,36 @@ impl DeleteDocumentationPartError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentationPartErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentationPartErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentationPartErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentationPartErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentationPartErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for DeleteDocumentationPartError {
@@ -1902,6 +2343,36 @@ impl DeleteDocumentationVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentationVersionErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentationVersionErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentationVersionErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentationVersionErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDocumentationVersionErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteDocumentationVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1986,6 +2457,21 @@ impl DeleteDomainNameError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteDomainNameErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteDomainNameErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDomainNameErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, DeleteDomainNameErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for DeleteDomainNameError {
@@ -2073,6 +2559,30 @@ impl DeleteGatewayResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteGatewayResponseErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteGatewayResponseErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteGatewayResponseErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteGatewayResponseErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteGatewayResponseErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteGatewayResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2157,6 +2667,21 @@ impl DeleteIntegrationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteIntegrationErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteIntegrationErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteIntegrationErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, DeleteIntegrationErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for DeleteIntegrationError {
@@ -2244,6 +2769,36 @@ impl DeleteIntegrationResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteIntegrationResponseErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteIntegrationResponseErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteIntegrationResponseErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteIntegrationResponseErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteIntegrationResponseErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteIntegrationResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2328,6 +2883,18 @@ impl DeleteMethodError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteMethodErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteMethodErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, DeleteMethodErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, DeleteMethodErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for DeleteMethodError {
@@ -2414,6 +2981,30 @@ impl DeleteMethodResponseError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMethodResponseErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteMethodResponseErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteMethodResponseErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMethodResponseErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMethodResponseErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for DeleteMethodResponseError {
@@ -2502,6 +3093,21 @@ impl DeleteModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteModelErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteModelErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteModelErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, DeleteModelErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, DeleteModelErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for DeleteModelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2588,6 +3194,36 @@ impl DeleteRequestValidatorError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRequestValidatorErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRequestValidatorErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRequestValidatorErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRequestValidatorErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRequestValidatorErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for DeleteRequestValidatorError {
@@ -2676,6 +3312,21 @@ impl DeleteResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteResourceErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteResourceErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteResourceErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, DeleteResourceErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, DeleteResourceErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for DeleteResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2761,6 +3412,18 @@ impl DeleteRestApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteRestApiErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteRestApiErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, DeleteRestApiErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, DeleteRestApiErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for DeleteRestApiError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2845,6 +3508,18 @@ impl DeleteStageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteStageErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteStageErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, DeleteStageErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, DeleteStageErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for DeleteStageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2928,6 +3603,21 @@ impl DeleteUsagePlanError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteUsagePlanErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteUsagePlanErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUsagePlanErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, DeleteUsagePlanErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for DeleteUsagePlanError {
@@ -3015,6 +3705,27 @@ impl DeleteUsagePlanKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteUsagePlanKeyErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteUsagePlanKeyErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteUsagePlanKeyErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUsagePlanKeyErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUsagePlanKeyErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteUsagePlanKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3100,6 +3811,18 @@ impl DeleteVpcLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteVpcLinkErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteVpcLinkErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, DeleteVpcLinkErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, DeleteVpcLinkErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for DeleteVpcLinkError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3183,6 +3906,30 @@ impl FlushStageAuthorizersCacheError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            FlushStageAuthorizersCacheErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            FlushStageAuthorizersCacheErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            FlushStageAuthorizersCacheErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            FlushStageAuthorizersCacheErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for FlushStageAuthorizersCacheError {
@@ -3268,6 +4015,21 @@ impl FlushStageCacheError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, FlushStageCacheErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, FlushStageCacheErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            FlushStageCacheErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, FlushStageCacheErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for FlushStageCacheError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3350,6 +4112,24 @@ impl GenerateClientCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateClientCertificateErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateClientCertificateErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateClientCertificateErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for GenerateClientCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3430,6 +4210,15 @@ impl GetAccountError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetAccountErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetAccountErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetAccountErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for GetAccountError {
@@ -3512,6 +4301,15 @@ impl GetApiKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetApiKeyErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetApiKeyErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetApiKeyErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetApiKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3593,6 +4391,15 @@ impl GetApiKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetApiKeysErrorKind::BadRequestError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetApiKeysErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetApiKeysErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetApiKeysError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3673,6 +4480,15 @@ impl GetAuthorizerError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetAuthorizerErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetAuthorizerErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetAuthorizerErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for GetAuthorizerError {
@@ -3757,6 +4573,18 @@ impl GetAuthorizersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetAuthorizersErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetAuthorizersErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetAuthorizersErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetAuthorizersErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetAuthorizersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3839,6 +4667,21 @@ impl GetBasePathMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetBasePathMappingErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBasePathMappingErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBasePathMappingErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for GetBasePathMappingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3919,6 +4762,21 @@ impl GetBasePathMappingsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetBasePathMappingsErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBasePathMappingsErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBasePathMappingsErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for GetBasePathMappingsError {
@@ -4001,6 +4859,21 @@ impl GetClientCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetClientCertificateErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetClientCertificateErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetClientCertificateErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for GetClientCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4081,6 +4954,24 @@ impl GetClientCertificatesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetClientCertificatesErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetClientCertificatesErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetClientCertificatesErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for GetClientCertificatesError {
@@ -4164,6 +5055,21 @@ impl GetDeploymentError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetDeploymentErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeploymentErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetDeploymentErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetDeploymentErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for GetDeploymentError {
@@ -4251,6 +5157,24 @@ impl GetDeploymentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetDeploymentsErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetDeploymentsErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeploymentsErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetDeploymentsErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetDeploymentsErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetDeploymentsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4333,6 +5257,21 @@ impl GetDocumentationPartError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetDocumentationPartErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentationPartErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentationPartErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for GetDocumentationPartError {
@@ -4417,6 +5356,27 @@ impl GetDocumentationPartsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentationPartsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetDocumentationPartsErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentationPartsErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentationPartsErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for GetDocumentationPartsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4498,6 +5458,24 @@ impl GetDocumentationVersionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentationVersionErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentationVersionErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentationVersionErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for GetDocumentationVersionError {
@@ -4581,6 +5559,30 @@ impl GetDocumentationVersionsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentationVersionsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentationVersionsErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentationVersionsErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentationVersionsErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for GetDocumentationVersionsError {
@@ -4666,6 +5668,21 @@ impl GetDomainNameError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetDomainNameErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDomainNameErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetDomainNameErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetDomainNameErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetDomainNameError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4747,6 +5764,15 @@ impl GetDomainNamesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetDomainNamesErrorKind::BadRequestError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetDomainNamesErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetDomainNamesErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for GetDomainNamesError {
@@ -4833,6 +5859,21 @@ impl GetExportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetExportErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, GetExportErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetExportErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetExportErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetExportErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetExportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4915,6 +5956,21 @@ impl GetGatewayResponseError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetGatewayResponseErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetGatewayResponseErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetGatewayResponseErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for GetGatewayResponseError {
@@ -4999,6 +6055,24 @@ impl GetGatewayResponsesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetGatewayResponsesErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetGatewayResponsesErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetGatewayResponsesErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetGatewayResponsesErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for GetGatewayResponsesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5081,6 +6155,15 @@ impl GetIntegrationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetIntegrationErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetIntegrationErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetIntegrationErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetIntegrationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5161,6 +6244,24 @@ impl GetIntegrationResponseError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetIntegrationResponseErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetIntegrationResponseErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetIntegrationResponseErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for GetIntegrationResponseError {
@@ -5243,6 +6344,15 @@ impl GetMethodError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetMethodErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetMethodErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetMethodErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetMethodError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5324,6 +6434,18 @@ impl GetMethodResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetMethodResponseErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMethodResponseErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetMethodResponseErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetMethodResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5404,6 +6526,15 @@ impl GetModelError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetModelErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetModelErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetModelErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for GetModelError {
@@ -5487,6 +6618,18 @@ impl GetModelsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetModelsErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetModelsErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetModelsErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetModelsErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for GetModelsError {
@@ -5572,6 +6715,21 @@ impl GetModelTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetModelTemplateErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetModelTemplateErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetModelTemplateErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetModelTemplateErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetModelTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5653,6 +6811,21 @@ impl GetRequestValidatorError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetRequestValidatorErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRequestValidatorErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRequestValidatorErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for GetRequestValidatorError {
@@ -5737,6 +6910,27 @@ impl GetRequestValidatorsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRequestValidatorsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetRequestValidatorsErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRequestValidatorsErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRequestValidatorsErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for GetRequestValidatorsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5818,6 +7012,15 @@ impl GetResourceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetResourceErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetResourceErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetResourceErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for GetResourceError {
@@ -5902,6 +7105,18 @@ impl GetResourcesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetResourcesErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetResourcesErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetResourcesErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetResourcesErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetResourcesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5984,6 +7199,15 @@ impl GetRestApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetRestApiErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetRestApiErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetRestApiErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetRestApiError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6064,6 +7288,15 @@ impl GetRestApisError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetRestApisErrorKind::BadRequestError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetRestApisErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetRestApisErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for GetRestApisError {
@@ -6150,6 +7383,21 @@ impl GetSdkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetSdkErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, GetSdkErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetSdkErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetSdkErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetSdkErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetSdkError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6233,6 +7481,15 @@ impl GetSdkTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetSdkTypeErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetSdkTypeErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetSdkTypeErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetSdkTypeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6311,6 +7568,12 @@ impl GetSdkTypesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetSdkTypesErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetSdkTypesErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for GetSdkTypesError {
@@ -6392,6 +7655,15 @@ impl GetStageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetStageErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetStageErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetStageErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetStageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6472,6 +7744,15 @@ impl GetStagesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetStagesErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetStagesErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetStagesErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for GetStagesError {
@@ -6558,6 +7839,21 @@ impl GetTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetTagsErrorKind::BadRequestError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, GetTagsErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetTagsErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetTagsErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetTagsErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6643,6 +7939,18 @@ impl GetUsageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetUsageErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetUsageErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetUsageErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetUsageErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetUsageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6726,6 +8034,18 @@ impl GetUsagePlanError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetUsagePlanErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetUsagePlanErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetUsagePlanErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetUsagePlanErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for GetUsagePlanError {
@@ -6811,6 +8131,21 @@ impl GetUsagePlanKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetUsagePlanKeyErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetUsagePlanKeyErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUsagePlanKeyErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetUsagePlanKeyErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetUsagePlanKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6894,6 +8229,21 @@ impl GetUsagePlanKeysError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetUsagePlanKeysErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetUsagePlanKeysErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetUsagePlanKeysErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetUsagePlanKeysErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for GetUsagePlanKeysError {
@@ -6981,6 +8331,21 @@ impl GetUsagePlansError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetUsagePlansErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, GetUsagePlansErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetUsagePlansErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetUsagePlansErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetUsagePlansErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetUsagePlansError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7064,6 +8429,15 @@ impl GetVpcLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetVpcLinkErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetVpcLinkErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetVpcLinkErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for GetVpcLinkError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7144,6 +8518,15 @@ impl GetVpcLinksError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetVpcLinksErrorKind::BadRequestError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetVpcLinksErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, GetVpcLinksErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for GetVpcLinksError {
@@ -7231,6 +8614,24 @@ impl ImportApiKeysError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ImportApiKeysErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, ImportApiKeysErrorKind::ConflictError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, ImportApiKeysErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ImportApiKeysErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, ImportApiKeysErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, ImportApiKeysErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for ImportApiKeysError {
@@ -7320,6 +8721,36 @@ impl ImportDocumentationPartsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportDocumentationPartsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportDocumentationPartsErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportDocumentationPartsErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportDocumentationPartsErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportDocumentationPartsErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for ImportDocumentationPartsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7406,6 +8837,21 @@ impl ImportRestApiError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ImportRestApiErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, ImportRestApiErrorKind::ConflictError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, ImportRestApiErrorKind::LimitExceededError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, ImportRestApiErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, ImportRestApiErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for ImportRestApiError {
@@ -7494,6 +8940,30 @@ impl PutGatewayResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, PutGatewayResponseErrorKind::BadRequestError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutGatewayResponseErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, PutGatewayResponseErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutGatewayResponseErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutGatewayResponseErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for PutGatewayResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7580,6 +9050,21 @@ impl PutIntegrationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, PutIntegrationErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, PutIntegrationErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, PutIntegrationErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, PutIntegrationErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, PutIntegrationErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for PutIntegrationError {
@@ -7669,6 +9154,42 @@ impl PutIntegrationResponseError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutIntegrationResponseErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutIntegrationResponseErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutIntegrationResponseErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutIntegrationResponseErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutIntegrationResponseErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutIntegrationResponseErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for PutIntegrationResponseError {
@@ -7760,6 +9281,24 @@ impl PutMethodError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, PutMethodErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, PutMethodErrorKind::ConflictError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, PutMethodErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, PutMethodErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, PutMethodErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, PutMethodErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for PutMethodError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7849,6 +9388,30 @@ impl PutMethodResponseError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, PutMethodResponseErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, PutMethodResponseErrorKind::ConflictError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutMethodResponseErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, PutMethodResponseErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutMethodResponseErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, PutMethodResponseErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for PutMethodResponseError {
@@ -7940,6 +9503,24 @@ impl PutRestApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, PutRestApiErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, PutRestApiErrorKind::ConflictError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, PutRestApiErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, PutRestApiErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, PutRestApiErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, PutRestApiErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for PutRestApiError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8030,6 +9611,24 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ConflictError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8116,6 +9715,27 @@ impl TestInvokeAuthorizerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestInvokeAuthorizerErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, TestInvokeAuthorizerErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestInvokeAuthorizerErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestInvokeAuthorizerErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for TestInvokeAuthorizerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8199,6 +9819,21 @@ impl TestInvokeMethodError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, TestInvokeMethodErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, TestInvokeMethodErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestInvokeMethodErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, TestInvokeMethodErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for TestInvokeMethodError {
@@ -8286,6 +9921,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8370,6 +10020,18 @@ impl UpdateAccountError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateAccountErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateAccountErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, UpdateAccountErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, UpdateAccountErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for UpdateAccountError {
@@ -8457,6 +10119,21 @@ impl UpdateApiKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateApiKeyErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateApiKeyErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateApiKeyErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, UpdateApiKeyErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, UpdateApiKeyErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for UpdateApiKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8541,6 +10218,21 @@ impl UpdateAuthorizerError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateAuthorizerErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateAuthorizerErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAuthorizerErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, UpdateAuthorizerErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for UpdateAuthorizerError {
@@ -8628,6 +10320,30 @@ impl UpdateBasePathMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBasePathMappingErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateBasePathMappingErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateBasePathMappingErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBasePathMappingErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBasePathMappingErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateBasePathMappingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8712,6 +10428,30 @@ impl UpdateClientCertificateError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateClientCertificateErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateClientCertificateErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateClientCertificateErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateClientCertificateErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for UpdateClientCertificateError {
@@ -8798,6 +10538,27 @@ impl UpdateDeploymentError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateDeploymentErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateDeploymentErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDeploymentErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDeploymentErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, UpdateDeploymentErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for UpdateDeploymentError {
@@ -8888,6 +10649,42 @@ impl UpdateDocumentationPartError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentationPartErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentationPartErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentationPartErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentationPartErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentationPartErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentationPartErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateDocumentationPartError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8976,6 +10773,36 @@ impl UpdateDocumentationVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentationVersionErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentationVersionErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentationVersionErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentationVersionErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentationVersionErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateDocumentationVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9063,6 +10890,24 @@ impl UpdateDomainNameError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateDomainNameErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateDomainNameErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateDomainNameErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDomainNameErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, UpdateDomainNameErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for UpdateDomainNameError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9147,6 +10992,27 @@ impl UpdateGatewayResponseError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGatewayResponseErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateGatewayResponseErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGatewayResponseErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGatewayResponseErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for UpdateGatewayResponseError {
@@ -9233,6 +11099,24 @@ impl UpdateIntegrationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateIntegrationErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateIntegrationErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateIntegrationErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateIntegrationErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, UpdateIntegrationErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for UpdateIntegrationError {
@@ -9321,6 +11205,36 @@ impl UpdateIntegrationResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateIntegrationResponseErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateIntegrationResponseErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateIntegrationResponseErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateIntegrationResponseErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateIntegrationResponseErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateIntegrationResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9407,6 +11321,21 @@ impl UpdateMethodError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateMethodErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateMethodErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateMethodErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, UpdateMethodErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, UpdateMethodErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for UpdateMethodError {
@@ -9497,6 +11426,36 @@ impl UpdateMethodResponseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMethodResponseErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateMethodResponseErrorKind::ConflictError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMethodResponseErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateMethodResponseErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMethodResponseErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMethodResponseErrorKind::UnauthorizedError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateMethodResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9585,6 +11544,21 @@ impl UpdateModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateModelErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateModelErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateModelErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, UpdateModelErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, UpdateModelErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for UpdateModelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9669,6 +11643,30 @@ impl UpdateRequestValidatorError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRequestValidatorErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRequestValidatorErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRequestValidatorErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRequestValidatorErrorKind::UnauthorizedError(_)
+        )
     }
 }
 impl std::error::Error for UpdateRequestValidatorError {
@@ -9755,6 +11753,21 @@ impl UpdateResourceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateResourceErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateResourceErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateResourceErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, UpdateResourceErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, UpdateResourceErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for UpdateResourceError {
@@ -9843,6 +11856,21 @@ impl UpdateRestApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateRestApiErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateRestApiErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateRestApiErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, UpdateRestApiErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, UpdateRestApiErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for UpdateRestApiError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9930,6 +11958,21 @@ impl UpdateStageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateStageErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateStageErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateStageErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, UpdateStageErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, UpdateStageErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for UpdateStageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10014,6 +12057,18 @@ impl UpdateUsageError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateUsageErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateUsageErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, UpdateUsageErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, UpdateUsageErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for UpdateUsageError {
@@ -10100,6 +12155,24 @@ impl UpdateUsagePlanError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateUsagePlanErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateUsagePlanErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateUsagePlanErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateUsagePlanErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, UpdateUsagePlanErrorKind::UnauthorizedError(_))
     }
 }
 impl std::error::Error for UpdateUsagePlanError {
@@ -10188,6 +12261,21 @@ impl UpdateVpcLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateVpcLinkErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateVpcLinkErrorKind::ConflictError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateVpcLinkErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, UpdateVpcLinkErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unauthorized_error(&self) -> bool {
+        matches!(&self.kind, UpdateVpcLinkErrorKind::UnauthorizedError(_))
+    }
 }
 impl std::error::Error for UpdateVpcLinkError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10241,12 +12329,12 @@ pub mod unauthorized_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UnauthorizedError`](crate::error::UnauthorizedError)
@@ -10308,23 +12396,23 @@ pub mod too_many_requests_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn retry_after_seconds(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.retry_after_seconds = Some(inp.into());
+        pub fn retry_after_seconds(mut self, input: impl Into<std::string::String>) -> Self {
+            self.retry_after_seconds = Some(input.into());
             self
         }
         pub fn set_retry_after_seconds(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.retry_after_seconds = inp;
+            self.retry_after_seconds = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TooManyRequestsError`](crate::error::TooManyRequestsError)
@@ -10382,12 +12470,12 @@ pub mod not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NotFoundError`](crate::error::NotFoundError)
@@ -10444,12 +12532,12 @@ pub mod conflict_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ConflictError`](crate::error::ConflictError)
@@ -10506,12 +12594,12 @@ pub mod bad_request_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`BadRequestError`](crate::error::BadRequestError)
@@ -10573,23 +12661,23 @@ pub mod limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn retry_after_seconds(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.retry_after_seconds = Some(inp.into());
+        pub fn retry_after_seconds(mut self, input: impl Into<std::string::String>) -> Self {
+            self.retry_after_seconds = Some(input.into());
             self
         }
         pub fn set_retry_after_seconds(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.retry_after_seconds = inp;
+            self.retry_after_seconds = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
@@ -10652,23 +12740,23 @@ pub mod service_unavailable_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn retry_after_seconds(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.retry_after_seconds = Some(inp.into());
+        pub fn retry_after_seconds(mut self, input: impl Into<std::string::String>) -> Self {
+            self.retry_after_seconds = Some(input.into());
             self
         }
         pub fn set_retry_after_seconds(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.retry_after_seconds = inp;
+            self.retry_after_seconds = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceUnavailableError`](crate::error::ServiceUnavailableError)

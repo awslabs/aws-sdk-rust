@@ -9,24 +9,26 @@ pub mod batch_execute_statement_input {
             std::option::Option<std::vec::Vec<crate::model::BatchStatementRequest>>,
     }
     impl Builder {
-        pub fn statements(mut self, inp: impl Into<crate::model::BatchStatementRequest>) -> Self {
+        pub fn statements(mut self, input: impl Into<crate::model::BatchStatementRequest>) -> Self {
             let mut v = self.statements.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.statements = Some(v);
             self
         }
         pub fn set_statements(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::BatchStatementRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::BatchStatementRequest>>,
         ) -> Self {
-            self.statements = inp;
+            self.statements = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchExecuteStatementInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::BatchExecuteStatementInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::BatchExecuteStatementInput {
                 statements: self.statements,
             })
@@ -43,7 +45,7 @@ impl BatchExecuteStatementInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::BatchExecuteStatement,
             aws_http::AwsErrorRetryPolicy,
@@ -99,7 +101,7 @@ impl BatchExecuteStatementInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -146,11 +148,11 @@ pub mod batch_get_item_input {
         }
         pub fn set_request_items(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::KeysAndAttributes>,
             >,
         ) -> Self {
-            self.request_items = inp;
+            self.request_items = input;
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -171,22 +173,23 @@ pub mod batch_get_item_input {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.return_consumed_capacity = Some(inp);
+            self.return_consumed_capacity = Some(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.return_consumed_capacity = inp;
+            self.return_consumed_capacity = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchGetItemInput`](crate::input::BatchGetItemInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchGetItemInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::BatchGetItemInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::BatchGetItemInput {
                 request_items: self.request_items,
                 return_consumed_capacity: self.return_consumed_capacity,
@@ -204,7 +207,7 @@ impl BatchGetItemInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::BatchGetItem,
             aws_http::AwsErrorRetryPolicy,
@@ -260,7 +263,7 @@ impl BatchGetItemInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -312,14 +315,14 @@ pub mod batch_write_item_input {
         }
         pub fn set_request_items(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     std::vec::Vec<crate::model::WriteRequest>,
                 >,
             >,
         ) -> Self {
-            self.request_items = inp;
+            self.request_items = input;
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -340,38 +343,41 @@ pub mod batch_write_item_input {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.return_consumed_capacity = Some(inp);
+            self.return_consumed_capacity = Some(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.return_consumed_capacity = inp;
+            self.return_consumed_capacity = input;
             self
         }
         /// <p>Determines whether item collection metrics are returned.  If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during
         /// the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn return_item_collection_metrics(
             mut self,
-            inp: crate::model::ReturnItemCollectionMetrics,
+            input: crate::model::ReturnItemCollectionMetrics,
         ) -> Self {
-            self.return_item_collection_metrics = Some(inp);
+            self.return_item_collection_metrics = Some(input);
             self
         }
         pub fn set_return_item_collection_metrics(
             mut self,
-            inp: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
+            input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
         ) -> Self {
-            self.return_item_collection_metrics = inp;
+            self.return_item_collection_metrics = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchWriteItemInput`](crate::input::BatchWriteItemInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchWriteItemInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::BatchWriteItemInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::BatchWriteItemInput {
                 request_items: self.request_items,
                 return_consumed_capacity: self.return_consumed_capacity,
@@ -390,7 +396,7 @@ impl BatchWriteItemInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::BatchWriteItem,
             aws_http::AwsErrorRetryPolicy,
@@ -445,7 +451,7 @@ impl BatchWriteItemInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -478,27 +484,28 @@ pub mod create_backup_input {
     }
     impl Builder {
         /// <p>The name of the table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// <p>Specified name for the backup.</p>
-        pub fn backup_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.backup_name = Some(inp.into());
+        pub fn backup_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_name = Some(input.into());
             self
         }
-        pub fn set_backup_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.backup_name = inp;
+        pub fn set_backup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backup_name = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateBackupInput`](crate::input::CreateBackupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateBackupInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateBackupInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateBackupInput {
                 table_name: self.table_name,
                 backup_name: self.backup_name,
@@ -516,7 +523,7 @@ impl CreateBackupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateBackup,
             aws_http::AwsErrorRetryPolicy,
@@ -572,7 +579,7 @@ impl CreateBackupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -605,35 +612,37 @@ pub mod create_global_table_input {
     }
     impl Builder {
         /// <p>The global table name.</p>
-        pub fn global_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.global_table_name = Some(inp.into());
+        pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_table_name = Some(input.into());
             self
         }
         pub fn set_global_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.global_table_name = inp;
+            self.global_table_name = input;
             self
         }
-        pub fn replication_group(mut self, inp: impl Into<crate::model::Replica>) -> Self {
+        pub fn replication_group(mut self, input: impl Into<crate::model::Replica>) -> Self {
             let mut v = self.replication_group.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.replication_group = Some(v);
             self
         }
         pub fn set_replication_group(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Replica>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Replica>>,
         ) -> Self {
-            self.replication_group = inp;
+            self.replication_group = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateGlobalTableInput`](crate::input::CreateGlobalTableInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateGlobalTableInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateGlobalTableInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateGlobalTableInput {
                 global_table_name: self.global_table_name,
                 replication_group: self.replication_group,
@@ -651,7 +660,7 @@ impl CreateGlobalTableInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateGlobalTable,
             aws_http::AwsErrorRetryPolicy,
@@ -707,7 +716,7 @@ impl CreateGlobalTableInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -752,72 +761,72 @@ pub mod create_table_input {
     impl Builder {
         pub fn attribute_definitions(
             mut self,
-            inp: impl Into<crate::model::AttributeDefinition>,
+            input: impl Into<crate::model::AttributeDefinition>,
         ) -> Self {
             let mut v = self.attribute_definitions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attribute_definitions = Some(v);
             self
         }
         pub fn set_attribute_definitions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
         ) -> Self {
-            self.attribute_definitions = inp;
+            self.attribute_definitions = input;
             self
         }
         /// <p>The name of the table to create.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
-        pub fn key_schema(mut self, inp: impl Into<crate::model::KeySchemaElement>) -> Self {
+        pub fn key_schema(mut self, input: impl Into<crate::model::KeySchemaElement>) -> Self {
             let mut v = self.key_schema.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.key_schema = Some(v);
             self
         }
         pub fn set_key_schema(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
+            input: std::option::Option<std::vec::Vec<crate::model::KeySchemaElement>>,
         ) -> Self {
-            self.key_schema = inp;
+            self.key_schema = input;
             self
         }
         pub fn local_secondary_indexes(
             mut self,
-            inp: impl Into<crate::model::LocalSecondaryIndex>,
+            input: impl Into<crate::model::LocalSecondaryIndex>,
         ) -> Self {
             let mut v = self.local_secondary_indexes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.local_secondary_indexes = Some(v);
             self
         }
         pub fn set_local_secondary_indexes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
         ) -> Self {
-            self.local_secondary_indexes = inp;
+            self.local_secondary_indexes = input;
             self
         }
         pub fn global_secondary_indexes(
             mut self,
-            inp: impl Into<crate::model::GlobalSecondaryIndex>,
+            input: impl Into<crate::model::GlobalSecondaryIndex>,
         ) -> Self {
             let mut v = self.global_secondary_indexes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.global_secondary_indexes = Some(v);
             self
         }
         pub fn set_global_secondary_indexes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
         ) -> Self {
-            self.global_secondary_indexes = inp;
+            self.global_secondary_indexes = input;
             self
         }
         /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
@@ -832,15 +841,15 @@ pub mod create_table_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn billing_mode(mut self, inp: crate::model::BillingMode) -> Self {
-            self.billing_mode = Some(inp);
+        pub fn billing_mode(mut self, input: crate::model::BillingMode) -> Self {
+            self.billing_mode = Some(input);
             self
         }
         pub fn set_billing_mode(
             mut self,
-            inp: std::option::Option<crate::model::BillingMode>,
+            input: std::option::Option<crate::model::BillingMode>,
         ) -> Self {
-            self.billing_mode = inp;
+            self.billing_mode = input;
             self
         }
         /// <p>Represents the provisioned throughput settings for a specified table or index. The
@@ -851,15 +860,18 @@ pub mod create_table_input {
         /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
         /// Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn provisioned_throughput(mut self, inp: crate::model::ProvisionedThroughput) -> Self {
-            self.provisioned_throughput = Some(inp);
+        pub fn provisioned_throughput(
+            mut self,
+            input: crate::model::ProvisionedThroughput,
+        ) -> Self {
+            self.provisioned_throughput = Some(input);
             self
         }
         pub fn set_provisioned_throughput(
             mut self,
-            inp: std::option::Option<crate::model::ProvisionedThroughput>,
+            input: std::option::Option<crate::model::ProvisionedThroughput>,
         ) -> Self {
-            self.provisioned_throughput = inp;
+            self.provisioned_throughput = input;
             self
         }
         /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
@@ -898,46 +910,47 @@ pub mod create_table_input {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn stream_specification(mut self, inp: crate::model::StreamSpecification) -> Self {
-            self.stream_specification = Some(inp);
+        pub fn stream_specification(mut self, input: crate::model::StreamSpecification) -> Self {
+            self.stream_specification = Some(input);
             self
         }
         pub fn set_stream_specification(
             mut self,
-            inp: std::option::Option<crate::model::StreamSpecification>,
+            input: std::option::Option<crate::model::StreamSpecification>,
         ) -> Self {
-            self.stream_specification = inp;
+            self.stream_specification = input;
             self
         }
         /// <p>Represents the settings used to enable server-side encryption.</p>
-        pub fn sse_specification(mut self, inp: crate::model::SSESpecification) -> Self {
-            self.sse_specification = Some(inp);
+        pub fn sse_specification(mut self, input: crate::model::SSESpecification) -> Self {
+            self.sse_specification = Some(input);
             self
         }
         pub fn set_sse_specification(
             mut self,
-            inp: std::option::Option<crate::model::SSESpecification>,
+            input: std::option::Option<crate::model::SSESpecification>,
         ) -> Self {
-            self.sse_specification = inp;
+            self.sse_specification = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTableInput`](crate::input::CreateTableInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTableInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateTableInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateTableInput {
                 attribute_definitions: self.attribute_definitions,
                 table_name: self.table_name,
@@ -963,7 +976,7 @@ impl CreateTableInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateTable,
             aws_http::AwsErrorRetryPolicy,
@@ -1019,7 +1032,7 @@ impl CreateTableInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1051,18 +1064,19 @@ pub mod delete_backup_input {
     }
     impl Builder {
         /// <p>The ARN associated with the backup.</p>
-        pub fn backup_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.backup_arn = Some(inp.into());
+        pub fn backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_arn = Some(input.into());
             self
         }
-        pub fn set_backup_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.backup_arn = inp;
+        pub fn set_backup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backup_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteBackupInput`](crate::input::DeleteBackupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteBackupInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteBackupInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteBackupInput {
                 backup_arn: self.backup_arn,
             })
@@ -1079,7 +1093,7 @@ impl DeleteBackupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteBackup,
             aws_http::AwsErrorRetryPolicy,
@@ -1135,7 +1149,7 @@ impl DeleteBackupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1186,12 +1200,12 @@ pub mod delete_item_input {
     }
     impl Builder {
         /// <p>The name of the table from which to delete the item.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         pub fn key(
@@ -1206,11 +1220,11 @@ pub mod delete_item_input {
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.key = inp;
+            self.key = input;
             self
         }
         pub fn expected(
@@ -1225,27 +1239,27 @@ pub mod delete_item_input {
         }
         pub fn set_expected(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     crate::model::ExpectedAttributeValue,
                 >,
             >,
         ) -> Self {
-            self.expected = inp;
+            self.expected = input;
             self
         }
         /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.  For more information, see
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn conditional_operator(mut self, inp: crate::model::ConditionalOperator) -> Self {
-            self.conditional_operator = Some(inp);
+        pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
+            self.conditional_operator = Some(input);
             self
         }
         pub fn set_conditional_operator(
             mut self,
-            inp: std::option::Option<crate::model::ConditionalOperator>,
+            input: std::option::Option<crate::model::ConditionalOperator>,
         ) -> Self {
-            self.conditional_operator = inp;
+            self.conditional_operator = input;
             self
         }
         /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they
@@ -1267,15 +1281,15 @@ pub mod delete_item_input {
         /// <code>DeleteItem</code> does not recognize any values other than <code>NONE</code> or
         /// <code>ALL_OLD</code>.</p>
         /// </note>
-        pub fn return_values(mut self, inp: crate::model::ReturnValue) -> Self {
-            self.return_values = Some(inp);
+        pub fn return_values(mut self, input: crate::model::ReturnValue) -> Self {
+            self.return_values = Some(input);
             self
         }
         pub fn set_return_values(
             mut self,
-            inp: std::option::Option<crate::model::ReturnValue>,
+            input: std::option::Option<crate::model::ReturnValue>,
         ) -> Self {
-            self.return_values = inp;
+            self.return_values = input;
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -1296,32 +1310,32 @@ pub mod delete_item_input {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.return_consumed_capacity = Some(inp);
+            self.return_consumed_capacity = Some(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.return_consumed_capacity = inp;
+            self.return_consumed_capacity = input;
             self
         }
         /// <p>Determines whether item collection metrics are returned.  If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during
         /// the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn return_item_collection_metrics(
             mut self,
-            inp: crate::model::ReturnItemCollectionMetrics,
+            input: crate::model::ReturnItemCollectionMetrics,
         ) -> Self {
-            self.return_item_collection_metrics = Some(inp);
+            self.return_item_collection_metrics = Some(input);
             self
         }
         pub fn set_return_item_collection_metrics(
             mut self,
-            inp: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
+            input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
         ) -> Self {
-            self.return_item_collection_metrics = inp;
+            self.return_item_collection_metrics = input;
             self
         }
         /// <p>A condition that must be satisfied in order for a conditional <code>DeleteItem</code> to
@@ -1346,15 +1360,15 @@ pub mod delete_item_input {
         /// </ul>
         /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn condition_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.condition_expression = Some(inp.into());
+        pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.condition_expression = Some(input.into());
             self
         }
         pub fn set_condition_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.condition_expression = inp;
+            self.condition_expression = input;
             self
         }
         pub fn expression_attribute_names(
@@ -1369,11 +1383,11 @@ pub mod delete_item_input {
         }
         pub fn set_expression_attribute_names(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.expression_attribute_names = inp;
+            self.expression_attribute_names = input;
             self
         }
         pub fn expression_attribute_values(
@@ -1388,17 +1402,18 @@ pub mod delete_item_input {
         }
         pub fn set_expression_attribute_values(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.expression_attribute_values = inp;
+            self.expression_attribute_values = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteItemInput`](crate::input::DeleteItemInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteItemInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteItemInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteItemInput {
                 table_name: self.table_name,
                 key: self.key,
@@ -1424,7 +1439,7 @@ impl DeleteItemInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteItem,
             aws_http::AwsErrorRetryPolicy,
@@ -1480,7 +1495,7 @@ impl DeleteItemInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1512,18 +1527,19 @@ pub mod delete_table_input {
     }
     impl Builder {
         /// <p>The name of the table to delete.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTableInput`](crate::input::DeleteTableInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTableInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteTableInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteTableInput {
                 table_name: self.table_name,
             })
@@ -1540,7 +1556,7 @@ impl DeleteTableInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteTable,
             aws_http::AwsErrorRetryPolicy,
@@ -1596,7 +1612,7 @@ impl DeleteTableInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1628,18 +1644,21 @@ pub mod describe_backup_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
-        pub fn backup_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.backup_arn = Some(inp.into());
+        pub fn backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_arn = Some(input.into());
             self
         }
-        pub fn set_backup_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.backup_arn = inp;
+        pub fn set_backup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backup_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeBackupInput`](crate::input::DescribeBackupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeBackupInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::DescribeBackupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeBackupInput {
                 backup_arn: self.backup_arn,
             })
@@ -1656,7 +1675,7 @@ impl DescribeBackupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeBackup,
             aws_http::AwsErrorRetryPolicy,
@@ -1711,7 +1730,7 @@ impl DescribeBackupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1743,19 +1762,21 @@ pub mod describe_continuous_backups_input {
     }
     impl Builder {
         /// <p>Name of the table for which the customer wants to check the continuous backups and point in time recovery settings.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeContinuousBackupsInput`](crate::input::DescribeContinuousBackupsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeContinuousBackupsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeContinuousBackupsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeContinuousBackupsInput {
                 table_name: self.table_name,
             })
@@ -1773,7 +1794,7 @@ impl DescribeContinuousBackupsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeContinuousBackups,
             aws_http::AwsErrorRetryPolicy,
@@ -1829,7 +1850,7 @@ impl DescribeContinuousBackupsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1865,27 +1886,27 @@ pub mod describe_contributor_insights_input {
     }
     impl Builder {
         /// <p>The name of the table to describe.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// <p>The name of the global secondary index to describe, if applicable.</p>
-        pub fn index_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.index_name = Some(inp.into());
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_name = Some(input.into());
             self
         }
-        pub fn set_index_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.index_name = inp;
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeContributorInsightsInput`](crate::input::DescribeContributorInsightsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeContributorInsightsInput,
             smithy_http::operation::BuildError,
         > {
@@ -1907,7 +1928,7 @@ impl DescribeContributorInsightsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeContributorInsights,
             aws_http::AwsErrorRetryPolicy,
@@ -1964,7 +1985,7 @@ impl DescribeContributorInsightsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1999,8 +2020,10 @@ pub mod describe_endpoints_input {
         /// Consumes the builder and constructs a [`DescribeEndpointsInput`](crate::input::DescribeEndpointsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeEndpointsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeEndpointsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeEndpointsInput {})
         }
     }
@@ -2015,7 +2038,7 @@ impl DescribeEndpointsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeEndpoints,
             aws_http::AwsErrorRetryPolicy,
@@ -2068,7 +2091,7 @@ impl DescribeEndpointsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2100,18 +2123,21 @@ pub mod describe_export_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with the export.</p>
-        pub fn export_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.export_arn = Some(inp.into());
+        pub fn export_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.export_arn = Some(input.into());
             self
         }
-        pub fn set_export_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.export_arn = inp;
+        pub fn set_export_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.export_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeExportInput`](crate::input::DescribeExportInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeExportInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::DescribeExportInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeExportInput {
                 export_arn: self.export_arn,
             })
@@ -2128,7 +2154,7 @@ impl DescribeExportInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeExport,
             aws_http::AwsErrorRetryPolicy,
@@ -2183,7 +2209,7 @@ impl DescribeExportInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2215,22 +2241,24 @@ pub mod describe_global_table_input {
     }
     impl Builder {
         /// <p>The name of the global table.</p>
-        pub fn global_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.global_table_name = Some(inp.into());
+        pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_table_name = Some(input.into());
             self
         }
         pub fn set_global_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.global_table_name = inp;
+            self.global_table_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeGlobalTableInput`](crate::input::DescribeGlobalTableInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeGlobalTableInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeGlobalTableInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeGlobalTableInput {
                 global_table_name: self.global_table_name,
             })
@@ -2247,7 +2275,7 @@ impl DescribeGlobalTableInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeGlobalTable,
             aws_http::AwsErrorRetryPolicy,
@@ -2303,7 +2331,7 @@ impl DescribeGlobalTableInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2335,21 +2363,21 @@ pub mod describe_global_table_settings_input {
     }
     impl Builder {
         /// <p>The name of the global table to describe.</p>
-        pub fn global_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.global_table_name = Some(inp.into());
+        pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_table_name = Some(input.into());
             self
         }
         pub fn set_global_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.global_table_name = inp;
+            self.global_table_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeGlobalTableSettingsInput`](crate::input::DescribeGlobalTableSettingsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeGlobalTableSettingsInput,
             smithy_http::operation::BuildError,
         > {
@@ -2370,7 +2398,7 @@ impl DescribeGlobalTableSettingsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeGlobalTableSettings,
             aws_http::AwsErrorRetryPolicy,
@@ -2427,7 +2455,7 @@ impl DescribeGlobalTableSettingsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2462,18 +2490,18 @@ pub mod describe_kinesis_streaming_destination_input {
     }
     impl Builder {
         /// <p>The name of the table being described.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeKinesisStreamingDestinationInput`](crate::input::DescribeKinesisStreamingDestinationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeKinesisStreamingDestinationInput,
             smithy_http::operation::BuildError,
         > {
@@ -2495,7 +2523,7 @@ impl DescribeKinesisStreamingDestinationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeKinesisStreamingDestination,
             aws_http::AwsErrorRetryPolicy,
@@ -2554,7 +2582,7 @@ impl DescribeKinesisStreamingDestinationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2589,7 +2617,10 @@ pub mod describe_limits_input {
         /// Consumes the builder and constructs a [`DescribeLimitsInput`](crate::input::DescribeLimitsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeLimitsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::DescribeLimitsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeLimitsInput {})
         }
     }
@@ -2604,7 +2635,7 @@ impl DescribeLimitsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeLimits,
             aws_http::AwsErrorRetryPolicy,
@@ -2657,7 +2688,7 @@ impl DescribeLimitsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2689,18 +2720,19 @@ pub mod describe_table_input {
     }
     impl Builder {
         /// <p>The name of the table to describe.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTableInput`](crate::input::DescribeTableInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeTableInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DescribeTableInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DescribeTableInput {
                 table_name: self.table_name,
             })
@@ -2717,7 +2749,7 @@ impl DescribeTableInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeTable,
             aws_http::AwsErrorRetryPolicy,
@@ -2773,7 +2805,7 @@ impl DescribeTableInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2805,18 +2837,18 @@ pub mod describe_table_replica_auto_scaling_input {
     }
     impl Builder {
         /// <p>The name of the table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTableReplicaAutoScalingInput`](crate::input::DescribeTableReplicaAutoScalingInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DescribeTableReplicaAutoScalingInput,
             smithy_http::operation::BuildError,
         > {
@@ -2837,7 +2869,7 @@ impl DescribeTableReplicaAutoScalingInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeTableReplicaAutoScaling,
             aws_http::AwsErrorRetryPolicy,
@@ -2896,7 +2928,7 @@ impl DescribeTableReplicaAutoScalingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2931,19 +2963,21 @@ pub mod describe_time_to_live_input {
     }
     impl Builder {
         /// <p>The name of the table to be described.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTimeToLiveInput`](crate::input::DescribeTimeToLiveInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeTimeToLiveInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeTimeToLiveInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeTimeToLiveInput {
                 table_name: self.table_name,
             })
@@ -2960,7 +2994,7 @@ impl DescribeTimeToLiveInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeTimeToLive,
             aws_http::AwsErrorRetryPolicy,
@@ -3016,7 +3050,7 @@ impl DescribeTimeToLiveInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3049,27 +3083,27 @@ pub mod disable_kinesis_streaming_destination_input {
     }
     impl Builder {
         /// <p>The name of the DynamoDB table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// <p>The ARN for a Kinesis data stream.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_arn = Some(inp.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = inp;
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DisableKinesisStreamingDestinationInput`](crate::input::DisableKinesisStreamingDestinationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DisableKinesisStreamingDestinationInput,
             smithy_http::operation::BuildError,
         > {
@@ -3091,7 +3125,7 @@ impl DisableKinesisStreamingDestinationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DisableKinesisStreamingDestination,
             aws_http::AwsErrorRetryPolicy,
@@ -3150,7 +3184,7 @@ impl DisableKinesisStreamingDestinationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3186,27 +3220,27 @@ pub mod enable_kinesis_streaming_destination_input {
     }
     impl Builder {
         /// <p>The name of the DynamoDB table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// <p>The ARN for a Kinesis data stream.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_arn = Some(inp.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = inp;
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`EnableKinesisStreamingDestinationInput`](crate::input::EnableKinesisStreamingDestinationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::EnableKinesisStreamingDestinationInput,
             smithy_http::operation::BuildError,
         > {
@@ -3228,7 +3262,7 @@ impl EnableKinesisStreamingDestinationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::EnableKinesisStreamingDestination,
             aws_http::AwsErrorRetryPolicy,
@@ -3287,7 +3321,7 @@ impl EnableKinesisStreamingDestinationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3327,54 +3361,56 @@ pub mod execute_statement_input {
         /// <p>
         /// The PartiQL statement representing the operation to run.
         /// </p>
-        pub fn statement(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.statement = Some(inp.into());
+        pub fn statement(mut self, input: impl Into<std::string::String>) -> Self {
+            self.statement = Some(input.into());
             self
         }
-        pub fn set_statement(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.statement = inp;
+        pub fn set_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.statement = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::AttributeValue>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::AttributeValue>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// <p>
         /// The consistency of a read operation. If set to <code>true</code>, then a strongly consistent read is used; otherwise, an eventually consistent read is used.
         /// </p>
-        pub fn consistent_read(mut self, inp: bool) -> Self {
-            self.consistent_read = Some(inp);
+        pub fn consistent_read(mut self, input: bool) -> Self {
+            self.consistent_read = Some(input);
             self
         }
-        pub fn set_consistent_read(mut self, inp: std::option::Option<bool>) -> Self {
-            self.consistent_read = inp;
+        pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
+            self.consistent_read = input;
             self
         }
         /// <p>
         /// Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::input::ExecuteStatementInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ExecuteStatementInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ExecuteStatementInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ExecuteStatementInput {
                 statement: self.statement,
                 parameters: self.parameters,
@@ -3394,7 +3430,7 @@ impl ExecuteStatementInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ExecuteStatement,
             aws_http::AwsErrorRetryPolicy,
@@ -3449,7 +3485,7 @@ impl ExecuteStatementInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3484,39 +3520,41 @@ pub mod execute_transaction_input {
     impl Builder {
         pub fn transact_statements(
             mut self,
-            inp: impl Into<crate::model::ParameterizedStatement>,
+            input: impl Into<crate::model::ParameterizedStatement>,
         ) -> Self {
             let mut v = self.transact_statements.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.transact_statements = Some(v);
             self
         }
         pub fn set_transact_statements(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ParameterizedStatement>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ParameterizedStatement>>,
         ) -> Self {
-            self.transact_statements = inp;
+            self.transact_statements = input;
             self
         }
         /// <p>
         /// Set this value to get remaining results, if <code>NextToken</code> was returned in the statement response.
         /// </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(inp.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_request_token = inp;
+            self.client_request_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ExecuteTransactionInput`](crate::input::ExecuteTransactionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ExecuteTransactionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ExecuteTransactionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ExecuteTransactionInput {
                 transact_statements: self.transact_statements,
                 client_request_token: self.client_request_token,
@@ -3534,7 +3572,7 @@ impl ExecuteTransactionInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ExecuteTransaction,
             aws_http::AwsErrorRetryPolicy,
@@ -3593,7 +3631,7 @@ impl ExecuteTransactionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3633,22 +3671,25 @@ pub mod export_table_to_point_in_time_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
-        pub fn table_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_arn = Some(inp.into());
+        pub fn table_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_arn = Some(input.into());
             self
         }
-        pub fn set_table_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_arn = inp;
+        pub fn set_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_arn = input;
             self
         }
         /// <p>Time in the past from which to export table data. The table export will be a snapshot
         /// of the table's state at this point in time.</p>
-        pub fn export_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.export_time = Some(inp);
+        pub fn export_time(mut self, input: smithy_types::Instant) -> Self {
+            self.export_time = Some(input);
             self
         }
-        pub fn set_export_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.export_time = inp;
+        pub fn set_export_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.export_time = input;
             self
         }
         /// <p>Providing a <code>ClientToken</code> makes the call to
@@ -3661,43 +3702,43 @@ pub mod export_table_to_point_in_time_input {
         /// <p>If you submit a request with the same client token but a change in other parameters
         /// within the 8-hour idempotency window, DynamoDB returns an
         /// <code>IdempotentParameterMismatch</code> exception.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_token = Some(inp.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_token = inp;
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
             self
         }
         /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
-        pub fn s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_bucket = Some(inp.into());
+        pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket = Some(input.into());
             self
         }
-        pub fn set_s3_bucket(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = inp;
+        pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket = input;
             self
         }
         /// <p>The ID of the AWS account that owns the bucket the export will be stored in.</p>
-        pub fn s3_bucket_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_bucket_owner = Some(inp.into());
+        pub fn s3_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket_owner = Some(input.into());
             self
         }
         pub fn set_s3_bucket_owner(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.s3_bucket_owner = inp;
+            self.s3_bucket_owner = input;
             self
         }
         /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported
         /// snapshot.</p>
-        pub fn s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_prefix = Some(inp.into());
+        pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_prefix = Some(input.into());
             self
         }
-        pub fn set_s3_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_prefix = inp;
+        pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_prefix = input;
             self
         }
         /// <p>Type of encryption used on the bucket where export data will be stored. Valid values
@@ -3712,48 +3753,50 @@ pub mod export_table_to_point_in_time_input {
         /// <code>KMS</code> - server-side encryption with AWS KMS managed keys</p>
         /// </li>
         /// </ul>
-        pub fn s3_sse_algorithm(mut self, inp: crate::model::S3SseAlgorithm) -> Self {
-            self.s3_sse_algorithm = Some(inp);
+        pub fn s3_sse_algorithm(mut self, input: crate::model::S3SseAlgorithm) -> Self {
+            self.s3_sse_algorithm = Some(input);
             self
         }
         pub fn set_s3_sse_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::S3SseAlgorithm>,
+            input: std::option::Option<crate::model::S3SseAlgorithm>,
         ) -> Self {
-            self.s3_sse_algorithm = inp;
+            self.s3_sse_algorithm = input;
             self
         }
         /// <p>The ID of the AWS KMS managed key used to encrypt the S3 bucket where export data will
         /// be stored (if applicable).</p>
-        pub fn s3_sse_kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_sse_kms_key_id = Some(inp.into());
+        pub fn s3_sse_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_sse_kms_key_id = Some(input.into());
             self
         }
         pub fn set_s3_sse_kms_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.s3_sse_kms_key_id = inp;
+            self.s3_sse_kms_key_id = input;
             self
         }
         /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are
         /// <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
-        pub fn export_format(mut self, inp: crate::model::ExportFormat) -> Self {
-            self.export_format = Some(inp);
+        pub fn export_format(mut self, input: crate::model::ExportFormat) -> Self {
+            self.export_format = Some(input);
             self
         }
         pub fn set_export_format(
             mut self,
-            inp: std::option::Option<crate::model::ExportFormat>,
+            input: std::option::Option<crate::model::ExportFormat>,
         ) -> Self {
-            self.export_format = inp;
+            self.export_format = input;
             self
         }
         /// Consumes the builder and constructs a [`ExportTableToPointInTimeInput`](crate::input::ExportTableToPointInTimeInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ExportTableToPointInTimeInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ExportTableToPointInTimeInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ExportTableToPointInTimeInput {
                 table_arn: self.table_arn,
                 export_time: self.export_time,
@@ -3779,7 +3822,7 @@ impl ExportTableToPointInTimeInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ExportTableToPointInTime,
             aws_http::AwsErrorRetryPolicy,
@@ -3839,7 +3882,7 @@ impl ExportTableToPointInTimeInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3882,12 +3925,12 @@ pub mod get_item_input {
     }
     impl Builder {
         /// <p>The name of the table containing the requested item.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         pub fn key(
@@ -3902,33 +3945,33 @@ pub mod get_item_input {
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.key = inp;
+            self.key = input;
             self
         }
-        pub fn attributes_to_get(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn attributes_to_get(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes_to_get.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attributes_to_get = Some(v);
             self
         }
         pub fn set_attributes_to_get(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.attributes_to_get = inp;
+            self.attributes_to_get = input;
             self
         }
         /// <p>Determines the read consistency model:  If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
-        pub fn consistent_read(mut self, inp: bool) -> Self {
-            self.consistent_read = Some(inp);
+        pub fn consistent_read(mut self, input: bool) -> Self {
+            self.consistent_read = Some(input);
             self
         }
-        pub fn set_consistent_read(mut self, inp: std::option::Option<bool>) -> Self {
-            self.consistent_read = inp;
+        pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
+            self.consistent_read = input;
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -3949,16 +3992,16 @@ pub mod get_item_input {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.return_consumed_capacity = Some(inp);
+            self.return_consumed_capacity = Some(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.return_consumed_capacity = inp;
+            self.return_consumed_capacity = input;
             self
         }
         /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
@@ -3966,15 +4009,15 @@ pub mod get_item_input {
         /// requested attributes are not found, they do not appear in the result.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn projection_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.projection_expression = Some(inp.into());
+        pub fn projection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.projection_expression = Some(input.into());
             self
         }
         pub fn set_projection_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.projection_expression = inp;
+            self.projection_expression = input;
             self
         }
         pub fn expression_attribute_names(
@@ -3989,17 +4032,18 @@ pub mod get_item_input {
         }
         pub fn set_expression_attribute_names(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.expression_attribute_names = inp;
+            self.expression_attribute_names = input;
             self
         }
         /// Consumes the builder and constructs a [`GetItemInput`](crate::input::GetItemInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetItemInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetItemInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetItemInput {
                 table_name: self.table_name,
                 key: self.key,
@@ -4022,7 +4066,7 @@ impl GetItemInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<crate::operation::GetItem, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
@@ -4070,7 +4114,7 @@ impl GetItemInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -4107,45 +4151,45 @@ pub mod list_backups_input {
     }
     impl Builder {
         /// <p>The backups from the table specified by <code>TableName</code> are listed. </p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// <p>Maximum number of backups to return at once.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is inclusive.</p>
-        pub fn time_range_lower_bound(mut self, inp: smithy_types::Instant) -> Self {
-            self.time_range_lower_bound = Some(inp);
+        pub fn time_range_lower_bound(mut self, input: smithy_types::Instant) -> Self {
+            self.time_range_lower_bound = Some(input);
             self
         }
         pub fn set_time_range_lower_bound(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.time_range_lower_bound = inp;
+            self.time_range_lower_bound = input;
             self
         }
         /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is exclusive. </p>
-        pub fn time_range_upper_bound(mut self, inp: smithy_types::Instant) -> Self {
-            self.time_range_upper_bound = Some(inp);
+        pub fn time_range_upper_bound(mut self, input: smithy_types::Instant) -> Self {
+            self.time_range_upper_bound = Some(input);
             self
         }
         pub fn set_time_range_upper_bound(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.time_range_upper_bound = inp;
+            self.time_range_upper_bound = input;
             self
         }
         /// <p>
@@ -4153,15 +4197,15 @@ pub mod list_backups_input {
         /// evaluated when the current page of results was returned, inclusive of the current page
         /// of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a
         /// new <code>ListBackups</code> operation in order to fetch the next page of results. </p>
-        pub fn exclusive_start_backup_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.exclusive_start_backup_arn = Some(inp.into());
+        pub fn exclusive_start_backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.exclusive_start_backup_arn = Some(input.into());
             self
         }
         pub fn set_exclusive_start_backup_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.exclusive_start_backup_arn = inp;
+            self.exclusive_start_backup_arn = input;
             self
         }
         /// <p>The backups from the table specified by <code>BackupType</code> are listed.</p>
@@ -4181,21 +4225,22 @@ pub mod list_backups_input {
         /// <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p>
         /// </li>
         /// </ul>
-        pub fn backup_type(mut self, inp: crate::model::BackupTypeFilter) -> Self {
-            self.backup_type = Some(inp);
+        pub fn backup_type(mut self, input: crate::model::BackupTypeFilter) -> Self {
+            self.backup_type = Some(input);
             self
         }
         pub fn set_backup_type(
             mut self,
-            inp: std::option::Option<crate::model::BackupTypeFilter>,
+            input: std::option::Option<crate::model::BackupTypeFilter>,
         ) -> Self {
-            self.backup_type = inp;
+            self.backup_type = input;
             self
         }
         /// Consumes the builder and constructs a [`ListBackupsInput`](crate::input::ListBackupsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListBackupsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListBackupsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListBackupsInput {
                 table_name: self.table_name,
                 limit: self.limit,
@@ -4217,7 +4262,7 @@ impl ListBackupsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListBackups,
             aws_http::AwsErrorRetryPolicy,
@@ -4273,7 +4318,7 @@ impl ListBackupsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -4307,37 +4352,39 @@ pub mod list_contributor_insights_input {
     }
     impl Builder {
         /// <p>The name of the table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// <p>A token to for the desired page, if there is one.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>Maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Consumes the builder and constructs a [`ListContributorInsightsInput`](crate::input::ListContributorInsightsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListContributorInsightsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListContributorInsightsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListContributorInsightsInput {
                 table_name: self.table_name,
                 next_token: self.next_token,
@@ -4357,7 +4404,7 @@ impl ListContributorInsightsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListContributorInsights,
             aws_http::AwsErrorRetryPolicy,
@@ -4413,7 +4460,7 @@ impl ListContributorInsightsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -4447,38 +4494,39 @@ pub mod list_exports_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with the exported table.</p>
-        pub fn table_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_arn = Some(inp.into());
+        pub fn table_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_arn = Some(input.into());
             self
         }
-        pub fn set_table_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_arn = inp;
+        pub fn set_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_arn = input;
             self
         }
         /// <p>Maximum number of results to return per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>An optional string that, if supplied, must be copied from the output of a previous
         /// call to <code>ListExports</code>. When provided in this manner, the API fetches the next
         /// page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListExportsInput`](crate::input::ListExportsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListExportsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListExportsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListExportsInput {
                 table_arn: self.table_arn,
                 max_results: self.max_results,
@@ -4497,7 +4545,7 @@ impl ListExportsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListExports,
             aws_http::AwsErrorRetryPolicy,
@@ -4553,7 +4601,7 @@ impl ListExportsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -4589,43 +4637,45 @@ pub mod list_global_tables_input {
         /// <p>The first global table name that this operation will evaluate.</p>
         pub fn exclusive_start_global_table_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.exclusive_start_global_table_name = Some(inp.into());
+            self.exclusive_start_global_table_name = Some(input.into());
             self
         }
         pub fn set_exclusive_start_global_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.exclusive_start_global_table_name = inp;
+            self.exclusive_start_global_table_name = input;
             self
         }
         /// <p>The maximum number of table names to return, if the parameter is not specified DynamoDB defaults to 100.</p>
         /// <p>If the number of global tables DynamoDB finds reaches this limit, it stops the operation and returns the table names collected up to that point,
         /// with a table name in the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>Lists the global tables in a specific Region.</p>
-        pub fn region_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.region_name = Some(inp.into());
+        pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region_name = Some(input.into());
             self
         }
-        pub fn set_region_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.region_name = inp;
+        pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ListGlobalTablesInput`](crate::input::ListGlobalTablesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListGlobalTablesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListGlobalTablesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListGlobalTablesInput {
                 exclusive_start_global_table_name: self.exclusive_start_global_table_name,
                 limit: self.limit,
@@ -4644,7 +4694,7 @@ impl ListGlobalTablesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListGlobalTables,
             aws_http::AwsErrorRetryPolicy,
@@ -4700,7 +4750,7 @@ impl ListGlobalTablesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -4735,30 +4785,31 @@ pub mod list_tables_input {
         /// <p>The first table name that this operation will evaluate. Use the value that was returned for
         /// <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page
         /// of results.</p>
-        pub fn exclusive_start_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.exclusive_start_table_name = Some(inp.into());
+        pub fn exclusive_start_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.exclusive_start_table_name = Some(input.into());
             self
         }
         pub fn set_exclusive_start_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.exclusive_start_table_name = inp;
+            self.exclusive_start_table_name = input;
             self
         }
         /// <p>A maximum number of table names to return. If this parameter is not specified, the limit is 100.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTablesInput`](crate::input::ListTablesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTablesInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListTablesInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListTablesInput {
                 exclusive_start_table_name: self.exclusive_start_table_name,
                 limit: self.limit,
@@ -4776,7 +4827,7 @@ impl ListTablesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTables,
             aws_http::AwsErrorRetryPolicy,
@@ -4832,7 +4883,7 @@ impl ListTablesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -4865,29 +4916,31 @@ pub mod list_tags_of_resource_input {
     }
     impl Builder {
         /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = inp;
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
         /// <p>An optional string that, if supplied, must be copied from the output of a previous
         /// call to ListTagOfResource. When provided in this manner, this API fetches the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsOfResourceInput`](crate::input::ListTagsOfResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsOfResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTagsOfResourceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTagsOfResourceInput {
                 resource_arn: self.resource_arn,
                 next_token: self.next_token,
@@ -4905,7 +4958,7 @@ impl ListTagsOfResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTagsOfResource,
             aws_http::AwsErrorRetryPolicy,
@@ -4961,7 +5014,7 @@ impl ListTagsOfResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -5012,12 +5065,12 @@ pub mod put_item_input {
     }
     impl Builder {
         /// <p>The name of the table to contain the item.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         pub fn item(
@@ -5032,11 +5085,11 @@ pub mod put_item_input {
         }
         pub fn set_item(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.item = inp;
+            self.item = input;
             self
         }
         pub fn expected(
@@ -5051,14 +5104,14 @@ pub mod put_item_input {
         }
         pub fn set_expected(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     crate::model::ExpectedAttributeValue,
                 >,
             >,
         ) -> Self {
-            self.expected = inp;
+            self.expected = input;
             self
         }
         /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared before they
@@ -5081,15 +5134,15 @@ pub mod put_item_input {
         /// <code>PutItem</code> does not recognize any values other than <code>NONE</code> or
         /// <code>ALL_OLD</code>.</p>
         /// </note>
-        pub fn return_values(mut self, inp: crate::model::ReturnValue) -> Self {
-            self.return_values = Some(inp);
+        pub fn return_values(mut self, input: crate::model::ReturnValue) -> Self {
+            self.return_values = Some(input);
             self
         }
         pub fn set_return_values(
             mut self,
-            inp: std::option::Option<crate::model::ReturnValue>,
+            input: std::option::Option<crate::model::ReturnValue>,
         ) -> Self {
-            self.return_values = inp;
+            self.return_values = input;
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -5110,45 +5163,45 @@ pub mod put_item_input {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.return_consumed_capacity = Some(inp);
+            self.return_consumed_capacity = Some(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.return_consumed_capacity = inp;
+            self.return_consumed_capacity = input;
             self
         }
         /// <p>Determines whether item collection metrics are returned.  If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during
         /// the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn return_item_collection_metrics(
             mut self,
-            inp: crate::model::ReturnItemCollectionMetrics,
+            input: crate::model::ReturnItemCollectionMetrics,
         ) -> Self {
-            self.return_item_collection_metrics = Some(inp);
+            self.return_item_collection_metrics = Some(input);
             self
         }
         pub fn set_return_item_collection_metrics(
             mut self,
-            inp: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
+            input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
         ) -> Self {
-            self.return_item_collection_metrics = inp;
+            self.return_item_collection_metrics = input;
             self
         }
         /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.  For more information, see
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn conditional_operator(mut self, inp: crate::model::ConditionalOperator) -> Self {
-            self.conditional_operator = Some(inp);
+        pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
+            self.conditional_operator = Some(input);
             self
         }
         pub fn set_conditional_operator(
             mut self,
-            inp: std::option::Option<crate::model::ConditionalOperator>,
+            input: std::option::Option<crate::model::ConditionalOperator>,
         ) -> Self {
-            self.conditional_operator = inp;
+            self.conditional_operator = input;
             self
         }
         /// <p>A condition that must be satisfied in order for a conditional <code>PutItem</code> operation to
@@ -5173,15 +5226,15 @@ pub mod put_item_input {
         /// </ul>
         /// <p>For more information on condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn condition_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.condition_expression = Some(inp.into());
+        pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.condition_expression = Some(input.into());
             self
         }
         pub fn set_condition_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.condition_expression = inp;
+            self.condition_expression = input;
             self
         }
         pub fn expression_attribute_names(
@@ -5196,11 +5249,11 @@ pub mod put_item_input {
         }
         pub fn set_expression_attribute_names(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.expression_attribute_names = inp;
+            self.expression_attribute_names = input;
             self
         }
         pub fn expression_attribute_values(
@@ -5215,17 +5268,18 @@ pub mod put_item_input {
         }
         pub fn set_expression_attribute_values(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.expression_attribute_values = inp;
+            self.expression_attribute_values = input;
             self
         }
         /// Consumes the builder and constructs a [`PutItemInput`](crate::input::PutItemInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutItemInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::PutItemInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::PutItemInput {
                 table_name: self.table_name,
                 item: self.item,
@@ -5251,7 +5305,7 @@ impl PutItemInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<crate::operation::PutItem, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
@@ -5299,7 +5353,7 @@ impl PutItemInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -5358,23 +5412,23 @@ pub mod query_input {
     }
     impl Builder {
         /// <p>The name of the table containing the requested items.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// <p>The name of an index to query. This index can be any local secondary index or global secondary index on the table. Note that
         /// if you use the <code>IndexName</code> parameter, you must also provide <code>TableName.</code>
         /// </p>
-        pub fn index_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.index_name = Some(inp.into());
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_name = Some(input.into());
             self
         }
-        pub fn set_index_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.index_name = inp;
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_name = input;
             self
         }
         /// <p>The attributes to be returned in the
@@ -5433,25 +5487,25 @@ pub mod query_input {
         /// <code>SPECIFIC_ATTRIBUTES</code>. Any other value for
         /// <code>Select</code> will return an error.</p>
         /// </note>
-        pub fn select(mut self, inp: crate::model::Select) -> Self {
-            self.select = Some(inp);
+        pub fn select(mut self, input: crate::model::Select) -> Self {
+            self.select = Some(input);
             self
         }
-        pub fn set_select(mut self, inp: std::option::Option<crate::model::Select>) -> Self {
-            self.select = inp;
+        pub fn set_select(mut self, input: std::option::Option<crate::model::Select>) -> Self {
+            self.select = input;
             self
         }
-        pub fn attributes_to_get(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn attributes_to_get(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes_to_get.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attributes_to_get = Some(v);
             self
         }
         pub fn set_attributes_to_get(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.attributes_to_get = inp;
+            self.attributes_to_get = input;
             self
         }
         /// <p>The maximum number of items to evaluate (not necessarily the number of matching items).
@@ -5463,24 +5517,24 @@ pub mod query_input {
         /// to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
         /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>Determines the read consistency model:  If set to <code>true</code>, then the operation uses strongly consistent reads; otherwise, the operation uses eventually consistent reads.</p>
         /// <p>Strongly consistent reads
         /// are not supported on global secondary indexes. If you query a global secondary index with <code>ConsistentRead</code> set to
         /// <code>true</code>, you will receive a <code>ValidationException</code>.</p>
-        pub fn consistent_read(mut self, inp: bool) -> Self {
-            self.consistent_read = Some(inp);
+        pub fn consistent_read(mut self, input: bool) -> Self {
+            self.consistent_read = Some(input);
             self
         }
-        pub fn set_consistent_read(mut self, inp: std::option::Option<bool>) -> Self {
-            self.consistent_read = inp;
+        pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
+            self.consistent_read = input;
             self
         }
         pub fn key_conditions(
@@ -5495,11 +5549,11 @@ pub mod query_input {
         }
         pub fn set_key_conditions(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::Condition>,
             >,
         ) -> Self {
-            self.key_conditions = inp;
+            self.key_conditions = input;
             self
         }
         pub fn query_filter(
@@ -5514,35 +5568,35 @@ pub mod query_input {
         }
         pub fn set_query_filter(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::Condition>,
             >,
         ) -> Self {
-            self.query_filter = inp;
+            self.query_filter = input;
             self
         }
         /// <p>This is a legacy parameter.  Use <code>FilterExpression</code> instead.  For more information, see
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn conditional_operator(mut self, inp: crate::model::ConditionalOperator) -> Self {
-            self.conditional_operator = Some(inp);
+        pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
+            self.conditional_operator = Some(input);
             self
         }
         pub fn set_conditional_operator(
             mut self,
-            inp: std::option::Option<crate::model::ConditionalOperator>,
+            input: std::option::Option<crate::model::ConditionalOperator>,
         ) -> Self {
-            self.conditional_operator = inp;
+            self.conditional_operator = input;
             self
         }
         /// <p>Specifies the order for index traversal: If <code>true</code> (default), the traversal is performed in ascending order; if <code>false</code>, the traversal is performed in descending order. </p>
         /// <p>Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes. For type Binary, DynamoDB treats each byte of the binary data as unsigned.</p>
         /// <p>If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they are stored (by sort key value). This is the default behavior. If <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads the results in reverse order by sort key value, and then returns the results to the client.</p>
-        pub fn scan_index_forward(mut self, inp: bool) -> Self {
-            self.scan_index_forward = Some(inp);
+        pub fn scan_index_forward(mut self, input: bool) -> Self {
+            self.scan_index_forward = Some(input);
             self
         }
-        pub fn set_scan_index_forward(mut self, inp: std::option::Option<bool>) -> Self {
-            self.scan_index_forward = inp;
+        pub fn set_scan_index_forward(mut self, input: std::option::Option<bool>) -> Self {
+            self.scan_index_forward = input;
             self
         }
         pub fn exclusive_start_key(
@@ -5557,11 +5611,11 @@ pub mod query_input {
         }
         pub fn set_exclusive_start_key(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.exclusive_start_key = inp;
+            self.exclusive_start_key = input;
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -5582,31 +5636,31 @@ pub mod query_input {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.return_consumed_capacity = Some(inp);
+            self.return_consumed_capacity = Some(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.return_consumed_capacity = inp;
+            self.return_consumed_capacity = input;
             self
         }
         /// <p>A string that identifies one or more attributes to retrieve from the table. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
         /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn projection_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.projection_expression = Some(inp.into());
+        pub fn projection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.projection_expression = Some(input.into());
             self
         }
         pub fn set_projection_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.projection_expression = inp;
+            self.projection_expression = input;
             self
         }
         /// <p>A string that contains conditions that DynamoDB applies after the <code>Query</code> operation, but
@@ -5619,15 +5673,15 @@ pub mod query_input {
         /// </note>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
         /// Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn filter_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.filter_expression = Some(inp.into());
+        pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.filter_expression = Some(input.into());
             self
         }
         pub fn set_filter_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.filter_expression = inp;
+            self.filter_expression = input;
             self
         }
         /// <p>The condition that specifies the key values for items to be retrieved by the
@@ -5734,15 +5788,15 @@ pub mod query_input {
         /// <p>For more information on <code>ExpressionAttributeNames</code> and <code>ExpressionAttributeValues</code>,
         /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using Placeholders for Attribute
         /// Names and Values</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn key_condition_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_condition_expression = Some(inp.into());
+        pub fn key_condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_condition_expression = Some(input.into());
             self
         }
         pub fn set_key_condition_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.key_condition_expression = inp;
+            self.key_condition_expression = input;
             self
         }
         pub fn expression_attribute_names(
@@ -5757,11 +5811,11 @@ pub mod query_input {
         }
         pub fn set_expression_attribute_names(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.expression_attribute_names = inp;
+            self.expression_attribute_names = input;
             self
         }
         pub fn expression_attribute_values(
@@ -5776,15 +5830,18 @@ pub mod query_input {
         }
         pub fn set_expression_attribute_values(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.expression_attribute_values = inp;
+            self.expression_attribute_values = input;
             self
         }
         /// Consumes the builder and constructs a [`QueryInput`](crate::input::QueryInput)
-        pub fn build(self) -> Result<crate::input::QueryInput, smithy_http::operation::BuildError> {
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::QueryInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::QueryInput {
                 table_name: self.table_name,
                 index_name: self.index_name,
@@ -5817,7 +5874,7 @@ impl QueryInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<crate::operation::Query, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
@@ -5864,7 +5921,7 @@ impl QueryInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -5905,102 +5962,104 @@ pub mod restore_table_from_backup_input {
     }
     impl Builder {
         /// <p>The name of the new table to which the backup must be restored.</p>
-        pub fn target_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_table_name = Some(inp.into());
+        pub fn target_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_table_name = Some(input.into());
             self
         }
         pub fn set_target_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_table_name = inp;
+            self.target_table_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
-        pub fn backup_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.backup_arn = Some(inp.into());
+        pub fn backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backup_arn = Some(input.into());
             self
         }
-        pub fn set_backup_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.backup_arn = inp;
+        pub fn set_backup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backup_arn = input;
             self
         }
         /// <p>The billing mode of the restored table.</p>
-        pub fn billing_mode_override(mut self, inp: crate::model::BillingMode) -> Self {
-            self.billing_mode_override = Some(inp);
+        pub fn billing_mode_override(mut self, input: crate::model::BillingMode) -> Self {
+            self.billing_mode_override = Some(input);
             self
         }
         pub fn set_billing_mode_override(
             mut self,
-            inp: std::option::Option<crate::model::BillingMode>,
+            input: std::option::Option<crate::model::BillingMode>,
         ) -> Self {
-            self.billing_mode_override = inp;
+            self.billing_mode_override = input;
             self
         }
         pub fn global_secondary_index_override(
             mut self,
-            inp: impl Into<crate::model::GlobalSecondaryIndex>,
+            input: impl Into<crate::model::GlobalSecondaryIndex>,
         ) -> Self {
             let mut v = self.global_secondary_index_override.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.global_secondary_index_override = Some(v);
             self
         }
         pub fn set_global_secondary_index_override(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
         ) -> Self {
-            self.global_secondary_index_override = inp;
+            self.global_secondary_index_override = input;
             self
         }
         pub fn local_secondary_index_override(
             mut self,
-            inp: impl Into<crate::model::LocalSecondaryIndex>,
+            input: impl Into<crate::model::LocalSecondaryIndex>,
         ) -> Self {
             let mut v = self.local_secondary_index_override.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.local_secondary_index_override = Some(v);
             self
         }
         pub fn set_local_secondary_index_override(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
         ) -> Self {
-            self.local_secondary_index_override = inp;
+            self.local_secondary_index_override = input;
             self
         }
         /// <p>Provisioned throughput settings for the restored table.</p>
         pub fn provisioned_throughput_override(
             mut self,
-            inp: crate::model::ProvisionedThroughput,
+            input: crate::model::ProvisionedThroughput,
         ) -> Self {
-            self.provisioned_throughput_override = Some(inp);
+            self.provisioned_throughput_override = Some(input);
             self
         }
         pub fn set_provisioned_throughput_override(
             mut self,
-            inp: std::option::Option<crate::model::ProvisionedThroughput>,
+            input: std::option::Option<crate::model::ProvisionedThroughput>,
         ) -> Self {
-            self.provisioned_throughput_override = inp;
+            self.provisioned_throughput_override = input;
             self
         }
         /// <p>The new server-side encryption settings for the restored table.</p>
-        pub fn sse_specification_override(mut self, inp: crate::model::SSESpecification) -> Self {
-            self.sse_specification_override = Some(inp);
+        pub fn sse_specification_override(mut self, input: crate::model::SSESpecification) -> Self {
+            self.sse_specification_override = Some(input);
             self
         }
         pub fn set_sse_specification_override(
             mut self,
-            inp: std::option::Option<crate::model::SSESpecification>,
+            input: std::option::Option<crate::model::SSESpecification>,
         ) -> Self {
-            self.sse_specification_override = inp;
+            self.sse_specification_override = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreTableFromBackupInput`](crate::input::RestoreTableFromBackupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RestoreTableFromBackupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RestoreTableFromBackupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RestoreTableFromBackupInput {
                 target_table_name: self.target_table_name,
                 backup_arn: self.backup_arn,
@@ -6023,7 +6082,7 @@ impl RestoreTableFromBackupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RestoreTableFromBackup,
             aws_http::AwsErrorRetryPolicy,
@@ -6079,7 +6138,7 @@ impl RestoreTableFromBackupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -6124,139 +6183,141 @@ pub mod restore_table_to_point_in_time_input {
     impl Builder {
         /// <p>The DynamoDB table that will be restored. This value is an Amazon
         /// Resource Name (ARN).</p>
-        pub fn source_table_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_table_arn = Some(inp.into());
+        pub fn source_table_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_table_arn = Some(input.into());
             self
         }
         pub fn set_source_table_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_table_arn = inp;
+            self.source_table_arn = input;
             self
         }
         /// <p>Name of the source table that is being restored.</p>
-        pub fn source_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_table_name = Some(inp.into());
+        pub fn source_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_table_name = Some(input.into());
             self
         }
         pub fn set_source_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_table_name = inp;
+            self.source_table_name = input;
             self
         }
         /// <p>The name of the new table to which it must be restored to.</p>
-        pub fn target_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_table_name = Some(inp.into());
+        pub fn target_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_table_name = Some(input.into());
             self
         }
         pub fn set_target_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_table_name = inp;
+            self.target_table_name = input;
             self
         }
         /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code>
         /// is typically 5 minutes before the current time. </p>
-        pub fn use_latest_restorable_time(mut self, inp: bool) -> Self {
-            self.use_latest_restorable_time = Some(inp);
+        pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
+            self.use_latest_restorable_time = Some(input);
             self
         }
-        pub fn set_use_latest_restorable_time(mut self, inp: std::option::Option<bool>) -> Self {
-            self.use_latest_restorable_time = inp;
+        pub fn set_use_latest_restorable_time(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_latest_restorable_time = input;
             self
         }
         /// <p>Time in the past to restore the table to.</p>
-        pub fn restore_date_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.restore_date_time = Some(inp);
+        pub fn restore_date_time(mut self, input: smithy_types::Instant) -> Self {
+            self.restore_date_time = Some(input);
             self
         }
         pub fn set_restore_date_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.restore_date_time = inp;
+            self.restore_date_time = input;
             self
         }
         /// <p>The billing mode of the restored table.</p>
-        pub fn billing_mode_override(mut self, inp: crate::model::BillingMode) -> Self {
-            self.billing_mode_override = Some(inp);
+        pub fn billing_mode_override(mut self, input: crate::model::BillingMode) -> Self {
+            self.billing_mode_override = Some(input);
             self
         }
         pub fn set_billing_mode_override(
             mut self,
-            inp: std::option::Option<crate::model::BillingMode>,
+            input: std::option::Option<crate::model::BillingMode>,
         ) -> Self {
-            self.billing_mode_override = inp;
+            self.billing_mode_override = input;
             self
         }
         pub fn global_secondary_index_override(
             mut self,
-            inp: impl Into<crate::model::GlobalSecondaryIndex>,
+            input: impl Into<crate::model::GlobalSecondaryIndex>,
         ) -> Self {
             let mut v = self.global_secondary_index_override.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.global_secondary_index_override = Some(v);
             self
         }
         pub fn set_global_secondary_index_override(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndex>>,
         ) -> Self {
-            self.global_secondary_index_override = inp;
+            self.global_secondary_index_override = input;
             self
         }
         pub fn local_secondary_index_override(
             mut self,
-            inp: impl Into<crate::model::LocalSecondaryIndex>,
+            input: impl Into<crate::model::LocalSecondaryIndex>,
         ) -> Self {
             let mut v = self.local_secondary_index_override.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.local_secondary_index_override = Some(v);
             self
         }
         pub fn set_local_secondary_index_override(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LocalSecondaryIndex>>,
         ) -> Self {
-            self.local_secondary_index_override = inp;
+            self.local_secondary_index_override = input;
             self
         }
         /// <p>Provisioned throughput settings for the restored table.</p>
         pub fn provisioned_throughput_override(
             mut self,
-            inp: crate::model::ProvisionedThroughput,
+            input: crate::model::ProvisionedThroughput,
         ) -> Self {
-            self.provisioned_throughput_override = Some(inp);
+            self.provisioned_throughput_override = Some(input);
             self
         }
         pub fn set_provisioned_throughput_override(
             mut self,
-            inp: std::option::Option<crate::model::ProvisionedThroughput>,
+            input: std::option::Option<crate::model::ProvisionedThroughput>,
         ) -> Self {
-            self.provisioned_throughput_override = inp;
+            self.provisioned_throughput_override = input;
             self
         }
         /// <p>The new server-side encryption settings for the restored table.</p>
-        pub fn sse_specification_override(mut self, inp: crate::model::SSESpecification) -> Self {
-            self.sse_specification_override = Some(inp);
+        pub fn sse_specification_override(mut self, input: crate::model::SSESpecification) -> Self {
+            self.sse_specification_override = Some(input);
             self
         }
         pub fn set_sse_specification_override(
             mut self,
-            inp: std::option::Option<crate::model::SSESpecification>,
+            input: std::option::Option<crate::model::SSESpecification>,
         ) -> Self {
-            self.sse_specification_override = inp;
+            self.sse_specification_override = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreTableToPointInTimeInput`](crate::input::RestoreTableToPointInTimeInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RestoreTableToPointInTimeInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RestoreTableToPointInTimeInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RestoreTableToPointInTimeInput {
                 source_table_arn: self.source_table_arn,
                 source_table_name: self.source_table_name,
@@ -6283,7 +6344,7 @@ impl RestoreTableToPointInTimeInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RestoreTableToPointInTime,
             aws_http::AwsErrorRetryPolicy,
@@ -6340,7 +6401,7 @@ impl RestoreTableToPointInTimeInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -6400,34 +6461,34 @@ pub mod scan_input {
     impl Builder {
         /// <p>The name of the table containing the requested items; or, if you provide
         /// <code>IndexName</code>, the name of the table to which that index belongs.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// <p>The name of a secondary index to scan. This index can be any local secondary index or global secondary index.  Note that if you use the <code>IndexName</code> parameter, you must also provide <code>TableName</code>.</p>
-        pub fn index_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.index_name = Some(inp.into());
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_name = Some(input.into());
             self
         }
-        pub fn set_index_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.index_name = inp;
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_name = input;
             self
         }
-        pub fn attributes_to_get(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn attributes_to_get(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes_to_get.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attributes_to_get = Some(v);
             self
         }
         pub fn set_attributes_to_get(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.attributes_to_get = inp;
+            self.attributes_to_get = input;
             self
         }
         /// <p>The maximum number of items to evaluate (not necessarily the number of matching items).
@@ -6439,12 +6500,12 @@ pub mod scan_input {
         /// to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
         /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with Queries</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.limit = Some(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.limit = inp;
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
             self
         }
         /// <p>The attributes to be returned in the
@@ -6503,12 +6564,12 @@ pub mod scan_input {
         /// <code>SPECIFIC_ATTRIBUTES</code>. Any other value for
         /// <code>Select</code> will return an error.</p>
         /// </note>
-        pub fn select(mut self, inp: crate::model::Select) -> Self {
-            self.select = Some(inp);
+        pub fn select(mut self, input: crate::model::Select) -> Self {
+            self.select = Some(input);
             self
         }
-        pub fn set_select(mut self, inp: std::option::Option<crate::model::Select>) -> Self {
-            self.select = inp;
+        pub fn set_select(mut self, input: std::option::Option<crate::model::Select>) -> Self {
+            self.select = input;
             self
         }
         pub fn scan_filter(
@@ -6523,24 +6584,24 @@ pub mod scan_input {
         }
         pub fn set_scan_filter(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::Condition>,
             >,
         ) -> Self {
-            self.scan_filter = inp;
+            self.scan_filter = input;
             self
         }
         /// <p>This is a legacy parameter.  Use <code>FilterExpression</code> instead.   For more information, see
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn conditional_operator(mut self, inp: crate::model::ConditionalOperator) -> Self {
-            self.conditional_operator = Some(inp);
+        pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
+            self.conditional_operator = Some(input);
             self
         }
         pub fn set_conditional_operator(
             mut self,
-            inp: std::option::Option<crate::model::ConditionalOperator>,
+            input: std::option::Option<crate::model::ConditionalOperator>,
         ) -> Self {
-            self.conditional_operator = inp;
+            self.conditional_operator = input;
             self
         }
         pub fn exclusive_start_key(
@@ -6555,11 +6616,11 @@ pub mod scan_input {
         }
         pub fn set_exclusive_start_key(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.exclusive_start_key = inp;
+            self.exclusive_start_key = input;
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -6580,16 +6641,16 @@ pub mod scan_input {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.return_consumed_capacity = Some(inp);
+            self.return_consumed_capacity = Some(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.return_consumed_capacity = inp;
+            self.return_consumed_capacity = input;
             self
         }
         /// <p>For a parallel <code>Scan</code> request, <code>TotalSegments</code> represents the total number of
@@ -6601,12 +6662,12 @@ pub mod scan_input {
         /// to 1000000. If you specify a <code>TotalSegments</code> value of 1, the <code>Scan</code> operation will
         /// be sequential rather than parallel.</p>
         /// <p>If you specify <code>TotalSegments</code>, you must also specify <code>Segment</code>.</p>
-        pub fn total_segments(mut self, inp: i32) -> Self {
-            self.total_segments = Some(inp);
+        pub fn total_segments(mut self, input: i32) -> Self {
+            self.total_segments = Some(input);
             self
         }
-        pub fn set_total_segments(mut self, inp: std::option::Option<i32>) -> Self {
-            self.total_segments = inp;
+        pub fn set_total_segments(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_segments = input;
             self
         }
         /// <p>For a parallel <code>Scan</code> request, <code>Segment</code> identifies an individual segment to be
@@ -6620,27 +6681,27 @@ pub mod scan_input {
         /// <p>The value for <code>Segment</code> must be greater than or equal to 0, and less than the value
         /// provided for <code>TotalSegments</code>.</p>
         /// <p>If you provide <code>Segment</code>, you must also provide <code>TotalSegments</code>.</p>
-        pub fn segment(mut self, inp: i32) -> Self {
-            self.segment = Some(inp);
+        pub fn segment(mut self, input: i32) -> Self {
+            self.segment = Some(input);
             self
         }
-        pub fn set_segment(mut self, inp: std::option::Option<i32>) -> Self {
-            self.segment = inp;
+        pub fn set_segment(mut self, input: std::option::Option<i32>) -> Self {
+            self.segment = input;
             self
         }
         /// <p>A string that identifies one or more attributes to retrieve from the specified table or index. These attributes can include scalars, sets, or elements of a JSON document. The attributes in the expression must be separated by commas.</p>
         /// <p>If no attribute names are specified, then all attributes will be returned. If any of the requested attributes are not found, they will not appear in the result.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn projection_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.projection_expression = Some(inp.into());
+        pub fn projection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.projection_expression = Some(input.into());
             self
         }
         pub fn set_projection_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.projection_expression = inp;
+            self.projection_expression = input;
             self
         }
         /// <p>A string that contains conditions that DynamoDB applies after the <code>Scan</code> operation, but
@@ -6652,15 +6713,15 @@ pub mod scan_input {
         /// </note>
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn filter_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.filter_expression = Some(inp.into());
+        pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.filter_expression = Some(input.into());
             self
         }
         pub fn set_filter_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.filter_expression = inp;
+            self.filter_expression = input;
             self
         }
         pub fn expression_attribute_names(
@@ -6675,11 +6736,11 @@ pub mod scan_input {
         }
         pub fn set_expression_attribute_names(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.expression_attribute_names = inp;
+            self.expression_attribute_names = input;
             self
         }
         pub fn expression_attribute_values(
@@ -6694,11 +6755,11 @@ pub mod scan_input {
         }
         pub fn set_expression_attribute_values(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.expression_attribute_values = inp;
+            self.expression_attribute_values = input;
             self
         }
         /// <p>A Boolean value that determines the read consistency model during the scan:</p>
@@ -6715,16 +6776,19 @@ pub mod scan_input {
         /// </ul>
         /// <p>The default setting for <code>ConsistentRead</code> is <code>false</code>.</p>
         /// <p>The <code>ConsistentRead</code> parameter is not supported on global secondary indexes. If you scan a global secondary index with <code>ConsistentRead</code> set to true, you will receive a <code>ValidationException</code>.</p>
-        pub fn consistent_read(mut self, inp: bool) -> Self {
-            self.consistent_read = Some(inp);
+        pub fn consistent_read(mut self, input: bool) -> Self {
+            self.consistent_read = Some(input);
             self
         }
-        pub fn set_consistent_read(mut self, inp: std::option::Option<bool>) -> Self {
-            self.consistent_read = inp;
+        pub fn set_consistent_read(mut self, input: std::option::Option<bool>) -> Self {
+            self.consistent_read = input;
             self
         }
         /// Consumes the builder and constructs a [`ScanInput`](crate::input::ScanInput)
-        pub fn build(self) -> Result<crate::input::ScanInput, smithy_http::operation::BuildError> {
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::ScanInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ScanInput {
                 table_name: self.table_name,
                 index_name: self.index_name,
@@ -6756,7 +6820,7 @@ impl ScanInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<crate::operation::Scan, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
@@ -6802,7 +6866,7 @@ impl ScanInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -6835,31 +6899,32 @@ pub mod tag_resource_input {
     }
     impl Builder {
         /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is an Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = inp;
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -6877,7 +6942,7 @@ impl TagResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
@@ -6933,7 +6998,7 @@ impl TagResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -6967,17 +7032,17 @@ pub mod transact_get_items_input {
             std::option::Option<crate::model::ReturnConsumedCapacity>,
     }
     impl Builder {
-        pub fn transact_items(mut self, inp: impl Into<crate::model::TransactGetItem>) -> Self {
+        pub fn transact_items(mut self, input: impl Into<crate::model::TransactGetItem>) -> Self {
             let mut v = self.transact_items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.transact_items = Some(v);
             self
         }
         pub fn set_transact_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TransactGetItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TransactGetItem>>,
         ) -> Self {
-            self.transact_items = inp;
+            self.transact_items = input;
             self
         }
         /// <p>A value of <code>TOTAL</code> causes consumed capacity information
@@ -6985,23 +7050,25 @@ pub mod transact_get_items_input {
         /// from being returned. No other value is valid.</p>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.return_consumed_capacity = Some(inp);
+            self.return_consumed_capacity = Some(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.return_consumed_capacity = inp;
+            self.return_consumed_capacity = input;
             self
         }
         /// Consumes the builder and constructs a [`TransactGetItemsInput`](crate::input::TransactGetItemsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TransactGetItemsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TransactGetItemsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TransactGetItemsInput {
                 transact_items: self.transact_items,
                 return_consumed_capacity: self.return_consumed_capacity,
@@ -7019,7 +7086,7 @@ impl TransactGetItemsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TransactGetItems,
             aws_http::AwsErrorRetryPolicy,
@@ -7075,7 +7142,7 @@ impl TransactGetItemsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -7112,17 +7179,17 @@ pub mod transact_write_items_input {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn transact_items(mut self, inp: impl Into<crate::model::TransactWriteItem>) -> Self {
+        pub fn transact_items(mut self, input: impl Into<crate::model::TransactWriteItem>) -> Self {
             let mut v = self.transact_items.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.transact_items = Some(v);
             self
         }
         pub fn set_transact_items(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TransactWriteItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TransactWriteItem>>,
         ) -> Self {
-            self.transact_items = inp;
+            self.transact_items = input;
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -7143,16 +7210,16 @@ pub mod transact_write_items_input {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.return_consumed_capacity = Some(inp);
+            self.return_consumed_capacity = Some(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.return_consumed_capacity = inp;
+            self.return_consumed_capacity = input;
             self
         }
         /// <p>Determines whether item collection metrics are returned. If set to
@@ -7162,16 +7229,16 @@ pub mod transact_write_items_input {
         /// </p>
         pub fn return_item_collection_metrics(
             mut self,
-            inp: crate::model::ReturnItemCollectionMetrics,
+            input: crate::model::ReturnItemCollectionMetrics,
         ) -> Self {
-            self.return_item_collection_metrics = Some(inp);
+            self.return_item_collection_metrics = Some(input);
             self
         }
         pub fn set_return_item_collection_metrics(
             mut self,
-            inp: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
+            input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
         ) -> Self {
-            self.return_item_collection_metrics = inp;
+            self.return_item_collection_metrics = input;
             self
         }
         /// <p>Providing a <code>ClientRequestToken</code> makes the call to <code>TransactWriteItems</code>
@@ -7190,22 +7257,24 @@ pub mod transact_write_items_input {
         /// <p>If you submit a request with the same client token but a change in other parameters
         /// within the 10-minute idempotency window, DynamoDB returns an
         /// <code>IdempotentParameterMismatch</code> exception.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(inp.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_request_token = inp;
+            self.client_request_token = input;
             self
         }
         /// Consumes the builder and constructs a [`TransactWriteItemsInput`](crate::input::TransactWriteItemsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TransactWriteItemsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TransactWriteItemsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TransactWriteItemsInput {
                 transact_items: self.transact_items,
                 return_consumed_capacity: self.return_consumed_capacity,
@@ -7225,7 +7294,7 @@ impl TransactWriteItemsInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TransactWriteItems,
             aws_http::AwsErrorRetryPolicy,
@@ -7284,7 +7353,7 @@ impl TransactWriteItemsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -7318,31 +7387,32 @@ pub mod untag_resource_input {
     impl Builder {
         /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon
         /// Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = inp;
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -7360,7 +7430,7 @@ impl UntagResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
@@ -7416,7 +7486,7 @@ impl UntagResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -7450,34 +7520,36 @@ pub mod update_continuous_backups_input {
     }
     impl Builder {
         /// <p>The name of the table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// <p>Represents the settings used to enable point in time recovery.</p>
         pub fn point_in_time_recovery_specification(
             mut self,
-            inp: crate::model::PointInTimeRecoverySpecification,
+            input: crate::model::PointInTimeRecoverySpecification,
         ) -> Self {
-            self.point_in_time_recovery_specification = Some(inp);
+            self.point_in_time_recovery_specification = Some(input);
             self
         }
         pub fn set_point_in_time_recovery_specification(
             mut self,
-            inp: std::option::Option<crate::model::PointInTimeRecoverySpecification>,
+            input: std::option::Option<crate::model::PointInTimeRecoverySpecification>,
         ) -> Self {
-            self.point_in_time_recovery_specification = inp;
+            self.point_in_time_recovery_specification = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateContinuousBackupsInput`](crate::input::UpdateContinuousBackupsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateContinuousBackupsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateContinuousBackupsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateContinuousBackupsInput {
                 table_name: self.table_name,
                 point_in_time_recovery_specification: self.point_in_time_recovery_specification,
@@ -7496,7 +7568,7 @@ impl UpdateContinuousBackupsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateContinuousBackups,
             aws_http::AwsErrorRetryPolicy,
@@ -7552,7 +7624,7 @@ impl UpdateContinuousBackupsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -7587,43 +7659,45 @@ pub mod update_contributor_insights_input {
     }
     impl Builder {
         /// <p>The name of the table.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// <p>The global secondary index name, if applicable.</p>
-        pub fn index_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.index_name = Some(inp.into());
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_name = Some(input.into());
             self
         }
-        pub fn set_index_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.index_name = inp;
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_name = input;
             self
         }
         /// <p>Represents the contributor insights action.</p>
         pub fn contributor_insights_action(
             mut self,
-            inp: crate::model::ContributorInsightsAction,
+            input: crate::model::ContributorInsightsAction,
         ) -> Self {
-            self.contributor_insights_action = Some(inp);
+            self.contributor_insights_action = Some(input);
             self
         }
         pub fn set_contributor_insights_action(
             mut self,
-            inp: std::option::Option<crate::model::ContributorInsightsAction>,
+            input: std::option::Option<crate::model::ContributorInsightsAction>,
         ) -> Self {
-            self.contributor_insights_action = inp;
+            self.contributor_insights_action = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateContributorInsightsInput`](crate::input::UpdateContributorInsightsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateContributorInsightsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateContributorInsightsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateContributorInsightsInput {
                 table_name: self.table_name,
                 index_name: self.index_name,
@@ -7643,7 +7717,7 @@ impl UpdateContributorInsightsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateContributorInsights,
             aws_http::AwsErrorRetryPolicy,
@@ -7699,7 +7773,7 @@ impl UpdateContributorInsightsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -7735,35 +7809,37 @@ pub mod update_global_table_input {
     }
     impl Builder {
         /// <p>The global table name.</p>
-        pub fn global_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.global_table_name = Some(inp.into());
+        pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_table_name = Some(input.into());
             self
         }
         pub fn set_global_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.global_table_name = inp;
+            self.global_table_name = input;
             self
         }
-        pub fn replica_updates(mut self, inp: impl Into<crate::model::ReplicaUpdate>) -> Self {
+        pub fn replica_updates(mut self, input: impl Into<crate::model::ReplicaUpdate>) -> Self {
             let mut v = self.replica_updates.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.replica_updates = Some(v);
             self
         }
         pub fn set_replica_updates(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReplicaUpdate>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReplicaUpdate>>,
         ) -> Self {
-            self.replica_updates = inp;
+            self.replica_updates = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateGlobalTableInput`](crate::input::UpdateGlobalTableInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateGlobalTableInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateGlobalTableInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateGlobalTableInput {
                 global_table_name: self.global_table_name,
                 replica_updates: self.replica_updates,
@@ -7781,7 +7857,7 @@ impl UpdateGlobalTableInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateGlobalTable,
             aws_http::AwsErrorRetryPolicy,
@@ -7837,7 +7913,7 @@ impl UpdateGlobalTableInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -7878,15 +7954,15 @@ pub mod update_global_table_settings_input {
     }
     impl Builder {
         /// <p>The name of the global table</p>
-        pub fn global_table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.global_table_name = Some(inp.into());
+        pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_table_name = Some(input.into());
             self
         }
         pub fn set_global_table_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.global_table_name = inp;
+            self.global_table_name = input;
             self
         }
         /// <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not specified, the global table defaults to <code>PROVISIONED</code> capacity billing mode.</p>
@@ -7901,87 +7977,89 @@ pub mod update_global_table_settings_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn global_table_billing_mode(mut self, inp: crate::model::BillingMode) -> Self {
-            self.global_table_billing_mode = Some(inp);
+        pub fn global_table_billing_mode(mut self, input: crate::model::BillingMode) -> Self {
+            self.global_table_billing_mode = Some(input);
             self
         }
         pub fn set_global_table_billing_mode(
             mut self,
-            inp: std::option::Option<crate::model::BillingMode>,
+            input: std::option::Option<crate::model::BillingMode>,
         ) -> Self {
-            self.global_table_billing_mode = inp;
+            self.global_table_billing_mode = input;
             self
         }
         /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code>
         /// </p>
-        pub fn global_table_provisioned_write_capacity_units(mut self, inp: i64) -> Self {
-            self.global_table_provisioned_write_capacity_units = Some(inp);
+        pub fn global_table_provisioned_write_capacity_units(mut self, input: i64) -> Self {
+            self.global_table_provisioned_write_capacity_units = Some(input);
             self
         }
         pub fn set_global_table_provisioned_write_capacity_units(
             mut self,
-            inp: std::option::Option<i64>,
+            input: std::option::Option<i64>,
         ) -> Self {
-            self.global_table_provisioned_write_capacity_units = inp;
+            self.global_table_provisioned_write_capacity_units = input;
             self
         }
         /// <p>Auto scaling settings for managing provisioned write capacity for the global
         /// table.</p>
         pub fn global_table_provisioned_write_capacity_auto_scaling_settings_update(
             mut self,
-            inp: crate::model::AutoScalingSettingsUpdate,
+            input: crate::model::AutoScalingSettingsUpdate,
         ) -> Self {
-            self.global_table_provisioned_write_capacity_auto_scaling_settings_update = Some(inp);
+            self.global_table_provisioned_write_capacity_auto_scaling_settings_update = Some(input);
             self
         }
         pub fn set_global_table_provisioned_write_capacity_auto_scaling_settings_update(
             mut self,
-            inp: std::option::Option<crate::model::AutoScalingSettingsUpdate>,
+            input: std::option::Option<crate::model::AutoScalingSettingsUpdate>,
         ) -> Self {
-            self.global_table_provisioned_write_capacity_auto_scaling_settings_update = inp;
+            self.global_table_provisioned_write_capacity_auto_scaling_settings_update = input;
             self
         }
         pub fn global_table_global_secondary_index_settings_update(
             mut self,
-            inp: impl Into<crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate>,
+            input: impl Into<crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate>,
         ) -> Self {
             let mut v = self
                 .global_table_global_secondary_index_settings_update
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.global_table_global_secondary_index_settings_update = Some(v);
             self
         }
         pub fn set_global_table_global_secondary_index_settings_update(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::GlobalTableGlobalSecondaryIndexSettingsUpdate>,
             >,
         ) -> Self {
-            self.global_table_global_secondary_index_settings_update = inp;
+            self.global_table_global_secondary_index_settings_update = input;
             self
         }
         pub fn replica_settings_update(
             mut self,
-            inp: impl Into<crate::model::ReplicaSettingsUpdate>,
+            input: impl Into<crate::model::ReplicaSettingsUpdate>,
         ) -> Self {
             let mut v = self.replica_settings_update.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.replica_settings_update = Some(v);
             self
         }
         pub fn set_replica_settings_update(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsUpdate>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReplicaSettingsUpdate>>,
         ) -> Self {
-            self.replica_settings_update = inp;
+            self.replica_settings_update = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateGlobalTableSettingsInput`](crate::input::UpdateGlobalTableSettingsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateGlobalTableSettingsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateGlobalTableSettingsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateGlobalTableSettingsInput {
                 global_table_name: self.global_table_name,
                 global_table_billing_mode: self.global_table_billing_mode,
@@ -8007,7 +8085,7 @@ impl UpdateGlobalTableSettingsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateGlobalTableSettings,
             aws_http::AwsErrorRetryPolicy,
@@ -8064,7 +8142,7 @@ impl UpdateGlobalTableSettingsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -8122,12 +8200,12 @@ pub mod update_item_input {
     }
     impl Builder {
         /// <p>The name of the table containing the item to update.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         pub fn key(
@@ -8142,11 +8220,11 @@ pub mod update_item_input {
         }
         pub fn set_key(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.key = inp;
+            self.key = input;
             self
         }
         pub fn attribute_updates(
@@ -8161,11 +8239,11 @@ pub mod update_item_input {
         }
         pub fn set_attribute_updates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValueUpdate>,
             >,
         ) -> Self {
-            self.attribute_updates = inp;
+            self.attribute_updates = input;
             self
         }
         pub fn expected(
@@ -8180,27 +8258,27 @@ pub mod update_item_input {
         }
         pub fn set_expected(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     crate::model::ExpectedAttributeValue,
                 >,
             >,
         ) -> Self {
-            self.expected = inp;
+            self.expected = input;
             self
         }
         /// <p>This is a legacy parameter.  Use <code>ConditionExpression</code> instead.   For more information, see
         /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn conditional_operator(mut self, inp: crate::model::ConditionalOperator) -> Self {
-            self.conditional_operator = Some(inp);
+        pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
+            self.conditional_operator = Some(input);
             self
         }
         pub fn set_conditional_operator(
             mut self,
-            inp: std::option::Option<crate::model::ConditionalOperator>,
+            input: std::option::Option<crate::model::ConditionalOperator>,
         ) -> Self {
-            self.conditional_operator = inp;
+            self.conditional_operator = input;
             self
         }
         /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appear
@@ -8234,15 +8312,15 @@ pub mod update_item_input {
         /// small network and processing overhead of receiving a larger response. No read capacity
         /// units are consumed.</p>
         /// <p>The values returned are strongly consistent.</p>
-        pub fn return_values(mut self, inp: crate::model::ReturnValue) -> Self {
-            self.return_values = Some(inp);
+        pub fn return_values(mut self, input: crate::model::ReturnValue) -> Self {
+            self.return_values = Some(input);
             self
         }
         pub fn set_return_values(
             mut self,
-            inp: std::option::Option<crate::model::ReturnValue>,
+            input: std::option::Option<crate::model::ReturnValue>,
         ) -> Self {
-            self.return_values = inp;
+            self.return_values = input;
             self
         }
         /// <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p>
@@ -8263,32 +8341,32 @@ pub mod update_item_input {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            inp: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.return_consumed_capacity = Some(inp);
+            self.return_consumed_capacity = Some(input);
             self
         }
         pub fn set_return_consumed_capacity(
             mut self,
-            inp: std::option::Option<crate::model::ReturnConsumedCapacity>,
+            input: std::option::Option<crate::model::ReturnConsumedCapacity>,
         ) -> Self {
-            self.return_consumed_capacity = inp;
+            self.return_consumed_capacity = input;
             self
         }
         /// <p>Determines whether item collection metrics are returned.  If set to <code>SIZE</code>, the response includes statistics about item collections, if any, that were modified during
         /// the operation are returned in the response. If set to <code>NONE</code> (the default), no statistics are returned.</p>
         pub fn return_item_collection_metrics(
             mut self,
-            inp: crate::model::ReturnItemCollectionMetrics,
+            input: crate::model::ReturnItemCollectionMetrics,
         ) -> Self {
-            self.return_item_collection_metrics = Some(inp);
+            self.return_item_collection_metrics = Some(input);
             self
         }
         pub fn set_return_item_collection_metrics(
             mut self,
-            inp: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
+            input: std::option::Option<crate::model::ReturnItemCollectionMetrics>,
         ) -> Self {
-            self.return_item_collection_metrics = inp;
+            self.return_item_collection_metrics = input;
             self
         }
         /// <p>An expression that defines one or more attributes to be updated, the action to be
@@ -8379,15 +8457,15 @@ pub mod update_item_input {
         /// b=:value2 DELETE :value3, :value4, :value5</code>
         /// </p>
         /// <p>For more information on update expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-        pub fn update_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.update_expression = Some(inp.into());
+        pub fn update_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.update_expression = Some(input.into());
             self
         }
         pub fn set_update_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.update_expression = inp;
+            self.update_expression = input;
             self
         }
         /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
@@ -8411,15 +8489,15 @@ pub mod update_item_input {
         /// </ul>
         /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn condition_expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.condition_expression = Some(inp.into());
+        pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.condition_expression = Some(input.into());
             self
         }
         pub fn set_condition_expression(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.condition_expression = inp;
+            self.condition_expression = input;
             self
         }
         pub fn expression_attribute_names(
@@ -8434,11 +8512,11 @@ pub mod update_item_input {
         }
         pub fn set_expression_attribute_names(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.expression_attribute_names = inp;
+            self.expression_attribute_names = input;
             self
         }
         pub fn expression_attribute_values(
@@ -8453,17 +8531,18 @@ pub mod update_item_input {
         }
         pub fn set_expression_attribute_values(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::AttributeValue>,
             >,
         ) -> Self {
-            self.expression_attribute_values = inp;
+            self.expression_attribute_values = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateItemInput`](crate::input::UpdateItemInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateItemInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateItemInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateItemInput {
                 table_name: self.table_name,
                 key: self.key,
@@ -8491,7 +8570,7 @@ impl UpdateItemInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateItem,
             aws_http::AwsErrorRetryPolicy,
@@ -8547,7 +8626,7 @@ impl UpdateItemInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -8590,27 +8669,27 @@ pub mod update_table_input {
     impl Builder {
         pub fn attribute_definitions(
             mut self,
-            inp: impl Into<crate::model::AttributeDefinition>,
+            input: impl Into<crate::model::AttributeDefinition>,
         ) -> Self {
             let mut v = self.attribute_definitions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attribute_definitions = Some(v);
             self
         }
         pub fn set_attribute_definitions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AttributeDefinition>>,
         ) -> Self {
-            self.attribute_definitions = inp;
+            self.attribute_definitions = input;
             self
         }
         /// <p>The name of the table to be updated.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// <p>Controls how you are charged for read and write throughput and how you manage capacity.
@@ -8628,43 +8707,46 @@ pub mod update_table_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn billing_mode(mut self, inp: crate::model::BillingMode) -> Self {
-            self.billing_mode = Some(inp);
+        pub fn billing_mode(mut self, input: crate::model::BillingMode) -> Self {
+            self.billing_mode = Some(input);
             self
         }
         pub fn set_billing_mode(
             mut self,
-            inp: std::option::Option<crate::model::BillingMode>,
+            input: std::option::Option<crate::model::BillingMode>,
         ) -> Self {
-            self.billing_mode = inp;
+            self.billing_mode = input;
             self
         }
         /// <p>The new provisioned throughput settings for the specified table or index.</p>
-        pub fn provisioned_throughput(mut self, inp: crate::model::ProvisionedThroughput) -> Self {
-            self.provisioned_throughput = Some(inp);
+        pub fn provisioned_throughput(
+            mut self,
+            input: crate::model::ProvisionedThroughput,
+        ) -> Self {
+            self.provisioned_throughput = Some(input);
             self
         }
         pub fn set_provisioned_throughput(
             mut self,
-            inp: std::option::Option<crate::model::ProvisionedThroughput>,
+            input: std::option::Option<crate::model::ProvisionedThroughput>,
         ) -> Self {
-            self.provisioned_throughput = inp;
+            self.provisioned_throughput = input;
             self
         }
         pub fn global_secondary_index_updates(
             mut self,
-            inp: impl Into<crate::model::GlobalSecondaryIndexUpdate>,
+            input: impl Into<crate::model::GlobalSecondaryIndexUpdate>,
         ) -> Self {
             let mut v = self.global_secondary_index_updates.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.global_secondary_index_updates = Some(v);
             self
         }
         pub fn set_global_secondary_index_updates(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexUpdate>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GlobalSecondaryIndexUpdate>>,
         ) -> Self {
-            self.global_secondary_index_updates = inp;
+            self.global_secondary_index_updates = input;
             self
         }
         /// <p>Represents the DynamoDB Streams configuration for the table.</p>
@@ -8673,49 +8755,50 @@ pub mod update_table_input {
         /// table that already has a stream, or if you try to disable a stream on a table that
         /// doesn't have a stream.</p>
         /// </note>
-        pub fn stream_specification(mut self, inp: crate::model::StreamSpecification) -> Self {
-            self.stream_specification = Some(inp);
+        pub fn stream_specification(mut self, input: crate::model::StreamSpecification) -> Self {
+            self.stream_specification = Some(input);
             self
         }
         pub fn set_stream_specification(
             mut self,
-            inp: std::option::Option<crate::model::StreamSpecification>,
+            input: std::option::Option<crate::model::StreamSpecification>,
         ) -> Self {
-            self.stream_specification = inp;
+            self.stream_specification = input;
             self
         }
         /// <p>The new server-side encryption settings for the specified table.</p>
-        pub fn sse_specification(mut self, inp: crate::model::SSESpecification) -> Self {
-            self.sse_specification = Some(inp);
+        pub fn sse_specification(mut self, input: crate::model::SSESpecification) -> Self {
+            self.sse_specification = Some(input);
             self
         }
         pub fn set_sse_specification(
             mut self,
-            inp: std::option::Option<crate::model::SSESpecification>,
+            input: std::option::Option<crate::model::SSESpecification>,
         ) -> Self {
-            self.sse_specification = inp;
+            self.sse_specification = input;
             self
         }
         pub fn replica_updates(
             mut self,
-            inp: impl Into<crate::model::ReplicationGroupUpdate>,
+            input: impl Into<crate::model::ReplicationGroupUpdate>,
         ) -> Self {
             let mut v = self.replica_updates.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.replica_updates = Some(v);
             self
         }
         pub fn set_replica_updates(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReplicationGroupUpdate>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReplicationGroupUpdate>>,
         ) -> Self {
-            self.replica_updates = inp;
+            self.replica_updates = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateTableInput`](crate::input::UpdateTableInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateTableInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateTableInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateTableInput {
                 attribute_definitions: self.attribute_definitions,
                 table_name: self.table_name,
@@ -8739,7 +8822,7 @@ impl UpdateTableInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateTable,
             aws_http::AwsErrorRetryPolicy,
@@ -8795,7 +8878,7 @@ impl UpdateTableInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -8834,67 +8917,67 @@ pub mod update_table_replica_auto_scaling_input {
     impl Builder {
         pub fn global_secondary_index_updates(
             mut self,
-            inp: impl Into<crate::model::GlobalSecondaryIndexAutoScalingUpdate>,
+            input: impl Into<crate::model::GlobalSecondaryIndexAutoScalingUpdate>,
         ) -> Self {
             let mut v = self.global_secondary_index_updates.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.global_secondary_index_updates = Some(v);
             self
         }
         pub fn set_global_secondary_index_updates(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::GlobalSecondaryIndexAutoScalingUpdate>,
             >,
         ) -> Self {
-            self.global_secondary_index_updates = inp;
+            self.global_secondary_index_updates = input;
             self
         }
         /// <p>The name of the global table to be updated.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// <p>Represents the auto scaling settings to be modified for a global table or global
         /// secondary index.</p>
         pub fn provisioned_write_capacity_auto_scaling_update(
             mut self,
-            inp: crate::model::AutoScalingSettingsUpdate,
+            input: crate::model::AutoScalingSettingsUpdate,
         ) -> Self {
-            self.provisioned_write_capacity_auto_scaling_update = Some(inp);
+            self.provisioned_write_capacity_auto_scaling_update = Some(input);
             self
         }
         pub fn set_provisioned_write_capacity_auto_scaling_update(
             mut self,
-            inp: std::option::Option<crate::model::AutoScalingSettingsUpdate>,
+            input: std::option::Option<crate::model::AutoScalingSettingsUpdate>,
         ) -> Self {
-            self.provisioned_write_capacity_auto_scaling_update = inp;
+            self.provisioned_write_capacity_auto_scaling_update = input;
             self
         }
         pub fn replica_updates(
             mut self,
-            inp: impl Into<crate::model::ReplicaAutoScalingUpdate>,
+            input: impl Into<crate::model::ReplicaAutoScalingUpdate>,
         ) -> Self {
             let mut v = self.replica_updates.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.replica_updates = Some(v);
             self
         }
         pub fn set_replica_updates(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReplicaAutoScalingUpdate>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReplicaAutoScalingUpdate>>,
         ) -> Self {
-            self.replica_updates = inp;
+            self.replica_updates = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateTableReplicaAutoScalingInput`](crate::input::UpdateTableReplicaAutoScalingInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::UpdateTableReplicaAutoScalingInput,
             smithy_http::operation::BuildError,
         > {
@@ -8919,7 +9002,7 @@ impl UpdateTableReplicaAutoScalingInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateTableReplicaAutoScaling,
             aws_http::AwsErrorRetryPolicy,
@@ -8976,7 +9059,7 @@ impl UpdateTableReplicaAutoScalingInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -9013,34 +9096,36 @@ pub mod update_time_to_live_input {
     }
     impl Builder {
         /// <p>The name of the table to be configured.</p>
-        pub fn table_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.table_name = Some(inp.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.table_name = Some(input.into());
             self
         }
-        pub fn set_table_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.table_name = inp;
+        pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.table_name = input;
             self
         }
         /// <p>Represents the settings used to enable or disable Time to Live for the specified table.</p>
         pub fn time_to_live_specification(
             mut self,
-            inp: crate::model::TimeToLiveSpecification,
+            input: crate::model::TimeToLiveSpecification,
         ) -> Self {
-            self.time_to_live_specification = Some(inp);
+            self.time_to_live_specification = Some(input);
             self
         }
         pub fn set_time_to_live_specification(
             mut self,
-            inp: std::option::Option<crate::model::TimeToLiveSpecification>,
+            input: std::option::Option<crate::model::TimeToLiveSpecification>,
         ) -> Self {
-            self.time_to_live_specification = inp;
+            self.time_to_live_specification = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateTimeToLiveInput`](crate::input::UpdateTimeToLiveInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateTimeToLiveInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateTimeToLiveInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateTimeToLiveInput {
                 table_name: self.table_name,
                 time_to_live_specification: self.time_to_live_specification,
@@ -9058,7 +9143,7 @@ impl UpdateTimeToLiveInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateTimeToLive,
             aws_http::AwsErrorRetryPolicy,
@@ -9114,7 +9199,7 @@ impl UpdateTimeToLiveInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")

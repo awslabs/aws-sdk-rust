@@ -64,6 +64,9 @@ impl AbortMultipartUploadError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_upload(&self) -> bool {
+        matches!(&self.kind, AbortMultipartUploadErrorKind::NoSuchUpload(_))
+    }
 }
 impl std::error::Error for AbortMultipartUploadError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -211,6 +214,12 @@ impl CopyObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_object_not_in_active_tier_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyObjectErrorKind::ObjectNotInActiveTierError(_)
+        )
+    }
 }
 impl std::error::Error for CopyObjectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -287,6 +296,15 @@ impl CreateBucketError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bucket_already_owned_by_you(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBucketErrorKind::BucketAlreadyOwnedByYou(_)
+        )
+    }
+    pub fn is_bucket_already_exists(&self) -> bool {
+        matches!(&self.kind, CreateBucketErrorKind::BucketAlreadyExists(_))
     }
 }
 impl std::error::Error for CreateBucketError {
@@ -3123,6 +3141,12 @@ impl GetObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_key(&self) -> bool {
+        matches!(&self.kind, GetObjectErrorKind::NoSuchKey(_))
+    }
+    pub fn is_invalid_object_state(&self) -> bool {
+        matches!(&self.kind, GetObjectErrorKind::InvalidObjectState(_))
+    }
 }
 impl std::error::Error for GetObjectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3198,6 +3222,9 @@ impl GetObjectAclError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_key(&self) -> bool {
+        matches!(&self.kind, GetObjectAclErrorKind::NoSuchKey(_))
     }
 }
 impl std::error::Error for GetObjectAclError {
@@ -3706,6 +3733,9 @@ impl HeadBucketError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_not_found(&self) -> bool {
+        matches!(&self.kind, HeadBucketErrorKind::NotFound(_))
+    }
 }
 impl std::error::Error for HeadBucketError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3780,6 +3810,9 @@ impl HeadObjectError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_not_found(&self) -> bool {
+        matches!(&self.kind, HeadObjectErrorKind::NotFound(_))
     }
 }
 impl std::error::Error for HeadObjectError {
@@ -4299,6 +4332,9 @@ impl ListObjectsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_bucket(&self) -> bool {
+        matches!(&self.kind, ListObjectsErrorKind::NoSuchBucket(_))
+    }
 }
 impl std::error::Error for ListObjectsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4373,6 +4409,9 @@ impl ListObjectsV2Error {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_bucket(&self) -> bool {
+        matches!(&self.kind, ListObjectsV2ErrorKind::NoSuchBucket(_))
     }
 }
 impl std::error::Error for ListObjectsV2Error {
@@ -5969,6 +6008,9 @@ impl PutObjectAclError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_key(&self) -> bool {
+        matches!(&self.kind, PutObjectAclErrorKind::NoSuchKey(_))
+    }
 }
 impl std::error::Error for PutObjectAclError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6404,6 +6446,12 @@ impl RestoreObjectError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_object_already_in_active_tier_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreObjectErrorKind::ObjectAlreadyInActiveTierError(_)
+        )
+    }
 }
 impl std::error::Error for RestoreObjectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6835,26 +6883,26 @@ pub mod invalid_object_state {
         pub(crate) access_tier: std::option::Option<crate::model::IntelligentTieringAccessTier>,
     }
     impl Builder {
-        pub fn storage_class(mut self, inp: crate::model::StorageClass) -> Self {
-            self.storage_class = Some(inp);
+        pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
+            self.storage_class = Some(input);
             self
         }
         pub fn set_storage_class(
             mut self,
-            inp: std::option::Option<crate::model::StorageClass>,
+            input: std::option::Option<crate::model::StorageClass>,
         ) -> Self {
-            self.storage_class = inp;
+            self.storage_class = input;
             self
         }
-        pub fn access_tier(mut self, inp: crate::model::IntelligentTieringAccessTier) -> Self {
-            self.access_tier = Some(inp);
+        pub fn access_tier(mut self, input: crate::model::IntelligentTieringAccessTier) -> Self {
+            self.access_tier = Some(input);
             self
         }
         pub fn set_access_tier(
             mut self,
-            inp: std::option::Option<crate::model::IntelligentTieringAccessTier>,
+            input: std::option::Option<crate::model::IntelligentTieringAccessTier>,
         ) -> Self {
-            self.access_tier = inp;
+            self.access_tier = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidObjectState`](crate::error::InvalidObjectState)

@@ -70,6 +70,24 @@ impl AssumeRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_expired_token_error(&self) -> bool {
+        matches!(&self.kind, AssumeRoleErrorKind::ExpiredTokenError(_))
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeRoleErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_packed_policy_too_large_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeRoleErrorKind::PackedPolicyTooLargeError(_)
+        )
+    }
+    pub fn is_region_disabled_error(&self) -> bool {
+        matches!(&self.kind, AssumeRoleErrorKind::RegionDisabledError(_))
+    }
 }
 impl std::error::Error for AssumeRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -157,6 +175,42 @@ impl AssumeRoleWithSAMLError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_expired_token_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeRoleWithSAMLErrorKind::ExpiredTokenError(_)
+        )
+    }
+    pub fn is_idp_rejected_claim_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeRoleWithSAMLErrorKind::IDPRejectedClaimError(_)
+        )
+    }
+    pub fn is_invalid_identity_token_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenError(_)
+        )
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_packed_policy_too_large_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeError(_)
+        )
+    }
+    pub fn is_region_disabled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeRoleWithSAMLErrorKind::RegionDisabledError(_)
+        )
     }
 }
 impl std::error::Error for AssumeRoleWithSAMLError {
@@ -252,6 +306,48 @@ impl AssumeRoleWithWebIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_expired_token_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeRoleWithWebIdentityErrorKind::ExpiredTokenError(_)
+        )
+    }
+    pub fn is_idp_communication_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeRoleWithWebIdentityErrorKind::IDPCommunicationErrorError(_)
+        )
+    }
+    pub fn is_idp_rejected_claim_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeRoleWithWebIdentityErrorKind::IDPRejectedClaimError(_)
+        )
+    }
+    pub fn is_invalid_identity_token_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenError(_)
+        )
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_packed_policy_too_large_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeError(_)
+        )
+    }
+    pub fn is_region_disabled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssumeRoleWithWebIdentityErrorKind::RegionDisabledError(_)
+        )
+    }
 }
 impl std::error::Error for AssumeRoleWithWebIdentityError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -336,6 +432,12 @@ impl DecodeAuthorizationMessageError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_authorization_message_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageError(_)
+        )
     }
 }
 impl std::error::Error for DecodeAuthorizationMessageError {
@@ -562,6 +664,24 @@ impl GetFederationTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFederationTokenErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_packed_policy_too_large_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFederationTokenErrorKind::PackedPolicyTooLargeError(_)
+        )
+    }
+    pub fn is_region_disabled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFederationTokenErrorKind::RegionDisabledError(_)
+        )
+    }
 }
 impl std::error::Error for GetFederationTokenError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -639,6 +759,9 @@ impl GetSessionTokenError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_region_disabled_error(&self) -> bool {
+        matches!(&self.kind, GetSessionTokenErrorKind::RegionDisabledError(_))
+    }
 }
 impl std::error::Error for GetSessionTokenError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -690,12 +813,12 @@ pub mod region_disabled_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`RegionDisabledError`](crate::error::RegionDisabledError)
@@ -761,12 +884,12 @@ pub mod packed_policy_too_large_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`PackedPolicyTooLargeError`](crate::error::PackedPolicyTooLargeError)
@@ -825,12 +948,12 @@ pub mod malformed_policy_document_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
@@ -890,12 +1013,12 @@ pub mod invalid_authorization_message_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidAuthorizationMessageError`](crate::error::InvalidAuthorizationMessageError)
@@ -954,12 +1077,12 @@ pub mod invalid_identity_token_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidIdentityTokenError`](crate::error::InvalidIdentityTokenError)
@@ -1017,12 +1140,12 @@ pub mod idp_rejected_claim_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`IDPRejectedClaimError`](crate::error::IDPRejectedClaimError)
@@ -1084,12 +1207,12 @@ pub mod idp_communication_error_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`IDPCommunicationErrorError`](crate::error::IDPCommunicationErrorError)
@@ -1145,12 +1268,12 @@ pub mod expired_token_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ExpiredTokenError`](crate::error::ExpiredTokenError)

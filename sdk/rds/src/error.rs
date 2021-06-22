@@ -70,6 +70,30 @@ impl AddRoleToDBClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddRoleToDBClusterErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_cluster_role_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddRoleToDBClusterErrorKind::DBClusterRoleAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_cluster_role_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddRoleToDBClusterErrorKind::DBClusterRoleQuotaExceededFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddRoleToDBClusterErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
 }
 impl std::error::Error for AddRoleToDBClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -153,6 +177,30 @@ impl AddRoleToDBInstanceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddRoleToDBInstanceErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_role_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddRoleToDBInstanceErrorKind::DBInstanceRoleAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_instance_role_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddRoleToDBInstanceErrorKind::DBInstanceRoleQuotaExceededFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddRoleToDBInstanceErrorKind::InvalidDBInstanceStateFault(_)
+        )
     }
 }
 impl std::error::Error for AddRoleToDBInstanceError {
@@ -241,6 +289,18 @@ impl AddSourceIdentifierToSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_source_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddSourceIdentifierToSubscriptionErrorKind::SourceNotFoundFault(_)
+        )
+    }
+    pub fn is_subscription_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddSourceIdentifierToSubscriptionErrorKind::SubscriptionNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for AddSourceIdentifierToSubscriptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -326,6 +386,36 @@ impl AddTagsToResourceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddTagsToResourceErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddTagsToResourceErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_db_proxy_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddTagsToResourceErrorKind::DBProxyNotFoundFault(_)
+        )
+    }
+    pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddTagsToResourceErrorKind::DBProxyTargetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddTagsToResourceErrorKind::DBSnapshotNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for AddTagsToResourceError {
@@ -413,6 +503,24 @@ impl ApplyPendingMaintenanceActionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ApplyPendingMaintenanceActionErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ApplyPendingMaintenanceActionErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
+    pub fn is_resource_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ApplyPendingMaintenanceActionErrorKind::ResourceNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for ApplyPendingMaintenanceActionError {
@@ -509,6 +617,30 @@ impl AuthorizeDBSecurityGroupIngressError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AuthorizeDBSecurityGroupIngressErrorKind::AuthorizationAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_authorization_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AuthorizeDBSecurityGroupIngressErrorKind::AuthorizationQuotaExceededFault(_)
+        )
+    }
+    pub fn is_db_security_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AuthorizeDBSecurityGroupIngressErrorKind::DBSecurityGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_security_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AuthorizeDBSecurityGroupIngressErrorKind::InvalidDBSecurityGroupStateFault(_)
+        )
+    }
 }
 impl std::error::Error for AuthorizeDBSecurityGroupIngressError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -597,6 +729,18 @@ impl BacktrackDBClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            BacktrackDBClusterErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            BacktrackDBClusterErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
 }
 impl std::error::Error for BacktrackDBClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -674,6 +818,18 @@ impl CancelExportTaskError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_export_task_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelExportTaskErrorKind::ExportTaskNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_export_task_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelExportTaskErrorKind::InvalidExportTaskStateFault(_)
+        )
     }
 }
 impl std::error::Error for CancelExportTaskError {
@@ -760,6 +916,24 @@ impl CopyDBClusterParameterGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_parameter_group_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBClusterParameterGroupErrorKind::DBParameterGroupAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBClusterParameterGroupErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_parameter_group_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBClusterParameterGroupErrorKind::DBParameterGroupQuotaExceededFault(_)
+        )
     }
 }
 impl std::error::Error for CopyDBClusterParameterGroupError {
@@ -858,6 +1032,42 @@ impl CopyDBClusterSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_snapshot_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBClusterSnapshotErrorKind::DBClusterSnapshotAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBClusterSnapshotErrorKind::DBClusterSnapshotNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBClusterSnapshotErrorKind::InvalidDBClusterSnapshotStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBClusterSnapshotErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBClusterSnapshotErrorKind::KMSKeyNotAccessibleFault(_)
+        )
+    }
+    pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBClusterSnapshotErrorKind::SnapshotQuotaExceededFault(_)
+        )
+    }
 }
 impl std::error::Error for CopyDBClusterSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -950,6 +1160,24 @@ impl CopyDBParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_parameter_group_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBParameterGroupErrorKind::DBParameterGroupAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBParameterGroupErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_parameter_group_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBParameterGroupErrorKind::DBParameterGroupQuotaExceededFault(_)
+        )
+    }
 }
 impl std::error::Error for CopyDBParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1041,6 +1269,42 @@ impl CopyDBSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_custom_availability_zone_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBSnapshotErrorKind::CustomAvailabilityZoneNotFoundFault(_)
+        )
+    }
+    pub fn is_db_snapshot_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBSnapshotErrorKind::DBSnapshotAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBSnapshotErrorKind::DBSnapshotNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBSnapshotErrorKind::InvalidDBSnapshotStateFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBSnapshotErrorKind::KMSKeyNotAccessibleFault(_)
+        )
+    }
+    pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyDBSnapshotErrorKind::SnapshotQuotaExceededFault(_)
+        )
+    }
 }
 impl std::error::Error for CopyDBSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1124,6 +1388,24 @@ impl CopyOptionGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_option_group_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyOptionGroupErrorKind::OptionGroupAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_option_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyOptionGroupErrorKind::OptionGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_option_group_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CopyOptionGroupErrorKind::OptionGroupQuotaExceededFault(_)
+        )
     }
 }
 impl std::error::Error for CopyOptionGroupError {
@@ -1215,6 +1497,24 @@ impl CreateCustomAvailabilityZoneError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_custom_availability_zone_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_custom_availability_zone_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneQuotaExceededFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomAvailabilityZoneErrorKind::KMSKeyNotAccessibleFault(_)
+        )
     }
 }
 impl std::error::Error for CreateCustomAvailabilityZoneError {
@@ -1333,6 +1633,108 @@ impl CreateDBClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::DBClusterAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_cluster_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::DBClusterParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_cluster_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::DBClusterQuotaExceededFault(_)
+        )
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+        )
+    }
+    pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::DBSubnetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_domain_not_found_fault(&self) -> bool {
+        matches!(&self.kind, CreateDBClusterErrorKind::DomainNotFoundFault(_))
+    }
+    pub fn is_global_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::GlobalClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_insufficient_storage_cluster_capacity_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::InsufficientStorageClusterCapacityFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_subnet_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::InvalidDBSubnetGroupStateFault(_)
+        )
+    }
+    pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::InvalidGlobalClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_subnet(&self) -> bool {
+        matches!(&self.kind, CreateDBClusterErrorKind::InvalidSubnet(_))
+    }
+    pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::InvalidVPCNetworkStateFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::KMSKeyNotAccessibleFault(_)
+        )
+    }
+    pub fn is_storage_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterErrorKind::StorageQuotaExceededFault(_)
+        )
+    }
 }
 impl std::error::Error for CreateDBClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1441,6 +1843,42 @@ impl CreateDBClusterEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_endpoint_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterEndpointErrorKind::DBClusterEndpointAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_cluster_endpoint_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterEndpointErrorKind::DBClusterEndpointQuotaExceededFault(_)
+        )
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterEndpointErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterEndpointErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterEndpointErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterEndpointErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
 }
 impl std::error::Error for CreateDBClusterEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1530,6 +1968,18 @@ impl CreateDBClusterParameterGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_parameter_group_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterParameterGroupErrorKind::DBParameterGroupAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_parameter_group_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterParameterGroupErrorKind::DBParameterGroupQuotaExceededFault(_)
+        )
     }
 }
 impl std::error::Error for CreateDBClusterParameterGroupError {
@@ -1622,6 +2072,36 @@ impl CreateDBClusterSnapshotError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterSnapshotErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_cluster_snapshot_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterSnapshotErrorKind::DBClusterSnapshotAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterSnapshotErrorKind::InvalidDBClusterSnapshotStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterSnapshotErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBClusterSnapshotErrorKind::SnapshotQuotaExceededFault(_)
+        )
     }
 }
 impl std::error::Error for CreateDBClusterSnapshotError {
@@ -1743,6 +2223,117 @@ impl CreateDBInstanceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::AuthorizationNotFoundFault(_)
+        )
+    }
+    pub fn is_backup_policy_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::BackupPolicyNotFoundFault(_)
+        )
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::DBInstanceAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_security_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::DBSecurityGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+        )
+    }
+    pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::DBSubnetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_domain_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::DomainNotFoundFault(_)
+        )
+    }
+    pub fn is_instance_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::InstanceQuotaExceededFault(_)
+        )
+    }
+    pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::InsufficientDBInstanceCapacityFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_subnet(&self) -> bool {
+        matches!(&self.kind, CreateDBInstanceErrorKind::InvalidSubnet(_))
+    }
+    pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::InvalidVPCNetworkStateFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::KMSKeyNotAccessibleFault(_)
+        )
+    }
+    pub fn is_option_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::OptionGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::ProvisionedIopsNotAvailableInAZFault(_)
+        )
+    }
+    pub fn is_storage_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::StorageQuotaExceededFault(_)
+        )
+    }
+    pub fn is_storage_type_not_supported_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceErrorKind::StorageTypeNotSupportedFault(_)
+        )
     }
 }
 impl std::error::Error for CreateDBInstanceError {
@@ -1901,6 +2492,120 @@ impl CreateDBInstanceReadReplicaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_instance_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::DBInstanceAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_security_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::DBSecurityGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+        )
+    }
+    pub fn is_db_subnet_group_not_allowed_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::DBSubnetGroupNotAllowedFault(_)
+        )
+    }
+    pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::DBSubnetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_domain_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::DomainNotFoundFault(_)
+        )
+    }
+    pub fn is_instance_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::InstanceQuotaExceededFault(_)
+        )
+    }
+    pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::InsufficientDBInstanceCapacityFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_subnet_group_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::InvalidDBSubnetGroupFault(_)
+        )
+    }
+    pub fn is_invalid_subnet(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::InvalidSubnet(_)
+        )
+    }
+    pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::InvalidVPCNetworkStateFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::KMSKeyNotAccessibleFault(_)
+        )
+    }
+    pub fn is_option_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::OptionGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::ProvisionedIopsNotAvailableInAZFault(_)
+        )
+    }
+    pub fn is_storage_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::StorageQuotaExceededFault(_)
+        )
+    }
+    pub fn is_storage_type_not_supported_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBInstanceReadReplicaErrorKind::StorageTypeNotSupportedFault(_)
+        )
+    }
 }
 impl std::error::Error for CreateDBInstanceReadReplicaError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2024,6 +2729,18 @@ impl CreateDBParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_parameter_group_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBParameterGroupErrorKind::DBParameterGroupAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_parameter_group_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBParameterGroupErrorKind::DBParameterGroupQuotaExceededFault(_)
+        )
+    }
 }
 impl std::error::Error for CreateDBParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2107,6 +2824,21 @@ impl CreateDBProxyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_proxy_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBProxyErrorKind::DBProxyAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_proxy_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBProxyErrorKind::DBProxyQuotaExceededFault(_)
+        )
+    }
+    pub fn is_invalid_subnet(&self) -> bool {
+        matches!(&self.kind, CreateDBProxyErrorKind::InvalidSubnet(_))
     }
 }
 impl std::error::Error for CreateDBProxyError {
@@ -2196,6 +2928,33 @@ impl CreateDBProxyEndpointError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_proxy_endpoint_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBProxyEndpointErrorKind::DBProxyEndpointAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_proxy_endpoint_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBProxyEndpointErrorKind::DBProxyEndpointQuotaExceededFault(_)
+        )
+    }
+    pub fn is_db_proxy_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBProxyEndpointErrorKind::DBProxyNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBProxyEndpointErrorKind::InvalidDBProxyStateFault(_)
+        )
+    }
+    pub fn is_invalid_subnet(&self) -> bool {
+        matches!(&self.kind, CreateDBProxyEndpointErrorKind::InvalidSubnet(_))
     }
 }
 impl std::error::Error for CreateDBProxyEndpointError {
@@ -2290,6 +3049,24 @@ impl CreateDBSecurityGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_security_group_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBSecurityGroupErrorKind::DBSecurityGroupAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_security_group_not_supported_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBSecurityGroupErrorKind::DBSecurityGroupNotSupportedFault(_)
+        )
+    }
+    pub fn is_db_security_group_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBSecurityGroupErrorKind::DBSecurityGroupQuotaExceededFault(_)
+        )
+    }
 }
 impl std::error::Error for CreateDBSecurityGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2379,6 +3156,30 @@ impl CreateDBSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBSnapshotErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_db_snapshot_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBSnapshotErrorKind::DBSnapshotAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBSnapshotErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
+    pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBSnapshotErrorKind::SnapshotQuotaExceededFault(_)
+        )
+    }
 }
 impl std::error::Error for CreateDBSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2466,6 +3267,33 @@ impl CreateDBSubnetGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_subnet_group_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBSubnetGroupErrorKind::DBSubnetGroupAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBSubnetGroupErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+        )
+    }
+    pub fn is_db_subnet_group_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBSubnetGroupErrorKind::DBSubnetGroupQuotaExceededFault(_)
+        )
+    }
+    pub fn is_db_subnet_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDBSubnetGroupErrorKind::DBSubnetQuotaExceededFault(_)
+        )
+    }
+    pub fn is_invalid_subnet(&self) -> bool {
+        matches!(&self.kind, CreateDBSubnetGroupErrorKind::InvalidSubnet(_))
     }
 }
 impl std::error::Error for CreateDBSubnetGroupError {
@@ -2566,6 +3394,48 @@ impl CreateEventSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_event_subscription_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault(_)
+        )
+    }
+    pub fn is_sns_invalid_topic_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventSubscriptionErrorKind::SNSInvalidTopicFault(_)
+        )
+    }
+    pub fn is_sns_no_authorization_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventSubscriptionErrorKind::SNSNoAuthorizationFault(_)
+        )
+    }
+    pub fn is_sns_topic_arn_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventSubscriptionErrorKind::SNSTopicArnNotFoundFault(_)
+        )
+    }
+    pub fn is_source_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventSubscriptionErrorKind::SourceNotFoundFault(_)
+        )
+    }
+    pub fn is_subscription_already_exist_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventSubscriptionErrorKind::SubscriptionAlreadyExistFault(_)
+        )
+    }
+    pub fn is_subscription_category_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for CreateEventSubscriptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2657,6 +3527,30 @@ impl CreateGlobalClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGlobalClusterErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_global_cluster_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGlobalClusterErrorKind::GlobalClusterAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_global_cluster_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGlobalClusterErrorKind::GlobalClusterQuotaExceededFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGlobalClusterErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
 }
 impl std::error::Error for CreateGlobalClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2736,6 +3630,18 @@ impl CreateOptionGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_option_group_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOptionGroupErrorKind::OptionGroupAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_option_group_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOptionGroupErrorKind::OptionGroupQuotaExceededFault(_)
+        )
     }
 }
 impl std::error::Error for CreateOptionGroupError {
@@ -2818,6 +3724,18 @@ impl DeleteCustomAvailabilityZoneError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_custom_availability_zone_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomAvailabilityZoneErrorKind::CustomAvailabilityZoneNotFoundFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomAvailabilityZoneErrorKind::KMSKeyNotAccessibleFault(_)
+        )
     }
 }
 impl std::error::Error for DeleteCustomAvailabilityZoneError {
@@ -2904,6 +3822,36 @@ impl DeleteDBClusterError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBClusterErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_cluster_snapshot_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBClusterErrorKind::DBClusterSnapshotAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBClusterErrorKind::InvalidDBClusterSnapshotStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBClusterErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBClusterErrorKind::SnapshotQuotaExceededFault(_)
+        )
     }
 }
 impl std::error::Error for DeleteDBClusterError {
@@ -2992,6 +3940,24 @@ impl DeleteDBClusterEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_endpoint_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBClusterEndpointErrorKind::DBClusterEndpointNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_endpoint_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBClusterEndpointErrorKind::InvalidDBClusterEndpointStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBClusterEndpointErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
 }
 impl std::error::Error for DeleteDBClusterEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3079,6 +4045,18 @@ impl DeleteDBClusterParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBClusterParameterGroupErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBClusterParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_)
+        )
+    }
 }
 impl std::error::Error for DeleteDBClusterParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3164,6 +4142,18 @@ impl DeleteDBClusterSnapshotError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBClusterSnapshotErrorKind::DBClusterSnapshotNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBClusterSnapshotErrorKind::InvalidDBClusterSnapshotStateFault(_)
+        )
     }
 }
 impl std::error::Error for DeleteDBClusterSnapshotError {
@@ -3259,6 +4249,42 @@ impl DeleteDBInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_instance_automated_backup_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBInstanceErrorKind::DBInstanceAutomatedBackupQuotaExceededFault(_)
+        )
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBInstanceErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_db_snapshot_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBInstanceErrorKind::DBSnapshotAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBInstanceErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBInstanceErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
+    pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBInstanceErrorKind::SnapshotQuotaExceededFault(_)
+        )
+    }
 }
 impl std::error::Error for DeleteDBInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3351,6 +4377,18 @@ impl DeleteDBInstanceAutomatedBackupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_instance_automated_backup_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBInstanceAutomatedBackupErrorKind::DBInstanceAutomatedBackupNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_automated_backup_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBInstanceAutomatedBackupErrorKind::InvalidDBInstanceAutomatedBackupStateFault(_)
+        )
+    }
 }
 impl std::error::Error for DeleteDBInstanceAutomatedBackupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3437,6 +4475,18 @@ impl DeleteDBParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBParameterGroupErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_)
+        )
+    }
 }
 impl std::error::Error for DeleteDBParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3517,6 +4567,15 @@ impl DeleteDBProxyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_proxy_not_found_fault(&self) -> bool {
+        matches!(&self.kind, DeleteDBProxyErrorKind::DBProxyNotFoundFault(_))
+    }
+    pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBProxyErrorKind::InvalidDBProxyStateFault(_)
+        )
+    }
 }
 impl std::error::Error for DeleteDBProxyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3596,6 +4655,18 @@ impl DeleteDBProxyEndpointError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_proxy_endpoint_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBProxyEndpointErrorKind::DBProxyEndpointNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_proxy_endpoint_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBProxyEndpointErrorKind::InvalidDBProxyEndpointStateFault(_)
+        )
     }
 }
 impl std::error::Error for DeleteDBProxyEndpointError {
@@ -3679,6 +4750,18 @@ impl DeleteDBSecurityGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_security_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBSecurityGroupErrorKind::DBSecurityGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_security_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBSecurityGroupErrorKind::InvalidDBSecurityGroupStateFault(_)
+        )
+    }
 }
 impl std::error::Error for DeleteDBSecurityGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3759,6 +4842,18 @@ impl DeleteDBSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBSnapshotErrorKind::DBSnapshotNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBSnapshotErrorKind::InvalidDBSnapshotStateFault(_)
+        )
+    }
 }
 impl std::error::Error for DeleteDBSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3838,6 +4933,24 @@ impl DeleteDBSubnetGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBSubnetGroupErrorKind::DBSubnetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_subnet_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBSubnetGroupErrorKind::InvalidDBSubnetGroupStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_subnet_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDBSubnetGroupErrorKind::InvalidDBSubnetStateFault(_)
+        )
     }
 }
 impl std::error::Error for DeleteDBSubnetGroupError {
@@ -3920,6 +5033,18 @@ impl DeleteEventSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_event_subscription_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventSubscriptionErrorKind::InvalidEventSubscriptionStateFault(_)
+        )
+    }
+    pub fn is_subscription_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventSubscriptionErrorKind::SubscriptionNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for DeleteEventSubscriptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4000,6 +5125,18 @@ impl DeleteGlobalClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_global_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteGlobalClusterErrorKind::GlobalClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_)
+        )
+    }
 }
 impl std::error::Error for DeleteGlobalClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4077,6 +5214,12 @@ impl DeleteInstallationMediaError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_installation_media_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInstallationMediaErrorKind::InstallationMediaNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for DeleteInstallationMediaError {
@@ -4156,6 +5299,18 @@ impl DeleteOptionGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_option_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteOptionGroupErrorKind::InvalidOptionGroupStateFault(_)
+        )
+    }
+    pub fn is_option_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteOptionGroupErrorKind::OptionGroupNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for DeleteOptionGroupError {
@@ -4240,6 +5395,30 @@ impl DeregisterDBProxyTargetsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_proxy_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterDBProxyTargetsErrorKind::DBProxyNotFoundFault(_)
+        )
+    }
+    pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterDBProxyTargetsErrorKind::DBProxyTargetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_proxy_target_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterDBProxyTargetsErrorKind::DBProxyTargetNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterDBProxyTargetsErrorKind::InvalidDBProxyStateFault(_)
+        )
     }
 }
 impl std::error::Error for DeregisterDBProxyTargetsError {
@@ -4393,6 +5572,12 @@ impl DescribeCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_certificate_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCertificatesErrorKind::CertificateNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeCertificatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4469,6 +5654,12 @@ impl DescribeCustomAvailabilityZonesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_custom_availability_zone_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCustomAvailabilityZonesErrorKind::CustomAvailabilityZoneNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for DescribeCustomAvailabilityZonesError {
@@ -4551,6 +5742,18 @@ impl DescribeDBClusterBacktracksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_backtrack_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBClusterBacktracksErrorKind::DBClusterBacktrackNotFoundFault(_)
+        )
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBClusterBacktracksErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeDBClusterBacktracksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4629,6 +5832,12 @@ impl DescribeDBClusterEndpointsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBClusterEndpointsErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeDBClusterEndpointsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4705,6 +5914,12 @@ impl DescribeDBClusterParameterGroupsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBClusterParameterGroupsErrorKind::DBParameterGroupNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for DescribeDBClusterParameterGroupsError {
@@ -4785,6 +6000,12 @@ impl DescribeDBClusterParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBClusterParametersErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeDBClusterParametersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4861,6 +6082,12 @@ impl DescribeDBClustersError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBClustersErrorKind::DBClusterNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for DescribeDBClustersError {
@@ -4942,6 +6169,12 @@ impl DescribeDBClusterSnapshotAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBClusterSnapshotAttributesErrorKind::DBClusterSnapshotNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeDBClusterSnapshotAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5022,6 +6255,12 @@ impl DescribeDBClusterSnapshotsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBClusterSnapshotsErrorKind::DBClusterSnapshotNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for DescribeDBClusterSnapshotsError {
@@ -5177,6 +6416,12 @@ impl DescribeDBInstanceAutomatedBackupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_instance_automated_backup_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBInstanceAutomatedBackupsErrorKind::DBInstanceAutomatedBackupNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeDBInstanceAutomatedBackupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5254,6 +6499,12 @@ impl DescribeDBInstancesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBInstancesErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeDBInstancesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5328,6 +6579,12 @@ impl DescribeDBLogFilesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBLogFilesErrorKind::DBInstanceNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for DescribeDBLogFilesError {
@@ -5406,6 +6663,12 @@ impl DescribeDBParameterGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBParameterGroupsErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeDBParameterGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5483,6 +6746,12 @@ impl DescribeDBParametersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBParametersErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeDBParametersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5557,6 +6826,12 @@ impl DescribeDBProxiesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_proxy_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBProxiesErrorKind::DBProxyNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for DescribeDBProxiesError {
@@ -5636,6 +6911,18 @@ impl DescribeDBProxyEndpointsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_proxy_endpoint_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBProxyEndpointsErrorKind::DBProxyEndpointNotFoundFault(_)
+        )
+    }
+    pub fn is_db_proxy_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBProxyEndpointsErrorKind::DBProxyNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for DescribeDBProxyEndpointsError {
@@ -5718,6 +7005,24 @@ impl DescribeDBProxyTargetGroupsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_proxy_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBProxyTargetGroupsErrorKind::DBProxyNotFoundFault(_)
+        )
+    }
+    pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBProxyTargetGroupsErrorKind::DBProxyTargetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBProxyTargetGroupsErrorKind::InvalidDBProxyStateFault(_)
+        )
     }
 }
 impl std::error::Error for DescribeDBProxyTargetGroupsError {
@@ -5806,6 +7111,30 @@ impl DescribeDBProxyTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_proxy_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBProxyTargetsErrorKind::DBProxyNotFoundFault(_)
+        )
+    }
+    pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBProxyTargetsErrorKind::DBProxyTargetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_proxy_target_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBProxyTargetsErrorKind::DBProxyTargetNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBProxyTargetsErrorKind::InvalidDBProxyStateFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeDBProxyTargetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5888,6 +7217,12 @@ impl DescribeDBSecurityGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_security_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBSecurityGroupsErrorKind::DBSecurityGroupNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeDBSecurityGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5962,6 +7297,12 @@ impl DescribeDBSnapshotAttributesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBSnapshotAttributesErrorKind::DBSnapshotNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for DescribeDBSnapshotAttributesError {
@@ -6038,6 +7379,12 @@ impl DescribeDBSnapshotsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBSnapshotsErrorKind::DBSnapshotNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeDBSnapshotsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6112,6 +7459,12 @@ impl DescribeDBSubnetGroupsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDBSubnetGroupsErrorKind::DBSubnetGroupNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for DescribeDBSubnetGroupsError {
@@ -6481,6 +7834,12 @@ impl DescribeEventSubscriptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_subscription_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeEventSubscriptionsErrorKind::SubscriptionNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeEventSubscriptionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6556,6 +7915,12 @@ impl DescribeExportTasksError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_export_task_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeExportTasksErrorKind::ExportTaskNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeExportTasksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6630,6 +7995,12 @@ impl DescribeGlobalClustersError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_global_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeGlobalClustersErrorKind::GlobalClusterNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for DescribeGlobalClustersError {
@@ -6707,6 +8078,12 @@ impl DescribeInstallationMediaError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_installation_media_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInstallationMediaErrorKind::InstallationMediaNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for DescribeInstallationMediaError {
@@ -6856,6 +8233,12 @@ impl DescribeOptionGroupsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_option_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOptionGroupsErrorKind::OptionGroupNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for DescribeOptionGroupsError {
@@ -7012,6 +8395,12 @@ impl DescribePendingMaintenanceActionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePendingMaintenanceActionsErrorKind::ResourceNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribePendingMaintenanceActionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7090,6 +8479,12 @@ impl DescribeReservedDBInstancesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_reserved_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservedDBInstancesErrorKind::ReservedDBInstanceNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for DescribeReservedDBInstancesError {
@@ -7176,6 +8571,14 @@ impl DescribeReservedDBInstancesOfferingsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_reserved_db_instances_offering_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservedDBInstancesOfferingsErrorKind::ReservedDBInstancesOfferingNotFoundFault(
+                _
+            )
+        )
     }
 }
 impl std::error::Error for DescribeReservedDBInstancesOfferingsError {
@@ -7337,6 +8740,18 @@ impl DescribeValidDBInstanceModificationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeValidDBInstanceModificationsErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeValidDBInstanceModificationsErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
 }
 impl std::error::Error for DescribeValidDBInstanceModificationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7421,6 +8836,18 @@ impl DownloadDBLogFilePortionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DownloadDBLogFilePortionErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_db_log_file_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DownloadDBLogFilePortionErrorKind::DBLogFileNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for DownloadDBLogFilePortionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7500,6 +8927,24 @@ impl FailoverDBClusterError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            FailoverDBClusterErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            FailoverDBClusterErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            FailoverDBClusterErrorKind::InvalidDBInstanceStateFault(_)
+        )
     }
 }
 impl std::error::Error for FailoverDBClusterError {
@@ -7584,6 +9029,30 @@ impl FailoverGlobalClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            FailoverGlobalClusterErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_global_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            FailoverGlobalClusterErrorKind::GlobalClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            FailoverGlobalClusterErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            FailoverGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_)
+        )
+    }
 }
 impl std::error::Error for FailoverGlobalClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7667,6 +9136,18 @@ impl ImportInstallationMediaError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_custom_availability_zone_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportInstallationMediaErrorKind::CustomAvailabilityZoneNotFoundFault(_)
+        )
+    }
+    pub fn is_installation_media_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportInstallationMediaErrorKind::InstallationMediaAlreadyExistsFault(_)
+        )
     }
 }
 impl std::error::Error for ImportInstallationMediaError {
@@ -7756,6 +9237,36 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_db_proxy_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::DBProxyNotFoundFault(_)
+        )
+    }
+    pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::DBProxyTargetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::DBSnapshotNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7834,6 +9345,12 @@ impl ModifyCertificatesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_certificate_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyCertificatesErrorKind::CertificateNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for ModifyCertificatesError {
@@ -7919,6 +9436,24 @@ impl ModifyCurrentDBClusterCapacityError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyCurrentDBClusterCapacityErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_capacity_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyCurrentDBClusterCapacityErrorKind::InvalidDBClusterCapacityFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyCurrentDBClusterCapacityErrorKind::InvalidDBClusterStateFault(_)
+        )
     }
 }
 impl std::error::Error for ModifyCurrentDBClusterCapacityError {
@@ -8023,6 +9558,72 @@ impl ModifyDBClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterErrorKind::DBClusterAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_cluster_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterErrorKind::DBClusterParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterErrorKind::DBSubnetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_domain_not_found_fault(&self) -> bool {
+        matches!(&self.kind, ModifyDBClusterErrorKind::DomainNotFoundFault(_))
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_security_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterErrorKind::InvalidDBSecurityGroupStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_subnet_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterErrorKind::InvalidDBSubnetGroupStateFault(_)
+        )
+    }
+    pub fn is_invalid_subnet(&self) -> bool {
+        matches!(&self.kind, ModifyDBClusterErrorKind::InvalidSubnet(_))
+    }
+    pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterErrorKind::InvalidVPCNetworkStateFault(_)
+        )
+    }
+    pub fn is_storage_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterErrorKind::StorageQuotaExceededFault(_)
+        )
+    }
 }
 impl std::error::Error for ModifyDBClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8121,6 +9722,36 @@ impl ModifyDBClusterEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_endpoint_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterEndpointErrorKind::DBClusterEndpointNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterEndpointErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_endpoint_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterEndpointErrorKind::InvalidDBClusterEndpointStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterEndpointErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterEndpointErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
 }
 impl std::error::Error for ModifyDBClusterEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8209,6 +9840,18 @@ impl ModifyDBClusterParameterGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterParameterGroupErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_)
+        )
     }
 }
 impl std::error::Error for ModifyDBClusterParameterGroupError {
@@ -8299,6 +9942,24 @@ impl ModifyDBClusterSnapshotAttributeError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterSnapshotAttributeErrorKind::DBClusterSnapshotNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterSnapshotAttributeErrorKind::InvalidDBClusterSnapshotStateFault(_)
+        )
+    }
+    pub fn is_shared_snapshot_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBClusterSnapshotAttributeErrorKind::SharedSnapshotQuotaExceededFault(_)
+        )
     }
 }
 impl std::error::Error for ModifyDBClusterSnapshotAttributeError {
@@ -8421,6 +10082,120 @@ impl ModifyDBInstanceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::AuthorizationNotFoundFault(_)
+        )
+    }
+    pub fn is_backup_policy_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::BackupPolicyNotFoundFault(_)
+        )
+    }
+    pub fn is_certificate_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::CertificateNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::DBInstanceAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_security_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::DBSecurityGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_upgrade_dependency_failure_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::DBUpgradeDependencyFailureFault(_)
+        )
+    }
+    pub fn is_domain_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::DomainNotFoundFault(_)
+        )
+    }
+    pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::InsufficientDBInstanceCapacityFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_security_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::InvalidDBSecurityGroupStateFault(_)
+        )
+    }
+    pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::InvalidVPCNetworkStateFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::KMSKeyNotAccessibleFault(_)
+        )
+    }
+    pub fn is_option_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::OptionGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::ProvisionedIopsNotAvailableInAZFault(_)
+        )
+    }
+    pub fn is_storage_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::StorageQuotaExceededFault(_)
+        )
+    }
+    pub fn is_storage_type_not_supported_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBInstanceErrorKind::StorageTypeNotSupportedFault(_)
+        )
+    }
 }
 impl std::error::Error for ModifyDBInstanceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8518,6 +10293,18 @@ impl ModifyDBParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBParameterGroupErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_)
+        )
+    }
 }
 impl std::error::Error for ModifyDBParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8599,6 +10386,21 @@ impl ModifyDBProxyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_proxy_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBProxyErrorKind::DBProxyAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_proxy_not_found_fault(&self) -> bool {
+        matches!(&self.kind, ModifyDBProxyErrorKind::DBProxyNotFoundFault(_))
+    }
+    pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBProxyErrorKind::InvalidDBProxyStateFault(_)
+        )
     }
 }
 impl std::error::Error for ModifyDBProxyError {
@@ -8686,6 +10488,30 @@ impl ModifyDBProxyEndpointError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_proxy_endpoint_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBProxyEndpointErrorKind::DBProxyEndpointAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_proxy_endpoint_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBProxyEndpointErrorKind::DBProxyEndpointNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_proxy_endpoint_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBProxyEndpointErrorKind::InvalidDBProxyEndpointStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBProxyEndpointErrorKind::InvalidDBProxyStateFault(_)
+        )
     }
 }
 impl std::error::Error for ModifyDBProxyEndpointError {
@@ -8775,6 +10601,24 @@ impl ModifyDBProxyTargetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_proxy_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBProxyTargetGroupErrorKind::DBProxyNotFoundFault(_)
+        )
+    }
+    pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBProxyTargetGroupErrorKind::DBProxyTargetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBProxyTargetGroupErrorKind::InvalidDBProxyStateFault(_)
+        )
+    }
 }
 impl std::error::Error for ModifyDBProxyTargetGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8853,6 +10697,12 @@ impl ModifyDBSnapshotError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBSnapshotErrorKind::DBSnapshotNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for ModifyDBSnapshotError {
@@ -8936,6 +10786,24 @@ impl ModifyDBSnapshotAttributeError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBSnapshotAttributeErrorKind::DBSnapshotNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBSnapshotAttributeErrorKind::InvalidDBSnapshotStateFault(_)
+        )
+    }
+    pub fn is_shared_snapshot_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBSnapshotAttributeErrorKind::SharedSnapshotQuotaExceededFault(_)
+        )
     }
 }
 impl std::error::Error for ModifyDBSnapshotAttributeError {
@@ -9025,6 +10893,33 @@ impl ModifyDBSubnetGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBSubnetGroupErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+        )
+    }
+    pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBSubnetGroupErrorKind::DBSubnetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_subnet_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBSubnetGroupErrorKind::DBSubnetQuotaExceededFault(_)
+        )
+    }
+    pub fn is_invalid_subnet(&self) -> bool {
+        matches!(&self.kind, ModifyDBSubnetGroupErrorKind::InvalidSubnet(_))
+    }
+    pub fn is_subnet_already_in_use(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyDBSubnetGroupErrorKind::SubnetAlreadyInUse(_)
+        )
     }
 }
 impl std::error::Error for ModifyDBSubnetGroupError {
@@ -9121,6 +11016,42 @@ impl ModifyEventSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_event_subscription_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault(_)
+        )
+    }
+    pub fn is_sns_invalid_topic_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyEventSubscriptionErrorKind::SNSInvalidTopicFault(_)
+        )
+    }
+    pub fn is_sns_no_authorization_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyEventSubscriptionErrorKind::SNSNoAuthorizationFault(_)
+        )
+    }
+    pub fn is_sns_topic_arn_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyEventSubscriptionErrorKind::SNSTopicArnNotFoundFault(_)
+        )
+    }
+    pub fn is_subscription_category_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault(_)
+        )
+    }
+    pub fn is_subscription_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyEventSubscriptionErrorKind::SubscriptionNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for ModifyEventSubscriptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9211,6 +11142,30 @@ impl ModifyGlobalClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_global_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyGlobalClusterErrorKind::GlobalClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyGlobalClusterErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyGlobalClusterErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
+    pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_)
+        )
+    }
 }
 impl std::error::Error for ModifyGlobalClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9291,6 +11246,18 @@ impl ModifyOptionGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_option_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyOptionGroupErrorKind::InvalidOptionGroupStateFault(_)
+        )
+    }
+    pub fn is_option_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyOptionGroupErrorKind::OptionGroupNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for ModifyOptionGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9368,6 +11335,18 @@ impl PromoteReadReplicaError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            PromoteReadReplicaErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            PromoteReadReplicaErrorKind::InvalidDBInstanceStateFault(_)
+        )
     }
 }
 impl std::error::Error for PromoteReadReplicaError {
@@ -9448,6 +11427,18 @@ impl PromoteReadReplicaDBClusterError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            PromoteReadReplicaDBClusterErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            PromoteReadReplicaDBClusterErrorKind::InvalidDBClusterStateFault(_)
+        )
     }
 }
 impl std::error::Error for PromoteReadReplicaDBClusterError {
@@ -9544,6 +11535,26 @@ impl PurchaseReservedDBInstancesOfferingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_reserved_db_instance_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDBInstanceAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_reserved_db_instance_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDBInstanceQuotaExceededFault(_)
+        )
+    }
+    pub fn is_reserved_db_instances_offering_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            PurchaseReservedDBInstancesOfferingErrorKind::ReservedDBInstancesOfferingNotFoundFault(
+                _
+            )
+        )
+    }
 }
 impl std::error::Error for PurchaseReservedDBInstancesOfferingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9630,6 +11641,18 @@ impl RebootDBInstanceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RebootDBInstanceErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RebootDBInstanceErrorKind::InvalidDBInstanceStateFault(_)
+        )
     }
 }
 impl std::error::Error for RebootDBInstanceError {
@@ -9729,6 +11752,60 @@ impl RegisterDBProxyTargetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterDBProxyTargetsErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterDBProxyTargetsErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_db_proxy_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterDBProxyTargetsErrorKind::DBProxyNotFoundFault(_)
+        )
+    }
+    pub fn is_db_proxy_target_already_registered_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterDBProxyTargetsErrorKind::DBProxyTargetAlreadyRegisteredFault(_)
+        )
+    }
+    pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterDBProxyTargetsErrorKind::DBProxyTargetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_insufficient_available_i_ps_in_subnet_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterDBProxyTargetsErrorKind::InsufficientAvailableIPsInSubnetFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterDBProxyTargetsErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterDBProxyTargetsErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_proxy_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterDBProxyTargetsErrorKind::InvalidDBProxyStateFault(_)
+        )
+    }
 }
 impl std::error::Error for RegisterDBProxyTargetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9824,6 +11901,24 @@ impl RemoveFromGlobalClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveFromGlobalClusterErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_global_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveFromGlobalClusterErrorKind::GlobalClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_global_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveFromGlobalClusterErrorKind::InvalidGlobalClusterStateFault(_)
+        )
+    }
 }
 impl std::error::Error for RemoveFromGlobalClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9907,6 +12002,24 @@ impl RemoveRoleFromDBClusterError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveRoleFromDBClusterErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_cluster_role_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveRoleFromDBClusterErrorKind::DBClusterRoleNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveRoleFromDBClusterErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
 }
 impl std::error::Error for RemoveRoleFromDBClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9987,6 +12100,24 @@ impl RemoveRoleFromDBInstanceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveRoleFromDBInstanceErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_role_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveRoleFromDBInstanceErrorKind::DBInstanceRoleNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveRoleFromDBInstanceErrorKind::InvalidDBInstanceStateFault(_)
+        )
     }
 }
 impl std::error::Error for RemoveRoleFromDBInstanceError {
@@ -10073,6 +12204,18 @@ impl RemoveSourceIdentifierFromSubscriptionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_source_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveSourceIdentifierFromSubscriptionErrorKind::SourceNotFoundFault(_)
+        )
+    }
+    pub fn is_subscription_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveSourceIdentifierFromSubscriptionErrorKind::SubscriptionNotFoundFault(_)
+        )
     }
 }
 impl std::error::Error for RemoveSourceIdentifierFromSubscriptionError {
@@ -10166,6 +12309,36 @@ impl RemoveTagsFromResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsFromResourceErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsFromResourceErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_db_proxy_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsFromResourceErrorKind::DBProxyNotFoundFault(_)
+        )
+    }
+    pub fn is_db_proxy_target_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsFromResourceErrorKind::DBProxyTargetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsFromResourceErrorKind::DBSnapshotNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for RemoveTagsFromResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10253,6 +12426,18 @@ impl ResetDBClusterParameterGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResetDBClusterParameterGroupErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResetDBClusterParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_)
+        )
+    }
 }
 impl std::error::Error for ResetDBClusterParameterGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10336,6 +12521,18 @@ impl ResetDBParameterGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResetDBParameterGroupErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_parameter_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResetDBParameterGroupErrorKind::InvalidDBParameterGroupStateFault(_)
+        )
     }
 }
 impl std::error::Error for ResetDBParameterGroupError {
@@ -10446,6 +12643,90 @@ impl RestoreDBClusterFromS3Error {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_cluster_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromS3ErrorKind::DBClusterAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromS3ErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_cluster_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromS3ErrorKind::DBClusterParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_cluster_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromS3ErrorKind::DBClusterQuotaExceededFault(_)
+        )
+    }
+    pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromS3ErrorKind::DBSubnetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_domain_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromS3ErrorKind::DomainNotFoundFault(_)
+        )
+    }
+    pub fn is_insufficient_storage_cluster_capacity_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromS3ErrorKind::InsufficientStorageClusterCapacityFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromS3ErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_subnet_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromS3ErrorKind::InvalidDBSubnetGroupStateFault(_)
+        )
+    }
+    pub fn is_invalid_s3_bucket_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromS3ErrorKind::InvalidS3BucketFault(_)
+        )
+    }
+    pub fn is_invalid_subnet(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromS3ErrorKind::InvalidSubnet(_)
+        )
+    }
+    pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromS3ErrorKind::InvalidVPCNetworkStateFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromS3ErrorKind::KMSKeyNotAccessibleFault(_)
+        )
+    }
+    pub fn is_storage_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromS3ErrorKind::StorageQuotaExceededFault(_)
+        )
     }
 }
 impl std::error::Error for RestoreDBClusterFromS3Error {
@@ -10596,6 +12877,108 @@ impl RestoreDBClusterFromSnapshotError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_cluster_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::DBClusterAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_cluster_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::DBClusterParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_cluster_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::DBClusterQuotaExceededFault(_)
+        )
+    }
+    pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::DBClusterSnapshotNotFoundFault(_)
+        )
+    }
+    pub fn is_db_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::DBSnapshotNotFoundFault(_)
+        )
+    }
+    pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::DBSubnetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_domain_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::DomainNotFoundFault(_)
+        )
+    }
+    pub fn is_insufficient_db_cluster_capacity_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::InsufficientDBClusterCapacityFault(_)
+        )
+    }
+    pub fn is_insufficient_storage_cluster_capacity_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::InsufficientStorageClusterCapacityFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::InvalidDBClusterSnapshotStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::InvalidDBSnapshotStateFault(_)
+        )
+    }
+    pub fn is_invalid_restore_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::InvalidRestoreFault(_)
+        )
+    }
+    pub fn is_invalid_subnet(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::InvalidSubnet(_)
+        )
+    }
+    pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::InvalidVPCNetworkStateFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::KMSKeyNotAccessibleFault(_)
+        )
+    }
+    pub fn is_option_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::OptionGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_storage_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterFromSnapshotErrorKind::StorageQuotaExceededFault(_)
+        )
     }
 }
 impl std::error::Error for RestoreDBClusterFromSnapshotError {
@@ -10771,6 +13154,114 @@ impl RestoreDBClusterToPointInTimeError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_cluster_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::DBClusterAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_cluster_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::DBClusterParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_cluster_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::DBClusterQuotaExceededFault(_)
+        )
+    }
+    pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::DBClusterSnapshotNotFoundFault(_)
+        )
+    }
+    pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::DBSubnetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_domain_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::DomainNotFoundFault(_)
+        )
+    }
+    pub fn is_insufficient_db_cluster_capacity_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::InsufficientDBClusterCapacityFault(_)
+        )
+    }
+    pub fn is_insufficient_storage_cluster_capacity_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::InsufficientStorageClusterCapacityFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_snapshot_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::InvalidDBClusterSnapshotStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::InvalidDBSnapshotStateFault(_)
+        )
+    }
+    pub fn is_invalid_restore_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::InvalidRestoreFault(_)
+        )
+    }
+    pub fn is_invalid_subnet(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::InvalidSubnet(_)
+        )
+    }
+    pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::InvalidVPCNetworkStateFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::KMSKeyNotAccessibleFault(_)
+        )
+    }
+    pub fn is_option_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::OptionGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_storage_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBClusterToPointInTimeErrorKind::StorageQuotaExceededFault(_)
+        )
     }
 }
 impl std::error::Error for RestoreDBClusterToPointInTimeError {
@@ -10964,6 +13455,126 @@ impl RestoreDBInstanceFromDBSnapshotError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::AuthorizationNotFoundFault(_)
+        )
+    }
+    pub fn is_backup_policy_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::BackupPolicyNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::DBInstanceAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_security_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::DBSecurityGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::DBSnapshotNotFoundFault(_)
+        )
+    }
+    pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+        )
+    }
+    pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::DBSubnetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_domain_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::DomainNotFoundFault(_)
+        )
+    }
+    pub fn is_instance_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::InstanceQuotaExceededFault(_)
+        )
+    }
+    pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::InsufficientDBInstanceCapacityFault(_)
+        )
+    }
+    pub fn is_invalid_db_snapshot_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::InvalidDBSnapshotStateFault(_)
+        )
+    }
+    pub fn is_invalid_restore_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::InvalidRestoreFault(_)
+        )
+    }
+    pub fn is_invalid_subnet(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::InvalidSubnet(_)
+        )
+    }
+    pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::InvalidVPCNetworkStateFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::KMSKeyNotAccessibleFault(_)
+        )
+    }
+    pub fn is_option_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::OptionGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::ProvisionedIopsNotAvailableInAZFault(_)
+        )
+    }
+    pub fn is_storage_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::StorageQuotaExceededFault(_)
+        )
+    }
+    pub fn is_storage_type_not_supported_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromDBSnapshotErrorKind::StorageTypeNotSupportedFault(_)
+        )
+    }
 }
 impl std::error::Error for RestoreDBInstanceFromDBSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -11131,6 +13742,108 @@ impl RestoreDBInstanceFromS3Error {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::AuthorizationNotFoundFault(_)
+        )
+    }
+    pub fn is_backup_policy_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::BackupPolicyNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::DBInstanceAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_security_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::DBSecurityGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+        )
+    }
+    pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::DBSubnetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_instance_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::InstanceQuotaExceededFault(_)
+        )
+    }
+    pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::InsufficientDBInstanceCapacityFault(_)
+        )
+    }
+    pub fn is_invalid_s3_bucket_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::InvalidS3BucketFault(_)
+        )
+    }
+    pub fn is_invalid_subnet(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::InvalidSubnet(_)
+        )
+    }
+    pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::InvalidVPCNetworkStateFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::KMSKeyNotAccessibleFault(_)
+        )
+    }
+    pub fn is_option_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::OptionGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::ProvisionedIopsNotAvailableInAZFault(_)
+        )
+    }
+    pub fn is_storage_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::StorageQuotaExceededFault(_)
+        )
+    }
+    pub fn is_storage_type_not_supported_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceFromS3ErrorKind::StorageTypeNotSupportedFault(_)
+        )
     }
 }
 impl std::error::Error for RestoreDBInstanceFromS3Error {
@@ -11309,6 +14022,138 @@ impl RestoreDBInstanceToPointInTimeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::AuthorizationNotFoundFault(_)
+        )
+    }
+    pub fn is_backup_policy_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::BackupPolicyNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::DBInstanceAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_db_instance_automated_backup_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::DBInstanceAutomatedBackupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_db_parameter_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::DBParameterGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_security_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::DBSecurityGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+        )
+    }
+    pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::DBSubnetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_domain_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::DomainNotFoundFault(_)
+        )
+    }
+    pub fn is_instance_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::InstanceQuotaExceededFault(_)
+        )
+    }
+    pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::InsufficientDBInstanceCapacityFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
+    pub fn is_invalid_restore_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::InvalidRestoreFault(_)
+        )
+    }
+    pub fn is_invalid_subnet(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::InvalidSubnet(_)
+        )
+    }
+    pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::InvalidVPCNetworkStateFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::KMSKeyNotAccessibleFault(_)
+        )
+    }
+    pub fn is_option_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::OptionGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_point_in_time_restore_not_enabled_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::PointInTimeRestoreNotEnabledFault(_)
+        )
+    }
+    pub fn is_provisioned_iops_not_available_in_az_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::ProvisionedIopsNotAvailableInAZFault(_)
+        )
+    }
+    pub fn is_storage_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::StorageQuotaExceededFault(_)
+        )
+    }
+    pub fn is_storage_type_not_supported_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RestoreDBInstanceToPointInTimeErrorKind::StorageTypeNotSupportedFault(_)
+        )
+    }
 }
 impl std::error::Error for RestoreDBInstanceToPointInTimeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -11453,6 +14298,24 @@ impl RevokeDBSecurityGroupIngressError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RevokeDBSecurityGroupIngressErrorKind::AuthorizationNotFoundFault(_)
+        )
+    }
+    pub fn is_db_security_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RevokeDBSecurityGroupIngressErrorKind::DBSecurityGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_security_group_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RevokeDBSecurityGroupIngressErrorKind::InvalidDBSecurityGroupStateFault(_)
+        )
+    }
 }
 impl std::error::Error for RevokeDBSecurityGroupIngressError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -11546,6 +14409,42 @@ impl StartActivityStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartActivityStreamErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartActivityStreamErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartActivityStreamErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartActivityStreamErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartActivityStreamErrorKind::KMSKeyNotAccessibleFault(_)
+        )
+    }
+    pub fn is_resource_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartActivityStreamErrorKind::ResourceNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for StartActivityStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -11629,6 +14528,24 @@ impl StartDBClusterError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBClusterErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBClusterErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBClusterErrorKind::InvalidDBInstanceStateFault(_)
+        )
     }
 }
 impl std::error::Error for StartDBClusterError {
@@ -11726,6 +14643,69 @@ impl StartDBInstanceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBInstanceErrorKind::AuthorizationNotFoundFault(_)
+        )
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBInstanceErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBInstanceErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_db_subnet_group_does_not_cover_enough_a_zs(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBInstanceErrorKind::DBSubnetGroupDoesNotCoverEnoughAZs(_)
+        )
+    }
+    pub fn is_db_subnet_group_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBInstanceErrorKind::DBSubnetGroupNotFoundFault(_)
+        )
+    }
+    pub fn is_insufficient_db_instance_capacity_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBInstanceErrorKind::InsufficientDBInstanceCapacityFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBInstanceErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBInstanceErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
+    pub fn is_invalid_subnet(&self) -> bool {
+        matches!(&self.kind, StartDBInstanceErrorKind::InvalidSubnet(_))
+    }
+    pub fn is_invalid_vpc_network_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBInstanceErrorKind::InvalidVPCNetworkStateFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBInstanceErrorKind::KMSKeyNotAccessibleFault(_)
+        )
     }
 }
 impl std::error::Error for StartDBInstanceError {
@@ -11837,6 +14817,33 @@ impl StartDBInstanceAutomatedBackupsReplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_instance_automated_backup_quota_exceeded_fault(&self) -> bool {
+        matches!(&self.kind, StartDBInstanceAutomatedBackupsReplicationErrorKind::DBInstanceAutomatedBackupQuotaExceededFault(_))
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBInstanceAutomatedBackupsReplicationErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBInstanceAutomatedBackupsReplicationErrorKind::KMSKeyNotAccessibleFault(_)
+        )
+    }
+    pub fn is_storage_type_not_supported_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDBInstanceAutomatedBackupsReplicationErrorKind::StorageTypeNotSupportedFault(_)
+        )
+    }
 }
 impl std::error::Error for StartDBInstanceAutomatedBackupsReplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -11944,6 +14951,60 @@ impl StartExportTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExportTaskErrorKind::DBClusterSnapshotNotFoundFault(_)
+        )
+    }
+    pub fn is_db_snapshot_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExportTaskErrorKind::DBSnapshotNotFoundFault(_)
+        )
+    }
+    pub fn is_export_task_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExportTaskErrorKind::ExportTaskAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_iam_role_missing_permissions_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExportTaskErrorKind::IamRoleMissingPermissionsFault(_)
+        )
+    }
+    pub fn is_iam_role_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExportTaskErrorKind::IamRoleNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_export_only_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExportTaskErrorKind::InvalidExportOnlyFault(_)
+        )
+    }
+    pub fn is_invalid_export_source_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExportTaskErrorKind::InvalidExportSourceStateFault(_)
+        )
+    }
+    pub fn is_invalid_s3_bucket_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExportTaskErrorKind::InvalidS3BucketFault(_)
+        )
+    }
+    pub fn is_kms_key_not_accessible_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartExportTaskErrorKind::KMSKeyNotAccessibleFault(_)
+        )
+    }
 }
 impl std::error::Error for StartExportTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -12035,6 +15096,36 @@ impl StopActivityStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopActivityStreamErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopActivityStreamErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopActivityStreamErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopActivityStreamErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
+    pub fn is_resource_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopActivityStreamErrorKind::ResourceNotFoundFault(_)
+        )
+    }
 }
 impl std::error::Error for StopActivityStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -12117,6 +15208,24 @@ impl StopDBClusterError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_cluster_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopDBClusterErrorKind::DBClusterNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopDBClusterErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopDBClusterErrorKind::InvalidDBInstanceStateFault(_)
+        )
     }
 }
 impl std::error::Error for StopDBClusterError {
@@ -12202,6 +15311,36 @@ impl StopDBInstanceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopDBInstanceErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_db_snapshot_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopDBInstanceErrorKind::DBSnapshotAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_invalid_db_cluster_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopDBInstanceErrorKind::InvalidDBClusterStateFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopDBInstanceErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
+    pub fn is_snapshot_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopDBInstanceErrorKind::SnapshotQuotaExceededFault(_)
+        )
     }
 }
 impl std::error::Error for StopDBInstanceError {
@@ -12291,6 +15430,18 @@ impl StopDBInstanceAutomatedBackupsReplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_db_instance_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopDBInstanceAutomatedBackupsReplicationErrorKind::DBInstanceNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_db_instance_state_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopDBInstanceAutomatedBackupsReplicationErrorKind::InvalidDBInstanceStateFault(_)
+        )
+    }
 }
 impl std::error::Error for StopDBInstanceAutomatedBackupsReplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -12345,12 +15496,12 @@ pub mod invalid_db_instance_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDBInstanceStateFault`](crate::error::InvalidDBInstanceStateFault)
@@ -12407,12 +15558,12 @@ pub mod db_instance_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBInstanceNotFoundFault`](crate::error::DBInstanceNotFoundFault)
@@ -12468,12 +15619,12 @@ pub mod snapshot_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`SnapshotQuotaExceededFault`](crate::error::SnapshotQuotaExceededFault)
@@ -12528,12 +15679,12 @@ pub mod invalid_db_cluster_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDBClusterStateFault`](crate::error::InvalidDBClusterStateFault)
@@ -12590,12 +15741,12 @@ pub mod db_snapshot_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSnapshotAlreadyExistsFault`](crate::error::DBSnapshotAlreadyExistsFault)
@@ -12652,12 +15803,12 @@ pub mod db_cluster_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterNotFoundFault`](crate::error::DBClusterNotFoundFault)
@@ -12712,12 +15863,12 @@ pub mod resource_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundFault`](crate::error::ResourceNotFoundFault)
@@ -12772,12 +15923,12 @@ pub mod kms_key_not_accessible_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSKeyNotAccessibleFault`](crate::error::KMSKeyNotAccessibleFault)
@@ -12833,12 +15984,12 @@ pub mod invalid_s3_bucket_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidS3BucketFault`](crate::error::InvalidS3BucketFault)
@@ -12893,12 +16044,12 @@ pub mod invalid_export_source_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidExportSourceStateFault`](crate::error::InvalidExportSourceStateFault)
@@ -12953,12 +16104,12 @@ pub mod invalid_export_only_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidExportOnlyFault`](crate::error::InvalidExportOnlyFault)
@@ -13013,12 +16164,12 @@ pub mod iam_role_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`IamRoleNotFoundFault`](crate::error::IamRoleNotFoundFault)
@@ -13073,12 +16224,12 @@ pub mod iam_role_missing_permissions_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`IamRoleMissingPermissionsFault`](crate::error::IamRoleMissingPermissionsFault)
@@ -13133,12 +16284,12 @@ pub mod export_task_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ExportTaskAlreadyExistsFault`](crate::error::ExportTaskAlreadyExistsFault)
@@ -13195,12 +16346,12 @@ pub mod db_snapshot_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSnapshotNotFoundFault`](crate::error::DBSnapshotNotFoundFault)
@@ -13257,12 +16408,12 @@ pub mod db_cluster_snapshot_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterSnapshotNotFoundFault`](crate::error::DBClusterSnapshotNotFoundFault)
@@ -13318,12 +16469,12 @@ pub mod storage_type_not_supported_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`StorageTypeNotSupportedFault`](crate::error::StorageTypeNotSupportedFault)
@@ -13380,12 +16531,12 @@ pub mod db_instance_automated_backup_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBInstanceAutomatedBackupQuotaExceededFault`](crate::error::DBInstanceAutomatedBackupQuotaExceededFault)
@@ -13441,12 +16592,12 @@ pub mod invalid_vpc_network_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidVPCNetworkStateFault`](crate::error::InvalidVPCNetworkStateFault)
@@ -13501,12 +16652,12 @@ pub mod invalid_subnet {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidSubnet`](crate::error::InvalidSubnet)
@@ -13562,12 +16713,12 @@ pub mod insufficient_db_instance_capacity_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InsufficientDBInstanceCapacityFault`](crate::error::InsufficientDBInstanceCapacityFault)
@@ -13624,12 +16775,12 @@ pub mod db_subnet_group_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSubnetGroupNotFoundFault`](crate::error::DBSubnetGroupNotFoundFault)
@@ -13684,12 +16835,12 @@ pub mod db_subnet_group_does_not_cover_enough_a_zs {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSubnetGroupDoesNotCoverEnoughAZs`](crate::error::DBSubnetGroupDoesNotCoverEnoughAZs)
@@ -13747,12 +16898,12 @@ pub mod authorization_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AuthorizationNotFoundFault`](crate::error::AuthorizationNotFoundFault)
@@ -13807,12 +16958,12 @@ pub mod invalid_db_security_group_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDBSecurityGroupStateFault`](crate::error::InvalidDBSecurityGroupStateFault)
@@ -13869,12 +17020,12 @@ pub mod db_security_group_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSecurityGroupNotFoundFault`](crate::error::DBSecurityGroupNotFoundFault)
@@ -13930,12 +17081,12 @@ pub mod storage_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`StorageQuotaExceededFault`](crate::error::StorageQuotaExceededFault)
@@ -13990,12 +17141,12 @@ pub mod provisioned_iops_not_available_in_az_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ProvisionedIopsNotAvailableInAZFault`](crate::error::ProvisionedIopsNotAvailableInAZFault)
@@ -14054,12 +17205,12 @@ pub mod point_in_time_restore_not_enabled_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`PointInTimeRestoreNotEnabledFault`](crate::error::PointInTimeRestoreNotEnabledFault)
@@ -14114,12 +17265,12 @@ pub mod option_group_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OptionGroupNotFoundFault`](crate::error::OptionGroupNotFoundFault)
@@ -14174,12 +17325,12 @@ pub mod invalid_restore_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidRestoreFault`](crate::error::InvalidRestoreFault)
@@ -14235,12 +17386,12 @@ pub mod instance_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InstanceQuotaExceededFault`](crate::error::InstanceQuotaExceededFault)
@@ -14297,12 +17448,12 @@ pub mod domain_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DomainNotFoundFault`](crate::error::DomainNotFoundFault)
@@ -14360,12 +17511,12 @@ pub mod db_parameter_group_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBParameterGroupNotFoundFault`](crate::error::DBParameterGroupNotFoundFault)
@@ -14420,12 +17571,12 @@ pub mod db_instance_automated_backup_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBInstanceAutomatedBackupNotFoundFault`](crate::error::DBInstanceAutomatedBackupNotFoundFault)
@@ -14480,12 +17631,12 @@ pub mod db_instance_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBInstanceAlreadyExistsFault`](crate::error::DBInstanceAlreadyExistsFault)
@@ -14539,12 +17690,12 @@ pub mod backup_policy_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`BackupPolicyNotFoundFault`](crate::error::BackupPolicyNotFoundFault)
@@ -14599,12 +17750,12 @@ pub mod invalid_db_snapshot_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDBSnapshotStateFault`](crate::error::InvalidDBSnapshotStateFault)
@@ -14659,12 +17810,12 @@ pub mod invalid_db_cluster_snapshot_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDBClusterSnapshotStateFault`](crate::error::InvalidDBClusterSnapshotStateFault)
@@ -14721,12 +17872,12 @@ pub mod insufficient_storage_cluster_capacity_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InsufficientStorageClusterCapacityFault`](crate::error::InsufficientStorageClusterCapacityFault)
@@ -14781,12 +17932,12 @@ pub mod insufficient_db_cluster_capacity_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InsufficientDBClusterCapacityFault`](crate::error::InsufficientDBClusterCapacityFault)
@@ -14842,12 +17993,12 @@ pub mod db_cluster_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterQuotaExceededFault`](crate::error::DBClusterQuotaExceededFault)
@@ -14904,12 +18055,12 @@ pub mod db_cluster_parameter_group_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterParameterGroupNotFoundFault`](crate::error::DBClusterParameterGroupNotFoundFault)
@@ -14964,12 +18115,12 @@ pub mod db_cluster_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterAlreadyExistsFault`](crate::error::DBClusterAlreadyExistsFault)
@@ -15024,12 +18175,12 @@ pub mod invalid_db_subnet_group_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDBSubnetGroupStateFault`](crate::error::InvalidDBSubnetGroupStateFault)
@@ -15086,12 +18237,12 @@ pub mod invalid_db_parameter_group_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDBParameterGroupStateFault`](crate::error::InvalidDBParameterGroupStateFault)
@@ -15146,12 +18297,12 @@ pub mod db_proxy_target_group_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBProxyTargetGroupNotFoundFault`](crate::error::DBProxyTargetGroupNotFoundFault)
@@ -15206,12 +18357,12 @@ pub mod db_proxy_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBProxyNotFoundFault`](crate::error::DBProxyNotFoundFault)
@@ -15266,12 +18417,12 @@ pub mod subscription_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`SubscriptionNotFoundFault`](crate::error::SubscriptionNotFoundFault)
@@ -15326,12 +18477,12 @@ pub mod source_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`SourceNotFoundFault`](crate::error::SourceNotFoundFault)
@@ -15387,12 +18538,12 @@ pub mod db_instance_role_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBInstanceRoleNotFoundFault`](crate::error::DBInstanceRoleNotFoundFault)
@@ -15447,12 +18598,12 @@ pub mod db_cluster_role_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterRoleNotFoundFault`](crate::error::DBClusterRoleNotFoundFault)
@@ -15507,12 +18658,12 @@ pub mod invalid_global_cluster_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidGlobalClusterStateFault`](crate::error::InvalidGlobalClusterStateFault)
@@ -15567,12 +18718,12 @@ pub mod global_cluster_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`GlobalClusterNotFoundFault`](crate::error::GlobalClusterNotFoundFault)
@@ -15627,12 +18778,12 @@ pub mod invalid_db_proxy_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDBProxyStateFault`](crate::error::InvalidDBProxyStateFault)
@@ -15689,12 +18840,12 @@ pub mod insufficient_available_i_ps_in_subnet_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InsufficientAvailableIPsInSubnetFault`](crate::error::InsufficientAvailableIPsInSubnetFault)
@@ -15749,12 +18900,12 @@ pub mod db_proxy_target_already_registered_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBProxyTargetAlreadyRegisteredFault`](crate::error::DBProxyTargetAlreadyRegisteredFault)
@@ -15809,12 +18960,12 @@ pub mod reserved_db_instances_offering_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ReservedDBInstancesOfferingNotFoundFault`](crate::error::ReservedDBInstancesOfferingNotFoundFault)
@@ -15869,12 +19020,12 @@ pub mod reserved_db_instance_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ReservedDBInstanceQuotaExceededFault`](crate::error::ReservedDBInstanceQuotaExceededFault)
@@ -15929,12 +19080,12 @@ pub mod reserved_db_instance_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ReservedDBInstanceAlreadyExistsFault`](crate::error::ReservedDBInstanceAlreadyExistsFault)
@@ -15991,12 +19142,12 @@ pub mod invalid_option_group_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidOptionGroupStateFault`](crate::error::InvalidOptionGroupStateFault)
@@ -16051,12 +19202,12 @@ pub mod subscription_category_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`SubscriptionCategoryNotFoundFault`](crate::error::SubscriptionCategoryNotFoundFault)
@@ -16111,12 +19262,12 @@ pub mod sns_topic_arn_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`SNSTopicArnNotFoundFault`](crate::error::SNSTopicArnNotFoundFault)
@@ -16171,12 +19322,12 @@ pub mod sns_no_authorization_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`SNSNoAuthorizationFault`](crate::error::SNSNoAuthorizationFault)
@@ -16231,12 +19382,12 @@ pub mod sns_invalid_topic_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`SNSInvalidTopicFault`](crate::error::SNSInvalidTopicFault)
@@ -16291,12 +19442,12 @@ pub mod event_subscription_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`EventSubscriptionQuotaExceededFault`](crate::error::EventSubscriptionQuotaExceededFault)
@@ -16351,12 +19502,12 @@ pub mod subnet_already_in_use {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`SubnetAlreadyInUse`](crate::error::SubnetAlreadyInUse)
@@ -16412,12 +19563,12 @@ pub mod db_subnet_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSubnetQuotaExceededFault`](crate::error::DBSubnetQuotaExceededFault)
@@ -16472,12 +19623,12 @@ pub mod shared_snapshot_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`SharedSnapshotQuotaExceededFault`](crate::error::SharedSnapshotQuotaExceededFault)
@@ -16532,12 +19683,12 @@ pub mod invalid_db_proxy_endpoint_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDBProxyEndpointStateFault`](crate::error::InvalidDBProxyEndpointStateFault)
@@ -16592,12 +19743,12 @@ pub mod db_proxy_endpoint_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBProxyEndpointNotFoundFault`](crate::error::DBProxyEndpointNotFoundFault)
@@ -16652,12 +19803,12 @@ pub mod db_proxy_endpoint_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBProxyEndpointAlreadyExistsFault`](crate::error::DBProxyEndpointAlreadyExistsFault)
@@ -16712,12 +19863,12 @@ pub mod db_proxy_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBProxyAlreadyExistsFault`](crate::error::DBProxyAlreadyExistsFault)
@@ -16773,12 +19924,12 @@ pub mod db_upgrade_dependency_failure_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBUpgradeDependencyFailureFault`](crate::error::DBUpgradeDependencyFailureFault)
@@ -16836,12 +19987,12 @@ pub mod certificate_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CertificateNotFoundFault`](crate::error::CertificateNotFoundFault)
@@ -16896,12 +20047,12 @@ pub mod invalid_db_cluster_endpoint_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDBClusterEndpointStateFault`](crate::error::InvalidDBClusterEndpointStateFault)
@@ -16956,12 +20107,12 @@ pub mod db_cluster_endpoint_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterEndpointNotFoundFault`](crate::error::DBClusterEndpointNotFoundFault)
@@ -17019,12 +20170,12 @@ pub mod invalid_db_cluster_capacity_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDBClusterCapacityFault`](crate::error::InvalidDBClusterCapacityFault)
@@ -17079,12 +20230,12 @@ pub mod installation_media_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InstallationMediaAlreadyExistsFault`](crate::error::InstallationMediaAlreadyExistsFault)
@@ -17141,12 +20292,12 @@ pub mod custom_availability_zone_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CustomAvailabilityZoneNotFoundFault`](crate::error::CustomAvailabilityZoneNotFoundFault)
@@ -17202,12 +20353,12 @@ pub mod db_log_file_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBLogFileNotFoundFault`](crate::error::DBLogFileNotFoundFault)
@@ -17262,12 +20413,12 @@ pub mod reserved_db_instance_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ReservedDBInstanceNotFoundFault`](crate::error::ReservedDBInstanceNotFoundFault)
@@ -17323,12 +20474,12 @@ pub mod installation_media_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InstallationMediaNotFoundFault`](crate::error::InstallationMediaNotFoundFault)
@@ -17383,12 +20534,12 @@ pub mod export_task_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ExportTaskNotFoundFault`](crate::error::ExportTaskNotFoundFault)
@@ -17443,12 +20594,12 @@ pub mod db_proxy_target_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBProxyTargetNotFoundFault`](crate::error::DBProxyTargetNotFoundFault)
@@ -17504,12 +20655,12 @@ pub mod db_cluster_backtrack_not_found_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterBacktrackNotFoundFault`](crate::error::DBClusterBacktrackNotFoundFault)
@@ -17564,12 +20715,12 @@ pub mod invalid_event_subscription_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidEventSubscriptionStateFault`](crate::error::InvalidEventSubscriptionStateFault)
@@ -17626,12 +20777,12 @@ pub mod invalid_db_subnet_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDBSubnetStateFault`](crate::error::InvalidDBSubnetStateFault)
@@ -17687,12 +20838,12 @@ pub mod invalid_db_instance_automated_backup_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDBInstanceAutomatedBackupStateFault`](crate::error::InvalidDBInstanceAutomatedBackupStateFault)
@@ -17747,12 +20898,12 @@ pub mod db_cluster_snapshot_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterSnapshotAlreadyExistsFault`](crate::error::DBClusterSnapshotAlreadyExistsFault)
@@ -17807,12 +20958,12 @@ pub mod option_group_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OptionGroupQuotaExceededFault`](crate::error::OptionGroupQuotaExceededFault)
@@ -17867,12 +21018,12 @@ pub mod option_group_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OptionGroupAlreadyExistsFault`](crate::error::OptionGroupAlreadyExistsFault)
@@ -17927,12 +21078,12 @@ pub mod global_cluster_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`GlobalClusterQuotaExceededFault`](crate::error::GlobalClusterQuotaExceededFault)
@@ -17987,12 +21138,12 @@ pub mod global_cluster_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`GlobalClusterAlreadyExistsFault`](crate::error::GlobalClusterAlreadyExistsFault)
@@ -18047,12 +21198,12 @@ pub mod subscription_already_exist_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`SubscriptionAlreadyExistFault`](crate::error::SubscriptionAlreadyExistFault)
@@ -18108,12 +21259,12 @@ pub mod db_subnet_group_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSubnetGroupQuotaExceededFault`](crate::error::DBSubnetGroupQuotaExceededFault)
@@ -18170,12 +21321,12 @@ pub mod db_subnet_group_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSubnetGroupAlreadyExistsFault`](crate::error::DBSubnetGroupAlreadyExistsFault)
@@ -18231,12 +21382,12 @@ pub mod db_security_group_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSecurityGroupQuotaExceededFault`](crate::error::DBSecurityGroupQuotaExceededFault)
@@ -18291,12 +21442,12 @@ pub mod db_security_group_not_supported_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSecurityGroupNotSupportedFault`](crate::error::DBSecurityGroupNotSupportedFault)
@@ -18354,12 +21505,12 @@ pub mod db_security_group_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSecurityGroupAlreadyExistsFault`](crate::error::DBSecurityGroupAlreadyExistsFault)
@@ -18414,12 +21565,12 @@ pub mod db_proxy_endpoint_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBProxyEndpointQuotaExceededFault`](crate::error::DBProxyEndpointQuotaExceededFault)
@@ -18474,12 +21625,12 @@ pub mod db_proxy_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBProxyQuotaExceededFault`](crate::error::DBProxyQuotaExceededFault)
@@ -18535,12 +21686,12 @@ pub mod db_parameter_group_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBParameterGroupQuotaExceededFault`](crate::error::DBParameterGroupQuotaExceededFault)
@@ -18595,12 +21746,12 @@ pub mod db_parameter_group_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBParameterGroupAlreadyExistsFault`](crate::error::DBParameterGroupAlreadyExistsFault)
@@ -18656,12 +21807,12 @@ pub mod invalid_db_subnet_group_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidDBSubnetGroupFault`](crate::error::InvalidDBSubnetGroupFault)
@@ -18717,12 +21868,12 @@ pub mod db_subnet_group_not_allowed_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSubnetGroupNotAllowedFault`](crate::error::DBSubnetGroupNotAllowedFault)
@@ -18777,12 +21928,12 @@ pub mod db_cluster_endpoint_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterEndpointQuotaExceededFault`](crate::error::DBClusterEndpointQuotaExceededFault)
@@ -18837,12 +21988,12 @@ pub mod db_cluster_endpoint_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterEndpointAlreadyExistsFault`](crate::error::DBClusterEndpointAlreadyExistsFault)
@@ -18897,12 +22048,12 @@ pub mod custom_availability_zone_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CustomAvailabilityZoneQuotaExceededFault`](crate::error::CustomAvailabilityZoneQuotaExceededFault)
@@ -18959,12 +22110,12 @@ pub mod custom_availability_zone_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CustomAvailabilityZoneAlreadyExistsFault`](crate::error::CustomAvailabilityZoneAlreadyExistsFault)
@@ -19019,12 +22170,12 @@ pub mod invalid_export_task_state_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidExportTaskStateFault`](crate::error::InvalidExportTaskStateFault)
@@ -19079,12 +22230,12 @@ pub mod authorization_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AuthorizationQuotaExceededFault`](crate::error::AuthorizationQuotaExceededFault)
@@ -19140,12 +22291,12 @@ pub mod authorization_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AuthorizationAlreadyExistsFault`](crate::error::AuthorizationAlreadyExistsFault)
@@ -19200,12 +22351,12 @@ pub mod db_instance_role_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBInstanceRoleQuotaExceededFault`](crate::error::DBInstanceRoleQuotaExceededFault)
@@ -19260,12 +22411,12 @@ pub mod db_instance_role_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBInstanceRoleAlreadyExistsFault`](crate::error::DBInstanceRoleAlreadyExistsFault)
@@ -19320,12 +22471,12 @@ pub mod db_cluster_role_quota_exceeded_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterRoleQuotaExceededFault`](crate::error::DBClusterRoleQuotaExceededFault)
@@ -19380,12 +22531,12 @@ pub mod db_cluster_role_already_exists_fault {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterRoleAlreadyExistsFault`](crate::error::DBClusterRoleAlreadyExistsFault)

@@ -2,7 +2,10 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_abort_multipart_upload_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AbortMultipartUploadOutput, crate::error::AbortMultipartUploadError> {
+) -> std::result::Result<
+    crate::output::AbortMultipartUploadOutput,
+    crate::error::AbortMultipartUploadError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AbortMultipartUploadError::unhandled)?;
     let error_code = match generic.code() {
@@ -31,7 +34,10 @@ pub fn parse_abort_multipart_upload_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_abort_multipart_upload_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AbortMultipartUploadOutput, crate::error::AbortMultipartUploadError> {
+) -> std::result::Result<
+    crate::output::AbortMultipartUploadOutput,
+    crate::error::AbortMultipartUploadError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::abort_multipart_upload_output::Builder::default();
@@ -53,8 +59,10 @@ pub fn parse_abort_multipart_upload_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_complete_multipart_upload_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CompleteMultipartUploadOutput, crate::error::CompleteMultipartUploadError>
-{
+) -> std::result::Result<
+    crate::output::CompleteMultipartUploadOutput,
+    crate::error::CompleteMultipartUploadError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CompleteMultipartUploadError::unhandled)?;
     Err(crate::error::CompleteMultipartUploadError::generic(generic))
@@ -63,8 +71,10 @@ pub fn parse_complete_multipart_upload_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_complete_multipart_upload_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CompleteMultipartUploadOutput, crate::error::CompleteMultipartUploadError>
-{
+) -> std::result::Result<
+    crate::output::CompleteMultipartUploadOutput,
+    crate::error::CompleteMultipartUploadError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::complete_multipart_upload_output::Builder::default();
@@ -123,7 +133,7 @@ pub fn parse_complete_multipart_upload_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_object_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CopyObjectOutput, crate::error::CopyObjectError> {
+) -> std::result::Result<crate::output::CopyObjectOutput, crate::error::CopyObjectError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CopyObjectError::unhandled)?;
     let error_code = match generic.code() {
@@ -152,7 +162,7 @@ pub fn parse_copy_object_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_object_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CopyObjectOutput, crate::error::CopyObjectError> {
+) -> std::result::Result<crate::output::CopyObjectOutput, crate::error::CopyObjectError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::copy_object_output::Builder::default();
@@ -223,7 +233,7 @@ pub fn parse_copy_object_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_bucket_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError> {
+) -> std::result::Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateBucketError::unhandled)?;
     let error_code = match generic.code() {
@@ -266,7 +276,7 @@ pub fn parse_create_bucket_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_bucket_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError> {
+) -> std::result::Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_bucket_output::Builder::default();
@@ -287,7 +297,10 @@ pub fn parse_create_bucket_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_multipart_upload_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateMultipartUploadOutput, crate::error::CreateMultipartUploadError> {
+) -> std::result::Result<
+    crate::output::CreateMultipartUploadOutput,
+    crate::error::CreateMultipartUploadError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateMultipartUploadError::unhandled)?;
     Err(crate::error::CreateMultipartUploadError::generic(generic))
@@ -296,7 +309,10 @@ pub fn parse_create_multipart_upload_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_multipart_upload_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateMultipartUploadOutput, crate::error::CreateMultipartUploadError> {
+) -> std::result::Result<
+    crate::output::CreateMultipartUploadOutput,
+    crate::error::CreateMultipartUploadError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_multipart_upload_output::Builder::default();
@@ -365,7 +381,7 @@ pub fn parse_create_multipart_upload_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError> {
+) -> std::result::Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteBucketError::unhandled)?;
     Err(crate::error::DeleteBucketError::generic(generic))
@@ -374,7 +390,7 @@ pub fn parse_delete_bucket_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError> {
+) -> std::result::Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_output::Builder::default();
@@ -386,7 +402,7 @@ pub fn parse_delete_bucket_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_analytics_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteBucketAnalyticsConfigurationOutput,
     crate::error::DeleteBucketAnalyticsConfigurationError,
 > {
@@ -398,7 +414,7 @@ pub fn parse_delete_bucket_analytics_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_analytics_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteBucketAnalyticsConfigurationOutput,
     crate::error::DeleteBucketAnalyticsConfigurationError,
 > {
@@ -414,7 +430,8 @@ pub fn parse_delete_bucket_analytics_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_cors_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteBucketCorsOutput, crate::error::DeleteBucketCorsError> {
+) -> std::result::Result<crate::output::DeleteBucketCorsOutput, crate::error::DeleteBucketCorsError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteBucketCorsError::unhandled)?;
     Err(crate::error::DeleteBucketCorsError::generic(generic))
@@ -423,7 +440,8 @@ pub fn parse_delete_bucket_cors_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_cors_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteBucketCorsOutput, crate::error::DeleteBucketCorsError> {
+) -> std::result::Result<crate::output::DeleteBucketCorsOutput, crate::error::DeleteBucketCorsError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_cors_output::Builder::default();
@@ -435,8 +453,10 @@ pub fn parse_delete_bucket_cors_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_encryption_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteBucketEncryptionOutput, crate::error::DeleteBucketEncryptionError>
-{
+) -> std::result::Result<
+    crate::output::DeleteBucketEncryptionOutput,
+    crate::error::DeleteBucketEncryptionError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteBucketEncryptionError::unhandled)?;
     Err(crate::error::DeleteBucketEncryptionError::generic(generic))
@@ -445,8 +465,10 @@ pub fn parse_delete_bucket_encryption_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_encryption_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteBucketEncryptionOutput, crate::error::DeleteBucketEncryptionError>
-{
+) -> std::result::Result<
+    crate::output::DeleteBucketEncryptionOutput,
+    crate::error::DeleteBucketEncryptionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_encryption_output::Builder::default();
@@ -458,7 +480,7 @@ pub fn parse_delete_bucket_encryption_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_intelligent_tiering_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteBucketIntelligentTieringConfigurationOutput,
     crate::error::DeleteBucketIntelligentTieringConfigurationError,
 > {
@@ -470,7 +492,7 @@ pub fn parse_delete_bucket_intelligent_tiering_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_intelligent_tiering_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteBucketIntelligentTieringConfigurationOutput,
     crate::error::DeleteBucketIntelligentTieringConfigurationError,
 > {
@@ -487,7 +509,7 @@ pub fn parse_delete_bucket_intelligent_tiering_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_inventory_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteBucketInventoryConfigurationOutput,
     crate::error::DeleteBucketInventoryConfigurationError,
 > {
@@ -499,7 +521,7 @@ pub fn parse_delete_bucket_inventory_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_inventory_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteBucketInventoryConfigurationOutput,
     crate::error::DeleteBucketInventoryConfigurationError,
 > {
@@ -515,7 +537,10 @@ pub fn parse_delete_bucket_inventory_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_lifecycle_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteBucketLifecycleOutput, crate::error::DeleteBucketLifecycleError> {
+) -> std::result::Result<
+    crate::output::DeleteBucketLifecycleOutput,
+    crate::error::DeleteBucketLifecycleError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteBucketLifecycleError::unhandled)?;
     Err(crate::error::DeleteBucketLifecycleError::generic(generic))
@@ -524,7 +549,10 @@ pub fn parse_delete_bucket_lifecycle_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_lifecycle_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteBucketLifecycleOutput, crate::error::DeleteBucketLifecycleError> {
+) -> std::result::Result<
+    crate::output::DeleteBucketLifecycleOutput,
+    crate::error::DeleteBucketLifecycleError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_lifecycle_output::Builder::default();
@@ -536,7 +564,7 @@ pub fn parse_delete_bucket_lifecycle_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_metrics_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteBucketMetricsConfigurationOutput,
     crate::error::DeleteBucketMetricsConfigurationError,
 > {
@@ -548,7 +576,7 @@ pub fn parse_delete_bucket_metrics_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_metrics_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteBucketMetricsConfigurationOutput,
     crate::error::DeleteBucketMetricsConfigurationError,
 > {
@@ -564,7 +592,7 @@ pub fn parse_delete_bucket_metrics_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_ownership_controls_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteBucketOwnershipControlsOutput,
     crate::error::DeleteBucketOwnershipControlsError,
 > {
@@ -578,7 +606,7 @@ pub fn parse_delete_bucket_ownership_controls_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_ownership_controls_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteBucketOwnershipControlsOutput,
     crate::error::DeleteBucketOwnershipControlsError,
 > {
@@ -593,7 +621,10 @@ pub fn parse_delete_bucket_ownership_controls_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteBucketPolicyOutput, crate::error::DeleteBucketPolicyError> {
+) -> std::result::Result<
+    crate::output::DeleteBucketPolicyOutput,
+    crate::error::DeleteBucketPolicyError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteBucketPolicyError::unhandled)?;
     Err(crate::error::DeleteBucketPolicyError::generic(generic))
@@ -602,7 +633,10 @@ pub fn parse_delete_bucket_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteBucketPolicyOutput, crate::error::DeleteBucketPolicyError> {
+) -> std::result::Result<
+    crate::output::DeleteBucketPolicyOutput,
+    crate::error::DeleteBucketPolicyError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_policy_output::Builder::default();
@@ -614,8 +648,10 @@ pub fn parse_delete_bucket_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_replication_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteBucketReplicationOutput, crate::error::DeleteBucketReplicationError>
-{
+) -> std::result::Result<
+    crate::output::DeleteBucketReplicationOutput,
+    crate::error::DeleteBucketReplicationError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteBucketReplicationError::unhandled)?;
     Err(crate::error::DeleteBucketReplicationError::generic(generic))
@@ -624,8 +660,10 @@ pub fn parse_delete_bucket_replication_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_replication_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteBucketReplicationOutput, crate::error::DeleteBucketReplicationError>
-{
+) -> std::result::Result<
+    crate::output::DeleteBucketReplicationOutput,
+    crate::error::DeleteBucketReplicationError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_replication_output::Builder::default();
@@ -637,7 +675,10 @@ pub fn parse_delete_bucket_replication_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_tagging_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteBucketTaggingOutput, crate::error::DeleteBucketTaggingError> {
+) -> std::result::Result<
+    crate::output::DeleteBucketTaggingOutput,
+    crate::error::DeleteBucketTaggingError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteBucketTaggingError::unhandled)?;
     Err(crate::error::DeleteBucketTaggingError::generic(generic))
@@ -646,7 +687,10 @@ pub fn parse_delete_bucket_tagging_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_tagging_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteBucketTaggingOutput, crate::error::DeleteBucketTaggingError> {
+) -> std::result::Result<
+    crate::output::DeleteBucketTaggingOutput,
+    crate::error::DeleteBucketTaggingError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_tagging_output::Builder::default();
@@ -658,7 +702,10 @@ pub fn parse_delete_bucket_tagging_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_website_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteBucketWebsiteOutput, crate::error::DeleteBucketWebsiteError> {
+) -> std::result::Result<
+    crate::output::DeleteBucketWebsiteOutput,
+    crate::error::DeleteBucketWebsiteError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteBucketWebsiteError::unhandled)?;
     Err(crate::error::DeleteBucketWebsiteError::generic(generic))
@@ -667,7 +714,10 @@ pub fn parse_delete_bucket_website_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_bucket_website_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteBucketWebsiteOutput, crate::error::DeleteBucketWebsiteError> {
+) -> std::result::Result<
+    crate::output::DeleteBucketWebsiteOutput,
+    crate::error::DeleteBucketWebsiteError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_website_output::Builder::default();
@@ -679,7 +729,7 @@ pub fn parse_delete_bucket_website_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_object_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteObjectOutput, crate::error::DeleteObjectError> {
+) -> std::result::Result<crate::output::DeleteObjectOutput, crate::error::DeleteObjectError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteObjectError::unhandled)?;
     Err(crate::error::DeleteObjectError::generic(generic))
@@ -688,7 +738,7 @@ pub fn parse_delete_object_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_object_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteObjectOutput, crate::error::DeleteObjectError> {
+) -> std::result::Result<crate::output::DeleteObjectOutput, crate::error::DeleteObjectError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_object_output::Builder::default();
@@ -725,7 +775,7 @@ pub fn parse_delete_object_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_objects_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteObjectsOutput, crate::error::DeleteObjectsError> {
+) -> std::result::Result<crate::output::DeleteObjectsOutput, crate::error::DeleteObjectsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteObjectsError::unhandled)?;
     Err(crate::error::DeleteObjectsError::generic(generic))
@@ -734,7 +784,7 @@ pub fn parse_delete_objects_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_objects_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteObjectsOutput, crate::error::DeleteObjectsError> {
+) -> std::result::Result<crate::output::DeleteObjectsOutput, crate::error::DeleteObjectsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_objects_output::Builder::default();
@@ -756,7 +806,10 @@ pub fn parse_delete_objects_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_object_tagging_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteObjectTaggingOutput, crate::error::DeleteObjectTaggingError> {
+) -> std::result::Result<
+    crate::output::DeleteObjectTaggingOutput,
+    crate::error::DeleteObjectTaggingError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteObjectTaggingError::unhandled)?;
     Err(crate::error::DeleteObjectTaggingError::generic(generic))
@@ -765,7 +818,10 @@ pub fn parse_delete_object_tagging_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_object_tagging_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteObjectTaggingOutput, crate::error::DeleteObjectTaggingError> {
+) -> std::result::Result<
+    crate::output::DeleteObjectTaggingOutput,
+    crate::error::DeleteObjectTaggingError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_object_tagging_output::Builder::default();
@@ -785,8 +841,10 @@ pub fn parse_delete_object_tagging_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_public_access_block_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeletePublicAccessBlockOutput, crate::error::DeletePublicAccessBlockError>
-{
+) -> std::result::Result<
+    crate::output::DeletePublicAccessBlockOutput,
+    crate::error::DeletePublicAccessBlockError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeletePublicAccessBlockError::unhandled)?;
     Err(crate::error::DeletePublicAccessBlockError::generic(generic))
@@ -795,8 +853,10 @@ pub fn parse_delete_public_access_block_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_public_access_block_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeletePublicAccessBlockOutput, crate::error::DeletePublicAccessBlockError>
-{
+) -> std::result::Result<
+    crate::output::DeletePublicAccessBlockOutput,
+    crate::error::DeletePublicAccessBlockError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_public_access_block_output::Builder::default();
@@ -808,7 +868,7 @@ pub fn parse_delete_public_access_block_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_accelerate_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetBucketAccelerateConfigurationOutput,
     crate::error::GetBucketAccelerateConfigurationError,
 > {
@@ -820,7 +880,7 @@ pub fn parse_get_bucket_accelerate_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_accelerate_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetBucketAccelerateConfigurationOutput,
     crate::error::GetBucketAccelerateConfigurationError,
 > {
@@ -841,7 +901,7 @@ pub fn parse_get_bucket_accelerate_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_acl_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketAclOutput, crate::error::GetBucketAclError> {
+) -> std::result::Result<crate::output::GetBucketAclOutput, crate::error::GetBucketAclError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetBucketAclError::unhandled)?;
     Err(crate::error::GetBucketAclError::generic(generic))
@@ -850,7 +910,7 @@ pub fn parse_get_bucket_acl_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_acl_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketAclOutput, crate::error::GetBucketAclError> {
+) -> std::result::Result<crate::output::GetBucketAclOutput, crate::error::GetBucketAclError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_acl_output::Builder::default();
@@ -864,7 +924,7 @@ pub fn parse_get_bucket_acl_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_analytics_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetBucketAnalyticsConfigurationOutput,
     crate::error::GetBucketAnalyticsConfigurationError,
 > {
@@ -878,7 +938,7 @@ pub fn parse_get_bucket_analytics_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_analytics_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetBucketAnalyticsConfigurationOutput,
     crate::error::GetBucketAnalyticsConfigurationError,
 > {
@@ -897,7 +957,7 @@ pub fn parse_get_bucket_analytics_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_cors_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketCorsOutput, crate::error::GetBucketCorsError> {
+) -> std::result::Result<crate::output::GetBucketCorsOutput, crate::error::GetBucketCorsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetBucketCorsError::unhandled)?;
     Err(crate::error::GetBucketCorsError::generic(generic))
@@ -906,7 +966,7 @@ pub fn parse_get_bucket_cors_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_cors_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketCorsOutput, crate::error::GetBucketCorsError> {
+) -> std::result::Result<crate::output::GetBucketCorsOutput, crate::error::GetBucketCorsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_cors_output::Builder::default();
@@ -921,7 +981,10 @@ pub fn parse_get_bucket_cors_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_encryption_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketEncryptionOutput, crate::error::GetBucketEncryptionError> {
+) -> std::result::Result<
+    crate::output::GetBucketEncryptionOutput,
+    crate::error::GetBucketEncryptionError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetBucketEncryptionError::unhandled)?;
     Err(crate::error::GetBucketEncryptionError::generic(generic))
@@ -930,7 +993,10 @@ pub fn parse_get_bucket_encryption_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_encryption_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketEncryptionOutput, crate::error::GetBucketEncryptionError> {
+) -> std::result::Result<
+    crate::output::GetBucketEncryptionOutput,
+    crate::error::GetBucketEncryptionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_encryption_output::Builder::default();
@@ -945,7 +1011,7 @@ pub fn parse_get_bucket_encryption_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_intelligent_tiering_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetBucketIntelligentTieringConfigurationOutput,
     crate::error::GetBucketIntelligentTieringConfigurationError,
 > {
@@ -957,7 +1023,7 @@ pub fn parse_get_bucket_intelligent_tiering_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_intelligent_tiering_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetBucketIntelligentTieringConfigurationOutput,
     crate::error::GetBucketIntelligentTieringConfigurationError,
 > {
@@ -976,7 +1042,7 @@ pub fn parse_get_bucket_intelligent_tiering_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_inventory_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetBucketInventoryConfigurationOutput,
     crate::error::GetBucketInventoryConfigurationError,
 > {
@@ -990,7 +1056,7 @@ pub fn parse_get_bucket_inventory_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_inventory_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetBucketInventoryConfigurationOutput,
     crate::error::GetBucketInventoryConfigurationError,
 > {
@@ -1009,7 +1075,7 @@ pub fn parse_get_bucket_inventory_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_lifecycle_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetBucketLifecycleConfigurationOutput,
     crate::error::GetBucketLifecycleConfigurationError,
 > {
@@ -1023,7 +1089,7 @@ pub fn parse_get_bucket_lifecycle_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_lifecycle_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetBucketLifecycleConfigurationOutput,
     crate::error::GetBucketLifecycleConfigurationError,
 > {
@@ -1044,7 +1110,8 @@ pub fn parse_get_bucket_lifecycle_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_location_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketLocationOutput, crate::error::GetBucketLocationError> {
+) -> std::result::Result<crate::output::GetBucketLocationOutput, crate::error::GetBucketLocationError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetBucketLocationError::unhandled)?;
     Err(crate::error::GetBucketLocationError::generic(generic))
@@ -1053,7 +1120,8 @@ pub fn parse_get_bucket_location_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_location_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketLocationOutput, crate::error::GetBucketLocationError> {
+) -> std::result::Result<crate::output::GetBucketLocationOutput, crate::error::GetBucketLocationError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_location_output::Builder::default();
@@ -1068,7 +1136,8 @@ pub fn parse_get_bucket_location_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_logging_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketLoggingOutput, crate::error::GetBucketLoggingError> {
+) -> std::result::Result<crate::output::GetBucketLoggingOutput, crate::error::GetBucketLoggingError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetBucketLoggingError::unhandled)?;
     Err(crate::error::GetBucketLoggingError::generic(generic))
@@ -1077,7 +1146,8 @@ pub fn parse_get_bucket_logging_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_logging_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketLoggingOutput, crate::error::GetBucketLoggingError> {
+) -> std::result::Result<crate::output::GetBucketLoggingOutput, crate::error::GetBucketLoggingError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_logging_output::Builder::default();
@@ -1092,7 +1162,7 @@ pub fn parse_get_bucket_logging_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_metrics_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetBucketMetricsConfigurationOutput,
     crate::error::GetBucketMetricsConfigurationError,
 > {
@@ -1106,7 +1176,7 @@ pub fn parse_get_bucket_metrics_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_metrics_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetBucketMetricsConfigurationOutput,
     crate::error::GetBucketMetricsConfigurationError,
 > {
@@ -1124,7 +1194,7 @@ pub fn parse_get_bucket_metrics_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_notification_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetBucketNotificationConfigurationOutput,
     crate::error::GetBucketNotificationConfigurationError,
 > {
@@ -1136,7 +1206,7 @@ pub fn parse_get_bucket_notification_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_notification_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetBucketNotificationConfigurationOutput,
     crate::error::GetBucketNotificationConfigurationError,
 > {
@@ -1157,7 +1227,7 @@ pub fn parse_get_bucket_notification_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_ownership_controls_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetBucketOwnershipControlsOutput,
     crate::error::GetBucketOwnershipControlsError,
 > {
@@ -1171,7 +1241,7 @@ pub fn parse_get_bucket_ownership_controls_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_ownership_controls_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetBucketOwnershipControlsOutput,
     crate::error::GetBucketOwnershipControlsError,
 > {
@@ -1191,7 +1261,7 @@ pub fn parse_get_bucket_ownership_controls_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketPolicyOutput, crate::error::GetBucketPolicyError> {
+) -> std::result::Result<crate::output::GetBucketPolicyOutput, crate::error::GetBucketPolicyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetBucketPolicyError::unhandled)?;
     Err(crate::error::GetBucketPolicyError::generic(generic))
@@ -1200,7 +1270,7 @@ pub fn parse_get_bucket_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketPolicyOutput, crate::error::GetBucketPolicyError> {
+) -> std::result::Result<crate::output::GetBucketPolicyOutput, crate::error::GetBucketPolicyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_policy_output::Builder::default();
@@ -1215,7 +1285,10 @@ pub fn parse_get_bucket_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_policy_status_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketPolicyStatusOutput, crate::error::GetBucketPolicyStatusError> {
+) -> std::result::Result<
+    crate::output::GetBucketPolicyStatusOutput,
+    crate::error::GetBucketPolicyStatusError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetBucketPolicyStatusError::unhandled)?;
     Err(crate::error::GetBucketPolicyStatusError::generic(generic))
@@ -1224,7 +1297,10 @@ pub fn parse_get_bucket_policy_status_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_policy_status_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketPolicyStatusOutput, crate::error::GetBucketPolicyStatusError> {
+) -> std::result::Result<
+    crate::output::GetBucketPolicyStatusOutput,
+    crate::error::GetBucketPolicyStatusError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_policy_status_output::Builder::default();
@@ -1241,7 +1317,10 @@ pub fn parse_get_bucket_policy_status_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_replication_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketReplicationOutput, crate::error::GetBucketReplicationError> {
+) -> std::result::Result<
+    crate::output::GetBucketReplicationOutput,
+    crate::error::GetBucketReplicationError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetBucketReplicationError::unhandled)?;
     Err(crate::error::GetBucketReplicationError::generic(generic))
@@ -1250,7 +1329,10 @@ pub fn parse_get_bucket_replication_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_replication_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketReplicationOutput, crate::error::GetBucketReplicationError> {
+) -> std::result::Result<
+    crate::output::GetBucketReplicationOutput,
+    crate::error::GetBucketReplicationError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_replication_output::Builder::default();
@@ -1267,8 +1349,10 @@ pub fn parse_get_bucket_replication_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_request_payment_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketRequestPaymentOutput, crate::error::GetBucketRequestPaymentError>
-{
+) -> std::result::Result<
+    crate::output::GetBucketRequestPaymentOutput,
+    crate::error::GetBucketRequestPaymentError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetBucketRequestPaymentError::unhandled)?;
     Err(crate::error::GetBucketRequestPaymentError::generic(generic))
@@ -1277,8 +1361,10 @@ pub fn parse_get_bucket_request_payment_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_request_payment_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketRequestPaymentOutput, crate::error::GetBucketRequestPaymentError>
-{
+) -> std::result::Result<
+    crate::output::GetBucketRequestPaymentOutput,
+    crate::error::GetBucketRequestPaymentError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_request_payment_output::Builder::default();
@@ -1295,7 +1381,8 @@ pub fn parse_get_bucket_request_payment_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_tagging_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketTaggingOutput, crate::error::GetBucketTaggingError> {
+) -> std::result::Result<crate::output::GetBucketTaggingOutput, crate::error::GetBucketTaggingError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetBucketTaggingError::unhandled)?;
     Err(crate::error::GetBucketTaggingError::generic(generic))
@@ -1304,7 +1391,8 @@ pub fn parse_get_bucket_tagging_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_tagging_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketTaggingOutput, crate::error::GetBucketTaggingError> {
+) -> std::result::Result<crate::output::GetBucketTaggingOutput, crate::error::GetBucketTaggingError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_tagging_output::Builder::default();
@@ -1319,7 +1407,10 @@ pub fn parse_get_bucket_tagging_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_versioning_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketVersioningOutput, crate::error::GetBucketVersioningError> {
+) -> std::result::Result<
+    crate::output::GetBucketVersioningOutput,
+    crate::error::GetBucketVersioningError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetBucketVersioningError::unhandled)?;
     Err(crate::error::GetBucketVersioningError::generic(generic))
@@ -1328,7 +1419,10 @@ pub fn parse_get_bucket_versioning_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_versioning_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketVersioningOutput, crate::error::GetBucketVersioningError> {
+) -> std::result::Result<
+    crate::output::GetBucketVersioningOutput,
+    crate::error::GetBucketVersioningError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_versioning_output::Builder::default();
@@ -1345,7 +1439,8 @@ pub fn parse_get_bucket_versioning_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_website_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketWebsiteOutput, crate::error::GetBucketWebsiteError> {
+) -> std::result::Result<crate::output::GetBucketWebsiteOutput, crate::error::GetBucketWebsiteError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetBucketWebsiteError::unhandled)?;
     Err(crate::error::GetBucketWebsiteError::generic(generic))
@@ -1354,7 +1449,8 @@ pub fn parse_get_bucket_website_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_bucket_website_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetBucketWebsiteOutput, crate::error::GetBucketWebsiteError> {
+) -> std::result::Result<crate::output::GetBucketWebsiteOutput, crate::error::GetBucketWebsiteError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_bucket_website_output::Builder::default();
@@ -1369,7 +1465,7 @@ pub fn parse_get_bucket_website_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object(
     response: &mut http::Response<smithy_http::body::SdkBody>,
-) -> Result<crate::output::GetObjectOutput, crate::error::GetObjectError> {
+) -> std::result::Result<crate::output::GetObjectOutput, crate::error::GetObjectError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_object_output::Builder::default();
@@ -1383,9 +1479,9 @@ pub fn parse_get_object(
                 },
             )?,
         );
-        output = output.set_body(crate::http_serde::deser_payload_get_object_body(
+        output = output.set_body(Some(crate::http_serde::deser_payload_get_object_body(
             response.body_mut(),
-        )?);
+        )?));
         output = output.set_bucket_key_enabled(
             crate::http_serde::deser_header_get_object_bucket_key_enabled(response.headers())
                                         .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse BucketKeyEnabled from header `x-amz-server-side-encryption-bucket-key-enabled"))?
@@ -1612,7 +1708,7 @@ pub fn parse_get_object(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetObjectOutput, crate::error::GetObjectError> {
+) -> std::result::Result<crate::output::GetObjectOutput, crate::error::GetObjectError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetObjectError::unhandled)?;
     let error_code = match generic.code() {
@@ -1655,7 +1751,7 @@ pub fn parse_get_object_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object_acl_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetObjectAclOutput, crate::error::GetObjectAclError> {
+) -> std::result::Result<crate::output::GetObjectAclOutput, crate::error::GetObjectAclError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetObjectAclError::unhandled)?;
     let error_code = match generic.code() {
@@ -1684,7 +1780,7 @@ pub fn parse_get_object_acl_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object_acl_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetObjectAclOutput, crate::error::GetObjectAclError> {
+) -> std::result::Result<crate::output::GetObjectAclOutput, crate::error::GetObjectAclError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_object_acl_output::Builder::default();
@@ -1706,7 +1802,10 @@ pub fn parse_get_object_acl_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object_legal_hold_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetObjectLegalHoldOutput, crate::error::GetObjectLegalHoldError> {
+) -> std::result::Result<
+    crate::output::GetObjectLegalHoldOutput,
+    crate::error::GetObjectLegalHoldError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetObjectLegalHoldError::unhandled)?;
     Err(crate::error::GetObjectLegalHoldError::generic(generic))
@@ -1715,7 +1814,10 @@ pub fn parse_get_object_legal_hold_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object_legal_hold_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetObjectLegalHoldOutput, crate::error::GetObjectLegalHoldError> {
+) -> std::result::Result<
+    crate::output::GetObjectLegalHoldOutput,
+    crate::error::GetObjectLegalHoldError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_object_legal_hold_output::Builder::default();
@@ -1732,7 +1834,7 @@ pub fn parse_get_object_legal_hold_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object_lock_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetObjectLockConfigurationOutput,
     crate::error::GetObjectLockConfigurationError,
 > {
@@ -1746,7 +1848,7 @@ pub fn parse_get_object_lock_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object_lock_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetObjectLockConfigurationOutput,
     crate::error::GetObjectLockConfigurationError,
 > {
@@ -1764,7 +1866,10 @@ pub fn parse_get_object_lock_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object_retention_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetObjectRetentionOutput, crate::error::GetObjectRetentionError> {
+) -> std::result::Result<
+    crate::output::GetObjectRetentionOutput,
+    crate::error::GetObjectRetentionError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetObjectRetentionError::unhandled)?;
     Err(crate::error::GetObjectRetentionError::generic(generic))
@@ -1773,7 +1878,10 @@ pub fn parse_get_object_retention_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object_retention_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetObjectRetentionOutput, crate::error::GetObjectRetentionError> {
+) -> std::result::Result<
+    crate::output::GetObjectRetentionOutput,
+    crate::error::GetObjectRetentionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_object_retention_output::Builder::default();
@@ -1790,7 +1898,8 @@ pub fn parse_get_object_retention_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object_tagging_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetObjectTaggingOutput, crate::error::GetObjectTaggingError> {
+) -> std::result::Result<crate::output::GetObjectTaggingOutput, crate::error::GetObjectTaggingError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetObjectTaggingError::unhandled)?;
     Err(crate::error::GetObjectTaggingError::generic(generic))
@@ -1799,7 +1908,8 @@ pub fn parse_get_object_tagging_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object_tagging_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetObjectTaggingOutput, crate::error::GetObjectTaggingError> {
+) -> std::result::Result<crate::output::GetObjectTaggingOutput, crate::error::GetObjectTaggingError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_object_tagging_output::Builder::default();
@@ -1822,14 +1932,15 @@ pub fn parse_get_object_tagging_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object_torrent(
     response: &mut http::Response<smithy_http::body::SdkBody>,
-) -> Result<crate::output::GetObjectTorrentOutput, crate::error::GetObjectTorrentError> {
+) -> std::result::Result<crate::output::GetObjectTorrentOutput, crate::error::GetObjectTorrentError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_object_torrent_output::Builder::default();
         let _ = response;
-        output = output.set_body(crate::http_serde::deser_payload_get_object_torrent_body(
-            response.body_mut(),
-        )?);
+        output = output.set_body(Some(
+            crate::http_serde::deser_payload_get_object_torrent_body(response.body_mut())?,
+        ));
         output = output.set_request_charged(
             crate::http_serde::deser_header_get_object_torrent_request_charged(response.headers())
                 .map_err(|_| {
@@ -1845,7 +1956,8 @@ pub fn parse_get_object_torrent(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_object_torrent_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetObjectTorrentOutput, crate::error::GetObjectTorrentError> {
+) -> std::result::Result<crate::output::GetObjectTorrentOutput, crate::error::GetObjectTorrentError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetObjectTorrentError::unhandled)?;
     Err(crate::error::GetObjectTorrentError::generic(generic))
@@ -1854,7 +1966,10 @@ pub fn parse_get_object_torrent_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_public_access_block_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetPublicAccessBlockOutput, crate::error::GetPublicAccessBlockError> {
+) -> std::result::Result<
+    crate::output::GetPublicAccessBlockOutput,
+    crate::error::GetPublicAccessBlockError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetPublicAccessBlockError::unhandled)?;
     Err(crate::error::GetPublicAccessBlockError::generic(generic))
@@ -1863,7 +1978,10 @@ pub fn parse_get_public_access_block_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_public_access_block_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetPublicAccessBlockOutput, crate::error::GetPublicAccessBlockError> {
+) -> std::result::Result<
+    crate::output::GetPublicAccessBlockOutput,
+    crate::error::GetPublicAccessBlockError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_public_access_block_output::Builder::default();
@@ -1878,7 +1996,7 @@ pub fn parse_get_public_access_block_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_head_bucket_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::HeadBucketOutput, crate::error::HeadBucketError> {
+) -> std::result::Result<crate::output::HeadBucketOutput, crate::error::HeadBucketError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::HeadBucketError::unhandled)?;
     let error_code = match generic.code() {
@@ -1907,7 +2025,7 @@ pub fn parse_head_bucket_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_head_bucket_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::HeadBucketOutput, crate::error::HeadBucketError> {
+) -> std::result::Result<crate::output::HeadBucketOutput, crate::error::HeadBucketError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::head_bucket_output::Builder::default();
@@ -1919,7 +2037,7 @@ pub fn parse_head_bucket_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_head_object_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::HeadObjectOutput, crate::error::HeadObjectError> {
+) -> std::result::Result<crate::output::HeadObjectOutput, crate::error::HeadObjectError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::HeadObjectError::unhandled)?;
     let error_code = match generic.code() {
@@ -1948,7 +2066,7 @@ pub fn parse_head_object_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_head_object_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::HeadObjectOutput, crate::error::HeadObjectError> {
+) -> std::result::Result<crate::output::HeadObjectOutput, crate::error::HeadObjectError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::head_object_output::Builder::default();
@@ -2181,7 +2299,7 @@ pub fn parse_head_object_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_bucket_analytics_configurations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListBucketAnalyticsConfigurationsOutput,
     crate::error::ListBucketAnalyticsConfigurationsError,
 > {
@@ -2193,7 +2311,7 @@ pub fn parse_list_bucket_analytics_configurations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_bucket_analytics_configurations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListBucketAnalyticsConfigurationsOutput,
     crate::error::ListBucketAnalyticsConfigurationsError,
 > {
@@ -2214,7 +2332,7 @@ pub fn parse_list_bucket_analytics_configurations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_bucket_intelligent_tiering_configurations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListBucketIntelligentTieringConfigurationsOutput,
     crate::error::ListBucketIntelligentTieringConfigurationsError,
 > {
@@ -2226,7 +2344,7 @@ pub fn parse_list_bucket_intelligent_tiering_configurations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_bucket_intelligent_tiering_configurations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListBucketIntelligentTieringConfigurationsOutput,
     crate::error::ListBucketIntelligentTieringConfigurationsError,
 > {
@@ -2248,7 +2366,7 @@ pub fn parse_list_bucket_intelligent_tiering_configurations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_bucket_inventory_configurations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListBucketInventoryConfigurationsOutput,
     crate::error::ListBucketInventoryConfigurationsError,
 > {
@@ -2260,7 +2378,7 @@ pub fn parse_list_bucket_inventory_configurations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_bucket_inventory_configurations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListBucketInventoryConfigurationsOutput,
     crate::error::ListBucketInventoryConfigurationsError,
 > {
@@ -2281,7 +2399,7 @@ pub fn parse_list_bucket_inventory_configurations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_bucket_metrics_configurations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListBucketMetricsConfigurationsOutput,
     crate::error::ListBucketMetricsConfigurationsError,
 > {
@@ -2295,7 +2413,7 @@ pub fn parse_list_bucket_metrics_configurations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_bucket_metrics_configurations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListBucketMetricsConfigurationsOutput,
     crate::error::ListBucketMetricsConfigurationsError,
 > {
@@ -2316,7 +2434,7 @@ pub fn parse_list_bucket_metrics_configurations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_buckets_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListBucketsOutput, crate::error::ListBucketsError> {
+) -> std::result::Result<crate::output::ListBucketsOutput, crate::error::ListBucketsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListBucketsError::unhandled)?;
     Err(crate::error::ListBucketsError::generic(generic))
@@ -2325,7 +2443,7 @@ pub fn parse_list_buckets_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_buckets_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListBucketsOutput, crate::error::ListBucketsError> {
+) -> std::result::Result<crate::output::ListBucketsOutput, crate::error::ListBucketsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_buckets_output::Builder::default();
@@ -2339,7 +2457,10 @@ pub fn parse_list_buckets_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_multipart_uploads_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListMultipartUploadsOutput, crate::error::ListMultipartUploadsError> {
+) -> std::result::Result<
+    crate::output::ListMultipartUploadsOutput,
+    crate::error::ListMultipartUploadsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListMultipartUploadsError::unhandled)?;
     Err(crate::error::ListMultipartUploadsError::generic(generic))
@@ -2348,7 +2469,10 @@ pub fn parse_list_multipart_uploads_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_multipart_uploads_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListMultipartUploadsOutput, crate::error::ListMultipartUploadsError> {
+) -> std::result::Result<
+    crate::output::ListMultipartUploadsOutput,
+    crate::error::ListMultipartUploadsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_multipart_uploads_output::Builder::default();
@@ -2365,7 +2489,7 @@ pub fn parse_list_multipart_uploads_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_objects_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListObjectsOutput, crate::error::ListObjectsError> {
+) -> std::result::Result<crate::output::ListObjectsOutput, crate::error::ListObjectsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListObjectsError::unhandled)?;
     let error_code = match generic.code() {
@@ -2394,7 +2518,7 @@ pub fn parse_list_objects_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_objects_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListObjectsOutput, crate::error::ListObjectsError> {
+) -> std::result::Result<crate::output::ListObjectsOutput, crate::error::ListObjectsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_objects_output::Builder::default();
@@ -2408,7 +2532,7 @@ pub fn parse_list_objects_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_objects_v2_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListObjectsV2Output, crate::error::ListObjectsV2Error> {
+) -> std::result::Result<crate::output::ListObjectsV2Output, crate::error::ListObjectsV2Error> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListObjectsV2Error::unhandled)?;
     let error_code = match generic.code() {
@@ -2437,7 +2561,7 @@ pub fn parse_list_objects_v2_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_objects_v2_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListObjectsV2Output, crate::error::ListObjectsV2Error> {
+) -> std::result::Result<crate::output::ListObjectsV2Output, crate::error::ListObjectsV2Error> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_objects_v2_output::Builder::default();
@@ -2452,7 +2576,10 @@ pub fn parse_list_objects_v2_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_object_versions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListObjectVersionsOutput, crate::error::ListObjectVersionsError> {
+) -> std::result::Result<
+    crate::output::ListObjectVersionsOutput,
+    crate::error::ListObjectVersionsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListObjectVersionsError::unhandled)?;
     Err(crate::error::ListObjectVersionsError::generic(generic))
@@ -2461,7 +2588,10 @@ pub fn parse_list_object_versions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_object_versions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListObjectVersionsOutput, crate::error::ListObjectVersionsError> {
+) -> std::result::Result<
+    crate::output::ListObjectVersionsOutput,
+    crate::error::ListObjectVersionsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_object_versions_output::Builder::default();
@@ -2478,7 +2608,7 @@ pub fn parse_list_object_versions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_parts_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListPartsOutput, crate::error::ListPartsError> {
+) -> std::result::Result<crate::output::ListPartsOutput, crate::error::ListPartsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListPartsError::unhandled)?;
     Err(crate::error::ListPartsError::generic(generic))
@@ -2487,7 +2617,7 @@ pub fn parse_list_parts_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_parts_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListPartsOutput, crate::error::ListPartsError> {
+) -> std::result::Result<crate::output::ListPartsOutput, crate::error::ListPartsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_parts_output::Builder::default();
@@ -2527,7 +2657,7 @@ pub fn parse_list_parts_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_accelerate_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutBucketAccelerateConfigurationOutput,
     crate::error::PutBucketAccelerateConfigurationError,
 > {
@@ -2539,7 +2669,7 @@ pub fn parse_put_bucket_accelerate_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_accelerate_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutBucketAccelerateConfigurationOutput,
     crate::error::PutBucketAccelerateConfigurationError,
 > {
@@ -2555,7 +2685,7 @@ pub fn parse_put_bucket_accelerate_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_acl_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketAclOutput, crate::error::PutBucketAclError> {
+) -> std::result::Result<crate::output::PutBucketAclOutput, crate::error::PutBucketAclError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutBucketAclError::unhandled)?;
     Err(crate::error::PutBucketAclError::generic(generic))
@@ -2564,7 +2694,7 @@ pub fn parse_put_bucket_acl_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_acl_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketAclOutput, crate::error::PutBucketAclError> {
+) -> std::result::Result<crate::output::PutBucketAclOutput, crate::error::PutBucketAclError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_acl_output::Builder::default();
@@ -2576,7 +2706,7 @@ pub fn parse_put_bucket_acl_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_analytics_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutBucketAnalyticsConfigurationOutput,
     crate::error::PutBucketAnalyticsConfigurationError,
 > {
@@ -2590,7 +2720,7 @@ pub fn parse_put_bucket_analytics_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_analytics_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutBucketAnalyticsConfigurationOutput,
     crate::error::PutBucketAnalyticsConfigurationError,
 > {
@@ -2606,7 +2736,7 @@ pub fn parse_put_bucket_analytics_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_cors_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketCorsOutput, crate::error::PutBucketCorsError> {
+) -> std::result::Result<crate::output::PutBucketCorsOutput, crate::error::PutBucketCorsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutBucketCorsError::unhandled)?;
     Err(crate::error::PutBucketCorsError::generic(generic))
@@ -2615,7 +2745,7 @@ pub fn parse_put_bucket_cors_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_cors_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketCorsOutput, crate::error::PutBucketCorsError> {
+) -> std::result::Result<crate::output::PutBucketCorsOutput, crate::error::PutBucketCorsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_cors_output::Builder::default();
@@ -2627,7 +2757,10 @@ pub fn parse_put_bucket_cors_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_encryption_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketEncryptionOutput, crate::error::PutBucketEncryptionError> {
+) -> std::result::Result<
+    crate::output::PutBucketEncryptionOutput,
+    crate::error::PutBucketEncryptionError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutBucketEncryptionError::unhandled)?;
     Err(crate::error::PutBucketEncryptionError::generic(generic))
@@ -2636,7 +2769,10 @@ pub fn parse_put_bucket_encryption_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_encryption_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketEncryptionOutput, crate::error::PutBucketEncryptionError> {
+) -> std::result::Result<
+    crate::output::PutBucketEncryptionOutput,
+    crate::error::PutBucketEncryptionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_encryption_output::Builder::default();
@@ -2648,7 +2784,7 @@ pub fn parse_put_bucket_encryption_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_intelligent_tiering_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutBucketIntelligentTieringConfigurationOutput,
     crate::error::PutBucketIntelligentTieringConfigurationError,
 > {
@@ -2660,7 +2796,7 @@ pub fn parse_put_bucket_intelligent_tiering_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_intelligent_tiering_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutBucketIntelligentTieringConfigurationOutput,
     crate::error::PutBucketIntelligentTieringConfigurationError,
 > {
@@ -2676,7 +2812,7 @@ pub fn parse_put_bucket_intelligent_tiering_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_inventory_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutBucketInventoryConfigurationOutput,
     crate::error::PutBucketInventoryConfigurationError,
 > {
@@ -2690,7 +2826,7 @@ pub fn parse_put_bucket_inventory_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_inventory_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutBucketInventoryConfigurationOutput,
     crate::error::PutBucketInventoryConfigurationError,
 > {
@@ -2706,7 +2842,7 @@ pub fn parse_put_bucket_inventory_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_lifecycle_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutBucketLifecycleConfigurationOutput,
     crate::error::PutBucketLifecycleConfigurationError,
 > {
@@ -2720,7 +2856,7 @@ pub fn parse_put_bucket_lifecycle_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_lifecycle_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutBucketLifecycleConfigurationOutput,
     crate::error::PutBucketLifecycleConfigurationError,
 > {
@@ -2736,7 +2872,8 @@ pub fn parse_put_bucket_lifecycle_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_logging_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketLoggingOutput, crate::error::PutBucketLoggingError> {
+) -> std::result::Result<crate::output::PutBucketLoggingOutput, crate::error::PutBucketLoggingError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutBucketLoggingError::unhandled)?;
     Err(crate::error::PutBucketLoggingError::generic(generic))
@@ -2745,7 +2882,8 @@ pub fn parse_put_bucket_logging_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_logging_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketLoggingOutput, crate::error::PutBucketLoggingError> {
+) -> std::result::Result<crate::output::PutBucketLoggingOutput, crate::error::PutBucketLoggingError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_logging_output::Builder::default();
@@ -2757,7 +2895,7 @@ pub fn parse_put_bucket_logging_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_metrics_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutBucketMetricsConfigurationOutput,
     crate::error::PutBucketMetricsConfigurationError,
 > {
@@ -2771,7 +2909,7 @@ pub fn parse_put_bucket_metrics_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_metrics_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutBucketMetricsConfigurationOutput,
     crate::error::PutBucketMetricsConfigurationError,
 > {
@@ -2786,7 +2924,7 @@ pub fn parse_put_bucket_metrics_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_notification_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutBucketNotificationConfigurationOutput,
     crate::error::PutBucketNotificationConfigurationError,
 > {
@@ -2798,7 +2936,7 @@ pub fn parse_put_bucket_notification_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_notification_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutBucketNotificationConfigurationOutput,
     crate::error::PutBucketNotificationConfigurationError,
 > {
@@ -2814,7 +2952,7 @@ pub fn parse_put_bucket_notification_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_ownership_controls_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutBucketOwnershipControlsOutput,
     crate::error::PutBucketOwnershipControlsError,
 > {
@@ -2828,7 +2966,7 @@ pub fn parse_put_bucket_ownership_controls_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_ownership_controls_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutBucketOwnershipControlsOutput,
     crate::error::PutBucketOwnershipControlsError,
 > {
@@ -2843,7 +2981,7 @@ pub fn parse_put_bucket_ownership_controls_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_policy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketPolicyOutput, crate::error::PutBucketPolicyError> {
+) -> std::result::Result<crate::output::PutBucketPolicyOutput, crate::error::PutBucketPolicyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutBucketPolicyError::unhandled)?;
     Err(crate::error::PutBucketPolicyError::generic(generic))
@@ -2852,7 +2990,7 @@ pub fn parse_put_bucket_policy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_policy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketPolicyOutput, crate::error::PutBucketPolicyError> {
+) -> std::result::Result<crate::output::PutBucketPolicyOutput, crate::error::PutBucketPolicyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_policy_output::Builder::default();
@@ -2864,7 +3002,10 @@ pub fn parse_put_bucket_policy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_replication_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketReplicationOutput, crate::error::PutBucketReplicationError> {
+) -> std::result::Result<
+    crate::output::PutBucketReplicationOutput,
+    crate::error::PutBucketReplicationError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutBucketReplicationError::unhandled)?;
     Err(crate::error::PutBucketReplicationError::generic(generic))
@@ -2873,7 +3014,10 @@ pub fn parse_put_bucket_replication_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_replication_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketReplicationOutput, crate::error::PutBucketReplicationError> {
+) -> std::result::Result<
+    crate::output::PutBucketReplicationOutput,
+    crate::error::PutBucketReplicationError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_replication_output::Builder::default();
@@ -2885,8 +3029,10 @@ pub fn parse_put_bucket_replication_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_request_payment_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketRequestPaymentOutput, crate::error::PutBucketRequestPaymentError>
-{
+) -> std::result::Result<
+    crate::output::PutBucketRequestPaymentOutput,
+    crate::error::PutBucketRequestPaymentError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutBucketRequestPaymentError::unhandled)?;
     Err(crate::error::PutBucketRequestPaymentError::generic(generic))
@@ -2895,8 +3041,10 @@ pub fn parse_put_bucket_request_payment_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_request_payment_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketRequestPaymentOutput, crate::error::PutBucketRequestPaymentError>
-{
+) -> std::result::Result<
+    crate::output::PutBucketRequestPaymentOutput,
+    crate::error::PutBucketRequestPaymentError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_request_payment_output::Builder::default();
@@ -2908,7 +3056,8 @@ pub fn parse_put_bucket_request_payment_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_tagging_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketTaggingOutput, crate::error::PutBucketTaggingError> {
+) -> std::result::Result<crate::output::PutBucketTaggingOutput, crate::error::PutBucketTaggingError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutBucketTaggingError::unhandled)?;
     Err(crate::error::PutBucketTaggingError::generic(generic))
@@ -2917,7 +3066,8 @@ pub fn parse_put_bucket_tagging_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_tagging_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketTaggingOutput, crate::error::PutBucketTaggingError> {
+) -> std::result::Result<crate::output::PutBucketTaggingOutput, crate::error::PutBucketTaggingError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_tagging_output::Builder::default();
@@ -2929,7 +3079,10 @@ pub fn parse_put_bucket_tagging_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_versioning_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketVersioningOutput, crate::error::PutBucketVersioningError> {
+) -> std::result::Result<
+    crate::output::PutBucketVersioningOutput,
+    crate::error::PutBucketVersioningError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutBucketVersioningError::unhandled)?;
     Err(crate::error::PutBucketVersioningError::generic(generic))
@@ -2938,7 +3091,10 @@ pub fn parse_put_bucket_versioning_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_versioning_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketVersioningOutput, crate::error::PutBucketVersioningError> {
+) -> std::result::Result<
+    crate::output::PutBucketVersioningOutput,
+    crate::error::PutBucketVersioningError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_versioning_output::Builder::default();
@@ -2950,7 +3106,8 @@ pub fn parse_put_bucket_versioning_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_website_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketWebsiteOutput, crate::error::PutBucketWebsiteError> {
+) -> std::result::Result<crate::output::PutBucketWebsiteOutput, crate::error::PutBucketWebsiteError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutBucketWebsiteError::unhandled)?;
     Err(crate::error::PutBucketWebsiteError::generic(generic))
@@ -2959,7 +3116,8 @@ pub fn parse_put_bucket_website_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_bucket_website_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutBucketWebsiteOutput, crate::error::PutBucketWebsiteError> {
+) -> std::result::Result<crate::output::PutBucketWebsiteOutput, crate::error::PutBucketWebsiteError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_website_output::Builder::default();
@@ -2971,7 +3129,7 @@ pub fn parse_put_bucket_website_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_object_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutObjectOutput, crate::error::PutObjectError> {
+) -> std::result::Result<crate::output::PutObjectOutput, crate::error::PutObjectError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutObjectError::unhandled)?;
     Err(crate::error::PutObjectError::generic(generic))
@@ -2980,7 +3138,7 @@ pub fn parse_put_object_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_object_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutObjectOutput, crate::error::PutObjectError> {
+) -> std::result::Result<crate::output::PutObjectOutput, crate::error::PutObjectError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_object_output::Builder::default();
@@ -3047,7 +3205,7 @@ pub fn parse_put_object_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_object_acl_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutObjectAclOutput, crate::error::PutObjectAclError> {
+) -> std::result::Result<crate::output::PutObjectAclOutput, crate::error::PutObjectAclError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutObjectAclError::unhandled)?;
     let error_code = match generic.code() {
@@ -3076,7 +3234,7 @@ pub fn parse_put_object_acl_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_object_acl_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutObjectAclOutput, crate::error::PutObjectAclError> {
+) -> std::result::Result<crate::output::PutObjectAclOutput, crate::error::PutObjectAclError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_object_acl_output::Builder::default();
@@ -3096,7 +3254,10 @@ pub fn parse_put_object_acl_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_object_legal_hold_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutObjectLegalHoldOutput, crate::error::PutObjectLegalHoldError> {
+) -> std::result::Result<
+    crate::output::PutObjectLegalHoldOutput,
+    crate::error::PutObjectLegalHoldError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutObjectLegalHoldError::unhandled)?;
     Err(crate::error::PutObjectLegalHoldError::generic(generic))
@@ -3105,7 +3266,10 @@ pub fn parse_put_object_legal_hold_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_object_legal_hold_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutObjectLegalHoldOutput, crate::error::PutObjectLegalHoldError> {
+) -> std::result::Result<
+    crate::output::PutObjectLegalHoldOutput,
+    crate::error::PutObjectLegalHoldError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_object_legal_hold_output::Builder::default();
@@ -3127,7 +3291,7 @@ pub fn parse_put_object_legal_hold_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_object_lock_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutObjectLockConfigurationOutput,
     crate::error::PutObjectLockConfigurationError,
 > {
@@ -3141,7 +3305,7 @@ pub fn parse_put_object_lock_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_object_lock_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PutObjectLockConfigurationOutput,
     crate::error::PutObjectLockConfigurationError,
 > {
@@ -3166,7 +3330,10 @@ pub fn parse_put_object_lock_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_object_retention_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutObjectRetentionOutput, crate::error::PutObjectRetentionError> {
+) -> std::result::Result<
+    crate::output::PutObjectRetentionOutput,
+    crate::error::PutObjectRetentionError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutObjectRetentionError::unhandled)?;
     Err(crate::error::PutObjectRetentionError::generic(generic))
@@ -3175,7 +3342,10 @@ pub fn parse_put_object_retention_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_object_retention_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutObjectRetentionOutput, crate::error::PutObjectRetentionError> {
+) -> std::result::Result<
+    crate::output::PutObjectRetentionOutput,
+    crate::error::PutObjectRetentionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_object_retention_output::Builder::default();
@@ -3197,7 +3367,8 @@ pub fn parse_put_object_retention_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_object_tagging_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutObjectTaggingOutput, crate::error::PutObjectTaggingError> {
+) -> std::result::Result<crate::output::PutObjectTaggingOutput, crate::error::PutObjectTaggingError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutObjectTaggingError::unhandled)?;
     Err(crate::error::PutObjectTaggingError::generic(generic))
@@ -3206,7 +3377,8 @@ pub fn parse_put_object_tagging_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_object_tagging_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutObjectTaggingOutput, crate::error::PutObjectTaggingError> {
+) -> std::result::Result<crate::output::PutObjectTaggingOutput, crate::error::PutObjectTaggingError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_object_tagging_output::Builder::default();
@@ -3226,7 +3398,10 @@ pub fn parse_put_object_tagging_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_public_access_block_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutPublicAccessBlockOutput, crate::error::PutPublicAccessBlockError> {
+) -> std::result::Result<
+    crate::output::PutPublicAccessBlockOutput,
+    crate::error::PutPublicAccessBlockError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PutPublicAccessBlockError::unhandled)?;
     Err(crate::error::PutPublicAccessBlockError::generic(generic))
@@ -3235,7 +3410,10 @@ pub fn parse_put_public_access_block_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_public_access_block_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutPublicAccessBlockOutput, crate::error::PutPublicAccessBlockError> {
+) -> std::result::Result<
+    crate::output::PutPublicAccessBlockOutput,
+    crate::error::PutPublicAccessBlockError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_public_access_block_output::Builder::default();
@@ -3247,7 +3425,7 @@ pub fn parse_put_public_access_block_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_object_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RestoreObjectOutput, crate::error::RestoreObjectError> {
+) -> std::result::Result<crate::output::RestoreObjectOutput, crate::error::RestoreObjectError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RestoreObjectError::unhandled)?;
     let error_code = match generic.code() {
@@ -3275,7 +3453,7 @@ pub fn parse_restore_object_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_object_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RestoreObjectOutput, crate::error::RestoreObjectError> {
+) -> std::result::Result<crate::output::RestoreObjectOutput, crate::error::RestoreObjectError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::restore_object_output::Builder::default();
@@ -3303,7 +3481,7 @@ pub fn parse_restore_object_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_upload_part_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UploadPartOutput, crate::error::UploadPartError> {
+) -> std::result::Result<crate::output::UploadPartOutput, crate::error::UploadPartError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UploadPartError::unhandled)?;
     Err(crate::error::UploadPartError::generic(generic))
@@ -3312,7 +3490,7 @@ pub fn parse_upload_part_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_upload_part_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UploadPartOutput, crate::error::UploadPartError> {
+) -> std::result::Result<crate::output::UploadPartOutput, crate::error::UploadPartError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::upload_part_output::Builder::default();
@@ -3361,7 +3539,7 @@ pub fn parse_upload_part_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_upload_part_copy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UploadPartCopyOutput, crate::error::UploadPartCopyError> {
+) -> std::result::Result<crate::output::UploadPartCopyOutput, crate::error::UploadPartCopyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UploadPartCopyError::unhandled)?;
     Err(crate::error::UploadPartCopyError::generic(generic))
@@ -3370,7 +3548,7 @@ pub fn parse_upload_part_copy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_upload_part_copy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UploadPartCopyOutput, crate::error::UploadPartCopyError> {
+) -> std::result::Result<crate::output::UploadPartCopyOutput, crate::error::UploadPartCopyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::upload_part_copy_output::Builder::default();
@@ -3425,8 +3603,10 @@ pub fn parse_upload_part_copy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_write_get_object_response_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::WriteGetObjectResponseOutput, crate::error::WriteGetObjectResponseError>
-{
+) -> std::result::Result<
+    crate::output::WriteGetObjectResponseOutput,
+    crate::error::WriteGetObjectResponseError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::WriteGetObjectResponseError::unhandled)?;
     Err(crate::error::WriteGetObjectResponseError::generic(generic))
@@ -3435,8 +3615,10 @@ pub fn parse_write_get_object_response_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_write_get_object_response_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::WriteGetObjectResponseOutput, crate::error::WriteGetObjectResponseError>
-{
+) -> std::result::Result<
+    crate::output::WriteGetObjectResponseOutput,
+    crate::error::WriteGetObjectResponseError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::write_get_object_response_output::Builder::default();

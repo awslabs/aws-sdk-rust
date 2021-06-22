@@ -18,7 +18,7 @@ impl CreateConfigurationSet {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateConfigurationSet {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateConfigurationSetOutput,
         crate::error::CreateConfigurationSetError,
     >;
@@ -52,7 +52,7 @@ impl CreateConfigurationSetEventDestination {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateConfigurationSetEventDestination {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateConfigurationSetEventDestinationOutput,
         crate::error::CreateConfigurationSetEventDestinationError,
     >;
@@ -83,7 +83,8 @@ impl CreateContact {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateContact {
-    type Output = Result<crate::output::CreateContactOutput, crate::error::CreateContactError>;
+    type Output =
+        std::result::Result<crate::output::CreateContactOutput, crate::error::CreateContactError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_contact_error(response)
@@ -108,8 +109,10 @@ impl CreateContactList {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateContactList {
-    type Output =
-        Result<crate::output::CreateContactListOutput, crate::error::CreateContactListError>;
+    type Output = std::result::Result<
+        crate::output::CreateContactListOutput,
+        crate::error::CreateContactListError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_contact_list_error(response)
@@ -137,7 +140,7 @@ impl CreateCustomVerificationEmailTemplate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateCustomVerificationEmailTemplate {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateCustomVerificationEmailTemplateOutput,
         crate::error::CreateCustomVerificationEmailTemplateError,
     >;
@@ -170,7 +173,7 @@ impl CreateDedicatedIpPool {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDedicatedIpPool {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateDedicatedIpPoolOutput,
         crate::error::CreateDedicatedIpPoolError,
     >;
@@ -204,7 +207,7 @@ impl CreateDeliverabilityTestReport {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateDeliverabilityTestReport {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateDeliverabilityTestReportOutput,
         crate::error::CreateDeliverabilityTestReportError,
     >;
@@ -256,8 +259,10 @@ impl CreateEmailIdentity {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateEmailIdentity {
-    type Output =
-        Result<crate::output::CreateEmailIdentityOutput, crate::error::CreateEmailIdentityError>;
+    type Output = std::result::Result<
+        crate::output::CreateEmailIdentityOutput,
+        crate::error::CreateEmailIdentityError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_email_identity_error(response)
@@ -292,7 +297,7 @@ impl CreateEmailIdentityPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateEmailIdentityPolicy {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateEmailIdentityPolicyOutput,
         crate::error::CreateEmailIdentityPolicyError,
     >;
@@ -323,8 +328,10 @@ impl CreateEmailTemplate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateEmailTemplate {
-    type Output =
-        Result<crate::output::CreateEmailTemplateOutput, crate::error::CreateEmailTemplateError>;
+    type Output = std::result::Result<
+        crate::output::CreateEmailTemplateOutput,
+        crate::error::CreateEmailTemplateError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_email_template_error(response)
@@ -349,7 +356,10 @@ impl CreateImportJob {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateImportJob {
-    type Output = Result<crate::output::CreateImportJobOutput, crate::error::CreateImportJobError>;
+    type Output = std::result::Result<
+        crate::output::CreateImportJobOutput,
+        crate::error::CreateImportJobError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_import_job_error(response)
@@ -379,7 +389,7 @@ impl DeleteConfigurationSet {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteConfigurationSet {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteConfigurationSetOutput,
         crate::error::DeleteConfigurationSetError,
     >;
@@ -413,7 +423,7 @@ impl DeleteConfigurationSetEventDestination {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteConfigurationSetEventDestination {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteConfigurationSetEventDestinationOutput,
         crate::error::DeleteConfigurationSetEventDestinationError,
     >;
@@ -443,7 +453,8 @@ impl DeleteContact {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteContact {
-    type Output = Result<crate::output::DeleteContactOutput, crate::error::DeleteContactError>;
+    type Output =
+        std::result::Result<crate::output::DeleteContactOutput, crate::error::DeleteContactError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_contact_error(response)
@@ -468,8 +479,10 @@ impl DeleteContactList {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteContactList {
-    type Output =
-        Result<crate::output::DeleteContactListOutput, crate::error::DeleteContactListError>;
+    type Output = std::result::Result<
+        crate::output::DeleteContactListOutput,
+        crate::error::DeleteContactListError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_contact_list_error(response)
@@ -497,7 +510,7 @@ impl DeleteCustomVerificationEmailTemplate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteCustomVerificationEmailTemplate {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteCustomVerificationEmailTemplateOutput,
         crate::error::DeleteCustomVerificationEmailTemplateError,
     >;
@@ -527,7 +540,7 @@ impl DeleteDedicatedIpPool {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteDedicatedIpPool {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteDedicatedIpPoolOutput,
         crate::error::DeleteDedicatedIpPoolError,
     >;
@@ -556,8 +569,10 @@ impl DeleteEmailIdentity {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteEmailIdentity {
-    type Output =
-        Result<crate::output::DeleteEmailIdentityOutput, crate::error::DeleteEmailIdentityError>;
+    type Output = std::result::Result<
+        crate::output::DeleteEmailIdentityOutput,
+        crate::error::DeleteEmailIdentityError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_email_identity_error(response)
@@ -593,7 +608,7 @@ impl DeleteEmailIdentityPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteEmailIdentityPolicy {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteEmailIdentityPolicyOutput,
         crate::error::DeleteEmailIdentityPolicyError,
     >;
@@ -622,8 +637,10 @@ impl DeleteEmailTemplate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteEmailTemplate {
-    type Output =
-        Result<crate::output::DeleteEmailTemplateOutput, crate::error::DeleteEmailTemplateError>;
+    type Output = std::result::Result<
+        crate::output::DeleteEmailTemplateOutput,
+        crate::error::DeleteEmailTemplateError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_email_template_error(response)
@@ -648,7 +665,7 @@ impl DeleteSuppressedDestination {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteSuppressedDestination {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteSuppressedDestinationOutput,
         crate::error::DeleteSuppressedDestinationError,
     >;
@@ -677,7 +694,8 @@ impl GetAccount {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetAccount {
-    type Output = Result<crate::output::GetAccountOutput, crate::error::GetAccountError>;
+    type Output =
+        std::result::Result<crate::output::GetAccountOutput, crate::error::GetAccountError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_account_error(response)
@@ -702,8 +720,10 @@ impl GetBlacklistReports {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBlacklistReports {
-    type Output =
-        Result<crate::output::GetBlacklistReportsOutput, crate::error::GetBlacklistReportsError>;
+    type Output = std::result::Result<
+        crate::output::GetBlacklistReportsOutput,
+        crate::error::GetBlacklistReportsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_blacklist_reports_error(response)
@@ -735,8 +755,10 @@ impl GetConfigurationSet {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetConfigurationSet {
-    type Output =
-        Result<crate::output::GetConfigurationSetOutput, crate::error::GetConfigurationSetError>;
+    type Output = std::result::Result<
+        crate::output::GetConfigurationSetOutput,
+        crate::error::GetConfigurationSetError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_configuration_set_error(response)
@@ -768,7 +790,7 @@ impl GetConfigurationSetEventDestinations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetConfigurationSetEventDestinations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetConfigurationSetEventDestinationsOutput,
         crate::error::GetConfigurationSetEventDestinationsError,
     >;
@@ -798,7 +820,8 @@ impl GetContact {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetContact {
-    type Output = Result<crate::output::GetContactOutput, crate::error::GetContactError>;
+    type Output =
+        std::result::Result<crate::output::GetContactOutput, crate::error::GetContactError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_contact_error(response)
@@ -824,7 +847,8 @@ impl GetContactList {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetContactList {
-    type Output = Result<crate::output::GetContactListOutput, crate::error::GetContactListError>;
+    type Output =
+        std::result::Result<crate::output::GetContactListOutput, crate::error::GetContactListError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_contact_list_error(response)
@@ -853,7 +877,7 @@ impl GetCustomVerificationEmailTemplate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetCustomVerificationEmailTemplate {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetCustomVerificationEmailTemplateOutput,
         crate::error::GetCustomVerificationEmailTemplateError,
     >;
@@ -883,7 +907,8 @@ impl GetDedicatedIp {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetDedicatedIp {
-    type Output = Result<crate::output::GetDedicatedIpOutput, crate::error::GetDedicatedIpError>;
+    type Output =
+        std::result::Result<crate::output::GetDedicatedIpOutput, crate::error::GetDedicatedIpError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_dedicated_ip_error(response)
@@ -909,7 +934,10 @@ impl GetDedicatedIps {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetDedicatedIps {
-    type Output = Result<crate::output::GetDedicatedIpsOutput, crate::error::GetDedicatedIpsError>;
+    type Output = std::result::Result<
+        crate::output::GetDedicatedIpsOutput,
+        crate::error::GetDedicatedIpsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_dedicated_ips_error(response)
@@ -940,7 +968,7 @@ impl GetDeliverabilityDashboardOptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetDeliverabilityDashboardOptions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetDeliverabilityDashboardOptionsOutput,
         crate::error::GetDeliverabilityDashboardOptionsError,
     >;
@@ -968,7 +996,7 @@ impl GetDeliverabilityTestReport {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetDeliverabilityTestReport {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetDeliverabilityTestReportOutput,
         crate::error::GetDeliverabilityTestReportError,
     >;
@@ -998,7 +1026,7 @@ impl GetDomainDeliverabilityCampaign {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetDomainDeliverabilityCampaign {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetDomainDeliverabilityCampaignOutput,
         crate::error::GetDomainDeliverabilityCampaignError,
     >;
@@ -1027,7 +1055,7 @@ impl GetDomainStatisticsReport {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetDomainStatisticsReport {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetDomainStatisticsReportOutput,
         crate::error::GetDomainStatisticsReportError,
     >;
@@ -1057,8 +1085,10 @@ impl GetEmailIdentity {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetEmailIdentity {
-    type Output =
-        Result<crate::output::GetEmailIdentityOutput, crate::error::GetEmailIdentityError>;
+    type Output = std::result::Result<
+        crate::output::GetEmailIdentityOutput,
+        crate::error::GetEmailIdentityError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_email_identity_error(response)
@@ -1094,7 +1124,7 @@ impl GetEmailIdentityPolicies {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetEmailIdentityPolicies {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetEmailIdentityPoliciesOutput,
         crate::error::GetEmailIdentityPoliciesError,
     >;
@@ -1124,8 +1154,10 @@ impl GetEmailTemplate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetEmailTemplate {
-    type Output =
-        Result<crate::output::GetEmailTemplateOutput, crate::error::GetEmailTemplateError>;
+    type Output = std::result::Result<
+        crate::output::GetEmailTemplateOutput,
+        crate::error::GetEmailTemplateError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_email_template_error(response)
@@ -1150,7 +1182,8 @@ impl GetImportJob {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetImportJob {
-    type Output = Result<crate::output::GetImportJobOutput, crate::error::GetImportJobError>;
+    type Output =
+        std::result::Result<crate::output::GetImportJobOutput, crate::error::GetImportJobError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_import_job_error(response)
@@ -1176,7 +1209,7 @@ impl GetSuppressedDestination {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetSuppressedDestination {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetSuppressedDestinationOutput,
         crate::error::GetSuppressedDestinationError,
     >;
@@ -1210,7 +1243,7 @@ impl ListConfigurationSets {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListConfigurationSets {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListConfigurationSetsOutput,
         crate::error::ListConfigurationSetsError,
     >;
@@ -1238,8 +1271,10 @@ impl ListContactLists {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListContactLists {
-    type Output =
-        Result<crate::output::ListContactListsOutput, crate::error::ListContactListsError>;
+    type Output = std::result::Result<
+        crate::output::ListContactListsOutput,
+        crate::error::ListContactListsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_contact_lists_error(response)
@@ -1264,7 +1299,8 @@ impl ListContacts {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListContacts {
-    type Output = Result<crate::output::ListContactsOutput, crate::error::ListContactsError>;
+    type Output =
+        std::result::Result<crate::output::ListContactsOutput, crate::error::ListContactsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_contacts_error(response)
@@ -1293,7 +1329,7 @@ impl ListCustomVerificationEmailTemplates {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListCustomVerificationEmailTemplates {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListCustomVerificationEmailTemplatesOutput,
         crate::error::ListCustomVerificationEmailTemplatesError,
     >;
@@ -1324,8 +1360,10 @@ impl ListDedicatedIpPools {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListDedicatedIpPools {
-    type Output =
-        Result<crate::output::ListDedicatedIpPoolsOutput, crate::error::ListDedicatedIpPoolsError>;
+    type Output = std::result::Result<
+        crate::output::ListDedicatedIpPoolsOutput,
+        crate::error::ListDedicatedIpPoolsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_dedicated_ip_pools_error(response)
@@ -1352,7 +1390,7 @@ impl ListDeliverabilityTestReports {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListDeliverabilityTestReports {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListDeliverabilityTestReportsOutput,
         crate::error::ListDeliverabilityTestReportsError,
     >;
@@ -1382,7 +1420,7 @@ impl ListDomainDeliverabilityCampaigns {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListDomainDeliverabilityCampaigns {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListDomainDeliverabilityCampaignsOutput,
         crate::error::ListDomainDeliverabilityCampaignsError,
     >;
@@ -1413,8 +1451,10 @@ impl ListEmailIdentities {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListEmailIdentities {
-    type Output =
-        Result<crate::output::ListEmailIdentitiesOutput, crate::error::ListEmailIdentitiesError>;
+    type Output = std::result::Result<
+        crate::output::ListEmailIdentitiesOutput,
+        crate::error::ListEmailIdentitiesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_email_identities_error(response)
@@ -1441,8 +1481,10 @@ impl ListEmailTemplates {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListEmailTemplates {
-    type Output =
-        Result<crate::output::ListEmailTemplatesOutput, crate::error::ListEmailTemplatesError>;
+    type Output = std::result::Result<
+        crate::output::ListEmailTemplatesOutput,
+        crate::error::ListEmailTemplatesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_email_templates_error(response)
@@ -1467,7 +1509,8 @@ impl ListImportJobs {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListImportJobs {
-    type Output = Result<crate::output::ListImportJobsOutput, crate::error::ListImportJobsError>;
+    type Output =
+        std::result::Result<crate::output::ListImportJobsOutput, crate::error::ListImportJobsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_import_jobs_error(response)
@@ -1493,7 +1536,7 @@ impl ListSuppressedDestinations {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListSuppressedDestinations {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListSuppressedDestinationsOutput,
         crate::error::ListSuppressedDestinationsError,
     >;
@@ -1526,8 +1569,10 @@ impl ListTagsForResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
-    type Output =
-        Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
+    type Output = std::result::Result<
+        crate::output::ListTagsForResourceOutput,
+        crate::error::ListTagsForResourceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
@@ -1552,7 +1597,7 @@ impl PutAccountDedicatedIpWarmupAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutAccountDedicatedIpWarmupAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutAccountDedicatedIpWarmupAttributesOutput,
         crate::error::PutAccountDedicatedIpWarmupAttributesError,
     >;
@@ -1582,8 +1627,10 @@ impl PutAccountDetails {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutAccountDetails {
-    type Output =
-        Result<crate::output::PutAccountDetailsOutput, crate::error::PutAccountDetailsError>;
+    type Output = std::result::Result<
+        crate::output::PutAccountDetailsOutput,
+        crate::error::PutAccountDetailsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_account_details_error(response)
@@ -1608,7 +1655,7 @@ impl PutAccountSendingAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutAccountSendingAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutAccountSendingAttributesOutput,
         crate::error::PutAccountSendingAttributesError,
     >;
@@ -1636,7 +1683,7 @@ impl PutAccountSuppressionAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutAccountSuppressionAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutAccountSuppressionAttributesOutput,
         crate::error::PutAccountSuppressionAttributesError,
     >;
@@ -1665,7 +1712,7 @@ impl PutConfigurationSetDeliveryOptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutConfigurationSetDeliveryOptions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutConfigurationSetDeliveryOptionsOutput,
         crate::error::PutConfigurationSetDeliveryOptionsError,
     >;
@@ -1694,7 +1741,7 @@ impl PutConfigurationSetReputationOptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutConfigurationSetReputationOptions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutConfigurationSetReputationOptionsOutput,
         crate::error::PutConfigurationSetReputationOptionsError,
     >;
@@ -1725,7 +1772,7 @@ impl PutConfigurationSetSendingOptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutConfigurationSetSendingOptions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutConfigurationSetSendingOptionsOutput,
         crate::error::PutConfigurationSetSendingOptionsError,
     >;
@@ -1753,7 +1800,7 @@ impl PutConfigurationSetSuppressionOptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutConfigurationSetSuppressionOptions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutConfigurationSetSuppressionOptionsOutput,
         crate::error::PutConfigurationSetSuppressionOptionsError,
     >;
@@ -1784,7 +1831,7 @@ impl PutConfigurationSetTrackingOptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutConfigurationSetTrackingOptions {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutConfigurationSetTrackingOptionsOutput,
         crate::error::PutConfigurationSetTrackingOptionsError,
     >;
@@ -1819,8 +1866,10 @@ impl PutDedicatedIpInPool {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutDedicatedIpInPool {
-    type Output =
-        Result<crate::output::PutDedicatedIpInPoolOutput, crate::error::PutDedicatedIpInPoolError>;
+    type Output = std::result::Result<
+        crate::output::PutDedicatedIpInPoolOutput,
+        crate::error::PutDedicatedIpInPoolError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_dedicated_ip_in_pool_error(response)
@@ -1845,7 +1894,7 @@ impl PutDedicatedIpWarmupAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutDedicatedIpWarmupAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutDedicatedIpWarmupAttributesOutput,
         crate::error::PutDedicatedIpWarmupAttributesError,
     >;
@@ -1878,7 +1927,7 @@ impl PutDeliverabilityDashboardOption {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutDeliverabilityDashboardOption {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutDeliverabilityDashboardOptionOutput,
         crate::error::PutDeliverabilityDashboardOptionError,
     >;
@@ -1907,7 +1956,7 @@ impl PutEmailIdentityConfigurationSetAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutEmailIdentityConfigurationSetAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutEmailIdentityConfigurationSetAttributesOutput,
         crate::error::PutEmailIdentityConfigurationSetAttributesError,
     >;
@@ -1939,7 +1988,7 @@ impl PutEmailIdentityDkimAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutEmailIdentityDkimAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutEmailIdentityDkimAttributesOutput,
         crate::error::PutEmailIdentityDkimAttributesError,
     >;
@@ -1986,7 +2035,7 @@ impl PutEmailIdentityDkimSigningAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutEmailIdentityDkimSigningAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutEmailIdentityDkimSigningAttributesOutput,
         crate::error::PutEmailIdentityDkimSigningAttributesError,
     >;
@@ -2025,7 +2074,7 @@ impl PutEmailIdentityFeedbackAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutEmailIdentityFeedbackAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutEmailIdentityFeedbackAttributesOutput,
         crate::error::PutEmailIdentityFeedbackAttributesError,
     >;
@@ -2054,7 +2103,7 @@ impl PutEmailIdentityMailFromAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutEmailIdentityMailFromAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutEmailIdentityMailFromAttributesOutput,
         crate::error::PutEmailIdentityMailFromAttributesError,
     >;
@@ -2082,7 +2131,7 @@ impl PutSuppressedDestination {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutSuppressedDestination {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::PutSuppressedDestinationOutput,
         crate::error::PutSuppressedDestinationError,
     >;
@@ -2110,7 +2159,8 @@ impl SendBulkEmail {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SendBulkEmail {
-    type Output = Result<crate::output::SendBulkEmailOutput, crate::error::SendBulkEmailError>;
+    type Output =
+        std::result::Result<crate::output::SendBulkEmailOutput, crate::error::SendBulkEmailError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_send_bulk_email_error(response)
@@ -2142,7 +2192,7 @@ impl SendCustomVerificationEmail {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SendCustomVerificationEmail {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::SendCustomVerificationEmailOutput,
         crate::error::SendCustomVerificationEmailError,
     >;
@@ -2193,7 +2243,7 @@ impl SendEmail {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SendEmail {
-    type Output = Result<crate::output::SendEmailOutput, crate::error::SendEmailError>;
+    type Output = std::result::Result<crate::output::SendEmailOutput, crate::error::SendEmailError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_send_email_error(response)
@@ -2226,7 +2276,8 @@ impl TagResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TagResource {
-    type Output = Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
+    type Output =
+        std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_resource_error(response)
@@ -2253,7 +2304,7 @@ impl TestRenderEmailTemplate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TestRenderEmailTemplate {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::TestRenderEmailTemplateOutput,
         crate::error::TestRenderEmailTemplateError,
     >;
@@ -2281,7 +2332,8 @@ impl UntagResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UntagResource {
-    type Output = Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
+    type Output =
+        std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_resource_error(response)
@@ -2312,7 +2364,7 @@ impl UpdateConfigurationSetEventDestination {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateConfigurationSetEventDestination {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateConfigurationSetEventDestinationOutput,
         crate::error::UpdateConfigurationSetEventDestinationError,
     >;
@@ -2344,7 +2396,8 @@ impl UpdateContact {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateContact {
-    type Output = Result<crate::output::UpdateContactOutput, crate::error::UpdateContactError>;
+    type Output =
+        std::result::Result<crate::output::UpdateContactOutput, crate::error::UpdateContactError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_contact_error(response)
@@ -2369,8 +2422,10 @@ impl UpdateContactList {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateContactList {
-    type Output =
-        Result<crate::output::UpdateContactListOutput, crate::error::UpdateContactListError>;
+    type Output = std::result::Result<
+        crate::output::UpdateContactListOutput,
+        crate::error::UpdateContactListError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_contact_list_error(response)
@@ -2398,7 +2453,7 @@ impl UpdateCustomVerificationEmailTemplate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateCustomVerificationEmailTemplate {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateCustomVerificationEmailTemplateOutput,
         crate::error::UpdateCustomVerificationEmailTemplateError,
     >;
@@ -2439,7 +2494,7 @@ impl UpdateEmailIdentityPolicy {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateEmailIdentityPolicy {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateEmailIdentityPolicyOutput,
         crate::error::UpdateEmailIdentityPolicyError,
     >;
@@ -2470,8 +2525,10 @@ impl UpdateEmailTemplate {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateEmailTemplate {
-    type Output =
-        Result<crate::output::UpdateEmailTemplateOutput, crate::error::UpdateEmailTemplateError>;
+    type Output = std::result::Result<
+        crate::output::UpdateEmailTemplateOutput,
+        crate::error::UpdateEmailTemplateError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_email_template_error(response)

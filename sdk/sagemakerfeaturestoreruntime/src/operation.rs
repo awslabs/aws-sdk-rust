@@ -14,7 +14,8 @@ impl BatchGetRecord {
     }
 }
 impl smithy_http::response::ParseStrictResponse for BatchGetRecord {
-    type Output = Result<crate::output::BatchGetRecordOutput, crate::error::BatchGetRecordError>;
+    type Output =
+        std::result::Result<crate::output::BatchGetRecordOutput, crate::error::BatchGetRecordError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_batch_get_record_error(response)
@@ -41,7 +42,8 @@ impl DeleteRecord {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteRecord {
-    type Output = Result<crate::output::DeleteRecordOutput, crate::error::DeleteRecordError>;
+    type Output =
+        std::result::Result<crate::output::DeleteRecordOutput, crate::error::DeleteRecordError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_record_error(response)
@@ -68,7 +70,7 @@ impl GetRecord {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetRecord {
-    type Output = Result<crate::output::GetRecordOutput, crate::error::GetRecordError>;
+    type Output = std::result::Result<crate::output::GetRecordOutput, crate::error::GetRecordError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_record_error(response)
@@ -97,7 +99,7 @@ impl PutRecord {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutRecord {
-    type Output = Result<crate::output::PutRecordOutput, crate::error::PutRecordError>;
+    type Output = std::result::Result<crate::output::PutRecordOutput, crate::error::PutRecordError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_record_error(response)

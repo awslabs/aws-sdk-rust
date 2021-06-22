@@ -70,6 +70,30 @@ impl CancelRotateSecretError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelRotateSecretErrorKind::InternalServiceError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelRotateSecretErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelRotateSecretErrorKind::InvalidRequestError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelRotateSecretErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for CancelRotateSecretError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -164,6 +188,39 @@ impl CreateSecretError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_encryption_failure(&self) -> bool {
+        matches!(&self.kind, CreateSecretErrorKind::EncryptionFailure(_))
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, CreateSecretErrorKind::InternalServiceError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, CreateSecretErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(&self.kind, CreateSecretErrorKind::InvalidRequestError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateSecretErrorKind::LimitExceededError(_))
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSecretErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_precondition_not_met_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSecretErrorKind::PreconditionNotMetError(_)
+        )
+    }
+    pub fn is_resource_exists_error(&self) -> bool {
+        matches!(&self.kind, CreateSecretErrorKind::ResourceExistsError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateSecretErrorKind::ResourceNotFoundError(_))
+    }
 }
 impl std::error::Error for CreateSecretError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -253,6 +310,30 @@ impl DeleteResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::InternalServiceError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::InvalidRequestError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteResourcePolicyErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteResourcePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -337,6 +418,18 @@ impl DeleteSecretError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, DeleteSecretErrorKind::InternalServiceError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, DeleteSecretErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteSecretErrorKind::InvalidRequestError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteSecretErrorKind::ResourceNotFoundError(_))
+    }
 }
 impl std::error::Error for DeleteSecretError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -416,6 +509,15 @@ impl DescribeSecretError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, DescribeSecretErrorKind::InternalServiceError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeSecretErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for DescribeSecretError {
@@ -497,6 +599,24 @@ impl GetRandomPasswordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRandomPasswordErrorKind::InternalServiceError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRandomPasswordErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRandomPasswordErrorKind::InvalidRequestError(_)
+        )
+    }
 }
 impl std::error::Error for GetRandomPasswordError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -577,6 +697,24 @@ impl GetResourcePolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourcePolicyErrorKind::InternalServiceError(_)
+        )
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourcePolicyErrorKind::InvalidRequestError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetResourcePolicyErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for GetResourcePolicyError {
@@ -663,6 +801,27 @@ impl GetSecretValueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_decryption_failure(&self) -> bool {
+        matches!(&self.kind, GetSecretValueErrorKind::DecryptionFailure(_))
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, GetSecretValueErrorKind::InternalServiceError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSecretValueErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(&self.kind, GetSecretValueErrorKind::InvalidRequestError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSecretValueErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for GetSecretValueError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -746,6 +905,15 @@ impl ListSecretsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, ListSecretsErrorKind::InternalServiceError(_))
+    }
+    pub fn is_invalid_next_token_error(&self) -> bool {
+        matches!(&self.kind, ListSecretsErrorKind::InvalidNextTokenError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, ListSecretsErrorKind::InvalidParameterError(_))
+    }
 }
 impl std::error::Error for ListSecretsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -826,6 +994,24 @@ impl ListSecretVersionIdsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSecretVersionIdsErrorKind::InternalServiceError(_)
+        )
+    }
+    pub fn is_invalid_next_token_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSecretVersionIdsErrorKind::InvalidNextTokenError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSecretVersionIdsErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for ListSecretVersionIdsError {
@@ -913,6 +1099,39 @@ impl PutResourcePolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::InternalServiceError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::InvalidRequestError(_)
+        )
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_public_policy_error(&self) -> bool {
+        matches!(&self.kind, PutResourcePolicyErrorKind::PublicPolicyError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutResourcePolicyErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for PutResourcePolicyError {
@@ -1006,6 +1225,33 @@ impl PutSecretValueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_encryption_failure(&self) -> bool {
+        matches!(&self.kind, PutSecretValueErrorKind::EncryptionFailure(_))
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, PutSecretValueErrorKind::InternalServiceError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutSecretValueErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(&self.kind, PutSecretValueErrorKind::InvalidRequestError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, PutSecretValueErrorKind::LimitExceededError(_))
+    }
+    pub fn is_resource_exists_error(&self) -> bool {
+        matches!(&self.kind, PutSecretValueErrorKind::ResourceExistsError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutSecretValueErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for PutSecretValueError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1093,6 +1339,30 @@ impl RemoveRegionsFromReplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveRegionsFromReplicationErrorKind::InternalServiceError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveRegionsFromReplicationErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveRegionsFromReplicationErrorKind::InvalidRequestError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveRegionsFromReplicationErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for RemoveRegionsFromReplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1176,6 +1446,30 @@ impl ReplicateSecretToRegionsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReplicateSecretToRegionsErrorKind::InternalServiceError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReplicateSecretToRegionsErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReplicateSecretToRegionsErrorKind::InvalidRequestError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ReplicateSecretToRegionsErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for ReplicateSecretToRegionsError {
@@ -1261,6 +1555,18 @@ impl RestoreSecretError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, RestoreSecretErrorKind::InternalServiceError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, RestoreSecretErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(&self.kind, RestoreSecretErrorKind::InvalidRequestError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, RestoreSecretErrorKind::ResourceNotFoundError(_))
+    }
 }
 impl std::error::Error for RestoreSecretError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1344,6 +1650,18 @@ impl RotateSecretError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, RotateSecretErrorKind::InternalServiceError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, RotateSecretErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(&self.kind, RotateSecretErrorKind::InvalidRequestError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, RotateSecretErrorKind::ResourceNotFoundError(_))
     }
 }
 impl std::error::Error for RotateSecretError {
@@ -1429,6 +1747,30 @@ impl StopReplicationToReplicaError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopReplicationToReplicaErrorKind::InternalServiceError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopReplicationToReplicaErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopReplicationToReplicaErrorKind::InvalidRequestError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopReplicationToReplicaErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for StopReplicationToReplicaError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1513,6 +1855,18 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InternalServiceError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InvalidRequestError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ResourceNotFoundError(_))
+    }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1596,6 +1950,18 @@ impl UntagResourceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::InternalServiceError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::InvalidRequestError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ResourceNotFoundError(_))
     }
 }
 impl std::error::Error for UntagResourceError {
@@ -1691,6 +2057,39 @@ impl UpdateSecretError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_encryption_failure(&self) -> bool {
+        matches!(&self.kind, UpdateSecretErrorKind::EncryptionFailure(_))
+    }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(&self.kind, UpdateSecretErrorKind::InternalServiceError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, UpdateSecretErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateSecretErrorKind::InvalidRequestError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, UpdateSecretErrorKind::LimitExceededError(_))
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSecretErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_precondition_not_met_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSecretErrorKind::PreconditionNotMetError(_)
+        )
+    }
+    pub fn is_resource_exists_error(&self) -> bool {
+        matches!(&self.kind, UpdateSecretErrorKind::ResourceExistsError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateSecretErrorKind::ResourceNotFoundError(_))
+    }
 }
 impl std::error::Error for UpdateSecretError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1782,6 +2181,36 @@ impl UpdateSecretVersionStageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSecretVersionStageErrorKind::InternalServiceError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSecretVersionStageErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSecretVersionStageErrorKind::InvalidRequestError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSecretVersionStageErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSecretVersionStageErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateSecretVersionStageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1869,6 +2298,36 @@ impl ValidateResourcePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ValidateResourcePolicyErrorKind::InternalServiceError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ValidateResourcePolicyErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_invalid_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ValidateResourcePolicyErrorKind::InvalidRequestError(_)
+        )
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ValidateResourcePolicyErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ValidateResourcePolicyErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for ValidateResourcePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1922,12 +2381,12 @@ pub mod resource_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
@@ -1987,12 +2446,12 @@ pub mod malformed_policy_document_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
@@ -2060,12 +2519,12 @@ pub mod invalid_request_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidRequestError`](crate::error::InvalidRequestError)
@@ -2122,12 +2581,12 @@ pub mod invalid_parameter_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidParameterError`](crate::error::InvalidParameterError)
@@ -2184,12 +2643,12 @@ pub mod internal_service_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InternalServiceError`](crate::error::InternalServiceError)
@@ -2246,12 +2705,12 @@ pub mod limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
@@ -2308,12 +2767,12 @@ pub mod resource_exists_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceExistsError`](crate::error::ResourceExistsError)
@@ -2370,12 +2829,12 @@ pub mod precondition_not_met_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`PreconditionNotMetError`](crate::error::PreconditionNotMetError)
@@ -2435,12 +2894,12 @@ pub mod encryption_failure {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`EncryptionFailure`](crate::error::EncryptionFailure)
@@ -2497,12 +2956,12 @@ pub mod public_policy_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`PublicPolicyError`](crate::error::PublicPolicyError)
@@ -2559,12 +3018,12 @@ pub mod invalid_next_token_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidNextTokenError`](crate::error::InvalidNextTokenError)
@@ -2621,12 +3080,12 @@ pub mod decryption_failure {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DecryptionFailure`](crate::error::DecryptionFailure)

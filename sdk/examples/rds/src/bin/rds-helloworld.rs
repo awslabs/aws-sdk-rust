@@ -25,9 +25,6 @@ struct Opt {
 /// Displays information about your RDS instances.
 /// # Arguments
 ///
-/// * `-k KEY` - The KMS key.
-/// * `-o OUT` - The name of the file to store the encryped key in.
-/// * `-t TEXT` - The string to encrypt.
 /// * `[-d DEFAULT-REGION]` - The region in which the client is created.
 ///    If not supplied, uses the value of the **AWS_DEFAULT_REGION** environment variable.
 ///    If the environment variable is not set, defaults to **us-west-2**.

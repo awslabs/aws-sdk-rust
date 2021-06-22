@@ -68,7 +68,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::BatchGetRecordOutput,
             smithy_http::result::SdkError<crate::error::BatchGetRecordError>,
         >
@@ -95,9 +95,9 @@ pub mod fluent_builders {
         }
         pub fn set_identifiers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
+            input: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
         ) -> Self {
-            self.inner = self.inner.set_identifiers(inp);
+            self.inner = self.inner.set_identifiers(input);
             self
         }
     }
@@ -116,7 +116,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteRecordOutput,
             smithy_http::result::SdkError<crate::error::DeleteRecordError>,
         >
@@ -133,38 +133,41 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the feature group to delete the record from. </p>
-        pub fn feature_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_group_name(inp);
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_group_name(input);
             self
         }
-        pub fn set_feature_group_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_feature_group_name(inp);
+        pub fn set_feature_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_feature_group_name(input);
             self
         }
         /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in
         /// string format. </p>
         pub fn record_identifier_value_as_string(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.record_identifier_value_as_string(inp);
+            self.inner = self.inner.record_identifier_value_as_string(input);
             self
         }
         pub fn set_record_identifier_value_as_string(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_record_identifier_value_as_string(inp);
+            self.inner = self.inner.set_record_identifier_value_as_string(input);
             self
         }
         /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be
         /// used to query data at a certain point in time.</p>
-        pub fn event_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_time(inp);
+        pub fn event_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_time(input);
             self
         }
-        pub fn set_event_time(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_event_time(inp);
+        pub fn set_event_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_event_time(input);
             self
         }
     }
@@ -183,7 +186,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetRecordOutput,
             smithy_http::result::SdkError<crate::error::GetRecordError>,
         >
@@ -200,28 +203,31 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the feature group in which you want to put the records.</p>
-        pub fn feature_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_group_name(inp);
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_group_name(input);
             self
         }
-        pub fn set_feature_group_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_feature_group_name(inp);
+        pub fn set_feature_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_feature_group_name(input);
             self
         }
         /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies
         /// the record in the <code>FeatureGroup</code>. </p>
         pub fn record_identifier_value_as_string(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.record_identifier_value_as_string(inp);
+            self.inner = self.inner.record_identifier_value_as_string(input);
             self
         }
         pub fn set_record_identifier_value_as_string(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_record_identifier_value_as_string(inp);
+            self.inner = self.inner.set_record_identifier_value_as_string(input);
             self
         }
         /// <p>List of names of Features to be retrieved. If not specified, the latest value for all
@@ -232,9 +238,9 @@ pub mod fluent_builders {
         }
         pub fn set_feature_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_feature_names(inp);
+            self.inner = self.inner.set_feature_names(input);
             self
         }
     }
@@ -253,7 +259,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutRecordOutput,
             smithy_http::result::SdkError<crate::error::PutRecordError>,
         >
@@ -270,12 +276,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the feature group that you want to insert the record into.</p>
-        pub fn feature_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_group_name(inp);
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_group_name(input);
             self
         }
-        pub fn set_feature_group_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_feature_group_name(inp);
+        pub fn set_feature_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_feature_group_name(input);
             self
         }
         /// <p>List of FeatureValues to be inserted. This will be a full over-write. If you only want
@@ -297,9 +306,9 @@ pub mod fluent_builders {
         }
         pub fn set_record(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
         ) -> Self {
-            self.inner = self.inner.set_record(inp);
+            self.inner = self.inner.set_record(input);
             self
         }
     }

@@ -73,40 +73,43 @@ pub mod traffic_policy_instance {
     }
     impl Builder {
         /// <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The ID of the hosted zone that Amazon Route 53 created resource record sets in.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the
         /// resource record sets that are associated with this traffic policy instance. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted zone.</p>
-        pub fn ttl(mut self, inp: i64) -> Self {
-            self.ttl = Some(inp);
+        pub fn ttl(mut self, input: i64) -> Self {
+            self.ttl = Some(input);
             self
         }
-        pub fn set_ttl(mut self, inp: std::option::Option<i64>) -> Self {
-            self.ttl = inp;
+        pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
+            self.ttl = input;
             self
         }
         /// <p>The value of <code>State</code> is one of the following values:</p>
@@ -126,55 +129,55 @@ pub mod traffic_policy_instance {
         /// see <code>Message</code> for an explanation of what caused the request to fail.</p>
         /// </dd>
         /// </dl>
-        pub fn state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state = Some(inp.into());
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
             self
         }
         /// <p>If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If <code>State</code> is another value,
         /// <code>Message</code> is empty.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// <p>The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
-        pub fn traffic_policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.traffic_policy_id = Some(inp.into());
+        pub fn traffic_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.traffic_policy_id = Some(input.into());
             self
         }
         pub fn set_traffic_policy_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_policy_id = inp;
+            self.traffic_policy_id = input;
             self
         }
         /// <p>The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
-        pub fn traffic_policy_version(mut self, inp: i32) -> Self {
-            self.traffic_policy_version = Some(inp);
+        pub fn traffic_policy_version(mut self, input: i32) -> Self {
+            self.traffic_policy_version = Some(input);
             self
         }
-        pub fn set_traffic_policy_version(mut self, inp: std::option::Option<i32>) -> Self {
-            self.traffic_policy_version = inp;
+        pub fn set_traffic_policy_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.traffic_policy_version = input;
             self
         }
         /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance. </p>
-        pub fn traffic_policy_type(mut self, inp: crate::model::RrType) -> Self {
-            self.traffic_policy_type = Some(inp);
+        pub fn traffic_policy_type(mut self, input: crate::model::RrType) -> Self {
+            self.traffic_policy_type = Some(input);
             self
         }
         pub fn set_traffic_policy_type(
             mut self,
-            inp: std::option::Option<crate::model::RrType>,
+            input: std::option::Option<crate::model::RrType>,
         ) -> Self {
-            self.traffic_policy_type = inp;
+            self.traffic_policy_type = input;
             self
         }
         /// Consumes the builder and constructs a [`TrafficPolicyInstance`](crate::model::TrafficPolicyInstance)
@@ -337,61 +340,61 @@ pub mod traffic_policy {
     }
     impl Builder {
         /// <p>The ID that Amazon Route 53 assigned to a traffic policy when you created it.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy,
         /// the value of <code>Version</code> is always 1.</p>
-        pub fn version(mut self, inp: i32) -> Self {
-            self.version = Some(inp);
+        pub fn version(mut self, input: i32) -> Self {
+            self.version = Some(input);
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<i32>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.version = input;
             self
         }
         /// <p>The name that you specified when you created the traffic policy.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy
         /// to create a traffic policy instance.</p>
-        pub fn r#type(mut self, inp: crate::model::RrType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::RrType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RrType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RrType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The definition of a traffic policy in JSON format. You specify the JSON document to use for a new
         /// traffic policy in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
-        pub fn document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document = Some(inp.into());
+        pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document = Some(input.into());
             self
         }
-        pub fn set_document(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.document = inp;
+        pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document = input;
             self
         }
         /// <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.comment = Some(inp.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.comment = Some(input.into());
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.comment = inp;
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comment = input;
             self
         }
         /// Consumes the builder and constructs a [`TrafficPolicy`](crate::model::TrafficPolicy)
@@ -467,12 +470,12 @@ pub mod hosted_zone {
     }
     impl Builder {
         /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The name of the domain. For public hosted zones, this is the name that you have
@@ -480,62 +483,62 @@ pub mod hosted_zone {
         /// <p>For information about how to specify characters other than <code>a-z</code>,
         /// <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The value that you specified for <code>CallerReference</code> when you created the
         /// hosted zone.</p>
-        pub fn caller_reference(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.caller_reference = Some(inp.into());
+        pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
+            self.caller_reference = Some(input.into());
             self
         }
         pub fn set_caller_reference(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.caller_reference = inp;
+            self.caller_reference = input;
             self
         }
         /// <p>A complex type that includes the <code>Comment</code> and <code>PrivateZone</code>
         /// elements. If you omitted the <code>HostedZoneConfig</code> and <code>Comment</code> elements
         /// from the request, the <code>Config</code> and <code>Comment</code> elements don't appear in
         /// the response.</p>
-        pub fn config(mut self, inp: crate::model::HostedZoneConfig) -> Self {
-            self.config = Some(inp);
+        pub fn config(mut self, input: crate::model::HostedZoneConfig) -> Self {
+            self.config = Some(input);
             self
         }
         pub fn set_config(
             mut self,
-            inp: std::option::Option<crate::model::HostedZoneConfig>,
+            input: std::option::Option<crate::model::HostedZoneConfig>,
         ) -> Self {
-            self.config = inp;
+            self.config = input;
             self
         }
         /// <p>The number of resource record sets in the hosted zone.</p>
-        pub fn resource_record_set_count(mut self, inp: i64) -> Self {
-            self.resource_record_set_count = Some(inp);
+        pub fn resource_record_set_count(mut self, input: i64) -> Self {
+            self.resource_record_set_count = Some(input);
             self
         }
-        pub fn set_resource_record_set_count(mut self, inp: std::option::Option<i64>) -> Self {
-            self.resource_record_set_count = inp;
+        pub fn set_resource_record_set_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.resource_record_set_count = input;
             self
         }
         /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created
         /// by another service, you can't edit or delete it using Route 53. </p>
-        pub fn linked_service(mut self, inp: crate::model::LinkedService) -> Self {
-            self.linked_service = Some(inp);
+        pub fn linked_service(mut self, input: crate::model::LinkedService) -> Self {
+            self.linked_service = Some(input);
             self
         }
         pub fn set_linked_service(
             mut self,
-            inp: std::option::Option<crate::model::LinkedService>,
+            input: std::option::Option<crate::model::LinkedService>,
         ) -> Self {
-            self.linked_service = inp;
+            self.linked_service = input;
             self
         }
         /// Consumes the builder and constructs a [`HostedZone`](crate::model::HostedZone)
@@ -590,25 +593,25 @@ pub mod linked_service {
     impl Builder {
         /// <p>If the health check or hosted zone was created by another service, the service that created the resource. When a resource is created
         /// by another service, you can't edit or delete it using Amazon Route 53. </p>
-        pub fn service_principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_principal = Some(inp.into());
+        pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_principal = Some(input.into());
             self
         }
         pub fn set_service_principal(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.service_principal = inp;
+            self.service_principal = input;
             self
         }
         /// <p>If the health check or hosted zone was created by another service, an optional description that can be provided by the other service.
         /// When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`LinkedService`](crate::model::LinkedService)
@@ -657,21 +660,21 @@ pub mod hosted_zone_config {
     }
     impl Builder {
         /// <p>Any comments that you want to include about the hosted zone.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.comment = Some(inp.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.comment = Some(input.into());
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.comment = inp;
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comment = input;
             self
         }
         /// <p>A value that indicates whether this is a private hosted zone.</p>
-        pub fn private_zone(mut self, inp: bool) -> Self {
-            self.private_zone = Some(inp);
+        pub fn private_zone(mut self, input: bool) -> Self {
+            self.private_zone = Some(input);
             self
         }
-        pub fn set_private_zone(mut self, inp: bool) -> Self {
-            self.private_zone = Some(inp);
+        pub fn set_private_zone(mut self, input: std::option::Option<bool>) -> Self {
+            self.private_zone = input;
             self
         }
         /// Consumes the builder and constructs a [`HostedZoneConfig`](crate::model::HostedZoneConfig)
@@ -743,74 +746,74 @@ pub mod health_check {
     impl Builder {
         /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use
         /// this value to specify which health check to use. The value can be up to 64 characters long. </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>A unique string that you specified when you created the health check.</p>
-        pub fn caller_reference(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.caller_reference = Some(inp.into());
+        pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
+            self.caller_reference = Some(input.into());
             self
         }
         pub fn set_caller_reference(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.caller_reference = inp;
+            self.caller_reference = input;
             self
         }
         /// <p>If the health check was created by another service, the service that created the health check. When a health check is created
         /// by another service, you can't edit or delete it using Amazon Route 53. </p>
-        pub fn linked_service(mut self, inp: crate::model::LinkedService) -> Self {
-            self.linked_service = Some(inp);
+        pub fn linked_service(mut self, input: crate::model::LinkedService) -> Self {
+            self.linked_service = Some(input);
             self
         }
         pub fn set_linked_service(
             mut self,
-            inp: std::option::Option<crate::model::LinkedService>,
+            input: std::option::Option<crate::model::LinkedService>,
         ) -> Self {
-            self.linked_service = inp;
+            self.linked_service = input;
             self
         }
         /// <p>A complex type that contains detailed information about one health check.</p>
-        pub fn health_check_config(mut self, inp: crate::model::HealthCheckConfig) -> Self {
-            self.health_check_config = Some(inp);
+        pub fn health_check_config(mut self, input: crate::model::HealthCheckConfig) -> Self {
+            self.health_check_config = Some(input);
             self
         }
         pub fn set_health_check_config(
             mut self,
-            inp: std::option::Option<crate::model::HealthCheckConfig>,
+            input: std::option::Option<crate::model::HealthCheckConfig>,
         ) -> Self {
-            self.health_check_config = inp;
+            self.health_check_config = input;
             self
         }
         /// <p>The version of the health check. You can optionally pass this value in a call to <code>UpdateHealthCheck</code> to prevent overwriting
         /// another change to the health check.</p>
-        pub fn health_check_version(mut self, inp: i64) -> Self {
-            self.health_check_version = Some(inp);
+        pub fn health_check_version(mut self, input: i64) -> Self {
+            self.health_check_version = Some(input);
             self
         }
-        pub fn set_health_check_version(mut self, inp: std::option::Option<i64>) -> Self {
-            self.health_check_version = inp;
+        pub fn set_health_check_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.health_check_version = input;
             self
         }
         /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
         pub fn cloud_watch_alarm_configuration(
             mut self,
-            inp: crate::model::CloudWatchAlarmConfiguration,
+            input: crate::model::CloudWatchAlarmConfiguration,
         ) -> Self {
-            self.cloud_watch_alarm_configuration = Some(inp);
+            self.cloud_watch_alarm_configuration = Some(input);
             self
         }
         pub fn set_cloud_watch_alarm_configuration(
             mut self,
-            inp: std::option::Option<crate::model::CloudWatchAlarmConfiguration>,
+            input: std::option::Option<crate::model::CloudWatchAlarmConfiguration>,
         ) -> Self {
-            self.cloud_watch_alarm_configuration = inp;
+            self.cloud_watch_alarm_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`HealthCheck`](crate::model::HealthCheck)
@@ -890,84 +893,87 @@ pub mod cloud_watch_alarm_configuration {
     }
     impl Builder {
         /// <p>For the metric that the CloudWatch alarm is associated with, the number of periods that the metric is compared to the threshold.</p>
-        pub fn evaluation_periods(mut self, inp: i32) -> Self {
-            self.evaluation_periods = Some(inp);
+        pub fn evaluation_periods(mut self, input: i32) -> Self {
+            self.evaluation_periods = Some(input);
             self
         }
-        pub fn set_evaluation_periods(mut self, inp: std::option::Option<i32>) -> Self {
-            self.evaluation_periods = inp;
+        pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
+            self.evaluation_periods = input;
             self
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the value the metric is compared with.</p>
-        pub fn threshold(mut self, inp: f64) -> Self {
-            self.threshold = Some(inp);
+        pub fn threshold(mut self, input: f64) -> Self {
+            self.threshold = Some(input);
             self
         }
-        pub fn set_threshold(mut self, inp: std::option::Option<f64>) -> Self {
-            self.threshold = inp;
+        pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
+            self.threshold = input;
             self
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the arithmetic operation that is used for the comparison.</p>
-        pub fn comparison_operator(mut self, inp: crate::model::ComparisonOperator) -> Self {
-            self.comparison_operator = Some(inp);
+        pub fn comparison_operator(mut self, input: crate::model::ComparisonOperator) -> Self {
+            self.comparison_operator = Some(input);
             self
         }
         pub fn set_comparison_operator(
             mut self,
-            inp: std::option::Option<crate::model::ComparisonOperator>,
+            input: std::option::Option<crate::model::ComparisonOperator>,
         ) -> Self {
-            self.comparison_operator = inp;
+            self.comparison_operator = input;
             self
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the duration of one evaluation period in seconds.</p>
-        pub fn period(mut self, inp: i32) -> Self {
-            self.period = Some(inp);
+        pub fn period(mut self, input: i32) -> Self {
+            self.period = Some(input);
             self
         }
-        pub fn set_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.period = inp;
+        pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.period = input;
             self
         }
         /// <p>The name of the CloudWatch metric that the alarm is associated with.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.metric_name = Some(inp.into());
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_name = Some(input.into());
             self
         }
-        pub fn set_metric_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = inp;
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_name = input;
             self
         }
         /// <p>The namespace of the metric that the alarm is associated with. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a>
         /// in the <i>Amazon CloudWatch User Guide</i>.</p>
-        pub fn namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.namespace = Some(inp.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.namespace = Some(input.into());
             self
         }
-        pub fn set_namespace(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.namespace = inp;
+        pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace = input;
             self
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the statistic that is applied to the metric.</p>
-        pub fn statistic(mut self, inp: crate::model::Statistic) -> Self {
-            self.statistic = Some(inp);
+        pub fn statistic(mut self, input: crate::model::Statistic) -> Self {
+            self.statistic = Some(input);
             self
         }
-        pub fn set_statistic(mut self, inp: std::option::Option<crate::model::Statistic>) -> Self {
-            self.statistic = inp;
+        pub fn set_statistic(
+            mut self,
+            input: std::option::Option<crate::model::Statistic>,
+        ) -> Self {
+            self.statistic = input;
             self
         }
-        pub fn dimensions(mut self, inp: impl Into<crate::model::Dimension>) -> Self {
+        pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.dimensions = Some(v);
             self
         }
         pub fn set_dimensions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
         ) -> Self {
-            self.dimensions = inp;
+            self.dimensions = input;
             self
         }
         /// Consumes the builder and constructs a [`CloudWatchAlarmConfiguration`](crate::model::CloudWatchAlarmConfiguration)
@@ -1020,21 +1026,21 @@ pub mod dimension {
     }
     impl Builder {
         /// <p>For the metric that the CloudWatch alarm is associated with, the name of one dimension.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the value of one dimension.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`Dimension`](crate::model::Dimension)
@@ -1550,12 +1556,12 @@ pub mod health_check_config {
         /// </li>
         /// </ul>
         /// <p>When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit <code>IPAddress</code>.</p>
-        pub fn ip_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ip_address = Some(inp.into());
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_address = Some(input.into());
             self
         }
-        pub fn set_ip_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = inp;
+        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_address = input;
             self
         }
         /// <p>The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p>
@@ -1563,12 +1569,12 @@ pub mod health_check_config {
         /// <p>Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or
         /// <code>CALCULATED</code>.</p>
         /// </note>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>The type of health check that you want to create, which indicates how Amazon Route 53 determines whether an endpoint is healthy.</p>
@@ -1622,24 +1628,30 @@ pub mod health_check_config {
         /// <p>For more information, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53
         /// Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-        pub fn r#type(mut self, inp: crate::model::HealthCheckType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::HealthCheckType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::HealthCheckType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::HealthCheckType>,
+        ) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The path, if any, that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint
         /// will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example, the file /docs/route53-health-check.html.
         /// You can also include query string parameters, for example, <code>/welcome.html?language=jp&login=y</code>.
         /// </p>
-        pub fn resource_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_path = Some(inp.into());
+        pub fn resource_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_path = Some(input.into());
             self
         }
-        pub fn set_resource_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_path = inp;
+        pub fn set_resource_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_path = input;
             self
         }
         /// <p>Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p>
@@ -1687,26 +1699,32 @@ pub mod health_check_config {
         /// <p>In addition, if the value that you specify for <code>Type</code> is <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or
         /// <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it does when you
         /// specify a value for <code>IPAddress</code>. If the value of <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a <code>Host</code> header.</p>
-        pub fn fully_qualified_domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.fully_qualified_domain_name = Some(inp.into());
+        pub fn fully_qualified_domain_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.fully_qualified_domain_name = Some(input.into());
             self
         }
         pub fn set_fully_qualified_domain_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.fully_qualified_domain_name = inp;
+            self.fully_qualified_domain_name = input;
             self
         }
         /// <p>If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the
         /// response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy.</p>
         /// <p>Route 53 considers case when searching for <code>SearchString</code> in the response body. </p>
-        pub fn search_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.search_string = Some(inp.into());
+        pub fn search_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.search_string = Some(input.into());
             self
         }
-        pub fn set_search_string(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.search_string = inp;
+        pub fn set_search_string(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.search_string = input;
             self
         }
         /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next
@@ -1715,12 +1733,12 @@ pub mod health_check_config {
         /// <p>You can't change the value of <code>RequestInterval</code> after you create a health check.</p>
         /// </important>
         /// <p>If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
-        pub fn request_interval(mut self, inp: i32) -> Self {
-            self.request_interval = Some(inp);
+        pub fn request_interval(mut self, input: i32) -> Self {
+            self.request_interval = Some(input);
             self
         }
-        pub fn set_request_interval(mut self, inp: std::option::Option<i32>) -> Self {
-            self.request_interval = inp;
+        pub fn set_request_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.request_interval = input;
             self
         }
         /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint
@@ -1728,12 +1746,12 @@ pub mod health_check_config {
         /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
         /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
-        pub fn failure_threshold(mut self, inp: i32) -> Self {
-            self.failure_threshold = Some(inp);
+        pub fn failure_threshold(mut self, input: i32) -> Self {
+            self.failure_threshold = Some(input);
             self
         }
-        pub fn set_failure_threshold(mut self, inp: std::option::Option<i32>) -> Self {
-            self.failure_threshold = inp;
+        pub fn set_failure_threshold(mut self, input: std::option::Option<i32>) -> Self {
+            self.failure_threshold = input;
             self
         }
         /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple AWS regions and your endpoint, and to
@@ -1741,22 +1759,22 @@ pub mod health_check_config {
         /// <important>
         /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p>
         /// </important>
-        pub fn measure_latency(mut self, inp: bool) -> Self {
-            self.measure_latency = Some(inp);
+        pub fn measure_latency(mut self, input: bool) -> Self {
+            self.measure_latency = Some(input);
             self
         }
-        pub fn set_measure_latency(mut self, inp: std::option::Option<bool>) -> Self {
-            self.measure_latency = inp;
+        pub fn set_measure_latency(mut self, input: std::option::Option<bool>) -> Self {
+            self.measure_latency = input;
             self
         }
         /// <p>Specify whether you want Amazon Route 53 to invert the status of a health check, for example, to consider a health check unhealthy when it
         /// otherwise would be considered healthy.</p>
-        pub fn inverted(mut self, inp: bool) -> Self {
-            self.inverted = Some(inp);
+        pub fn inverted(mut self, input: bool) -> Self {
+            self.inverted = Some(input);
             self
         }
-        pub fn set_inverted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inverted = inp;
+        pub fn set_inverted(mut self, input: std::option::Option<bool>) -> Self {
+            self.inverted = input;
             self
         }
         /// <p>Stops Route 53 from performing health checks. When you disable a health check, here's what happens:</p>
@@ -1783,12 +1801,12 @@ pub mod health_check_config {
         /// </p>
         /// <p>Charges for a health check still apply when the health check is disabled. For more information, see
         /// <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
-        pub fn disabled(mut self, inp: bool) -> Self {
-            self.disabled = Some(inp);
+        pub fn disabled(mut self, input: bool) -> Self {
+            self.disabled = Some(input);
             self
         }
-        pub fn set_disabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.disabled = inp;
+        pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.disabled = input;
             self
         }
         /// <p>The number of child health checks that are associated with a <code>CALCULATED</code> health check that Amazon Route 53 must consider healthy for the
@@ -1805,25 +1823,25 @@ pub mod health_check_config {
         /// <p>If you specify <code>0</code>, Route 53 always considers this health check to be healthy.</p>
         /// </li>
         /// </ul>
-        pub fn health_threshold(mut self, inp: i32) -> Self {
-            self.health_threshold = Some(inp);
+        pub fn health_threshold(mut self, input: i32) -> Self {
+            self.health_threshold = Some(input);
             self
         }
-        pub fn set_health_threshold(mut self, inp: std::option::Option<i32>) -> Self {
-            self.health_threshold = inp;
+        pub fn set_health_threshold(mut self, input: std::option::Option<i32>) -> Self {
+            self.health_threshold = input;
             self
         }
-        pub fn child_health_checks(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn child_health_checks(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.child_health_checks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.child_health_checks = Some(v);
             self
         }
         pub fn set_child_health_checks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.child_health_checks = inp;
+            self.child_health_checks = input;
             self
         }
         /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code>
@@ -1838,38 +1856,38 @@ pub mod health_check_config {
         /// <code>FullyQualifiedDomainName</code>. If the endpoint responds to the <code>client_hello</code> message with a certificate that does not
         /// include the domain name that you specified in <code>FullyQualifiedDomainName</code>, a health checker will retry the handshake. In the
         /// second attempt, the health checker will omit <code>FullyQualifiedDomainName</code> from the <code>client_hello</code> message.</p>
-        pub fn enable_sni(mut self, inp: bool) -> Self {
-            self.enable_sni = Some(inp);
+        pub fn enable_sni(mut self, input: bool) -> Self {
+            self.enable_sni = Some(input);
             self
         }
-        pub fn set_enable_sni(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enable_sni = inp;
+        pub fn set_enable_sni(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_sni = input;
             self
         }
-        pub fn regions(mut self, inp: impl Into<crate::model::HealthCheckRegion>) -> Self {
+        pub fn regions(mut self, input: impl Into<crate::model::HealthCheckRegion>) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.regions = Some(v);
             self
         }
         pub fn set_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HealthCheckRegion>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HealthCheckRegion>>,
         ) -> Self {
-            self.regions = inp;
+            self.regions = input;
             self
         }
         /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether
         /// the specified health check is healthy.</p>
-        pub fn alarm_identifier(mut self, inp: crate::model::AlarmIdentifier) -> Self {
-            self.alarm_identifier = Some(inp);
+        pub fn alarm_identifier(mut self, input: crate::model::AlarmIdentifier) -> Self {
+            self.alarm_identifier = Some(input);
             self
         }
         pub fn set_alarm_identifier(
             mut self,
-            inp: std::option::Option<crate::model::AlarmIdentifier>,
+            input: std::option::Option<crate::model::AlarmIdentifier>,
         ) -> Self {
-            self.alarm_identifier = inp;
+            self.alarm_identifier = input;
             self
         }
         /// <p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign to the health check:</p>
@@ -1891,16 +1909,16 @@ pub mod health_check_config {
         /// </ul>
         pub fn insufficient_data_health_status(
             mut self,
-            inp: crate::model::InsufficientDataHealthStatus,
+            input: crate::model::InsufficientDataHealthStatus,
         ) -> Self {
-            self.insufficient_data_health_status = Some(inp);
+            self.insufficient_data_health_status = Some(input);
             self
         }
         pub fn set_insufficient_data_health_status(
             mut self,
-            inp: std::option::Option<crate::model::InsufficientDataHealthStatus>,
+            input: std::option::Option<crate::model::InsufficientDataHealthStatus>,
         ) -> Self {
-            self.insufficient_data_health_status = inp;
+            self.insufficient_data_health_status = input;
             self
         }
         /// Consumes the builder and constructs a [`HealthCheckConfig`](crate::model::HealthCheckConfig)
@@ -2041,15 +2059,15 @@ pub mod alarm_identifier {
         /// the region that the alarm was created in.</p>
         /// <p>For the current list of CloudWatch regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/cw_region.html">Amazon CloudWatch endpoints and quotas</a> in
         /// the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn region(mut self, inp: crate::model::CloudWatchRegion) -> Self {
-            self.region = Some(inp);
+        pub fn region(mut self, input: crate::model::CloudWatchRegion) -> Self {
+            self.region = Some(input);
             self
         }
         pub fn set_region(
             mut self,
-            inp: std::option::Option<crate::model::CloudWatchRegion>,
+            input: std::option::Option<crate::model::CloudWatchRegion>,
         ) -> Self {
-            self.region = inp;
+            self.region = input;
             self
         }
         /// <p>The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.</p>
@@ -2066,12 +2084,12 @@ pub mod alarm_identifier {
         /// </li>
         /// </ul>
         /// </note>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`AlarmIdentifier`](crate::model::AlarmIdentifier)
@@ -2456,21 +2474,24 @@ pub mod vpc {
     }
     impl Builder {
         /// <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
-        pub fn vpc_region(mut self, inp: crate::model::VpcRegion) -> Self {
-            self.vpc_region = Some(inp);
+        pub fn vpc_region(mut self, input: crate::model::VpcRegion) -> Self {
+            self.vpc_region = Some(input);
             self
         }
-        pub fn set_vpc_region(mut self, inp: std::option::Option<crate::model::VpcRegion>) -> Self {
-            self.vpc_region = inp;
+        pub fn set_vpc_region(
+            mut self,
+            input: std::option::Option<crate::model::VpcRegion>,
+        ) -> Self {
+            self.vpc_region = input;
             self
         }
         /// <p>(Private hosted zones only) The ID of an Amazon VPC. </p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_id = Some(inp.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
             self
         }
-        pub fn set_vpc_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = inp;
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
             self
         }
         /// Consumes the builder and constructs a [`VPC`](crate::model::VPC)
@@ -2659,49 +2680,49 @@ pub mod traffic_policy_summary {
     }
     impl Builder {
         /// <p>The ID that Amazon Route 53 assigned to the traffic policy when you created it.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The name that you specified for the traffic policy when you created it.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy
         /// to create a traffic policy instance.</p>
-        pub fn r#type(mut self, inp: crate::model::RrType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::RrType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RrType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RrType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The version number of the latest version of the traffic policy.</p>
-        pub fn latest_version(mut self, inp: i32) -> Self {
-            self.latest_version = Some(inp);
+        pub fn latest_version(mut self, input: i32) -> Self {
+            self.latest_version = Some(input);
             self
         }
-        pub fn set_latest_version(mut self, inp: std::option::Option<i32>) -> Self {
-            self.latest_version = inp;
+        pub fn set_latest_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.latest_version = input;
             self
         }
         /// <p>The number of traffic policies that are associated with the current AWS account.</p>
-        pub fn traffic_policy_count(mut self, inp: i32) -> Self {
-            self.traffic_policy_count = Some(inp);
+        pub fn traffic_policy_count(mut self, input: i32) -> Self {
+            self.traffic_policy_count = Some(input);
             self
         }
-        pub fn set_traffic_policy_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.traffic_policy_count = inp;
+        pub fn set_traffic_policy_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.traffic_policy_count = input;
             self
         }
         /// Consumes the builder and constructs a [`TrafficPolicySummary`](crate::model::TrafficPolicySummary)
@@ -2771,37 +2792,37 @@ pub mod resource_tag_set {
         /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_type(mut self, inp: crate::model::TagResourceType) -> Self {
-            self.resource_type = Some(inp);
+        pub fn resource_type(mut self, input: crate::model::TagResourceType) -> Self {
+            self.resource_type = Some(input);
             self
         }
         pub fn set_resource_type(
             mut self,
-            inp: std::option::Option<crate::model::TagResourceType>,
+            input: std::option::Option<crate::model::TagResourceType>,
         ) -> Self {
-            self.resource_type = inp;
+            self.resource_type = input;
             self
         }
         /// <p>The ID for the specified resource.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = inp;
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceTagSet`](crate::model::ResourceTagSet)
@@ -2900,12 +2921,12 @@ pub mod tag {
         /// given to each health check.</p>
         /// </li>
         /// </ul>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>The value of <code>Value</code> depends on the operation that you want to perform:</p>
@@ -2920,12 +2941,12 @@ pub mod tag {
         /// <b>Edit a tag</b>: <code>Value</code> is the new value that you want to assign the tag.</p>
         /// </li>
         /// </ul>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
@@ -3033,37 +3054,37 @@ pub mod delegation_set {
     }
     impl Builder {
         /// <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.</p>
-        pub fn caller_reference(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.caller_reference = Some(inp.into());
+        pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
+            self.caller_reference = Some(input.into());
             self
         }
         pub fn set_caller_reference(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.caller_reference = inp;
+            self.caller_reference = input;
             self
         }
-        pub fn name_servers(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn name_servers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.name_servers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.name_servers = Some(v);
             self
         }
         pub fn set_name_servers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.name_servers = inp;
+            self.name_servers = input;
             self
         }
         /// Consumes the builder and constructs a [`DelegationSet`](crate::model::DelegationSet)
@@ -3614,12 +3635,12 @@ pub mod resource_record_set {
         /// <p>You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an *
         /// for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for
         /// example, you can't specify <code>prod*.example.com</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The DNS record type. For information about different record types and how data is encoded for them, see
@@ -3693,12 +3714,12 @@ pub mod resource_record_set {
         /// </note>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, inp: crate::model::RrType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::RrType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RrType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RrType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>
@@ -3709,12 +3730,15 @@ pub mod resource_record_set {
         /// <p>For information about routing policies, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a>
         /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
-        pub fn set_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.set_identifier = Some(inp.into());
+        pub fn set_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.set_identifier = Some(input.into());
             self
         }
-        pub fn set_set_identifier(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.set_identifier = inp;
+        pub fn set_set_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.set_identifier = input;
             self
         }
         /// <p>
@@ -3748,12 +3772,12 @@ pub mod resource_record_set {
         /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn weight(mut self, inp: i64) -> Self {
-            self.weight = Some(inp);
+        pub fn weight(mut self, input: i64) -> Self {
+            self.weight = Some(input);
             self
         }
-        pub fn set_weight(mut self, inp: std::option::Option<i64>) -> Self {
-            self.weight = inp;
+        pub fn set_weight(mut self, input: std::option::Option<i64>) -> Self {
+            self.weight = input;
             self
         }
         /// <p>
@@ -3784,15 +3808,15 @@ pub mod resource_record_set {
         /// elements as latency resource record sets.</p>
         /// </li>
         /// </ul>
-        pub fn region(mut self, inp: crate::model::ResourceRecordSetRegion) -> Self {
-            self.region = Some(inp);
+        pub fn region(mut self, input: crate::model::ResourceRecordSetRegion) -> Self {
+            self.region = Some(input);
             self
         }
         pub fn set_region(
             mut self,
-            inp: std::option::Option<crate::model::ResourceRecordSetRegion>,
+            input: std::option::Option<crate::model::ResourceRecordSetRegion>,
         ) -> Self {
-            self.region = inp;
+            self.region = input;
             self
         }
         /// <p>
@@ -3820,15 +3844,15 @@ pub mod resource_record_set {
         /// </important>
         /// <p>You can't create non-geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements
         /// as geolocation resource record sets.</p>
-        pub fn geo_location(mut self, inp: crate::model::GeoLocation) -> Self {
-            self.geo_location = Some(inp);
+        pub fn geo_location(mut self, input: crate::model::GeoLocation) -> Self {
+            self.geo_location = Some(input);
             self
         }
         pub fn set_geo_location(
             mut self,
-            inp: std::option::Option<crate::model::GeoLocation>,
+            input: std::option::Option<crate::model::GeoLocation>,
         ) -> Self {
-            self.geo_location = inp;
+            self.geo_location = input;
             self
         }
         /// <p>
@@ -3873,15 +3897,15 @@ pub mod resource_record_set {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn failover(mut self, inp: crate::model::ResourceRecordSetFailover) -> Self {
-            self.failover = Some(inp);
+        pub fn failover(mut self, input: crate::model::ResourceRecordSetFailover) -> Self {
+            self.failover = Some(input);
             self
         }
         pub fn set_failover(
             mut self,
-            inp: std::option::Option<crate::model::ResourceRecordSetFailover>,
+            input: std::option::Option<crate::model::ResourceRecordSetFailover>,
         ) -> Self {
-            self.failover = inp;
+            self.failover = input;
             self
         }
         /// <p>
@@ -3914,12 +3938,12 @@ pub mod resource_record_set {
         /// </li>
         /// </ul>
         /// <p>You can't create multivalue answer alias records.</p>
-        pub fn multi_value_answer(mut self, inp: bool) -> Self {
-            self.multi_value_answer = Some(inp);
+        pub fn multi_value_answer(mut self, input: bool) -> Self {
+            self.multi_value_answer = Some(input);
             self
         }
-        pub fn set_multi_value_answer(mut self, inp: std::option::Option<bool>) -> Self {
-            self.multi_value_answer = inp;
+        pub fn set_multi_value_answer(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_value_answer = input;
             self
         }
         /// <p>The resource record cache time to live (TTL), in seconds. Note the following:</p>
@@ -3942,25 +3966,25 @@ pub mod resource_record_set {
         /// load balancers) will change the effect of the values that you specify for <code>Weight</code>.</p>
         /// </li>
         /// </ul>
-        pub fn ttl(mut self, inp: i64) -> Self {
-            self.ttl = Some(inp);
+        pub fn ttl(mut self, input: i64) -> Self {
+            self.ttl = Some(input);
             self
         }
-        pub fn set_ttl(mut self, inp: std::option::Option<i64>) -> Self {
-            self.ttl = inp;
+        pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
+            self.ttl = input;
             self
         }
-        pub fn resource_records(mut self, inp: impl Into<crate::model::ResourceRecord>) -> Self {
+        pub fn resource_records(mut self, input: impl Into<crate::model::ResourceRecord>) -> Self {
             let mut v = self.resource_records.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resource_records = Some(v);
             self
         }
         pub fn set_resource_records(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ResourceRecord>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceRecord>>,
         ) -> Self {
-            self.resource_records = inp;
+            self.resource_records = input;
             self
         }
         /// <p>
@@ -3980,15 +4004,15 @@ pub mod resource_record_set {
         /// <i>Amazon Route 53 Developer Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn alias_target(mut self, inp: crate::model::AliasTarget) -> Self {
-            self.alias_target = Some(inp);
+        pub fn alias_target(mut self, input: crate::model::AliasTarget) -> Self {
+            self.alias_target = Some(input);
             self
         }
         pub fn set_alias_target(
             mut self,
-            inp: std::option::Option<crate::model::AliasTarget>,
+            input: std::option::Option<crate::model::AliasTarget>,
         ) -> Self {
-            self.alias_target = inp;
+            self.alias_target = input;
             self
         }
         /// <p>If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the status of a
@@ -4113,15 +4137,15 @@ pub mod resource_record_set {
         /// </li>
         /// </ul>
         /// </important>
-        pub fn health_check_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.health_check_id = Some(inp.into());
+        pub fn health_check_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.health_check_id = Some(input.into());
             self
         }
         pub fn set_health_check_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.health_check_id = inp;
+            self.health_check_id = input;
             self
         }
         /// <p>When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID
@@ -4131,15 +4155,15 @@ pub mod resource_record_set {
         /// Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>,
         /// Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p>
         /// </important>
-        pub fn traffic_policy_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.traffic_policy_instance_id = Some(inp.into());
+        pub fn traffic_policy_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.traffic_policy_instance_id = Some(input.into());
             self
         }
         pub fn set_traffic_policy_instance_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_policy_instance_id = inp;
+            self.traffic_policy_instance_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceRecordSet`](crate::model::ResourceRecordSet)
@@ -4657,12 +4681,15 @@ pub mod alias_target {
         /// can't reference a resource record set in a different hosted zone.)</p>
         /// </dd>
         /// </dl>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>
@@ -4831,12 +4858,12 @@ pub mod alias_target {
         /// </note>
         /// </dd>
         /// </dl>
-        pub fn dns_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.dns_name = Some(inp.into());
+        pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dns_name = Some(input.into());
             self
         }
-        pub fn set_dns_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.dns_name = inp;
+        pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dns_name = input;
             self
         }
         /// <p>
@@ -4908,12 +4935,12 @@ pub mod alias_target {
         /// </dl>
         /// <p>For more information and examples, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-        pub fn evaluate_target_health(mut self, inp: bool) -> Self {
-            self.evaluate_target_health = Some(inp);
+        pub fn evaluate_target_health(mut self, input: bool) -> Self {
+            self.evaluate_target_health = Some(input);
             self
         }
-        pub fn set_evaluate_target_health(mut self, inp: bool) -> Self {
-            self.evaluate_target_health = Some(inp);
+        pub fn set_evaluate_target_health(mut self, input: std::option::Option<bool>) -> Self {
+            self.evaluate_target_health = input;
             self
         }
         /// Consumes the builder and constructs a [`AliasTarget`](crate::model::AliasTarget)
@@ -4976,12 +5003,12 @@ pub mod resource_record {
         /// <note>
         /// <p>If you're creating an alias resource record set, omit <code>Value</code>.</p>
         /// </note>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceRecord`](crate::model::ResourceRecord)
@@ -5157,23 +5184,26 @@ pub mod geo_location {
         /// </ul>
         /// <p>Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an
         /// <code>InvalidInput</code> error.</p>
-        pub fn continent_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.continent_code = Some(inp.into());
+        pub fn continent_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.continent_code = Some(input.into());
             self
         }
-        pub fn set_continent_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.continent_code = inp;
+        pub fn set_continent_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.continent_code = input;
             self
         }
         /// <p>For geolocation resource record sets, the two-letter code for a country.</p>
         /// <p>Amazon Route 53 uses the two-letter country codes that are specified in
         /// <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
-        pub fn country_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.country_code = Some(inp.into());
+        pub fn country_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.country_code = Some(input.into());
             self
         }
-        pub fn set_country_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.country_code = inp;
+        pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.country_code = input;
             self
         }
         /// <p>For geolocation resource record sets, the two-letter code for a state of the United States.
@@ -5181,15 +5211,15 @@ pub mod geo_location {
         /// <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a>
         /// on the United States Postal Service website. </p>
         /// <p>If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>. </p>
-        pub fn subdivision_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subdivision_code = Some(inp.into());
+        pub fn subdivision_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subdivision_code = Some(input.into());
             self
         }
         pub fn set_subdivision_code(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subdivision_code = inp;
+            self.subdivision_code = input;
             self
         }
         /// Consumes the builder and constructs a [`GeoLocation`](crate::model::GeoLocation)
@@ -5363,36 +5393,39 @@ pub mod query_logging_config {
     }
     impl Builder {
         /// <p>The ID for a configuration for DNS query logging.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.</p>
         pub fn cloud_watch_logs_log_group_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.cloud_watch_logs_log_group_arn = Some(inp.into());
+            self.cloud_watch_logs_log_group_arn = Some(input.into());
             self
         }
         pub fn set_cloud_watch_logs_log_group_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cloud_watch_logs_log_group_arn = inp;
+            self.cloud_watch_logs_log_group_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`QueryLoggingConfig`](crate::model::QueryLoggingConfig)
@@ -5447,34 +5480,37 @@ pub mod hosted_zone_summary {
     }
     impl Builder {
         /// <p>The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>The name of the private hosted zone, such as <code>example.com</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an AWS account or
         /// an AWS service.</p>
-        pub fn owner(mut self, inp: crate::model::HostedZoneOwner) -> Self {
-            self.owner = Some(inp);
+        pub fn owner(mut self, input: crate::model::HostedZoneOwner) -> Self {
+            self.owner = Some(input);
             self
         }
         pub fn set_owner(
             mut self,
-            inp: std::option::Option<crate::model::HostedZoneOwner>,
+            input: std::option::Option<crate::model::HostedZoneOwner>,
         ) -> Self {
-            self.owner = inp;
+            self.owner = input;
             self
         }
         /// Consumes the builder and constructs a [`HostedZoneSummary`](crate::model::HostedZoneSummary)
@@ -5529,23 +5565,29 @@ pub mod hosted_zone_owner {
         /// <p>If the hosted zone was created by an AWS account, or was created by an AWS service that creates hosted zones using the current account,  
         /// <code>OwningAccount</code> contains the account ID of that account. For example, when you use AWS Cloud Map to create a hosted zone, Cloud Map
         /// creates the hosted zone using the current AWS account. </p>
-        pub fn owning_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.owning_account = Some(inp.into());
+        pub fn owning_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owning_account = Some(input.into());
             self
         }
-        pub fn set_owning_account(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.owning_account = inp;
+        pub fn set_owning_account(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.owning_account = input;
             self
         }
         /// <p>If an AWS service uses its own account to create a hosted zone and associate the specified VPC with that hosted zone, <code>OwningService</code>
         /// contains an abbreviation that identifies the service. For example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and
         /// associated a VPC with the hosted zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.</p>
-        pub fn owning_service(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.owning_service = Some(inp.into());
+        pub fn owning_service(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owning_service = Some(input.into());
             self
         }
-        pub fn set_owning_service(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.owning_service = inp;
+        pub fn set_owning_service(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.owning_service = input;
             self
         }
         /// Consumes the builder and constructs a [`HostedZoneOwner`](crate::model::HostedZoneOwner)
@@ -5608,63 +5650,69 @@ pub mod geo_location_details {
     }
     impl Builder {
         /// <p>The two-letter code for the continent.</p>
-        pub fn continent_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.continent_code = Some(inp.into());
+        pub fn continent_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.continent_code = Some(input.into());
             self
         }
-        pub fn set_continent_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.continent_code = inp;
+        pub fn set_continent_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.continent_code = input;
             self
         }
         /// <p>The full name of the continent.</p>
-        pub fn continent_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.continent_name = Some(inp.into());
+        pub fn continent_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.continent_name = Some(input.into());
             self
         }
-        pub fn set_continent_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.continent_name = inp;
+        pub fn set_continent_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.continent_name = input;
             self
         }
         /// <p>The two-letter code for the country.</p>
-        pub fn country_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.country_code = Some(inp.into());
+        pub fn country_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.country_code = Some(input.into());
             self
         }
-        pub fn set_country_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.country_code = inp;
+        pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.country_code = input;
             self
         }
         /// <p>The name of the country.</p>
-        pub fn country_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.country_name = Some(inp.into());
+        pub fn country_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.country_name = Some(input.into());
             self
         }
-        pub fn set_country_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.country_name = inp;
+        pub fn set_country_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.country_name = input;
             self
         }
         /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a>  on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-        pub fn subdivision_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subdivision_code = Some(inp.into());
+        pub fn subdivision_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subdivision_code = Some(input.into());
             self
         }
         pub fn set_subdivision_code(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subdivision_code = inp;
+            self.subdivision_code = input;
             self
         }
         /// <p>The full name of the subdivision. Route 53 currently supports only states in the United States.</p>
-        pub fn subdivision_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subdivision_name = Some(inp.into());
+        pub fn subdivision_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subdivision_name = Some(input.into());
             self
         }
         pub fn set_subdivision_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subdivision_name = inp;
+            self.subdivision_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GeoLocationDetails`](crate::model::GeoLocationDetails)
@@ -5717,24 +5765,24 @@ pub mod reusable_delegation_set_limit {
     impl Builder {
         /// <p>The limit that you requested: <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted zones that you can associate
         /// with the specified reusable delegation set.</p>
-        pub fn r#type(mut self, inp: crate::model::ReusableDelegationSetLimitType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::ReusableDelegationSetLimitType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::ReusableDelegationSetLimitType>,
+            input: std::option::Option<crate::model::ReusableDelegationSetLimitType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.</p>
-        pub fn value(mut self, inp: i64) -> Self {
-            self.value = Some(inp);
+        pub fn value(mut self, input: i64) -> Self {
+            self.value = Some(input);
             self
         }
-        pub fn set_value(mut self, inp: i64) -> Self {
-            self.value = Some(inp);
+        pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`ReusableDelegationSetLimit`](crate::model::ReusableDelegationSetLimit)
@@ -5862,24 +5910,24 @@ pub mod hosted_zone_limit {
         /// associate with the specified private hosted zone.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, inp: crate::model::HostedZoneLimitType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::HostedZoneLimitType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::HostedZoneLimitType>,
+            input: std::option::Option<crate::model::HostedZoneLimitType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// <p>The current value for the limit that is specified by <code>Type</code>.</p>
-        pub fn value(mut self, inp: i64) -> Self {
-            self.value = Some(inp);
+        pub fn value(mut self, input: i64) -> Self {
+            self.value = Some(input);
             self
         }
-        pub fn set_value(mut self, inp: i64) -> Self {
-            self.value = Some(inp);
+        pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`HostedZoneLimit`](crate::model::HostedZoneLimit)
@@ -5986,36 +6034,36 @@ pub mod health_check_observation {
     }
     impl Builder {
         /// <p>The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.</p>
-        pub fn region(mut self, inp: crate::model::HealthCheckRegion) -> Self {
-            self.region = Some(inp);
+        pub fn region(mut self, input: crate::model::HealthCheckRegion) -> Self {
+            self.region = Some(input);
             self
         }
         pub fn set_region(
             mut self,
-            inp: std::option::Option<crate::model::HealthCheckRegion>,
+            input: std::option::Option<crate::model::HealthCheckRegion>,
         ) -> Self {
-            self.region = inp;
+            self.region = input;
             self
         }
         /// <p>The IP address of the Amazon Route 53 health checker that provided the failure reason in <code>StatusReport</code>.</p>
-        pub fn ip_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ip_address = Some(inp.into());
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_address = Some(input.into());
             self
         }
-        pub fn set_ip_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = inp;
+        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_address = input;
             self
         }
         /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the time of the failed health check.</p>
-        pub fn status_report(mut self, inp: crate::model::StatusReport) -> Self {
-            self.status_report = Some(inp);
+        pub fn status_report(mut self, input: crate::model::StatusReport) -> Self {
+            self.status_report = Some(input);
             self
         }
         pub fn set_status_report(
             mut self,
-            inp: std::option::Option<crate::model::StatusReport>,
+            input: std::option::Option<crate::model::StatusReport>,
         ) -> Self {
-            self.status_report = inp;
+            self.status_report = input;
             self
         }
         /// Consumes the builder and constructs a [`HealthCheckObservation`](crate::model::HealthCheckObservation)
@@ -6065,23 +6113,26 @@ pub mod status_report {
     }
     impl Builder {
         /// <p>A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health checkers.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The date and time that the health checker performed the health check in
         /// <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
         /// For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-        pub fn checked_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.checked_time = Some(inp);
+        pub fn checked_time(mut self, input: smithy_types::Instant) -> Self {
+            self.checked_time = Some(input);
             self
         }
-        pub fn set_checked_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.checked_time = inp;
+        pub fn set_checked_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.checked_time = input;
             self
         }
         /// Consumes the builder and constructs a [`StatusReport`](crate::model::StatusReport)
@@ -6272,12 +6323,12 @@ pub mod key_signing_key {
     impl Builder {
         /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters,  and underscores (_). <code>Name</code> must be unique for each key-signing key in the same
         /// hosted zone.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The Amazon resource name (ARN) used to identify the customer managed customer master key (CMK) in AWS Key Management Service (AWS KMS).
@@ -6323,118 +6374,121 @@ pub mod key_signing_key {
         /// </dl>
         /// <p>For more information about working with the customer managed CMK in AWS KMS, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service concepts</a>.</p>
-        pub fn kms_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_arn = Some(inp.into());
+        pub fn kms_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_arn = Some(input.into());
             self
         }
-        pub fn set_kms_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_arn = inp;
+        pub fn set_kms_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_arn = input;
             self
         }
         /// <p>An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.</p>
-        pub fn flag(mut self, inp: i32) -> Self {
-            self.flag = Some(inp);
+        pub fn flag(mut self, input: i32) -> Self {
+            self.flag = Some(input);
             self
         }
-        pub fn set_flag(mut self, inp: i32) -> Self {
-            self.flag = Some(inp);
+        pub fn set_flag(mut self, input: std::option::Option<i32>) -> Self {
+            self.flag = input;
             self
         }
         /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by
         /// <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.
         /// </p>
-        pub fn signing_algorithm_mnemonic(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.signing_algorithm_mnemonic = Some(inp.into());
+        pub fn signing_algorithm_mnemonic(mut self, input: impl Into<std::string::String>) -> Self {
+            self.signing_algorithm_mnemonic = Some(input.into());
             self
         }
         pub fn set_signing_algorithm_mnemonic(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.signing_algorithm_mnemonic = inp;
+            self.signing_algorithm_mnemonic = input;
             self
         }
         /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by
         /// <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.
         /// </p>
-        pub fn signing_algorithm_type(mut self, inp: i32) -> Self {
-            self.signing_algorithm_type = Some(inp);
+        pub fn signing_algorithm_type(mut self, input: i32) -> Self {
+            self.signing_algorithm_type = Some(input);
             self
         }
-        pub fn set_signing_algorithm_type(mut self, inp: i32) -> Self {
-            self.signing_algorithm_type = Some(inp);
+        pub fn set_signing_algorithm_type(mut self, input: std::option::Option<i32>) -> Self {
+            self.signing_algorithm_type = input;
             self
         }
         /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by
         /// <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.
         /// </p>
-        pub fn digest_algorithm_mnemonic(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.digest_algorithm_mnemonic = Some(inp.into());
+        pub fn digest_algorithm_mnemonic(mut self, input: impl Into<std::string::String>) -> Self {
+            self.digest_algorithm_mnemonic = Some(input.into());
             self
         }
         pub fn set_digest_algorithm_mnemonic(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.digest_algorithm_mnemonic = inp;
+            self.digest_algorithm_mnemonic = input;
             self
         }
         /// <p>An integer used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by
         /// <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
-        pub fn digest_algorithm_type(mut self, inp: i32) -> Self {
-            self.digest_algorithm_type = Some(inp);
+        pub fn digest_algorithm_type(mut self, input: i32) -> Self {
+            self.digest_algorithm_type = Some(input);
             self
         }
-        pub fn set_digest_algorithm_type(mut self, inp: i32) -> Self {
-            self.digest_algorithm_type = Some(inp);
+        pub fn set_digest_algorithm_type(mut self, input: std::option::Option<i32>) -> Self {
+            self.digest_algorithm_type = input;
             self
         }
         /// <p>An integer used to identify the DNSSEC record for the domain name. The process used to calculate the value is described in
         /// <a href="https://tools.ietf.org/rfc/rfc4034.txt">RFC-4034 Appendix B</a>.</p>
-        pub fn key_tag(mut self, inp: i32) -> Self {
-            self.key_tag = Some(inp);
+        pub fn key_tag(mut self, input: i32) -> Self {
+            self.key_tag = Some(input);
             self
         }
-        pub fn set_key_tag(mut self, inp: i32) -> Self {
-            self.key_tag = Some(inp);
+        pub fn set_key_tag(mut self, input: std::option::Option<i32>) -> Self {
+            self.key_tag = input;
             self
         }
         /// <p>A cryptographic digest of a DNSKEY resource record (RR). DNSKEY records are used to publish the public key that resolvers
         /// can use to verify DNSSEC signatures that are used to secure certain kinds of information provided by the DNS system.</p>
-        pub fn digest_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.digest_value = Some(inp.into());
+        pub fn digest_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.digest_value = Some(input.into());
             self
         }
-        pub fn set_digest_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.digest_value = inp;
+        pub fn set_digest_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.digest_value = input;
             self
         }
         /// <p>The public key, represented as a Base64 encoding, as required by <a href="https://tools.ietf.org/rfc/rfc4034.txt">
         /// RFC-4034 Page 5</a>.</p>
-        pub fn public_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.public_key = Some(inp.into());
+        pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.public_key = Some(input.into());
             self
         }
-        pub fn set_public_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.public_key = inp;
+        pub fn set_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_key = input;
             self
         }
         /// <p>A string that represents a delegation signer (DS) record.</p>
-        pub fn ds_record(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ds_record = Some(inp.into());
+        pub fn ds_record(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ds_record = Some(input.into());
             self
         }
-        pub fn set_ds_record(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ds_record = inp;
+        pub fn set_ds_record(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ds_record = input;
             self
         }
         /// <p>A string that represents a DNSKEY record.</p>
-        pub fn dnskey_record(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.dnskey_record = Some(inp.into());
+        pub fn dnskey_record(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dnskey_record = Some(input.into());
             self
         }
-        pub fn set_dnskey_record(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.dnskey_record = inp;
+        pub fn set_dnskey_record(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dnskey_record = input;
             self
         }
         /// <p>A string that represents the current key-signing key (KSK) status.</p>
@@ -6465,44 +6519,50 @@ pub mod key_signing_key {
         /// you may need to activate or deactivate the KSK.</p>
         /// </dd>
         /// </dl>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code> or
         /// <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps
         /// that you can take to correct the issue.</p>
-        pub fn status_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_message = Some(inp.into());
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
             self
         }
-        pub fn set_status_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_message = inp;
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
             self
         }
         /// <p>The date when the key-signing key (KSK) was created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The last time that the key-signing key (KSK) was changed.</p>
-        pub fn last_modified_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified_date = Some(inp);
+        pub fn last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified_date = Some(input);
             self
         }
         pub fn set_last_modified_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified_date = inp;
+            self.last_modified_date = input;
             self
         }
         /// Consumes the builder and constructs a [`KeySigningKey`](crate::model::KeySigningKey)
@@ -6618,25 +6678,28 @@ pub mod dnssec_status {
         /// disabling DNSSEC signing for the hosted zone.</p>
         /// </dd>
         /// </dl>
-        pub fn serve_signature(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.serve_signature = Some(inp.into());
+        pub fn serve_signature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.serve_signature = Some(input.into());
             self
         }
         pub fn set_serve_signature(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.serve_signature = inp;
+            self.serve_signature = input;
             self
         }
         /// <p>The status message provided for the following DNSSEC signing status: <code>INTERNAL_FAILURE</code>. The status message
         /// includes information about what the problem might be and steps that you can take to correct the issue.</p>
-        pub fn status_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_message = Some(inp.into());
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
             self
         }
-        pub fn set_status_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_message = inp;
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
             self
         }
         /// Consumes the builder and constructs a [`DNSSECStatus`](crate::model::DNSSECStatus)
@@ -6699,33 +6762,39 @@ pub mod change_info {
     }
     impl Builder {
         /// <p>The ID of the request.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The current state of the request. <code>PENDING</code> indicates that this request has
         /// not yet been applied to all Amazon Route 53 DNS servers.</p>
-        pub fn status(mut self, inp: crate::model::ChangeStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ChangeStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::ChangeStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ChangeStatus>,
+        ) -> Self {
+            self.status = input;
             self
         }
         /// <p>The date and time that the change request was submitted in
         /// <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
         /// For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-        pub fn submitted_at(mut self, inp: smithy_types::Instant) -> Self {
-            self.submitted_at = Some(inp);
+        pub fn submitted_at(mut self, input: smithy_types::Instant) -> Self {
+            self.submitted_at = Some(input);
             self
         }
-        pub fn set_submitted_at(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.submitted_at = inp;
+        pub fn set_submitted_at(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.submitted_at = input;
             self
         }
         /// <p>A complex type that describes change information about changes made to your hosted
@@ -6733,12 +6802,12 @@ pub mod change_info {
         /// <p>This element contains an ID that you use when performing a
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>
         /// action to get detailed information about the change.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.comment = Some(inp.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.comment = Some(input.into());
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.comment = inp;
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comment = input;
             self
         }
         /// Consumes the builder and constructs a [`ChangeInfo`](crate::model::ChangeInfo)
@@ -6900,25 +6969,25 @@ pub mod account_limit {
         /// Amazon Route 53 console.)</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, inp: crate::model::AccountLimitType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::AccountLimitType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::AccountLimitType>,
+            input: std::option::Option<crate::model::AccountLimitType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// <p>The current value for the limit that is specified by
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
-        pub fn value(mut self, inp: i64) -> Self {
-            self.value = Some(inp);
+        pub fn value(mut self, input: i64) -> Self {
+            self.value = Some(input);
             self
         }
-        pub fn set_value(mut self, inp: i64) -> Self {
-            self.value = Some(inp);
+        pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`AccountLimit`](crate::model::AccountLimit)
@@ -7042,25 +7111,25 @@ pub mod change_batch {
         /// <p>
         /// <i>Optional:</i> Any comments you want to include about a change batch
         /// request.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.comment = Some(inp.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.comment = Some(input.into());
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.comment = inp;
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comment = input;
             self
         }
-        pub fn changes(mut self, inp: impl Into<crate::model::Change>) -> Self {
+        pub fn changes(mut self, input: impl Into<crate::model::Change>) -> Self {
             let mut v = self.changes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.changes = Some(v);
             self
         }
         pub fn set_changes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Change>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Change>>,
         ) -> Self {
-            self.changes = inp;
+            self.changes = input;
             self
         }
         /// Consumes the builder and constructs a [`ChangeBatch`](crate::model::ChangeBatch)
@@ -7151,24 +7220,27 @@ pub mod change {
         /// If a resource record set does exist, Route 53 updates it with the values in the request.</p>
         /// </li>
         /// </ul>
-        pub fn action(mut self, inp: crate::model::ChangeAction) -> Self {
-            self.action = Some(inp);
+        pub fn action(mut self, input: crate::model::ChangeAction) -> Self {
+            self.action = Some(input);
             self
         }
-        pub fn set_action(mut self, inp: std::option::Option<crate::model::ChangeAction>) -> Self {
-            self.action = inp;
+        pub fn set_action(
+            mut self,
+            input: std::option::Option<crate::model::ChangeAction>,
+        ) -> Self {
+            self.action = input;
             self
         }
         /// <p>Information about the resource record set to create, delete, or update.</p>
-        pub fn resource_record_set(mut self, inp: crate::model::ResourceRecordSet) -> Self {
-            self.resource_record_set = Some(inp);
+        pub fn resource_record_set(mut self, input: crate::model::ResourceRecordSet) -> Self {
+            self.resource_record_set = Some(input);
             self
         }
         pub fn set_resource_record_set(
             mut self,
-            inp: std::option::Option<crate::model::ResourceRecordSet>,
+            input: std::option::Option<crate::model::ResourceRecordSet>,
         ) -> Self {
-            self.resource_record_set = inp;
+            self.resource_record_set = input;
             self
         }
         /// Consumes the builder and constructs a [`Change`](crate::model::Change)

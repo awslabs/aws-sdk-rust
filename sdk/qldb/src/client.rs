@@ -124,7 +124,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CancelJournalKinesisStreamOutput,
             smithy_http::result::SdkError<crate::error::CancelJournalKinesisStreamError>,
         >
@@ -141,22 +141,22 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn ledger_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ledger_name(inp);
+        pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ledger_name(input);
             self
         }
-        pub fn set_ledger_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_ledger_name(inp);
+        pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ledger_name(input);
             self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be
         /// canceled.</p>
-        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_id(inp);
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(input);
             self
         }
-        pub fn set_stream_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_stream_id(inp);
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_id(input);
             self
         }
     }
@@ -175,7 +175,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateLedgerOutput,
             smithy_http::result::SdkError<crate::error::CreateLedgerError>,
         >
@@ -195,12 +195,12 @@ pub mod fluent_builders {
         /// your ledgers in the current AWS Region.</p>
         /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a>
         /// in the <i>Amazon QLDB Developer Guide</i>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are
@@ -215,14 +215,14 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     std::option::Option<std::string::String>,
                 >,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can
@@ -255,27 +255,27 @@ pub mod fluent_builders {
         /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
         /// the security of your ledger data.</p>
         /// </note>
-        pub fn permissions_mode(mut self, inp: crate::model::PermissionsMode) -> Self {
-            self.inner = self.inner.permissions_mode(inp);
+        pub fn permissions_mode(mut self, input: crate::model::PermissionsMode) -> Self {
+            self.inner = self.inner.permissions_mode(input);
             self
         }
         pub fn set_permissions_mode(
             mut self,
-            inp: std::option::Option<crate::model::PermissionsMode>,
+            input: std::option::Option<crate::model::PermissionsMode>,
         ) -> Self {
-            self.inner = self.inner.set_permissions_mode(inp);
+            self.inner = self.inner.set_permissions_mode(input);
             self
         }
         /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
         /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
         /// <p>If deletion protection is enabled, you must first disable it before you can delete the
         /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deletion_protection(inp);
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
             self
         }
     }
@@ -294,7 +294,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteLedgerOutput,
             smithy_http::result::SdkError<crate::error::DeleteLedgerError>,
         >
@@ -311,12 +311,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger that you want to delete.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -335,7 +335,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeJournalKinesisStreamOutput,
             smithy_http::result::SdkError<crate::error::DescribeJournalKinesisStreamError>,
         >
@@ -352,22 +352,22 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn ledger_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ledger_name(inp);
+        pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ledger_name(input);
             self
         }
-        pub fn set_ledger_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_ledger_name(inp);
+        pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ledger_name(input);
             self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
         /// describe.</p>
-        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_id(inp);
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(input);
             self
         }
-        pub fn set_stream_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_stream_id(inp);
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_id(input);
             self
         }
     }
@@ -386,7 +386,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeJournalS3ExportOutput,
             smithy_http::result::SdkError<crate::error::DescribeJournalS3ExportError>,
         >
@@ -403,22 +403,22 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the journal export job to
         /// describe.</p>
-        pub fn export_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_id(inp);
+        pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_id(input);
             self
         }
-        pub fn set_export_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_export_id(inp);
+        pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_export_id(input);
             self
         }
     }
@@ -437,7 +437,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeLedgerOutput,
             smithy_http::result::SdkError<crate::error::DescribeLedgerError>,
         >
@@ -454,12 +454,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger that you want to describe.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -478,7 +478,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ExportJournalToS3Output,
             smithy_http::result::SdkError<crate::error::ExportJournalToS3Error>,
         >
@@ -495,12 +495,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The inclusive start date and time for the range of journal contents to export.</p>
@@ -511,15 +511,15 @@ pub mod fluent_builders {
         /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
         /// <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's
         /// <code>CreationDateTime</code>.</p>
-        pub fn inclusive_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.inclusive_start_time(inp);
+        pub fn inclusive_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.inclusive_start_time(input);
             self
         }
         pub fn set_inclusive_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_inclusive_start_time(inp);
+            self.inner = self.inner.set_inclusive_start_time(input);
             self
         }
         /// <p>The exclusive end date and time for the range of journal contents to export.</p>
@@ -528,28 +528,31 @@ pub mod fluent_builders {
         /// <code>2019-06-13T21:36:34Z</code>.</p>
         /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and
         /// time.</p>
-        pub fn exclusive_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.exclusive_end_time(inp);
+        pub fn exclusive_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.exclusive_end_time(input);
             self
         }
         pub fn set_exclusive_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_exclusive_end_time(inp);
+            self.inner = self.inner.set_exclusive_end_time(input);
             self
         }
         /// <p>The configuration settings of the Amazon S3 bucket destination for your export
         /// request.</p>
-        pub fn s3_export_configuration(mut self, inp: crate::model::S3ExportConfiguration) -> Self {
-            self.inner = self.inner.s3_export_configuration(inp);
+        pub fn s3_export_configuration(
+            mut self,
+            input: crate::model::S3ExportConfiguration,
+        ) -> Self {
+            self.inner = self.inner.s3_export_configuration(input);
             self
         }
         pub fn set_s3_export_configuration(
             mut self,
-            inp: std::option::Option<crate::model::S3ExportConfiguration>,
+            input: std::option::Option<crate::model::S3ExportConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_s3_export_configuration(inp);
+            self.inner = self.inner.set_s3_export_configuration(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
@@ -563,12 +566,12 @@ pub mod fluent_builders {
         /// KMS) for server-side encryption of your exported data.</p>
         /// </li>
         /// </ul>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
     }
@@ -587,7 +590,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetBlockOutput,
             smithy_http::result::SdkError<crate::error::GetBlockError>,
         >
@@ -604,41 +607,41 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The location of the block that you want to request. An address is an Amazon Ion
         /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
-        pub fn block_address(mut self, inp: crate::model::ValueHolder) -> Self {
-            self.inner = self.inner.block_address(inp);
+        pub fn block_address(mut self, input: crate::model::ValueHolder) -> Self {
+            self.inner = self.inner.block_address(input);
             self
         }
         pub fn set_block_address(
             mut self,
-            inp: std::option::Option<crate::model::ValueHolder>,
+            input: std::option::Option<crate::model::ValueHolder>,
         ) -> Self {
-            self.inner = self.inner.set_block_address(inp);
+            self.inner = self.inner.set_block_address(input);
             self
         }
         /// <p>The latest block location covered by the digest for which to request a proof. An address
         /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
         /// <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
-        pub fn digest_tip_address(mut self, inp: crate::model::ValueHolder) -> Self {
-            self.inner = self.inner.digest_tip_address(inp);
+        pub fn digest_tip_address(mut self, input: crate::model::ValueHolder) -> Self {
+            self.inner = self.inner.digest_tip_address(input);
             self
         }
         pub fn set_digest_tip_address(
             mut self,
-            inp: std::option::Option<crate::model::ValueHolder>,
+            input: std::option::Option<crate::model::ValueHolder>,
         ) -> Self {
-            self.inner = self.inner.set_digest_tip_address(inp);
+            self.inner = self.inner.set_digest_tip_address(input);
             self
         }
     }
@@ -657,7 +660,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetDigestOutput,
             smithy_http::result::SdkError<crate::error::GetDigestError>,
         >
@@ -674,12 +677,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -698,7 +701,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetRevisionOutput,
             smithy_http::result::SdkError<crate::error::GetRevisionError>,
         >
@@ -715,50 +718,50 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The block location of the document revision to be verified. An address is an Amazon Ion
         /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
-        pub fn block_address(mut self, inp: crate::model::ValueHolder) -> Self {
-            self.inner = self.inner.block_address(inp);
+        pub fn block_address(mut self, input: crate::model::ValueHolder) -> Self {
+            self.inner = self.inner.block_address(input);
             self
         }
         pub fn set_block_address(
             mut self,
-            inp: std::option::Option<crate::model::ValueHolder>,
+            input: std::option::Option<crate::model::ValueHolder>,
         ) -> Self {
-            self.inner = self.inner.set_block_address(inp);
+            self.inner = self.inner.set_block_address(input);
             self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
-        pub fn document_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_id(inp);
+        pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_id(input);
             self
         }
-        pub fn set_document_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_document_id(inp);
+        pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_document_id(input);
             self
         }
         /// <p>The latest block location covered by the digest for which to request a proof. An address
         /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
         /// <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
-        pub fn digest_tip_address(mut self, inp: crate::model::ValueHolder) -> Self {
-            self.inner = self.inner.digest_tip_address(inp);
+        pub fn digest_tip_address(mut self, input: crate::model::ValueHolder) -> Self {
+            self.inner = self.inner.digest_tip_address(input);
             self
         }
         pub fn set_digest_tip_address(
             mut self,
-            inp: std::option::Option<crate::model::ValueHolder>,
+            input: std::option::Option<crate::model::ValueHolder>,
         ) -> Self {
-            self.inner = self.inner.set_digest_tip_address(inp);
+            self.inner = self.inner.set_digest_tip_address(input);
             self
         }
     }
@@ -777,7 +780,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListJournalKinesisStreamsForLedgerOutput,
             smithy_http::result::SdkError<crate::error::ListJournalKinesisStreamsForLedgerError>,
         >
@@ -794,35 +797,35 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn ledger_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ledger_name(inp);
+        pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ledger_name(input);
             self
         }
-        pub fn set_ledger_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_ledger_name(inp);
+        pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ledger_name(input);
             self
         }
         /// <p>The maximum number of results to return in a single
         /// <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results
         /// returned might be fewer.)</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
         /// you received a value for <code>NextToken</code> in the response from a previous
         /// <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input
         /// here.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -841,7 +844,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListJournalS3ExportsOutput,
             smithy_http::result::SdkError<crate::error::ListJournalS3ExportsError>,
         >
@@ -859,24 +862,24 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code>
         /// request. (The actual number of results returned might be fewer.)</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
         /// you received a value for <code>NextToken</code> in the response from a previous
         /// <code>ListJournalS3Exports</code> call, then you should use that value as input
         /// here.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -895,7 +898,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListJournalS3ExportsForLedgerOutput,
             smithy_http::result::SdkError<crate::error::ListJournalS3ExportsForLedgerError>,
         >
@@ -912,35 +915,35 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The maximum number of results to return in a single
         /// <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results
         /// returned might be fewer.)</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
         /// you received a value for <code>NextToken</code> in the response from a previous
         /// <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input
         /// here.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -959,7 +962,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListLedgersOutput,
             smithy_http::result::SdkError<crate::error::ListLedgersError>,
         >
@@ -977,23 +980,23 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in a single <code>ListLedgers</code> request.
         /// (The actual number of results returned might be fewer.)</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
         /// you received a value for <code>NextToken</code> in the response from a previous
         /// <code>ListLedgers</code> call, then you should use that value as input here.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -1012,7 +1015,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTagsForResourceOutput,
             smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
         >
@@ -1032,12 +1035,12 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
     }
@@ -1056,7 +1059,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StreamJournalToKinesisOutput,
             smithy_http::result::SdkError<crate::error::StreamJournalToKinesisError>,
         >
@@ -1073,22 +1076,22 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn ledger_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ledger_name(inp);
+        pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ledger_name(input);
             self
         }
-        pub fn set_ledger_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_ledger_name(inp);
+        pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_ledger_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
         /// journal stream to write data records to a Kinesis Data Streams resource.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are
@@ -1103,14 +1106,14 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     std::option::Option<std::string::String>,
                 >,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>The inclusive start date and time from which to start streaming journal data. This
@@ -1121,15 +1124,15 @@ pub mod fluent_builders {
         /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
         /// <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
         /// <code>CreationDateTime</code>.</p>
-        pub fn inclusive_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.inclusive_start_time(inp);
+        pub fn inclusive_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.inclusive_start_time(input);
             self
         }
         pub fn set_inclusive_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_inclusive_start_time(inp);
+            self.inner = self.inner.set_inclusive_start_time(input);
             self
         }
         /// <p>The exclusive date and time that specifies when the stream ends. If you don't define
@@ -1137,27 +1140,27 @@ pub mod fluent_builders {
         /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
         /// and in Universal Coordinated Time (UTC). For example:
         /// <code>2019-06-13T21:36:34Z</code>.</p>
-        pub fn exclusive_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.exclusive_end_time(inp);
+        pub fn exclusive_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.exclusive_end_time(input);
             self
         }
         pub fn set_exclusive_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.inner = self.inner.set_exclusive_end_time(inp);
+            self.inner = self.inner.set_exclusive_end_time(input);
             self
         }
         /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
-        pub fn kinesis_configuration(mut self, inp: crate::model::KinesisConfiguration) -> Self {
-            self.inner = self.inner.kinesis_configuration(inp);
+        pub fn kinesis_configuration(mut self, input: crate::model::KinesisConfiguration) -> Self {
+            self.inner = self.inner.kinesis_configuration(input);
             self
         }
         pub fn set_kinesis_configuration(
             mut self,
-            inp: std::option::Option<crate::model::KinesisConfiguration>,
+            input: std::option::Option<crate::model::KinesisConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_kinesis_configuration(inp);
+            self.inner = self.inner.set_kinesis_configuration(input);
             self
         }
         /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can
@@ -1166,12 +1169,12 @@ pub mod fluent_builders {
         /// given ledger. Stream names have the same naming constraints as ledger names, as defined in
         /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer
         /// Guide</i>.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(inp);
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input);
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stream_name(inp);
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stream_name(input);
             self
         }
     }
@@ -1190,7 +1193,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagResourceOutput,
             smithy_http::result::SdkError<crate::error::TagResourceError>,
         >
@@ -1210,12 +1213,12 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case
@@ -1231,14 +1234,14 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     std::option::Option<std::string::String>,
                 >,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1257,7 +1260,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagResourceOutput,
             smithy_http::result::SdkError<crate::error::UntagResourceError>,
         >
@@ -1277,12 +1280,12 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
         /// </p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The list of tag keys to remove.</p>
@@ -1292,9 +1295,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -1313,7 +1316,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateLedgerOutput,
             smithy_http::result::SdkError<crate::error::UpdateLedgerError>,
         >
@@ -1330,24 +1333,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
         /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
         /// <p>If deletion protection is enabled, you must first disable it before you can delete the
         /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.deletion_protection(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_deletion_protection(inp);
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_deletion_protection(input);
             self
         }
     }
@@ -1366,7 +1369,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateLedgerPermissionsModeOutput,
             smithy_http::result::SdkError<crate::error::UpdateLedgerPermissionsModeError>,
         >
@@ -1383,12 +1386,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>The permissions mode to assign to the ledger. This parameter can have one of the
@@ -1421,15 +1424,15 @@ pub mod fluent_builders {
         /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
         /// the security of your ledger data.</p>
         /// </note>
-        pub fn permissions_mode(mut self, inp: crate::model::PermissionsMode) -> Self {
-            self.inner = self.inner.permissions_mode(inp);
+        pub fn permissions_mode(mut self, input: crate::model::PermissionsMode) -> Self {
+            self.inner = self.inner.permissions_mode(input);
             self
         }
         pub fn set_permissions_mode(
             mut self,
-            inp: std::option::Option<crate::model::PermissionsMode>,
+            input: std::option::Option<crate::model::PermissionsMode>,
         ) -> Self {
-            self.inner = self.inner.set_permissions_mode(inp);
+            self.inner = self.inner.set_permissions_mode(input);
             self
         }
     }

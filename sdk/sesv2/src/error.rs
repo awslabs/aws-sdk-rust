@@ -74,6 +74,42 @@ impl CreateConfigurationSetError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConfigurationSetErrorKind::AlreadyExistsError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConfigurationSetErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConfigurationSetErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConfigurationSetErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConfigurationSetErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConfigurationSetErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for CreateConfigurationSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -173,6 +209,36 @@ impl CreateConfigurationSetEventDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConfigurationSetEventDestinationErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConfigurationSetEventDestinationErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConfigurationSetEventDestinationErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for CreateConfigurationSetEventDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -268,6 +334,18 @@ impl CreateContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_already_exists_error(&self) -> bool {
+        matches!(&self.kind, CreateContactErrorKind::AlreadyExistsError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateContactErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateContactErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, CreateContactErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for CreateContactError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -351,6 +429,27 @@ impl CreateContactListError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContactListErrorKind::AlreadyExistsError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateContactListErrorKind::BadRequestError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContactListErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateContactListErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for CreateContactListError {
@@ -449,6 +548,36 @@ impl CreateCustomVerificationEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomVerificationEmailTemplateErrorKind::AlreadyExistsError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomVerificationEmailTemplateErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomVerificationEmailTemplateErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomVerificationEmailTemplateErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for CreateCustomVerificationEmailTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -543,6 +672,36 @@ impl CreateDedicatedIpPoolError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDedicatedIpPoolErrorKind::AlreadyExistsError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDedicatedIpPoolErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDedicatedIpPoolErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDedicatedIpPoolErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDedicatedIpPoolErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for CreateDedicatedIpPoolError {
@@ -643,6 +802,60 @@ impl CreateDeliverabilityTestReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_account_suspended_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeliverabilityTestReportErrorKind::AccountSuspendedError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeliverabilityTestReportErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeliverabilityTestReportErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeliverabilityTestReportErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_mail_from_domain_not_verified_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeliverabilityTestReportErrorKind::MailFromDomainNotVerifiedError(_)
+        )
+    }
+    pub fn is_message_rejected(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeliverabilityTestReportErrorKind::MessageRejected(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeliverabilityTestReportErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_sending_paused_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeliverabilityTestReportErrorKind::SendingPausedError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDeliverabilityTestReportErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for CreateDeliverabilityTestReportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -740,6 +953,36 @@ impl CreateEmailIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEmailIdentityErrorKind::AlreadyExistsError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateEmailIdentityErrorKind::BadRequestError(_))
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEmailIdentityErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEmailIdentityErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateEmailIdentityErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEmailIdentityErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for CreateEmailIdentityError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -828,6 +1071,36 @@ impl CreateEmailIdentityPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEmailIdentityPolicyErrorKind::AlreadyExistsError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEmailIdentityPolicyErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEmailIdentityPolicyErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEmailIdentityPolicyErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEmailIdentityPolicyErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for CreateEmailIdentityPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -913,6 +1186,27 @@ impl CreateEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEmailTemplateErrorKind::AlreadyExistsError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateEmailTemplateErrorKind::BadRequestError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEmailTemplateErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEmailTemplateErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for CreateEmailTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -994,6 +1288,18 @@ impl CreateImportJobError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateImportJobErrorKind::BadRequestError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateImportJobErrorKind::LimitExceededError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateImportJobErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for CreateImportJobError {
@@ -1077,6 +1383,30 @@ impl DeleteConfigurationSetError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteConfigurationSetErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteConfigurationSetErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteConfigurationSetErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteConfigurationSetErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for DeleteConfigurationSetError {
@@ -1167,6 +1497,24 @@ impl DeleteConfigurationSetEventDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteConfigurationSetEventDestinationErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteConfigurationSetEventDestinationErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteConfigurationSetEventDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1254,6 +1602,15 @@ impl DeleteContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteContactErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteContactErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, DeleteContactErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for DeleteContactError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1336,6 +1693,24 @@ impl DeleteContactListError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteContactListErrorKind::BadRequestError(_))
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContactListErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteContactListErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteContactListErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for DeleteContactListError {
@@ -1426,6 +1801,24 @@ impl DeleteCustomVerificationEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomVerificationEmailTemplateErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomVerificationEmailTemplateErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteCustomVerificationEmailTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1513,6 +1906,27 @@ impl DeleteDedicatedIpPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDedicatedIpPoolErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDedicatedIpPoolErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteDedicatedIpPoolErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDedicatedIpPoolErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteDedicatedIpPoolError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1597,6 +2011,24 @@ impl DeleteEmailIdentityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteEmailIdentityErrorKind::BadRequestError(_))
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEmailIdentityErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteEmailIdentityErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEmailIdentityErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteEmailIdentityError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1679,6 +2111,24 @@ impl DeleteEmailIdentityPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEmailIdentityPolicyErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEmailIdentityPolicyErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEmailIdentityPolicyErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteEmailIdentityPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1759,6 +2209,18 @@ impl DeleteEmailTemplateError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteEmailTemplateErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteEmailTemplateErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEmailTemplateErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for DeleteEmailTemplateError {
@@ -1841,6 +2303,24 @@ impl DeleteSuppressedDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSuppressedDestinationErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSuppressedDestinationErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSuppressedDestinationErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteSuppressedDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1919,6 +2399,12 @@ impl GetAccountError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetAccountErrorKind::BadRequestError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetAccountErrorKind::TooManyRequestsError(_))
     }
 }
 impl std::error::Error for GetAccountError {
@@ -2000,6 +2486,18 @@ impl GetBlacklistReportsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetBlacklistReportsErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetBlacklistReportsErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBlacklistReportsErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for GetBlacklistReportsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2080,6 +2578,18 @@ impl GetConfigurationSetError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetConfigurationSetErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetConfigurationSetErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetConfigurationSetErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for GetConfigurationSetError {
@@ -2167,6 +2677,24 @@ impl GetConfigurationSetEventDestinationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetConfigurationSetEventDestinationsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetConfigurationSetEventDestinationsErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for GetConfigurationSetEventDestinationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2252,6 +2780,15 @@ impl GetContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetContactErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetContactErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetContactErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for GetContactError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2332,6 +2869,15 @@ impl GetContactListError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetContactListErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetContactListErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetContactListErrorKind::TooManyRequestsError(_))
     }
 }
 impl std::error::Error for GetContactListError {
@@ -2419,6 +2965,24 @@ impl GetCustomVerificationEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCustomVerificationEmailTemplateErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCustomVerificationEmailTemplateErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for GetCustomVerificationEmailTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2502,6 +3066,15 @@ impl GetDedicatedIpError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetDedicatedIpErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetDedicatedIpErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetDedicatedIpErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for GetDedicatedIpError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2582,6 +3155,18 @@ impl GetDedicatedIpsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetDedicatedIpsErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetDedicatedIpsErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDedicatedIpsErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for GetDedicatedIpsError {
@@ -2669,6 +3254,24 @@ impl GetDeliverabilityDashboardOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeliverabilityDashboardOptionsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeliverabilityDashboardOptionsErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeliverabilityDashboardOptionsErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for GetDeliverabilityDashboardOptionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2752,6 +3355,24 @@ impl GetDeliverabilityTestReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeliverabilityTestReportErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeliverabilityTestReportErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDeliverabilityTestReportErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for GetDeliverabilityTestReportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2832,6 +3453,24 @@ impl GetDomainDeliverabilityCampaignError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDomainDeliverabilityCampaignErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDomainDeliverabilityCampaignErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDomainDeliverabilityCampaignErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for GetDomainDeliverabilityCampaignError {
@@ -2914,6 +3553,24 @@ impl GetDomainStatisticsReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDomainStatisticsReportErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDomainStatisticsReportErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDomainStatisticsReportErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for GetDomainStatisticsReportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2994,6 +3651,18 @@ impl GetEmailIdentityError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetEmailIdentityErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetEmailIdentityErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEmailIdentityErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for GetEmailIdentityError {
@@ -3076,6 +3745,24 @@ impl GetEmailIdentityPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEmailIdentityPoliciesErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEmailIdentityPoliciesErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEmailIdentityPoliciesErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for GetEmailIdentityPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3156,6 +3843,18 @@ impl GetEmailTemplateError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetEmailTemplateErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetEmailTemplateErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEmailTemplateErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for GetEmailTemplateError {
@@ -3238,6 +3937,15 @@ impl GetImportJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, GetImportJobErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetImportJobErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetImportJobErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for GetImportJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3319,6 +4027,24 @@ impl GetSuppressedDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSuppressedDestinationErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSuppressedDestinationErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSuppressedDestinationErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for GetSuppressedDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3398,6 +4124,18 @@ impl ListConfigurationSetsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListConfigurationSetsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListConfigurationSetsErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for ListConfigurationSetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3475,6 +4213,15 @@ impl ListContactListsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ListContactListsErrorKind::BadRequestError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListContactListsErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for ListContactListsError {
@@ -3555,6 +4302,15 @@ impl ListContactsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ListContactsErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListContactsErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, ListContactsErrorKind::TooManyRequestsError(_))
     }
 }
 impl std::error::Error for ListContactsError {
@@ -3640,6 +4396,18 @@ impl ListCustomVerificationEmailTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCustomVerificationEmailTemplatesErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCustomVerificationEmailTemplatesErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for ListCustomVerificationEmailTemplatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3722,6 +4490,18 @@ impl ListDedicatedIpPoolsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDedicatedIpPoolsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDedicatedIpPoolsErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for ListDedicatedIpPoolsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3801,6 +4581,24 @@ impl ListDeliverabilityTestReportsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDeliverabilityTestReportsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDeliverabilityTestReportsErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDeliverabilityTestReportsErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for ListDeliverabilityTestReportsError {
@@ -3888,6 +4686,24 @@ impl ListDomainDeliverabilityCampaignsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDomainDeliverabilityCampaignsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDomainDeliverabilityCampaignsErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListDomainDeliverabilityCampaignsErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for ListDomainDeliverabilityCampaignsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3969,6 +4785,15 @@ impl ListEmailIdentitiesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ListEmailIdentitiesErrorKind::BadRequestError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEmailIdentitiesErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for ListEmailIdentitiesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4047,6 +4872,15 @@ impl ListEmailTemplatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ListEmailTemplatesErrorKind::BadRequestError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEmailTemplatesErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for ListEmailTemplatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4124,6 +4958,12 @@ impl ListImportJobsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ListImportJobsErrorKind::BadRequestError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, ListImportJobsErrorKind::TooManyRequestsError(_))
     }
 }
 impl std::error::Error for ListImportJobsError {
@@ -4205,6 +5045,24 @@ impl ListSuppressedDestinationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSuppressedDestinationsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_invalid_next_token_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSuppressedDestinationsErrorKind::InvalidNextTokenError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSuppressedDestinationsErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for ListSuppressedDestinationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4285,6 +5143,18 @@ impl ListTagsForResourceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourceErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourceErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for ListTagsForResourceError {
@@ -4372,6 +5242,18 @@ impl PutAccountDedicatedIpWarmupAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAccountDedicatedIpWarmupAttributesErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAccountDedicatedIpWarmupAttributesErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for PutAccountDedicatedIpWarmupAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4456,6 +5338,18 @@ impl PutAccountDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, PutAccountDetailsErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, PutAccountDetailsErrorKind::ConflictError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAccountDetailsErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for PutAccountDetailsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4535,6 +5429,18 @@ impl PutAccountSendingAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAccountSendingAttributesErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAccountSendingAttributesErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for PutAccountSendingAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4612,6 +5518,18 @@ impl PutAccountSuppressionAttributesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAccountSuppressionAttributesErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutAccountSuppressionAttributesErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for PutAccountSuppressionAttributesError {
@@ -4697,6 +5615,24 @@ impl PutConfigurationSetDeliveryOptionsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetDeliveryOptionsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetDeliveryOptionsErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetDeliveryOptionsErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for PutConfigurationSetDeliveryOptionsError {
@@ -4785,6 +5721,24 @@ impl PutConfigurationSetReputationOptionsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetReputationOptionsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetReputationOptionsErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetReputationOptionsErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for PutConfigurationSetReputationOptionsError {
@@ -4876,6 +5830,24 @@ impl PutConfigurationSetSendingOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetSendingOptionsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetSendingOptionsErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetSendingOptionsErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for PutConfigurationSetSendingOptionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4965,6 +5937,24 @@ impl PutConfigurationSetSuppressionOptionsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetSuppressionOptionsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetSuppressionOptionsErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetSuppressionOptionsErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for PutConfigurationSetSuppressionOptionsError {
@@ -5056,6 +6046,24 @@ impl PutConfigurationSetTrackingOptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetTrackingOptionsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetTrackingOptionsErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutConfigurationSetTrackingOptionsErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for PutConfigurationSetTrackingOptionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5139,6 +6147,21 @@ impl PutDedicatedIpInPoolError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutDedicatedIpInPoolErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, PutDedicatedIpInPoolErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutDedicatedIpInPoolErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for PutDedicatedIpInPoolError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5219,6 +6242,24 @@ impl PutDedicatedIpWarmupAttributesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutDedicatedIpWarmupAttributesErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutDedicatedIpWarmupAttributesErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutDedicatedIpWarmupAttributesErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for PutDedicatedIpWarmupAttributesError {
@@ -5306,6 +6347,36 @@ impl PutDeliverabilityDashboardOptionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutDeliverabilityDashboardOptionErrorKind::AlreadyExistsError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutDeliverabilityDashboardOptionErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutDeliverabilityDashboardOptionErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutDeliverabilityDashboardOptionErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutDeliverabilityDashboardOptionErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for PutDeliverabilityDashboardOptionError {
@@ -5399,6 +6470,24 @@ impl PutEmailIdentityConfigurationSetAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailIdentityConfigurationSetAttributesErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailIdentityConfigurationSetAttributesErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailIdentityConfigurationSetAttributesErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for PutEmailIdentityConfigurationSetAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5488,6 +6577,24 @@ impl PutEmailIdentityDkimAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailIdentityDkimAttributesErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailIdentityDkimAttributesErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailIdentityDkimAttributesErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for PutEmailIdentityDkimAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5575,6 +6682,24 @@ impl PutEmailIdentityDkimSigningAttributesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailIdentityDkimSigningAttributesErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailIdentityDkimSigningAttributesErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailIdentityDkimSigningAttributesErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for PutEmailIdentityDkimSigningAttributesError {
@@ -5666,6 +6791,24 @@ impl PutEmailIdentityFeedbackAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailIdentityFeedbackAttributesErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailIdentityFeedbackAttributesErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailIdentityFeedbackAttributesErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for PutEmailIdentityFeedbackAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5754,6 +6897,24 @@ impl PutEmailIdentityMailFromAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailIdentityMailFromAttributesErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailIdentityMailFromAttributesErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutEmailIdentityMailFromAttributesErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for PutEmailIdentityMailFromAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5834,6 +6995,18 @@ impl PutSuppressedDestinationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutSuppressedDestinationErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutSuppressedDestinationErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for PutSuppressedDestinationError {
@@ -5924,6 +7097,33 @@ impl SendBulkEmailError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_account_suspended_error(&self) -> bool {
+        matches!(&self.kind, SendBulkEmailErrorKind::AccountSuspendedError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, SendBulkEmailErrorKind::BadRequestError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, SendBulkEmailErrorKind::LimitExceededError(_))
+    }
+    pub fn is_mail_from_domain_not_verified_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendBulkEmailErrorKind::MailFromDomainNotVerifiedError(_)
+        )
+    }
+    pub fn is_message_rejected(&self) -> bool {
+        matches!(&self.kind, SendBulkEmailErrorKind::MessageRejected(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, SendBulkEmailErrorKind::NotFoundError(_))
+    }
+    pub fn is_sending_paused_error(&self) -> bool {
+        matches!(&self.kind, SendBulkEmailErrorKind::SendingPausedError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, SendBulkEmailErrorKind::TooManyRequestsError(_))
     }
 }
 impl std::error::Error for SendBulkEmailError {
@@ -6020,6 +7220,48 @@ impl SendCustomVerificationEmailError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendCustomVerificationEmailErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendCustomVerificationEmailErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_mail_from_domain_not_verified_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendCustomVerificationEmailErrorKind::MailFromDomainNotVerifiedError(_)
+        )
+    }
+    pub fn is_message_rejected(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendCustomVerificationEmailErrorKind::MessageRejected(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendCustomVerificationEmailErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_sending_paused_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendCustomVerificationEmailErrorKind::SendingPausedError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendCustomVerificationEmailErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for SendCustomVerificationEmailError {
@@ -6118,6 +7360,33 @@ impl SendEmailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_account_suspended_error(&self) -> bool {
+        matches!(&self.kind, SendEmailErrorKind::AccountSuspendedError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, SendEmailErrorKind::BadRequestError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, SendEmailErrorKind::LimitExceededError(_))
+    }
+    pub fn is_mail_from_domain_not_verified_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SendEmailErrorKind::MailFromDomainNotVerifiedError(_)
+        )
+    }
+    pub fn is_message_rejected(&self) -> bool {
+        matches!(&self.kind, SendEmailErrorKind::MessageRejected(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, SendEmailErrorKind::NotFoundError(_))
+    }
+    pub fn is_sending_paused_error(&self) -> bool {
+        matches!(&self.kind, SendEmailErrorKind::SendingPausedError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, SendEmailErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for SendEmailError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6206,6 +7475,21 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::BadRequestError(_))
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6287,6 +7571,24 @@ impl TestRenderEmailTemplateError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestRenderEmailTemplateErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestRenderEmailTemplateErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TestRenderEmailTemplateErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for TestRenderEmailTemplateError {
@@ -6370,6 +7672,21 @@ impl UntagResourceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::BadRequestError(_))
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::TooManyRequestsError(_))
     }
 }
 impl std::error::Error for UntagResourceError {
@@ -6460,6 +7777,24 @@ impl UpdateConfigurationSetEventDestinationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConfigurationSetEventDestinationErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConfigurationSetEventDestinationErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateConfigurationSetEventDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6549,6 +7884,21 @@ impl UpdateContactError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateContactErrorKind::BadRequestError(_))
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateContactErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, UpdateContactErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for UpdateContactError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6632,6 +7982,24 @@ impl UpdateContactListError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateContactListErrorKind::BadRequestError(_))
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactListErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateContactListErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateContactListErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for UpdateContactListError {
@@ -6722,6 +8090,24 @@ impl UpdateCustomVerificationEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomVerificationEmailTemplateErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomVerificationEmailTemplateErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomVerificationEmailTemplateErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateCustomVerificationEmailTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6807,6 +8193,24 @@ impl UpdateEmailIdentityPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEmailIdentityPolicyErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEmailIdentityPolicyErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEmailIdentityPolicyErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateEmailIdentityPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6888,6 +8292,18 @@ impl UpdateEmailTemplateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateEmailTemplateErrorKind::BadRequestError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateEmailTemplateErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEmailTemplateErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateEmailTemplateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6939,12 +8355,12 @@ pub mod too_many_requests_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TooManyRequestsError`](crate::error::TooManyRequestsError)
@@ -7001,12 +8417,12 @@ pub mod not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NotFoundError`](crate::error::NotFoundError)
@@ -7063,12 +8479,12 @@ pub mod bad_request_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`BadRequestError`](crate::error::BadRequestError)
@@ -7128,12 +8544,12 @@ pub mod concurrent_modification_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ConcurrentModificationError`](crate::error::ConcurrentModificationError)
@@ -7191,12 +8607,12 @@ pub mod sending_paused_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`SendingPausedError`](crate::error::SendingPausedError)
@@ -7253,12 +8669,12 @@ pub mod message_rejected {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`MessageRejected`](crate::error::MessageRejected)
@@ -7318,12 +8734,12 @@ pub mod mail_from_domain_not_verified_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`MailFromDomainNotVerifiedError`](crate::error::MailFromDomainNotVerifiedError)
@@ -7380,12 +8796,12 @@ pub mod limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
@@ -7443,12 +8859,12 @@ pub mod account_suspended_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AccountSuspendedError`](crate::error::AccountSuspendedError)
@@ -7505,12 +8921,12 @@ pub mod already_exists_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AlreadyExistsError`](crate::error::AlreadyExistsError)
@@ -7567,12 +8983,12 @@ pub mod conflict_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ConflictError`](crate::error::ConflictError)
@@ -7629,12 +9045,12 @@ pub mod invalid_next_token_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidNextTokenError`](crate::error::InvalidNextTokenError)

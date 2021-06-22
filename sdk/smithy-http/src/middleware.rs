@@ -77,10 +77,9 @@ where
     O: ParseHttpResponse<SdkBody, Output = Result<T, E>>,
 {
     if let Some(parsed_response) = handler.parse_unloaded(&mut response) {
+        trace!(response = ?response);
         return sdk_result(parsed_response, response);
     }
-
-    trace!(response = ?response);
 
     let (parts, body) = response.into_parts();
     let body = match read_body(body).await {
@@ -94,6 +93,7 @@ where
     };
 
     let response = Response::from_parts(parts, Bytes::from(body));
+    trace!(response = ?response);
     let parsed = handler.parse_loaded(&response);
     sdk_result(parsed, response.map(SdkBody::from))
 }

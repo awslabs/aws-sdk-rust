@@ -162,70 +162,70 @@ pub mod db_instance_automated_backup {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the automated backups.</p>
-        pub fn db_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_arn = Some(inp.into());
+        pub fn db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_arn = Some(input.into());
             self
         }
         pub fn set_db_instance_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_arn = inp;
+            self.db_instance_arn = input;
             self
         }
         /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>
-        pub fn dbi_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.dbi_resource_id = Some(inp.into());
+        pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dbi_resource_id = Some(input.into());
             self
         }
         pub fn set_dbi_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.dbi_resource_id = inp;
+            self.dbi_resource_id = input;
             self
         }
         /// <p>The AWS Region associated with the automated backup.</p>
-        pub fn region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.region = Some(inp.into());
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
             self
         }
-        pub fn set_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.region = inp;
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
             self
         }
         /// <p>The customer id of the instance that is/was associated with the automated backup.
         /// </p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>Earliest and latest time an instance can be restored to.</p>
-        pub fn restore_window(mut self, inp: crate::model::RestoreWindow) -> Self {
-            self.restore_window = Some(inp);
+        pub fn restore_window(mut self, input: crate::model::RestoreWindow) -> Self {
+            self.restore_window = Some(input);
             self
         }
         pub fn set_restore_window(
             mut self,
-            inp: std::option::Option<crate::model::RestoreWindow>,
+            input: std::option::Option<crate::model::RestoreWindow>,
         ) -> Self {
-            self.restore_window = inp;
+            self.restore_window = input;
             self
         }
         /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.allocated_storage = Some(inp);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.allocated_storage = Some(input);
             self
         }
-        pub fn set_allocated_storage(mut self, inp: i32) -> Self {
-            self.allocated_storage = Some(inp);
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_storage = input;
             self
         }
         /// <p>Provides a list of status information for an automated backup:</p>
@@ -244,226 +244,235 @@ pub mod db_instance_automated_backup {
         /// for the first automated snapshot to be available.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The port number that the automated backup used for connections.</p>
         /// <p>Default: Inherits from the source DB instance</p>
         /// <p>Valid Values: <code>1150-65535</code>
         /// </p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>The Availability Zone that the automated backup was created in. For information on
         /// AWS Regions and Availability Zones, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
         /// and Availability Zones</a>.</p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.availability_zone = Some(inp.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone = Some(input.into());
             self
         }
         pub fn set_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.availability_zone = inp;
+            self.availability_zone = input;
             self
         }
         /// <p>Provides the VPC ID associated with the DB instance</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_id = Some(inp.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
             self
         }
-        pub fn set_vpc_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = inp;
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
             self
         }
         /// <p>Provides the date and time that the DB instance was created.
         /// </p>
-        pub fn instance_create_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.instance_create_time = Some(inp);
+        pub fn instance_create_time(mut self, input: smithy_types::Instant) -> Self {
+            self.instance_create_time = Some(input);
             self
         }
         pub fn set_instance_create_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.instance_create_time = inp;
+            self.instance_create_time = input;
             self
         }
         /// <p>The license model of an automated backup.</p>
-        pub fn master_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_username = Some(inp.into());
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_username = Some(input.into());
             self
         }
         pub fn set_master_username(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_username = inp;
+            self.master_username = input;
             self
         }
         /// <p>The name of the database engine for this automated backup.</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The version of the database engine for the automated backup.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>License model information for the automated backup.</p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.license_model = Some(inp.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_model = Some(input.into());
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.license_model = inp;
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.license_model = input;
             self
         }
         /// <p>The IOPS (I/O operations per second) value for the automated backup. </p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.iops = Some(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.iops = inp;
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
             self
         }
         /// <p>The option group the automated backup is associated with. If omitted, the default option group for the engine specified is used.</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         /// <p>The ARN from the key store with which the automated backup is associated for TDE encryption.</p>
-        pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tde_credential_arn = Some(inp.into());
+        pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tde_credential_arn = Some(input.into());
             self
         }
         pub fn set_tde_credential_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.tde_credential_arn = inp;
+            self.tde_credential_arn = input;
             self
         }
         /// <p>Specifies whether the automated backup is encrypted.</p>
-        pub fn encrypted(mut self, inp: bool) -> Self {
-            self.encrypted = Some(inp);
+        pub fn encrypted(mut self, input: bool) -> Self {
+            self.encrypted = Some(input);
             self
         }
-        pub fn set_encrypted(mut self, inp: bool) -> Self {
-            self.encrypted = Some(inp);
+        pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.encrypted = input;
             self
         }
         /// <p>Specifies the storage type associated with the automated backup.</p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.storage_type = Some(inp.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.storage_type = inp;
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
             self
         }
         /// <p>The AWS KMS key ID for an automated backup.</p>
         /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The time zone of the automated backup. In most cases, the <code>Timezone</code> element is empty.
         /// <code>Timezone</code> content appears only for Microsoft SQL Server DB instances
         /// that were created with a time zone specified.</p>
-        pub fn timezone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.timezone = Some(inp.into());
+        pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timezone = Some(input.into());
             self
         }
-        pub fn set_timezone(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.timezone = inp;
+        pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.timezone = input;
             self
         }
         /// <p>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled,
         /// and otherwise false.</p>
-        pub fn iam_database_authentication_enabled(mut self, inp: bool) -> Self {
-            self.iam_database_authentication_enabled = Some(inp);
+        pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
+            self.iam_database_authentication_enabled = Some(input);
             self
         }
-        pub fn set_iam_database_authentication_enabled(mut self, inp: bool) -> Self {
-            self.iam_database_authentication_enabled = Some(inp);
+        pub fn set_iam_database_authentication_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.iam_database_authentication_enabled = input;
             self
         }
         /// <p>The retention period for the automated backups.</p>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.backup_retention_period = Some(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.backup_retention_period = Some(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.backup_retention_period = inp;
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.backup_retention_period = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>
         pub fn db_instance_automated_backups_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_instance_automated_backups_arn = Some(inp.into());
+            self.db_instance_automated_backups_arn = Some(input.into());
             self
         }
         pub fn set_db_instance_automated_backups_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_automated_backups_arn = inp;
+            self.db_instance_automated_backups_arn = input;
             self
         }
         pub fn db_instance_automated_backups_replications(
             mut self,
-            inp: impl Into<crate::model::DBInstanceAutomatedBackupsReplication>,
+            input: impl Into<crate::model::DBInstanceAutomatedBackupsReplication>,
         ) -> Self {
             let mut v = self
                 .db_instance_automated_backups_replications
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_instance_automated_backups_replications = Some(v);
             self
         }
         pub fn set_db_instance_automated_backups_replications(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::DBInstanceAutomatedBackupsReplication>,
             >,
         ) -> Self {
-            self.db_instance_automated_backups_replications = inp;
+            self.db_instance_automated_backups_replications = input;
             self
         }
         /// Consumes the builder and constructs a [`DBInstanceAutomatedBackup`](crate::model::DBInstanceAutomatedBackup)
@@ -538,16 +547,16 @@ pub mod db_instance_automated_backups_replication {
         /// <p>The Amazon Resource Name (ARN) of the replicated automated backups.</p>
         pub fn db_instance_automated_backups_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_instance_automated_backups_arn = Some(inp.into());
+            self.db_instance_automated_backups_arn = Some(input.into());
             self
         }
         pub fn set_db_instance_automated_backups_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_automated_backups_arn = inp;
+            self.db_instance_automated_backups_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DBInstanceAutomatedBackupsReplication`](crate::model::DBInstanceAutomatedBackupsReplication)
@@ -593,24 +602,27 @@ pub mod restore_window {
     }
     impl Builder {
         /// <p>The earliest time you can restore an instance to.</p>
-        pub fn earliest_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.earliest_time = Some(inp);
+        pub fn earliest_time(mut self, input: smithy_types::Instant) -> Self {
+            self.earliest_time = Some(input);
             self
         }
         pub fn set_earliest_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.earliest_time = inp;
+            self.earliest_time = input;
             self
         }
         /// <p>The latest time you can restore an instance to.</p>
-        pub fn latest_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.latest_time = Some(inp);
+        pub fn latest_time(mut self, input: smithy_types::Instant) -> Self {
+            self.latest_time = Some(input);
             self
         }
-        pub fn set_latest_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.latest_time = inp;
+        pub fn set_latest_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.latest_time = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreWindow`](crate::model::RestoreWindow)
@@ -1066,36 +1078,36 @@ pub mod db_instance {
     }
     impl Builder {
         /// <p>Contains a user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>Contains the name of the compute and memory capacity class of the DB instance.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_class = Some(inp.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_class = Some(input.into());
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_class = inp;
+            self.db_instance_class = input;
             self
         }
         /// <p>The name of the database engine to be used for this DB instance.</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>Specifies the current state of this database.</p>
@@ -1103,27 +1115,27 @@ pub mod db_instance {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing DB instance status</a>
         /// in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn db_instance_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_status = Some(inp.into());
+        pub fn db_instance_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_status = Some(input.into());
             self
         }
         pub fn set_db_instance_status(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_status = inp;
+            self.db_instance_status = input;
             self
         }
         /// <p>Contains the master username for the DB instance.</p>
-        pub fn master_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_username = Some(inp.into());
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_username = Some(input.into());
             self
         }
         pub fn set_master_username(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_username = inp;
+            self.master_username = input;
             self
         }
         /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -1136,42 +1148,42 @@ pub mod db_instance {
         /// <b>Oracle</b>
         /// </p>
         /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance.</p>
-        pub fn db_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_name = Some(inp.into());
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_name = Some(input.into());
             self
         }
-        pub fn set_db_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_name = inp;
+        pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_name = input;
             self
         }
         /// <p>Specifies the connection endpoint.</p>
-        pub fn endpoint(mut self, inp: crate::model::Endpoint) -> Self {
-            self.endpoint = Some(inp);
+        pub fn endpoint(mut self, input: crate::model::Endpoint) -> Self {
+            self.endpoint = Some(input);
             self
         }
-        pub fn set_endpoint(mut self, inp: std::option::Option<crate::model::Endpoint>) -> Self {
-            self.endpoint = inp;
+        pub fn set_endpoint(mut self, input: std::option::Option<crate::model::Endpoint>) -> Self {
+            self.endpoint = input;
             self
         }
         /// <p>Specifies the allocated storage size specified in gibibytes.</p>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.allocated_storage = Some(inp);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.allocated_storage = Some(input);
             self
         }
-        pub fn set_allocated_storage(mut self, inp: i32) -> Self {
-            self.allocated_storage = Some(inp);
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_storage = input;
             self
         }
         /// <p>Provides the date and time the DB instance was created.</p>
-        pub fn instance_create_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.instance_create_time = Some(inp);
+        pub fn instance_create_time(mut self, input: smithy_types::Instant) -> Self {
+            self.instance_create_time = Some(input);
             self
         }
         pub fn set_instance_create_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.instance_create_time = inp;
+            self.instance_create_time = input;
             self
         }
         /// <p>
@@ -1179,209 +1191,218 @@ pub mod db_instance {
         /// created if automated backups are enabled, as determined
         /// by the <code>BackupRetentionPeriod</code>.
         /// </p>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_backup_window = Some(inp.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.preferred_backup_window = Some(input.into());
             self
         }
         pub fn set_preferred_backup_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_backup_window = inp;
+            self.preferred_backup_window = input;
             self
         }
         /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.backup_retention_period = Some(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.backup_retention_period = Some(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: i32) -> Self {
-            self.backup_retention_period = Some(inp);
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.backup_retention_period = input;
             self
         }
         pub fn db_security_groups(
             mut self,
-            inp: impl Into<crate::model::DBSecurityGroupMembership>,
+            input: impl Into<crate::model::DBSecurityGroupMembership>,
         ) -> Self {
             let mut v = self.db_security_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_security_groups = Some(v);
             self
         }
         pub fn set_db_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBSecurityGroupMembership>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBSecurityGroupMembership>>,
         ) -> Self {
-            self.db_security_groups = inp;
+            self.db_security_groups = input;
             self
         }
         pub fn vpc_security_groups(
             mut self,
-            inp: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: impl Into<crate::model::VpcSecurityGroupMembership>,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_groups = Some(v);
             self
         }
         pub fn set_vpc_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
         ) -> Self {
-            self.vpc_security_groups = inp;
+            self.vpc_security_groups = input;
             self
         }
         pub fn db_parameter_groups(
             mut self,
-            inp: impl Into<crate::model::DBParameterGroupStatus>,
+            input: impl Into<crate::model::DBParameterGroupStatus>,
         ) -> Self {
             let mut v = self.db_parameter_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_parameter_groups = Some(v);
             self
         }
         pub fn set_db_parameter_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBParameterGroupStatus>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBParameterGroupStatus>>,
         ) -> Self {
-            self.db_parameter_groups = inp;
+            self.db_parameter_groups = input;
             self
         }
         /// <p>Specifies the name of the Availability Zone the DB instance is located in.</p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.availability_zone = Some(inp.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone = Some(input.into());
             self
         }
         pub fn set_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.availability_zone = inp;
+            self.availability_zone = input;
             self
         }
         /// <p>Specifies information on the subnet group associated with the DB instance, including the name, description, and subnets in the subnet group.</p>
-        pub fn db_subnet_group(mut self, inp: crate::model::DBSubnetGroup) -> Self {
-            self.db_subnet_group = Some(inp);
+        pub fn db_subnet_group(mut self, input: crate::model::DBSubnetGroup) -> Self {
+            self.db_subnet_group = Some(input);
             self
         }
         pub fn set_db_subnet_group(
             mut self,
-            inp: std::option::Option<crate::model::DBSubnetGroup>,
+            input: std::option::Option<crate::model::DBSubnetGroup>,
         ) -> Self {
-            self.db_subnet_group = inp;
+            self.db_subnet_group = input;
             self
         }
         /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_maintenance_window = Some(inp.into());
+        pub fn preferred_maintenance_window(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.preferred_maintenance_window = Some(input.into());
             self
         }
         pub fn set_preferred_maintenance_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_maintenance_window = inp;
+            self.preferred_maintenance_window = input;
             self
         }
         /// <p>A value that specifies that changes to the DB instance are pending. This element is only included when changes are pending. Specific changes are identified by subelements.</p>
-        pub fn pending_modified_values(mut self, inp: crate::model::PendingModifiedValues) -> Self {
-            self.pending_modified_values = Some(inp);
+        pub fn pending_modified_values(
+            mut self,
+            input: crate::model::PendingModifiedValues,
+        ) -> Self {
+            self.pending_modified_values = Some(input);
             self
         }
         pub fn set_pending_modified_values(
             mut self,
-            inp: std::option::Option<crate::model::PendingModifiedValues>,
+            input: std::option::Option<crate::model::PendingModifiedValues>,
         ) -> Self {
-            self.pending_modified_values = inp;
+            self.pending_modified_values = input;
             self
         }
         /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
-        pub fn latest_restorable_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.latest_restorable_time = Some(inp);
+        pub fn latest_restorable_time(mut self, input: smithy_types::Instant) -> Self {
+            self.latest_restorable_time = Some(input);
             self
         }
         pub fn set_latest_restorable_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.latest_restorable_time = inp;
+            self.latest_restorable_time = input;
             self
         }
         /// <p>Specifies if the DB instance is a Multi-AZ deployment.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.multi_az = Some(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.multi_az = Some(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: bool) -> Self {
-            self.multi_az = Some(inp);
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_az = input;
             self
         }
         /// <p>Indicates the database engine version.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>A value that indicates that minor version patches are applied automatically.</p>
-        pub fn auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.auto_minor_version_upgrade = Some(inp);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.auto_minor_version_upgrade = Some(input);
             self
         }
-        pub fn set_auto_minor_version_upgrade(mut self, inp: bool) -> Self {
-            self.auto_minor_version_upgrade = Some(inp);
+        pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_minor_version_upgrade = input;
             self
         }
         /// <p>Contains the identifier of the source DB instance if this DB instance is a read
         /// replica.</p>
         pub fn read_replica_source_db_instance_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.read_replica_source_db_instance_identifier = Some(inp.into());
+            self.read_replica_source_db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_read_replica_source_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.read_replica_source_db_instance_identifier = inp;
+            self.read_replica_source_db_instance_identifier = input;
             self
         }
         pub fn read_replica_db_instance_identifiers(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self
                 .read_replica_db_instance_identifiers
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.read_replica_db_instance_identifiers = Some(v);
             self
         }
         pub fn set_read_replica_db_instance_identifiers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.read_replica_db_instance_identifiers = inp;
+            self.read_replica_db_instance_identifiers = input;
             self
         }
         pub fn read_replica_db_cluster_identifiers(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.read_replica_db_cluster_identifiers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.read_replica_db_cluster_identifiers = Some(v);
             self
         }
         pub fn set_read_replica_db_cluster_identifiers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.read_replica_db_cluster_identifiers = inp;
+            self.read_replica_db_cluster_identifiers = input;
             self
         }
         /// <p>The open mode of an Oracle read replica. The default is <code>open-read-only</code>.
@@ -1390,87 +1411,93 @@ pub mod db_instance {
         /// <note>
         /// <p>This attribute is only supported in RDS for Oracle.</p>
         /// </note>
-        pub fn replica_mode(mut self, inp: crate::model::ReplicaMode) -> Self {
-            self.replica_mode = Some(inp);
+        pub fn replica_mode(mut self, input: crate::model::ReplicaMode) -> Self {
+            self.replica_mode = Some(input);
             self
         }
         pub fn set_replica_mode(
             mut self,
-            inp: std::option::Option<crate::model::ReplicaMode>,
+            input: std::option::Option<crate::model::ReplicaMode>,
         ) -> Self {
-            self.replica_mode = inp;
+            self.replica_mode = input;
             self
         }
         /// <p>License model information for this DB instance.</p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.license_model = Some(inp.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_model = Some(input.into());
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.license_model = inp;
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.license_model = input;
             self
         }
         /// <p>Specifies the Provisioned IOPS (I/O operations per second) value.</p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.iops = Some(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.iops = inp;
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
             self
         }
         pub fn option_group_memberships(
             mut self,
-            inp: impl Into<crate::model::OptionGroupMembership>,
+            input: impl Into<crate::model::OptionGroupMembership>,
         ) -> Self {
             let mut v = self.option_group_memberships.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.option_group_memberships = Some(v);
             self
         }
         pub fn set_option_group_memberships(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OptionGroupMembership>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OptionGroupMembership>>,
         ) -> Self {
-            self.option_group_memberships = inp;
+            self.option_group_memberships = input;
             self
         }
         /// <p>If present, specifies the name of the character set that this instance is associated with.</p>
-        pub fn character_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.character_set_name = Some(inp.into());
+        pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.character_set_name = Some(input.into());
             self
         }
         pub fn set_character_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.character_set_name = inp;
+            self.character_set_name = input;
             self
         }
         /// <p>The name of the NCHAR character set for the Oracle DB instance. This character set specifies the
         /// Unicode encoding for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.
         /// </p>
-        pub fn nchar_character_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.nchar_character_set_name = Some(inp.into());
+        pub fn nchar_character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.nchar_character_set_name = Some(input.into());
             self
         }
         pub fn set_nchar_character_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.nchar_character_set_name = inp;
+            self.nchar_character_set_name = input;
             self
         }
         /// <p>If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.</p>
-        pub fn secondary_availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secondary_availability_zone = Some(inp.into());
+        pub fn secondary_availability_zone(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.secondary_availability_zone = Some(input.into());
             self
         }
         pub fn set_secondary_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.secondary_availability_zone = inp;
+            self.secondary_availability_zone = input;
             self
         }
         /// <p>Specifies the accessibility options for the DB instance.</p>
@@ -1479,76 +1506,79 @@ pub mod db_instance {
         /// and that public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
-        pub fn publicly_accessible(mut self, inp: bool) -> Self {
-            self.publicly_accessible = Some(inp);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.publicly_accessible = Some(input);
             self
         }
-        pub fn set_publicly_accessible(mut self, inp: bool) -> Self {
-            self.publicly_accessible = Some(inp);
+        pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+            self.publicly_accessible = input;
             self
         }
-        pub fn status_infos(mut self, inp: impl Into<crate::model::DBInstanceStatusInfo>) -> Self {
+        pub fn status_infos(
+            mut self,
+            input: impl Into<crate::model::DBInstanceStatusInfo>,
+        ) -> Self {
             let mut v = self.status_infos.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.status_infos = Some(v);
             self
         }
         pub fn set_status_infos(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBInstanceStatusInfo>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBInstanceStatusInfo>>,
         ) -> Self {
-            self.status_infos = inp;
+            self.status_infos = input;
             self
         }
         /// <p>Specifies the storage type associated with DB instance.</p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.storage_type = Some(inp.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.storage_type = inp;
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
             self
         }
         /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
-        pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tde_credential_arn = Some(inp.into());
+        pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tde_credential_arn = Some(input.into());
             self
         }
         pub fn set_tde_credential_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.tde_credential_arn = inp;
+            self.tde_credential_arn = input;
             self
         }
         /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
-        pub fn db_instance_port(mut self, inp: i32) -> Self {
-            self.db_instance_port = Some(inp);
+        pub fn db_instance_port(mut self, input: i32) -> Self {
+            self.db_instance_port = Some(input);
             self
         }
-        pub fn set_db_instance_port(mut self, inp: i32) -> Self {
-            self.db_instance_port = Some(inp);
+        pub fn set_db_instance_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.db_instance_port = input;
             self
         }
         /// <p>If the DB instance is a member of a DB cluster, contains the name of the DB cluster that the DB instance is a member of.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>Specifies whether the DB instance is encrypted.</p>
-        pub fn storage_encrypted(mut self, inp: bool) -> Self {
-            self.storage_encrypted = Some(inp);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.storage_encrypted = Some(input);
             self
         }
-        pub fn set_storage_encrypted(mut self, inp: bool) -> Self {
-            self.storage_encrypted = Some(inp);
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.storage_encrypted = input;
             self
         }
         /// <p>
@@ -1556,53 +1586,53 @@ pub mod db_instance {
         /// for the encrypted DB instance.
         /// </p>
         /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
         /// entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.</p>
-        pub fn dbi_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.dbi_resource_id = Some(inp.into());
+        pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dbi_resource_id = Some(input.into());
             self
         }
         pub fn set_dbi_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.dbi_resource_id = inp;
+            self.dbi_resource_id = input;
             self
         }
         /// <p>The identifier of the CA certificate for this DB instance.</p>
-        pub fn ca_certificate_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ca_certificate_identifier = Some(inp.into());
+        pub fn ca_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ca_certificate_identifier = Some(input.into());
             self
         }
         pub fn set_ca_certificate_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ca_certificate_identifier = inp;
+            self.ca_certificate_identifier = input;
             self
         }
         pub fn domain_memberships(
             mut self,
-            inp: impl Into<crate::model::DomainMembership>,
+            input: impl Into<crate::model::DomainMembership>,
         ) -> Self {
             let mut v = self.domain_memberships.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.domain_memberships = Some(v);
             self
         }
         pub fn set_domain_memberships(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DomainMembership>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DomainMembership>>,
         ) -> Self {
-            self.domain_memberships = inp;
+            self.domain_memberships = input;
             self
         }
         /// <p>Specifies whether tags are copied from the DB instance to snapshots of the DB instance.</p>
@@ -1612,48 +1642,48 @@ pub mod db_instance {
         /// <p>Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this
         /// value for an Aurora DB instance has no effect on the DB cluster setting. For more
         /// information, see <code>DBCluster</code>.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.copy_tags_to_snapshot = Some(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.copy_tags_to_snapshot = Some(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.copy_tags_to_snapshot = Some(inp);
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_snapshot = input;
             self
         }
         /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance.</p>
-        pub fn monitoring_interval(mut self, inp: i32) -> Self {
-            self.monitoring_interval = Some(inp);
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.monitoring_interval = Some(input);
             self
         }
-        pub fn set_monitoring_interval(mut self, inp: std::option::Option<i32>) -> Self {
-            self.monitoring_interval = inp;
+        pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.monitoring_interval = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log stream that receives the Enhanced Monitoring metrics data for the DB instance.</p>
         pub fn enhanced_monitoring_resource_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.enhanced_monitoring_resource_arn = Some(inp.into());
+            self.enhanced_monitoring_resource_arn = Some(input.into());
             self
         }
         pub fn set_enhanced_monitoring_resource_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.enhanced_monitoring_resource_arn = inp;
+            self.enhanced_monitoring_resource_arn = input;
             self
         }
         /// <p>The ARN for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.</p>
-        pub fn monitoring_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.monitoring_role_arn = Some(inp.into());
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.monitoring_role_arn = Some(input.into());
             self
         }
         pub fn set_monitoring_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.monitoring_role_arn = inp;
+            self.monitoring_role_arn = input;
             self
         }
         /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance
@@ -1661,24 +1691,24 @@ pub mod db_instance {
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
         /// Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// </p>
-        pub fn promotion_tier(mut self, inp: i32) -> Self {
-            self.promotion_tier = Some(inp);
+        pub fn promotion_tier(mut self, input: i32) -> Self {
+            self.promotion_tier = Some(input);
             self
         }
-        pub fn set_promotion_tier(mut self, inp: std::option::Option<i32>) -> Self {
-            self.promotion_tier = inp;
+        pub fn set_promotion_tier(mut self, input: std::option::Option<i32>) -> Self {
+            self.promotion_tier = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the DB instance.</p>
-        pub fn db_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_arn = Some(inp.into());
+        pub fn db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_arn = Some(input.into());
             self
         }
         pub fn set_db_instance_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_arn = inp;
+            self.db_instance_arn = input;
             self
         }
         /// <p>The time zone of the DB instance.
@@ -1687,12 +1717,12 @@ pub mod db_instance {
         /// Microsoft SQL Server DB instances
         /// that were created with a time zone specified.
         /// </p>
-        pub fn timezone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.timezone = Some(inp.into());
+        pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timezone = Some(input.into());
             self
         }
-        pub fn set_timezone(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.timezone = inp;
+        pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.timezone = input;
             self
         }
         /// <p>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
@@ -1708,81 +1738,87 @@ pub mod db_instance {
         /// <p>Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.</p>
         /// </li>
         /// </ul>
-        pub fn iam_database_authentication_enabled(mut self, inp: bool) -> Self {
-            self.iam_database_authentication_enabled = Some(inp);
+        pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
+            self.iam_database_authentication_enabled = Some(input);
             self
         }
-        pub fn set_iam_database_authentication_enabled(mut self, inp: bool) -> Self {
-            self.iam_database_authentication_enabled = Some(inp);
+        pub fn set_iam_database_authentication_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.iam_database_authentication_enabled = input;
             self
         }
         /// <p>True if Performance Insights is enabled for the DB instance, and otherwise false.</p>
-        pub fn performance_insights_enabled(mut self, inp: bool) -> Self {
-            self.performance_insights_enabled = Some(inp);
+        pub fn performance_insights_enabled(mut self, input: bool) -> Self {
+            self.performance_insights_enabled = Some(input);
             self
         }
-        pub fn set_performance_insights_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.performance_insights_enabled = inp;
+        pub fn set_performance_insights_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.performance_insights_enabled = input;
             self
         }
         /// <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
         /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.performance_insights_kms_key_id = Some(inp.into());
+            self.performance_insights_kms_key_id = Some(input.into());
             self
         }
         pub fn set_performance_insights_kms_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.performance_insights_kms_key_id = inp;
+            self.performance_insights_kms_key_id = input;
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
-        pub fn performance_insights_retention_period(mut self, inp: i32) -> Self {
-            self.performance_insights_retention_period = Some(inp);
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.performance_insights_retention_period = Some(input);
             self
         }
         pub fn set_performance_insights_retention_period(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.performance_insights_retention_period = inp;
+            self.performance_insights_retention_period = input;
             self
         }
         pub fn enabled_cloudwatch_logs_exports(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.enabled_cloudwatch_logs_exports.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.enabled_cloudwatch_logs_exports = Some(v);
             self
         }
         pub fn set_enabled_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.enabled_cloudwatch_logs_exports = inp;
+            self.enabled_cloudwatch_logs_exports = input;
             self
         }
         pub fn processor_features(
             mut self,
-            inp: impl Into<crate::model::ProcessorFeature>,
+            input: impl Into<crate::model::ProcessorFeature>,
         ) -> Self {
             let mut v = self.processor_features.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.processor_features = Some(v);
             self
         }
         pub fn set_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         ) -> Self {
-            self.processor_features = inp;
+            self.processor_features = input;
             self
         }
         /// <p>Indicates if the DB instance has deletion protection enabled.
@@ -1791,79 +1827,79 @@ pub mod db_instance {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
-        pub fn associated_roles(mut self, inp: impl Into<crate::model::DBInstanceRole>) -> Self {
+        pub fn associated_roles(mut self, input: impl Into<crate::model::DBInstanceRole>) -> Self {
             let mut v = self.associated_roles.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.associated_roles = Some(v);
             self
         }
         pub fn set_associated_roles(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBInstanceRole>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBInstanceRole>>,
         ) -> Self {
-            self.associated_roles = inp;
+            self.associated_roles = input;
             self
         }
         /// <p>Specifies the listener connection endpoint for SQL Server Always On.</p>
-        pub fn listener_endpoint(mut self, inp: crate::model::Endpoint) -> Self {
-            self.listener_endpoint = Some(inp);
+        pub fn listener_endpoint(mut self, input: crate::model::Endpoint) -> Self {
+            self.listener_endpoint = Some(input);
             self
         }
         pub fn set_listener_endpoint(
             mut self,
-            inp: std::option::Option<crate::model::Endpoint>,
+            input: std::option::Option<crate::model::Endpoint>,
         ) -> Self {
-            self.listener_endpoint = inp;
+            self.listener_endpoint = input;
             self
         }
         /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
-        pub fn max_allocated_storage(mut self, inp: i32) -> Self {
-            self.max_allocated_storage = Some(inp);
+        pub fn max_allocated_storage(mut self, input: i32) -> Self {
+            self.max_allocated_storage = Some(input);
             self
         }
-        pub fn set_max_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_allocated_storage = inp;
+        pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_allocated_storage = input;
             self
         }
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_list = Some(v);
             self
         }
         pub fn set_tag_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tag_list = inp;
+            self.tag_list = input;
             self
         }
         pub fn db_instance_automated_backups_replications(
             mut self,
-            inp: impl Into<crate::model::DBInstanceAutomatedBackupsReplication>,
+            input: impl Into<crate::model::DBInstanceAutomatedBackupsReplication>,
         ) -> Self {
             let mut v = self
                 .db_instance_automated_backups_replications
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_instance_automated_backups_replications = Some(v);
             self
         }
         pub fn set_db_instance_automated_backups_replications(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::DBInstanceAutomatedBackupsReplication>,
             >,
         ) -> Self {
-            self.db_instance_automated_backups_replications = inp;
+            self.db_instance_automated_backups_replications = input;
             self
         }
         /// <p>Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
@@ -1875,27 +1911,27 @@ pub mod db_instance {
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
         /// in the <i>AWS Outposts User Guide</i>.</p>
-        pub fn customer_owned_ip_enabled(mut self, inp: bool) -> Self {
-            self.customer_owned_ip_enabled = Some(inp);
+        pub fn customer_owned_ip_enabled(mut self, input: bool) -> Self {
+            self.customer_owned_ip_enabled = Some(input);
             self
         }
-        pub fn set_customer_owned_ip_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.customer_owned_ip_enabled = inp;
+        pub fn set_customer_owned_ip_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.customer_owned_ip_enabled = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
         pub fn aws_backup_recovery_point_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.aws_backup_recovery_point_arn = Some(inp.into());
+            self.aws_backup_recovery_point_arn = Some(input.into());
             self
         }
         pub fn set_aws_backup_recovery_point_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.aws_backup_recovery_point_arn = inp;
+            self.aws_backup_recovery_point_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DBInstance`](crate::model::DBInstance)
@@ -2008,21 +2044,21 @@ pub mod tag {
     }
     impl Builder {
         /// <p>A key is the required name of the tag. The string value can be from 1 to 128 Unicode characters in length and can't be prefixed with "aws:" or "rds:". The string can only contain only the set of Unicode letters, digits, white-space, '_', '.', ':', '/', '=', '+', '-', '@' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$").</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>A value is the optional value of the tag. The string value can be from 1 to 256 Unicode characters in length and can't be prefixed with "aws:" or "rds:". The string can only contain only the set of Unicode letters, digits, white-space, '_', '.', ':', '/', '=', '+', '-', '@' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$").</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
@@ -2093,30 +2129,33 @@ pub mod endpoint {
     }
     impl Builder {
         /// <p>Specifies the DNS address of the DB instance.</p>
-        pub fn address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.address = Some(inp.into());
+        pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.address = Some(input.into());
             self
         }
-        pub fn set_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.address = inp;
+        pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.address = input;
             self
         }
         /// <p>Specifies the port that the database engine is listening on.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// Consumes the builder and constructs a [`Endpoint`](crate::model::Endpoint)
@@ -2189,23 +2228,23 @@ pub mod db_instance_role {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the IAM role that is associated with the DB
         /// instance.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// <p>The name of the feature associated with the AWS Identity and Access Management (IAM) role.
         /// For the list of supported feature names, see <code>DBEngineVersion</code>.
         /// </p>
-        pub fn feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.feature_name = Some(inp.into());
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_name = Some(input.into());
             self
         }
-        pub fn set_feature_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.feature_name = inp;
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_name = input;
             self
         }
         /// <p>Describes the state of association between the IAM role and the DB instance. The Status property returns one of the following
@@ -2226,12 +2265,12 @@ pub mod db_instance_role {
         /// to assume the IAM role in order to access other AWS services on your behalf.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`DBInstanceRole`](crate::model::DBInstanceRole)
@@ -2349,21 +2388,21 @@ pub mod processor_feature {
     }
     impl Builder {
         /// <p>The name of the processor feature. Valid names are <code>coreCount</code> and <code>threadsPerCore</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The value of a processor feature name.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`ProcessorFeature`](crate::model::ProcessorFeature)
@@ -2418,39 +2457,42 @@ pub mod domain_membership {
     }
     impl Builder {
         /// <p>The identifier of the Active Directory Domain.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain = Some(inp.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain = inp;
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
             self
         }
         /// <p>The status of the Active Directory Domain membership for the DB instance or cluster. Values include joined, pending-join, failed, and so on.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The fully qualified domain name of the Active Directory Domain.</p>
-        pub fn fqdn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.fqdn = Some(inp.into());
+        pub fn fqdn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fqdn = Some(input.into());
             self
         }
-        pub fn set_fqdn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.fqdn = inp;
+        pub fn set_fqdn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fqdn = input;
             self
         }
         /// <p>The name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn iam_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.iam_role_name = Some(inp.into());
+        pub fn iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.iam_role_name = Some(input.into());
             self
         }
-        pub fn set_iam_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_name = inp;
+        pub fn set_iam_role_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.iam_role_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DomainMembership`](crate::model::DomainMembership)
@@ -2509,41 +2551,41 @@ pub mod db_instance_status_info {
     }
     impl Builder {
         /// <p>This value is currently "read replication."</p>
-        pub fn status_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_type = Some(inp.into());
+        pub fn status_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_type = Some(input.into());
             self
         }
-        pub fn set_status_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_type = inp;
+        pub fn set_status_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_type = input;
             self
         }
         /// <p>Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
-        pub fn normal(mut self, inp: bool) -> Self {
-            self.normal = Some(inp);
+        pub fn normal(mut self, input: bool) -> Self {
+            self.normal = Some(input);
             self
         }
-        pub fn set_normal(mut self, inp: bool) -> Self {
-            self.normal = Some(inp);
+        pub fn set_normal(mut self, input: std::option::Option<bool>) -> Self {
+            self.normal = input;
             self
         }
         /// <p>Status of the DB instance. For a StatusType of read replica, the values can be
         /// replicating, replication stop point set, replication stop point reached, error, stopped,
         /// or terminated.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>Details of the error if there is an error for the instance. If the instance isn't in an error state, this value is blank.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DBInstanceStatusInfo`](crate::model::DBInstanceStatusInfo)
@@ -2601,15 +2643,15 @@ pub mod option_group_membership {
     }
     impl Builder {
         /// <p>The name of the option group that the instance belongs to.</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         /// <p>The status of the DB instance's option group membership. Valid values are:
@@ -2622,12 +2664,12 @@ pub mod option_group_membership {
         /// <code>removing</code>,
         /// and <code>failed</code>.
         /// </p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`OptionGroupMembership`](crate::model::OptionGroupMembership)
@@ -2802,181 +2844,187 @@ pub mod pending_modified_values {
     }
     impl Builder {
         /// <p>The name of the compute and memory capacity class for the DB instance.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_class = Some(inp.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_class = Some(input.into());
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_class = inp;
+            self.db_instance_class = input;
             self
         }
         /// <p>The allocated storage size for the DB instance specified in gibibytes .</p>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.allocated_storage = Some(inp);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.allocated_storage = Some(input);
             self
         }
-        pub fn set_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.allocated_storage = inp;
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_storage = input;
             self
         }
         /// <p>The master credentials for the DB instance.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_user_password = Some(inp.into());
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_user_password = Some(input.into());
             self
         }
         pub fn set_master_user_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_user_password = inp;
+            self.master_user_password = input;
             self
         }
         /// <p>The port for the DB instance.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>The number of days for which automated backups are retained.</p>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.backup_retention_period = Some(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.backup_retention_period = Some(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.backup_retention_period = inp;
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.backup_retention_period = input;
             self
         }
         /// <p>A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.multi_az = Some(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.multi_az = Some(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.multi_az = inp;
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_az = input;
             self
         }
         /// <p>The database engine version.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>The license model for the DB instance.</p>
         /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
         /// <code>general-public-license</code>
         /// </p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.license_model = Some(inp.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_model = Some(input.into());
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.license_model = inp;
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.license_model = input;
             self
         }
         /// <p>The Provisioned IOPS value for the DB instance.</p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.iops = Some(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.iops = inp;
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
             self
         }
         /// <p>The  database identifier for the DB instance.</p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>The storage type of the DB instance.</p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.storage_type = Some(inp.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.storage_type = inp;
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
             self
         }
         /// <p>The identifier of the CA certificate for the DB instance.</p>
-        pub fn ca_certificate_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ca_certificate_identifier = Some(inp.into());
+        pub fn ca_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ca_certificate_identifier = Some(input.into());
             self
         }
         pub fn set_ca_certificate_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ca_certificate_identifier = inp;
+            self.ca_certificate_identifier = input;
             self
         }
         /// <p>The DB subnet group for the DB instance.</p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_name = Some(inp.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_name = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_name = inp;
+            self.db_subnet_group_name = input;
             self
         }
         /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
         pub fn pending_cloudwatch_logs_exports(
             mut self,
-            inp: crate::model::PendingCloudwatchLogsExports,
+            input: crate::model::PendingCloudwatchLogsExports,
         ) -> Self {
-            self.pending_cloudwatch_logs_exports = Some(inp);
+            self.pending_cloudwatch_logs_exports = Some(input);
             self
         }
         pub fn set_pending_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<crate::model::PendingCloudwatchLogsExports>,
+            input: std::option::Option<crate::model::PendingCloudwatchLogsExports>,
         ) -> Self {
-            self.pending_cloudwatch_logs_exports = inp;
+            self.pending_cloudwatch_logs_exports = input;
             self
         }
         pub fn processor_features(
             mut self,
-            inp: impl Into<crate::model::ProcessorFeature>,
+            input: impl Into<crate::model::ProcessorFeature>,
         ) -> Self {
             let mut v = self.processor_features.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.processor_features = Some(v);
             self
         }
         pub fn set_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         ) -> Self {
-            self.processor_features = inp;
+            self.processor_features = input;
             self
         }
         /// <p>Whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-        pub fn iam_database_authentication_enabled(mut self, inp: bool) -> Self {
-            self.iam_database_authentication_enabled = Some(inp);
+        pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
+            self.iam_database_authentication_enabled = Some(input);
             self
         }
         pub fn set_iam_database_authentication_enabled(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.iam_database_authentication_enabled = inp;
+            self.iam_database_authentication_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`PendingModifiedValues`](crate::model::PendingModifiedValues)
@@ -3036,30 +3084,30 @@ pub mod pending_cloudwatch_logs_exports {
         pub(crate) log_types_to_disable: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn log_types_to_enable(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn log_types_to_enable(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_types_to_enable.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.log_types_to_enable = Some(v);
             self
         }
         pub fn set_log_types_to_enable(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.log_types_to_enable = inp;
+            self.log_types_to_enable = input;
             self
         }
-        pub fn log_types_to_disable(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn log_types_to_disable(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_types_to_disable.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.log_types_to_disable = Some(v);
             self
         }
         pub fn set_log_types_to_disable(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.log_types_to_disable = inp;
+            self.log_types_to_disable = input;
             self
         }
         /// Consumes the builder and constructs a [`PendingCloudwatchLogsExports`](crate::model::PendingCloudwatchLogsExports)
@@ -3131,73 +3179,76 @@ pub mod db_subnet_group {
     }
     impl Builder {
         /// <p>The name of the DB subnet group.</p>
-        pub fn db_subnet_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_name = Some(inp.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_name = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_name = inp;
+            self.db_subnet_group_name = input;
             self
         }
         /// <p>Provides the description of the DB subnet group.</p>
-        pub fn db_subnet_group_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_description = Some(inp.into());
+        pub fn db_subnet_group_description(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.db_subnet_group_description = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_description = inp;
+            self.db_subnet_group_description = input;
             self
         }
         /// <p>Provides the VpcId of the DB subnet group.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_id = Some(inp.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
             self
         }
-        pub fn set_vpc_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = inp;
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
             self
         }
         /// <p>Provides the status of the DB subnet group.</p>
-        pub fn subnet_group_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subnet_group_status = Some(inp.into());
+        pub fn subnet_group_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subnet_group_status = Some(input.into());
             self
         }
         pub fn set_subnet_group_status(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subnet_group_status = inp;
+            self.subnet_group_status = input;
             self
         }
-        pub fn subnets(mut self, inp: impl Into<crate::model::Subnet>) -> Self {
+        pub fn subnets(mut self, input: impl Into<crate::model::Subnet>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.subnets = Some(v);
             self
         }
         pub fn set_subnets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
         ) -> Self {
-            self.subnets = inp;
+            self.subnets = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the DB subnet group.</p>
-        pub fn db_subnet_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group_arn = Some(inp.into());
+        pub fn db_subnet_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group_arn = Some(input.into());
             self
         }
         pub fn set_db_subnet_group_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group_arn = inp;
+            self.db_subnet_group_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSubnetGroup`](crate::model::DBSubnetGroup)
@@ -3263,53 +3314,56 @@ pub mod subnet {
     }
     impl Builder {
         /// <p>The identifier of the subnet.</p>
-        pub fn subnet_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subnet_identifier = Some(inp.into());
+        pub fn subnet_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subnet_identifier = Some(input.into());
             self
         }
         pub fn set_subnet_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subnet_identifier = inp;
+            self.subnet_identifier = input;
             self
         }
         /// <p>Contains Availability Zone information.</p>
         /// <p> This data type is used as an element in the <code>OrderableDBInstanceOption</code>
         /// data type.</p>
-        pub fn subnet_availability_zone(mut self, inp: crate::model::AvailabilityZone) -> Self {
-            self.subnet_availability_zone = Some(inp);
+        pub fn subnet_availability_zone(mut self, input: crate::model::AvailabilityZone) -> Self {
+            self.subnet_availability_zone = Some(input);
             self
         }
         pub fn set_subnet_availability_zone(
             mut self,
-            inp: std::option::Option<crate::model::AvailabilityZone>,
+            input: std::option::Option<crate::model::AvailabilityZone>,
         ) -> Self {
-            self.subnet_availability_zone = inp;
+            self.subnet_availability_zone = input;
             self
         }
         /// <p>If the subnet is associated with an Outpost, this value specifies the Outpost.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
         /// in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn subnet_outpost(mut self, inp: crate::model::Outpost) -> Self {
-            self.subnet_outpost = Some(inp);
+        pub fn subnet_outpost(mut self, input: crate::model::Outpost) -> Self {
+            self.subnet_outpost = Some(input);
             self
         }
         pub fn set_subnet_outpost(
             mut self,
-            inp: std::option::Option<crate::model::Outpost>,
+            input: std::option::Option<crate::model::Outpost>,
         ) -> Self {
-            self.subnet_outpost = inp;
+            self.subnet_outpost = input;
             self
         }
         /// <p>The status of the subnet.</p>
-        pub fn subnet_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subnet_status = Some(inp.into());
+        pub fn subnet_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subnet_status = Some(input.into());
             self
         }
-        pub fn set_subnet_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.subnet_status = inp;
+        pub fn set_subnet_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.subnet_status = input;
             self
         }
         /// Consumes the builder and constructs a [`Subnet`](crate::model::Subnet)
@@ -3357,12 +3411,12 @@ pub mod outpost {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// Consumes the builder and constructs a [`Outpost`](crate::model::Outpost)
@@ -3404,12 +3458,12 @@ pub mod availability_zone {
     }
     impl Builder {
         /// <p>The name of the Availability Zone.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`AvailabilityZone`](crate::model::AvailabilityZone)
@@ -3486,27 +3540,27 @@ pub mod db_parameter_group_status {
     }
     impl Builder {
         /// <p>The name of the DB parameter group.</p>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_name = Some(inp.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_name = inp;
+            self.db_parameter_group_name = input;
             self
         }
         /// <p>The status of parameter updates.</p>
-        pub fn parameter_apply_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parameter_apply_status = Some(inp.into());
+        pub fn parameter_apply_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parameter_apply_status = Some(input.into());
             self
         }
         pub fn set_parameter_apply_status(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.parameter_apply_status = inp;
+            self.parameter_apply_status = input;
             self
         }
         /// Consumes the builder and constructs a [`DBParameterGroupStatus`](crate::model::DBParameterGroupStatus)
@@ -3553,24 +3607,24 @@ pub mod vpc_security_group_membership {
     }
     impl Builder {
         /// <p>The name of the VPC security group.</p>
-        pub fn vpc_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_security_group_id = Some(inp.into());
+        pub fn vpc_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_security_group_id = Some(input.into());
             self
         }
         pub fn set_vpc_security_group_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.vpc_security_group_id = inp;
+            self.vpc_security_group_id = input;
             self
         }
         /// <p>The status of the VPC security group.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`VpcSecurityGroupMembership`](crate::model::VpcSecurityGroupMembership)
@@ -3639,24 +3693,24 @@ pub mod db_security_group_membership {
     }
     impl Builder {
         /// <p>The name of the DB security group.</p>
-        pub fn db_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_security_group_name = Some(inp.into());
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_security_group_name = Some(input.into());
             self
         }
         pub fn set_db_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_security_group_name = inp;
+            self.db_security_group_name = input;
             self
         }
         /// <p>The status of the DB security group.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSecurityGroupMembership`](crate::model::DBSecurityGroupMembership)
@@ -4022,134 +4076,137 @@ pub mod db_cluster {
         /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB).
         /// For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically
         /// adjusts as needed.</p>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.allocated_storage = Some(inp);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.allocated_storage = Some(input);
             self
         }
-        pub fn set_allocated_storage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.allocated_storage = inp;
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_storage = input;
             self
         }
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
         pub fn set_availability_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.availability_zones = inp;
+            self.availability_zones = input;
             self
         }
         /// <p>Specifies the number of days for which automatic DB snapshots are retained.</p>
-        pub fn backup_retention_period(mut self, inp: i32) -> Self {
-            self.backup_retention_period = Some(inp);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.backup_retention_period = Some(input);
             self
         }
-        pub fn set_backup_retention_period(mut self, inp: std::option::Option<i32>) -> Self {
-            self.backup_retention_period = inp;
+        pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.backup_retention_period = input;
             self
         }
         /// <p>If present, specifies the name of the character set that this cluster is associated with.</p>
-        pub fn character_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.character_set_name = Some(inp.into());
+        pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.character_set_name = Some(input.into());
             self
         }
         pub fn set_character_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.character_set_name = inp;
+            self.character_set_name = input;
             self
         }
         /// <p>Contains the name of the initial database of this DB cluster that was provided at create time, if one was specified when the DB cluster was created. This same name is returned for the life of the DB cluster.</p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.database_name = Some(inp.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
             self
         }
-        pub fn set_database_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.database_name = inp;
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
             self
         }
         /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>Specifies the name of the DB cluster parameter group for the DB cluster.</p>
-        pub fn db_cluster_parameter_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_parameter_group = Some(inp.into());
+        pub fn db_cluster_parameter_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_parameter_group = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group = inp;
+            self.db_cluster_parameter_group = input;
             self
         }
         /// <p>Specifies information on the subnet group associated with the DB cluster, including the name, description, and subnets in the subnet group.</p>
-        pub fn db_subnet_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_subnet_group = Some(inp.into());
+        pub fn db_subnet_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_subnet_group = Some(input.into());
             self
         }
         pub fn set_db_subnet_group(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_subnet_group = inp;
+            self.db_subnet_group = input;
             self
         }
         /// <p>Specifies the current state of this DB cluster.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>Specifies the progress of the operation as a percentage.</p>
-        pub fn percent_progress(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.percent_progress = Some(inp.into());
+        pub fn percent_progress(mut self, input: impl Into<std::string::String>) -> Self {
+            self.percent_progress = Some(input.into());
             self
         }
         pub fn set_percent_progress(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.percent_progress = inp;
+            self.percent_progress = input;
             self
         }
         /// <p>The earliest time to which a database can be restored with point-in-time
         /// restore.</p>
-        pub fn earliest_restorable_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.earliest_restorable_time = Some(inp);
+        pub fn earliest_restorable_time(mut self, input: smithy_types::Instant) -> Self {
+            self.earliest_restorable_time = Some(input);
             self
         }
         pub fn set_earliest_restorable_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.earliest_restorable_time = inp;
+            self.earliest_restorable_time = input;
             self
         }
         /// <p>Specifies the connection endpoint for the primary instance of the DB cluster.</p>
-        pub fn endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint = Some(inp.into());
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
             self
         }
-        pub fn set_endpoint(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = inp;
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
             self
         }
         /// <p>The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances
@@ -4160,359 +4217,377 @@ pub mod db_cluster {
         /// to be the primary instance, your connection is dropped. To
         /// continue sending your read workload to other Aurora Replicas in the cluster,
         /// you can then reconnect to the reader endpoint.</p>
-        pub fn reader_endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reader_endpoint = Some(inp.into());
+        pub fn reader_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reader_endpoint = Some(input.into());
             self
         }
         pub fn set_reader_endpoint(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.reader_endpoint = inp;
+            self.reader_endpoint = input;
             self
         }
-        pub fn custom_endpoints(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn custom_endpoints(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.custom_endpoints.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.custom_endpoints = Some(v);
             self
         }
         pub fn set_custom_endpoints(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.custom_endpoints = inp;
+            self.custom_endpoints = input;
             self
         }
         /// <p>Specifies whether the DB cluster has instances in multiple Availability Zones.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.multi_az = Some(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.multi_az = Some(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: std::option::Option<bool>) -> Self {
-            self.multi_az = inp;
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_az = input;
             self
         }
         /// <p>The name of the database engine to be used for this DB cluster.</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>Indicates the database engine version.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
-        pub fn latest_restorable_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.latest_restorable_time = Some(inp);
+        pub fn latest_restorable_time(mut self, input: smithy_types::Instant) -> Self {
+            self.latest_restorable_time = Some(input);
             self
         }
         pub fn set_latest_restorable_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.latest_restorable_time = inp;
+            self.latest_restorable_time = input;
             self
         }
         /// <p>Specifies the port that the database engine is listening on.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>Contains the master username for the DB cluster.</p>
-        pub fn master_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_username = Some(inp.into());
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_username = Some(input.into());
             self
         }
         pub fn set_master_username(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_username = inp;
+            self.master_username = input;
             self
         }
         pub fn db_cluster_option_group_memberships(
             mut self,
-            inp: impl Into<crate::model::DBClusterOptionGroupStatus>,
+            input: impl Into<crate::model::DBClusterOptionGroupStatus>,
         ) -> Self {
             let mut v = self.db_cluster_option_group_memberships.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_cluster_option_group_memberships = Some(v);
             self
         }
         pub fn set_db_cluster_option_group_memberships(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBClusterOptionGroupStatus>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBClusterOptionGroupStatus>>,
         ) -> Self {
-            self.db_cluster_option_group_memberships = inp;
+            self.db_cluster_option_group_memberships = input;
             self
         }
         /// <p>Specifies the daily time range during which automated backups are
         /// created if automated backups are enabled, as determined
         /// by the <code>BackupRetentionPeriod</code>.
         /// </p>
-        pub fn preferred_backup_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_backup_window = Some(inp.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.preferred_backup_window = Some(input.into());
             self
         }
         pub fn set_preferred_backup_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_backup_window = inp;
+            self.preferred_backup_window = input;
             self
         }
         /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-        pub fn preferred_maintenance_window(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.preferred_maintenance_window = Some(inp.into());
+        pub fn preferred_maintenance_window(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.preferred_maintenance_window = Some(input.into());
             self
         }
         pub fn set_preferred_maintenance_window(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.preferred_maintenance_window = inp;
+            self.preferred_maintenance_window = input;
             self
         }
         /// <p>Contains the identifier of the source DB cluster if this DB cluster is a read
         /// replica.</p>
         pub fn replication_source_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.replication_source_identifier = Some(inp.into());
+            self.replication_source_identifier = Some(input.into());
             self
         }
         pub fn set_replication_source_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.replication_source_identifier = inp;
+            self.replication_source_identifier = input;
             self
         }
-        pub fn read_replica_identifiers(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn read_replica_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.read_replica_identifiers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.read_replica_identifiers = Some(v);
             self
         }
         pub fn set_read_replica_identifiers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.read_replica_identifiers = inp;
+            self.read_replica_identifiers = input;
             self
         }
-        pub fn db_cluster_members(mut self, inp: impl Into<crate::model::DBClusterMember>) -> Self {
+        pub fn db_cluster_members(
+            mut self,
+            input: impl Into<crate::model::DBClusterMember>,
+        ) -> Self {
             let mut v = self.db_cluster_members.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_cluster_members = Some(v);
             self
         }
         pub fn set_db_cluster_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBClusterMember>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBClusterMember>>,
         ) -> Self {
-            self.db_cluster_members = inp;
+            self.db_cluster_members = input;
             self
         }
         pub fn vpc_security_groups(
             mut self,
-            inp: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: impl Into<crate::model::VpcSecurityGroupMembership>,
         ) -> Self {
             let mut v = self.vpc_security_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_groups = Some(v);
             self
         }
         pub fn set_vpc_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
         ) -> Self {
-            self.vpc_security_groups = inp;
+            self.vpc_security_groups = input;
             self
         }
         /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>Specifies whether the DB cluster is encrypted.</p>
-        pub fn storage_encrypted(mut self, inp: bool) -> Self {
-            self.storage_encrypted = Some(inp);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.storage_encrypted = Some(input);
             self
         }
-        pub fn set_storage_encrypted(mut self, inp: bool) -> Self {
-            self.storage_encrypted = Some(inp);
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.storage_encrypted = input;
             self
         }
         /// <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.</p>
         /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log entries whenever
         /// the AWS KMS CMK for the DB cluster is accessed.</p>
-        pub fn db_cluster_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_resource_id = Some(inp.into());
+        pub fn db_cluster_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_resource_id = Some(input.into());
             self
         }
         pub fn set_db_cluster_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_resource_id = inp;
+            self.db_cluster_resource_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the DB cluster.</p>
-        pub fn db_cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_arn = Some(inp.into());
+        pub fn db_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_arn = Some(input.into());
             self
         }
-        pub fn set_db_cluster_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_cluster_arn = inp;
+        pub fn set_db_cluster_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_cluster_arn = input;
             self
         }
-        pub fn associated_roles(mut self, inp: impl Into<crate::model::DBClusterRole>) -> Self {
+        pub fn associated_roles(mut self, input: impl Into<crate::model::DBClusterRole>) -> Self {
             let mut v = self.associated_roles.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.associated_roles = Some(v);
             self
         }
         pub fn set_associated_roles(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBClusterRole>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBClusterRole>>,
         ) -> Self {
-            self.associated_roles = inp;
+            self.associated_roles = input;
             self
         }
         /// <p>A value that indicates whether the mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-        pub fn iam_database_authentication_enabled(mut self, inp: bool) -> Self {
-            self.iam_database_authentication_enabled = Some(inp);
+        pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
+            self.iam_database_authentication_enabled = Some(input);
             self
         }
         pub fn set_iam_database_authentication_enabled(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.iam_database_authentication_enabled = inp;
+            self.iam_database_authentication_enabled = input;
             self
         }
         /// <p>Identifies the clone group to which the DB cluster is associated.</p>
-        pub fn clone_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.clone_group_id = Some(inp.into());
+        pub fn clone_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.clone_group_id = Some(input.into());
             self
         }
-        pub fn set_clone_group_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.clone_group_id = inp;
+        pub fn set_clone_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.clone_group_id = input;
             self
         }
         /// <p>Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
-        pub fn cluster_create_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.cluster_create_time = Some(inp);
+        pub fn cluster_create_time(mut self, input: smithy_types::Instant) -> Self {
+            self.cluster_create_time = Some(input);
             self
         }
         pub fn set_cluster_create_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.cluster_create_time = inp;
+            self.cluster_create_time = input;
             self
         }
         /// <p>The earliest time to which a DB cluster can be backtracked.</p>
-        pub fn earliest_backtrack_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.earliest_backtrack_time = Some(inp);
+        pub fn earliest_backtrack_time(mut self, input: smithy_types::Instant) -> Self {
+            self.earliest_backtrack_time = Some(input);
             self
         }
         pub fn set_earliest_backtrack_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.earliest_backtrack_time = inp;
+            self.earliest_backtrack_time = input;
             self
         }
         /// <p>The target backtrack window, in seconds. If this value is set to 0, backtracking is
         /// disabled for the DB cluster. Otherwise, backtracking is enabled.</p>
-        pub fn backtrack_window(mut self, inp: i64) -> Self {
-            self.backtrack_window = Some(inp);
+        pub fn backtrack_window(mut self, input: i64) -> Self {
+            self.backtrack_window = Some(input);
             self
         }
-        pub fn set_backtrack_window(mut self, inp: std::option::Option<i64>) -> Self {
-            self.backtrack_window = inp;
+        pub fn set_backtrack_window(mut self, input: std::option::Option<i64>) -> Self {
+            self.backtrack_window = input;
             self
         }
         /// <p>The number of change records stored for Backtrack.</p>
-        pub fn backtrack_consumed_change_records(mut self, inp: i64) -> Self {
-            self.backtrack_consumed_change_records = Some(inp);
+        pub fn backtrack_consumed_change_records(mut self, input: i64) -> Self {
+            self.backtrack_consumed_change_records = Some(input);
             self
         }
         pub fn set_backtrack_consumed_change_records(
             mut self,
-            inp: std::option::Option<i64>,
+            input: std::option::Option<i64>,
         ) -> Self {
-            self.backtrack_consumed_change_records = inp;
+            self.backtrack_consumed_change_records = input;
             self
         }
         pub fn enabled_cloudwatch_logs_exports(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.enabled_cloudwatch_logs_exports.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.enabled_cloudwatch_logs_exports = Some(v);
             self
         }
         pub fn set_enabled_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.enabled_cloudwatch_logs_exports = inp;
+            self.enabled_cloudwatch_logs_exports = input;
             self
         }
         /// <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0 (zero)
         /// when the cluster is paused.</p>
         /// <p>For more information about Aurora Serverless, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using Amazon Aurora Serverless</a> in the
         /// <i>Amazon Aurora User Guide</i>.</p>
-        pub fn capacity(mut self, inp: i32) -> Self {
-            self.capacity = Some(inp);
+        pub fn capacity(mut self, input: i32) -> Self {
+            self.capacity = Some(input);
             self
         }
-        pub fn set_capacity(mut self, inp: std::option::Option<i32>) -> Self {
-            self.capacity = inp;
+        pub fn set_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.capacity = input;
             self
         }
         /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
         /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
         /// CreateDBCluster</a>.</p>
-        pub fn engine_mode(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_mode = Some(inp.into());
+        pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_mode = Some(input.into());
             self
         }
-        pub fn set_engine_mode(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_mode = inp;
+        pub fn set_engine_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine_mode = input;
             self
         }
         /// <p>Shows the scaling configuration for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
@@ -4520,27 +4595,27 @@ pub mod db_cluster {
         /// <i>Amazon Aurora User Guide</i>.</p>
         pub fn scaling_configuration_info(
             mut self,
-            inp: crate::model::ScalingConfigurationInfo,
+            input: crate::model::ScalingConfigurationInfo,
         ) -> Self {
-            self.scaling_configuration_info = Some(inp);
+            self.scaling_configuration_info = Some(input);
             self
         }
         pub fn set_scaling_configuration_info(
             mut self,
-            inp: std::option::Option<crate::model::ScalingConfigurationInfo>,
+            input: std::option::Option<crate::model::ScalingConfigurationInfo>,
         ) -> Self {
-            self.scaling_configuration_info = inp;
+            self.scaling_configuration_info = input;
             self
         }
         /// <p>Indicates if the DB cluster has deletion protection enabled.
         /// The database can't be deleted when deletion protection is enabled.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// <p>A value that indicates whether the HTTP endpoint for an Aurora Serverless DB cluster is enabled.</p>
@@ -4549,161 +4624,161 @@ pub mod db_cluster {
         /// from inside the RDS console with the query editor.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the
         /// <i>Amazon Aurora User Guide</i>.</p>
-        pub fn http_endpoint_enabled(mut self, inp: bool) -> Self {
-            self.http_endpoint_enabled = Some(inp);
+        pub fn http_endpoint_enabled(mut self, input: bool) -> Self {
+            self.http_endpoint_enabled = Some(input);
             self
         }
-        pub fn set_http_endpoint_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.http_endpoint_enabled = inp;
+        pub fn set_http_endpoint_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.http_endpoint_enabled = input;
             self
         }
         /// <p>The mode of the database activity stream.
         /// Database events such as a change or access generate an activity stream event.
         /// The database session can handle these events either synchronously or asynchronously.
         /// </p>
-        pub fn activity_stream_mode(mut self, inp: crate::model::ActivityStreamMode) -> Self {
-            self.activity_stream_mode = Some(inp);
+        pub fn activity_stream_mode(mut self, input: crate::model::ActivityStreamMode) -> Self {
+            self.activity_stream_mode = Some(input);
             self
         }
         pub fn set_activity_stream_mode(
             mut self,
-            inp: std::option::Option<crate::model::ActivityStreamMode>,
+            input: std::option::Option<crate::model::ActivityStreamMode>,
         ) -> Self {
-            self.activity_stream_mode = inp;
+            self.activity_stream_mode = input;
             self
         }
         /// <p>The status of the database activity stream.</p>
-        pub fn activity_stream_status(mut self, inp: crate::model::ActivityStreamStatus) -> Self {
-            self.activity_stream_status = Some(inp);
+        pub fn activity_stream_status(mut self, input: crate::model::ActivityStreamStatus) -> Self {
+            self.activity_stream_status = Some(input);
             self
         }
         pub fn set_activity_stream_status(
             mut self,
-            inp: std::option::Option<crate::model::ActivityStreamStatus>,
+            input: std::option::Option<crate::model::ActivityStreamStatus>,
         ) -> Self {
-            self.activity_stream_status = inp;
+            self.activity_stream_status = input;
             self
         }
         /// <p>The AWS KMS key identifier used for encrypting messages in the database activity stream.</p>
         /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
-        pub fn activity_stream_kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.activity_stream_kms_key_id = Some(inp.into());
+        pub fn activity_stream_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.activity_stream_kms_key_id = Some(input.into());
             self
         }
         pub fn set_activity_stream_kms_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.activity_stream_kms_key_id = inp;
+            self.activity_stream_kms_key_id = input;
             self
         }
         /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
         pub fn activity_stream_kinesis_stream_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.activity_stream_kinesis_stream_name = Some(inp.into());
+            self.activity_stream_kinesis_stream_name = Some(input.into());
             self
         }
         pub fn set_activity_stream_kinesis_stream_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.activity_stream_kinesis_stream_name = inp;
+            self.activity_stream_kinesis_stream_name = input;
             self
         }
         /// <p>Specifies whether tags are copied from the DB cluster to snapshots of the DB cluster.</p>
-        pub fn copy_tags_to_snapshot(mut self, inp: bool) -> Self {
-            self.copy_tags_to_snapshot = Some(inp);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.copy_tags_to_snapshot = Some(input);
             self
         }
-        pub fn set_copy_tags_to_snapshot(mut self, inp: std::option::Option<bool>) -> Self {
-            self.copy_tags_to_snapshot = inp;
+        pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+            self.copy_tags_to_snapshot = input;
             self
         }
         /// <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a different AWS account.</p>
-        pub fn cross_account_clone(mut self, inp: bool) -> Self {
-            self.cross_account_clone = Some(inp);
+        pub fn cross_account_clone(mut self, input: bool) -> Self {
+            self.cross_account_clone = Some(input);
             self
         }
-        pub fn set_cross_account_clone(mut self, inp: std::option::Option<bool>) -> Self {
-            self.cross_account_clone = inp;
+        pub fn set_cross_account_clone(mut self, input: std::option::Option<bool>) -> Self {
+            self.cross_account_clone = input;
             self
         }
         pub fn domain_memberships(
             mut self,
-            inp: impl Into<crate::model::DomainMembership>,
+            input: impl Into<crate::model::DomainMembership>,
         ) -> Self {
             let mut v = self.domain_memberships.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.domain_memberships = Some(v);
             self
         }
         pub fn set_domain_memberships(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DomainMembership>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DomainMembership>>,
         ) -> Self {
-            self.domain_memberships = inp;
+            self.domain_memberships = input;
             self
         }
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_list = Some(v);
             self
         }
         pub fn set_tag_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tag_list = inp;
+            self.tag_list = input;
             self
         }
         /// <p>Specifies whether a secondary cluster in an Aurora global database has
         /// write forwarding enabled, not enabled, or is in the process of enabling it.</p>
         pub fn global_write_forwarding_status(
             mut self,
-            inp: crate::model::WriteForwardingStatus,
+            input: crate::model::WriteForwardingStatus,
         ) -> Self {
-            self.global_write_forwarding_status = Some(inp);
+            self.global_write_forwarding_status = Some(input);
             self
         }
         pub fn set_global_write_forwarding_status(
             mut self,
-            inp: std::option::Option<crate::model::WriteForwardingStatus>,
+            input: std::option::Option<crate::model::WriteForwardingStatus>,
         ) -> Self {
-            self.global_write_forwarding_status = inp;
+            self.global_write_forwarding_status = input;
             self
         }
         /// <p>Specifies whether you have requested to enable write forwarding for a secondary cluster
         /// in an Aurora global database. Because write forwarding takes time to enable, check the
         /// value of <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed
         /// before using the write forwarding feature for this cluster.</p>
-        pub fn global_write_forwarding_requested(mut self, inp: bool) -> Self {
-            self.global_write_forwarding_requested = Some(inp);
+        pub fn global_write_forwarding_requested(mut self, input: bool) -> Self {
+            self.global_write_forwarding_requested = Some(input);
             self
         }
         pub fn set_global_write_forwarding_requested(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.global_write_forwarding_requested = inp;
+            self.global_write_forwarding_requested = input;
             self
         }
         /// <p>A value that specifies that changes to the DB cluster are pending. This element is only included when changes are pending.
         /// Specific changes are identified by subelements.</p>
         pub fn pending_modified_values(
             mut self,
-            inp: crate::model::ClusterPendingModifiedValues,
+            input: crate::model::ClusterPendingModifiedValues,
         ) -> Self {
-            self.pending_modified_values = Some(inp);
+            self.pending_modified_values = Some(input);
             self
         }
         pub fn set_pending_modified_values(
             mut self,
-            inp: std::option::Option<crate::model::ClusterPendingModifiedValues>,
+            input: std::option::Option<crate::model::ClusterPendingModifiedValues>,
         ) -> Self {
-            self.pending_modified_values = inp;
+            self.pending_modified_values = input;
             self
         }
         /// Consumes the builder and constructs a [`DBCluster`](crate::model::DBCluster)
@@ -4827,61 +4902,64 @@ pub mod cluster_pending_modified_values {
         /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
         pub fn pending_cloudwatch_logs_exports(
             mut self,
-            inp: crate::model::PendingCloudwatchLogsExports,
+            input: crate::model::PendingCloudwatchLogsExports,
         ) -> Self {
-            self.pending_cloudwatch_logs_exports = Some(inp);
+            self.pending_cloudwatch_logs_exports = Some(input);
             self
         }
         pub fn set_pending_cloudwatch_logs_exports(
             mut self,
-            inp: std::option::Option<crate::model::PendingCloudwatchLogsExports>,
+            input: std::option::Option<crate::model::PendingCloudwatchLogsExports>,
         ) -> Self {
-            self.pending_cloudwatch_logs_exports = inp;
+            self.pending_cloudwatch_logs_exports = input;
             self
         }
         /// <p>The DBClusterIdentifier value for the DB cluster.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>The master credentials for the DB cluster.</p>
-        pub fn master_user_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_user_password = Some(inp.into());
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_user_password = Some(input.into());
             self
         }
         pub fn set_master_user_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_user_password = inp;
+            self.master_user_password = input;
             self
         }
         /// <p>A value that indicates whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-        pub fn iam_database_authentication_enabled(mut self, inp: bool) -> Self {
-            self.iam_database_authentication_enabled = Some(inp);
+        pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
+            self.iam_database_authentication_enabled = Some(input);
             self
         }
         pub fn set_iam_database_authentication_enabled(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.iam_database_authentication_enabled = inp;
+            self.iam_database_authentication_enabled = input;
             self
         }
         /// <p>The database engine version.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// Consumes the builder and constructs a [`ClusterPendingModifiedValues`](crate::model::ClusterPendingModifiedValues)
@@ -5137,53 +5215,56 @@ pub mod scaling_configuration_info {
     impl Builder {
         /// <p>The maximum capacity for the Aurora DB cluster in <code>serverless</code> DB engine
         /// mode.</p>
-        pub fn min_capacity(mut self, inp: i32) -> Self {
-            self.min_capacity = Some(inp);
+        pub fn min_capacity(mut self, input: i32) -> Self {
+            self.min_capacity = Some(input);
             self
         }
-        pub fn set_min_capacity(mut self, inp: std::option::Option<i32>) -> Self {
-            self.min_capacity = inp;
+        pub fn set_min_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.min_capacity = input;
             self
         }
         /// <p>The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
-        pub fn max_capacity(mut self, inp: i32) -> Self {
-            self.max_capacity = Some(inp);
+        pub fn max_capacity(mut self, input: i32) -> Self {
+            self.max_capacity = Some(input);
             self
         }
-        pub fn set_max_capacity(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_capacity = inp;
+        pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_capacity = input;
             self
         }
         /// <p>A value that indicates whether automatic pause is allowed for the Aurora DB cluster
         /// in <code>serverless</code> DB engine mode.</p>    
         /// <p>When the value is set to false for an Aurora Serverless DB cluster, the DB cluster automatically resumes.</p>
-        pub fn auto_pause(mut self, inp: bool) -> Self {
-            self.auto_pause = Some(inp);
+        pub fn auto_pause(mut self, input: bool) -> Self {
+            self.auto_pause = Some(input);
             self
         }
-        pub fn set_auto_pause(mut self, inp: std::option::Option<bool>) -> Self {
-            self.auto_pause = inp;
+        pub fn set_auto_pause(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_pause = input;
             self
         }
         /// <p>The remaining amount of time, in seconds, before the Aurora DB cluster in
         /// <code>serverless</code> mode is paused. A DB cluster can be paused only when
         /// it's idle (it has no connections).</p>
-        pub fn seconds_until_auto_pause(mut self, inp: i32) -> Self {
-            self.seconds_until_auto_pause = Some(inp);
+        pub fn seconds_until_auto_pause(mut self, input: i32) -> Self {
+            self.seconds_until_auto_pause = Some(input);
             self
         }
-        pub fn set_seconds_until_auto_pause(mut self, inp: std::option::Option<i32>) -> Self {
-            self.seconds_until_auto_pause = inp;
+        pub fn set_seconds_until_auto_pause(mut self, input: std::option::Option<i32>) -> Self {
+            self.seconds_until_auto_pause = input;
             self
         }
         /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either
         /// <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-        pub fn timeout_action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.timeout_action = Some(inp.into());
+        pub fn timeout_action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timeout_action = Some(input.into());
             self
         }
-        pub fn set_timeout_action(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.timeout_action = inp;
+        pub fn set_timeout_action(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.timeout_action = input;
             self
         }
         /// Consumes the builder and constructs a [`ScalingConfigurationInfo`](crate::model::ScalingConfigurationInfo)
@@ -5256,12 +5337,12 @@ pub mod db_cluster_role {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the IAM role that is associated with the DB cluster.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// <p>Describes the state of association between the IAM role and the DB cluster. The Status property returns one of the following
@@ -5282,23 +5363,23 @@ pub mod db_cluster_role {
         /// to assume the IAM role in order to access other AWS services on your behalf.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The name of the feature associated with the AWS Identity and Access Management (IAM) role.
         /// For the list of supported feature names, see <a>DBEngineVersion</a>.
         /// </p>
-        pub fn feature_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.feature_name = Some(inp.into());
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_name = Some(input.into());
             self
         }
-        pub fn set_feature_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.feature_name = inp;
+        pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feature_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterRole`](crate::model::DBClusterRole)
@@ -5361,39 +5442,39 @@ pub mod db_cluster_member {
     }
     impl Builder {
         /// <p>Specifies the instance identifier for this member of the DB cluster.</p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>Value that is <code>true</code> if the cluster member is the primary instance for the DB cluster and <code>false</code> otherwise.</p>
-        pub fn is_cluster_writer(mut self, inp: bool) -> Self {
-            self.is_cluster_writer = Some(inp);
+        pub fn is_cluster_writer(mut self, input: bool) -> Self {
+            self.is_cluster_writer = Some(input);
             self
         }
-        pub fn set_is_cluster_writer(mut self, inp: bool) -> Self {
-            self.is_cluster_writer = Some(inp);
+        pub fn set_is_cluster_writer(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_cluster_writer = input;
             self
         }
         /// <p>Specifies the status of the DB cluster parameter group for this member of the DB cluster.</p>
         pub fn db_cluster_parameter_group_status(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_status = Some(inp.into());
+            self.db_cluster_parameter_group_status = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group_status(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_status = inp;
+            self.db_cluster_parameter_group_status = input;
             self
         }
         /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance
@@ -5401,12 +5482,12 @@ pub mod db_cluster_member {
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
         /// Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
         /// </p>
-        pub fn promotion_tier(mut self, inp: i32) -> Self {
-            self.promotion_tier = Some(inp);
+        pub fn promotion_tier(mut self, input: i32) -> Self {
+            self.promotion_tier = Some(input);
             self
         }
-        pub fn set_promotion_tier(mut self, inp: std::option::Option<i32>) -> Self {
-            self.promotion_tier = inp;
+        pub fn set_promotion_tier(mut self, input: std::option::Option<i32>) -> Self {
+            self.promotion_tier = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterMember`](crate::model::DBClusterMember)
@@ -5458,24 +5539,27 @@ pub mod db_cluster_option_group_status {
     }
     impl Builder {
         /// <p>Specifies the name of the DB cluster option group.</p>
-        pub fn db_cluster_option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_option_group_name = Some(inp.into());
+        pub fn db_cluster_option_group_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.db_cluster_option_group_name = Some(input.into());
             self
         }
         pub fn set_db_cluster_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_option_group_name = inp;
+            self.db_cluster_option_group_name = input;
             self
         }
         /// <p>Specifies the status of the DB cluster option group.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterOptionGroupStatus`](crate::model::DBClusterOptionGroupStatus)
@@ -5554,89 +5638,89 @@ pub mod db_security_group {
     }
     impl Builder {
         /// <p>Provides the AWS ID of the owner of a specific DB security group.</p>
-        pub fn owner_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.owner_id = Some(inp.into());
+        pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_id = Some(input.into());
             self
         }
-        pub fn set_owner_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.owner_id = inp;
+        pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_id = input;
             self
         }
         /// <p>Specifies the name of the DB security group.</p>
-        pub fn db_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_security_group_name = Some(inp.into());
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_security_group_name = Some(input.into());
             self
         }
         pub fn set_db_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_security_group_name = inp;
+            self.db_security_group_name = input;
             self
         }
         /// <p>Provides the description of the DB security group.</p>
         pub fn db_security_group_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_security_group_description = Some(inp.into());
+            self.db_security_group_description = Some(input.into());
             self
         }
         pub fn set_db_security_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_security_group_description = inp;
+            self.db_security_group_description = input;
             self
         }
         /// <p>Provides the VpcId of the DB security group.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_id = Some(inp.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
             self
         }
-        pub fn set_vpc_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = inp;
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
             self
         }
         pub fn ec2_security_groups(
             mut self,
-            inp: impl Into<crate::model::EC2SecurityGroup>,
+            input: impl Into<crate::model::EC2SecurityGroup>,
         ) -> Self {
             let mut v = self.ec2_security_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.ec2_security_groups = Some(v);
             self
         }
         pub fn set_ec2_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EC2SecurityGroup>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EC2SecurityGroup>>,
         ) -> Self {
-            self.ec2_security_groups = inp;
+            self.ec2_security_groups = input;
             self
         }
-        pub fn ip_ranges(mut self, inp: impl Into<crate::model::IPRange>) -> Self {
+        pub fn ip_ranges(mut self, input: impl Into<crate::model::IPRange>) -> Self {
             let mut v = self.ip_ranges.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.ip_ranges = Some(v);
             self
         }
         pub fn set_ip_ranges(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::IPRange>>,
+            input: std::option::Option<std::vec::Vec<crate::model::IPRange>>,
         ) -> Self {
-            self.ip_ranges = inp;
+            self.ip_ranges = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the DB security group.</p>
-        pub fn db_security_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_security_group_arn = Some(inp.into());
+        pub fn db_security_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_security_group_arn = Some(input.into());
             self
         }
         pub fn set_db_security_group_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_security_group_arn = inp;
+            self.db_security_group_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSecurityGroup`](crate::model::DBSecurityGroup)
@@ -5690,21 +5774,21 @@ pub mod ip_range {
     }
     impl Builder {
         /// <p>Specifies the status of the IP range. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>Specifies the IP range.</p>
-        pub fn cidrip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cidrip = Some(inp.into());
+        pub fn cidrip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cidrip = Some(input.into());
             self
         }
-        pub fn set_cidrip(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cidrip = inp;
+        pub fn set_cidrip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cidrip = input;
             self
         }
         /// Consumes the builder and constructs a [`IPRange`](crate::model::IPRange)
@@ -5782,51 +5866,54 @@ pub mod ec2_security_group {
     }
     impl Builder {
         /// <p>Provides the status of the EC2 security group. Status can be "authorizing", "authorized", "revoking", and "revoked".</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>Specifies the name of the EC2 security group.</p>
-        pub fn ec2_security_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ec2_security_group_name = Some(inp.into());
+        pub fn ec2_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ec2_security_group_name = Some(input.into());
             self
         }
         pub fn set_ec2_security_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ec2_security_group_name = inp;
+            self.ec2_security_group_name = input;
             self
         }
         /// <p>Specifies the id of the EC2 security group.</p>
-        pub fn ec2_security_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ec2_security_group_id = Some(inp.into());
+        pub fn ec2_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ec2_security_group_id = Some(input.into());
             self
         }
         pub fn set_ec2_security_group_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ec2_security_group_id = inp;
+            self.ec2_security_group_id = input;
             self
         }
         /// <p>
         /// Specifies the AWS ID of the owner of the EC2 security group
         /// specified in the <code>EC2SecurityGroupName</code> field.
         /// </p>
-        pub fn ec2_security_group_owner_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ec2_security_group_owner_id = Some(inp.into());
+        pub fn ec2_security_group_owner_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.ec2_security_group_owner_id = Some(input.into());
             self
         }
         pub fn set_ec2_security_group_owner_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ec2_security_group_owner_id = inp;
+            self.ec2_security_group_owner_id = input;
             self
         }
         /// Consumes the builder and constructs a [`EC2SecurityGroup`](crate::model::EC2SecurityGroup)
@@ -5914,24 +6001,24 @@ pub mod scaling_configuration {
         /// <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
         /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p>
         /// <p>The minimum capacity must be less than or equal to the maximum capacity.</p>
-        pub fn min_capacity(mut self, inp: i32) -> Self {
-            self.min_capacity = Some(inp);
+        pub fn min_capacity(mut self, input: i32) -> Self {
+            self.min_capacity = Some(input);
             self
         }
-        pub fn set_min_capacity(mut self, inp: std::option::Option<i32>) -> Self {
-            self.min_capacity = inp;
+        pub fn set_min_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.min_capacity = input;
             self
         }
         /// <p>The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine mode.</p>
         /// <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p>
         /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p>
         /// <p>The maximum capacity must be greater than or equal to the minimum capacity.</p>
-        pub fn max_capacity(mut self, inp: i32) -> Self {
-            self.max_capacity = Some(inp);
+        pub fn max_capacity(mut self, input: i32) -> Self {
+            self.max_capacity = Some(input);
             self
         }
-        pub fn set_max_capacity(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_capacity = inp;
+        pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_capacity = input;
             self
         }
         /// <p>A value that indicates whether to allow or disallow automatic pause for an Aurora DB cluster in <code>serverless</code> DB engine mode.
@@ -5940,22 +6027,22 @@ pub mod scaling_configuration {
         /// <p>If a DB cluster is paused for more than seven days, the DB cluster might be backed up with a snapshot.
         /// In this case, the DB cluster is restored when there is a request to connect to it. </p>
         /// </note>
-        pub fn auto_pause(mut self, inp: bool) -> Self {
-            self.auto_pause = Some(inp);
+        pub fn auto_pause(mut self, input: bool) -> Self {
+            self.auto_pause = Some(input);
             self
         }
-        pub fn set_auto_pause(mut self, inp: std::option::Option<bool>) -> Self {
-            self.auto_pause = inp;
+        pub fn set_auto_pause(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_pause = input;
             self
         }
         /// <p>The time, in seconds, before an Aurora DB cluster in <code>serverless</code> mode is paused.</p>
         /// <p>Specify a value between 300 and 86,400 seconds.</p>
-        pub fn seconds_until_auto_pause(mut self, inp: i32) -> Self {
-            self.seconds_until_auto_pause = Some(inp);
+        pub fn seconds_until_auto_pause(mut self, input: i32) -> Self {
+            self.seconds_until_auto_pause = Some(input);
             self
         }
-        pub fn set_seconds_until_auto_pause(mut self, inp: std::option::Option<i32>) -> Self {
-            self.seconds_until_auto_pause = inp;
+        pub fn set_seconds_until_auto_pause(mut self, input: std::option::Option<i32>) -> Self {
+            self.seconds_until_auto_pause = input;
             self
         }
         /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
@@ -5969,12 +6056,15 @@ pub mod scaling_configuration {
         /// </important>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.how-it-works.html#aurora-serverless.how-it-works.auto-scaling">
         /// Autoscaling for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        pub fn timeout_action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.timeout_action = Some(inp.into());
+        pub fn timeout_action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timeout_action = Some(input.into());
             self
         }
-        pub fn set_timeout_action(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.timeout_action = inp;
+        pub fn set_timeout_action(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.timeout_action = input;
             self
         }
         /// Consumes the builder and constructs a [`ScalingConfiguration`](crate::model::ScalingConfiguration)
@@ -6069,69 +6159,75 @@ pub mod parameter {
     }
     impl Builder {
         /// <p>Specifies the name of the parameter.</p>
-        pub fn parameter_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parameter_name = Some(inp.into());
+        pub fn parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parameter_name = Some(input.into());
             self
         }
-        pub fn set_parameter_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.parameter_name = inp;
+        pub fn set_parameter_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.parameter_name = input;
             self
         }
         /// <p>Specifies the value of the parameter.</p>
-        pub fn parameter_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parameter_value = Some(inp.into());
+        pub fn parameter_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parameter_value = Some(input.into());
             self
         }
         pub fn set_parameter_value(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.parameter_value = inp;
+            self.parameter_value = input;
             self
         }
         /// <p>Provides a description of the parameter.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Indicates the source of the parameter value.</p>
-        pub fn source(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source = Some(inp.into());
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source = Some(input.into());
             self
         }
-        pub fn set_source(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source = inp;
+        pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source = input;
             self
         }
         /// <p>Specifies the engine specific parameters type.</p>
-        pub fn apply_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.apply_type = Some(inp.into());
+        pub fn apply_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.apply_type = Some(input.into());
             self
         }
-        pub fn set_apply_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.apply_type = inp;
+        pub fn set_apply_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.apply_type = input;
             self
         }
         /// <p>Specifies the valid data type for the parameter.</p>
-        pub fn data_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.data_type = Some(inp.into());
+        pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_type = Some(input.into());
             self
         }
-        pub fn set_data_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.data_type = inp;
+        pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_type = input;
             self
         }
         /// <p>Specifies the valid range of values for the parameter.</p>
-        pub fn allowed_values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.allowed_values = Some(inp.into());
+        pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.allowed_values = Some(input.into());
             self
         }
-        pub fn set_allowed_values(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.allowed_values = inp;
+        pub fn set_allowed_values(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.allowed_values = input;
             self
         }
         /// <p>
@@ -6139,49 +6235,49 @@ pub mod parameter {
         /// Some parameters have security or operational implications
         /// that prevent them from being changed.
         /// </p>
-        pub fn is_modifiable(mut self, inp: bool) -> Self {
-            self.is_modifiable = Some(inp);
+        pub fn is_modifiable(mut self, input: bool) -> Self {
+            self.is_modifiable = Some(input);
             self
         }
-        pub fn set_is_modifiable(mut self, inp: bool) -> Self {
-            self.is_modifiable = Some(inp);
+        pub fn set_is_modifiable(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_modifiable = input;
             self
         }
         /// <p>The earliest engine version to which the parameter can apply.</p>
-        pub fn minimum_engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.minimum_engine_version = Some(inp.into());
+        pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.minimum_engine_version = Some(input.into());
             self
         }
         pub fn set_minimum_engine_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.minimum_engine_version = inp;
+            self.minimum_engine_version = input;
             self
         }
         /// <p>Indicates when to apply parameter updates.</p>
-        pub fn apply_method(mut self, inp: crate::model::ApplyMethod) -> Self {
-            self.apply_method = Some(inp);
+        pub fn apply_method(mut self, input: crate::model::ApplyMethod) -> Self {
+            self.apply_method = Some(input);
             self
         }
         pub fn set_apply_method(
             mut self,
-            inp: std::option::Option<crate::model::ApplyMethod>,
+            input: std::option::Option<crate::model::ApplyMethod>,
         ) -> Self {
-            self.apply_method = inp;
+            self.apply_method = input;
             self
         }
-        pub fn supported_engine_modes(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn supported_engine_modes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_engine_modes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.supported_engine_modes = Some(v);
             self
         }
         pub fn set_supported_engine_modes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.supported_engine_modes = inp;
+            self.supported_engine_modes = input;
             self
         }
         /// Consumes the builder and constructs a [`Parameter`](crate::model::Parameter)
@@ -6331,116 +6427,119 @@ pub mod event_subscription {
     }
     impl Builder {
         /// <p>The AWS customer account associated with the RDS event notification subscription.</p>
-        pub fn customer_aws_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.customer_aws_id = Some(inp.into());
+        pub fn customer_aws_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.customer_aws_id = Some(input.into());
             self
         }
         pub fn set_customer_aws_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.customer_aws_id = inp;
+            self.customer_aws_id = input;
             self
         }
         /// <p>The RDS event notification subscription Id.</p>
-        pub fn cust_subscription_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cust_subscription_id = Some(inp.into());
+        pub fn cust_subscription_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cust_subscription_id = Some(input.into());
             self
         }
         pub fn set_cust_subscription_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cust_subscription_id = inp;
+            self.cust_subscription_id = input;
             self
         }
         /// <p>The topic ARN of the RDS event notification subscription.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sns_topic_arn = Some(inp.into());
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sns_topic_arn = Some(input.into());
             self
         }
-        pub fn set_sns_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.sns_topic_arn = inp;
+        pub fn set_sns_topic_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sns_topic_arn = input;
             self
         }
         /// <p>The status of the RDS event notification subscription.</p>
         /// <p>Constraints:</p>
         /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist</p>
         /// <p>The status "no-permission" indicates that RDS no longer has permission to post to the SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The time the RDS event notification subscription was created.</p>
-        pub fn subscription_creation_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subscription_creation_time = Some(inp.into());
+        pub fn subscription_creation_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subscription_creation_time = Some(input.into());
             self
         }
         pub fn set_subscription_creation_time(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subscription_creation_time = inp;
+            self.subscription_creation_time = input;
             self
         }
         /// <p>The source type for the RDS event notification subscription.</p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_type = Some(inp.into());
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_type = Some(input.into());
             self
         }
-        pub fn set_source_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_type = inp;
+        pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_type = input;
             self
         }
-        pub fn source_ids_list(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn source_ids_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source_ids_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.source_ids_list = Some(v);
             self
         }
         pub fn set_source_ids_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.source_ids_list = inp;
+            self.source_ids_list = input;
             self
         }
-        pub fn event_categories_list(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn event_categories_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_categories_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.event_categories_list = Some(v);
             self
         }
         pub fn set_event_categories_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.event_categories_list = inp;
+            self.event_categories_list = input;
             self
         }
         /// <p>A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
             self
         }
-        pub fn set_enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the event subscription.</p>
-        pub fn event_subscription_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.event_subscription_arn = Some(inp.into());
+        pub fn event_subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_subscription_arn = Some(input.into());
             self
         }
         pub fn set_event_subscription_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.event_subscription_arn = inp;
+            self.event_subscription_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`EventSubscription`](crate::model::EventSubscription)
@@ -6558,134 +6657,140 @@ pub mod global_cluster {
         /// Contains a user-supplied global database cluster identifier. This identifier is the unique key that
         /// identifies a global database cluster.
         /// </p>
-        pub fn global_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.global_cluster_identifier = Some(inp.into());
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_global_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.global_cluster_identifier = inp;
+            self.global_cluster_identifier = input;
             self
         }
         /// <p>
         /// The AWS Region-unique, immutable identifier for the global database cluster. This identifier is found in
         /// AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB cluster is accessed.
         /// </p>
-        pub fn global_cluster_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.global_cluster_resource_id = Some(inp.into());
+        pub fn global_cluster_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_resource_id = Some(input.into());
             self
         }
         pub fn set_global_cluster_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.global_cluster_resource_id = inp;
+            self.global_cluster_resource_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the global database cluster.</p>
-        pub fn global_cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.global_cluster_arn = Some(inp.into());
+        pub fn global_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.global_cluster_arn = Some(input.into());
             self
         }
         pub fn set_global_cluster_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.global_cluster_arn = inp;
+            self.global_cluster_arn = input;
             self
         }
         /// <p>Specifies the current state of this global database cluster.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>
         /// The Aurora database engine used by the global database cluster.
         /// </p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>Indicates the database engine version.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>
         /// The default database name within the new global database cluster.
         /// </p>
-        pub fn database_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.database_name = Some(inp.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database_name = Some(input.into());
             self
         }
-        pub fn set_database_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.database_name = inp;
+        pub fn set_database_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.database_name = input;
             self
         }
         /// <p>
         /// The storage encryption setting for the global database cluster.
         /// </p>
-        pub fn storage_encrypted(mut self, inp: bool) -> Self {
-            self.storage_encrypted = Some(inp);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.storage_encrypted = Some(input);
             self
         }
-        pub fn set_storage_encrypted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.storage_encrypted = inp;
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.storage_encrypted = input;
             self
         }
         /// <p>
         /// The deletion protection setting for the new global database cluster.
         /// </p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         pub fn global_cluster_members(
             mut self,
-            inp: impl Into<crate::model::GlobalClusterMember>,
+            input: impl Into<crate::model::GlobalClusterMember>,
         ) -> Self {
             let mut v = self.global_cluster_members.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.global_cluster_members = Some(v);
             self
         }
         pub fn set_global_cluster_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GlobalClusterMember>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GlobalClusterMember>>,
         ) -> Self {
-            self.global_cluster_members = inp;
+            self.global_cluster_members = input;
             self
         }
         /// <p>A data object containing all properties for the current state of an in-process or pending failover process for this Aurora global database.
         /// This object is empty unless the <a>FailoverGlobalCluster</a> API operation has been called on this Aurora global database (<a>GlobalCluster</a>).
         /// </p>
-        pub fn failover_state(mut self, inp: crate::model::FailoverState) -> Self {
-            self.failover_state = Some(inp);
+        pub fn failover_state(mut self, input: crate::model::FailoverState) -> Self {
+            self.failover_state = Some(input);
             self
         }
         pub fn set_failover_state(
             mut self,
-            inp: std::option::Option<crate::model::FailoverState>,
+            input: std::option::Option<crate::model::FailoverState>,
         ) -> Self {
-            self.failover_state = inp;
+            self.failover_state = input;
             self
         }
         /// Consumes the builder and constructs a [`GlobalCluster`](crate::model::GlobalCluster)
@@ -6783,41 +6888,41 @@ pub mod failover_state {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::FailoverStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::FailoverStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::FailoverStatus>,
+            input: std::option::Option<crate::model::FailoverStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being demoted, and which is associated with this
         /// state. </p>
-        pub fn from_db_cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.from_db_cluster_arn = Some(inp.into());
+        pub fn from_db_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.from_db_cluster_arn = Some(input.into());
             self
         }
         pub fn set_from_db_cluster_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.from_db_cluster_arn = inp;
+            self.from_db_cluster_arn = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora DB cluster that is currently being promoted, and which is associated
         /// with this state.</p>
-        pub fn to_db_cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.to_db_cluster_arn = Some(inp.into());
+        pub fn to_db_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.to_db_cluster_arn = Some(input.into());
             self
         }
         pub fn set_to_db_cluster_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.to_db_cluster_arn = inp;
+            self.to_db_cluster_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`FailoverState`](crate::model::FailoverState)
@@ -6951,25 +7056,28 @@ pub mod global_cluster_member {
         /// <p>
         /// The Amazon Resource Name (ARN) for each Aurora cluster.
         /// </p>
-        pub fn db_cluster_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_arn = Some(inp.into());
+        pub fn db_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_arn = Some(input.into());
             self
         }
-        pub fn set_db_cluster_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_cluster_arn = inp;
+        pub fn set_db_cluster_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_cluster_arn = input;
             self
         }
-        pub fn readers(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn readers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.readers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.readers = Some(v);
             self
         }
         pub fn set_readers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.readers = inp;
+            self.readers = input;
             self
         }
         /// <p>
@@ -6977,28 +7085,28 @@ pub mod global_cluster_member {
         /// (that is, has read-write capability) for the Aurora global
         /// database with which it is associated.
         /// </p>
-        pub fn is_writer(mut self, inp: bool) -> Self {
-            self.is_writer = Some(inp);
+        pub fn is_writer(mut self, input: bool) -> Self {
+            self.is_writer = Some(input);
             self
         }
-        pub fn set_is_writer(mut self, inp: bool) -> Self {
-            self.is_writer = Some(inp);
+        pub fn set_is_writer(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_writer = input;
             self
         }
         /// <p>Specifies whether a secondary cluster in an Aurora global database has
         /// write forwarding enabled, not enabled, or is in the process of enabling it.</p>
         pub fn global_write_forwarding_status(
             mut self,
-            inp: crate::model::WriteForwardingStatus,
+            input: crate::model::WriteForwardingStatus,
         ) -> Self {
-            self.global_write_forwarding_status = Some(inp);
+            self.global_write_forwarding_status = Some(input);
             self
         }
         pub fn set_global_write_forwarding_status(
             mut self,
-            inp: std::option::Option<crate::model::WriteForwardingStatus>,
+            input: std::option::Option<crate::model::WriteForwardingStatus>,
         ) -> Self {
-            self.global_write_forwarding_status = inp;
+            self.global_write_forwarding_status = input;
             self
         }
         /// Consumes the builder and constructs a [`GlobalClusterMember`](crate::model::GlobalClusterMember)
@@ -7074,85 +7182,85 @@ pub mod db_proxy_target {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the RDS DB instance or Aurora DB cluster.</p>
-        pub fn target_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_arn = Some(inp.into());
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_arn = Some(input.into());
             self
         }
-        pub fn set_target_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.target_arn = inp;
+        pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_arn = input;
             self
         }
         /// <p>The writer endpoint for the RDS DB instance or Aurora DB cluster.</p>
-        pub fn endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint = Some(inp.into());
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
             self
         }
-        pub fn set_endpoint(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = inp;
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
             self
         }
         /// <p>The DB cluster identifier when the target represents an Aurora DB cluster. This field is blank when the target represents an RDS DB instance.</p>
-        pub fn tracked_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tracked_cluster_id = Some(inp.into());
+        pub fn tracked_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tracked_cluster_id = Some(input.into());
             self
         }
         pub fn set_tracked_cluster_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.tracked_cluster_id = inp;
+            self.tracked_cluster_id = input;
             self
         }
         /// <p>The identifier representing the target. It can be the instance identifier for an RDS DB instance,
         /// or the cluster identifier for an Aurora DB cluster.</p>
-        pub fn rds_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rds_resource_id = Some(inp.into());
+        pub fn rds_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rds_resource_id = Some(input.into());
             self
         }
         pub fn set_rds_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.rds_resource_id = inp;
+            self.rds_resource_id = input;
             self
         }
         /// <p>The port that the RDS Proxy uses to connect to the target RDS DB instance or Aurora DB cluster.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>Specifies the kind of database, such as an RDS DB instance or an Aurora DB cluster, that the target represents.</p>
-        pub fn r#type(mut self, inp: crate::model::TargetType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::TargetType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::TargetType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::TargetType>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>A value that indicates whether the target of the proxy can be used for read/write or read-only operations.</p>
-        pub fn role(mut self, inp: crate::model::TargetRole) -> Self {
-            self.role = Some(inp);
+        pub fn role(mut self, input: crate::model::TargetRole) -> Self {
+            self.role = Some(input);
             self
         }
-        pub fn set_role(mut self, inp: std::option::Option<crate::model::TargetRole>) -> Self {
-            self.role = inp;
+        pub fn set_role(mut self, input: std::option::Option<crate::model::TargetRole>) -> Self {
+            self.role = input;
             self
         }
         /// <p>Information about the connection health of the RDS Proxy target.</p>
-        pub fn target_health(mut self, inp: crate::model::TargetHealth) -> Self {
-            self.target_health = Some(inp);
+        pub fn target_health(mut self, input: crate::model::TargetHealth) -> Self {
+            self.target_health = Some(input);
             self
         }
         pub fn set_target_health(
             mut self,
-            inp: std::option::Option<crate::model::TargetHealth>,
+            input: std::option::Option<crate::model::TargetHealth>,
         ) -> Self {
-            self.target_health = inp;
+            self.target_health = input;
             self
         }
         /// Consumes the builder and constructs a [`DBProxyTarget`](crate::model::DBProxyTarget)
@@ -7220,34 +7328,34 @@ pub mod target_health {
         /// <p>
         /// <code>registering</code> > <code>unavailable</code> > <code>available</code> > <code>unavailable</code> > <code>available</code>
         /// </p>
-        pub fn state(mut self, inp: crate::model::TargetState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::TargetState) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::TargetState>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<crate::model::TargetState>) -> Self {
+            self.state = input;
             self
         }
         /// <p>The reason for the current health <code>State</code> of the RDS Proxy target.</p>
-        pub fn reason(mut self, inp: crate::model::TargetHealthReason) -> Self {
-            self.reason = Some(inp);
+        pub fn reason(mut self, input: crate::model::TargetHealthReason) -> Self {
+            self.reason = Some(input);
             self
         }
         pub fn set_reason(
             mut self,
-            inp: std::option::Option<crate::model::TargetHealthReason>,
+            input: std::option::Option<crate::model::TargetHealthReason>,
         ) -> Self {
-            self.reason = inp;
+            self.reason = input;
             self
         }
         /// <p>A description of the health of the RDS Proxy target.
         /// If the <code>State</code> is <code>AVAILABLE</code>, a description is not included.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`TargetHealth`](crate::model::TargetHealth)
@@ -7606,172 +7714,181 @@ pub mod reserved_db_instance {
     }
     impl Builder {
         /// <p>The unique identifier for the reservation.</p>
-        pub fn reserved_db_instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reserved_db_instance_id = Some(inp.into());
+        pub fn reserved_db_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reserved_db_instance_id = Some(input.into());
             self
         }
         pub fn set_reserved_db_instance_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.reserved_db_instance_id = inp;
+            self.reserved_db_instance_id = input;
             self
         }
         /// <p>The offering identifier.</p>
         pub fn reserved_db_instances_offering_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.reserved_db_instances_offering_id = Some(inp.into());
+            self.reserved_db_instances_offering_id = Some(input.into());
             self
         }
         pub fn set_reserved_db_instances_offering_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.reserved_db_instances_offering_id = inp;
+            self.reserved_db_instances_offering_id = input;
             self
         }
         /// <p>The DB instance class for the reserved DB instance.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_class = Some(inp.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_class = Some(input.into());
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_class = inp;
+            self.db_instance_class = input;
             self
         }
         /// <p>The time the reservation started.</p>
-        pub fn start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.start_time = Some(inp);
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.start_time = inp;
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_time = input;
             self
         }
         /// <p>The duration of the reservation in seconds.</p>
-        pub fn duration(mut self, inp: i32) -> Self {
-            self.duration = Some(inp);
+        pub fn duration(mut self, input: i32) -> Self {
+            self.duration = Some(input);
             self
         }
-        pub fn set_duration(mut self, inp: i32) -> Self {
-            self.duration = Some(inp);
+        pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration = input;
             self
         }
         /// <p>The fixed price charged for this reserved DB instance.</p>
-        pub fn fixed_price(mut self, inp: f64) -> Self {
-            self.fixed_price = Some(inp);
+        pub fn fixed_price(mut self, input: f64) -> Self {
+            self.fixed_price = Some(input);
             self
         }
-        pub fn set_fixed_price(mut self, inp: f64) -> Self {
-            self.fixed_price = Some(inp);
+        pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
+            self.fixed_price = input;
             self
         }
         /// <p>The hourly price charged for this reserved DB instance.</p>
-        pub fn usage_price(mut self, inp: f64) -> Self {
-            self.usage_price = Some(inp);
+        pub fn usage_price(mut self, input: f64) -> Self {
+            self.usage_price = Some(input);
             self
         }
-        pub fn set_usage_price(mut self, inp: f64) -> Self {
-            self.usage_price = Some(inp);
+        pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
+            self.usage_price = input;
             self
         }
         /// <p>The currency code for the reserved DB instance.</p>
-        pub fn currency_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.currency_code = Some(inp.into());
+        pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.currency_code = Some(input.into());
             self
         }
-        pub fn set_currency_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.currency_code = inp;
+        pub fn set_currency_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.currency_code = input;
             self
         }
         /// <p>The number of reserved DB instances.</p>
-        pub fn db_instance_count(mut self, inp: i32) -> Self {
-            self.db_instance_count = Some(inp);
+        pub fn db_instance_count(mut self, input: i32) -> Self {
+            self.db_instance_count = Some(input);
             self
         }
-        pub fn set_db_instance_count(mut self, inp: i32) -> Self {
-            self.db_instance_count = Some(inp);
+        pub fn set_db_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.db_instance_count = input;
             self
         }
         /// <p>The description of the reserved DB instance.</p>
-        pub fn product_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.product_description = Some(inp.into());
+        pub fn product_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.product_description = Some(input.into());
             self
         }
         pub fn set_product_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.product_description = inp;
+            self.product_description = input;
             self
         }
         /// <p>The offering type of this reserved DB instance.</p>
-        pub fn offering_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.offering_type = Some(inp.into());
+        pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.offering_type = Some(input.into());
             self
         }
-        pub fn set_offering_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.offering_type = inp;
+        pub fn set_offering_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.offering_type = input;
             self
         }
         /// <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.multi_az = Some(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.multi_az = Some(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: bool) -> Self {
-            self.multi_az = Some(inp);
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_az = input;
             self
         }
         /// <p>The state of the reserved DB instance.</p>
-        pub fn state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state = Some(inp.into());
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
             self
         }
-        pub fn recurring_charges(mut self, inp: impl Into<crate::model::RecurringCharge>) -> Self {
+        pub fn recurring_charges(
+            mut self,
+            input: impl Into<crate::model::RecurringCharge>,
+        ) -> Self {
             let mut v = self.recurring_charges.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.recurring_charges = Some(v);
             self
         }
         pub fn set_recurring_charges(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
+            input: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
         ) -> Self {
-            self.recurring_charges = inp;
+            self.recurring_charges = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
-        pub fn reserved_db_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reserved_db_instance_arn = Some(inp.into());
+        pub fn reserved_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reserved_db_instance_arn = Some(input.into());
             self
         }
         pub fn set_reserved_db_instance_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.reserved_db_instance_arn = inp;
+            self.reserved_db_instance_arn = input;
             self
         }
         /// <p>The unique identifier for the lease associated with the reserved DB instance.</p>
         /// <note>
         /// <p>AWS Support might request the lease ID for an issue related to a reserved DB instance.</p>
         /// </note>
-        pub fn lease_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.lease_id = Some(inp.into());
+        pub fn lease_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lease_id = Some(input.into());
             self
         }
-        pub fn set_lease_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.lease_id = inp;
+        pub fn set_lease_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lease_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ReservedDBInstance`](crate::model::ReservedDBInstance)
@@ -7838,24 +7955,24 @@ pub mod recurring_charge {
     }
     impl Builder {
         /// <p>The amount of the recurring charge.</p>
-        pub fn recurring_charge_amount(mut self, inp: f64) -> Self {
-            self.recurring_charge_amount = Some(inp);
+        pub fn recurring_charge_amount(mut self, input: f64) -> Self {
+            self.recurring_charge_amount = Some(input);
             self
         }
-        pub fn set_recurring_charge_amount(mut self, inp: f64) -> Self {
-            self.recurring_charge_amount = Some(inp);
+        pub fn set_recurring_charge_amount(mut self, input: std::option::Option<f64>) -> Self {
+            self.recurring_charge_amount = input;
             self
         }
         /// <p>The frequency of the recurring charge.</p>
-        pub fn recurring_charge_frequency(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.recurring_charge_frequency = Some(inp.into());
+        pub fn recurring_charge_frequency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recurring_charge_frequency = Some(input.into());
             self
         }
         pub fn set_recurring_charge_frequency(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.recurring_charge_frequency = inp;
+            self.recurring_charge_frequency = input;
             self
         }
         /// Consumes the builder and constructs a [`RecurringCharge`](crate::model::RecurringCharge)
@@ -7937,73 +8054,76 @@ pub mod option_group {
     }
     impl Builder {
         /// <p>Specifies the name of the option group.</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         /// <p>Provides a description of the option group.</p>
-        pub fn option_group_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_description = Some(inp.into());
+        pub fn option_group_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_description = Some(input.into());
             self
         }
         pub fn set_option_group_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_description = inp;
+            self.option_group_description = input;
             self
         }
         /// <p>Indicates the name of the engine that this option group can be applied to.</p>
-        pub fn engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_name = Some(inp.into());
+        pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_name = Some(input.into());
             self
         }
-        pub fn set_engine_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_name = inp;
+        pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine_name = input;
             self
         }
         /// <p>Indicates the major engine version associated with this option group.</p>
-        pub fn major_engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.major_engine_version = Some(inp.into());
+        pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.major_engine_version = Some(input.into());
             self
         }
         pub fn set_major_engine_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.major_engine_version = inp;
+            self.major_engine_version = input;
             self
         }
-        pub fn options(mut self, inp: impl Into<crate::model::Option>) -> Self {
+        pub fn options(mut self, input: impl Into<crate::model::Option>) -> Self {
             let mut v = self.options.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.options = Some(v);
             self
         }
         pub fn set_options(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Option>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Option>>,
         ) -> Self {
-            self.options = inp;
+            self.options = input;
             self
         }
         /// <p>Indicates whether this option group can be applied to both VPC
         /// and non-VPC instances. The value <code>true</code> indicates the option group
         /// can be applied to both VPC and non-VPC instances.
         /// </p>
-        pub fn allows_vpc_and_non_vpc_instance_memberships(mut self, inp: bool) -> Self {
-            self.allows_vpc_and_non_vpc_instance_memberships = Some(inp);
+        pub fn allows_vpc_and_non_vpc_instance_memberships(mut self, input: bool) -> Self {
+            self.allows_vpc_and_non_vpc_instance_memberships = Some(input);
             self
         }
-        pub fn set_allows_vpc_and_non_vpc_instance_memberships(mut self, inp: bool) -> Self {
-            self.allows_vpc_and_non_vpc_instance_memberships = Some(inp);
+        pub fn set_allows_vpc_and_non_vpc_instance_memberships(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.allows_vpc_and_non_vpc_instance_memberships = input;
             self
         }
         /// <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this field is blank.
@@ -8012,24 +8132,24 @@ pub mod option_group {
         /// If this field contains a value, then this option group can only be
         /// applied to instances that are in the VPC indicated by this field.
         /// </p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_id = Some(inp.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
             self
         }
-        pub fn set_vpc_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = inp;
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the option group.</p>
-        pub fn option_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_arn = Some(inp.into());
+        pub fn option_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_arn = Some(input.into());
             self
         }
         pub fn set_option_group_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_arn = inp;
+            self.option_group_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`OptionGroup`](crate::model::OptionGroup)
@@ -8122,105 +8242,108 @@ pub mod option {
     }
     impl Builder {
         /// <p>The name of the option.</p>
-        pub fn option_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_name = Some(inp.into());
+        pub fn option_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_name = Some(input.into());
             self
         }
-        pub fn set_option_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.option_name = inp;
+        pub fn set_option_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.option_name = input;
             self
         }
         /// <p>The description of the option.</p>
-        pub fn option_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_description = Some(inp.into());
+        pub fn option_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_description = Some(input.into());
             self
         }
         pub fn set_option_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_description = inp;
+            self.option_description = input;
             self
         }
         /// <p>Indicate if this option is persistent.</p>
-        pub fn persistent(mut self, inp: bool) -> Self {
-            self.persistent = Some(inp);
+        pub fn persistent(mut self, input: bool) -> Self {
+            self.persistent = Some(input);
             self
         }
-        pub fn set_persistent(mut self, inp: bool) -> Self {
-            self.persistent = Some(inp);
+        pub fn set_persistent(mut self, input: std::option::Option<bool>) -> Self {
+            self.persistent = input;
             self
         }
         /// <p>Indicate if this option is permanent.</p>
-        pub fn permanent(mut self, inp: bool) -> Self {
-            self.permanent = Some(inp);
+        pub fn permanent(mut self, input: bool) -> Self {
+            self.permanent = Some(input);
             self
         }
-        pub fn set_permanent(mut self, inp: bool) -> Self {
-            self.permanent = Some(inp);
+        pub fn set_permanent(mut self, input: std::option::Option<bool>) -> Self {
+            self.permanent = input;
             self
         }
         /// <p>If required, the port configured for this option to use.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>The version of the option.</p>
-        pub fn option_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_version = Some(inp.into());
+        pub fn option_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_version = Some(input.into());
             self
         }
-        pub fn set_option_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.option_version = inp;
+        pub fn set_option_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.option_version = input;
             self
         }
-        pub fn option_settings(mut self, inp: impl Into<crate::model::OptionSetting>) -> Self {
+        pub fn option_settings(mut self, input: impl Into<crate::model::OptionSetting>) -> Self {
             let mut v = self.option_settings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.option_settings = Some(v);
             self
         }
         pub fn set_option_settings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OptionSetting>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OptionSetting>>,
         ) -> Self {
-            self.option_settings = inp;
+            self.option_settings = input;
             self
         }
         pub fn db_security_group_memberships(
             mut self,
-            inp: impl Into<crate::model::DBSecurityGroupMembership>,
+            input: impl Into<crate::model::DBSecurityGroupMembership>,
         ) -> Self {
             let mut v = self.db_security_group_memberships.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_security_group_memberships = Some(v);
             self
         }
         pub fn set_db_security_group_memberships(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBSecurityGroupMembership>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBSecurityGroupMembership>>,
         ) -> Self {
-            self.db_security_group_memberships = inp;
+            self.db_security_group_memberships = input;
             self
         }
         pub fn vpc_security_group_memberships(
             mut self,
-            inp: impl Into<crate::model::VpcSecurityGroupMembership>,
+            input: impl Into<crate::model::VpcSecurityGroupMembership>,
         ) -> Self {
             let mut v = self.vpc_security_group_memberships.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_memberships = Some(v);
             self
         }
         pub fn set_vpc_security_group_memberships(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
         ) -> Self {
-            self.vpc_security_group_memberships = inp;
+            self.vpc_security_group_memberships = input;
             self
         }
         /// Consumes the builder and constructs a [`Option`](crate::model::Option)
@@ -8302,84 +8425,90 @@ pub mod option_setting {
     }
     impl Builder {
         /// <p>The name of the option that has settings that you can set.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The current value of the option setting.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// <p>The default value of the option setting.</p>
-        pub fn default_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.default_value = Some(inp.into());
+        pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_value = Some(input.into());
             self
         }
-        pub fn set_default_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.default_value = inp;
+        pub fn set_default_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.default_value = input;
             self
         }
         /// <p>The description of the option setting.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The DB engine specific parameter type.</p>
-        pub fn apply_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.apply_type = Some(inp.into());
+        pub fn apply_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.apply_type = Some(input.into());
             self
         }
-        pub fn set_apply_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.apply_type = inp;
+        pub fn set_apply_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.apply_type = input;
             self
         }
         /// <p>The data type of the option setting.</p>
-        pub fn data_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.data_type = Some(inp.into());
+        pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_type = Some(input.into());
             self
         }
-        pub fn set_data_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.data_type = inp;
+        pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_type = input;
             self
         }
         /// <p>The allowed values of the option setting.</p>
-        pub fn allowed_values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.allowed_values = Some(inp.into());
+        pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.allowed_values = Some(input.into());
             self
         }
-        pub fn set_allowed_values(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.allowed_values = inp;
+        pub fn set_allowed_values(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.allowed_values = input;
             self
         }
         /// <p>A Boolean value that, when true, indicates the option setting can be modified from the default.</p>
-        pub fn is_modifiable(mut self, inp: bool) -> Self {
-            self.is_modifiable = Some(inp);
+        pub fn is_modifiable(mut self, input: bool) -> Self {
+            self.is_modifiable = Some(input);
             self
         }
-        pub fn set_is_modifiable(mut self, inp: bool) -> Self {
-            self.is_modifiable = Some(inp);
+        pub fn set_is_modifiable(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_modifiable = input;
             self
         }
         /// <p>Indicates if the option setting is part of a collection.</p>
-        pub fn is_collection(mut self, inp: bool) -> Self {
-            self.is_collection = Some(inp);
+        pub fn is_collection(mut self, input: bool) -> Self {
+            self.is_collection = Some(input);
             self
         }
-        pub fn set_is_collection(mut self, inp: bool) -> Self {
-            self.is_collection = Some(inp);
+        pub fn set_is_collection(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_collection = input;
             self
         }
         /// Consumes the builder and constructs a [`OptionSetting`](crate::model::OptionSetting)
@@ -8457,75 +8586,78 @@ pub mod option_configuration {
     }
     impl Builder {
         /// <p>The configuration of options to include in a group.</p>
-        pub fn option_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_name = Some(inp.into());
+        pub fn option_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_name = Some(input.into());
             self
         }
-        pub fn set_option_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.option_name = inp;
+        pub fn set_option_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.option_name = input;
             self
         }
         /// <p>The optional port for the option.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>The version for the option.</p>
-        pub fn option_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_version = Some(inp.into());
+        pub fn option_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_version = Some(input.into());
             self
         }
-        pub fn set_option_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.option_version = inp;
+        pub fn set_option_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.option_version = input;
             self
         }
         pub fn db_security_group_memberships(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.db_security_group_memberships.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_security_group_memberships = Some(v);
             self
         }
         pub fn set_db_security_group_memberships(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.db_security_group_memberships = inp;
+            self.db_security_group_memberships = input;
             self
         }
         pub fn vpc_security_group_memberships(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.vpc_security_group_memberships.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_memberships = Some(v);
             self
         }
         pub fn set_vpc_security_group_memberships(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_memberships = inp;
+            self.vpc_security_group_memberships = input;
             self
         }
-        pub fn option_settings(mut self, inp: impl Into<crate::model::OptionSetting>) -> Self {
+        pub fn option_settings(mut self, input: impl Into<crate::model::OptionSetting>) -> Self {
             let mut v = self.option_settings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.option_settings = Some(v);
             self
         }
         pub fn set_option_settings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OptionSetting>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OptionSetting>>,
         ) -> Self {
-            self.option_settings = inp;
+            self.option_settings = input;
             self
         }
         /// Consumes the builder and constructs a [`OptionConfiguration`](crate::model::OptionConfiguration)
@@ -8582,31 +8714,31 @@ pub mod db_snapshot_attributes_result {
     }
     impl Builder {
         /// <p>The identifier of the manual DB snapshot that the attributes apply to.</p>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_snapshot_identifier = Some(inp.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_snapshot_identifier = inp;
+            self.db_snapshot_identifier = input;
             self
         }
         pub fn db_snapshot_attributes(
             mut self,
-            inp: impl Into<crate::model::DBSnapshotAttribute>,
+            input: impl Into<crate::model::DBSnapshotAttribute>,
         ) -> Self {
             let mut v = self.db_snapshot_attributes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_snapshot_attributes = Some(v);
             self
         }
         pub fn set_db_snapshot_attributes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBSnapshotAttribute>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBSnapshotAttribute>>,
         ) -> Self {
-            self.db_snapshot_attributes = inp;
+            self.db_snapshot_attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSnapshotAttributesResult`](crate::model::DBSnapshotAttributesResult)
@@ -8668,25 +8800,28 @@ pub mod db_snapshot_attribute {
         /// have permission to copy or restore the manual DB cluster snapshot. For more information,
         /// see the <code>ModifyDBSnapshotAttribute</code>
         /// API action.</p>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.attribute_name = Some(inp.into());
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attribute_name = Some(input.into());
             self
         }
-        pub fn set_attribute_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.attribute_name = inp;
+        pub fn set_attribute_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attribute_name = input;
             self
         }
-        pub fn attribute_values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn attribute_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attribute_values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attribute_values = Some(v);
             self
         }
         pub fn set_attribute_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.attribute_values = inp;
+            self.attribute_values = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSnapshotAttribute`](crate::model::DBSnapshotAttribute)
@@ -8866,232 +9001,244 @@ pub mod db_snapshot {
     }
     impl Builder {
         /// <p>Specifies the identifier for the DB snapshot.</p>
-        pub fn db_snapshot_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_snapshot_identifier = Some(inp.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_snapshot_identifier = inp;
+            self.db_snapshot_identifier = input;
             self
         }
         /// <p>Specifies the DB instance identifier of the DB instance this DB snapshot was created from.</p>
-        pub fn db_instance_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_identifier = Some(inp.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_identifier = Some(input.into());
             self
         }
         pub fn set_db_instance_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_identifier = inp;
+            self.db_instance_identifier = input;
             self
         }
         /// <p>Specifies when the snapshot was taken in Coordinated Universal Time (UTC).</p>
-        pub fn snapshot_create_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.snapshot_create_time = Some(inp);
+        pub fn snapshot_create_time(mut self, input: smithy_types::Instant) -> Self {
+            self.snapshot_create_time = Some(input);
             self
         }
         pub fn set_snapshot_create_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.snapshot_create_time = inp;
+            self.snapshot_create_time = input;
             self
         }
         /// <p>Specifies the name of the database engine.</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.allocated_storage = Some(inp);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.allocated_storage = Some(input);
             self
         }
-        pub fn set_allocated_storage(mut self, inp: i32) -> Self {
-            self.allocated_storage = Some(inp);
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_storage = input;
             self
         }
         /// <p>Specifies the status of this DB snapshot.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>Specifies the port that the database engine was listening on at the time of the snapshot.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot.</p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.availability_zone = Some(inp.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone = Some(input.into());
             self
         }
         pub fn set_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.availability_zone = inp;
+            self.availability_zone = input;
             self
         }
         /// <p>Provides the VPC ID associated with the DB snapshot.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_id = Some(inp.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
             self
         }
-        pub fn set_vpc_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = inp;
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
             self
         }
         /// <p>Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from
         /// which the snapshot was taken, was created.</p>
-        pub fn instance_create_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.instance_create_time = Some(inp);
+        pub fn instance_create_time(mut self, input: smithy_types::Instant) -> Self {
+            self.instance_create_time = Some(input);
             self
         }
         pub fn set_instance_create_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.instance_create_time = inp;
+            self.instance_create_time = input;
             self
         }
         /// <p>Provides the master username for the DB snapshot.</p>
-        pub fn master_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_username = Some(inp.into());
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_username = Some(input.into());
             self
         }
         pub fn set_master_username(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_username = inp;
+            self.master_username = input;
             self
         }
         /// <p>Specifies the version of the database engine.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>License model information for the restored DB instance.</p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.license_model = Some(inp.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_model = Some(input.into());
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.license_model = inp;
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.license_model = input;
             self
         }
         /// <p>Provides the type of the DB snapshot.</p>
-        pub fn snapshot_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.snapshot_type = Some(inp.into());
+        pub fn snapshot_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_type = Some(input.into());
             self
         }
-        pub fn set_snapshot_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_type = inp;
+        pub fn set_snapshot_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.snapshot_type = input;
             self
         }
         /// <p>Specifies the Provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.</p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.iops = Some(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.iops = inp;
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
             self
         }
         /// <p>Provides the option group name for the DB snapshot.</p>
-        pub fn option_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.option_group_name = Some(inp.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.option_group_name = Some(input.into());
             self
         }
         pub fn set_option_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.option_group_name = inp;
+            self.option_group_name = input;
             self
         }
         /// <p>The percentage of the estimated data that has been transferred.</p>
-        pub fn percent_progress(mut self, inp: i32) -> Self {
-            self.percent_progress = Some(inp);
+        pub fn percent_progress(mut self, input: i32) -> Self {
+            self.percent_progress = Some(input);
             self
         }
-        pub fn set_percent_progress(mut self, inp: i32) -> Self {
-            self.percent_progress = Some(inp);
+        pub fn set_percent_progress(mut self, input: std::option::Option<i32>) -> Self {
+            self.percent_progress = input;
             self
         }
         /// <p>The AWS Region that the DB snapshot was created in or copied from.</p>
-        pub fn source_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_region = Some(inp.into());
+        pub fn source_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_region = Some(input.into());
             self
         }
-        pub fn set_source_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_region = inp;
+        pub fn set_source_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.source_region = input;
             self
         }
         /// <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case of cross-customer or cross-region copy.</p>
         pub fn source_db_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.source_db_snapshot_identifier = Some(inp.into());
+            self.source_db_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_source_db_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_db_snapshot_identifier = inp;
+            self.source_db_snapshot_identifier = input;
             self
         }
         /// <p>Specifies the storage type associated with DB snapshot.</p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.storage_type = Some(inp.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.storage_type = inp;
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-        pub fn tde_credential_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.tde_credential_arn = Some(inp.into());
+        pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tde_credential_arn = Some(input.into());
             self
         }
         pub fn set_tde_credential_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.tde_credential_arn = inp;
+            self.tde_credential_arn = input;
             self
         }
         /// <p>Specifies whether the DB snapshot is encrypted.</p>
-        pub fn encrypted(mut self, inp: bool) -> Self {
-            self.encrypted = Some(inp);
+        pub fn encrypted(mut self, input: bool) -> Self {
+            self.encrypted = Some(input);
             self
         }
-        pub fn set_encrypted(mut self, inp: bool) -> Self {
-            self.encrypted = Some(inp);
+        pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.encrypted = input;
             self
         }
         /// <p>
@@ -9099,24 +9246,24 @@ pub mod db_snapshot {
         /// for the encrypted DB snapshot.
         /// </p>
         /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the DB snapshot.</p>
-        pub fn db_snapshot_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_snapshot_arn = Some(inp.into());
+        pub fn db_snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_snapshot_arn = Some(input.into());
             self
         }
         pub fn set_db_snapshot_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_snapshot_arn = inp;
+            self.db_snapshot_arn = input;
             self
         }
         /// <p>The time zone of the DB snapshot.
@@ -9126,62 +9273,65 @@ pub mod db_snapshot {
         /// Microsoft SQL Server DB instances
         /// that were created with a time zone specified.
         /// </p>
-        pub fn timezone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.timezone = Some(inp.into());
+        pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timezone = Some(input.into());
             self
         }
-        pub fn set_timezone(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.timezone = inp;
+        pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.timezone = input;
             self
         }
         /// <p>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-        pub fn iam_database_authentication_enabled(mut self, inp: bool) -> Self {
-            self.iam_database_authentication_enabled = Some(inp);
+        pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
+            self.iam_database_authentication_enabled = Some(input);
             self
         }
-        pub fn set_iam_database_authentication_enabled(mut self, inp: bool) -> Self {
-            self.iam_database_authentication_enabled = Some(inp);
+        pub fn set_iam_database_authentication_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.iam_database_authentication_enabled = input;
             self
         }
         pub fn processor_features(
             mut self,
-            inp: impl Into<crate::model::ProcessorFeature>,
+            input: impl Into<crate::model::ProcessorFeature>,
         ) -> Self {
             let mut v = self.processor_features.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.processor_features = Some(v);
             self
         }
         pub fn set_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         ) -> Self {
-            self.processor_features = inp;
+            self.processor_features = input;
             self
         }
         /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>
-        pub fn dbi_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.dbi_resource_id = Some(inp.into());
+        pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dbi_resource_id = Some(input.into());
             self
         }
         pub fn set_dbi_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.dbi_resource_id = inp;
+            self.dbi_resource_id = input;
             self
         }
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_list = Some(v);
             self
         }
         pub fn set_tag_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tag_list = inp;
+            self.tag_list = input;
             self
         }
         /// Consumes the builder and constructs a [`DBSnapshot`](crate::model::DBSnapshot)
@@ -9288,91 +9438,100 @@ pub mod db_proxy_target_group {
     }
     impl Builder {
         /// <p>The identifier for the RDS proxy associated with this target group.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_name = Some(inp.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_name = Some(input.into());
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_proxy_name = inp;
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_proxy_name = input;
             self
         }
         /// <p>The identifier for the target group. This name must be unique for all target groups owned by your AWS account in the specified AWS Region.</p>
-        pub fn target_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_group_name = Some(inp.into());
+        pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_group_name = Some(input.into());
             self
         }
         pub fn set_target_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_group_name = inp;
+            self.target_group_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) representing the target group.</p>
-        pub fn target_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_group_arn = Some(inp.into());
+        pub fn target_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_group_arn = Some(input.into());
             self
         }
         pub fn set_target_group_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.target_group_arn = inp;
+            self.target_group_arn = input;
             self
         }
         /// <p>Whether this target group is the first one used for connection requests by the associated proxy.
         /// Because each proxy is currently associated with a single target group, currently this setting
         /// is always <code>true</code>.</p>
-        pub fn is_default(mut self, inp: bool) -> Self {
-            self.is_default = Some(inp);
+        pub fn is_default(mut self, input: bool) -> Self {
+            self.is_default = Some(input);
             self
         }
-        pub fn set_is_default(mut self, inp: bool) -> Self {
-            self.is_default = Some(inp);
+        pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_default = input;
             self
         }
         /// <p>The current status of this target group. A status of <code>available</code> means the
         /// target group is correctly associated with a database. Other values indicate that you must wait for
         /// the target group to be ready, or take some action to resolve an issue.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
         pub fn connection_pool_config(
             mut self,
-            inp: crate::model::ConnectionPoolConfigurationInfo,
+            input: crate::model::ConnectionPoolConfigurationInfo,
         ) -> Self {
-            self.connection_pool_config = Some(inp);
+            self.connection_pool_config = Some(input);
             self
         }
         pub fn set_connection_pool_config(
             mut self,
-            inp: std::option::Option<crate::model::ConnectionPoolConfigurationInfo>,
+            input: std::option::Option<crate::model::ConnectionPoolConfigurationInfo>,
         ) -> Self {
-            self.connection_pool_config = inp;
+            self.connection_pool_config = input;
             self
         }
         /// <p>The date and time when the target group was first created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The date and time when the target group was last updated.</p>
-        pub fn updated_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.updated_date = Some(inp);
+        pub fn updated_date(mut self, input: smithy_types::Instant) -> Self {
+            self.updated_date = Some(input);
             self
         }
-        pub fn set_updated_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.updated_date = inp;
+        pub fn set_updated_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.updated_date = input;
             self
         }
         /// Consumes the builder and constructs a [`DBProxyTargetGroup`](crate::model::DBProxyTargetGroup)
@@ -9458,12 +9617,12 @@ pub mod connection_pool_configuration_info {
     impl Builder {
         /// <p>The maximum size of the connection pool for each target in a target group. For Aurora MySQL, it is expressed as a percentage of the
         /// <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
-        pub fn max_connections_percent(mut self, inp: i32) -> Self {
-            self.max_connections_percent = Some(inp);
+        pub fn max_connections_percent(mut self, input: i32) -> Self {
+            self.max_connections_percent = Some(input);
             self
         }
-        pub fn set_max_connections_percent(mut self, inp: i32) -> Self {
-            self.max_connections_percent = Some(inp);
+        pub fn set_max_connections_percent(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_connections_percent = input;
             self
         }
         /// <p>
@@ -9472,35 +9631,35 @@ pub mod connection_pool_configuration_info {
         /// A low value causes the proxy to close idle client connections and return the underlying database connections to the connection pool.
         /// For Aurora MySQL, it is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.
         /// </p>
-        pub fn max_idle_connections_percent(mut self, inp: i32) -> Self {
-            self.max_idle_connections_percent = Some(inp);
+        pub fn max_idle_connections_percent(mut self, input: i32) -> Self {
+            self.max_idle_connections_percent = Some(input);
             self
         }
-        pub fn set_max_idle_connections_percent(mut self, inp: i32) -> Self {
-            self.max_idle_connections_percent = Some(inp);
+        pub fn set_max_idle_connections_percent(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_idle_connections_percent = input;
             self
         }
         /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only applies when the
         /// proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
-        pub fn connection_borrow_timeout(mut self, inp: i32) -> Self {
-            self.connection_borrow_timeout = Some(inp);
+        pub fn connection_borrow_timeout(mut self, input: i32) -> Self {
+            self.connection_borrow_timeout = Some(input);
             self
         }
-        pub fn set_connection_borrow_timeout(mut self, inp: i32) -> Self {
-            self.connection_borrow_timeout = Some(inp);
+        pub fn set_connection_borrow_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.connection_borrow_timeout = input;
             self
         }
-        pub fn session_pinning_filters(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn session_pinning_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.session_pinning_filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.session_pinning_filters = Some(v);
             self
         }
         pub fn set_session_pinning_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.session_pinning_filters = inp;
+            self.session_pinning_filters = input;
             self
         }
         /// <p>
@@ -9511,12 +9670,12 @@ pub mod connection_pool_configuration_info {
         /// You can also include multiple variables in a single <code>SET</code> statement, such as
         /// <code>SET x=1, y=2</code>.
         /// </p>
-        pub fn init_query(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.init_query = Some(inp.into());
+        pub fn init_query(mut self, input: impl Into<std::string::String>) -> Self {
+            self.init_query = Some(input.into());
             self
         }
-        pub fn set_init_query(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.init_query = inp;
+        pub fn set_init_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.init_query = input;
             self
         }
         /// Consumes the builder and constructs a [`ConnectionPoolConfigurationInfo`](crate::model::ConnectionPoolConfigurationInfo)
@@ -9609,12 +9768,12 @@ pub mod connection_pool_configuration {
         /// <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by the target group.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: between 1 and 100</p>
-        pub fn max_connections_percent(mut self, inp: i32) -> Self {
-            self.max_connections_percent = Some(inp);
+        pub fn max_connections_percent(mut self, input: i32) -> Self {
+            self.max_connections_percent = Some(input);
             self
         }
-        pub fn set_max_connections_percent(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_connections_percent = inp;
+        pub fn set_max_connections_percent(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_connections_percent = input;
             self
         }
         /// <p>
@@ -9627,37 +9786,37 @@ pub mod connection_pool_configuration {
         /// <p>Default: 50</p>
         /// <p>Constraints: between 0 and <code>MaxConnectionsPercent</code>
         /// </p>
-        pub fn max_idle_connections_percent(mut self, inp: i32) -> Self {
-            self.max_idle_connections_percent = Some(inp);
+        pub fn max_idle_connections_percent(mut self, input: i32) -> Self {
+            self.max_idle_connections_percent = Some(input);
             self
         }
-        pub fn set_max_idle_connections_percent(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_idle_connections_percent = inp;
+        pub fn set_max_idle_connections_percent(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_idle_connections_percent = input;
             self
         }
         /// <p>The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only applies when the
         /// proxy has opened its maximum number of connections and all connections are busy with client sessions.</p>
         /// <p>Default: 120</p>
         /// <p>Constraints: between 1 and 3600, or 0 representing unlimited</p>
-        pub fn connection_borrow_timeout(mut self, inp: i32) -> Self {
-            self.connection_borrow_timeout = Some(inp);
+        pub fn connection_borrow_timeout(mut self, input: i32) -> Self {
+            self.connection_borrow_timeout = Some(input);
             self
         }
-        pub fn set_connection_borrow_timeout(mut self, inp: std::option::Option<i32>) -> Self {
-            self.connection_borrow_timeout = inp;
+        pub fn set_connection_borrow_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.connection_borrow_timeout = input;
             self
         }
-        pub fn session_pinning_filters(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn session_pinning_filters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.session_pinning_filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.session_pinning_filters = Some(v);
             self
         }
         pub fn set_session_pinning_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.session_pinning_filters = inp;
+            self.session_pinning_filters = input;
             self
         }
         /// <p>
@@ -9668,12 +9827,12 @@ pub mod connection_pool_configuration {
         /// <code>SET x=1, y=2</code>.
         /// </p>
         /// <p>Default: no initialization query</p>
-        pub fn init_query(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.init_query = Some(inp.into());
+        pub fn init_query(mut self, input: impl Into<std::string::String>) -> Self {
+            self.init_query = Some(input.into());
             self
         }
-        pub fn set_init_query(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.init_query = inp;
+        pub fn set_init_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.init_query = input;
             self
         }
         /// Consumes the builder and constructs a [`ConnectionPoolConfiguration`](crate::model::ConnectionPoolConfiguration)
@@ -9772,127 +9931,133 @@ pub mod db_proxy_endpoint {
         /// <p>The name for the DB proxy endpoint. An identifier must begin with a letter and
         /// must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen
         /// or contain two consecutive hyphens.</p>
-        pub fn db_proxy_endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_endpoint_name = Some(inp.into());
+        pub fn db_proxy_endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_endpoint_name = Some(input.into());
             self
         }
         pub fn set_db_proxy_endpoint_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_proxy_endpoint_name = inp;
+            self.db_proxy_endpoint_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the DB proxy endpoint.</p>
-        pub fn db_proxy_endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_endpoint_arn = Some(inp.into());
+        pub fn db_proxy_endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_endpoint_arn = Some(input.into());
             self
         }
         pub fn set_db_proxy_endpoint_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_proxy_endpoint_arn = inp;
+            self.db_proxy_endpoint_arn = input;
             self
         }
         /// <p>The identifier for the DB proxy that is associated with this DB proxy endpoint.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_name = Some(inp.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_name = Some(input.into());
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_proxy_name = inp;
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_proxy_name = input;
             self
         }
         /// <p>The current status of this DB proxy endpoint. A status of <code>available</code> means the
         /// endpoint is ready to handle requests. Other values indicate that you must wait for
         /// the endpoint to be ready, or take some action to resolve an issue.</p>
-        pub fn status(mut self, inp: crate::model::DbProxyEndpointStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::DbProxyEndpointStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::DbProxyEndpointStatus>,
+            input: std::option::Option<crate::model::DbProxyEndpointStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>Provides the VPC ID of the DB proxy endpoint.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_id = Some(inp.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
             self
         }
-        pub fn set_vpc_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = inp;
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
             self
         }
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_ids = inp;
+            self.vpc_security_group_ids = input;
             self
         }
-        pub fn vpc_subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_subnet_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_subnet_ids = Some(v);
             self
         }
         pub fn set_vpc_subnet_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_subnet_ids = inp;
+            self.vpc_subnet_ids = input;
             self
         }
         /// <p>The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the
         /// connection string for a database client application.</p>
-        pub fn endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint = Some(inp.into());
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
             self
         }
-        pub fn set_endpoint(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = inp;
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
             self
         }
         /// <p>The date and time when the DB proxy endpoint was first created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations.</p>
-        pub fn target_role(mut self, inp: crate::model::DbProxyEndpointTargetRole) -> Self {
-            self.target_role = Some(inp);
+        pub fn target_role(mut self, input: crate::model::DbProxyEndpointTargetRole) -> Self {
+            self.target_role = Some(input);
             self
         }
         pub fn set_target_role(
             mut self,
-            inp: std::option::Option<crate::model::DbProxyEndpointTargetRole>,
+            input: std::option::Option<crate::model::DbProxyEndpointTargetRole>,
         ) -> Self {
-            self.target_role = inp;
+            self.target_role = input;
             self
         }
         /// <p>A value that indicates whether this endpoint is the default endpoint for the associated DB proxy.
         /// Default DB proxy endpoints always have read/write capability. Other endpoints that you associate with the
         /// DB proxy can be either read/write or read-only.</p>
-        pub fn is_default(mut self, inp: bool) -> Self {
-            self.is_default = Some(inp);
+        pub fn is_default(mut self, input: bool) -> Self {
+            self.is_default = Some(input);
             self
         }
-        pub fn set_is_default(mut self, inp: bool) -> Self {
-            self.is_default = Some(inp);
+        pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_default = input;
             self
         }
         /// Consumes the builder and constructs a [`DBProxyEndpoint`](crate::model::DBProxyEndpoint)
@@ -10138,117 +10303,126 @@ pub mod db_proxy {
     }
     impl Builder {
         /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your AWS account in the specified AWS Region.</p>
-        pub fn db_proxy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_name = Some(inp.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_name = Some(input.into());
             self
         }
-        pub fn set_db_proxy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_proxy_name = inp;
+        pub fn set_db_proxy_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.db_proxy_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the proxy.</p>
-        pub fn db_proxy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_proxy_arn = Some(inp.into());
+        pub fn db_proxy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_proxy_arn = Some(input.into());
             self
         }
-        pub fn set_db_proxy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.db_proxy_arn = inp;
+        pub fn set_db_proxy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_proxy_arn = input;
             self
         }
         /// <p>The current status of this proxy. A status of <code>available</code> means the
         /// proxy is ready to handle requests. Other values indicate that you must wait for
         /// the proxy to be ready, or take some action to resolve an issue.</p>
-        pub fn status(mut self, inp: crate::model::DbProxyStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::DbProxyStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::DbProxyStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::DbProxyStatus>,
+        ) -> Self {
+            self.status = input;
             self
         }
         /// <p>The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.</p>
-        pub fn engine_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_family = Some(inp.into());
+        pub fn engine_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_family = Some(input.into());
             self
         }
-        pub fn set_engine_family(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_family = inp;
+        pub fn set_engine_family(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_family = input;
             self
         }
         /// <p>Provides the VPC ID of the DB proxy.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_id = Some(inp.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
             self
         }
-        pub fn set_vpc_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = inp;
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
             self
         }
-        pub fn vpc_security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_security_group_ids = Some(v);
             self
         }
         pub fn set_vpc_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_security_group_ids = inp;
+            self.vpc_security_group_ids = input;
             self
         }
-        pub fn vpc_subnet_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn vpc_subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_subnet_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_subnet_ids = Some(v);
             self
         }
         pub fn set_vpc_subnet_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.vpc_subnet_ids = inp;
+            self.vpc_subnet_ids = input;
             self
         }
-        pub fn auth(mut self, inp: impl Into<crate::model::UserAuthConfigInfo>) -> Self {
+        pub fn auth(mut self, input: impl Into<crate::model::UserAuthConfigInfo>) -> Self {
             let mut v = self.auth.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.auth = Some(v);
             self
         }
         pub fn set_auth(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UserAuthConfigInfo>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UserAuthConfigInfo>>,
         ) -> Self {
-            self.auth = inp;
+            self.auth = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the IAM role that the proxy uses to access Amazon Secrets Manager.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_arn = Some(inp.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_arn = Some(input.into());
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = inp;
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_arn = input;
             self
         }
         /// <p>The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the
         /// connection string for a database client application.</p>
-        pub fn endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint = Some(inp.into());
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
             self
         }
-        pub fn set_endpoint(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = inp;
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
             self
         }
         /// <p>Indicates whether Transport Layer Security (TLS) encryption is required for connections to the proxy.</p>
-        pub fn require_tls(mut self, inp: bool) -> Self {
-            self.require_tls = Some(inp);
+        pub fn require_tls(mut self, input: bool) -> Self {
+            self.require_tls = Some(input);
             self
         }
-        pub fn set_require_tls(mut self, inp: bool) -> Self {
-            self.require_tls = Some(inp);
+        pub fn set_require_tls(mut self, input: std::option::Option<bool>) -> Self {
+            self.require_tls = input;
             self
         }
         /// <p>The number of seconds a connection to the proxy can have no activity before the proxy drops the client connection.
@@ -10256,12 +10430,12 @@ pub mod db_proxy {
         /// later connection requests.</p>
         /// <p>Default: 1800 (30 minutes)</p>
         /// <p>Constraints: 1 to 28,800</p>
-        pub fn idle_client_timeout(mut self, inp: i32) -> Self {
-            self.idle_client_timeout = Some(inp);
+        pub fn idle_client_timeout(mut self, input: i32) -> Self {
+            self.idle_client_timeout = Some(input);
             self
         }
-        pub fn set_idle_client_timeout(mut self, inp: i32) -> Self {
-            self.idle_client_timeout = Some(inp);
+        pub fn set_idle_client_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.idle_client_timeout = input;
             self
         }
         /// <p>Whether the proxy includes detailed information about SQL statements in its logs.
@@ -10270,30 +10444,36 @@ pub mod db_proxy {
         /// SQL statements that you submit through the proxy. Thus, only enable this setting
         /// when needed for debugging, and only when you have security measures in place to
         /// safeguard any sensitive information that appears in the logs.</p>
-        pub fn debug_logging(mut self, inp: bool) -> Self {
-            self.debug_logging = Some(inp);
+        pub fn debug_logging(mut self, input: bool) -> Self {
+            self.debug_logging = Some(input);
             self
         }
-        pub fn set_debug_logging(mut self, inp: bool) -> Self {
-            self.debug_logging = Some(inp);
+        pub fn set_debug_logging(mut self, input: std::option::Option<bool>) -> Self {
+            self.debug_logging = input;
             self
         }
         /// <p>The date and time when the proxy was first created.</p>
-        pub fn created_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_date = Some(inp);
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
             self
         }
-        pub fn set_created_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.created_date = inp;
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
             self
         }
         /// <p>The date and time when the proxy was last updated.</p>
-        pub fn updated_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.updated_date = Some(inp);
+        pub fn updated_date(mut self, input: smithy_types::Instant) -> Self {
+            self.updated_date = Some(input);
             self
         }
-        pub fn set_updated_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.updated_date = inp;
+        pub fn set_updated_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.updated_date = input;
             self
         }
         /// Consumes the builder and constructs a [`DBProxy`](crate::model::DBProxy)
@@ -10366,52 +10546,55 @@ pub mod user_auth_config_info {
     }
     impl Builder {
         /// <p>A user-specified description about the authentication used by a proxy to log in as a specific database user.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The name of the database user to which the proxy connects.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The type of authentication that the proxy uses for connections from the proxy to the underlying database.</p>
-        pub fn auth_scheme(mut self, inp: crate::model::AuthScheme) -> Self {
-            self.auth_scheme = Some(inp);
+        pub fn auth_scheme(mut self, input: crate::model::AuthScheme) -> Self {
+            self.auth_scheme = Some(input);
             self
         }
         pub fn set_auth_scheme(
             mut self,
-            inp: std::option::Option<crate::model::AuthScheme>,
+            input: std::option::Option<crate::model::AuthScheme>,
         ) -> Self {
-            self.auth_scheme = inp;
+            self.auth_scheme = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) representing the secret that the proxy uses to authenticate
         /// to the RDS DB instance or Aurora DB cluster. These secrets are stored within Amazon Secrets Manager.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_arn = Some(inp.into());
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_arn = Some(input.into());
             self
         }
-        pub fn set_secret_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = inp;
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_arn = input;
             self
         }
         /// <p>Whether to require or disallow AWS Identity and Access Management (IAM) authentication for connections to the proxy.</p>
-        pub fn iam_auth(mut self, inp: crate::model::IamAuthMode) -> Self {
-            self.iam_auth = Some(inp);
+        pub fn iam_auth(mut self, input: crate::model::IamAuthMode) -> Self {
+            self.iam_auth = Some(input);
             self
         }
-        pub fn set_iam_auth(mut self, inp: std::option::Option<crate::model::IamAuthMode>) -> Self {
-            self.iam_auth = inp;
+        pub fn set_iam_auth(
+            mut self,
+            input: std::option::Option<crate::model::IamAuthMode>,
+        ) -> Self {
+            self.iam_auth = input;
             self
         }
         /// Consumes the builder and constructs a [`UserAuthConfigInfo`](crate::model::UserAuthConfigInfo)
@@ -10660,52 +10843,55 @@ pub mod user_auth_config {
     }
     impl Builder {
         /// <p>A user-specified description about the authentication used by a proxy to log in as a specific database user.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The name of the database user to which the proxy connects.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The type of authentication that the proxy uses for connections from the proxy to the underlying database.</p>
-        pub fn auth_scheme(mut self, inp: crate::model::AuthScheme) -> Self {
-            self.auth_scheme = Some(inp);
+        pub fn auth_scheme(mut self, input: crate::model::AuthScheme) -> Self {
+            self.auth_scheme = Some(input);
             self
         }
         pub fn set_auth_scheme(
             mut self,
-            inp: std::option::Option<crate::model::AuthScheme>,
+            input: std::option::Option<crate::model::AuthScheme>,
         ) -> Self {
-            self.auth_scheme = inp;
+            self.auth_scheme = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) representing the secret that the proxy uses to authenticate
         /// to the RDS DB instance or Aurora DB cluster. These secrets are stored within Amazon Secrets Manager.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_arn = Some(inp.into());
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_arn = Some(input.into());
             self
         }
-        pub fn set_secret_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = inp;
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_arn = input;
             self
         }
         /// <p>Whether to require or disallow AWS Identity and Access Management (IAM) authentication for connections to the proxy.</p>
-        pub fn iam_auth(mut self, inp: crate::model::IamAuthMode) -> Self {
-            self.iam_auth = Some(inp);
+        pub fn iam_auth(mut self, input: crate::model::IamAuthMode) -> Self {
+            self.iam_auth = Some(input);
             self
         }
-        pub fn set_iam_auth(mut self, inp: std::option::Option<crate::model::IamAuthMode>) -> Self {
-            self.iam_auth = inp;
+        pub fn set_iam_auth(
+            mut self,
+            input: std::option::Option<crate::model::IamAuthMode>,
+        ) -> Self {
+            self.iam_auth = input;
             self
         }
         /// Consumes the builder and constructs a [`UserAuthConfig`](crate::model::UserAuthConfig)
@@ -10760,30 +10946,30 @@ pub mod cloudwatch_logs_export_configuration {
         pub(crate) disable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn enable_log_types(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn enable_log_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.enable_log_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.enable_log_types = Some(v);
             self
         }
         pub fn set_enable_log_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.enable_log_types = inp;
+            self.enable_log_types = input;
             self
         }
-        pub fn disable_log_types(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn disable_log_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.disable_log_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.disable_log_types = Some(v);
             self
         }
         pub fn set_disable_log_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.disable_log_types = inp;
+            self.disable_log_types = input;
             self
         }
         /// Consumes the builder and constructs a [`CloudwatchLogsExportConfiguration`](crate::model::CloudwatchLogsExportConfiguration)
@@ -10844,32 +11030,32 @@ pub mod db_cluster_snapshot_attributes_result {
         /// <p>The identifier of the manual DB cluster snapshot that the attributes apply to.</p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_snapshot_identifier = Some(inp.into());
+            self.db_cluster_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_snapshot_identifier = inp;
+            self.db_cluster_snapshot_identifier = input;
             self
         }
         pub fn db_cluster_snapshot_attributes(
             mut self,
-            inp: impl Into<crate::model::DBClusterSnapshotAttribute>,
+            input: impl Into<crate::model::DBClusterSnapshotAttribute>,
         ) -> Self {
             let mut v = self.db_cluster_snapshot_attributes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.db_cluster_snapshot_attributes = Some(v);
             self
         }
         pub fn set_db_cluster_snapshot_attributes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DBClusterSnapshotAttribute>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DBClusterSnapshotAttribute>>,
         ) -> Self {
-            self.db_cluster_snapshot_attributes = inp;
+            self.db_cluster_snapshot_attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterSnapshotAttributesResult`](crate::model::DBClusterSnapshotAttributesResult)
@@ -10931,25 +11117,28 @@ pub mod db_cluster_snapshot_attribute {
         /// have permission to copy or restore the manual DB cluster snapshot. For more information,
         /// see the <code>ModifyDBClusterSnapshotAttribute</code>
         /// API action.</p>
-        pub fn attribute_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.attribute_name = Some(inp.into());
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attribute_name = Some(input.into());
             self
         }
-        pub fn set_attribute_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.attribute_name = inp;
+        pub fn set_attribute_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attribute_name = input;
             self
         }
-        pub fn attribute_values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn attribute_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attribute_values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attribute_values = Some(v);
             self
         }
         pub fn set_attribute_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.attribute_values = inp;
+            self.attribute_values = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterSnapshotAttribute`](crate::model::DBClusterSnapshotAttribute)
@@ -11024,88 +11213,88 @@ pub mod certificate {
     }
     impl Builder {
         /// <p>The unique key that identifies a certificate.</p>
-        pub fn certificate_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_identifier = Some(inp.into());
+        pub fn certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_identifier = Some(input.into());
             self
         }
         pub fn set_certificate_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_identifier = inp;
+            self.certificate_identifier = input;
             self
         }
         /// <p>The type of the certificate.</p>
-        pub fn certificate_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_type = Some(inp.into());
+        pub fn certificate_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_type = Some(input.into());
             self
         }
         pub fn set_certificate_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_type = inp;
+            self.certificate_type = input;
             self
         }
         /// <p>The thumbprint of the certificate.</p>
-        pub fn thumbprint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.thumbprint = Some(inp.into());
+        pub fn thumbprint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.thumbprint = Some(input.into());
             self
         }
-        pub fn set_thumbprint(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.thumbprint = inp;
+        pub fn set_thumbprint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.thumbprint = input;
             self
         }
         /// <p>The starting date from which the certificate is valid.</p>
-        pub fn valid_from(mut self, inp: smithy_types::Instant) -> Self {
-            self.valid_from = Some(inp);
+        pub fn valid_from(mut self, input: smithy_types::Instant) -> Self {
+            self.valid_from = Some(input);
             self
         }
-        pub fn set_valid_from(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.valid_from = inp;
+        pub fn set_valid_from(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.valid_from = input;
             self
         }
         /// <p>The final date that the certificate continues to be valid.</p>
-        pub fn valid_till(mut self, inp: smithy_types::Instant) -> Self {
-            self.valid_till = Some(inp);
+        pub fn valid_till(mut self, input: smithy_types::Instant) -> Self {
+            self.valid_till = Some(input);
             self
         }
-        pub fn set_valid_till(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.valid_till = inp;
+        pub fn set_valid_till(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.valid_till = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
-        pub fn certificate_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_arn = Some(inp.into());
+        pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_arn = Some(input.into());
             self
         }
         pub fn set_certificate_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_arn = inp;
+            self.certificate_arn = input;
             self
         }
         /// <p>Whether there is an override for the default certificate identifier.</p>
-        pub fn customer_override(mut self, inp: bool) -> Self {
-            self.customer_override = Some(inp);
+        pub fn customer_override(mut self, input: bool) -> Self {
+            self.customer_override = Some(input);
             self
         }
-        pub fn set_customer_override(mut self, inp: std::option::Option<bool>) -> Self {
-            self.customer_override = inp;
+        pub fn set_customer_override(mut self, input: std::option::Option<bool>) -> Self {
+            self.customer_override = input;
             self
         }
         /// <p>If there is an override for the default certificate identifier, when the override
         /// expires.</p>
-        pub fn customer_override_valid_till(mut self, inp: smithy_types::Instant) -> Self {
-            self.customer_override_valid_till = Some(inp);
+        pub fn customer_override_valid_till(mut self, input: smithy_types::Instant) -> Self {
+            self.customer_override_valid_till = Some(input);
             self
         }
         pub fn set_customer_override_valid_till(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.customer_override_valid_till = inp;
+            self.customer_override_valid_till = input;
             self
         }
         /// Consumes the builder and constructs a [`Certificate`](crate::model::Certificate)
@@ -11192,25 +11381,25 @@ pub mod filter {
     }
     impl Builder {
         /// <p>The name of the filter. Filter names are case-sensitive.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
-        pub fn values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.values = Some(v);
             self
         }
         pub fn set_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.values = inp;
+            self.values = input;
             self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter)
@@ -11255,12 +11444,12 @@ pub mod installation_media_failure_cause {
     }
     impl Builder {
         /// <p>The reason that an installation media import failed.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InstallationMediaFailureCause`](crate::model::InstallationMediaFailureCause)
@@ -11314,33 +11503,33 @@ pub mod valid_db_instance_modifications_message {
             std::option::Option<std::vec::Vec<crate::model::AvailableProcessorFeature>>,
     }
     impl Builder {
-        pub fn storage(mut self, inp: impl Into<crate::model::ValidStorageOptions>) -> Self {
+        pub fn storage(mut self, input: impl Into<crate::model::ValidStorageOptions>) -> Self {
             let mut v = self.storage.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.storage = Some(v);
             self
         }
         pub fn set_storage(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ValidStorageOptions>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ValidStorageOptions>>,
         ) -> Self {
-            self.storage = inp;
+            self.storage = input;
             self
         }
         pub fn valid_processor_features(
             mut self,
-            inp: impl Into<crate::model::AvailableProcessorFeature>,
+            input: impl Into<crate::model::AvailableProcessorFeature>,
         ) -> Self {
             let mut v = self.valid_processor_features.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.valid_processor_features = Some(v);
             self
         }
         pub fn set_valid_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AvailableProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AvailableProcessorFeature>>,
         ) -> Self {
-            self.valid_processor_features = inp;
+            self.valid_processor_features = input;
             self
         }
         /// Consumes the builder and constructs a [`ValidDBInstanceModificationsMessage`](crate::model::ValidDBInstanceModificationsMessage)
@@ -11397,30 +11586,36 @@ pub mod available_processor_feature {
     impl Builder {
         /// <p>The name of the processor feature. Valid names are <code>coreCount</code>
         /// and <code>threadsPerCore</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The default value for the processor feature of the DB instance class.</p>
-        pub fn default_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.default_value = Some(inp.into());
+        pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_value = Some(input.into());
             self
         }
-        pub fn set_default_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.default_value = inp;
+        pub fn set_default_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.default_value = input;
             self
         }
         /// <p>The allowed values for the processor feature of the DB instance class.</p>
-        pub fn allowed_values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.allowed_values = Some(inp.into());
+        pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.allowed_values = Some(input.into());
             self
         }
-        pub fn set_allowed_values(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.allowed_values = inp;
+        pub fn set_allowed_values(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.allowed_values = input;
             self
         }
         /// Consumes the builder and constructs a [`AvailableProcessorFeature`](crate::model::AvailableProcessorFeature)
@@ -11498,60 +11693,66 @@ pub mod valid_storage_options {
         /// <p>The valid storage types for your DB instance.
         /// For example, gp2, io1.
         /// </p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.storage_type = Some(inp.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.storage_type = inp;
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
             self
         }
-        pub fn storage_size(mut self, inp: impl Into<crate::model::Range>) -> Self {
+        pub fn storage_size(mut self, input: impl Into<crate::model::Range>) -> Self {
             let mut v = self.storage_size.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.storage_size = Some(v);
             self
         }
         pub fn set_storage_size(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Range>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Range>>,
         ) -> Self {
-            self.storage_size = inp;
+            self.storage_size = input;
             self
         }
-        pub fn provisioned_iops(mut self, inp: impl Into<crate::model::Range>) -> Self {
+        pub fn provisioned_iops(mut self, input: impl Into<crate::model::Range>) -> Self {
             let mut v = self.provisioned_iops.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.provisioned_iops = Some(v);
             self
         }
         pub fn set_provisioned_iops(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Range>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Range>>,
         ) -> Self {
-            self.provisioned_iops = inp;
+            self.provisioned_iops = input;
             self
         }
-        pub fn iops_to_storage_ratio(mut self, inp: impl Into<crate::model::DoubleRange>) -> Self {
+        pub fn iops_to_storage_ratio(
+            mut self,
+            input: impl Into<crate::model::DoubleRange>,
+        ) -> Self {
             let mut v = self.iops_to_storage_ratio.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.iops_to_storage_ratio = Some(v);
             self
         }
         pub fn set_iops_to_storage_ratio(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DoubleRange>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DoubleRange>>,
         ) -> Self {
-            self.iops_to_storage_ratio = inp;
+            self.iops_to_storage_ratio = input;
             self
         }
         /// <p>Whether or not Amazon RDS can automatically scale storage for DB instances that use the new instance class.</p>
-        pub fn supports_storage_autoscaling(mut self, inp: bool) -> Self {
-            self.supports_storage_autoscaling = Some(inp);
+        pub fn supports_storage_autoscaling(mut self, input: bool) -> Self {
+            self.supports_storage_autoscaling = Some(input);
             self
         }
-        pub fn set_supports_storage_autoscaling(mut self, inp: bool) -> Self {
-            self.supports_storage_autoscaling = Some(inp);
+        pub fn set_supports_storage_autoscaling(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.supports_storage_autoscaling = input;
             self
         }
         /// Consumes the builder and constructs a [`ValidStorageOptions`](crate::model::ValidStorageOptions)
@@ -11601,21 +11802,21 @@ pub mod double_range {
     }
     impl Builder {
         /// <p>The minimum value in the range.</p>
-        pub fn from(mut self, inp: f64) -> Self {
-            self.from = Some(inp);
+        pub fn from(mut self, input: f64) -> Self {
+            self.from = Some(input);
             self
         }
-        pub fn set_from(mut self, inp: f64) -> Self {
-            self.from = Some(inp);
+        pub fn set_from(mut self, input: std::option::Option<f64>) -> Self {
+            self.from = input;
             self
         }
         /// <p>The maximum value in the range.</p>
-        pub fn to(mut self, inp: f64) -> Self {
-            self.to = Some(inp);
+        pub fn to(mut self, input: f64) -> Self {
+            self.to = Some(input);
             self
         }
-        pub fn set_to(mut self, inp: f64) -> Self {
-            self.to = Some(inp);
+        pub fn set_to(mut self, input: std::option::Option<f64>) -> Self {
+            self.to = input;
             self
         }
         /// Consumes the builder and constructs a [`DoubleRange`](crate::model::DoubleRange)
@@ -11673,21 +11874,21 @@ pub mod range {
     }
     impl Builder {
         /// <p>The minimum value in the range.</p>
-        pub fn from(mut self, inp: i32) -> Self {
-            self.from = Some(inp);
+        pub fn from(mut self, input: i32) -> Self {
+            self.from = Some(input);
             self
         }
-        pub fn set_from(mut self, inp: i32) -> Self {
-            self.from = Some(inp);
+        pub fn set_from(mut self, input: std::option::Option<i32>) -> Self {
+            self.from = input;
             self
         }
         /// <p>The maximum value in the range.</p>
-        pub fn to(mut self, inp: i32) -> Self {
-            self.to = Some(inp);
+        pub fn to(mut self, input: i32) -> Self {
+            self.to = Some(input);
             self
         }
-        pub fn set_to(mut self, inp: i32) -> Self {
-            self.to = Some(inp);
+        pub fn set_to(mut self, input: std::option::Option<i32>) -> Self {
+            self.to = input;
             self
         }
         /// <p>The step value for the range.
@@ -11698,12 +11899,12 @@ pub mod range {
         /// it isn't a valid value for the range.
         /// The valid values are 5,000, 6,000, 7,000, 8,000...
         /// </p>
-        pub fn step(mut self, inp: i32) -> Self {
-            self.step = Some(inp);
+        pub fn step(mut self, input: i32) -> Self {
+            self.step = Some(input);
             self
         }
-        pub fn set_step(mut self, inp: std::option::Option<i32>) -> Self {
-            self.step = inp;
+        pub fn set_step(mut self, input: std::option::Option<i32>) -> Self {
+            self.step = input;
             self
         }
         /// Consumes the builder and constructs a [`Range`](crate::model::Range)
@@ -11762,39 +11963,42 @@ pub mod source_region {
     }
     impl Builder {
         /// <p>The name of the source AWS Region.</p>
-        pub fn region_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.region_name = Some(inp.into());
+        pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region_name = Some(input.into());
             self
         }
-        pub fn set_region_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.region_name = inp;
+        pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region_name = input;
             self
         }
         /// <p>The endpoint for the source AWS Region endpoint.</p>
-        pub fn endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint = Some(inp.into());
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
             self
         }
-        pub fn set_endpoint(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = inp;
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
             self
         }
         /// <p>The status of the source AWS Region.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>Whether the source AWS Region supports replicating automated backups to the current AWS Region.</p>
-        pub fn supports_db_instance_automated_backups_replication(mut self, inp: bool) -> Self {
-            self.supports_db_instance_automated_backups_replication = Some(inp);
+        pub fn supports_db_instance_automated_backups_replication(mut self, input: bool) -> Self {
+            self.supports_db_instance_automated_backups_replication = Some(input);
             self
         }
-        pub fn set_supports_db_instance_automated_backups_replication(mut self, inp: bool) -> Self {
-            self.supports_db_instance_automated_backups_replication = Some(inp);
+        pub fn set_supports_db_instance_automated_backups_replication(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.supports_db_instance_automated_backups_replication = input;
             self
         }
         /// Consumes the builder and constructs a [`SourceRegion`](crate::model::SourceRegion)
@@ -11885,107 +12089,116 @@ pub mod reserved_db_instances_offering {
         /// <p>The offering identifier.</p>
         pub fn reserved_db_instances_offering_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.reserved_db_instances_offering_id = Some(inp.into());
+            self.reserved_db_instances_offering_id = Some(input.into());
             self
         }
         pub fn set_reserved_db_instances_offering_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.reserved_db_instances_offering_id = inp;
+            self.reserved_db_instances_offering_id = input;
             self
         }
         /// <p>The DB instance class for the reserved DB instance.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_class = Some(inp.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_class = Some(input.into());
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_class = inp;
+            self.db_instance_class = input;
             self
         }
         /// <p>The duration of the offering in seconds.</p>
-        pub fn duration(mut self, inp: i32) -> Self {
-            self.duration = Some(inp);
+        pub fn duration(mut self, input: i32) -> Self {
+            self.duration = Some(input);
             self
         }
-        pub fn set_duration(mut self, inp: i32) -> Self {
-            self.duration = Some(inp);
+        pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.duration = input;
             self
         }
         /// <p>The fixed price charged for this offering.</p>
-        pub fn fixed_price(mut self, inp: f64) -> Self {
-            self.fixed_price = Some(inp);
+        pub fn fixed_price(mut self, input: f64) -> Self {
+            self.fixed_price = Some(input);
             self
         }
-        pub fn set_fixed_price(mut self, inp: f64) -> Self {
-            self.fixed_price = Some(inp);
+        pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
+            self.fixed_price = input;
             self
         }
         /// <p>The hourly price charged for this offering.</p>
-        pub fn usage_price(mut self, inp: f64) -> Self {
-            self.usage_price = Some(inp);
+        pub fn usage_price(mut self, input: f64) -> Self {
+            self.usage_price = Some(input);
             self
         }
-        pub fn set_usage_price(mut self, inp: f64) -> Self {
-            self.usage_price = Some(inp);
+        pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
+            self.usage_price = input;
             self
         }
         /// <p>The currency code for the reserved DB instance offering.</p>
-        pub fn currency_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.currency_code = Some(inp.into());
+        pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.currency_code = Some(input.into());
             self
         }
-        pub fn set_currency_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.currency_code = inp;
+        pub fn set_currency_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.currency_code = input;
             self
         }
         /// <p>The database engine used by the offering.</p>
-        pub fn product_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.product_description = Some(inp.into());
+        pub fn product_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.product_description = Some(input.into());
             self
         }
         pub fn set_product_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.product_description = inp;
+            self.product_description = input;
             self
         }
         /// <p>The offering type.</p>
-        pub fn offering_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.offering_type = Some(inp.into());
+        pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.offering_type = Some(input.into());
             self
         }
-        pub fn set_offering_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.offering_type = inp;
+        pub fn set_offering_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.offering_type = input;
             self
         }
         /// <p>Indicates if the offering applies to Multi-AZ deployments.</p>
-        pub fn multi_az(mut self, inp: bool) -> Self {
-            self.multi_az = Some(inp);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.multi_az = Some(input);
             self
         }
-        pub fn set_multi_az(mut self, inp: bool) -> Self {
-            self.multi_az = Some(inp);
+        pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_az = input;
             self
         }
-        pub fn recurring_charges(mut self, inp: impl Into<crate::model::RecurringCharge>) -> Self {
+        pub fn recurring_charges(
+            mut self,
+            input: impl Into<crate::model::RecurringCharge>,
+        ) -> Self {
             let mut v = self.recurring_charges.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.recurring_charges = Some(v);
             self
         }
         pub fn set_recurring_charges(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
+            input: std::option::Option<std::vec::Vec<crate::model::RecurringCharge>>,
         ) -> Self {
-            self.recurring_charges = inp;
+            self.recurring_charges = input;
             self
         }
         /// Consumes the builder and constructs a [`ReservedDBInstancesOffering`](crate::model::ReservedDBInstancesOffering)
@@ -12045,31 +12258,31 @@ pub mod resource_pending_maintenance_actions {
     }
     impl Builder {
         /// <p>The ARN of the resource that has pending maintenance actions.</p>
-        pub fn resource_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_identifier = Some(inp.into());
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_identifier = Some(input.into());
             self
         }
         pub fn set_resource_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.resource_identifier = inp;
+            self.resource_identifier = input;
             self
         }
         pub fn pending_maintenance_action_details(
             mut self,
-            inp: impl Into<crate::model::PendingMaintenanceAction>,
+            input: impl Into<crate::model::PendingMaintenanceAction>,
         ) -> Self {
             let mut v = self.pending_maintenance_action_details.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.pending_maintenance_action_details = Some(v);
             self
         }
         pub fn set_pending_maintenance_action_details(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PendingMaintenanceAction>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PendingMaintenanceAction>>,
         ) -> Self {
-            self.pending_maintenance_action_details = inp;
+            self.pending_maintenance_action_details = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourcePendingMaintenanceActions`](crate::model::ResourcePendingMaintenanceActions)
@@ -12146,50 +12359,53 @@ pub mod pending_maintenance_action {
         /// <p>The type of pending maintenance action that is available for the resource.
         /// Valid actions are <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
         /// and <code>ca-certificate-rotation</code>.</p>
-        pub fn action(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.action = Some(inp.into());
+        pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.action = Some(input.into());
             self
         }
-        pub fn set_action(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.action = inp;
+        pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.action = input;
             self
         }
         /// <p>The date of the maintenance window when the action is applied.
         /// The maintenance action is applied to the resource during
         /// its first maintenance window after this date.</p>
-        pub fn auto_applied_after_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.auto_applied_after_date = Some(inp);
+        pub fn auto_applied_after_date(mut self, input: smithy_types::Instant) -> Self {
+            self.auto_applied_after_date = Some(input);
             self
         }
         pub fn set_auto_applied_after_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.auto_applied_after_date = inp;
+            self.auto_applied_after_date = input;
             self
         }
         /// <p>The date when the maintenance action is automatically applied.</p>
         /// <p>On this date, the maintenance action is applied to the resource as soon as possible,
         /// regardless of the maintenance window for the resource. There might be a delay of
         /// one or more days from this date before the maintenance action is applied.</p>
-        pub fn forced_apply_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.forced_apply_date = Some(inp);
+        pub fn forced_apply_date(mut self, input: smithy_types::Instant) -> Self {
+            self.forced_apply_date = Some(input);
             self
         }
         pub fn set_forced_apply_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.forced_apply_date = inp;
+            self.forced_apply_date = input;
             self
         }
         /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
-        pub fn opt_in_status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.opt_in_status = Some(inp.into());
+        pub fn opt_in_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.opt_in_status = Some(input.into());
             self
         }
-        pub fn set_opt_in_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.opt_in_status = inp;
+        pub fn set_opt_in_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.opt_in_status = input;
             self
         }
         /// <p>The effective date when the pending maintenance action is applied
@@ -12198,24 +12414,24 @@ pub mod pending_maintenance_action {
         /// and the <code>ForcedApplyDate</code>. This value is blank if an
         /// opt-in request has not been received and nothing has been specified as
         /// <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
-        pub fn current_apply_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.current_apply_date = Some(inp);
+        pub fn current_apply_date(mut self, input: smithy_types::Instant) -> Self {
+            self.current_apply_date = Some(input);
             self
         }
         pub fn set_current_apply_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.current_apply_date = inp;
+            self.current_apply_date = input;
             self
         }
         /// <p>A description providing more detail about the maintenance action.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`PendingMaintenanceAction`](crate::model::PendingMaintenanceAction)
@@ -12396,276 +12612,294 @@ pub mod orderable_db_instance_option {
     }
     impl Builder {
         /// <p>The engine type of a DB instance.</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The engine version of a DB instance.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>The DB instance class for a DB instance.</p>
-        pub fn db_instance_class(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_instance_class = Some(inp.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_instance_class = Some(input.into());
             self
         }
         pub fn set_db_instance_class(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_instance_class = inp;
+            self.db_instance_class = input;
             self
         }
         /// <p>The license model for a DB instance.</p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.license_model = Some(inp.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_model = Some(input.into());
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.license_model = inp;
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.license_model = input;
             self
         }
         /// <p>The Availability Zone group for a DB instance.</p>
-        pub fn availability_zone_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.availability_zone_group = Some(inp.into());
+        pub fn availability_zone_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone_group = Some(input.into());
             self
         }
         pub fn set_availability_zone_group(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.availability_zone_group = inp;
+            self.availability_zone_group = input;
             self
         }
         pub fn availability_zones(
             mut self,
-            inp: impl Into<crate::model::AvailabilityZone>,
+            input: impl Into<crate::model::AvailabilityZone>,
         ) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
         pub fn set_availability_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
         ) -> Self {
-            self.availability_zones = inp;
+            self.availability_zones = input;
             self
         }
         /// <p>Indicates whether a DB instance is Multi-AZ capable.</p>
-        pub fn multi_az_capable(mut self, inp: bool) -> Self {
-            self.multi_az_capable = Some(inp);
+        pub fn multi_az_capable(mut self, input: bool) -> Self {
+            self.multi_az_capable = Some(input);
             self
         }
-        pub fn set_multi_az_capable(mut self, inp: bool) -> Self {
-            self.multi_az_capable = Some(inp);
+        pub fn set_multi_az_capable(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_az_capable = input;
             self
         }
         /// <p>Indicates whether a DB instance can have a read replica.</p>
-        pub fn read_replica_capable(mut self, inp: bool) -> Self {
-            self.read_replica_capable = Some(inp);
+        pub fn read_replica_capable(mut self, input: bool) -> Self {
+            self.read_replica_capable = Some(input);
             self
         }
-        pub fn set_read_replica_capable(mut self, inp: bool) -> Self {
-            self.read_replica_capable = Some(inp);
+        pub fn set_read_replica_capable(mut self, input: std::option::Option<bool>) -> Self {
+            self.read_replica_capable = input;
             self
         }
         /// <p>Indicates whether a DB instance is in a VPC.</p>
-        pub fn vpc(mut self, inp: bool) -> Self {
-            self.vpc = Some(inp);
+        pub fn vpc(mut self, input: bool) -> Self {
+            self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, inp: bool) -> Self {
-            self.vpc = Some(inp);
+        pub fn set_vpc(mut self, input: std::option::Option<bool>) -> Self {
+            self.vpc = input;
             self
         }
         /// <p>Indicates whether a DB instance supports encrypted storage.</p>
-        pub fn supports_storage_encryption(mut self, inp: bool) -> Self {
-            self.supports_storage_encryption = Some(inp);
+        pub fn supports_storage_encryption(mut self, input: bool) -> Self {
+            self.supports_storage_encryption = Some(input);
             self
         }
-        pub fn set_supports_storage_encryption(mut self, inp: bool) -> Self {
-            self.supports_storage_encryption = Some(inp);
+        pub fn set_supports_storage_encryption(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_storage_encryption = input;
             self
         }
         /// <p>Indicates the storage type for a DB instance.</p>
-        pub fn storage_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.storage_type = Some(inp.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.storage_type = Some(input.into());
             self
         }
-        pub fn set_storage_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.storage_type = inp;
+        pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.storage_type = input;
             self
         }
         /// <p>Indicates whether a DB instance supports provisioned IOPS.</p>
-        pub fn supports_iops(mut self, inp: bool) -> Self {
-            self.supports_iops = Some(inp);
+        pub fn supports_iops(mut self, input: bool) -> Self {
+            self.supports_iops = Some(input);
             self
         }
-        pub fn set_supports_iops(mut self, inp: bool) -> Self {
-            self.supports_iops = Some(inp);
+        pub fn set_supports_iops(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_iops = input;
             self
         }
         /// <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals from 1 to 60 seconds.</p>
-        pub fn supports_enhanced_monitoring(mut self, inp: bool) -> Self {
-            self.supports_enhanced_monitoring = Some(inp);
+        pub fn supports_enhanced_monitoring(mut self, input: bool) -> Self {
+            self.supports_enhanced_monitoring = Some(input);
             self
         }
-        pub fn set_supports_enhanced_monitoring(mut self, inp: bool) -> Self {
-            self.supports_enhanced_monitoring = Some(inp);
+        pub fn set_supports_enhanced_monitoring(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.supports_enhanced_monitoring = input;
             self
         }
         /// <p>Indicates whether a DB instance supports IAM database authentication.</p>
-        pub fn supports_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.supports_iam_database_authentication = Some(inp);
+        pub fn supports_iam_database_authentication(mut self, input: bool) -> Self {
+            self.supports_iam_database_authentication = Some(input);
             self
         }
-        pub fn set_supports_iam_database_authentication(mut self, inp: bool) -> Self {
-            self.supports_iam_database_authentication = Some(inp);
+        pub fn set_supports_iam_database_authentication(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.supports_iam_database_authentication = input;
             self
         }
         /// <p>True if a DB instance supports Performance Insights, otherwise false.</p>
-        pub fn supports_performance_insights(mut self, inp: bool) -> Self {
-            self.supports_performance_insights = Some(inp);
+        pub fn supports_performance_insights(mut self, input: bool) -> Self {
+            self.supports_performance_insights = Some(input);
             self
         }
-        pub fn set_supports_performance_insights(mut self, inp: bool) -> Self {
-            self.supports_performance_insights = Some(inp);
+        pub fn set_supports_performance_insights(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.supports_performance_insights = input;
             self
         }
         /// <p>Minimum storage size for a DB instance.</p>
-        pub fn min_storage_size(mut self, inp: i32) -> Self {
-            self.min_storage_size = Some(inp);
+        pub fn min_storage_size(mut self, input: i32) -> Self {
+            self.min_storage_size = Some(input);
             self
         }
-        pub fn set_min_storage_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.min_storage_size = inp;
+        pub fn set_min_storage_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.min_storage_size = input;
             self
         }
         /// <p>Maximum storage size for a DB instance.</p>
-        pub fn max_storage_size(mut self, inp: i32) -> Self {
-            self.max_storage_size = Some(inp);
+        pub fn max_storage_size(mut self, input: i32) -> Self {
+            self.max_storage_size = Some(input);
             self
         }
-        pub fn set_max_storage_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_storage_size = inp;
+        pub fn set_max_storage_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_storage_size = input;
             self
         }
         /// <p>Minimum total provisioned IOPS for a DB instance.</p>
-        pub fn min_iops_per_db_instance(mut self, inp: i32) -> Self {
-            self.min_iops_per_db_instance = Some(inp);
+        pub fn min_iops_per_db_instance(mut self, input: i32) -> Self {
+            self.min_iops_per_db_instance = Some(input);
             self
         }
-        pub fn set_min_iops_per_db_instance(mut self, inp: std::option::Option<i32>) -> Self {
-            self.min_iops_per_db_instance = inp;
+        pub fn set_min_iops_per_db_instance(mut self, input: std::option::Option<i32>) -> Self {
+            self.min_iops_per_db_instance = input;
             self
         }
         /// <p>Maximum total provisioned IOPS for a DB instance.</p>
-        pub fn max_iops_per_db_instance(mut self, inp: i32) -> Self {
-            self.max_iops_per_db_instance = Some(inp);
+        pub fn max_iops_per_db_instance(mut self, input: i32) -> Self {
+            self.max_iops_per_db_instance = Some(input);
             self
         }
-        pub fn set_max_iops_per_db_instance(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_iops_per_db_instance = inp;
+        pub fn set_max_iops_per_db_instance(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_iops_per_db_instance = input;
             self
         }
         /// <p>Minimum provisioned IOPS per GiB for a DB instance.</p>
-        pub fn min_iops_per_gib(mut self, inp: f64) -> Self {
-            self.min_iops_per_gib = Some(inp);
+        pub fn min_iops_per_gib(mut self, input: f64) -> Self {
+            self.min_iops_per_gib = Some(input);
             self
         }
-        pub fn set_min_iops_per_gib(mut self, inp: std::option::Option<f64>) -> Self {
-            self.min_iops_per_gib = inp;
+        pub fn set_min_iops_per_gib(mut self, input: std::option::Option<f64>) -> Self {
+            self.min_iops_per_gib = input;
             self
         }
         /// <p>Maximum provisioned IOPS per GiB for a DB instance.</p>
-        pub fn max_iops_per_gib(mut self, inp: f64) -> Self {
-            self.max_iops_per_gib = Some(inp);
+        pub fn max_iops_per_gib(mut self, input: f64) -> Self {
+            self.max_iops_per_gib = Some(input);
             self
         }
-        pub fn set_max_iops_per_gib(mut self, inp: std::option::Option<f64>) -> Self {
-            self.max_iops_per_gib = inp;
+        pub fn set_max_iops_per_gib(mut self, input: std::option::Option<f64>) -> Self {
+            self.max_iops_per_gib = input;
             self
         }
         pub fn available_processor_features(
             mut self,
-            inp: impl Into<crate::model::AvailableProcessorFeature>,
+            input: impl Into<crate::model::AvailableProcessorFeature>,
         ) -> Self {
             let mut v = self.available_processor_features.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.available_processor_features = Some(v);
             self
         }
         pub fn set_available_processor_features(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AvailableProcessorFeature>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AvailableProcessorFeature>>,
         ) -> Self {
-            self.available_processor_features = inp;
+            self.available_processor_features = input;
             self
         }
-        pub fn supported_engine_modes(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn supported_engine_modes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_engine_modes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.supported_engine_modes = Some(v);
             self
         }
         pub fn set_supported_engine_modes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.supported_engine_modes = inp;
+            self.supported_engine_modes = input;
             self
         }
         /// <p>Whether Amazon RDS can automatically scale storage for DB instances that use the specified DB instance class.</p>
-        pub fn supports_storage_autoscaling(mut self, inp: bool) -> Self {
-            self.supports_storage_autoscaling = Some(inp);
+        pub fn supports_storage_autoscaling(mut self, input: bool) -> Self {
+            self.supports_storage_autoscaling = Some(input);
             self
         }
-        pub fn set_supports_storage_autoscaling(mut self, inp: std::option::Option<bool>) -> Self {
-            self.supports_storage_autoscaling = inp;
+        pub fn set_supports_storage_autoscaling(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.supports_storage_autoscaling = input;
             self
         }
         /// <p>Whether a DB instance supports Kerberos Authentication.</p>
-        pub fn supports_kerberos_authentication(mut self, inp: bool) -> Self {
-            self.supports_kerberos_authentication = Some(inp);
+        pub fn supports_kerberos_authentication(mut self, input: bool) -> Self {
+            self.supports_kerberos_authentication = Some(input);
             self
         }
         pub fn set_supports_kerberos_authentication(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.supports_kerberos_authentication = inp;
+            self.supports_kerberos_authentication = input;
             self
         }
         /// <p>Whether a DB instance supports RDS on Outposts.</p>
         /// <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
         /// in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn outpost_capable(mut self, inp: bool) -> Self {
-            self.outpost_capable = Some(inp);
+        pub fn outpost_capable(mut self, input: bool) -> Self {
+            self.outpost_capable = Some(input);
             self
         }
-        pub fn set_outpost_capable(mut self, inp: bool) -> Self {
-            self.outpost_capable = Some(inp);
+        pub fn set_outpost_capable(mut self, input: std::option::Option<bool>) -> Self {
+            self.outpost_capable = input;
             self
         }
         /// <p>A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine attributes.</p>
-        pub fn supports_global_databases(mut self, inp: bool) -> Self {
-            self.supports_global_databases = Some(inp);
+        pub fn supports_global_databases(mut self, input: bool) -> Self {
+            self.supports_global_databases = Some(input);
             self
         }
-        pub fn set_supports_global_databases(mut self, inp: bool) -> Self {
-            self.supports_global_databases = Some(inp);
+        pub fn set_supports_global_databases(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_global_databases = input;
             self
         }
         /// Consumes the builder and constructs a [`OrderableDBInstanceOption`](crate::model::OrderableDBInstanceOption)
@@ -12823,119 +13057,119 @@ pub mod option_group_option {
     }
     impl Builder {
         /// <p>The name of the option.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The description of the option.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The name of the engine that this option can be applied to.</p>
-        pub fn engine_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_name = Some(inp.into());
+        pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_name = Some(input.into());
             self
         }
-        pub fn set_engine_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_name = inp;
+        pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine_name = input;
             self
         }
         /// <p>Indicates the major engine version that the option is available for.</p>
-        pub fn major_engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.major_engine_version = Some(inp.into());
+        pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.major_engine_version = Some(input.into());
             self
         }
         pub fn set_major_engine_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.major_engine_version = inp;
+            self.major_engine_version = input;
             self
         }
         /// <p>The minimum required engine version for the option to be applied.</p>
         pub fn minimum_required_minor_engine_version(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.minimum_required_minor_engine_version = Some(inp.into());
+            self.minimum_required_minor_engine_version = Some(input.into());
             self
         }
         pub fn set_minimum_required_minor_engine_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.minimum_required_minor_engine_version = inp;
+            self.minimum_required_minor_engine_version = input;
             self
         }
         /// <p>Specifies whether the option requires a port.</p>
-        pub fn port_required(mut self, inp: bool) -> Self {
-            self.port_required = Some(inp);
+        pub fn port_required(mut self, input: bool) -> Self {
+            self.port_required = Some(input);
             self
         }
-        pub fn set_port_required(mut self, inp: bool) -> Self {
-            self.port_required = Some(inp);
+        pub fn set_port_required(mut self, input: std::option::Option<bool>) -> Self {
+            self.port_required = input;
             self
         }
         /// <p>If the option requires a port, specifies the default port for the option.</p>
-        pub fn default_port(mut self, inp: i32) -> Self {
-            self.default_port = Some(inp);
+        pub fn default_port(mut self, input: i32) -> Self {
+            self.default_port = Some(input);
             self
         }
-        pub fn set_default_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.default_port = inp;
+        pub fn set_default_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.default_port = input;
             self
         }
-        pub fn options_depended_on(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn options_depended_on(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.options_depended_on.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.options_depended_on = Some(v);
             self
         }
         pub fn set_options_depended_on(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.options_depended_on = inp;
+            self.options_depended_on = input;
             self
         }
-        pub fn options_conflicts_with(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn options_conflicts_with(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.options_conflicts_with.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.options_conflicts_with = Some(v);
             self
         }
         pub fn set_options_conflicts_with(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.options_conflicts_with = inp;
+            self.options_conflicts_with = input;
             self
         }
         /// <p>Persistent options can't be removed from an option group while DB instances are associated with the option group. If you disassociate all DB instances from the option group, your can remove the persistent option from the option group.</p>
-        pub fn persistent(mut self, inp: bool) -> Self {
-            self.persistent = Some(inp);
+        pub fn persistent(mut self, input: bool) -> Self {
+            self.persistent = Some(input);
             self
         }
-        pub fn set_persistent(mut self, inp: bool) -> Self {
-            self.persistent = Some(inp);
+        pub fn set_persistent(mut self, input: std::option::Option<bool>) -> Self {
+            self.persistent = input;
             self
         }
         /// <p>Permanent options can never be removed from an option group. An option group containing a permanent option can't be removed from a DB instance.</p>
-        pub fn permanent(mut self, inp: bool) -> Self {
-            self.permanent = Some(inp);
+        pub fn permanent(mut self, input: bool) -> Self {
+            self.permanent = Some(input);
             self
         }
-        pub fn set_permanent(mut self, inp: bool) -> Self {
-            self.permanent = Some(inp);
+        pub fn set_permanent(mut self, input: std::option::Option<bool>) -> Self {
+            self.permanent = input;
             self
         }
         /// <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB instance
@@ -12943,68 +13177,71 @@ pub mod option_group_option {
         /// You can enable Auto Minor Version Upgrade when you first create your DB instance,
         /// or by modifying your DB instance later.
         /// </p>
-        pub fn requires_auto_minor_engine_version_upgrade(mut self, inp: bool) -> Self {
-            self.requires_auto_minor_engine_version_upgrade = Some(inp);
+        pub fn requires_auto_minor_engine_version_upgrade(mut self, input: bool) -> Self {
+            self.requires_auto_minor_engine_version_upgrade = Some(input);
             self
         }
-        pub fn set_requires_auto_minor_engine_version_upgrade(mut self, inp: bool) -> Self {
-            self.requires_auto_minor_engine_version_upgrade = Some(inp);
+        pub fn set_requires_auto_minor_engine_version_upgrade(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.requires_auto_minor_engine_version_upgrade = input;
             self
         }
         /// <p>If true, you can only use this option with a DB instance that is in a VPC.
         /// </p>
-        pub fn vpc_only(mut self, inp: bool) -> Self {
-            self.vpc_only = Some(inp);
+        pub fn vpc_only(mut self, input: bool) -> Self {
+            self.vpc_only = Some(input);
             self
         }
-        pub fn set_vpc_only(mut self, inp: bool) -> Self {
-            self.vpc_only = Some(inp);
+        pub fn set_vpc_only(mut self, input: std::option::Option<bool>) -> Self {
+            self.vpc_only = input;
             self
         }
         /// <p>If true, you can change the option to an earlier version of the option.  
         /// This only applies to options that have different versions available.
         /// </p>
-        pub fn supports_option_version_downgrade(mut self, inp: bool) -> Self {
-            self.supports_option_version_downgrade = Some(inp);
+        pub fn supports_option_version_downgrade(mut self, input: bool) -> Self {
+            self.supports_option_version_downgrade = Some(input);
             self
         }
         pub fn set_supports_option_version_downgrade(
             mut self,
-            inp: std::option::Option<bool>,
+            input: std::option::Option<bool>,
         ) -> Self {
-            self.supports_option_version_downgrade = inp;
+            self.supports_option_version_downgrade = input;
             self
         }
         pub fn option_group_option_settings(
             mut self,
-            inp: impl Into<crate::model::OptionGroupOptionSetting>,
+            input: impl Into<crate::model::OptionGroupOptionSetting>,
         ) -> Self {
             let mut v = self.option_group_option_settings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.option_group_option_settings = Some(v);
             self
         }
         pub fn set_option_group_option_settings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OptionGroupOptionSetting>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OptionGroupOptionSetting>>,
         ) -> Self {
-            self.option_group_option_settings = inp;
+            self.option_group_option_settings = input;
             self
         }
         pub fn option_group_option_versions(
             mut self,
-            inp: impl Into<crate::model::OptionVersion>,
+            input: impl Into<crate::model::OptionVersion>,
         ) -> Self {
             let mut v = self.option_group_option_versions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.option_group_option_versions = Some(v);
             self
         }
         pub fn set_option_group_option_versions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OptionVersion>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OptionVersion>>,
         ) -> Self {
-            self.option_group_option_versions = inp;
+            self.option_group_option_versions = input;
             self
         }
         /// Consumes the builder and constructs a [`OptionGroupOption`](crate::model::OptionGroupOption)
@@ -13068,21 +13305,21 @@ pub mod option_version {
     }
     impl Builder {
         /// <p>The version of the option.</p>
-        pub fn version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version = Some(inp.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version = Some(input.into());
             self
         }
-        pub fn set_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version = inp;
+        pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version = input;
             self
         }
         /// <p>True if the version is the default version of the option, and otherwise false.</p>
-        pub fn is_default(mut self, inp: bool) -> Self {
-            self.is_default = Some(inp);
+        pub fn is_default(mut self, input: bool) -> Self {
+            self.is_default = Some(input);
             self
         }
-        pub fn set_is_default(mut self, inp: bool) -> Self {
-            self.is_default = Some(inp);
+        pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_default = input;
             self
         }
         /// Consumes the builder and constructs a [`OptionVersion`](crate::model::OptionVersion)
@@ -13158,89 +13395,95 @@ pub mod option_group_option_setting {
     }
     impl Builder {
         /// <p>The name of the option group option.</p>
-        pub fn setting_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.setting_name = Some(inp.into());
+        pub fn setting_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.setting_name = Some(input.into());
             self
         }
-        pub fn set_setting_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.setting_name = inp;
+        pub fn set_setting_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.setting_name = input;
             self
         }
         /// <p>The description of the option group option.</p>
-        pub fn setting_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.setting_description = Some(inp.into());
+        pub fn setting_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.setting_description = Some(input.into());
             self
         }
         pub fn set_setting_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.setting_description = inp;
+            self.setting_description = input;
             self
         }
         /// <p>The default value for the option group option.</p>
-        pub fn default_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.default_value = Some(inp.into());
+        pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_value = Some(input.into());
             self
         }
-        pub fn set_default_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.default_value = inp;
+        pub fn set_default_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.default_value = input;
             self
         }
         /// <p>The DB engine specific parameter type for the option group option.</p>
-        pub fn apply_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.apply_type = Some(inp.into());
+        pub fn apply_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.apply_type = Some(input.into());
             self
         }
-        pub fn set_apply_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.apply_type = inp;
+        pub fn set_apply_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.apply_type = input;
             self
         }
         /// <p>Indicates the acceptable values for the option group option.</p>
-        pub fn allowed_values(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.allowed_values = Some(inp.into());
+        pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
+            self.allowed_values = Some(input.into());
             self
         }
-        pub fn set_allowed_values(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.allowed_values = inp;
+        pub fn set_allowed_values(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.allowed_values = input;
             self
         }
         /// <p>Boolean value where true indicates that this option group option can be changed from the default value.</p>
-        pub fn is_modifiable(mut self, inp: bool) -> Self {
-            self.is_modifiable = Some(inp);
+        pub fn is_modifiable(mut self, input: bool) -> Self {
+            self.is_modifiable = Some(input);
             self
         }
-        pub fn set_is_modifiable(mut self, inp: bool) -> Self {
-            self.is_modifiable = Some(inp);
+        pub fn set_is_modifiable(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_modifiable = input;
             self
         }
         /// <p>Boolean value where true indicates that a value must be specified for this option setting of the option group option.</p>
-        pub fn is_required(mut self, inp: bool) -> Self {
-            self.is_required = Some(inp);
+        pub fn is_required(mut self, input: bool) -> Self {
+            self.is_required = Some(input);
             self
         }
-        pub fn set_is_required(mut self, inp: bool) -> Self {
-            self.is_required = Some(inp);
+        pub fn set_is_required(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_required = input;
             self
         }
         pub fn minimum_engine_version_per_allowed_value(
             mut self,
-            inp: impl Into<crate::model::MinimumEngineVersionPerAllowedValue>,
+            input: impl Into<crate::model::MinimumEngineVersionPerAllowedValue>,
         ) -> Self {
             let mut v = self
                 .minimum_engine_version_per_allowed_value
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.minimum_engine_version_per_allowed_value = Some(v);
             self
         }
         pub fn set_minimum_engine_version_per_allowed_value(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::MinimumEngineVersionPerAllowedValue>,
             >,
         ) -> Self {
-            self.minimum_engine_version_per_allowed_value = inp;
+            self.minimum_engine_version_per_allowed_value = input;
             self
         }
         /// Consumes the builder and constructs a [`OptionGroupOptionSetting`](crate::model::OptionGroupOptionSetting)
@@ -13294,24 +13537,27 @@ pub mod minimum_engine_version_per_allowed_value {
     }
     impl Builder {
         /// <p>The allowed value for an option setting.</p>
-        pub fn allowed_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.allowed_value = Some(inp.into());
+        pub fn allowed_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.allowed_value = Some(input.into());
             self
         }
-        pub fn set_allowed_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.allowed_value = inp;
+        pub fn set_allowed_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.allowed_value = input;
             self
         }
         /// <p>The minimum DB engine version required for the allowed value.</p>
-        pub fn minimum_engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.minimum_engine_version = Some(inp.into());
+        pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.minimum_engine_version = Some(input.into());
             self
         }
         pub fn set_minimum_engine_version(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.minimum_engine_version = inp;
+            self.minimum_engine_version = input;
             self
         }
         /// Consumes the builder and constructs a [`MinimumEngineVersionPerAllowedValue`](crate::model::MinimumEngineVersionPerAllowedValue)
@@ -13392,93 +13638,99 @@ pub mod installation_media {
     }
     impl Builder {
         /// <p>The installation medium ID.</p>
-        pub fn installation_media_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.installation_media_id = Some(inp.into());
+        pub fn installation_media_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.installation_media_id = Some(input.into());
             self
         }
         pub fn set_installation_media_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.installation_media_id = inp;
+            self.installation_media_id = input;
             self
         }
         /// <p>The custom Availability Zone (AZ) that contains the installation media.</p>
-        pub fn custom_availability_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_availability_zone_id = Some(inp.into());
+        pub fn custom_availability_zone_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.custom_availability_zone_id = Some(input.into());
             self
         }
         pub fn set_custom_availability_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_availability_zone_id = inp;
+            self.custom_availability_zone_id = input;
             self
         }
         /// <p>The DB engine.</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The engine version of the DB engine.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>The path to the installation medium for the DB engine.</p>
         pub fn engine_installation_media_path(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.engine_installation_media_path = Some(inp.into());
+            self.engine_installation_media_path = Some(input.into());
             self
         }
         pub fn set_engine_installation_media_path(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.engine_installation_media_path = inp;
+            self.engine_installation_media_path = input;
             self
         }
         /// <p>The path to the installation medium for the operating system associated with the DB engine.</p>
-        pub fn os_installation_media_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.os_installation_media_path = Some(inp.into());
+        pub fn os_installation_media_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.os_installation_media_path = Some(input.into());
             self
         }
         pub fn set_os_installation_media_path(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.os_installation_media_path = inp;
+            self.os_installation_media_path = input;
             self
         }
         /// <p>The status of the installation medium.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>If an installation media failure occurred, the cause of the failure.</p>
-        pub fn failure_cause(mut self, inp: crate::model::InstallationMediaFailureCause) -> Self {
-            self.failure_cause = Some(inp);
+        pub fn failure_cause(mut self, input: crate::model::InstallationMediaFailureCause) -> Self {
+            self.failure_cause = Some(input);
             self
         }
         pub fn set_failure_cause(
             mut self,
-            inp: std::option::Option<crate::model::InstallationMediaFailureCause>,
+            input: std::option::Option<crate::model::InstallationMediaFailureCause>,
         ) -> Self {
-            self.failure_cause = inp;
+            self.failure_cause = input;
             self
         }
         /// Consumes the builder and constructs a [`InstallationMedia`](crate::model::InstallationMedia)
@@ -13617,159 +13869,162 @@ pub mod export_task {
     impl Builder {
         /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for
         /// the Amazon S3 bucket where the snapshot is exported to. </p>
-        pub fn export_task_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.export_task_identifier = Some(inp.into());
+        pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.export_task_identifier = Some(input.into());
             self
         }
         pub fn set_export_task_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.export_task_identifier = inp;
+            self.export_task_identifier = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_arn = Some(inp.into());
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_arn = Some(input.into());
             self
         }
-        pub fn set_source_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = inp;
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_arn = input;
             self
         }
-        pub fn export_only(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn export_only(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.export_only.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.export_only = Some(v);
             self
         }
         pub fn set_export_only(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.export_only = inp;
+            self.export_only = input;
             self
         }
         /// <p>The time that the snapshot was created.</p>
-        pub fn snapshot_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.snapshot_time = Some(inp);
+        pub fn snapshot_time(mut self, input: smithy_types::Instant) -> Self {
+            self.snapshot_time = Some(input);
             self
         }
         pub fn set_snapshot_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.snapshot_time = inp;
+            self.snapshot_time = input;
             self
         }
         /// <p>The time that the snapshot export task started.</p>
-        pub fn task_start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.task_start_time = Some(inp);
+        pub fn task_start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.task_start_time = Some(input);
             self
         }
         pub fn set_task_start_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.task_start_time = inp;
+            self.task_start_time = input;
             self
         }
         /// <p>The time that the snapshot export task completed.</p>
-        pub fn task_end_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.task_end_time = Some(inp);
+        pub fn task_end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.task_end_time = Some(input);
             self
         }
         pub fn set_task_end_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.task_end_time = inp;
+            self.task_end_time = input;
             self
         }
         /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
-        pub fn s3_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_bucket = Some(inp.into());
+        pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_bucket = Some(input.into());
             self
         }
-        pub fn set_s3_bucket(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = inp;
+        pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket = input;
             self
         }
         /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported snapshot.</p>
-        pub fn s3_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_prefix = Some(inp.into());
+        pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_prefix = Some(input.into());
             self
         }
-        pub fn set_s3_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_prefix = inp;
+        pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_prefix = input;
             self
         }
         /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot. </p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.iam_role_arn = Some(inp.into());
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.iam_role_arn = Some(input.into());
             self
         }
-        pub fn set_iam_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = inp;
+        pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iam_role_arn = input;
             self
         }
         /// <p>The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt the snapshot when it's exported to
         /// Amazon S3. The AWS KMS CMK identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export
         /// must have encryption and decryption permissions to use this AWS KMS CMK. </p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The progress status of the export task.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The progress of the snapshot export task as a percentage.</p>
-        pub fn percent_progress(mut self, inp: i32) -> Self {
-            self.percent_progress = Some(inp);
+        pub fn percent_progress(mut self, input: i32) -> Self {
+            self.percent_progress = Some(input);
             self
         }
-        pub fn set_percent_progress(mut self, inp: i32) -> Self {
-            self.percent_progress = Some(inp);
+        pub fn set_percent_progress(mut self, input: std::option::Option<i32>) -> Self {
+            self.percent_progress = input;
             self
         }
         /// <p>The total amount of data exported, in gigabytes.</p>
-        pub fn total_extracted_data_in_gb(mut self, inp: i32) -> Self {
-            self.total_extracted_data_in_gb = Some(inp);
+        pub fn total_extracted_data_in_gb(mut self, input: i32) -> Self {
+            self.total_extracted_data_in_gb = Some(input);
             self
         }
-        pub fn set_total_extracted_data_in_gb(mut self, inp: i32) -> Self {
-            self.total_extracted_data_in_gb = Some(inp);
+        pub fn set_total_extracted_data_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_extracted_data_in_gb = input;
             self
         }
         /// <p>The reason the export failed, if it failed.</p>
-        pub fn failure_cause(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.failure_cause = Some(inp.into());
+        pub fn failure_cause(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_cause = Some(input.into());
             self
         }
-        pub fn set_failure_cause(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.failure_cause = inp;
+        pub fn set_failure_cause(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_cause = input;
             self
         }
         /// <p>A warning about the snapshot export task.</p>
-        pub fn warning_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.warning_message = Some(inp.into());
+        pub fn warning_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.warning_message = Some(input.into());
             self
         }
         pub fn set_warning_message(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.warning_message = inp;
+            self.warning_message = input;
             self
         }
         /// Consumes the builder and constructs a [`ExportTask`](crate::model::ExportTask)
@@ -13847,67 +14102,67 @@ pub mod event {
     }
     impl Builder {
         /// <p>Provides the identifier for the source of the event.</p>
-        pub fn source_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_identifier = Some(inp.into());
+        pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_identifier = Some(input.into());
             self
         }
         pub fn set_source_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_identifier = inp;
+            self.source_identifier = input;
             self
         }
         /// <p>Specifies the source type for this event.</p>
-        pub fn source_type(mut self, inp: crate::model::SourceType) -> Self {
-            self.source_type = Some(inp);
+        pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
+            self.source_type = Some(input);
             self
         }
         pub fn set_source_type(
             mut self,
-            inp: std::option::Option<crate::model::SourceType>,
+            input: std::option::Option<crate::model::SourceType>,
         ) -> Self {
-            self.source_type = inp;
+            self.source_type = input;
             self
         }
         /// <p>Provides the text of this event.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
-        pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_categories.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.event_categories = Some(v);
             self
         }
         pub fn set_event_categories(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.event_categories = inp;
+            self.event_categories = input;
             self
         }
         /// <p>Specifies the date and time of the event.</p>
-        pub fn date(mut self, inp: smithy_types::Instant) -> Self {
-            self.date = Some(inp);
+        pub fn date(mut self, input: smithy_types::Instant) -> Self {
+            self.date = Some(input);
             self
         }
-        pub fn set_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.date = inp;
+        pub fn set_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.date = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the event.</p>
-        pub fn source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_arn = Some(inp.into());
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_arn = Some(input.into());
             self
         }
-        pub fn set_source_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = inp;
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`Event`](crate::model::Event)
@@ -14026,25 +14281,25 @@ pub mod event_categories_map {
     }
     impl Builder {
         /// <p>The source type that the returned categories belong to</p>
-        pub fn source_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_type = Some(inp.into());
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_type = Some(input.into());
             self
         }
-        pub fn set_source_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.source_type = inp;
+        pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_type = input;
             self
         }
-        pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_categories.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.event_categories = Some(v);
             self
         }
         pub fn set_event_categories(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.event_categories = inp;
+            self.event_categories = input;
             self
         }
         /// Consumes the builder and constructs a [`EventCategoriesMap`](crate::model::EventCategoriesMap)
@@ -14103,15 +14358,15 @@ pub mod engine_defaults {
     }
     impl Builder {
         /// <p>Specifies the name of the DB parameter group family that the engine default parameters apply to.</p>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_family = Some(inp.into());
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_family = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_family(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_family = inp;
+            self.db_parameter_group_family = input;
             self
         }
         /// <p>
@@ -14121,25 +14376,25 @@ pub mod engine_defaults {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code> .
         /// </p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::Parameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// Consumes the builder and constructs a [`EngineDefaults`](crate::model::EngineDefaults)
@@ -14198,48 +14453,48 @@ pub mod db_parameter_group {
     }
     impl Builder {
         /// <p>The name of the DB parameter group.</p>
-        pub fn db_parameter_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_name = Some(inp.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_name = inp;
+            self.db_parameter_group_name = input;
             self
         }
         /// <p>The name of the DB parameter group family that this DB parameter group is compatible with.</p>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_family = Some(inp.into());
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_family = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_family(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_family = inp;
+            self.db_parameter_group_family = input;
             self
         }
         /// <p>Provides the customer-specified description for this DB parameter group.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
-        pub fn db_parameter_group_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_arn = Some(inp.into());
+        pub fn db_parameter_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_arn = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_arn = inp;
+            self.db_parameter_group_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DBParameterGroup`](crate::model::DBParameterGroup)
@@ -14292,30 +14547,33 @@ pub mod describe_db_log_files_details {
     }
     impl Builder {
         /// <p>The name of the log file for the specified DB instance.</p>
-        pub fn log_file_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.log_file_name = Some(inp.into());
+        pub fn log_file_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_file_name = Some(input.into());
             self
         }
-        pub fn set_log_file_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.log_file_name = inp;
+        pub fn set_log_file_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_file_name = input;
             self
         }
         /// <p>A POSIX timestamp when the last log entry was written.</p>
-        pub fn last_written(mut self, inp: i64) -> Self {
-            self.last_written = Some(inp);
+        pub fn last_written(mut self, input: i64) -> Self {
+            self.last_written = Some(input);
             self
         }
-        pub fn set_last_written(mut self, inp: i64) -> Self {
-            self.last_written = Some(inp);
+        pub fn set_last_written(mut self, input: std::option::Option<i64>) -> Self {
+            self.last_written = input;
             self
         }
         /// <p>The size, in bytes, of the log file for the specified DB instance.</p>
-        pub fn size(mut self, inp: i64) -> Self {
-            self.size = Some(inp);
+        pub fn size(mut self, input: i64) -> Self {
+            self.size = Some(input);
             self
         }
-        pub fn set_size(mut self, inp: i64) -> Self {
-            self.size = Some(inp);
+        pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
+            self.size = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDBLogFilesDetails`](crate::model::DescribeDBLogFilesDetails)
@@ -14457,60 +14715,63 @@ pub mod db_engine_version {
     }
     impl Builder {
         /// <p>The name of the database engine.</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The version number of the database engine.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>The name of the DB parameter group family for the database engine.</p>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_family = Some(inp.into());
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_family = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_family(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_family = inp;
+            self.db_parameter_group_family = input;
             self
         }
         /// <p>The description of the database engine.</p>
-        pub fn db_engine_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_engine_description = Some(inp.into());
+        pub fn db_engine_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_engine_description = Some(input.into());
             self
         }
         pub fn set_db_engine_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_engine_description = inp;
+            self.db_engine_description = input;
             self
         }
         /// <p>The description of the database engine version.</p>
         pub fn db_engine_version_description(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_engine_version_description = Some(inp.into());
+            self.db_engine_version_description = Some(input.into());
             self
         }
         pub fn set_db_engine_version_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_engine_version_description = inp;
+            self.db_engine_version_description = input;
             self
         }
         /// <p>
@@ -14518,157 +14779,163 @@ pub mod db_engine_version {
         /// if the <code>CharacterSetName</code> parameter of the CreateDBInstance API
         /// isn't specified.
         /// </p>
-        pub fn default_character_set(mut self, inp: crate::model::CharacterSet) -> Self {
-            self.default_character_set = Some(inp);
+        pub fn default_character_set(mut self, input: crate::model::CharacterSet) -> Self {
+            self.default_character_set = Some(input);
             self
         }
         pub fn set_default_character_set(
             mut self,
-            inp: std::option::Option<crate::model::CharacterSet>,
+            input: std::option::Option<crate::model::CharacterSet>,
         ) -> Self {
-            self.default_character_set = inp;
+            self.default_character_set = input;
             self
         }
         pub fn supported_character_sets(
             mut self,
-            inp: impl Into<crate::model::CharacterSet>,
+            input: impl Into<crate::model::CharacterSet>,
         ) -> Self {
             let mut v = self.supported_character_sets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.supported_character_sets = Some(v);
             self
         }
         pub fn set_supported_character_sets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
         ) -> Self {
-            self.supported_character_sets = inp;
+            self.supported_character_sets = input;
             self
         }
         pub fn supported_nchar_character_sets(
             mut self,
-            inp: impl Into<crate::model::CharacterSet>,
+            input: impl Into<crate::model::CharacterSet>,
         ) -> Self {
             let mut v = self.supported_nchar_character_sets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.supported_nchar_character_sets = Some(v);
             self
         }
         pub fn set_supported_nchar_character_sets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
         ) -> Self {
-            self.supported_nchar_character_sets = inp;
+            self.supported_nchar_character_sets = input;
             self
         }
-        pub fn valid_upgrade_target(mut self, inp: impl Into<crate::model::UpgradeTarget>) -> Self {
+        pub fn valid_upgrade_target(
+            mut self,
+            input: impl Into<crate::model::UpgradeTarget>,
+        ) -> Self {
             let mut v = self.valid_upgrade_target.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.valid_upgrade_target = Some(v);
             self
         }
         pub fn set_valid_upgrade_target(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
         ) -> Self {
-            self.valid_upgrade_target = inp;
+            self.valid_upgrade_target = input;
             self
         }
-        pub fn supported_timezones(mut self, inp: impl Into<crate::model::Timezone>) -> Self {
+        pub fn supported_timezones(mut self, input: impl Into<crate::model::Timezone>) -> Self {
             let mut v = self.supported_timezones.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.supported_timezones = Some(v);
             self
         }
         pub fn set_supported_timezones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Timezone>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Timezone>>,
         ) -> Self {
-            self.supported_timezones = inp;
+            self.supported_timezones = input;
             self
         }
-        pub fn exportable_log_types(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn exportable_log_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exportable_log_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.exportable_log_types = Some(v);
             self
         }
         pub fn set_exportable_log_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.exportable_log_types = inp;
+            self.exportable_log_types = input;
             self
         }
         /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
-        pub fn supports_log_exports_to_cloudwatch_logs(mut self, inp: bool) -> Self {
-            self.supports_log_exports_to_cloudwatch_logs = Some(inp);
+        pub fn supports_log_exports_to_cloudwatch_logs(mut self, input: bool) -> Self {
+            self.supports_log_exports_to_cloudwatch_logs = Some(input);
             self
         }
-        pub fn set_supports_log_exports_to_cloudwatch_logs(mut self, inp: bool) -> Self {
-            self.supports_log_exports_to_cloudwatch_logs = Some(inp);
+        pub fn set_supports_log_exports_to_cloudwatch_logs(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.supports_log_exports_to_cloudwatch_logs = input;
             self
         }
         /// <p>Indicates whether the database engine version supports read replicas.</p>
-        pub fn supports_read_replica(mut self, inp: bool) -> Self {
-            self.supports_read_replica = Some(inp);
+        pub fn supports_read_replica(mut self, input: bool) -> Self {
+            self.supports_read_replica = Some(input);
             self
         }
-        pub fn set_supports_read_replica(mut self, inp: bool) -> Self {
-            self.supports_read_replica = Some(inp);
+        pub fn set_supports_read_replica(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_read_replica = input;
             self
         }
-        pub fn supported_engine_modes(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn supported_engine_modes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_engine_modes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.supported_engine_modes = Some(v);
             self
         }
         pub fn set_supported_engine_modes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.supported_engine_modes = inp;
+            self.supported_engine_modes = input;
             self
         }
-        pub fn supported_feature_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn supported_feature_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_feature_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.supported_feature_names = Some(v);
             self
         }
         pub fn set_supported_feature_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.supported_feature_names = inp;
+            self.supported_feature_names = input;
             self
         }
         /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
-        pub fn supports_parallel_query(mut self, inp: bool) -> Self {
-            self.supports_parallel_query = Some(inp);
+        pub fn supports_parallel_query(mut self, input: bool) -> Self {
+            self.supports_parallel_query = Some(input);
             self
         }
-        pub fn set_supports_parallel_query(mut self, inp: bool) -> Self {
-            self.supports_parallel_query = Some(inp);
+        pub fn set_supports_parallel_query(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_parallel_query = input;
             self
         }
         /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
-        pub fn supports_global_databases(mut self, inp: bool) -> Self {
-            self.supports_global_databases = Some(inp);
+        pub fn supports_global_databases(mut self, input: bool) -> Self {
+            self.supports_global_databases = Some(input);
             self
         }
-        pub fn set_supports_global_databases(mut self, inp: bool) -> Self {
-            self.supports_global_databases = Some(inp);
+        pub fn set_supports_global_databases(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_global_databases = input;
             self
         }
         /// Consumes the builder and constructs a [`DBEngineVersion`](crate::model::DBEngineVersion)
@@ -14737,12 +15004,15 @@ pub mod timezone {
     }
     impl Builder {
         /// <p>The name of the time zone.</p>
-        pub fn timezone_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.timezone_name = Some(inp.into());
+        pub fn timezone_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.timezone_name = Some(input.into());
             self
         }
-        pub fn set_timezone_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.timezone_name = inp;
+        pub fn set_timezone_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.timezone_name = input;
             self
         }
         /// Consumes the builder and constructs a [`Timezone`](crate::model::Timezone)
@@ -14812,79 +15082,82 @@ pub mod upgrade_target {
     }
     impl Builder {
         /// <p>The name of the upgrade target database engine.</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>The version number of the upgrade target database engine.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to true.</p>
-        pub fn auto_upgrade(mut self, inp: bool) -> Self {
-            self.auto_upgrade = Some(inp);
+        pub fn auto_upgrade(mut self, input: bool) -> Self {
+            self.auto_upgrade = Some(input);
             self
         }
-        pub fn set_auto_upgrade(mut self, inp: bool) -> Self {
-            self.auto_upgrade = Some(inp);
+        pub fn set_auto_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.auto_upgrade = input;
             self
         }
         /// <p>A value that indicates whether upgrading to the target version requires upgrading the major version of the database engine.</p>
-        pub fn is_major_version_upgrade(mut self, inp: bool) -> Self {
-            self.is_major_version_upgrade = Some(inp);
+        pub fn is_major_version_upgrade(mut self, input: bool) -> Self {
+            self.is_major_version_upgrade = Some(input);
             self
         }
-        pub fn set_is_major_version_upgrade(mut self, inp: bool) -> Self {
-            self.is_major_version_upgrade = Some(inp);
+        pub fn set_is_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_major_version_upgrade = input;
             self
         }
-        pub fn supported_engine_modes(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn supported_engine_modes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_engine_modes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.supported_engine_modes = Some(v);
             self
         }
         pub fn set_supported_engine_modes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.supported_engine_modes = inp;
+            self.supported_engine_modes = input;
             self
         }
         /// <p>A value that indicates whether you can use Aurora parallel query with the target engine version.</p>
-        pub fn supports_parallel_query(mut self, inp: bool) -> Self {
-            self.supports_parallel_query = Some(inp);
+        pub fn supports_parallel_query(mut self, input: bool) -> Self {
+            self.supports_parallel_query = Some(input);
             self
         }
-        pub fn set_supports_parallel_query(mut self, inp: std::option::Option<bool>) -> Self {
-            self.supports_parallel_query = inp;
+        pub fn set_supports_parallel_query(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_parallel_query = input;
             self
         }
         /// <p>A value that indicates whether you can use Aurora global databases with the target engine version.</p>
-        pub fn supports_global_databases(mut self, inp: bool) -> Self {
-            self.supports_global_databases = Some(inp);
+        pub fn supports_global_databases(mut self, input: bool) -> Self {
+            self.supports_global_databases = Some(input);
             self
         }
-        pub fn set_supports_global_databases(mut self, inp: std::option::Option<bool>) -> Self {
-            self.supports_global_databases = inp;
+        pub fn set_supports_global_databases(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_global_databases = input;
             self
         }
         /// Consumes the builder and constructs a [`UpgradeTarget`](crate::model::UpgradeTarget)
@@ -14939,27 +15212,27 @@ pub mod character_set {
     }
     impl Builder {
         /// <p>The name of the character set.</p>
-        pub fn character_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.character_set_name = Some(inp.into());
+        pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.character_set_name = Some(input.into());
             self
         }
         pub fn set_character_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.character_set_name = inp;
+            self.character_set_name = input;
             self
         }
         /// <p>The description of the character set.</p>
-        pub fn character_set_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.character_set_description = Some(inp.into());
+        pub fn character_set_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.character_set_description = Some(input.into());
             self
         }
         pub fn set_character_set_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.character_set_description = inp;
+            self.character_set_description = input;
             self
         }
         /// Consumes the builder and constructs a [`CharacterSet`](crate::model::CharacterSet)
@@ -15102,239 +15375,251 @@ pub mod db_cluster_snapshot {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        pub fn availability_zones(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
         pub fn set_availability_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.availability_zones = inp;
+            self.availability_zones = input;
             self
         }
         /// <p>Specifies the identifier for the DB cluster snapshot.</p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_snapshot_identifier = Some(inp.into());
+            self.db_cluster_snapshot_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_snapshot_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_snapshot_identifier = inp;
+            self.db_cluster_snapshot_identifier = input;
             self
         }
         /// <p>Specifies the DB cluster identifier of the DB cluster that this DB cluster snapshot was created from.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).</p>
-        pub fn snapshot_create_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.snapshot_create_time = Some(inp);
+        pub fn snapshot_create_time(mut self, input: smithy_types::Instant) -> Self {
+            self.snapshot_create_time = Some(input);
             self
         }
         pub fn set_snapshot_create_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.snapshot_create_time = inp;
+            self.snapshot_create_time = input;
             self
         }
         /// <p>Specifies the name of the database engine for this DB cluster snapshot.</p>
-        pub fn engine(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine = Some(inp.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine = Some(input.into());
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>Provides the engine mode of the database engine for this DB cluster snapshot.</p>
-        pub fn engine_mode(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_mode = Some(inp.into());
+        pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_mode = Some(input.into());
             self
         }
-        pub fn set_engine_mode(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_mode = inp;
+        pub fn set_engine_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine_mode = input;
             self
         }
         /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
-        pub fn allocated_storage(mut self, inp: i32) -> Self {
-            self.allocated_storage = Some(inp);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.allocated_storage = Some(input);
             self
         }
-        pub fn set_allocated_storage(mut self, inp: i32) -> Self {
-            self.allocated_storage = Some(inp);
+        pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+            self.allocated_storage = input;
             self
         }
         /// <p>Specifies the status of this DB cluster snapshot.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>Specifies the port that the DB cluster was listening on at the time of the snapshot.</p>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>Provides the VPC ID associated with the DB cluster snapshot.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_id = Some(inp.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
             self
         }
-        pub fn set_vpc_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = inp;
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
             self
         }
         /// <p>Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
-        pub fn cluster_create_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.cluster_create_time = Some(inp);
+        pub fn cluster_create_time(mut self, input: smithy_types::Instant) -> Self {
+            self.cluster_create_time = Some(input);
             self
         }
         pub fn set_cluster_create_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.cluster_create_time = inp;
+            self.cluster_create_time = input;
             self
         }
         /// <p>Provides the master username for this DB cluster snapshot.</p>
-        pub fn master_username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.master_username = Some(inp.into());
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.master_username = Some(input.into());
             self
         }
         pub fn set_master_username(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.master_username = inp;
+            self.master_username = input;
             self
         }
         /// <p>Provides the version of the database engine for this DB cluster snapshot.</p>
-        pub fn engine_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.engine_version = Some(inp.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.engine_version = Some(input.into());
             self
         }
-        pub fn set_engine_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.engine_version = inp;
+        pub fn set_engine_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.engine_version = input;
             self
         }
         /// <p>Provides the license model information for this DB cluster snapshot.</p>
-        pub fn license_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.license_model = Some(inp.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_model = Some(input.into());
             self
         }
-        pub fn set_license_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.license_model = inp;
+        pub fn set_license_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.license_model = input;
             self
         }
         /// <p>Provides the type of the DB cluster snapshot.</p>
-        pub fn snapshot_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.snapshot_type = Some(inp.into());
+        pub fn snapshot_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_type = Some(input.into());
             self
         }
-        pub fn set_snapshot_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_type = inp;
+        pub fn set_snapshot_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.snapshot_type = input;
             self
         }
         /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
-        pub fn percent_progress(mut self, inp: i32) -> Self {
-            self.percent_progress = Some(inp);
+        pub fn percent_progress(mut self, input: i32) -> Self {
+            self.percent_progress = Some(input);
             self
         }
-        pub fn set_percent_progress(mut self, inp: i32) -> Self {
-            self.percent_progress = Some(inp);
+        pub fn set_percent_progress(mut self, input: std::option::Option<i32>) -> Self {
+            self.percent_progress = input;
             self
         }
         /// <p>Specifies whether the DB cluster snapshot is encrypted.</p>
-        pub fn storage_encrypted(mut self, inp: bool) -> Self {
-            self.storage_encrypted = Some(inp);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.storage_encrypted = Some(input);
             self
         }
-        pub fn set_storage_encrypted(mut self, inp: bool) -> Self {
-            self.storage_encrypted = Some(inp);
+        pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.storage_encrypted = input;
             self
         }
         /// <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.</p>
         /// <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
-        pub fn db_cluster_snapshot_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_snapshot_arn = Some(inp.into());
+        pub fn db_cluster_snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_snapshot_arn = Some(input.into());
             self
         }
         pub fn set_db_cluster_snapshot_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_snapshot_arn = inp;
+            self.db_cluster_snapshot_arn = input;
             self
         }
         /// <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon
         /// Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null value.</p>
         pub fn source_db_cluster_snapshot_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.source_db_cluster_snapshot_arn = Some(inp.into());
+            self.source_db_cluster_snapshot_arn = Some(input.into());
             self
         }
         pub fn set_source_db_cluster_snapshot_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_db_cluster_snapshot_arn = inp;
+            self.source_db_cluster_snapshot_arn = input;
             self
         }
         /// <p>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</p>
-        pub fn iam_database_authentication_enabled(mut self, inp: bool) -> Self {
-            self.iam_database_authentication_enabled = Some(inp);
+        pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
+            self.iam_database_authentication_enabled = Some(input);
             self
         }
-        pub fn set_iam_database_authentication_enabled(mut self, inp: bool) -> Self {
-            self.iam_database_authentication_enabled = Some(inp);
+        pub fn set_iam_database_authentication_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.iam_database_authentication_enabled = input;
             self
         }
-        pub fn tag_list(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_list = Some(v);
             self
         }
         pub fn set_tag_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tag_list = inp;
+            self.tag_list = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterSnapshot`](crate::model::DBClusterSnapshot)
@@ -15422,52 +15707,52 @@ pub mod db_cluster_parameter_group {
         /// <p>The name of the DB cluster parameter group.</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = Some(inp.into());
+            self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_name = inp;
+            self.db_cluster_parameter_group_name = input;
             self
         }
         /// <p>The name of the DB parameter group family that this DB cluster parameter group is compatible with.</p>
-        pub fn db_parameter_group_family(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_parameter_group_family = Some(inp.into());
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_parameter_group_family = Some(input.into());
             self
         }
         pub fn set_db_parameter_group_family(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_parameter_group_family = inp;
+            self.db_parameter_group_family = input;
             self
         }
         /// <p>Provides the customer-specified description for this DB cluster parameter group.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
         pub fn db_cluster_parameter_group_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_arn = Some(inp.into());
+            self.db_cluster_parameter_group_arn = Some(input.into());
             self
         }
         pub fn set_db_cluster_parameter_group_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_parameter_group_arn = inp;
+            self.db_cluster_parameter_group_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterParameterGroup`](crate::model::DBClusterParameterGroup)
@@ -15587,123 +15872,126 @@ pub mod db_cluster_endpoint {
         /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_identifier = Some(inp.into());
+            self.db_cluster_endpoint_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_endpoint_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_identifier = inp;
+            self.db_cluster_endpoint_identifier = input;
             self
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
         /// stored as a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
         pub fn db_cluster_endpoint_resource_identifier(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_resource_identifier = Some(inp.into());
+            self.db_cluster_endpoint_resource_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_endpoint_resource_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_resource_identifier = inp;
+            self.db_cluster_endpoint_resource_identifier = input;
             self
         }
         /// <p>The DNS address of the endpoint.</p>
-        pub fn endpoint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint = Some(inp.into());
+        pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint = Some(input.into());
             self
         }
-        pub fn set_endpoint(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = inp;
+        pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint = input;
             self
         }
         /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster,
         /// such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
-        pub fn endpoint_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.endpoint_type = Some(inp.into());
+        pub fn endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_type = Some(input.into());
             self
         }
-        pub fn set_endpoint_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_type = inp;
+        pub fn set_endpoint_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.endpoint_type = input;
             self
         }
         /// <p>The type associated with a custom endpoint. One of: <code>READER</code>,
         /// <code>WRITER</code>, <code>ANY</code>.</p>
-        pub fn custom_endpoint_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_endpoint_type = Some(inp.into());
+        pub fn custom_endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_endpoint_type = Some(input.into());
             self
         }
         pub fn set_custom_endpoint_type(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_endpoint_type = inp;
+            self.custom_endpoint_type = input;
             self
         }
-        pub fn static_members(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn static_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.static_members.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.static_members = Some(v);
             self
         }
         pub fn set_static_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.static_members = inp;
+            self.static_members = input;
             self
         }
-        pub fn excluded_members(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn excluded_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_members.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.excluded_members = Some(v);
             self
         }
         pub fn set_excluded_members(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.excluded_members = inp;
+            self.excluded_members = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
-        pub fn db_cluster_endpoint_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_endpoint_arn = Some(inp.into());
+        pub fn db_cluster_endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_endpoint_arn = Some(input.into());
             self
         }
         pub fn set_db_cluster_endpoint_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_endpoint_arn = inp;
+            self.db_cluster_endpoint_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterEndpoint`](crate::model::DBClusterEndpoint)
@@ -15797,60 +16085,63 @@ pub mod db_cluster_backtrack {
     }
     impl Builder {
         /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-        pub fn db_cluster_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_identifier = Some(inp.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_identifier = Some(input.into());
             self
         }
         pub fn set_db_cluster_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_identifier = inp;
+            self.db_cluster_identifier = input;
             self
         }
         /// <p>Contains the backtrack identifier.</p>
-        pub fn backtrack_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.backtrack_identifier = Some(inp.into());
+        pub fn backtrack_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.backtrack_identifier = Some(input.into());
             self
         }
         pub fn set_backtrack_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.backtrack_identifier = inp;
+            self.backtrack_identifier = input;
             self
         }
         /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
-        pub fn backtrack_to(mut self, inp: smithy_types::Instant) -> Self {
-            self.backtrack_to = Some(inp);
+        pub fn backtrack_to(mut self, input: smithy_types::Instant) -> Self {
+            self.backtrack_to = Some(input);
             self
         }
-        pub fn set_backtrack_to(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.backtrack_to = inp;
+        pub fn set_backtrack_to(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.backtrack_to = input;
             self
         }
         /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
-        pub fn backtracked_from(mut self, inp: smithy_types::Instant) -> Self {
-            self.backtracked_from = Some(inp);
+        pub fn backtracked_from(mut self, input: smithy_types::Instant) -> Self {
+            self.backtracked_from = Some(input);
             self
         }
         pub fn set_backtracked_from(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.backtracked_from = inp;
+            self.backtracked_from = input;
             self
         }
         /// <p>The timestamp of the time at which the backtrack was requested.</p>
-        pub fn backtrack_request_creation_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.backtrack_request_creation_time = Some(inp);
+        pub fn backtrack_request_creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.backtrack_request_creation_time = Some(input);
             self
         }
         pub fn set_backtrack_request_creation_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.backtrack_request_creation_time = inp;
+            self.backtrack_request_creation_time = input;
             self
         }
         /// <p>The status of the backtrack. This property returns one of the following
@@ -15873,12 +16164,12 @@ pub mod db_cluster_backtrack {
         /// <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`DBClusterBacktrack`](crate::model::DBClusterBacktrack)
@@ -15953,58 +16244,61 @@ pub mod custom_availability_zone {
     impl Builder {
         /// <p>The identifier of the custom AZ.</p>
         /// <p>Amazon RDS generates a unique identifier when a custom AZ is created.</p>
-        pub fn custom_availability_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_availability_zone_id = Some(inp.into());
+        pub fn custom_availability_zone_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.custom_availability_zone_id = Some(input.into());
             self
         }
         pub fn set_custom_availability_zone_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_availability_zone_id = inp;
+            self.custom_availability_zone_id = input;
             self
         }
         /// <p>The name of the custom AZ.</p>
         pub fn custom_availability_zone_name(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.custom_availability_zone_name = Some(inp.into());
+            self.custom_availability_zone_name = Some(input.into());
             self
         }
         pub fn set_custom_availability_zone_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_availability_zone_name = inp;
+            self.custom_availability_zone_name = input;
             self
         }
         /// <p>The status of the custom AZ.</p>
         pub fn custom_availability_zone_status(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.custom_availability_zone_status = Some(inp.into());
+            self.custom_availability_zone_status = Some(input.into());
             self
         }
         pub fn set_custom_availability_zone_status(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_availability_zone_status = inp;
+            self.custom_availability_zone_status = input;
             self
         }
         /// <p>Information about the virtual private network (VPN) between the VMware vSphere cluster
         /// and the AWS website.</p>
-        pub fn vpn_details(mut self, inp: crate::model::VpnDetails) -> Self {
-            self.vpn_details = Some(inp);
+        pub fn vpn_details(mut self, input: crate::model::VpnDetails) -> Self {
+            self.vpn_details = Some(input);
             self
         }
         pub fn set_vpn_details(
             mut self,
-            inp: std::option::Option<crate::model::VpnDetails>,
+            input: std::option::Option<crate::model::VpnDetails>,
         ) -> Self {
-            self.vpn_details = inp;
+            self.vpn_details = input;
             self
         }
         /// Consumes the builder and constructs a [`CustomAvailabilityZone`](crate::model::CustomAvailabilityZone)
@@ -16073,60 +16367,63 @@ pub mod vpn_details {
     }
     impl Builder {
         /// <p>The ID of the VPN.</p>
-        pub fn vpn_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpn_id = Some(inp.into());
+        pub fn vpn_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpn_id = Some(input.into());
             self
         }
-        pub fn set_vpn_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpn_id = inp;
+        pub fn set_vpn_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpn_id = input;
             self
         }
         /// <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>
-        pub fn vpn_tunnel_originator_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpn_tunnel_originator_ip = Some(inp.into());
+        pub fn vpn_tunnel_originator_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpn_tunnel_originator_ip = Some(input.into());
             self
         }
         pub fn set_vpn_tunnel_originator_ip(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.vpn_tunnel_originator_ip = inp;
+            self.vpn_tunnel_originator_ip = input;
             self
         }
         /// <p>The IP address of network traffic from AWS to your on-premises data center.</p>
-        pub fn vpn_gateway_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpn_gateway_ip = Some(inp.into());
+        pub fn vpn_gateway_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpn_gateway_ip = Some(input.into());
             self
         }
-        pub fn set_vpn_gateway_ip(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpn_gateway_ip = inp;
+        pub fn set_vpn_gateway_ip(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpn_gateway_ip = input;
             self
         }
         /// <p>The preshared key (PSK) for the VPN.</p>
-        pub fn vpn_psk(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpn_psk = Some(inp.into());
+        pub fn vpn_psk(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpn_psk = Some(input.into());
             self
         }
-        pub fn set_vpn_psk(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpn_psk = inp;
+        pub fn set_vpn_psk(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpn_psk = input;
             self
         }
         /// <p>The name of the VPN.</p>
-        pub fn vpn_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpn_name = Some(inp.into());
+        pub fn vpn_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpn_name = Some(input.into());
             self
         }
-        pub fn set_vpn_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpn_name = inp;
+        pub fn set_vpn_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpn_name = input;
             self
         }
         /// <p>The state of the VPN.</p>
-        pub fn vpn_state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpn_state = Some(inp.into());
+        pub fn vpn_state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpn_state = Some(input.into());
             self
         }
-        pub fn set_vpn_state(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpn_state = inp;
+        pub fn set_vpn_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpn_state = input;
             self
         }
         /// Consumes the builder and constructs a [`VpnDetails`](crate::model::VpnDetails)
@@ -16290,33 +16587,33 @@ pub mod account_quota {
     }
     impl Builder {
         /// <p>The name of the Amazon RDS quota for this AWS account.</p>
-        pub fn account_quota_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.account_quota_name = Some(inp.into());
+        pub fn account_quota_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_quota_name = Some(input.into());
             self
         }
         pub fn set_account_quota_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.account_quota_name = inp;
+            self.account_quota_name = input;
             self
         }
         /// <p>The amount currently used toward the quota maximum.</p>
-        pub fn used(mut self, inp: i64) -> Self {
-            self.used = Some(inp);
+        pub fn used(mut self, input: i64) -> Self {
+            self.used = Some(input);
             self
         }
-        pub fn set_used(mut self, inp: i64) -> Self {
-            self.used = Some(inp);
+        pub fn set_used(mut self, input: std::option::Option<i64>) -> Self {
+            self.used = input;
             self
         }
         /// <p>The maximum allowed value for the quota.</p>
-        pub fn max(mut self, inp: i64) -> Self {
-            self.max = Some(inp);
+        pub fn max(mut self, input: i64) -> Self {
+            self.max = Some(input);
             self
         }
-        pub fn set_max(mut self, inp: i64) -> Self {
-            self.max = Some(inp);
+        pub fn set_max(mut self, input: std::option::Option<i64>) -> Self {
+            self.max = input;
             self
         }
         /// Consumes the builder and constructs a [`AccountQuota`](crate::model::AccountQuota)

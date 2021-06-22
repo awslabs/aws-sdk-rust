@@ -66,6 +66,12 @@ impl CancelJobError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, CancelJobErrorKind::ClientError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, CancelJobErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for CancelJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -143,6 +149,18 @@ impl CreateComputeEnvironmentError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateComputeEnvironmentErrorKind::ClientError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateComputeEnvironmentErrorKind::ServerError(_)
+        )
     }
 }
 impl std::error::Error for CreateComputeEnvironmentError {
@@ -222,6 +240,12 @@ impl CreateJobQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, CreateJobQueueErrorKind::ClientError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, CreateJobQueueErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for CreateJobQueueError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -299,6 +323,18 @@ impl DeleteComputeEnvironmentError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteComputeEnvironmentErrorKind::ClientError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteComputeEnvironmentErrorKind::ServerError(_)
+        )
     }
 }
 impl std::error::Error for DeleteComputeEnvironmentError {
@@ -378,6 +414,12 @@ impl DeleteJobQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, DeleteJobQueueErrorKind::ClientError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, DeleteJobQueueErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for DeleteJobQueueError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -455,6 +497,12 @@ impl DeregisterJobDefinitionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, DeregisterJobDefinitionErrorKind::ClientError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, DeregisterJobDefinitionErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for DeregisterJobDefinitionError {
@@ -534,6 +582,18 @@ impl DescribeComputeEnvironmentsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeComputeEnvironmentsErrorKind::ClientError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeComputeEnvironmentsErrorKind::ServerError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeComputeEnvironmentsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -611,6 +671,12 @@ impl DescribeJobDefinitionsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, DescribeJobDefinitionsErrorKind::ClientError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, DescribeJobDefinitionsErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for DescribeJobDefinitionsError {
@@ -690,6 +756,12 @@ impl DescribeJobQueuesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, DescribeJobQueuesErrorKind::ClientError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, DescribeJobQueuesErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for DescribeJobQueuesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -767,6 +839,12 @@ impl DescribeJobsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, DescribeJobsErrorKind::ClientError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, DescribeJobsErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for DescribeJobsError {
@@ -846,6 +924,12 @@ impl ListJobsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, ListJobsErrorKind::ClientError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, ListJobsErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for ListJobsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -923,6 +1007,12 @@ impl ListTagsForResourceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourceErrorKind::ClientError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourceErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
@@ -1002,6 +1092,12 @@ impl RegisterJobDefinitionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, RegisterJobDefinitionErrorKind::ClientError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, RegisterJobDefinitionErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for RegisterJobDefinitionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1079,6 +1175,12 @@ impl SubmitJobError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, SubmitJobErrorKind::ClientError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, SubmitJobErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for SubmitJobError {
@@ -1158,6 +1260,12 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ClientError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1235,6 +1343,12 @@ impl TerminateJobError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, TerminateJobErrorKind::ClientError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, TerminateJobErrorKind::ServerError(_))
     }
 }
 impl std::error::Error for TerminateJobError {
@@ -1314,6 +1428,12 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ClientError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1391,6 +1511,18 @@ impl UpdateComputeEnvironmentError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_client_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateComputeEnvironmentErrorKind::ClientError(_)
+        )
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateComputeEnvironmentErrorKind::ServerError(_)
+        )
     }
 }
 impl std::error::Error for UpdateComputeEnvironmentError {
@@ -1470,6 +1602,12 @@ impl UpdateJobQueueError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_client_error(&self) -> bool {
+        matches!(&self.kind, UpdateJobQueueErrorKind::ClientError(_))
+    }
+    pub fn is_server_error(&self) -> bool {
+        matches!(&self.kind, UpdateJobQueueErrorKind::ServerError(_))
+    }
 }
 impl std::error::Error for UpdateJobQueueError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1520,12 +1658,12 @@ pub mod server_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ServerError`](crate::error::ServerError)
@@ -1583,12 +1721,12 @@ pub mod client_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ClientError`](crate::error::ClientError)

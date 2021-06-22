@@ -2,7 +2,10 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_device_registration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetDeviceRegistrationOutput, crate::error::GetDeviceRegistrationError> {
+) -> std::result::Result<
+    crate::output::GetDeviceRegistrationOutput,
+    crate::error::GetDeviceRegistrationError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetDeviceRegistrationError::unhandled)?;
     let error_code = match generic.code() {
@@ -29,7 +32,10 @@ pub fn parse_get_device_registration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_device_registration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetDeviceRegistrationOutput, crate::error::GetDeviceRegistrationError> {
+) -> std::result::Result<
+    crate::output::GetDeviceRegistrationOutput,
+    crate::error::GetDeviceRegistrationError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_device_registration_output::Builder::default();
@@ -46,7 +52,7 @@ pub fn parse_get_device_registration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_send_heartbeat_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SendHeartbeatOutput, crate::error::SendHeartbeatError> {
+) -> std::result::Result<crate::output::SendHeartbeatOutput, crate::error::SendHeartbeatError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::SendHeartbeatError::unhandled)?;
     let error_code = match generic.code() {
@@ -73,7 +79,7 @@ pub fn parse_send_heartbeat_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_send_heartbeat_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SendHeartbeatOutput, crate::error::SendHeartbeatError> {
+) -> std::result::Result<crate::output::SendHeartbeatOutput, crate::error::SendHeartbeatError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::send_heartbeat_output::Builder::default();

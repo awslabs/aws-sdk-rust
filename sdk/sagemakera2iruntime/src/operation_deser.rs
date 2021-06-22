@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_human_loop_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteHumanLoopOutput, crate::error::DeleteHumanLoopError> {
+) -> std::result::Result<crate::output::DeleteHumanLoopOutput, crate::error::DeleteHumanLoopError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteHumanLoopError::unhandled)?;
     let error_code = match generic.code() {
@@ -65,7 +65,7 @@ pub fn parse_delete_human_loop_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_human_loop_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteHumanLoopOutput, crate::error::DeleteHumanLoopError> {
+) -> std::result::Result<crate::output::DeleteHumanLoopOutput, crate::error::DeleteHumanLoopError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_human_loop_output::Builder::default();
@@ -77,7 +77,8 @@ pub fn parse_delete_human_loop_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_human_loop_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeHumanLoopOutput, crate::error::DescribeHumanLoopError> {
+) -> std::result::Result<crate::output::DescribeHumanLoopOutput, crate::error::DescribeHumanLoopError>
+{
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeHumanLoopError::unhandled)?;
     let error_code = match generic.code() {
@@ -140,7 +141,8 @@ pub fn parse_describe_human_loop_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_human_loop_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeHumanLoopOutput, crate::error::DescribeHumanLoopError> {
+) -> std::result::Result<crate::output::DescribeHumanLoopOutput, crate::error::DescribeHumanLoopError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_human_loop_output::Builder::default();
@@ -157,7 +159,7 @@ pub fn parse_describe_human_loop_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_human_loops_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListHumanLoopsOutput, crate::error::ListHumanLoopsError> {
+) -> std::result::Result<crate::output::ListHumanLoopsOutput, crate::error::ListHumanLoopsError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListHumanLoopsError::unhandled)?;
     let error_code = match generic.code() {
@@ -220,7 +222,7 @@ pub fn parse_list_human_loops_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_human_loops_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListHumanLoopsOutput, crate::error::ListHumanLoopsError> {
+) -> std::result::Result<crate::output::ListHumanLoopsOutput, crate::error::ListHumanLoopsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_human_loops_output::Builder::default();
@@ -235,7 +237,7 @@ pub fn parse_list_human_loops_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_human_loop_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StartHumanLoopOutput, crate::error::StartHumanLoopError> {
+) -> std::result::Result<crate::output::StartHumanLoopOutput, crate::error::StartHumanLoopError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::StartHumanLoopError::unhandled)?;
     let error_code = match generic.code() {
@@ -309,7 +311,7 @@ pub fn parse_start_human_loop_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_human_loop_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StartHumanLoopOutput, crate::error::StartHumanLoopError> {
+) -> std::result::Result<crate::output::StartHumanLoopOutput, crate::error::StartHumanLoopError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::start_human_loop_output::Builder::default();
@@ -324,7 +326,7 @@ pub fn parse_start_human_loop_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_stop_human_loop_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StopHumanLoopOutput, crate::error::StopHumanLoopError> {
+) -> std::result::Result<crate::output::StopHumanLoopOutput, crate::error::StopHumanLoopError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::StopHumanLoopError::unhandled)?;
     let error_code = match generic.code() {
@@ -387,7 +389,7 @@ pub fn parse_stop_human_loop_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_stop_human_loop_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StopHumanLoopOutput, crate::error::StopHumanLoopError> {
+) -> std::result::Result<crate::output::StopHumanLoopOutput, crate::error::StopHumanLoopError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::stop_human_loop_output::Builder::default();

@@ -70,6 +70,18 @@ impl BatchGetRecordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_access_forbidden(&self) -> bool {
+        matches!(&self.kind, BatchGetRecordErrorKind::AccessForbidden(_))
+    }
+    pub fn is_internal_failure(&self) -> bool {
+        matches!(&self.kind, BatchGetRecordErrorKind::InternalFailure(_))
+    }
+    pub fn is_service_unavailable(&self) -> bool {
+        matches!(&self.kind, BatchGetRecordErrorKind::ServiceUnavailable(_))
+    }
+    pub fn is_validation_error(&self) -> bool {
+        matches!(&self.kind, BatchGetRecordErrorKind::ValidationError(_))
+    }
 }
 impl std::error::Error for BatchGetRecordError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -153,6 +165,18 @@ impl DeleteRecordError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_access_forbidden(&self) -> bool {
+        matches!(&self.kind, DeleteRecordErrorKind::AccessForbidden(_))
+    }
+    pub fn is_internal_failure(&self) -> bool {
+        matches!(&self.kind, DeleteRecordErrorKind::InternalFailure(_))
+    }
+    pub fn is_service_unavailable(&self) -> bool {
+        matches!(&self.kind, DeleteRecordErrorKind::ServiceUnavailable(_))
+    }
+    pub fn is_validation_error(&self) -> bool {
+        matches!(&self.kind, DeleteRecordErrorKind::ValidationError(_))
     }
 }
 impl std::error::Error for DeleteRecordError {
@@ -240,6 +264,21 @@ impl GetRecordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_access_forbidden(&self) -> bool {
+        matches!(&self.kind, GetRecordErrorKind::AccessForbidden(_))
+    }
+    pub fn is_internal_failure(&self) -> bool {
+        matches!(&self.kind, GetRecordErrorKind::InternalFailure(_))
+    }
+    pub fn is_resource_not_found(&self) -> bool {
+        matches!(&self.kind, GetRecordErrorKind::ResourceNotFound(_))
+    }
+    pub fn is_service_unavailable(&self) -> bool {
+        matches!(&self.kind, GetRecordErrorKind::ServiceUnavailable(_))
+    }
+    pub fn is_validation_error(&self) -> bool {
+        matches!(&self.kind, GetRecordErrorKind::ValidationError(_))
+    }
 }
 impl std::error::Error for GetRecordError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -325,6 +364,18 @@ impl PutRecordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_access_forbidden(&self) -> bool {
+        matches!(&self.kind, PutRecordErrorKind::AccessForbidden(_))
+    }
+    pub fn is_internal_failure(&self) -> bool {
+        matches!(&self.kind, PutRecordErrorKind::InternalFailure(_))
+    }
+    pub fn is_service_unavailable(&self) -> bool {
+        matches!(&self.kind, PutRecordErrorKind::ServiceUnavailable(_))
+    }
+    pub fn is_validation_error(&self) -> bool {
+        matches!(&self.kind, PutRecordErrorKind::ValidationError(_))
+    }
 }
 impl std::error::Error for PutRecordError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -377,12 +428,12 @@ pub mod validation_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ValidationError`](crate::error::ValidationError)
@@ -439,12 +490,12 @@ pub mod service_unavailable {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceUnavailable`](crate::error::ServiceUnavailable)
@@ -502,12 +553,12 @@ pub mod internal_failure {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InternalFailure`](crate::error::InternalFailure)
@@ -564,12 +615,12 @@ pub mod access_forbidden {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AccessForbidden`](crate::error::AccessForbidden)
@@ -626,12 +677,12 @@ pub mod resource_not_found {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceNotFound`](crate::error::ResourceNotFound)

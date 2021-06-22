@@ -8,6 +8,8 @@ use std::sync::{Arc, Mutex};
 use std::time::{Duration, SystemTime};
 use sts::Credentials;
 
+/// Implements a basic version of ProvideCredentials with AWS STS
+/// and lists the tables in the region based on those credentials.
 #[tokio::main]
 async fn main() -> Result<(), dynamodb::Error> {
     tracing_subscriber::fmt::init();
@@ -26,7 +28,7 @@ async fn main() -> Result<(), dynamodb::Error> {
     Ok(())
 }
 
-/// This is a rough example of how you could implement ProvideCredentials with Sts
+/// This is a rough example of how you could implement ProvideCredentials with Amazon STS.
 ///
 /// Do not use this in production! A high quality implementation is in the roadmap.
 #[derive(Clone)]

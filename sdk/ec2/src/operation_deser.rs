@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_accept_reserved_instances_exchange_quote_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AcceptReservedInstancesExchangeQuoteOutput,
     crate::error::AcceptReservedInstancesExchangeQuoteError,
 > {
@@ -14,7 +14,7 @@ pub fn parse_accept_reserved_instances_exchange_quote_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_accept_reserved_instances_exchange_quote_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AcceptReservedInstancesExchangeQuoteOutput,
     crate::error::AcceptReservedInstancesExchangeQuoteError,
 > {
@@ -35,7 +35,7 @@ pub fn parse_accept_reserved_instances_exchange_quote_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_accept_transit_gateway_multicast_domain_associations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AcceptTransitGatewayMulticastDomainAssociationsOutput,
     crate::error::AcceptTransitGatewayMulticastDomainAssociationsError,
 > {
@@ -47,7 +47,7 @@ pub fn parse_accept_transit_gateway_multicast_domain_associations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_accept_transit_gateway_multicast_domain_associations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AcceptTransitGatewayMulticastDomainAssociationsOutput,
     crate::error::AcceptTransitGatewayMulticastDomainAssociationsError,
 > {
@@ -69,7 +69,7 @@ pub fn parse_accept_transit_gateway_multicast_domain_associations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_accept_transit_gateway_peering_attachment_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AcceptTransitGatewayPeeringAttachmentOutput,
     crate::error::AcceptTransitGatewayPeeringAttachmentError,
 > {
@@ -81,7 +81,7 @@ pub fn parse_accept_transit_gateway_peering_attachment_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_accept_transit_gateway_peering_attachment_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AcceptTransitGatewayPeeringAttachmentOutput,
     crate::error::AcceptTransitGatewayPeeringAttachmentError,
 > {
@@ -102,7 +102,7 @@ pub fn parse_accept_transit_gateway_peering_attachment_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_accept_transit_gateway_vpc_attachment_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AcceptTransitGatewayVpcAttachmentOutput,
     crate::error::AcceptTransitGatewayVpcAttachmentError,
 > {
@@ -114,7 +114,7 @@ pub fn parse_accept_transit_gateway_vpc_attachment_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_accept_transit_gateway_vpc_attachment_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AcceptTransitGatewayVpcAttachmentOutput,
     crate::error::AcceptTransitGatewayVpcAttachmentError,
 > {
@@ -135,7 +135,7 @@ pub fn parse_accept_transit_gateway_vpc_attachment_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_accept_vpc_endpoint_connections_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AcceptVpcEndpointConnectionsOutput,
     crate::error::AcceptVpcEndpointConnectionsError,
 > {
@@ -149,7 +149,7 @@ pub fn parse_accept_vpc_endpoint_connections_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_accept_vpc_endpoint_connections_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AcceptVpcEndpointConnectionsOutput,
     crate::error::AcceptVpcEndpointConnectionsError,
 > {
@@ -169,7 +169,7 @@ pub fn parse_accept_vpc_endpoint_connections_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_accept_vpc_peering_connection_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AcceptVpcPeeringConnectionOutput,
     crate::error::AcceptVpcPeeringConnectionError,
 > {
@@ -183,7 +183,7 @@ pub fn parse_accept_vpc_peering_connection_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_accept_vpc_peering_connection_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AcceptVpcPeeringConnectionOutput,
     crate::error::AcceptVpcPeeringConnectionError,
 > {
@@ -203,7 +203,10 @@ pub fn parse_accept_vpc_peering_connection_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_advertise_byoip_cidr_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AdvertiseByoipCidrOutput, crate::error::AdvertiseByoipCidrError> {
+) -> std::result::Result<
+    crate::output::AdvertiseByoipCidrOutput,
+    crate::error::AdvertiseByoipCidrError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
     Err(crate::error::AdvertiseByoipCidrError::generic(generic))
@@ -212,7 +215,10 @@ pub fn parse_advertise_byoip_cidr_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_advertise_byoip_cidr_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AdvertiseByoipCidrOutput, crate::error::AdvertiseByoipCidrError> {
+) -> std::result::Result<
+    crate::output::AdvertiseByoipCidrOutput,
+    crate::error::AdvertiseByoipCidrError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::advertise_byoip_cidr_output::Builder::default();
@@ -229,7 +235,7 @@ pub fn parse_advertise_byoip_cidr_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_allocate_address_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AllocateAddressOutput, crate::error::AllocateAddressError> {
+) -> std::result::Result<crate::output::AllocateAddressOutput, crate::error::AllocateAddressError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AllocateAddressError::unhandled)?;
     Err(crate::error::AllocateAddressError::generic(generic))
@@ -238,7 +244,7 @@ pub fn parse_allocate_address_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_allocate_address_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AllocateAddressOutput, crate::error::AllocateAddressError> {
+) -> std::result::Result<crate::output::AllocateAddressOutput, crate::error::AllocateAddressError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::allocate_address_output::Builder::default();
@@ -253,7 +259,7 @@ pub fn parse_allocate_address_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_allocate_hosts_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AllocateHostsOutput, crate::error::AllocateHostsError> {
+) -> std::result::Result<crate::output::AllocateHostsOutput, crate::error::AllocateHostsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AllocateHostsError::unhandled)?;
     Err(crate::error::AllocateHostsError::generic(generic))
@@ -262,7 +268,7 @@ pub fn parse_allocate_hosts_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_allocate_hosts_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AllocateHostsOutput, crate::error::AllocateHostsError> {
+) -> std::result::Result<crate::output::AllocateHostsOutput, crate::error::AllocateHostsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::allocate_hosts_output::Builder::default();
@@ -276,7 +282,7 @@ pub fn parse_allocate_hosts_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_apply_security_groups_to_client_vpn_target_network_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ApplySecurityGroupsToClientVpnTargetNetworkOutput,
     crate::error::ApplySecurityGroupsToClientVpnTargetNetworkError,
 > {
@@ -288,7 +294,7 @@ pub fn parse_apply_security_groups_to_client_vpn_target_network_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_apply_security_groups_to_client_vpn_target_network_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ApplySecurityGroupsToClientVpnTargetNetworkOutput,
     crate::error::ApplySecurityGroupsToClientVpnTargetNetworkError,
 > {
@@ -308,7 +314,10 @@ pub fn parse_apply_security_groups_to_client_vpn_target_network_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_assign_ipv6_addresses_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AssignIpv6AddressesOutput, crate::error::AssignIpv6AddressesError> {
+) -> std::result::Result<
+    crate::output::AssignIpv6AddressesOutput,
+    crate::error::AssignIpv6AddressesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AssignIpv6AddressesError::unhandled)?;
     Err(crate::error::AssignIpv6AddressesError::generic(generic))
@@ -317,7 +326,10 @@ pub fn parse_assign_ipv6_addresses_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_assign_ipv6_addresses_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AssignIpv6AddressesOutput, crate::error::AssignIpv6AddressesError> {
+) -> std::result::Result<
+    crate::output::AssignIpv6AddressesOutput,
+    crate::error::AssignIpv6AddressesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::assign_ipv6_addresses_output::Builder::default();
@@ -334,7 +346,7 @@ pub fn parse_assign_ipv6_addresses_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_assign_private_ip_addresses_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AssignPrivateIpAddressesOutput,
     crate::error::AssignPrivateIpAddressesError,
 > {
@@ -348,7 +360,7 @@ pub fn parse_assign_private_ip_addresses_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_assign_private_ip_addresses_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AssignPrivateIpAddressesOutput,
     crate::error::AssignPrivateIpAddressesError,
 > {
@@ -368,7 +380,8 @@ pub fn parse_assign_private_ip_addresses_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_address_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AssociateAddressOutput, crate::error::AssociateAddressError> {
+) -> std::result::Result<crate::output::AssociateAddressOutput, crate::error::AssociateAddressError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AssociateAddressError::unhandled)?;
     Err(crate::error::AssociateAddressError::generic(generic))
@@ -377,7 +390,8 @@ pub fn parse_associate_address_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_address_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AssociateAddressOutput, crate::error::AssociateAddressError> {
+) -> std::result::Result<crate::output::AssociateAddressOutput, crate::error::AssociateAddressError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::associate_address_output::Builder::default();
@@ -392,7 +406,7 @@ pub fn parse_associate_address_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_client_vpn_target_network_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AssociateClientVpnTargetNetworkOutput,
     crate::error::AssociateClientVpnTargetNetworkError,
 > {
@@ -406,7 +420,7 @@ pub fn parse_associate_client_vpn_target_network_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_client_vpn_target_network_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AssociateClientVpnTargetNetworkOutput,
     crate::error::AssociateClientVpnTargetNetworkError,
 > {
@@ -427,7 +441,10 @@ pub fn parse_associate_client_vpn_target_network_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_dhcp_options_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AssociateDhcpOptionsOutput, crate::error::AssociateDhcpOptionsError> {
+) -> std::result::Result<
+    crate::output::AssociateDhcpOptionsOutput,
+    crate::error::AssociateDhcpOptionsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AssociateDhcpOptionsError::unhandled)?;
     Err(crate::error::AssociateDhcpOptionsError::generic(generic))
@@ -436,7 +453,10 @@ pub fn parse_associate_dhcp_options_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_dhcp_options_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AssociateDhcpOptionsOutput, crate::error::AssociateDhcpOptionsError> {
+) -> std::result::Result<
+    crate::output::AssociateDhcpOptionsOutput,
+    crate::error::AssociateDhcpOptionsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::associate_dhcp_options_output::Builder::default();
@@ -448,7 +468,7 @@ pub fn parse_associate_dhcp_options_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_enclave_certificate_iam_role_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AssociateEnclaveCertificateIamRoleOutput,
     crate::error::AssociateEnclaveCertificateIamRoleError,
 > {
@@ -460,7 +480,7 @@ pub fn parse_associate_enclave_certificate_iam_role_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_enclave_certificate_iam_role_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AssociateEnclaveCertificateIamRoleOutput,
     crate::error::AssociateEnclaveCertificateIamRoleError,
 > {
@@ -481,7 +501,7 @@ pub fn parse_associate_enclave_certificate_iam_role_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_iam_instance_profile_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AssociateIamInstanceProfileOutput,
     crate::error::AssociateIamInstanceProfileError,
 > {
@@ -495,7 +515,7 @@ pub fn parse_associate_iam_instance_profile_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_iam_instance_profile_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AssociateIamInstanceProfileOutput,
     crate::error::AssociateIamInstanceProfileError,
 > {
@@ -515,7 +535,10 @@ pub fn parse_associate_iam_instance_profile_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_route_table_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AssociateRouteTableOutput, crate::error::AssociateRouteTableError> {
+) -> std::result::Result<
+    crate::output::AssociateRouteTableOutput,
+    crate::error::AssociateRouteTableError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AssociateRouteTableError::unhandled)?;
     Err(crate::error::AssociateRouteTableError::generic(generic))
@@ -524,7 +547,10 @@ pub fn parse_associate_route_table_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_route_table_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AssociateRouteTableOutput, crate::error::AssociateRouteTableError> {
+) -> std::result::Result<
+    crate::output::AssociateRouteTableOutput,
+    crate::error::AssociateRouteTableError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::associate_route_table_output::Builder::default();
@@ -541,7 +567,7 @@ pub fn parse_associate_route_table_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_subnet_cidr_block_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AssociateSubnetCidrBlockOutput,
     crate::error::AssociateSubnetCidrBlockError,
 > {
@@ -555,7 +581,7 @@ pub fn parse_associate_subnet_cidr_block_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_subnet_cidr_block_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AssociateSubnetCidrBlockOutput,
     crate::error::AssociateSubnetCidrBlockError,
 > {
@@ -575,7 +601,7 @@ pub fn parse_associate_subnet_cidr_block_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_transit_gateway_multicast_domain_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AssociateTransitGatewayMulticastDomainOutput,
     crate::error::AssociateTransitGatewayMulticastDomainError,
 > {
@@ -587,7 +613,7 @@ pub fn parse_associate_transit_gateway_multicast_domain_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_transit_gateway_multicast_domain_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AssociateTransitGatewayMulticastDomainOutput,
     crate::error::AssociateTransitGatewayMulticastDomainError,
 > {
@@ -608,7 +634,7 @@ pub fn parse_associate_transit_gateway_multicast_domain_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_transit_gateway_route_table_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AssociateTransitGatewayRouteTableOutput,
     crate::error::AssociateTransitGatewayRouteTableError,
 > {
@@ -620,7 +646,7 @@ pub fn parse_associate_transit_gateway_route_table_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_transit_gateway_route_table_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AssociateTransitGatewayRouteTableOutput,
     crate::error::AssociateTransitGatewayRouteTableError,
 > {
@@ -641,7 +667,10 @@ pub fn parse_associate_transit_gateway_route_table_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_vpc_cidr_block_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AssociateVpcCidrBlockOutput, crate::error::AssociateVpcCidrBlockError> {
+) -> std::result::Result<
+    crate::output::AssociateVpcCidrBlockOutput,
+    crate::error::AssociateVpcCidrBlockError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AssociateVpcCidrBlockError::unhandled)?;
     Err(crate::error::AssociateVpcCidrBlockError::generic(generic))
@@ -650,7 +679,10 @@ pub fn parse_associate_vpc_cidr_block_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_vpc_cidr_block_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AssociateVpcCidrBlockOutput, crate::error::AssociateVpcCidrBlockError> {
+) -> std::result::Result<
+    crate::output::AssociateVpcCidrBlockOutput,
+    crate::error::AssociateVpcCidrBlockError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::associate_vpc_cidr_block_output::Builder::default();
@@ -667,7 +699,10 @@ pub fn parse_associate_vpc_cidr_block_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_attach_classic_link_vpc_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AttachClassicLinkVpcOutput, crate::error::AttachClassicLinkVpcError> {
+) -> std::result::Result<
+    crate::output::AttachClassicLinkVpcOutput,
+    crate::error::AttachClassicLinkVpcError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AttachClassicLinkVpcError::unhandled)?;
     Err(crate::error::AttachClassicLinkVpcError::generic(generic))
@@ -676,7 +711,10 @@ pub fn parse_attach_classic_link_vpc_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_attach_classic_link_vpc_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AttachClassicLinkVpcOutput, crate::error::AttachClassicLinkVpcError> {
+) -> std::result::Result<
+    crate::output::AttachClassicLinkVpcOutput,
+    crate::error::AttachClassicLinkVpcError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::attach_classic_link_vpc_output::Builder::default();
@@ -693,7 +731,10 @@ pub fn parse_attach_classic_link_vpc_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_attach_internet_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AttachInternetGatewayOutput, crate::error::AttachInternetGatewayError> {
+) -> std::result::Result<
+    crate::output::AttachInternetGatewayOutput,
+    crate::error::AttachInternetGatewayError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AttachInternetGatewayError::unhandled)?;
     Err(crate::error::AttachInternetGatewayError::generic(generic))
@@ -702,7 +743,10 @@ pub fn parse_attach_internet_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_attach_internet_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AttachInternetGatewayOutput, crate::error::AttachInternetGatewayError> {
+) -> std::result::Result<
+    crate::output::AttachInternetGatewayOutput,
+    crate::error::AttachInternetGatewayError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::attach_internet_gateway_output::Builder::default();
@@ -714,8 +758,10 @@ pub fn parse_attach_internet_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_attach_network_interface_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AttachNetworkInterfaceOutput, crate::error::AttachNetworkInterfaceError>
-{
+) -> std::result::Result<
+    crate::output::AttachNetworkInterfaceOutput,
+    crate::error::AttachNetworkInterfaceError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AttachNetworkInterfaceError::unhandled)?;
     Err(crate::error::AttachNetworkInterfaceError::generic(generic))
@@ -724,8 +770,10 @@ pub fn parse_attach_network_interface_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_attach_network_interface_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AttachNetworkInterfaceOutput, crate::error::AttachNetworkInterfaceError>
-{
+) -> std::result::Result<
+    crate::output::AttachNetworkInterfaceOutput,
+    crate::error::AttachNetworkInterfaceError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::attach_network_interface_output::Builder::default();
@@ -742,7 +790,7 @@ pub fn parse_attach_network_interface_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_attach_volume_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AttachVolumeOutput, crate::error::AttachVolumeError> {
+) -> std::result::Result<crate::output::AttachVolumeOutput, crate::error::AttachVolumeError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AttachVolumeError::unhandled)?;
     Err(crate::error::AttachVolumeError::generic(generic))
@@ -751,7 +799,7 @@ pub fn parse_attach_volume_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_attach_volume_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AttachVolumeOutput, crate::error::AttachVolumeError> {
+) -> std::result::Result<crate::output::AttachVolumeOutput, crate::error::AttachVolumeError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::attach_volume_output::Builder::default();
@@ -765,7 +813,8 @@ pub fn parse_attach_volume_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_attach_vpn_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AttachVpnGatewayOutput, crate::error::AttachVpnGatewayError> {
+) -> std::result::Result<crate::output::AttachVpnGatewayOutput, crate::error::AttachVpnGatewayError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AttachVpnGatewayError::unhandled)?;
     Err(crate::error::AttachVpnGatewayError::generic(generic))
@@ -774,7 +823,8 @@ pub fn parse_attach_vpn_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_attach_vpn_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AttachVpnGatewayOutput, crate::error::AttachVpnGatewayError> {
+) -> std::result::Result<crate::output::AttachVpnGatewayOutput, crate::error::AttachVpnGatewayError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::attach_vpn_gateway_output::Builder::default();
@@ -789,7 +839,7 @@ pub fn parse_attach_vpn_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_authorize_client_vpn_ingress_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AuthorizeClientVpnIngressOutput,
     crate::error::AuthorizeClientVpnIngressError,
 > {
@@ -803,7 +853,7 @@ pub fn parse_authorize_client_vpn_ingress_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_authorize_client_vpn_ingress_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AuthorizeClientVpnIngressOutput,
     crate::error::AuthorizeClientVpnIngressError,
 > {
@@ -823,7 +873,7 @@ pub fn parse_authorize_client_vpn_ingress_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_authorize_security_group_egress_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AuthorizeSecurityGroupEgressOutput,
     crate::error::AuthorizeSecurityGroupEgressError,
 > {
@@ -837,7 +887,7 @@ pub fn parse_authorize_security_group_egress_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_authorize_security_group_egress_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AuthorizeSecurityGroupEgressOutput,
     crate::error::AuthorizeSecurityGroupEgressError,
 > {
@@ -852,7 +902,7 @@ pub fn parse_authorize_security_group_egress_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_authorize_security_group_ingress_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AuthorizeSecurityGroupIngressOutput,
     crate::error::AuthorizeSecurityGroupIngressError,
 > {
@@ -866,7 +916,7 @@ pub fn parse_authorize_security_group_ingress_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_authorize_security_group_ingress_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AuthorizeSecurityGroupIngressOutput,
     crate::error::AuthorizeSecurityGroupIngressError,
 > {
@@ -881,7 +931,7 @@ pub fn parse_authorize_security_group_ingress_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_bundle_instance_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::BundleInstanceOutput, crate::error::BundleInstanceError> {
+) -> std::result::Result<crate::output::BundleInstanceOutput, crate::error::BundleInstanceError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::BundleInstanceError::unhandled)?;
     Err(crate::error::BundleInstanceError::generic(generic))
@@ -890,7 +940,7 @@ pub fn parse_bundle_instance_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_bundle_instance_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::BundleInstanceOutput, crate::error::BundleInstanceError> {
+) -> std::result::Result<crate::output::BundleInstanceOutput, crate::error::BundleInstanceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::bundle_instance_output::Builder::default();
@@ -905,7 +955,8 @@ pub fn parse_bundle_instance_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_bundle_task_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CancelBundleTaskOutput, crate::error::CancelBundleTaskError> {
+) -> std::result::Result<crate::output::CancelBundleTaskOutput, crate::error::CancelBundleTaskError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CancelBundleTaskError::unhandled)?;
     Err(crate::error::CancelBundleTaskError::generic(generic))
@@ -914,7 +965,8 @@ pub fn parse_cancel_bundle_task_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_bundle_task_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CancelBundleTaskOutput, crate::error::CancelBundleTaskError> {
+) -> std::result::Result<crate::output::CancelBundleTaskOutput, crate::error::CancelBundleTaskError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_bundle_task_output::Builder::default();
@@ -929,7 +981,7 @@ pub fn parse_cancel_bundle_task_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_capacity_reservation_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CancelCapacityReservationOutput,
     crate::error::CancelCapacityReservationError,
 > {
@@ -943,7 +995,7 @@ pub fn parse_cancel_capacity_reservation_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_capacity_reservation_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CancelCapacityReservationOutput,
     crate::error::CancelCapacityReservationError,
 > {
@@ -963,7 +1015,10 @@ pub fn parse_cancel_capacity_reservation_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_conversion_task_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CancelConversionTaskOutput, crate::error::CancelConversionTaskError> {
+) -> std::result::Result<
+    crate::output::CancelConversionTaskOutput,
+    crate::error::CancelConversionTaskError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CancelConversionTaskError::unhandled)?;
     Err(crate::error::CancelConversionTaskError::generic(generic))
@@ -972,7 +1027,10 @@ pub fn parse_cancel_conversion_task_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_conversion_task_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CancelConversionTaskOutput, crate::error::CancelConversionTaskError> {
+) -> std::result::Result<
+    crate::output::CancelConversionTaskOutput,
+    crate::error::CancelConversionTaskError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_conversion_task_output::Builder::default();
@@ -984,7 +1042,8 @@ pub fn parse_cancel_conversion_task_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_export_task_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CancelExportTaskOutput, crate::error::CancelExportTaskError> {
+) -> std::result::Result<crate::output::CancelExportTaskOutput, crate::error::CancelExportTaskError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CancelExportTaskError::unhandled)?;
     Err(crate::error::CancelExportTaskError::generic(generic))
@@ -993,7 +1052,8 @@ pub fn parse_cancel_export_task_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_export_task_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CancelExportTaskOutput, crate::error::CancelExportTaskError> {
+) -> std::result::Result<crate::output::CancelExportTaskOutput, crate::error::CancelExportTaskError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_export_task_output::Builder::default();
@@ -1005,7 +1065,8 @@ pub fn parse_cancel_export_task_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_import_task_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CancelImportTaskOutput, crate::error::CancelImportTaskError> {
+) -> std::result::Result<crate::output::CancelImportTaskOutput, crate::error::CancelImportTaskError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CancelImportTaskError::unhandled)?;
     Err(crate::error::CancelImportTaskError::generic(generic))
@@ -1014,7 +1075,8 @@ pub fn parse_cancel_import_task_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_import_task_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CancelImportTaskOutput, crate::error::CancelImportTaskError> {
+) -> std::result::Result<crate::output::CancelImportTaskOutput, crate::error::CancelImportTaskError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_import_task_output::Builder::default();
@@ -1029,7 +1091,7 @@ pub fn parse_cancel_import_task_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_reserved_instances_listing_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CancelReservedInstancesListingOutput,
     crate::error::CancelReservedInstancesListingError,
 > {
@@ -1043,7 +1105,7 @@ pub fn parse_cancel_reserved_instances_listing_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_reserved_instances_listing_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CancelReservedInstancesListingOutput,
     crate::error::CancelReservedInstancesListingError,
 > {
@@ -1064,8 +1126,10 @@ pub fn parse_cancel_reserved_instances_listing_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_spot_fleet_requests_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CancelSpotFleetRequestsOutput, crate::error::CancelSpotFleetRequestsError>
-{
+) -> std::result::Result<
+    crate::output::CancelSpotFleetRequestsOutput,
+    crate::error::CancelSpotFleetRequestsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CancelSpotFleetRequestsError::unhandled)?;
     Err(crate::error::CancelSpotFleetRequestsError::generic(generic))
@@ -1074,8 +1138,10 @@ pub fn parse_cancel_spot_fleet_requests_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_spot_fleet_requests_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CancelSpotFleetRequestsOutput, crate::error::CancelSpotFleetRequestsError>
-{
+) -> std::result::Result<
+    crate::output::CancelSpotFleetRequestsOutput,
+    crate::error::CancelSpotFleetRequestsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_spot_fleet_requests_output::Builder::default();
@@ -1092,7 +1158,7 @@ pub fn parse_cancel_spot_fleet_requests_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_spot_instance_requests_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CancelSpotInstanceRequestsOutput,
     crate::error::CancelSpotInstanceRequestsError,
 > {
@@ -1106,7 +1172,7 @@ pub fn parse_cancel_spot_instance_requests_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_spot_instance_requests_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CancelSpotInstanceRequestsOutput,
     crate::error::CancelSpotInstanceRequestsError,
 > {
@@ -1126,8 +1192,10 @@ pub fn parse_cancel_spot_instance_requests_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_confirm_product_instance_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ConfirmProductInstanceOutput, crate::error::ConfirmProductInstanceError>
-{
+) -> std::result::Result<
+    crate::output::ConfirmProductInstanceOutput,
+    crate::error::ConfirmProductInstanceError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ConfirmProductInstanceError::unhandled)?;
     Err(crate::error::ConfirmProductInstanceError::generic(generic))
@@ -1136,8 +1204,10 @@ pub fn parse_confirm_product_instance_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_confirm_product_instance_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ConfirmProductInstanceOutput, crate::error::ConfirmProductInstanceError>
-{
+) -> std::result::Result<
+    crate::output::ConfirmProductInstanceOutput,
+    crate::error::ConfirmProductInstanceError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::confirm_product_instance_output::Builder::default();
@@ -1154,7 +1224,7 @@ pub fn parse_confirm_product_instance_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_fpga_image_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CopyFpgaImageOutput, crate::error::CopyFpgaImageError> {
+) -> std::result::Result<crate::output::CopyFpgaImageOutput, crate::error::CopyFpgaImageError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CopyFpgaImageError::unhandled)?;
     Err(crate::error::CopyFpgaImageError::generic(generic))
@@ -1163,7 +1233,7 @@ pub fn parse_copy_fpga_image_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_fpga_image_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CopyFpgaImageOutput, crate::error::CopyFpgaImageError> {
+) -> std::result::Result<crate::output::CopyFpgaImageOutput, crate::error::CopyFpgaImageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::copy_fpga_image_output::Builder::default();
@@ -1178,7 +1248,7 @@ pub fn parse_copy_fpga_image_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_image_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CopyImageOutput, crate::error::CopyImageError> {
+) -> std::result::Result<crate::output::CopyImageOutput, crate::error::CopyImageError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CopyImageError::unhandled)?;
     Err(crate::error::CopyImageError::generic(generic))
@@ -1187,7 +1257,7 @@ pub fn parse_copy_image_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_image_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CopyImageOutput, crate::error::CopyImageError> {
+) -> std::result::Result<crate::output::CopyImageOutput, crate::error::CopyImageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::copy_image_output::Builder::default();
@@ -1201,7 +1271,7 @@ pub fn parse_copy_image_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_snapshot_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CopySnapshotOutput, crate::error::CopySnapshotError> {
+) -> std::result::Result<crate::output::CopySnapshotOutput, crate::error::CopySnapshotError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CopySnapshotError::unhandled)?;
     Err(crate::error::CopySnapshotError::generic(generic))
@@ -1210,7 +1280,7 @@ pub fn parse_copy_snapshot_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_snapshot_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CopySnapshotOutput, crate::error::CopySnapshotError> {
+) -> std::result::Result<crate::output::CopySnapshotOutput, crate::error::CopySnapshotError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::copy_snapshot_output::Builder::default();
@@ -1224,7 +1294,7 @@ pub fn parse_copy_snapshot_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_capacity_reservation_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateCapacityReservationOutput,
     crate::error::CreateCapacityReservationError,
 > {
@@ -1238,7 +1308,7 @@ pub fn parse_create_capacity_reservation_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_capacity_reservation_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateCapacityReservationOutput,
     crate::error::CreateCapacityReservationError,
 > {
@@ -1258,7 +1328,10 @@ pub fn parse_create_capacity_reservation_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_carrier_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateCarrierGatewayOutput, crate::error::CreateCarrierGatewayError> {
+) -> std::result::Result<
+    crate::output::CreateCarrierGatewayOutput,
+    crate::error::CreateCarrierGatewayError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateCarrierGatewayError::unhandled)?;
     Err(crate::error::CreateCarrierGatewayError::generic(generic))
@@ -1267,7 +1340,10 @@ pub fn parse_create_carrier_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_carrier_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateCarrierGatewayOutput, crate::error::CreateCarrierGatewayError> {
+) -> std::result::Result<
+    crate::output::CreateCarrierGatewayOutput,
+    crate::error::CreateCarrierGatewayError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_carrier_gateway_output::Builder::default();
@@ -1284,8 +1360,10 @@ pub fn parse_create_carrier_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_client_vpn_endpoint_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateClientVpnEndpointOutput, crate::error::CreateClientVpnEndpointError>
-{
+) -> std::result::Result<
+    crate::output::CreateClientVpnEndpointOutput,
+    crate::error::CreateClientVpnEndpointError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateClientVpnEndpointError::unhandled)?;
     Err(crate::error::CreateClientVpnEndpointError::generic(generic))
@@ -1294,8 +1372,10 @@ pub fn parse_create_client_vpn_endpoint_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_client_vpn_endpoint_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateClientVpnEndpointOutput, crate::error::CreateClientVpnEndpointError>
-{
+) -> std::result::Result<
+    crate::output::CreateClientVpnEndpointOutput,
+    crate::error::CreateClientVpnEndpointError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_client_vpn_endpoint_output::Builder::default();
@@ -1312,7 +1392,10 @@ pub fn parse_create_client_vpn_endpoint_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_client_vpn_route_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateClientVpnRouteOutput, crate::error::CreateClientVpnRouteError> {
+) -> std::result::Result<
+    crate::output::CreateClientVpnRouteOutput,
+    crate::error::CreateClientVpnRouteError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateClientVpnRouteError::unhandled)?;
     Err(crate::error::CreateClientVpnRouteError::generic(generic))
@@ -1321,7 +1404,10 @@ pub fn parse_create_client_vpn_route_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_client_vpn_route_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateClientVpnRouteOutput, crate::error::CreateClientVpnRouteError> {
+) -> std::result::Result<
+    crate::output::CreateClientVpnRouteOutput,
+    crate::error::CreateClientVpnRouteError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_client_vpn_route_output::Builder::default();
@@ -1338,7 +1424,10 @@ pub fn parse_create_client_vpn_route_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_customer_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateCustomerGatewayOutput, crate::error::CreateCustomerGatewayError> {
+) -> std::result::Result<
+    crate::output::CreateCustomerGatewayOutput,
+    crate::error::CreateCustomerGatewayError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateCustomerGatewayError::unhandled)?;
     Err(crate::error::CreateCustomerGatewayError::generic(generic))
@@ -1347,7 +1436,10 @@ pub fn parse_create_customer_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_customer_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateCustomerGatewayOutput, crate::error::CreateCustomerGatewayError> {
+) -> std::result::Result<
+    crate::output::CreateCustomerGatewayOutput,
+    crate::error::CreateCustomerGatewayError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_customer_gateway_output::Builder::default();
@@ -1364,7 +1456,10 @@ pub fn parse_create_customer_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_default_subnet_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDefaultSubnetOutput, crate::error::CreateDefaultSubnetError> {
+) -> std::result::Result<
+    crate::output::CreateDefaultSubnetOutput,
+    crate::error::CreateDefaultSubnetError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateDefaultSubnetError::unhandled)?;
     Err(crate::error::CreateDefaultSubnetError::generic(generic))
@@ -1373,7 +1468,10 @@ pub fn parse_create_default_subnet_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_default_subnet_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDefaultSubnetOutput, crate::error::CreateDefaultSubnetError> {
+) -> std::result::Result<
+    crate::output::CreateDefaultSubnetOutput,
+    crate::error::CreateDefaultSubnetError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_default_subnet_output::Builder::default();
@@ -1390,7 +1488,8 @@ pub fn parse_create_default_subnet_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_default_vpc_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDefaultVpcOutput, crate::error::CreateDefaultVpcError> {
+) -> std::result::Result<crate::output::CreateDefaultVpcOutput, crate::error::CreateDefaultVpcError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateDefaultVpcError::unhandled)?;
     Err(crate::error::CreateDefaultVpcError::generic(generic))
@@ -1399,7 +1498,8 @@ pub fn parse_create_default_vpc_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_default_vpc_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDefaultVpcOutput, crate::error::CreateDefaultVpcError> {
+) -> std::result::Result<crate::output::CreateDefaultVpcOutput, crate::error::CreateDefaultVpcError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_default_vpc_output::Builder::default();
@@ -1414,7 +1514,8 @@ pub fn parse_create_default_vpc_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_dhcp_options_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDhcpOptionsOutput, crate::error::CreateDhcpOptionsError> {
+) -> std::result::Result<crate::output::CreateDhcpOptionsOutput, crate::error::CreateDhcpOptionsError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateDhcpOptionsError::unhandled)?;
     Err(crate::error::CreateDhcpOptionsError::generic(generic))
@@ -1423,7 +1524,8 @@ pub fn parse_create_dhcp_options_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_dhcp_options_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDhcpOptionsOutput, crate::error::CreateDhcpOptionsError> {
+) -> std::result::Result<crate::output::CreateDhcpOptionsOutput, crate::error::CreateDhcpOptionsError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_dhcp_options_output::Builder::default();
@@ -1438,7 +1540,7 @@ pub fn parse_create_dhcp_options_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_egress_only_internet_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateEgressOnlyInternetGatewayOutput,
     crate::error::CreateEgressOnlyInternetGatewayError,
 > {
@@ -1452,7 +1554,7 @@ pub fn parse_create_egress_only_internet_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_egress_only_internet_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateEgressOnlyInternetGatewayOutput,
     crate::error::CreateEgressOnlyInternetGatewayError,
 > {
@@ -1473,7 +1575,7 @@ pub fn parse_create_egress_only_internet_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_fleet_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateFleetOutput, crate::error::CreateFleetError> {
+) -> std::result::Result<crate::output::CreateFleetOutput, crate::error::CreateFleetError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateFleetError::unhandled)?;
     Err(crate::error::CreateFleetError::generic(generic))
@@ -1482,7 +1584,7 @@ pub fn parse_create_fleet_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_fleet_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateFleetOutput, crate::error::CreateFleetError> {
+) -> std::result::Result<crate::output::CreateFleetOutput, crate::error::CreateFleetError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_fleet_output::Builder::default();
@@ -1496,7 +1598,7 @@ pub fn parse_create_fleet_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_flow_logs_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateFlowLogsOutput, crate::error::CreateFlowLogsError> {
+) -> std::result::Result<crate::output::CreateFlowLogsOutput, crate::error::CreateFlowLogsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateFlowLogsError::unhandled)?;
     Err(crate::error::CreateFlowLogsError::generic(generic))
@@ -1505,7 +1607,7 @@ pub fn parse_create_flow_logs_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_flow_logs_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateFlowLogsOutput, crate::error::CreateFlowLogsError> {
+) -> std::result::Result<crate::output::CreateFlowLogsOutput, crate::error::CreateFlowLogsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_flow_logs_output::Builder::default();
@@ -1520,7 +1622,7 @@ pub fn parse_create_flow_logs_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_fpga_image_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateFpgaImageOutput, crate::error::CreateFpgaImageError> {
+) -> std::result::Result<crate::output::CreateFpgaImageOutput, crate::error::CreateFpgaImageError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateFpgaImageError::unhandled)?;
     Err(crate::error::CreateFpgaImageError::generic(generic))
@@ -1529,7 +1631,7 @@ pub fn parse_create_fpga_image_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_fpga_image_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateFpgaImageOutput, crate::error::CreateFpgaImageError> {
+) -> std::result::Result<crate::output::CreateFpgaImageOutput, crate::error::CreateFpgaImageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_fpga_image_output::Builder::default();
@@ -1544,7 +1646,7 @@ pub fn parse_create_fpga_image_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_image_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateImageOutput, crate::error::CreateImageError> {
+) -> std::result::Result<crate::output::CreateImageOutput, crate::error::CreateImageError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateImageError::unhandled)?;
     Err(crate::error::CreateImageError::generic(generic))
@@ -1553,7 +1655,7 @@ pub fn parse_create_image_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_image_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateImageOutput, crate::error::CreateImageError> {
+) -> std::result::Result<crate::output::CreateImageOutput, crate::error::CreateImageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_image_output::Builder::default();
@@ -1567,7 +1669,7 @@ pub fn parse_create_image_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_instance_export_task_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateInstanceExportTaskOutput,
     crate::error::CreateInstanceExportTaskError,
 > {
@@ -1581,7 +1683,7 @@ pub fn parse_create_instance_export_task_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_instance_export_task_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateInstanceExportTaskOutput,
     crate::error::CreateInstanceExportTaskError,
 > {
@@ -1601,7 +1703,10 @@ pub fn parse_create_instance_export_task_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_internet_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateInternetGatewayOutput, crate::error::CreateInternetGatewayError> {
+) -> std::result::Result<
+    crate::output::CreateInternetGatewayOutput,
+    crate::error::CreateInternetGatewayError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateInternetGatewayError::unhandled)?;
     Err(crate::error::CreateInternetGatewayError::generic(generic))
@@ -1610,7 +1715,10 @@ pub fn parse_create_internet_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_internet_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateInternetGatewayOutput, crate::error::CreateInternetGatewayError> {
+) -> std::result::Result<
+    crate::output::CreateInternetGatewayOutput,
+    crate::error::CreateInternetGatewayError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_internet_gateway_output::Builder::default();
@@ -1627,7 +1735,7 @@ pub fn parse_create_internet_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_key_pair_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateKeyPairOutput, crate::error::CreateKeyPairError> {
+) -> std::result::Result<crate::output::CreateKeyPairOutput, crate::error::CreateKeyPairError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateKeyPairError::unhandled)?;
     Err(crate::error::CreateKeyPairError::generic(generic))
@@ -1636,7 +1744,7 @@ pub fn parse_create_key_pair_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_key_pair_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateKeyPairOutput, crate::error::CreateKeyPairError> {
+) -> std::result::Result<crate::output::CreateKeyPairOutput, crate::error::CreateKeyPairError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_key_pair_output::Builder::default();
@@ -1651,7 +1759,10 @@ pub fn parse_create_key_pair_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_launch_template_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateLaunchTemplateOutput, crate::error::CreateLaunchTemplateError> {
+) -> std::result::Result<
+    crate::output::CreateLaunchTemplateOutput,
+    crate::error::CreateLaunchTemplateError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateLaunchTemplateError::unhandled)?;
     Err(crate::error::CreateLaunchTemplateError::generic(generic))
@@ -1660,7 +1771,10 @@ pub fn parse_create_launch_template_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_launch_template_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateLaunchTemplateOutput, crate::error::CreateLaunchTemplateError> {
+) -> std::result::Result<
+    crate::output::CreateLaunchTemplateOutput,
+    crate::error::CreateLaunchTemplateError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_launch_template_output::Builder::default();
@@ -1677,7 +1791,7 @@ pub fn parse_create_launch_template_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_launch_template_version_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateLaunchTemplateVersionOutput,
     crate::error::CreateLaunchTemplateVersionError,
 > {
@@ -1691,7 +1805,7 @@ pub fn parse_create_launch_template_version_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_launch_template_version_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateLaunchTemplateVersionOutput,
     crate::error::CreateLaunchTemplateVersionError,
 > {
@@ -1711,8 +1825,10 @@ pub fn parse_create_launch_template_version_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_local_gateway_route_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateLocalGatewayRouteOutput, crate::error::CreateLocalGatewayRouteError>
-{
+) -> std::result::Result<
+    crate::output::CreateLocalGatewayRouteOutput,
+    crate::error::CreateLocalGatewayRouteError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateLocalGatewayRouteError::unhandled)?;
     Err(crate::error::CreateLocalGatewayRouteError::generic(generic))
@@ -1721,8 +1837,10 @@ pub fn parse_create_local_gateway_route_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_local_gateway_route_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateLocalGatewayRouteOutput, crate::error::CreateLocalGatewayRouteError>
-{
+) -> std::result::Result<
+    crate::output::CreateLocalGatewayRouteOutput,
+    crate::error::CreateLocalGatewayRouteError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_local_gateway_route_output::Builder::default();
@@ -1739,7 +1857,7 @@ pub fn parse_create_local_gateway_route_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_local_gateway_route_table_vpc_association_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateLocalGatewayRouteTableVpcAssociationOutput,
     crate::error::CreateLocalGatewayRouteTableVpcAssociationError,
 > {
@@ -1751,7 +1869,7 @@ pub fn parse_create_local_gateway_route_table_vpc_association_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_local_gateway_route_table_vpc_association_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateLocalGatewayRouteTableVpcAssociationOutput,
     crate::error::CreateLocalGatewayRouteTableVpcAssociationError,
 > {
@@ -1771,8 +1889,10 @@ pub fn parse_create_local_gateway_route_table_vpc_association_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_managed_prefix_list_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateManagedPrefixListOutput, crate::error::CreateManagedPrefixListError>
-{
+) -> std::result::Result<
+    crate::output::CreateManagedPrefixListOutput,
+    crate::error::CreateManagedPrefixListError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateManagedPrefixListError::unhandled)?;
     Err(crate::error::CreateManagedPrefixListError::generic(generic))
@@ -1781,8 +1901,10 @@ pub fn parse_create_managed_prefix_list_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_managed_prefix_list_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateManagedPrefixListOutput, crate::error::CreateManagedPrefixListError>
-{
+) -> std::result::Result<
+    crate::output::CreateManagedPrefixListOutput,
+    crate::error::CreateManagedPrefixListError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_managed_prefix_list_output::Builder::default();
@@ -1799,7 +1921,8 @@ pub fn parse_create_managed_prefix_list_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_nat_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateNatGatewayOutput, crate::error::CreateNatGatewayError> {
+) -> std::result::Result<crate::output::CreateNatGatewayOutput, crate::error::CreateNatGatewayError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateNatGatewayError::unhandled)?;
     Err(crate::error::CreateNatGatewayError::generic(generic))
@@ -1808,7 +1931,8 @@ pub fn parse_create_nat_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_nat_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateNatGatewayOutput, crate::error::CreateNatGatewayError> {
+) -> std::result::Result<crate::output::CreateNatGatewayOutput, crate::error::CreateNatGatewayError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_nat_gateway_output::Builder::default();
@@ -1823,7 +1947,8 @@ pub fn parse_create_nat_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_network_acl_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateNetworkAclOutput, crate::error::CreateNetworkAclError> {
+) -> std::result::Result<crate::output::CreateNetworkAclOutput, crate::error::CreateNetworkAclError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateNetworkAclError::unhandled)?;
     Err(crate::error::CreateNetworkAclError::generic(generic))
@@ -1832,7 +1957,8 @@ pub fn parse_create_network_acl_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_network_acl_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateNetworkAclOutput, crate::error::CreateNetworkAclError> {
+) -> std::result::Result<crate::output::CreateNetworkAclOutput, crate::error::CreateNetworkAclError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_network_acl_output::Builder::default();
@@ -1847,7 +1973,10 @@ pub fn parse_create_network_acl_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_network_acl_entry_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateNetworkAclEntryOutput, crate::error::CreateNetworkAclEntryError> {
+) -> std::result::Result<
+    crate::output::CreateNetworkAclEntryOutput,
+    crate::error::CreateNetworkAclEntryError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateNetworkAclEntryError::unhandled)?;
     Err(crate::error::CreateNetworkAclEntryError::generic(generic))
@@ -1856,7 +1985,10 @@ pub fn parse_create_network_acl_entry_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_network_acl_entry_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateNetworkAclEntryOutput, crate::error::CreateNetworkAclEntryError> {
+) -> std::result::Result<
+    crate::output::CreateNetworkAclEntryOutput,
+    crate::error::CreateNetworkAclEntryError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_network_acl_entry_output::Builder::default();
@@ -1868,7 +2000,7 @@ pub fn parse_create_network_acl_entry_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_network_insights_path_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateNetworkInsightsPathOutput,
     crate::error::CreateNetworkInsightsPathError,
 > {
@@ -1882,7 +2014,7 @@ pub fn parse_create_network_insights_path_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_network_insights_path_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateNetworkInsightsPathOutput,
     crate::error::CreateNetworkInsightsPathError,
 > {
@@ -1902,8 +2034,10 @@ pub fn parse_create_network_insights_path_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_network_interface_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateNetworkInterfaceOutput, crate::error::CreateNetworkInterfaceError>
-{
+) -> std::result::Result<
+    crate::output::CreateNetworkInterfaceOutput,
+    crate::error::CreateNetworkInterfaceError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateNetworkInterfaceError::unhandled)?;
     Err(crate::error::CreateNetworkInterfaceError::generic(generic))
@@ -1912,8 +2046,10 @@ pub fn parse_create_network_interface_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_network_interface_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateNetworkInterfaceOutput, crate::error::CreateNetworkInterfaceError>
-{
+) -> std::result::Result<
+    crate::output::CreateNetworkInterfaceOutput,
+    crate::error::CreateNetworkInterfaceError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_network_interface_output::Builder::default();
@@ -1930,7 +2066,7 @@ pub fn parse_create_network_interface_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_network_interface_permission_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateNetworkInterfacePermissionOutput,
     crate::error::CreateNetworkInterfacePermissionError,
 > {
@@ -1942,7 +2078,7 @@ pub fn parse_create_network_interface_permission_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_network_interface_permission_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateNetworkInterfacePermissionOutput,
     crate::error::CreateNetworkInterfacePermissionError,
 > {
@@ -1963,7 +2099,10 @@ pub fn parse_create_network_interface_permission_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_placement_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreatePlacementGroupOutput, crate::error::CreatePlacementGroupError> {
+) -> std::result::Result<
+    crate::output::CreatePlacementGroupOutput,
+    crate::error::CreatePlacementGroupError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreatePlacementGroupError::unhandled)?;
     Err(crate::error::CreatePlacementGroupError::generic(generic))
@@ -1972,7 +2111,10 @@ pub fn parse_create_placement_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_placement_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreatePlacementGroupOutput, crate::error::CreatePlacementGroupError> {
+) -> std::result::Result<
+    crate::output::CreatePlacementGroupOutput,
+    crate::error::CreatePlacementGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_placement_group_output::Builder::default();
@@ -1989,7 +2131,7 @@ pub fn parse_create_placement_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_replace_root_volume_task_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateReplaceRootVolumeTaskOutput,
     crate::error::CreateReplaceRootVolumeTaskError,
 > {
@@ -2003,7 +2145,7 @@ pub fn parse_create_replace_root_volume_task_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_replace_root_volume_task_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateReplaceRootVolumeTaskOutput,
     crate::error::CreateReplaceRootVolumeTaskError,
 > {
@@ -2023,7 +2165,7 @@ pub fn parse_create_replace_root_volume_task_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_reserved_instances_listing_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateReservedInstancesListingOutput,
     crate::error::CreateReservedInstancesListingError,
 > {
@@ -2037,7 +2179,7 @@ pub fn parse_create_reserved_instances_listing_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_reserved_instances_listing_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateReservedInstancesListingOutput,
     crate::error::CreateReservedInstancesListingError,
 > {
@@ -2058,8 +2200,10 @@ pub fn parse_create_reserved_instances_listing_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_restore_image_task_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateRestoreImageTaskOutput, crate::error::CreateRestoreImageTaskError>
-{
+) -> std::result::Result<
+    crate::output::CreateRestoreImageTaskOutput,
+    crate::error::CreateRestoreImageTaskError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateRestoreImageTaskError::unhandled)?;
     Err(crate::error::CreateRestoreImageTaskError::generic(generic))
@@ -2068,8 +2212,10 @@ pub fn parse_create_restore_image_task_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_restore_image_task_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateRestoreImageTaskOutput, crate::error::CreateRestoreImageTaskError>
-{
+) -> std::result::Result<
+    crate::output::CreateRestoreImageTaskOutput,
+    crate::error::CreateRestoreImageTaskError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_restore_image_task_output::Builder::default();
@@ -2086,7 +2232,7 @@ pub fn parse_create_restore_image_task_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_route_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateRouteOutput, crate::error::CreateRouteError> {
+) -> std::result::Result<crate::output::CreateRouteOutput, crate::error::CreateRouteError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateRouteError::unhandled)?;
     Err(crate::error::CreateRouteError::generic(generic))
@@ -2095,7 +2241,7 @@ pub fn parse_create_route_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_route_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateRouteOutput, crate::error::CreateRouteError> {
+) -> std::result::Result<crate::output::CreateRouteOutput, crate::error::CreateRouteError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_route_output::Builder::default();
@@ -2109,7 +2255,8 @@ pub fn parse_create_route_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_route_table_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateRouteTableOutput, crate::error::CreateRouteTableError> {
+) -> std::result::Result<crate::output::CreateRouteTableOutput, crate::error::CreateRouteTableError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateRouteTableError::unhandled)?;
     Err(crate::error::CreateRouteTableError::generic(generic))
@@ -2118,7 +2265,8 @@ pub fn parse_create_route_table_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_route_table_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateRouteTableOutput, crate::error::CreateRouteTableError> {
+) -> std::result::Result<crate::output::CreateRouteTableOutput, crate::error::CreateRouteTableError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_route_table_output::Builder::default();
@@ -2133,7 +2281,10 @@ pub fn parse_create_route_table_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_security_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateSecurityGroupOutput, crate::error::CreateSecurityGroupError> {
+) -> std::result::Result<
+    crate::output::CreateSecurityGroupOutput,
+    crate::error::CreateSecurityGroupError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateSecurityGroupError::unhandled)?;
     Err(crate::error::CreateSecurityGroupError::generic(generic))
@@ -2142,7 +2293,10 @@ pub fn parse_create_security_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_security_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateSecurityGroupOutput, crate::error::CreateSecurityGroupError> {
+) -> std::result::Result<
+    crate::output::CreateSecurityGroupOutput,
+    crate::error::CreateSecurityGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_security_group_output::Builder::default();
@@ -2159,7 +2313,7 @@ pub fn parse_create_security_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_snapshot_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateSnapshotOutput, crate::error::CreateSnapshotError> {
+) -> std::result::Result<crate::output::CreateSnapshotOutput, crate::error::CreateSnapshotError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateSnapshotError::unhandled)?;
     Err(crate::error::CreateSnapshotError::generic(generic))
@@ -2168,7 +2322,7 @@ pub fn parse_create_snapshot_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_snapshot_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateSnapshotOutput, crate::error::CreateSnapshotError> {
+) -> std::result::Result<crate::output::CreateSnapshotOutput, crate::error::CreateSnapshotError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_snapshot_output::Builder::default();
@@ -2183,7 +2337,7 @@ pub fn parse_create_snapshot_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_snapshots_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateSnapshotsOutput, crate::error::CreateSnapshotsError> {
+) -> std::result::Result<crate::output::CreateSnapshotsOutput, crate::error::CreateSnapshotsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateSnapshotsError::unhandled)?;
     Err(crate::error::CreateSnapshotsError::generic(generic))
@@ -2192,7 +2346,7 @@ pub fn parse_create_snapshots_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_snapshots_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateSnapshotsOutput, crate::error::CreateSnapshotsError> {
+) -> std::result::Result<crate::output::CreateSnapshotsOutput, crate::error::CreateSnapshotsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_snapshots_output::Builder::default();
@@ -2207,7 +2361,7 @@ pub fn parse_create_snapshots_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_spot_datafeed_subscription_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateSpotDatafeedSubscriptionOutput,
     crate::error::CreateSpotDatafeedSubscriptionError,
 > {
@@ -2221,7 +2375,7 @@ pub fn parse_create_spot_datafeed_subscription_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_spot_datafeed_subscription_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateSpotDatafeedSubscriptionOutput,
     crate::error::CreateSpotDatafeedSubscriptionError,
 > {
@@ -2242,7 +2396,10 @@ pub fn parse_create_spot_datafeed_subscription_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_store_image_task_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateStoreImageTaskOutput, crate::error::CreateStoreImageTaskError> {
+) -> std::result::Result<
+    crate::output::CreateStoreImageTaskOutput,
+    crate::error::CreateStoreImageTaskError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateStoreImageTaskError::unhandled)?;
     Err(crate::error::CreateStoreImageTaskError::generic(generic))
@@ -2251,7 +2408,10 @@ pub fn parse_create_store_image_task_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_store_image_task_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateStoreImageTaskOutput, crate::error::CreateStoreImageTaskError> {
+) -> std::result::Result<
+    crate::output::CreateStoreImageTaskOutput,
+    crate::error::CreateStoreImageTaskError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_store_image_task_output::Builder::default();
@@ -2268,7 +2428,7 @@ pub fn parse_create_store_image_task_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_subnet_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateSubnetOutput, crate::error::CreateSubnetError> {
+) -> std::result::Result<crate::output::CreateSubnetOutput, crate::error::CreateSubnetError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateSubnetError::unhandled)?;
     Err(crate::error::CreateSubnetError::generic(generic))
@@ -2277,7 +2437,7 @@ pub fn parse_create_subnet_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_subnet_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateSubnetOutput, crate::error::CreateSubnetError> {
+) -> std::result::Result<crate::output::CreateSubnetOutput, crate::error::CreateSubnetError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_subnet_output::Builder::default();
@@ -2291,7 +2451,7 @@ pub fn parse_create_subnet_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_tags_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateTagsOutput, crate::error::CreateTagsError> {
+) -> std::result::Result<crate::output::CreateTagsOutput, crate::error::CreateTagsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateTagsError::unhandled)?;
     Err(crate::error::CreateTagsError::generic(generic))
@@ -2300,7 +2460,7 @@ pub fn parse_create_tags_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_tags_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateTagsOutput, crate::error::CreateTagsError> {
+) -> std::result::Result<crate::output::CreateTagsOutput, crate::error::CreateTagsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_tags_output::Builder::default();
@@ -2312,7 +2472,7 @@ pub fn parse_create_tags_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_traffic_mirror_filter_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTrafficMirrorFilterOutput,
     crate::error::CreateTrafficMirrorFilterError,
 > {
@@ -2326,7 +2486,7 @@ pub fn parse_create_traffic_mirror_filter_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_traffic_mirror_filter_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTrafficMirrorFilterOutput,
     crate::error::CreateTrafficMirrorFilterError,
 > {
@@ -2346,7 +2506,7 @@ pub fn parse_create_traffic_mirror_filter_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_traffic_mirror_filter_rule_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTrafficMirrorFilterRuleOutput,
     crate::error::CreateTrafficMirrorFilterRuleError,
 > {
@@ -2360,7 +2520,7 @@ pub fn parse_create_traffic_mirror_filter_rule_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_traffic_mirror_filter_rule_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTrafficMirrorFilterRuleOutput,
     crate::error::CreateTrafficMirrorFilterRuleError,
 > {
@@ -2381,7 +2541,7 @@ pub fn parse_create_traffic_mirror_filter_rule_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_traffic_mirror_session_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTrafficMirrorSessionOutput,
     crate::error::CreateTrafficMirrorSessionError,
 > {
@@ -2395,7 +2555,7 @@ pub fn parse_create_traffic_mirror_session_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_traffic_mirror_session_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTrafficMirrorSessionOutput,
     crate::error::CreateTrafficMirrorSessionError,
 > {
@@ -2415,7 +2575,7 @@ pub fn parse_create_traffic_mirror_session_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_traffic_mirror_target_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTrafficMirrorTargetOutput,
     crate::error::CreateTrafficMirrorTargetError,
 > {
@@ -2429,7 +2589,7 @@ pub fn parse_create_traffic_mirror_target_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_traffic_mirror_target_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTrafficMirrorTargetOutput,
     crate::error::CreateTrafficMirrorTargetError,
 > {
@@ -2449,7 +2609,10 @@ pub fn parse_create_traffic_mirror_target_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateTransitGatewayOutput, crate::error::CreateTransitGatewayError> {
+) -> std::result::Result<
+    crate::output::CreateTransitGatewayOutput,
+    crate::error::CreateTransitGatewayError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateTransitGatewayError::unhandled)?;
     Err(crate::error::CreateTransitGatewayError::generic(generic))
@@ -2458,7 +2621,10 @@ pub fn parse_create_transit_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateTransitGatewayOutput, crate::error::CreateTransitGatewayError> {
+) -> std::result::Result<
+    crate::output::CreateTransitGatewayOutput,
+    crate::error::CreateTransitGatewayError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_transit_gateway_output::Builder::default();
@@ -2475,7 +2641,7 @@ pub fn parse_create_transit_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_connect_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTransitGatewayConnectOutput,
     crate::error::CreateTransitGatewayConnectError,
 > {
@@ -2489,7 +2655,7 @@ pub fn parse_create_transit_gateway_connect_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_connect_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTransitGatewayConnectOutput,
     crate::error::CreateTransitGatewayConnectError,
 > {
@@ -2509,7 +2675,7 @@ pub fn parse_create_transit_gateway_connect_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_connect_peer_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTransitGatewayConnectPeerOutput,
     crate::error::CreateTransitGatewayConnectPeerError,
 > {
@@ -2523,7 +2689,7 @@ pub fn parse_create_transit_gateway_connect_peer_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_connect_peer_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTransitGatewayConnectPeerOutput,
     crate::error::CreateTransitGatewayConnectPeerError,
 > {
@@ -2544,7 +2710,7 @@ pub fn parse_create_transit_gateway_connect_peer_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_multicast_domain_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTransitGatewayMulticastDomainOutput,
     crate::error::CreateTransitGatewayMulticastDomainError,
 > {
@@ -2556,7 +2722,7 @@ pub fn parse_create_transit_gateway_multicast_domain_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_multicast_domain_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTransitGatewayMulticastDomainOutput,
     crate::error::CreateTransitGatewayMulticastDomainError,
 > {
@@ -2577,7 +2743,7 @@ pub fn parse_create_transit_gateway_multicast_domain_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_peering_attachment_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTransitGatewayPeeringAttachmentOutput,
     crate::error::CreateTransitGatewayPeeringAttachmentError,
 > {
@@ -2589,7 +2755,7 @@ pub fn parse_create_transit_gateway_peering_attachment_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_peering_attachment_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTransitGatewayPeeringAttachmentOutput,
     crate::error::CreateTransitGatewayPeeringAttachmentError,
 > {
@@ -2610,7 +2776,7 @@ pub fn parse_create_transit_gateway_peering_attachment_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_prefix_list_reference_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTransitGatewayPrefixListReferenceOutput,
     crate::error::CreateTransitGatewayPrefixListReferenceError,
 > {
@@ -2622,7 +2788,7 @@ pub fn parse_create_transit_gateway_prefix_list_reference_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_prefix_list_reference_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTransitGatewayPrefixListReferenceOutput,
     crate::error::CreateTransitGatewayPrefixListReferenceError,
 > {
@@ -2643,7 +2809,7 @@ pub fn parse_create_transit_gateway_prefix_list_reference_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_route_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTransitGatewayRouteOutput,
     crate::error::CreateTransitGatewayRouteError,
 > {
@@ -2657,7 +2823,7 @@ pub fn parse_create_transit_gateway_route_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_route_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTransitGatewayRouteOutput,
     crate::error::CreateTransitGatewayRouteError,
 > {
@@ -2677,7 +2843,7 @@ pub fn parse_create_transit_gateway_route_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_route_table_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTransitGatewayRouteTableOutput,
     crate::error::CreateTransitGatewayRouteTableError,
 > {
@@ -2691,7 +2857,7 @@ pub fn parse_create_transit_gateway_route_table_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_route_table_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTransitGatewayRouteTableOutput,
     crate::error::CreateTransitGatewayRouteTableError,
 > {
@@ -2712,7 +2878,7 @@ pub fn parse_create_transit_gateway_route_table_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_vpc_attachment_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTransitGatewayVpcAttachmentOutput,
     crate::error::CreateTransitGatewayVpcAttachmentError,
 > {
@@ -2724,7 +2890,7 @@ pub fn parse_create_transit_gateway_vpc_attachment_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_transit_gateway_vpc_attachment_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateTransitGatewayVpcAttachmentOutput,
     crate::error::CreateTransitGatewayVpcAttachmentError,
 > {
@@ -2745,7 +2911,7 @@ pub fn parse_create_transit_gateway_vpc_attachment_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_volume_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateVolumeOutput, crate::error::CreateVolumeError> {
+) -> std::result::Result<crate::output::CreateVolumeOutput, crate::error::CreateVolumeError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateVolumeError::unhandled)?;
     Err(crate::error::CreateVolumeError::generic(generic))
@@ -2754,7 +2920,7 @@ pub fn parse_create_volume_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_volume_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateVolumeOutput, crate::error::CreateVolumeError> {
+) -> std::result::Result<crate::output::CreateVolumeOutput, crate::error::CreateVolumeError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_volume_output::Builder::default();
@@ -2768,7 +2934,7 @@ pub fn parse_create_volume_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpc_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateVpcOutput, crate::error::CreateVpcError> {
+) -> std::result::Result<crate::output::CreateVpcOutput, crate::error::CreateVpcError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateVpcError::unhandled)?;
     Err(crate::error::CreateVpcError::generic(generic))
@@ -2777,7 +2943,7 @@ pub fn parse_create_vpc_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpc_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateVpcOutput, crate::error::CreateVpcError> {
+) -> std::result::Result<crate::output::CreateVpcOutput, crate::error::CreateVpcError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_vpc_output::Builder::default();
@@ -2791,7 +2957,8 @@ pub fn parse_create_vpc_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpc_endpoint_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateVpcEndpointOutput, crate::error::CreateVpcEndpointError> {
+) -> std::result::Result<crate::output::CreateVpcEndpointOutput, crate::error::CreateVpcEndpointError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateVpcEndpointError::unhandled)?;
     Err(crate::error::CreateVpcEndpointError::generic(generic))
@@ -2800,7 +2967,8 @@ pub fn parse_create_vpc_endpoint_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpc_endpoint_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateVpcEndpointOutput, crate::error::CreateVpcEndpointError> {
+) -> std::result::Result<crate::output::CreateVpcEndpointOutput, crate::error::CreateVpcEndpointError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_vpc_endpoint_output::Builder::default();
@@ -2815,7 +2983,7 @@ pub fn parse_create_vpc_endpoint_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpc_endpoint_connection_notification_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateVpcEndpointConnectionNotificationOutput,
     crate::error::CreateVpcEndpointConnectionNotificationError,
 > {
@@ -2827,7 +2995,7 @@ pub fn parse_create_vpc_endpoint_connection_notification_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpc_endpoint_connection_notification_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateVpcEndpointConnectionNotificationOutput,
     crate::error::CreateVpcEndpointConnectionNotificationError,
 > {
@@ -2848,7 +3016,7 @@ pub fn parse_create_vpc_endpoint_connection_notification_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpc_endpoint_service_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateVpcEndpointServiceConfigurationOutput,
     crate::error::CreateVpcEndpointServiceConfigurationError,
 > {
@@ -2860,7 +3028,7 @@ pub fn parse_create_vpc_endpoint_service_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpc_endpoint_service_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateVpcEndpointServiceConfigurationOutput,
     crate::error::CreateVpcEndpointServiceConfigurationError,
 > {
@@ -2881,7 +3049,7 @@ pub fn parse_create_vpc_endpoint_service_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpc_peering_connection_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateVpcPeeringConnectionOutput,
     crate::error::CreateVpcPeeringConnectionError,
 > {
@@ -2895,7 +3063,7 @@ pub fn parse_create_vpc_peering_connection_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpc_peering_connection_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateVpcPeeringConnectionOutput,
     crate::error::CreateVpcPeeringConnectionError,
 > {
@@ -2915,7 +3083,10 @@ pub fn parse_create_vpc_peering_connection_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpn_connection_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateVpnConnectionOutput, crate::error::CreateVpnConnectionError> {
+) -> std::result::Result<
+    crate::output::CreateVpnConnectionOutput,
+    crate::error::CreateVpnConnectionError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateVpnConnectionError::unhandled)?;
     Err(crate::error::CreateVpnConnectionError::generic(generic))
@@ -2924,7 +3095,10 @@ pub fn parse_create_vpn_connection_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpn_connection_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateVpnConnectionOutput, crate::error::CreateVpnConnectionError> {
+) -> std::result::Result<
+    crate::output::CreateVpnConnectionOutput,
+    crate::error::CreateVpnConnectionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_vpn_connection_output::Builder::default();
@@ -2941,7 +3115,7 @@ pub fn parse_create_vpn_connection_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpn_connection_route_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateVpnConnectionRouteOutput,
     crate::error::CreateVpnConnectionRouteError,
 > {
@@ -2955,7 +3129,7 @@ pub fn parse_create_vpn_connection_route_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpn_connection_route_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateVpnConnectionRouteOutput,
     crate::error::CreateVpnConnectionRouteError,
 > {
@@ -2970,7 +3144,8 @@ pub fn parse_create_vpn_connection_route_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpn_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateVpnGatewayOutput, crate::error::CreateVpnGatewayError> {
+) -> std::result::Result<crate::output::CreateVpnGatewayOutput, crate::error::CreateVpnGatewayError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateVpnGatewayError::unhandled)?;
     Err(crate::error::CreateVpnGatewayError::generic(generic))
@@ -2979,7 +3154,8 @@ pub fn parse_create_vpn_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_vpn_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateVpnGatewayOutput, crate::error::CreateVpnGatewayError> {
+) -> std::result::Result<crate::output::CreateVpnGatewayOutput, crate::error::CreateVpnGatewayError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_vpn_gateway_output::Builder::default();
@@ -2994,7 +3170,10 @@ pub fn parse_create_vpn_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_carrier_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteCarrierGatewayOutput, crate::error::DeleteCarrierGatewayError> {
+) -> std::result::Result<
+    crate::output::DeleteCarrierGatewayOutput,
+    crate::error::DeleteCarrierGatewayError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteCarrierGatewayError::unhandled)?;
     Err(crate::error::DeleteCarrierGatewayError::generic(generic))
@@ -3003,7 +3182,10 @@ pub fn parse_delete_carrier_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_carrier_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteCarrierGatewayOutput, crate::error::DeleteCarrierGatewayError> {
+) -> std::result::Result<
+    crate::output::DeleteCarrierGatewayOutput,
+    crate::error::DeleteCarrierGatewayError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_carrier_gateway_output::Builder::default();
@@ -3020,8 +3202,10 @@ pub fn parse_delete_carrier_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_client_vpn_endpoint_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteClientVpnEndpointOutput, crate::error::DeleteClientVpnEndpointError>
-{
+) -> std::result::Result<
+    crate::output::DeleteClientVpnEndpointOutput,
+    crate::error::DeleteClientVpnEndpointError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteClientVpnEndpointError::unhandled)?;
     Err(crate::error::DeleteClientVpnEndpointError::generic(generic))
@@ -3030,8 +3214,10 @@ pub fn parse_delete_client_vpn_endpoint_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_client_vpn_endpoint_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteClientVpnEndpointOutput, crate::error::DeleteClientVpnEndpointError>
-{
+) -> std::result::Result<
+    crate::output::DeleteClientVpnEndpointOutput,
+    crate::error::DeleteClientVpnEndpointError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_client_vpn_endpoint_output::Builder::default();
@@ -3048,7 +3234,10 @@ pub fn parse_delete_client_vpn_endpoint_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_client_vpn_route_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteClientVpnRouteOutput, crate::error::DeleteClientVpnRouteError> {
+) -> std::result::Result<
+    crate::output::DeleteClientVpnRouteOutput,
+    crate::error::DeleteClientVpnRouteError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteClientVpnRouteError::unhandled)?;
     Err(crate::error::DeleteClientVpnRouteError::generic(generic))
@@ -3057,7 +3246,10 @@ pub fn parse_delete_client_vpn_route_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_client_vpn_route_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteClientVpnRouteOutput, crate::error::DeleteClientVpnRouteError> {
+) -> std::result::Result<
+    crate::output::DeleteClientVpnRouteOutput,
+    crate::error::DeleteClientVpnRouteError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_client_vpn_route_output::Builder::default();
@@ -3074,7 +3266,10 @@ pub fn parse_delete_client_vpn_route_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_customer_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteCustomerGatewayOutput, crate::error::DeleteCustomerGatewayError> {
+) -> std::result::Result<
+    crate::output::DeleteCustomerGatewayOutput,
+    crate::error::DeleteCustomerGatewayError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteCustomerGatewayError::unhandled)?;
     Err(crate::error::DeleteCustomerGatewayError::generic(generic))
@@ -3083,7 +3278,10 @@ pub fn parse_delete_customer_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_customer_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteCustomerGatewayOutput, crate::error::DeleteCustomerGatewayError> {
+) -> std::result::Result<
+    crate::output::DeleteCustomerGatewayOutput,
+    crate::error::DeleteCustomerGatewayError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_customer_gateway_output::Builder::default();
@@ -3095,7 +3293,8 @@ pub fn parse_delete_customer_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_dhcp_options_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDhcpOptionsOutput, crate::error::DeleteDhcpOptionsError> {
+) -> std::result::Result<crate::output::DeleteDhcpOptionsOutput, crate::error::DeleteDhcpOptionsError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteDhcpOptionsError::unhandled)?;
     Err(crate::error::DeleteDhcpOptionsError::generic(generic))
@@ -3104,7 +3303,8 @@ pub fn parse_delete_dhcp_options_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_dhcp_options_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDhcpOptionsOutput, crate::error::DeleteDhcpOptionsError> {
+) -> std::result::Result<crate::output::DeleteDhcpOptionsOutput, crate::error::DeleteDhcpOptionsError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_dhcp_options_output::Builder::default();
@@ -3116,7 +3316,7 @@ pub fn parse_delete_dhcp_options_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_egress_only_internet_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteEgressOnlyInternetGatewayOutput,
     crate::error::DeleteEgressOnlyInternetGatewayError,
 > {
@@ -3130,7 +3330,7 @@ pub fn parse_delete_egress_only_internet_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_egress_only_internet_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteEgressOnlyInternetGatewayOutput,
     crate::error::DeleteEgressOnlyInternetGatewayError,
 > {
@@ -3151,7 +3351,7 @@ pub fn parse_delete_egress_only_internet_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_fleets_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteFleetsOutput, crate::error::DeleteFleetsError> {
+) -> std::result::Result<crate::output::DeleteFleetsOutput, crate::error::DeleteFleetsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteFleetsError::unhandled)?;
     Err(crate::error::DeleteFleetsError::generic(generic))
@@ -3160,7 +3360,7 @@ pub fn parse_delete_fleets_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_fleets_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteFleetsOutput, crate::error::DeleteFleetsError> {
+) -> std::result::Result<crate::output::DeleteFleetsOutput, crate::error::DeleteFleetsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_fleets_output::Builder::default();
@@ -3174,7 +3374,7 @@ pub fn parse_delete_fleets_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_flow_logs_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteFlowLogsOutput, crate::error::DeleteFlowLogsError> {
+) -> std::result::Result<crate::output::DeleteFlowLogsOutput, crate::error::DeleteFlowLogsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteFlowLogsError::unhandled)?;
     Err(crate::error::DeleteFlowLogsError::generic(generic))
@@ -3183,7 +3383,7 @@ pub fn parse_delete_flow_logs_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_flow_logs_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteFlowLogsOutput, crate::error::DeleteFlowLogsError> {
+) -> std::result::Result<crate::output::DeleteFlowLogsOutput, crate::error::DeleteFlowLogsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_flow_logs_output::Builder::default();
@@ -3198,7 +3398,7 @@ pub fn parse_delete_flow_logs_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_fpga_image_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteFpgaImageOutput, crate::error::DeleteFpgaImageError> {
+) -> std::result::Result<crate::output::DeleteFpgaImageOutput, crate::error::DeleteFpgaImageError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteFpgaImageError::unhandled)?;
     Err(crate::error::DeleteFpgaImageError::generic(generic))
@@ -3207,7 +3407,7 @@ pub fn parse_delete_fpga_image_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_fpga_image_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteFpgaImageOutput, crate::error::DeleteFpgaImageError> {
+) -> std::result::Result<crate::output::DeleteFpgaImageOutput, crate::error::DeleteFpgaImageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_fpga_image_output::Builder::default();
@@ -3222,7 +3422,10 @@ pub fn parse_delete_fpga_image_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_internet_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteInternetGatewayOutput, crate::error::DeleteInternetGatewayError> {
+) -> std::result::Result<
+    crate::output::DeleteInternetGatewayOutput,
+    crate::error::DeleteInternetGatewayError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteInternetGatewayError::unhandled)?;
     Err(crate::error::DeleteInternetGatewayError::generic(generic))
@@ -3231,7 +3434,10 @@ pub fn parse_delete_internet_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_internet_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteInternetGatewayOutput, crate::error::DeleteInternetGatewayError> {
+) -> std::result::Result<
+    crate::output::DeleteInternetGatewayOutput,
+    crate::error::DeleteInternetGatewayError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_internet_gateway_output::Builder::default();
@@ -3243,7 +3449,7 @@ pub fn parse_delete_internet_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_key_pair_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteKeyPairOutput, crate::error::DeleteKeyPairError> {
+) -> std::result::Result<crate::output::DeleteKeyPairOutput, crate::error::DeleteKeyPairError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteKeyPairError::unhandled)?;
     Err(crate::error::DeleteKeyPairError::generic(generic))
@@ -3252,7 +3458,7 @@ pub fn parse_delete_key_pair_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_key_pair_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteKeyPairOutput, crate::error::DeleteKeyPairError> {
+) -> std::result::Result<crate::output::DeleteKeyPairOutput, crate::error::DeleteKeyPairError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_key_pair_output::Builder::default();
@@ -3264,7 +3470,10 @@ pub fn parse_delete_key_pair_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_launch_template_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteLaunchTemplateOutput, crate::error::DeleteLaunchTemplateError> {
+) -> std::result::Result<
+    crate::output::DeleteLaunchTemplateOutput,
+    crate::error::DeleteLaunchTemplateError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteLaunchTemplateError::unhandled)?;
     Err(crate::error::DeleteLaunchTemplateError::generic(generic))
@@ -3273,7 +3482,10 @@ pub fn parse_delete_launch_template_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_launch_template_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteLaunchTemplateOutput, crate::error::DeleteLaunchTemplateError> {
+) -> std::result::Result<
+    crate::output::DeleteLaunchTemplateOutput,
+    crate::error::DeleteLaunchTemplateError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_launch_template_output::Builder::default();
@@ -3290,7 +3502,7 @@ pub fn parse_delete_launch_template_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_launch_template_versions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteLaunchTemplateVersionsOutput,
     crate::error::DeleteLaunchTemplateVersionsError,
 > {
@@ -3304,7 +3516,7 @@ pub fn parse_delete_launch_template_versions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_launch_template_versions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteLaunchTemplateVersionsOutput,
     crate::error::DeleteLaunchTemplateVersionsError,
 > {
@@ -3324,8 +3536,10 @@ pub fn parse_delete_launch_template_versions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_local_gateway_route_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteLocalGatewayRouteOutput, crate::error::DeleteLocalGatewayRouteError>
-{
+) -> std::result::Result<
+    crate::output::DeleteLocalGatewayRouteOutput,
+    crate::error::DeleteLocalGatewayRouteError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteLocalGatewayRouteError::unhandled)?;
     Err(crate::error::DeleteLocalGatewayRouteError::generic(generic))
@@ -3334,8 +3548,10 @@ pub fn parse_delete_local_gateway_route_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_local_gateway_route_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteLocalGatewayRouteOutput, crate::error::DeleteLocalGatewayRouteError>
-{
+) -> std::result::Result<
+    crate::output::DeleteLocalGatewayRouteOutput,
+    crate::error::DeleteLocalGatewayRouteError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_local_gateway_route_output::Builder::default();
@@ -3352,7 +3568,7 @@ pub fn parse_delete_local_gateway_route_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_local_gateway_route_table_vpc_association_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteLocalGatewayRouteTableVpcAssociationOutput,
     crate::error::DeleteLocalGatewayRouteTableVpcAssociationError,
 > {
@@ -3364,7 +3580,7 @@ pub fn parse_delete_local_gateway_route_table_vpc_association_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_local_gateway_route_table_vpc_association_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteLocalGatewayRouteTableVpcAssociationOutput,
     crate::error::DeleteLocalGatewayRouteTableVpcAssociationError,
 > {
@@ -3384,8 +3600,10 @@ pub fn parse_delete_local_gateway_route_table_vpc_association_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_managed_prefix_list_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteManagedPrefixListOutput, crate::error::DeleteManagedPrefixListError>
-{
+) -> std::result::Result<
+    crate::output::DeleteManagedPrefixListOutput,
+    crate::error::DeleteManagedPrefixListError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteManagedPrefixListError::unhandled)?;
     Err(crate::error::DeleteManagedPrefixListError::generic(generic))
@@ -3394,8 +3612,10 @@ pub fn parse_delete_managed_prefix_list_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_managed_prefix_list_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteManagedPrefixListOutput, crate::error::DeleteManagedPrefixListError>
-{
+) -> std::result::Result<
+    crate::output::DeleteManagedPrefixListOutput,
+    crate::error::DeleteManagedPrefixListError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_managed_prefix_list_output::Builder::default();
@@ -3412,7 +3632,8 @@ pub fn parse_delete_managed_prefix_list_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_nat_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteNatGatewayOutput, crate::error::DeleteNatGatewayError> {
+) -> std::result::Result<crate::output::DeleteNatGatewayOutput, crate::error::DeleteNatGatewayError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteNatGatewayError::unhandled)?;
     Err(crate::error::DeleteNatGatewayError::generic(generic))
@@ -3421,7 +3642,8 @@ pub fn parse_delete_nat_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_nat_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteNatGatewayOutput, crate::error::DeleteNatGatewayError> {
+) -> std::result::Result<crate::output::DeleteNatGatewayOutput, crate::error::DeleteNatGatewayError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_nat_gateway_output::Builder::default();
@@ -3436,7 +3658,8 @@ pub fn parse_delete_nat_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_network_acl_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteNetworkAclOutput, crate::error::DeleteNetworkAclError> {
+) -> std::result::Result<crate::output::DeleteNetworkAclOutput, crate::error::DeleteNetworkAclError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteNetworkAclError::unhandled)?;
     Err(crate::error::DeleteNetworkAclError::generic(generic))
@@ -3445,7 +3668,8 @@ pub fn parse_delete_network_acl_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_network_acl_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteNetworkAclOutput, crate::error::DeleteNetworkAclError> {
+) -> std::result::Result<crate::output::DeleteNetworkAclOutput, crate::error::DeleteNetworkAclError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_network_acl_output::Builder::default();
@@ -3457,7 +3681,10 @@ pub fn parse_delete_network_acl_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_network_acl_entry_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteNetworkAclEntryOutput, crate::error::DeleteNetworkAclEntryError> {
+) -> std::result::Result<
+    crate::output::DeleteNetworkAclEntryOutput,
+    crate::error::DeleteNetworkAclEntryError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteNetworkAclEntryError::unhandled)?;
     Err(crate::error::DeleteNetworkAclEntryError::generic(generic))
@@ -3466,7 +3693,10 @@ pub fn parse_delete_network_acl_entry_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_network_acl_entry_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteNetworkAclEntryOutput, crate::error::DeleteNetworkAclEntryError> {
+) -> std::result::Result<
+    crate::output::DeleteNetworkAclEntryOutput,
+    crate::error::DeleteNetworkAclEntryError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_network_acl_entry_output::Builder::default();
@@ -3478,7 +3708,7 @@ pub fn parse_delete_network_acl_entry_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_network_insights_analysis_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteNetworkInsightsAnalysisOutput,
     crate::error::DeleteNetworkInsightsAnalysisError,
 > {
@@ -3492,7 +3722,7 @@ pub fn parse_delete_network_insights_analysis_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_network_insights_analysis_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteNetworkInsightsAnalysisOutput,
     crate::error::DeleteNetworkInsightsAnalysisError,
 > {
@@ -3512,7 +3742,7 @@ pub fn parse_delete_network_insights_analysis_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_network_insights_path_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteNetworkInsightsPathOutput,
     crate::error::DeleteNetworkInsightsPathError,
 > {
@@ -3526,7 +3756,7 @@ pub fn parse_delete_network_insights_path_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_network_insights_path_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteNetworkInsightsPathOutput,
     crate::error::DeleteNetworkInsightsPathError,
 > {
@@ -3546,8 +3776,10 @@ pub fn parse_delete_network_insights_path_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_network_interface_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteNetworkInterfaceOutput, crate::error::DeleteNetworkInterfaceError>
-{
+) -> std::result::Result<
+    crate::output::DeleteNetworkInterfaceOutput,
+    crate::error::DeleteNetworkInterfaceError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteNetworkInterfaceError::unhandled)?;
     Err(crate::error::DeleteNetworkInterfaceError::generic(generic))
@@ -3556,8 +3788,10 @@ pub fn parse_delete_network_interface_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_network_interface_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteNetworkInterfaceOutput, crate::error::DeleteNetworkInterfaceError>
-{
+) -> std::result::Result<
+    crate::output::DeleteNetworkInterfaceOutput,
+    crate::error::DeleteNetworkInterfaceError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_network_interface_output::Builder::default();
@@ -3569,7 +3803,7 @@ pub fn parse_delete_network_interface_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_network_interface_permission_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteNetworkInterfacePermissionOutput,
     crate::error::DeleteNetworkInterfacePermissionError,
 > {
@@ -3581,7 +3815,7 @@ pub fn parse_delete_network_interface_permission_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_network_interface_permission_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteNetworkInterfacePermissionOutput,
     crate::error::DeleteNetworkInterfacePermissionError,
 > {
@@ -3602,7 +3836,10 @@ pub fn parse_delete_network_interface_permission_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_placement_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeletePlacementGroupOutput, crate::error::DeletePlacementGroupError> {
+) -> std::result::Result<
+    crate::output::DeletePlacementGroupOutput,
+    crate::error::DeletePlacementGroupError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeletePlacementGroupError::unhandled)?;
     Err(crate::error::DeletePlacementGroupError::generic(generic))
@@ -3611,7 +3848,10 @@ pub fn parse_delete_placement_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_placement_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeletePlacementGroupOutput, crate::error::DeletePlacementGroupError> {
+) -> std::result::Result<
+    crate::output::DeletePlacementGroupOutput,
+    crate::error::DeletePlacementGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_placement_group_output::Builder::default();
@@ -3623,7 +3863,7 @@ pub fn parse_delete_placement_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_queued_reserved_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteQueuedReservedInstancesOutput,
     crate::error::DeleteQueuedReservedInstancesError,
 > {
@@ -3637,7 +3877,7 @@ pub fn parse_delete_queued_reserved_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_queued_reserved_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteQueuedReservedInstancesOutput,
     crate::error::DeleteQueuedReservedInstancesError,
 > {
@@ -3657,7 +3897,7 @@ pub fn parse_delete_queued_reserved_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_route_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteRouteOutput, crate::error::DeleteRouteError> {
+) -> std::result::Result<crate::output::DeleteRouteOutput, crate::error::DeleteRouteError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteRouteError::unhandled)?;
     Err(crate::error::DeleteRouteError::generic(generic))
@@ -3666,7 +3906,7 @@ pub fn parse_delete_route_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_route_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteRouteOutput, crate::error::DeleteRouteError> {
+) -> std::result::Result<crate::output::DeleteRouteOutput, crate::error::DeleteRouteError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_route_output::Builder::default();
@@ -3678,7 +3918,8 @@ pub fn parse_delete_route_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_route_table_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteRouteTableOutput, crate::error::DeleteRouteTableError> {
+) -> std::result::Result<crate::output::DeleteRouteTableOutput, crate::error::DeleteRouteTableError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteRouteTableError::unhandled)?;
     Err(crate::error::DeleteRouteTableError::generic(generic))
@@ -3687,7 +3928,8 @@ pub fn parse_delete_route_table_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_route_table_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteRouteTableOutput, crate::error::DeleteRouteTableError> {
+) -> std::result::Result<crate::output::DeleteRouteTableOutput, crate::error::DeleteRouteTableError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_route_table_output::Builder::default();
@@ -3699,7 +3941,10 @@ pub fn parse_delete_route_table_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_security_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteSecurityGroupOutput, crate::error::DeleteSecurityGroupError> {
+) -> std::result::Result<
+    crate::output::DeleteSecurityGroupOutput,
+    crate::error::DeleteSecurityGroupError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteSecurityGroupError::unhandled)?;
     Err(crate::error::DeleteSecurityGroupError::generic(generic))
@@ -3708,7 +3953,10 @@ pub fn parse_delete_security_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_security_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteSecurityGroupOutput, crate::error::DeleteSecurityGroupError> {
+) -> std::result::Result<
+    crate::output::DeleteSecurityGroupOutput,
+    crate::error::DeleteSecurityGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_security_group_output::Builder::default();
@@ -3720,7 +3968,7 @@ pub fn parse_delete_security_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_snapshot_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteSnapshotOutput, crate::error::DeleteSnapshotError> {
+) -> std::result::Result<crate::output::DeleteSnapshotOutput, crate::error::DeleteSnapshotError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteSnapshotError::unhandled)?;
     Err(crate::error::DeleteSnapshotError::generic(generic))
@@ -3729,7 +3977,7 @@ pub fn parse_delete_snapshot_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_snapshot_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteSnapshotOutput, crate::error::DeleteSnapshotError> {
+) -> std::result::Result<crate::output::DeleteSnapshotOutput, crate::error::DeleteSnapshotError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_snapshot_output::Builder::default();
@@ -3741,7 +3989,7 @@ pub fn parse_delete_snapshot_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_spot_datafeed_subscription_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteSpotDatafeedSubscriptionOutput,
     crate::error::DeleteSpotDatafeedSubscriptionError,
 > {
@@ -3755,7 +4003,7 @@ pub fn parse_delete_spot_datafeed_subscription_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_spot_datafeed_subscription_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteSpotDatafeedSubscriptionOutput,
     crate::error::DeleteSpotDatafeedSubscriptionError,
 > {
@@ -3771,7 +4019,7 @@ pub fn parse_delete_spot_datafeed_subscription_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_subnet_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteSubnetOutput, crate::error::DeleteSubnetError> {
+) -> std::result::Result<crate::output::DeleteSubnetOutput, crate::error::DeleteSubnetError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteSubnetError::unhandled)?;
     Err(crate::error::DeleteSubnetError::generic(generic))
@@ -3780,7 +4028,7 @@ pub fn parse_delete_subnet_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_subnet_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteSubnetOutput, crate::error::DeleteSubnetError> {
+) -> std::result::Result<crate::output::DeleteSubnetOutput, crate::error::DeleteSubnetError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_subnet_output::Builder::default();
@@ -3792,7 +4040,7 @@ pub fn parse_delete_subnet_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_tags_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError> {
+) -> std::result::Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteTagsError::unhandled)?;
     Err(crate::error::DeleteTagsError::generic(generic))
@@ -3801,7 +4049,7 @@ pub fn parse_delete_tags_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_tags_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError> {
+) -> std::result::Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_tags_output::Builder::default();
@@ -3813,7 +4061,7 @@ pub fn parse_delete_tags_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_traffic_mirror_filter_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTrafficMirrorFilterOutput,
     crate::error::DeleteTrafficMirrorFilterError,
 > {
@@ -3827,7 +4075,7 @@ pub fn parse_delete_traffic_mirror_filter_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_traffic_mirror_filter_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTrafficMirrorFilterOutput,
     crate::error::DeleteTrafficMirrorFilterError,
 > {
@@ -3847,7 +4095,7 @@ pub fn parse_delete_traffic_mirror_filter_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_traffic_mirror_filter_rule_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTrafficMirrorFilterRuleOutput,
     crate::error::DeleteTrafficMirrorFilterRuleError,
 > {
@@ -3861,7 +4109,7 @@ pub fn parse_delete_traffic_mirror_filter_rule_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_traffic_mirror_filter_rule_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTrafficMirrorFilterRuleOutput,
     crate::error::DeleteTrafficMirrorFilterRuleError,
 > {
@@ -3882,7 +4130,7 @@ pub fn parse_delete_traffic_mirror_filter_rule_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_traffic_mirror_session_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTrafficMirrorSessionOutput,
     crate::error::DeleteTrafficMirrorSessionError,
 > {
@@ -3896,7 +4144,7 @@ pub fn parse_delete_traffic_mirror_session_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_traffic_mirror_session_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTrafficMirrorSessionOutput,
     crate::error::DeleteTrafficMirrorSessionError,
 > {
@@ -3916,7 +4164,7 @@ pub fn parse_delete_traffic_mirror_session_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_traffic_mirror_target_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTrafficMirrorTargetOutput,
     crate::error::DeleteTrafficMirrorTargetError,
 > {
@@ -3930,7 +4178,7 @@ pub fn parse_delete_traffic_mirror_target_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_traffic_mirror_target_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTrafficMirrorTargetOutput,
     crate::error::DeleteTrafficMirrorTargetError,
 > {
@@ -3950,7 +4198,10 @@ pub fn parse_delete_traffic_mirror_target_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteTransitGatewayOutput, crate::error::DeleteTransitGatewayError> {
+) -> std::result::Result<
+    crate::output::DeleteTransitGatewayOutput,
+    crate::error::DeleteTransitGatewayError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteTransitGatewayError::unhandled)?;
     Err(crate::error::DeleteTransitGatewayError::generic(generic))
@@ -3959,7 +4210,10 @@ pub fn parse_delete_transit_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteTransitGatewayOutput, crate::error::DeleteTransitGatewayError> {
+) -> std::result::Result<
+    crate::output::DeleteTransitGatewayOutput,
+    crate::error::DeleteTransitGatewayError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_transit_gateway_output::Builder::default();
@@ -3976,7 +4230,7 @@ pub fn parse_delete_transit_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_connect_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTransitGatewayConnectOutput,
     crate::error::DeleteTransitGatewayConnectError,
 > {
@@ -3990,7 +4244,7 @@ pub fn parse_delete_transit_gateway_connect_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_connect_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTransitGatewayConnectOutput,
     crate::error::DeleteTransitGatewayConnectError,
 > {
@@ -4010,7 +4264,7 @@ pub fn parse_delete_transit_gateway_connect_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_connect_peer_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTransitGatewayConnectPeerOutput,
     crate::error::DeleteTransitGatewayConnectPeerError,
 > {
@@ -4024,7 +4278,7 @@ pub fn parse_delete_transit_gateway_connect_peer_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_connect_peer_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTransitGatewayConnectPeerOutput,
     crate::error::DeleteTransitGatewayConnectPeerError,
 > {
@@ -4045,7 +4299,7 @@ pub fn parse_delete_transit_gateway_connect_peer_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_multicast_domain_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTransitGatewayMulticastDomainOutput,
     crate::error::DeleteTransitGatewayMulticastDomainError,
 > {
@@ -4057,7 +4311,7 @@ pub fn parse_delete_transit_gateway_multicast_domain_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_multicast_domain_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTransitGatewayMulticastDomainOutput,
     crate::error::DeleteTransitGatewayMulticastDomainError,
 > {
@@ -4078,7 +4332,7 @@ pub fn parse_delete_transit_gateway_multicast_domain_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_peering_attachment_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTransitGatewayPeeringAttachmentOutput,
     crate::error::DeleteTransitGatewayPeeringAttachmentError,
 > {
@@ -4090,7 +4344,7 @@ pub fn parse_delete_transit_gateway_peering_attachment_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_peering_attachment_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTransitGatewayPeeringAttachmentOutput,
     crate::error::DeleteTransitGatewayPeeringAttachmentError,
 > {
@@ -4111,7 +4365,7 @@ pub fn parse_delete_transit_gateway_peering_attachment_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_prefix_list_reference_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTransitGatewayPrefixListReferenceOutput,
     crate::error::DeleteTransitGatewayPrefixListReferenceError,
 > {
@@ -4123,7 +4377,7 @@ pub fn parse_delete_transit_gateway_prefix_list_reference_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_prefix_list_reference_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTransitGatewayPrefixListReferenceOutput,
     crate::error::DeleteTransitGatewayPrefixListReferenceError,
 > {
@@ -4144,7 +4398,7 @@ pub fn parse_delete_transit_gateway_prefix_list_reference_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_route_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTransitGatewayRouteOutput,
     crate::error::DeleteTransitGatewayRouteError,
 > {
@@ -4158,7 +4412,7 @@ pub fn parse_delete_transit_gateway_route_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_route_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTransitGatewayRouteOutput,
     crate::error::DeleteTransitGatewayRouteError,
 > {
@@ -4178,7 +4432,7 @@ pub fn parse_delete_transit_gateway_route_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_route_table_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTransitGatewayRouteTableOutput,
     crate::error::DeleteTransitGatewayRouteTableError,
 > {
@@ -4192,7 +4446,7 @@ pub fn parse_delete_transit_gateway_route_table_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_route_table_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTransitGatewayRouteTableOutput,
     crate::error::DeleteTransitGatewayRouteTableError,
 > {
@@ -4213,7 +4467,7 @@ pub fn parse_delete_transit_gateway_route_table_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_vpc_attachment_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTransitGatewayVpcAttachmentOutput,
     crate::error::DeleteTransitGatewayVpcAttachmentError,
 > {
@@ -4225,7 +4479,7 @@ pub fn parse_delete_transit_gateway_vpc_attachment_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_transit_gateway_vpc_attachment_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteTransitGatewayVpcAttachmentOutput,
     crate::error::DeleteTransitGatewayVpcAttachmentError,
 > {
@@ -4246,7 +4500,7 @@ pub fn parse_delete_transit_gateway_vpc_attachment_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_volume_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteVolumeOutput, crate::error::DeleteVolumeError> {
+) -> std::result::Result<crate::output::DeleteVolumeOutput, crate::error::DeleteVolumeError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteVolumeError::unhandled)?;
     Err(crate::error::DeleteVolumeError::generic(generic))
@@ -4255,7 +4509,7 @@ pub fn parse_delete_volume_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_volume_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteVolumeOutput, crate::error::DeleteVolumeError> {
+) -> std::result::Result<crate::output::DeleteVolumeOutput, crate::error::DeleteVolumeError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_volume_output::Builder::default();
@@ -4267,7 +4521,7 @@ pub fn parse_delete_volume_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpc_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteVpcOutput, crate::error::DeleteVpcError> {
+) -> std::result::Result<crate::output::DeleteVpcOutput, crate::error::DeleteVpcError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteVpcError::unhandled)?;
     Err(crate::error::DeleteVpcError::generic(generic))
@@ -4276,7 +4530,7 @@ pub fn parse_delete_vpc_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpc_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteVpcOutput, crate::error::DeleteVpcError> {
+) -> std::result::Result<crate::output::DeleteVpcOutput, crate::error::DeleteVpcError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_vpc_output::Builder::default();
@@ -4288,7 +4542,7 @@ pub fn parse_delete_vpc_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpc_endpoint_connection_notifications_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteVpcEndpointConnectionNotificationsOutput,
     crate::error::DeleteVpcEndpointConnectionNotificationsError,
 > {
@@ -4300,7 +4554,7 @@ pub fn parse_delete_vpc_endpoint_connection_notifications_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpc_endpoint_connection_notifications_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteVpcEndpointConnectionNotificationsOutput,
     crate::error::DeleteVpcEndpointConnectionNotificationsError,
 > {
@@ -4321,7 +4575,10 @@ pub fn parse_delete_vpc_endpoint_connection_notifications_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpc_endpoints_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteVpcEndpointsOutput, crate::error::DeleteVpcEndpointsError> {
+) -> std::result::Result<
+    crate::output::DeleteVpcEndpointsOutput,
+    crate::error::DeleteVpcEndpointsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteVpcEndpointsError::unhandled)?;
     Err(crate::error::DeleteVpcEndpointsError::generic(generic))
@@ -4330,7 +4587,10 @@ pub fn parse_delete_vpc_endpoints_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpc_endpoints_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteVpcEndpointsOutput, crate::error::DeleteVpcEndpointsError> {
+) -> std::result::Result<
+    crate::output::DeleteVpcEndpointsOutput,
+    crate::error::DeleteVpcEndpointsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_vpc_endpoints_output::Builder::default();
@@ -4347,7 +4607,7 @@ pub fn parse_delete_vpc_endpoints_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpc_endpoint_service_configurations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteVpcEndpointServiceConfigurationsOutput,
     crate::error::DeleteVpcEndpointServiceConfigurationsError,
 > {
@@ -4359,7 +4619,7 @@ pub fn parse_delete_vpc_endpoint_service_configurations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpc_endpoint_service_configurations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteVpcEndpointServiceConfigurationsOutput,
     crate::error::DeleteVpcEndpointServiceConfigurationsError,
 > {
@@ -4380,7 +4640,7 @@ pub fn parse_delete_vpc_endpoint_service_configurations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpc_peering_connection_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteVpcPeeringConnectionOutput,
     crate::error::DeleteVpcPeeringConnectionError,
 > {
@@ -4394,7 +4654,7 @@ pub fn parse_delete_vpc_peering_connection_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpc_peering_connection_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteVpcPeeringConnectionOutput,
     crate::error::DeleteVpcPeeringConnectionError,
 > {
@@ -4414,7 +4674,10 @@ pub fn parse_delete_vpc_peering_connection_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpn_connection_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteVpnConnectionOutput, crate::error::DeleteVpnConnectionError> {
+) -> std::result::Result<
+    crate::output::DeleteVpnConnectionOutput,
+    crate::error::DeleteVpnConnectionError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteVpnConnectionError::unhandled)?;
     Err(crate::error::DeleteVpnConnectionError::generic(generic))
@@ -4423,7 +4686,10 @@ pub fn parse_delete_vpn_connection_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpn_connection_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteVpnConnectionOutput, crate::error::DeleteVpnConnectionError> {
+) -> std::result::Result<
+    crate::output::DeleteVpnConnectionOutput,
+    crate::error::DeleteVpnConnectionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_vpn_connection_output::Builder::default();
@@ -4435,7 +4701,7 @@ pub fn parse_delete_vpn_connection_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpn_connection_route_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteVpnConnectionRouteOutput,
     crate::error::DeleteVpnConnectionRouteError,
 > {
@@ -4449,7 +4715,7 @@ pub fn parse_delete_vpn_connection_route_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpn_connection_route_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteVpnConnectionRouteOutput,
     crate::error::DeleteVpnConnectionRouteError,
 > {
@@ -4464,7 +4730,8 @@ pub fn parse_delete_vpn_connection_route_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpn_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteVpnGatewayOutput, crate::error::DeleteVpnGatewayError> {
+) -> std::result::Result<crate::output::DeleteVpnGatewayOutput, crate::error::DeleteVpnGatewayError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteVpnGatewayError::unhandled)?;
     Err(crate::error::DeleteVpnGatewayError::generic(generic))
@@ -4473,7 +4740,8 @@ pub fn parse_delete_vpn_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_vpn_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteVpnGatewayOutput, crate::error::DeleteVpnGatewayError> {
+) -> std::result::Result<crate::output::DeleteVpnGatewayOutput, crate::error::DeleteVpnGatewayError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_vpn_gateway_output::Builder::default();
@@ -4485,7 +4753,10 @@ pub fn parse_delete_vpn_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deprovision_byoip_cidr_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeprovisionByoipCidrOutput, crate::error::DeprovisionByoipCidrError> {
+) -> std::result::Result<
+    crate::output::DeprovisionByoipCidrOutput,
+    crate::error::DeprovisionByoipCidrError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
     Err(crate::error::DeprovisionByoipCidrError::generic(generic))
@@ -4494,7 +4765,10 @@ pub fn parse_deprovision_byoip_cidr_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deprovision_byoip_cidr_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeprovisionByoipCidrOutput, crate::error::DeprovisionByoipCidrError> {
+) -> std::result::Result<
+    crate::output::DeprovisionByoipCidrOutput,
+    crate::error::DeprovisionByoipCidrError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::deprovision_byoip_cidr_output::Builder::default();
@@ -4511,7 +4785,7 @@ pub fn parse_deprovision_byoip_cidr_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deregister_image_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeregisterImageOutput, crate::error::DeregisterImageError> {
+) -> std::result::Result<crate::output::DeregisterImageOutput, crate::error::DeregisterImageError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeregisterImageError::unhandled)?;
     Err(crate::error::DeregisterImageError::generic(generic))
@@ -4520,7 +4794,7 @@ pub fn parse_deregister_image_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deregister_image_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeregisterImageOutput, crate::error::DeregisterImageError> {
+) -> std::result::Result<crate::output::DeregisterImageOutput, crate::error::DeregisterImageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::deregister_image_output::Builder::default();
@@ -4532,7 +4806,7 @@ pub fn parse_deregister_image_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deregister_instance_event_notification_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeregisterInstanceEventNotificationAttributesOutput,
     crate::error::DeregisterInstanceEventNotificationAttributesError,
 > {
@@ -4544,7 +4818,7 @@ pub fn parse_deregister_instance_event_notification_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deregister_instance_event_notification_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeregisterInstanceEventNotificationAttributesOutput,
     crate::error::DeregisterInstanceEventNotificationAttributesError,
 > {
@@ -4564,7 +4838,7 @@ pub fn parse_deregister_instance_event_notification_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deregister_transit_gateway_multicast_group_members_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeregisterTransitGatewayMulticastGroupMembersOutput,
     crate::error::DeregisterTransitGatewayMulticastGroupMembersError,
 > {
@@ -4576,7 +4850,7 @@ pub fn parse_deregister_transit_gateway_multicast_group_members_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deregister_transit_gateway_multicast_group_members_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeregisterTransitGatewayMulticastGroupMembersOutput,
     crate::error::DeregisterTransitGatewayMulticastGroupMembersError,
 > {
@@ -4596,7 +4870,7 @@ pub fn parse_deregister_transit_gateway_multicast_group_members_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deregister_transit_gateway_multicast_group_sources_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeregisterTransitGatewayMulticastGroupSourcesOutput,
     crate::error::DeregisterTransitGatewayMulticastGroupSourcesError,
 > {
@@ -4608,7 +4882,7 @@ pub fn parse_deregister_transit_gateway_multicast_group_sources_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deregister_transit_gateway_multicast_group_sources_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeregisterTransitGatewayMulticastGroupSourcesOutput,
     crate::error::DeregisterTransitGatewayMulticastGroupSourcesError,
 > {
@@ -4628,7 +4902,7 @@ pub fn parse_deregister_transit_gateway_multicast_group_sources_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_account_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeAccountAttributesOutput,
     crate::error::DescribeAccountAttributesError,
 > {
@@ -4642,7 +4916,7 @@ pub fn parse_describe_account_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_account_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeAccountAttributesOutput,
     crate::error::DescribeAccountAttributesError,
 > {
@@ -4662,7 +4936,8 @@ pub fn parse_describe_account_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_addresses_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeAddressesOutput, crate::error::DescribeAddressesError> {
+) -> std::result::Result<crate::output::DescribeAddressesOutput, crate::error::DescribeAddressesError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeAddressesError::unhandled)?;
     Err(crate::error::DescribeAddressesError::generic(generic))
@@ -4671,7 +4946,8 @@ pub fn parse_describe_addresses_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_addresses_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeAddressesOutput, crate::error::DescribeAddressesError> {
+) -> std::result::Result<crate::output::DescribeAddressesOutput, crate::error::DescribeAddressesError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_addresses_output::Builder::default();
@@ -4686,7 +4962,7 @@ pub fn parse_describe_addresses_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_addresses_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeAddressesAttributeOutput,
     crate::error::DescribeAddressesAttributeError,
 > {
@@ -4700,7 +4976,7 @@ pub fn parse_describe_addresses_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_addresses_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeAddressesAttributeOutput,
     crate::error::DescribeAddressesAttributeError,
 > {
@@ -4720,7 +4996,7 @@ pub fn parse_describe_addresses_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_aggregate_id_format_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeAggregateIdFormatOutput,
     crate::error::DescribeAggregateIdFormatError,
 > {
@@ -4734,7 +5010,7 @@ pub fn parse_describe_aggregate_id_format_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_aggregate_id_format_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeAggregateIdFormatOutput,
     crate::error::DescribeAggregateIdFormatError,
 > {
@@ -4754,7 +5030,7 @@ pub fn parse_describe_aggregate_id_format_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_availability_zones_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeAvailabilityZonesOutput,
     crate::error::DescribeAvailabilityZonesError,
 > {
@@ -4768,7 +5044,7 @@ pub fn parse_describe_availability_zones_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_availability_zones_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeAvailabilityZonesOutput,
     crate::error::DescribeAvailabilityZonesError,
 > {
@@ -4788,7 +5064,10 @@ pub fn parse_describe_availability_zones_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_bundle_tasks_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeBundleTasksOutput, crate::error::DescribeBundleTasksError> {
+) -> std::result::Result<
+    crate::output::DescribeBundleTasksOutput,
+    crate::error::DescribeBundleTasksError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeBundleTasksError::unhandled)?;
     Err(crate::error::DescribeBundleTasksError::generic(generic))
@@ -4797,7 +5076,10 @@ pub fn parse_describe_bundle_tasks_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_bundle_tasks_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeBundleTasksOutput, crate::error::DescribeBundleTasksError> {
+) -> std::result::Result<
+    crate::output::DescribeBundleTasksOutput,
+    crate::error::DescribeBundleTasksError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_bundle_tasks_output::Builder::default();
@@ -4814,7 +5096,10 @@ pub fn parse_describe_bundle_tasks_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_byoip_cidrs_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeByoipCidrsOutput, crate::error::DescribeByoipCidrsError> {
+) -> std::result::Result<
+    crate::output::DescribeByoipCidrsOutput,
+    crate::error::DescribeByoipCidrsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeByoipCidrsError::unhandled)?;
     Err(crate::error::DescribeByoipCidrsError::generic(generic))
@@ -4823,7 +5108,10 @@ pub fn parse_describe_byoip_cidrs_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_byoip_cidrs_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeByoipCidrsOutput, crate::error::DescribeByoipCidrsError> {
+) -> std::result::Result<
+    crate::output::DescribeByoipCidrsOutput,
+    crate::error::DescribeByoipCidrsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_byoip_cidrs_output::Builder::default();
@@ -4840,7 +5128,7 @@ pub fn parse_describe_byoip_cidrs_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_capacity_reservations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeCapacityReservationsOutput,
     crate::error::DescribeCapacityReservationsError,
 > {
@@ -4854,7 +5142,7 @@ pub fn parse_describe_capacity_reservations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_capacity_reservations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeCapacityReservationsOutput,
     crate::error::DescribeCapacityReservationsError,
 > {
@@ -4874,8 +5162,10 @@ pub fn parse_describe_capacity_reservations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_carrier_gateways_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeCarrierGatewaysOutput, crate::error::DescribeCarrierGatewaysError>
-{
+) -> std::result::Result<
+    crate::output::DescribeCarrierGatewaysOutput,
+    crate::error::DescribeCarrierGatewaysError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeCarrierGatewaysError::unhandled)?;
     Err(crate::error::DescribeCarrierGatewaysError::generic(generic))
@@ -4884,8 +5174,10 @@ pub fn parse_describe_carrier_gateways_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_carrier_gateways_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeCarrierGatewaysOutput, crate::error::DescribeCarrierGatewaysError>
-{
+) -> std::result::Result<
+    crate::output::DescribeCarrierGatewaysOutput,
+    crate::error::DescribeCarrierGatewaysError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_carrier_gateways_output::Builder::default();
@@ -4902,7 +5194,7 @@ pub fn parse_describe_carrier_gateways_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_classic_link_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeClassicLinkInstancesOutput,
     crate::error::DescribeClassicLinkInstancesError,
 > {
@@ -4916,7 +5208,7 @@ pub fn parse_describe_classic_link_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_classic_link_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeClassicLinkInstancesOutput,
     crate::error::DescribeClassicLinkInstancesError,
 > {
@@ -4936,7 +5228,7 @@ pub fn parse_describe_classic_link_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_client_vpn_authorization_rules_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeClientVpnAuthorizationRulesOutput,
     crate::error::DescribeClientVpnAuthorizationRulesError,
 > {
@@ -4948,7 +5240,7 @@ pub fn parse_describe_client_vpn_authorization_rules_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_client_vpn_authorization_rules_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeClientVpnAuthorizationRulesOutput,
     crate::error::DescribeClientVpnAuthorizationRulesError,
 > {
@@ -4969,7 +5261,7 @@ pub fn parse_describe_client_vpn_authorization_rules_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_client_vpn_connections_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeClientVpnConnectionsOutput,
     crate::error::DescribeClientVpnConnectionsError,
 > {
@@ -4983,7 +5275,7 @@ pub fn parse_describe_client_vpn_connections_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_client_vpn_connections_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeClientVpnConnectionsOutput,
     crate::error::DescribeClientVpnConnectionsError,
 > {
@@ -5003,7 +5295,7 @@ pub fn parse_describe_client_vpn_connections_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_client_vpn_endpoints_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeClientVpnEndpointsOutput,
     crate::error::DescribeClientVpnEndpointsError,
 > {
@@ -5017,7 +5309,7 @@ pub fn parse_describe_client_vpn_endpoints_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_client_vpn_endpoints_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeClientVpnEndpointsOutput,
     crate::error::DescribeClientVpnEndpointsError,
 > {
@@ -5037,8 +5329,10 @@ pub fn parse_describe_client_vpn_endpoints_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_client_vpn_routes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeClientVpnRoutesOutput, crate::error::DescribeClientVpnRoutesError>
-{
+) -> std::result::Result<
+    crate::output::DescribeClientVpnRoutesOutput,
+    crate::error::DescribeClientVpnRoutesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeClientVpnRoutesError::unhandled)?;
     Err(crate::error::DescribeClientVpnRoutesError::generic(generic))
@@ -5047,8 +5341,10 @@ pub fn parse_describe_client_vpn_routes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_client_vpn_routes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeClientVpnRoutesOutput, crate::error::DescribeClientVpnRoutesError>
-{
+) -> std::result::Result<
+    crate::output::DescribeClientVpnRoutesOutput,
+    crate::error::DescribeClientVpnRoutesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_client_vpn_routes_output::Builder::default();
@@ -5065,7 +5361,7 @@ pub fn parse_describe_client_vpn_routes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_client_vpn_target_networks_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeClientVpnTargetNetworksOutput,
     crate::error::DescribeClientVpnTargetNetworksError,
 > {
@@ -5079,7 +5375,7 @@ pub fn parse_describe_client_vpn_target_networks_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_client_vpn_target_networks_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeClientVpnTargetNetworksOutput,
     crate::error::DescribeClientVpnTargetNetworksError,
 > {
@@ -5100,7 +5396,8 @@ pub fn parse_describe_client_vpn_target_networks_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_coip_pools_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeCoipPoolsOutput, crate::error::DescribeCoipPoolsError> {
+) -> std::result::Result<crate::output::DescribeCoipPoolsOutput, crate::error::DescribeCoipPoolsError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeCoipPoolsError::unhandled)?;
     Err(crate::error::DescribeCoipPoolsError::generic(generic))
@@ -5109,7 +5406,8 @@ pub fn parse_describe_coip_pools_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_coip_pools_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeCoipPoolsOutput, crate::error::DescribeCoipPoolsError> {
+) -> std::result::Result<crate::output::DescribeCoipPoolsOutput, crate::error::DescribeCoipPoolsError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_coip_pools_output::Builder::default();
@@ -5124,8 +5422,10 @@ pub fn parse_describe_coip_pools_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_conversion_tasks_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeConversionTasksOutput, crate::error::DescribeConversionTasksError>
-{
+) -> std::result::Result<
+    crate::output::DescribeConversionTasksOutput,
+    crate::error::DescribeConversionTasksError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeConversionTasksError::unhandled)?;
     Err(crate::error::DescribeConversionTasksError::generic(generic))
@@ -5134,8 +5434,10 @@ pub fn parse_describe_conversion_tasks_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_conversion_tasks_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeConversionTasksOutput, crate::error::DescribeConversionTasksError>
-{
+) -> std::result::Result<
+    crate::output::DescribeConversionTasksOutput,
+    crate::error::DescribeConversionTasksError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_conversion_tasks_output::Builder::default();
@@ -5152,7 +5454,7 @@ pub fn parse_describe_conversion_tasks_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_customer_gateways_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeCustomerGatewaysOutput,
     crate::error::DescribeCustomerGatewaysError,
 > {
@@ -5166,7 +5468,7 @@ pub fn parse_describe_customer_gateways_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_customer_gateways_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeCustomerGatewaysOutput,
     crate::error::DescribeCustomerGatewaysError,
 > {
@@ -5186,7 +5488,10 @@ pub fn parse_describe_customer_gateways_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_dhcp_options_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDhcpOptionsOutput, crate::error::DescribeDhcpOptionsError> {
+) -> std::result::Result<
+    crate::output::DescribeDhcpOptionsOutput,
+    crate::error::DescribeDhcpOptionsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeDhcpOptionsError::unhandled)?;
     Err(crate::error::DescribeDhcpOptionsError::generic(generic))
@@ -5195,7 +5500,10 @@ pub fn parse_describe_dhcp_options_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_dhcp_options_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDhcpOptionsOutput, crate::error::DescribeDhcpOptionsError> {
+) -> std::result::Result<
+    crate::output::DescribeDhcpOptionsOutput,
+    crate::error::DescribeDhcpOptionsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_dhcp_options_output::Builder::default();
@@ -5212,7 +5520,7 @@ pub fn parse_describe_dhcp_options_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_egress_only_internet_gateways_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeEgressOnlyInternetGatewaysOutput,
     crate::error::DescribeEgressOnlyInternetGatewaysError,
 > {
@@ -5224,7 +5532,7 @@ pub fn parse_describe_egress_only_internet_gateways_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_egress_only_internet_gateways_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeEgressOnlyInternetGatewaysOutput,
     crate::error::DescribeEgressOnlyInternetGatewaysError,
 > {
@@ -5245,7 +5553,10 @@ pub fn parse_describe_egress_only_internet_gateways_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_elastic_gpus_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeElasticGpusOutput, crate::error::DescribeElasticGpusError> {
+) -> std::result::Result<
+    crate::output::DescribeElasticGpusOutput,
+    crate::error::DescribeElasticGpusError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeElasticGpusError::unhandled)?;
     Err(crate::error::DescribeElasticGpusError::generic(generic))
@@ -5254,7 +5565,10 @@ pub fn parse_describe_elastic_gpus_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_elastic_gpus_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeElasticGpusOutput, crate::error::DescribeElasticGpusError> {
+) -> std::result::Result<
+    crate::output::DescribeElasticGpusOutput,
+    crate::error::DescribeElasticGpusError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_elastic_gpus_output::Builder::default();
@@ -5271,7 +5585,7 @@ pub fn parse_describe_elastic_gpus_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_export_image_tasks_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeExportImageTasksOutput,
     crate::error::DescribeExportImageTasksError,
 > {
@@ -5285,7 +5599,7 @@ pub fn parse_describe_export_image_tasks_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_export_image_tasks_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeExportImageTasksOutput,
     crate::error::DescribeExportImageTasksError,
 > {
@@ -5305,7 +5619,10 @@ pub fn parse_describe_export_image_tasks_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_export_tasks_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeExportTasksOutput, crate::error::DescribeExportTasksError> {
+) -> std::result::Result<
+    crate::output::DescribeExportTasksOutput,
+    crate::error::DescribeExportTasksError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeExportTasksError::unhandled)?;
     Err(crate::error::DescribeExportTasksError::generic(generic))
@@ -5314,7 +5631,10 @@ pub fn parse_describe_export_tasks_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_export_tasks_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeExportTasksOutput, crate::error::DescribeExportTasksError> {
+) -> std::result::Result<
+    crate::output::DescribeExportTasksOutput,
+    crate::error::DescribeExportTasksError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_export_tasks_output::Builder::default();
@@ -5331,7 +5651,7 @@ pub fn parse_describe_export_tasks_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_fast_snapshot_restores_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeFastSnapshotRestoresOutput,
     crate::error::DescribeFastSnapshotRestoresError,
 > {
@@ -5345,7 +5665,7 @@ pub fn parse_describe_fast_snapshot_restores_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_fast_snapshot_restores_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeFastSnapshotRestoresOutput,
     crate::error::DescribeFastSnapshotRestoresError,
 > {
@@ -5365,7 +5685,10 @@ pub fn parse_describe_fast_snapshot_restores_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_fleet_history_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeFleetHistoryOutput, crate::error::DescribeFleetHistoryError> {
+) -> std::result::Result<
+    crate::output::DescribeFleetHistoryOutput,
+    crate::error::DescribeFleetHistoryError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeFleetHistoryError::unhandled)?;
     Err(crate::error::DescribeFleetHistoryError::generic(generic))
@@ -5374,7 +5697,10 @@ pub fn parse_describe_fleet_history_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_fleet_history_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeFleetHistoryOutput, crate::error::DescribeFleetHistoryError> {
+) -> std::result::Result<
+    crate::output::DescribeFleetHistoryOutput,
+    crate::error::DescribeFleetHistoryError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_fleet_history_output::Builder::default();
@@ -5391,8 +5717,10 @@ pub fn parse_describe_fleet_history_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_fleet_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeFleetInstancesOutput, crate::error::DescribeFleetInstancesError>
-{
+) -> std::result::Result<
+    crate::output::DescribeFleetInstancesOutput,
+    crate::error::DescribeFleetInstancesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeFleetInstancesError::unhandled)?;
     Err(crate::error::DescribeFleetInstancesError::generic(generic))
@@ -5401,8 +5729,10 @@ pub fn parse_describe_fleet_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_fleet_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeFleetInstancesOutput, crate::error::DescribeFleetInstancesError>
-{
+) -> std::result::Result<
+    crate::output::DescribeFleetInstancesOutput,
+    crate::error::DescribeFleetInstancesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_fleet_instances_output::Builder::default();
@@ -5419,7 +5749,7 @@ pub fn parse_describe_fleet_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_fleets_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeFleetsOutput, crate::error::DescribeFleetsError> {
+) -> std::result::Result<crate::output::DescribeFleetsOutput, crate::error::DescribeFleetsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeFleetsError::unhandled)?;
     Err(crate::error::DescribeFleetsError::generic(generic))
@@ -5428,7 +5758,7 @@ pub fn parse_describe_fleets_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_fleets_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeFleetsOutput, crate::error::DescribeFleetsError> {
+) -> std::result::Result<crate::output::DescribeFleetsOutput, crate::error::DescribeFleetsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_fleets_output::Builder::default();
@@ -5443,7 +5773,8 @@ pub fn parse_describe_fleets_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_flow_logs_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeFlowLogsOutput, crate::error::DescribeFlowLogsError> {
+) -> std::result::Result<crate::output::DescribeFlowLogsOutput, crate::error::DescribeFlowLogsError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeFlowLogsError::unhandled)?;
     Err(crate::error::DescribeFlowLogsError::generic(generic))
@@ -5452,7 +5783,8 @@ pub fn parse_describe_flow_logs_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_flow_logs_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeFlowLogsOutput, crate::error::DescribeFlowLogsError> {
+) -> std::result::Result<crate::output::DescribeFlowLogsOutput, crate::error::DescribeFlowLogsError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_flow_logs_output::Builder::default();
@@ -5467,7 +5799,7 @@ pub fn parse_describe_flow_logs_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_fpga_image_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeFpgaImageAttributeOutput,
     crate::error::DescribeFpgaImageAttributeError,
 > {
@@ -5481,7 +5813,7 @@ pub fn parse_describe_fpga_image_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_fpga_image_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeFpgaImageAttributeOutput,
     crate::error::DescribeFpgaImageAttributeError,
 > {
@@ -5501,7 +5833,10 @@ pub fn parse_describe_fpga_image_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_fpga_images_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeFpgaImagesOutput, crate::error::DescribeFpgaImagesError> {
+) -> std::result::Result<
+    crate::output::DescribeFpgaImagesOutput,
+    crate::error::DescribeFpgaImagesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeFpgaImagesError::unhandled)?;
     Err(crate::error::DescribeFpgaImagesError::generic(generic))
@@ -5510,7 +5845,10 @@ pub fn parse_describe_fpga_images_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_fpga_images_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeFpgaImagesOutput, crate::error::DescribeFpgaImagesError> {
+) -> std::result::Result<
+    crate::output::DescribeFpgaImagesOutput,
+    crate::error::DescribeFpgaImagesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_fpga_images_output::Builder::default();
@@ -5527,7 +5865,7 @@ pub fn parse_describe_fpga_images_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_host_reservation_offerings_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeHostReservationOfferingsOutput,
     crate::error::DescribeHostReservationOfferingsError,
 > {
@@ -5539,7 +5877,7 @@ pub fn parse_describe_host_reservation_offerings_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_host_reservation_offerings_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeHostReservationOfferingsOutput,
     crate::error::DescribeHostReservationOfferingsError,
 > {
@@ -5560,7 +5898,7 @@ pub fn parse_describe_host_reservation_offerings_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_host_reservations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeHostReservationsOutput,
     crate::error::DescribeHostReservationsError,
 > {
@@ -5574,7 +5912,7 @@ pub fn parse_describe_host_reservations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_host_reservations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeHostReservationsOutput,
     crate::error::DescribeHostReservationsError,
 > {
@@ -5594,7 +5932,7 @@ pub fn parse_describe_host_reservations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_hosts_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeHostsOutput, crate::error::DescribeHostsError> {
+) -> std::result::Result<crate::output::DescribeHostsOutput, crate::error::DescribeHostsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeHostsError::unhandled)?;
     Err(crate::error::DescribeHostsError::generic(generic))
@@ -5603,7 +5941,7 @@ pub fn parse_describe_hosts_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_hosts_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeHostsOutput, crate::error::DescribeHostsError> {
+) -> std::result::Result<crate::output::DescribeHostsOutput, crate::error::DescribeHostsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_hosts_output::Builder::default();
@@ -5617,7 +5955,7 @@ pub fn parse_describe_hosts_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_iam_instance_profile_associations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeIamInstanceProfileAssociationsOutput,
     crate::error::DescribeIamInstanceProfileAssociationsError,
 > {
@@ -5629,7 +5967,7 @@ pub fn parse_describe_iam_instance_profile_associations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_iam_instance_profile_associations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeIamInstanceProfileAssociationsOutput,
     crate::error::DescribeIamInstanceProfileAssociationsError,
 > {
@@ -5650,7 +5988,7 @@ pub fn parse_describe_iam_instance_profile_associations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_identity_id_format_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeIdentityIdFormatOutput,
     crate::error::DescribeIdentityIdFormatError,
 > {
@@ -5664,7 +6002,7 @@ pub fn parse_describe_identity_id_format_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_identity_id_format_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeIdentityIdFormatOutput,
     crate::error::DescribeIdentityIdFormatError,
 > {
@@ -5684,7 +6022,8 @@ pub fn parse_describe_identity_id_format_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_id_format_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeIdFormatOutput, crate::error::DescribeIdFormatError> {
+) -> std::result::Result<crate::output::DescribeIdFormatOutput, crate::error::DescribeIdFormatError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeIdFormatError::unhandled)?;
     Err(crate::error::DescribeIdFormatError::generic(generic))
@@ -5693,7 +6032,8 @@ pub fn parse_describe_id_format_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_id_format_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeIdFormatOutput, crate::error::DescribeIdFormatError> {
+) -> std::result::Result<crate::output::DescribeIdFormatOutput, crate::error::DescribeIdFormatError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_id_format_output::Builder::default();
@@ -5708,8 +6048,10 @@ pub fn parse_describe_id_format_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_image_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeImageAttributeOutput, crate::error::DescribeImageAttributeError>
-{
+) -> std::result::Result<
+    crate::output::DescribeImageAttributeOutput,
+    crate::error::DescribeImageAttributeError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeImageAttributeError::unhandled)?;
     Err(crate::error::DescribeImageAttributeError::generic(generic))
@@ -5718,8 +6060,10 @@ pub fn parse_describe_image_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_image_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeImageAttributeOutput, crate::error::DescribeImageAttributeError>
-{
+) -> std::result::Result<
+    crate::output::DescribeImageAttributeOutput,
+    crate::error::DescribeImageAttributeError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_image_attribute_output::Builder::default();
@@ -5736,7 +6080,7 @@ pub fn parse_describe_image_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_images_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeImagesOutput, crate::error::DescribeImagesError> {
+) -> std::result::Result<crate::output::DescribeImagesOutput, crate::error::DescribeImagesError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeImagesError::unhandled)?;
     Err(crate::error::DescribeImagesError::generic(generic))
@@ -5745,7 +6089,7 @@ pub fn parse_describe_images_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_images_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeImagesOutput, crate::error::DescribeImagesError> {
+) -> std::result::Result<crate::output::DescribeImagesOutput, crate::error::DescribeImagesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_images_output::Builder::default();
@@ -5760,7 +6104,7 @@ pub fn parse_describe_images_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_import_image_tasks_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeImportImageTasksOutput,
     crate::error::DescribeImportImageTasksError,
 > {
@@ -5774,7 +6118,7 @@ pub fn parse_describe_import_image_tasks_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_import_image_tasks_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeImportImageTasksOutput,
     crate::error::DescribeImportImageTasksError,
 > {
@@ -5794,7 +6138,7 @@ pub fn parse_describe_import_image_tasks_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_import_snapshot_tasks_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeImportSnapshotTasksOutput,
     crate::error::DescribeImportSnapshotTasksError,
 > {
@@ -5808,7 +6152,7 @@ pub fn parse_describe_import_snapshot_tasks_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_import_snapshot_tasks_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeImportSnapshotTasksOutput,
     crate::error::DescribeImportSnapshotTasksError,
 > {
@@ -5828,7 +6172,7 @@ pub fn parse_describe_import_snapshot_tasks_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_instance_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeInstanceAttributeOutput,
     crate::error::DescribeInstanceAttributeError,
 > {
@@ -5842,7 +6186,7 @@ pub fn parse_describe_instance_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_instance_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeInstanceAttributeOutput,
     crate::error::DescribeInstanceAttributeError,
 > {
@@ -5862,7 +6206,7 @@ pub fn parse_describe_instance_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_instance_credit_specifications_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeInstanceCreditSpecificationsOutput,
     crate::error::DescribeInstanceCreditSpecificationsError,
 > {
@@ -5874,7 +6218,7 @@ pub fn parse_describe_instance_credit_specifications_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_instance_credit_specifications_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeInstanceCreditSpecificationsOutput,
     crate::error::DescribeInstanceCreditSpecificationsError,
 > {
@@ -5895,7 +6239,7 @@ pub fn parse_describe_instance_credit_specifications_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_instance_event_notification_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeInstanceEventNotificationAttributesOutput,
     crate::error::DescribeInstanceEventNotificationAttributesError,
 > {
@@ -5907,7 +6251,7 @@ pub fn parse_describe_instance_event_notification_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_instance_event_notification_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeInstanceEventNotificationAttributesOutput,
     crate::error::DescribeInstanceEventNotificationAttributesError,
 > {
@@ -5929,7 +6273,8 @@ pub fn parse_describe_instance_event_notification_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeInstancesOutput, crate::error::DescribeInstancesError> {
+) -> std::result::Result<crate::output::DescribeInstancesOutput, crate::error::DescribeInstancesError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeInstancesError::unhandled)?;
     Err(crate::error::DescribeInstancesError::generic(generic))
@@ -5938,7 +6283,8 @@ pub fn parse_describe_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeInstancesOutput, crate::error::DescribeInstancesError> {
+) -> std::result::Result<crate::output::DescribeInstancesOutput, crate::error::DescribeInstancesError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_instances_output::Builder::default();
@@ -5953,8 +6299,10 @@ pub fn parse_describe_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_instance_status_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeInstanceStatusOutput, crate::error::DescribeInstanceStatusError>
-{
+) -> std::result::Result<
+    crate::output::DescribeInstanceStatusOutput,
+    crate::error::DescribeInstanceStatusError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeInstanceStatusError::unhandled)?;
     Err(crate::error::DescribeInstanceStatusError::generic(generic))
@@ -5963,8 +6311,10 @@ pub fn parse_describe_instance_status_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_instance_status_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeInstanceStatusOutput, crate::error::DescribeInstanceStatusError>
-{
+) -> std::result::Result<
+    crate::output::DescribeInstanceStatusOutput,
+    crate::error::DescribeInstanceStatusError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_instance_status_output::Builder::default();
@@ -5981,7 +6331,7 @@ pub fn parse_describe_instance_status_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_instance_type_offerings_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeInstanceTypeOfferingsOutput,
     crate::error::DescribeInstanceTypeOfferingsError,
 > {
@@ -5995,7 +6345,7 @@ pub fn parse_describe_instance_type_offerings_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_instance_type_offerings_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeInstanceTypeOfferingsOutput,
     crate::error::DescribeInstanceTypeOfferingsError,
 > {
@@ -6015,7 +6365,10 @@ pub fn parse_describe_instance_type_offerings_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_instance_types_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeInstanceTypesOutput, crate::error::DescribeInstanceTypesError> {
+) -> std::result::Result<
+    crate::output::DescribeInstanceTypesOutput,
+    crate::error::DescribeInstanceTypesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeInstanceTypesError::unhandled)?;
     Err(crate::error::DescribeInstanceTypesError::generic(generic))
@@ -6024,7 +6377,10 @@ pub fn parse_describe_instance_types_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_instance_types_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeInstanceTypesOutput, crate::error::DescribeInstanceTypesError> {
+) -> std::result::Result<
+    crate::output::DescribeInstanceTypesOutput,
+    crate::error::DescribeInstanceTypesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_instance_types_output::Builder::default();
@@ -6041,7 +6397,7 @@ pub fn parse_describe_instance_types_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_internet_gateways_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeInternetGatewaysOutput,
     crate::error::DescribeInternetGatewaysError,
 > {
@@ -6055,7 +6411,7 @@ pub fn parse_describe_internet_gateways_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_internet_gateways_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeInternetGatewaysOutput,
     crate::error::DescribeInternetGatewaysError,
 > {
@@ -6075,7 +6431,8 @@ pub fn parse_describe_internet_gateways_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_ipv6_pools_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeIpv6PoolsOutput, crate::error::DescribeIpv6PoolsError> {
+) -> std::result::Result<crate::output::DescribeIpv6PoolsOutput, crate::error::DescribeIpv6PoolsError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeIpv6PoolsError::unhandled)?;
     Err(crate::error::DescribeIpv6PoolsError::generic(generic))
@@ -6084,7 +6441,8 @@ pub fn parse_describe_ipv6_pools_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_ipv6_pools_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeIpv6PoolsOutput, crate::error::DescribeIpv6PoolsError> {
+) -> std::result::Result<crate::output::DescribeIpv6PoolsOutput, crate::error::DescribeIpv6PoolsError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_ipv6_pools_output::Builder::default();
@@ -6099,7 +6457,8 @@ pub fn parse_describe_ipv6_pools_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_key_pairs_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeKeyPairsOutput, crate::error::DescribeKeyPairsError> {
+) -> std::result::Result<crate::output::DescribeKeyPairsOutput, crate::error::DescribeKeyPairsError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeKeyPairsError::unhandled)?;
     Err(crate::error::DescribeKeyPairsError::generic(generic))
@@ -6108,7 +6467,8 @@ pub fn parse_describe_key_pairs_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_key_pairs_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeKeyPairsOutput, crate::error::DescribeKeyPairsError> {
+) -> std::result::Result<crate::output::DescribeKeyPairsOutput, crate::error::DescribeKeyPairsError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_key_pairs_output::Builder::default();
@@ -6123,8 +6483,10 @@ pub fn parse_describe_key_pairs_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_launch_templates_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeLaunchTemplatesOutput, crate::error::DescribeLaunchTemplatesError>
-{
+) -> std::result::Result<
+    crate::output::DescribeLaunchTemplatesOutput,
+    crate::error::DescribeLaunchTemplatesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeLaunchTemplatesError::unhandled)?;
     Err(crate::error::DescribeLaunchTemplatesError::generic(generic))
@@ -6133,8 +6495,10 @@ pub fn parse_describe_launch_templates_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_launch_templates_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeLaunchTemplatesOutput, crate::error::DescribeLaunchTemplatesError>
-{
+) -> std::result::Result<
+    crate::output::DescribeLaunchTemplatesOutput,
+    crate::error::DescribeLaunchTemplatesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_launch_templates_output::Builder::default();
@@ -6151,7 +6515,7 @@ pub fn parse_describe_launch_templates_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_launch_template_versions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeLaunchTemplateVersionsOutput,
     crate::error::DescribeLaunchTemplateVersionsError,
 > {
@@ -6165,7 +6529,7 @@ pub fn parse_describe_launch_template_versions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_launch_template_versions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeLaunchTemplateVersionsOutput,
     crate::error::DescribeLaunchTemplateVersionsError,
 > {
@@ -6186,7 +6550,7 @@ pub fn parse_describe_launch_template_versions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_local_gateway_route_tables_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeLocalGatewayRouteTablesOutput,
     crate::error::DescribeLocalGatewayRouteTablesError,
 > {
@@ -6200,7 +6564,7 @@ pub fn parse_describe_local_gateway_route_tables_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_local_gateway_route_tables_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeLocalGatewayRouteTablesOutput,
     crate::error::DescribeLocalGatewayRouteTablesError,
 > {
@@ -6221,7 +6585,7 @@ pub fn parse_describe_local_gateway_route_tables_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_local_gateway_route_table_virtual_interface_group_associations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput,
     crate::error::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError,
 > {
@@ -6236,7 +6600,7 @@ pub fn parse_describe_local_gateway_route_table_virtual_interface_group_associat
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_local_gateway_route_table_virtual_interface_group_associations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput,
     crate::error::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError,
 > {
@@ -6251,7 +6615,7 @@ pub fn parse_describe_local_gateway_route_table_virtual_interface_group_associat
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_local_gateway_route_table_vpc_associations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeLocalGatewayRouteTableVpcAssociationsOutput,
     crate::error::DescribeLocalGatewayRouteTableVpcAssociationsError,
 > {
@@ -6263,7 +6627,7 @@ pub fn parse_describe_local_gateway_route_table_vpc_associations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_local_gateway_route_table_vpc_associations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeLocalGatewayRouteTableVpcAssociationsOutput,
     crate::error::DescribeLocalGatewayRouteTableVpcAssociationsError,
 > {
@@ -6283,7 +6647,10 @@ pub fn parse_describe_local_gateway_route_table_vpc_associations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_local_gateways_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeLocalGatewaysOutput, crate::error::DescribeLocalGatewaysError> {
+) -> std::result::Result<
+    crate::output::DescribeLocalGatewaysOutput,
+    crate::error::DescribeLocalGatewaysError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeLocalGatewaysError::unhandled)?;
     Err(crate::error::DescribeLocalGatewaysError::generic(generic))
@@ -6292,7 +6659,10 @@ pub fn parse_describe_local_gateways_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_local_gateways_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeLocalGatewaysOutput, crate::error::DescribeLocalGatewaysError> {
+) -> std::result::Result<
+    crate::output::DescribeLocalGatewaysOutput,
+    crate::error::DescribeLocalGatewaysError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_local_gateways_output::Builder::default();
@@ -6309,7 +6679,7 @@ pub fn parse_describe_local_gateways_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_local_gateway_virtual_interface_groups_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeLocalGatewayVirtualInterfaceGroupsOutput,
     crate::error::DescribeLocalGatewayVirtualInterfaceGroupsError,
 > {
@@ -6321,7 +6691,7 @@ pub fn parse_describe_local_gateway_virtual_interface_groups_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_local_gateway_virtual_interface_groups_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeLocalGatewayVirtualInterfaceGroupsOutput,
     crate::error::DescribeLocalGatewayVirtualInterfaceGroupsError,
 > {
@@ -6343,7 +6713,7 @@ pub fn parse_describe_local_gateway_virtual_interface_groups_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_local_gateway_virtual_interfaces_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeLocalGatewayVirtualInterfacesOutput,
     crate::error::DescribeLocalGatewayVirtualInterfacesError,
 > {
@@ -6355,7 +6725,7 @@ pub fn parse_describe_local_gateway_virtual_interfaces_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_local_gateway_virtual_interfaces_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeLocalGatewayVirtualInterfacesOutput,
     crate::error::DescribeLocalGatewayVirtualInterfacesError,
 > {
@@ -6376,7 +6746,7 @@ pub fn parse_describe_local_gateway_virtual_interfaces_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_managed_prefix_lists_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeManagedPrefixListsOutput,
     crate::error::DescribeManagedPrefixListsError,
 > {
@@ -6390,7 +6760,7 @@ pub fn parse_describe_managed_prefix_lists_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_managed_prefix_lists_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeManagedPrefixListsOutput,
     crate::error::DescribeManagedPrefixListsError,
 > {
@@ -6410,8 +6780,10 @@ pub fn parse_describe_managed_prefix_lists_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_moving_addresses_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeMovingAddressesOutput, crate::error::DescribeMovingAddressesError>
-{
+) -> std::result::Result<
+    crate::output::DescribeMovingAddressesOutput,
+    crate::error::DescribeMovingAddressesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeMovingAddressesError::unhandled)?;
     Err(crate::error::DescribeMovingAddressesError::generic(generic))
@@ -6420,8 +6792,10 @@ pub fn parse_describe_moving_addresses_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_moving_addresses_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeMovingAddressesOutput, crate::error::DescribeMovingAddressesError>
-{
+) -> std::result::Result<
+    crate::output::DescribeMovingAddressesOutput,
+    crate::error::DescribeMovingAddressesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_moving_addresses_output::Builder::default();
@@ -6438,7 +6812,10 @@ pub fn parse_describe_moving_addresses_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_nat_gateways_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeNatGatewaysOutput, crate::error::DescribeNatGatewaysError> {
+) -> std::result::Result<
+    crate::output::DescribeNatGatewaysOutput,
+    crate::error::DescribeNatGatewaysError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeNatGatewaysError::unhandled)?;
     Err(crate::error::DescribeNatGatewaysError::generic(generic))
@@ -6447,7 +6824,10 @@ pub fn parse_describe_nat_gateways_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_nat_gateways_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeNatGatewaysOutput, crate::error::DescribeNatGatewaysError> {
+) -> std::result::Result<
+    crate::output::DescribeNatGatewaysOutput,
+    crate::error::DescribeNatGatewaysError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_nat_gateways_output::Builder::default();
@@ -6464,7 +6844,10 @@ pub fn parse_describe_nat_gateways_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_network_acls_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeNetworkAclsOutput, crate::error::DescribeNetworkAclsError> {
+) -> std::result::Result<
+    crate::output::DescribeNetworkAclsOutput,
+    crate::error::DescribeNetworkAclsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeNetworkAclsError::unhandled)?;
     Err(crate::error::DescribeNetworkAclsError::generic(generic))
@@ -6473,7 +6856,10 @@ pub fn parse_describe_network_acls_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_network_acls_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeNetworkAclsOutput, crate::error::DescribeNetworkAclsError> {
+) -> std::result::Result<
+    crate::output::DescribeNetworkAclsOutput,
+    crate::error::DescribeNetworkAclsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_network_acls_output::Builder::default();
@@ -6490,7 +6876,7 @@ pub fn parse_describe_network_acls_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_network_insights_analyses_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeNetworkInsightsAnalysesOutput,
     crate::error::DescribeNetworkInsightsAnalysesError,
 > {
@@ -6504,7 +6890,7 @@ pub fn parse_describe_network_insights_analyses_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_network_insights_analyses_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeNetworkInsightsAnalysesOutput,
     crate::error::DescribeNetworkInsightsAnalysesError,
 > {
@@ -6525,7 +6911,7 @@ pub fn parse_describe_network_insights_analyses_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_network_insights_paths_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeNetworkInsightsPathsOutput,
     crate::error::DescribeNetworkInsightsPathsError,
 > {
@@ -6539,7 +6925,7 @@ pub fn parse_describe_network_insights_paths_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_network_insights_paths_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeNetworkInsightsPathsOutput,
     crate::error::DescribeNetworkInsightsPathsError,
 > {
@@ -6559,7 +6945,7 @@ pub fn parse_describe_network_insights_paths_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_network_interface_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeNetworkInterfaceAttributeOutput,
     crate::error::DescribeNetworkInterfaceAttributeError,
 > {
@@ -6571,7 +6957,7 @@ pub fn parse_describe_network_interface_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_network_interface_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeNetworkInterfaceAttributeOutput,
     crate::error::DescribeNetworkInterfaceAttributeError,
 > {
@@ -6592,7 +6978,7 @@ pub fn parse_describe_network_interface_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_network_interface_permissions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeNetworkInterfacePermissionsOutput,
     crate::error::DescribeNetworkInterfacePermissionsError,
 > {
@@ -6604,7 +6990,7 @@ pub fn parse_describe_network_interface_permissions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_network_interface_permissions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeNetworkInterfacePermissionsOutput,
     crate::error::DescribeNetworkInterfacePermissionsError,
 > {
@@ -6625,7 +7011,7 @@ pub fn parse_describe_network_interface_permissions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_network_interfaces_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeNetworkInterfacesOutput,
     crate::error::DescribeNetworkInterfacesError,
 > {
@@ -6639,7 +7025,7 @@ pub fn parse_describe_network_interfaces_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_network_interfaces_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeNetworkInterfacesOutput,
     crate::error::DescribeNetworkInterfacesError,
 > {
@@ -6659,8 +7045,10 @@ pub fn parse_describe_network_interfaces_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_placement_groups_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribePlacementGroupsOutput, crate::error::DescribePlacementGroupsError>
-{
+) -> std::result::Result<
+    crate::output::DescribePlacementGroupsOutput,
+    crate::error::DescribePlacementGroupsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribePlacementGroupsError::unhandled)?;
     Err(crate::error::DescribePlacementGroupsError::generic(generic))
@@ -6669,8 +7057,10 @@ pub fn parse_describe_placement_groups_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_placement_groups_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribePlacementGroupsOutput, crate::error::DescribePlacementGroupsError>
-{
+) -> std::result::Result<
+    crate::output::DescribePlacementGroupsOutput,
+    crate::error::DescribePlacementGroupsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_placement_groups_output::Builder::default();
@@ -6687,7 +7077,10 @@ pub fn parse_describe_placement_groups_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_prefix_lists_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribePrefixListsOutput, crate::error::DescribePrefixListsError> {
+) -> std::result::Result<
+    crate::output::DescribePrefixListsOutput,
+    crate::error::DescribePrefixListsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribePrefixListsError::unhandled)?;
     Err(crate::error::DescribePrefixListsError::generic(generic))
@@ -6696,7 +7089,10 @@ pub fn parse_describe_prefix_lists_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_prefix_lists_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribePrefixListsOutput, crate::error::DescribePrefixListsError> {
+) -> std::result::Result<
+    crate::output::DescribePrefixListsOutput,
+    crate::error::DescribePrefixListsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_prefix_lists_output::Builder::default();
@@ -6713,7 +7109,7 @@ pub fn parse_describe_prefix_lists_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_principal_id_format_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribePrincipalIdFormatOutput,
     crate::error::DescribePrincipalIdFormatError,
 > {
@@ -6727,7 +7123,7 @@ pub fn parse_describe_principal_id_format_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_principal_id_format_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribePrincipalIdFormatOutput,
     crate::error::DescribePrincipalIdFormatError,
 > {
@@ -6747,8 +7143,10 @@ pub fn parse_describe_principal_id_format_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_public_ipv4_pools_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribePublicIpv4PoolsOutput, crate::error::DescribePublicIpv4PoolsError>
-{
+) -> std::result::Result<
+    crate::output::DescribePublicIpv4PoolsOutput,
+    crate::error::DescribePublicIpv4PoolsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribePublicIpv4PoolsError::unhandled)?;
     Err(crate::error::DescribePublicIpv4PoolsError::generic(generic))
@@ -6757,8 +7155,10 @@ pub fn parse_describe_public_ipv4_pools_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_public_ipv4_pools_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribePublicIpv4PoolsOutput, crate::error::DescribePublicIpv4PoolsError>
-{
+) -> std::result::Result<
+    crate::output::DescribePublicIpv4PoolsOutput,
+    crate::error::DescribePublicIpv4PoolsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_public_ipv4_pools_output::Builder::default();
@@ -6775,7 +7175,7 @@ pub fn parse_describe_public_ipv4_pools_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_regions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeRegionsOutput, crate::error::DescribeRegionsError> {
+) -> std::result::Result<crate::output::DescribeRegionsOutput, crate::error::DescribeRegionsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeRegionsError::unhandled)?;
     Err(crate::error::DescribeRegionsError::generic(generic))
@@ -6784,7 +7184,7 @@ pub fn parse_describe_regions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_regions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeRegionsOutput, crate::error::DescribeRegionsError> {
+) -> std::result::Result<crate::output::DescribeRegionsOutput, crate::error::DescribeRegionsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_regions_output::Builder::default();
@@ -6799,7 +7199,7 @@ pub fn parse_describe_regions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_replace_root_volume_tasks_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeReplaceRootVolumeTasksOutput,
     crate::error::DescribeReplaceRootVolumeTasksError,
 > {
@@ -6813,7 +7213,7 @@ pub fn parse_describe_replace_root_volume_tasks_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_replace_root_volume_tasks_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeReplaceRootVolumeTasksOutput,
     crate::error::DescribeReplaceRootVolumeTasksError,
 > {
@@ -6834,7 +7234,7 @@ pub fn parse_describe_replace_root_volume_tasks_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_reserved_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeReservedInstancesOutput,
     crate::error::DescribeReservedInstancesError,
 > {
@@ -6848,7 +7248,7 @@ pub fn parse_describe_reserved_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_reserved_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeReservedInstancesOutput,
     crate::error::DescribeReservedInstancesError,
 > {
@@ -6868,7 +7268,7 @@ pub fn parse_describe_reserved_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_reserved_instances_listings_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeReservedInstancesListingsOutput,
     crate::error::DescribeReservedInstancesListingsError,
 > {
@@ -6880,7 +7280,7 @@ pub fn parse_describe_reserved_instances_listings_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_reserved_instances_listings_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeReservedInstancesListingsOutput,
     crate::error::DescribeReservedInstancesListingsError,
 > {
@@ -6901,7 +7301,7 @@ pub fn parse_describe_reserved_instances_listings_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_reserved_instances_modifications_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeReservedInstancesModificationsOutput,
     crate::error::DescribeReservedInstancesModificationsError,
 > {
@@ -6913,7 +7313,7 @@ pub fn parse_describe_reserved_instances_modifications_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_reserved_instances_modifications_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeReservedInstancesModificationsOutput,
     crate::error::DescribeReservedInstancesModificationsError,
 > {
@@ -6934,7 +7334,7 @@ pub fn parse_describe_reserved_instances_modifications_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_reserved_instances_offerings_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeReservedInstancesOfferingsOutput,
     crate::error::DescribeReservedInstancesOfferingsError,
 > {
@@ -6946,7 +7346,7 @@ pub fn parse_describe_reserved_instances_offerings_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_reserved_instances_offerings_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeReservedInstancesOfferingsOutput,
     crate::error::DescribeReservedInstancesOfferingsError,
 > {
@@ -6967,7 +7367,10 @@ pub fn parse_describe_reserved_instances_offerings_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_route_tables_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeRouteTablesOutput, crate::error::DescribeRouteTablesError> {
+) -> std::result::Result<
+    crate::output::DescribeRouteTablesOutput,
+    crate::error::DescribeRouteTablesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeRouteTablesError::unhandled)?;
     Err(crate::error::DescribeRouteTablesError::generic(generic))
@@ -6976,7 +7379,10 @@ pub fn parse_describe_route_tables_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_route_tables_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeRouteTablesOutput, crate::error::DescribeRouteTablesError> {
+) -> std::result::Result<
+    crate::output::DescribeRouteTablesOutput,
+    crate::error::DescribeRouteTablesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_route_tables_output::Builder::default();
@@ -6993,7 +7399,7 @@ pub fn parse_describe_route_tables_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_scheduled_instance_availability_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeScheduledInstanceAvailabilityOutput,
     crate::error::DescribeScheduledInstanceAvailabilityError,
 > {
@@ -7005,7 +7411,7 @@ pub fn parse_describe_scheduled_instance_availability_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_scheduled_instance_availability_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeScheduledInstanceAvailabilityOutput,
     crate::error::DescribeScheduledInstanceAvailabilityError,
 > {
@@ -7026,7 +7432,7 @@ pub fn parse_describe_scheduled_instance_availability_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_scheduled_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeScheduledInstancesOutput,
     crate::error::DescribeScheduledInstancesError,
 > {
@@ -7040,7 +7446,7 @@ pub fn parse_describe_scheduled_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_scheduled_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeScheduledInstancesOutput,
     crate::error::DescribeScheduledInstancesError,
 > {
@@ -7060,7 +7466,7 @@ pub fn parse_describe_scheduled_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_security_group_references_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeSecurityGroupReferencesOutput,
     crate::error::DescribeSecurityGroupReferencesError,
 > {
@@ -7074,7 +7480,7 @@ pub fn parse_describe_security_group_references_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_security_group_references_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeSecurityGroupReferencesOutput,
     crate::error::DescribeSecurityGroupReferencesError,
 > {
@@ -7095,8 +7501,10 @@ pub fn parse_describe_security_group_references_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_security_groups_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeSecurityGroupsOutput, crate::error::DescribeSecurityGroupsError>
-{
+) -> std::result::Result<
+    crate::output::DescribeSecurityGroupsOutput,
+    crate::error::DescribeSecurityGroupsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeSecurityGroupsError::unhandled)?;
     Err(crate::error::DescribeSecurityGroupsError::generic(generic))
@@ -7105,8 +7513,10 @@ pub fn parse_describe_security_groups_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_security_groups_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeSecurityGroupsOutput, crate::error::DescribeSecurityGroupsError>
-{
+) -> std::result::Result<
+    crate::output::DescribeSecurityGroupsOutput,
+    crate::error::DescribeSecurityGroupsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_security_groups_output::Builder::default();
@@ -7123,7 +7533,7 @@ pub fn parse_describe_security_groups_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_snapshot_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeSnapshotAttributeOutput,
     crate::error::DescribeSnapshotAttributeError,
 > {
@@ -7137,7 +7547,7 @@ pub fn parse_describe_snapshot_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_snapshot_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeSnapshotAttributeOutput,
     crate::error::DescribeSnapshotAttributeError,
 > {
@@ -7157,7 +7567,8 @@ pub fn parse_describe_snapshot_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_snapshots_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeSnapshotsOutput, crate::error::DescribeSnapshotsError> {
+) -> std::result::Result<crate::output::DescribeSnapshotsOutput, crate::error::DescribeSnapshotsError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeSnapshotsError::unhandled)?;
     Err(crate::error::DescribeSnapshotsError::generic(generic))
@@ -7166,7 +7577,8 @@ pub fn parse_describe_snapshots_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_snapshots_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeSnapshotsOutput, crate::error::DescribeSnapshotsError> {
+) -> std::result::Result<crate::output::DescribeSnapshotsOutput, crate::error::DescribeSnapshotsError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_snapshots_output::Builder::default();
@@ -7181,7 +7593,7 @@ pub fn parse_describe_snapshots_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_spot_datafeed_subscription_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeSpotDatafeedSubscriptionOutput,
     crate::error::DescribeSpotDatafeedSubscriptionError,
 > {
@@ -7193,7 +7605,7 @@ pub fn parse_describe_spot_datafeed_subscription_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_spot_datafeed_subscription_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeSpotDatafeedSubscriptionOutput,
     crate::error::DescribeSpotDatafeedSubscriptionError,
 > {
@@ -7214,7 +7626,7 @@ pub fn parse_describe_spot_datafeed_subscription_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_spot_fleet_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeSpotFleetInstancesOutput,
     crate::error::DescribeSpotFleetInstancesError,
 > {
@@ -7228,7 +7640,7 @@ pub fn parse_describe_spot_fleet_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_spot_fleet_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeSpotFleetInstancesOutput,
     crate::error::DescribeSpotFleetInstancesError,
 > {
@@ -7248,7 +7660,7 @@ pub fn parse_describe_spot_fleet_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_spot_fleet_request_history_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeSpotFleetRequestHistoryOutput,
     crate::error::DescribeSpotFleetRequestHistoryError,
 > {
@@ -7262,7 +7674,7 @@ pub fn parse_describe_spot_fleet_request_history_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_spot_fleet_request_history_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeSpotFleetRequestHistoryOutput,
     crate::error::DescribeSpotFleetRequestHistoryError,
 > {
@@ -7283,7 +7695,7 @@ pub fn parse_describe_spot_fleet_request_history_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_spot_fleet_requests_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeSpotFleetRequestsOutput,
     crate::error::DescribeSpotFleetRequestsError,
 > {
@@ -7297,7 +7709,7 @@ pub fn parse_describe_spot_fleet_requests_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_spot_fleet_requests_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeSpotFleetRequestsOutput,
     crate::error::DescribeSpotFleetRequestsError,
 > {
@@ -7317,7 +7729,7 @@ pub fn parse_describe_spot_fleet_requests_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_spot_instance_requests_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeSpotInstanceRequestsOutput,
     crate::error::DescribeSpotInstanceRequestsError,
 > {
@@ -7331,7 +7743,7 @@ pub fn parse_describe_spot_instance_requests_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_spot_instance_requests_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeSpotInstanceRequestsOutput,
     crate::error::DescribeSpotInstanceRequestsError,
 > {
@@ -7351,7 +7763,7 @@ pub fn parse_describe_spot_instance_requests_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_spot_price_history_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeSpotPriceHistoryOutput,
     crate::error::DescribeSpotPriceHistoryError,
 > {
@@ -7365,7 +7777,7 @@ pub fn parse_describe_spot_price_history_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_spot_price_history_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeSpotPriceHistoryOutput,
     crate::error::DescribeSpotPriceHistoryError,
 > {
@@ -7385,7 +7797,7 @@ pub fn parse_describe_spot_price_history_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_stale_security_groups_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeStaleSecurityGroupsOutput,
     crate::error::DescribeStaleSecurityGroupsError,
 > {
@@ -7399,7 +7811,7 @@ pub fn parse_describe_stale_security_groups_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_stale_security_groups_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeStaleSecurityGroupsOutput,
     crate::error::DescribeStaleSecurityGroupsError,
 > {
@@ -7419,8 +7831,10 @@ pub fn parse_describe_stale_security_groups_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_store_image_tasks_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeStoreImageTasksOutput, crate::error::DescribeStoreImageTasksError>
-{
+) -> std::result::Result<
+    crate::output::DescribeStoreImageTasksOutput,
+    crate::error::DescribeStoreImageTasksError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeStoreImageTasksError::unhandled)?;
     Err(crate::error::DescribeStoreImageTasksError::generic(generic))
@@ -7429,8 +7843,10 @@ pub fn parse_describe_store_image_tasks_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_store_image_tasks_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeStoreImageTasksOutput, crate::error::DescribeStoreImageTasksError>
-{
+) -> std::result::Result<
+    crate::output::DescribeStoreImageTasksOutput,
+    crate::error::DescribeStoreImageTasksError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_store_image_tasks_output::Builder::default();
@@ -7447,7 +7863,7 @@ pub fn parse_describe_store_image_tasks_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_subnets_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeSubnetsOutput, crate::error::DescribeSubnetsError> {
+) -> std::result::Result<crate::output::DescribeSubnetsOutput, crate::error::DescribeSubnetsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeSubnetsError::unhandled)?;
     Err(crate::error::DescribeSubnetsError::generic(generic))
@@ -7456,7 +7872,7 @@ pub fn parse_describe_subnets_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_subnets_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeSubnetsOutput, crate::error::DescribeSubnetsError> {
+) -> std::result::Result<crate::output::DescribeSubnetsOutput, crate::error::DescribeSubnetsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_subnets_output::Builder::default();
@@ -7471,7 +7887,7 @@ pub fn parse_describe_subnets_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_tags_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError> {
+) -> std::result::Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeTagsError::unhandled)?;
     Err(crate::error::DescribeTagsError::generic(generic))
@@ -7480,7 +7896,7 @@ pub fn parse_describe_tags_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_tags_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError> {
+) -> std::result::Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_tags_output::Builder::default();
@@ -7494,7 +7910,7 @@ pub fn parse_describe_tags_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_traffic_mirror_filters_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTrafficMirrorFiltersOutput,
     crate::error::DescribeTrafficMirrorFiltersError,
 > {
@@ -7508,7 +7924,7 @@ pub fn parse_describe_traffic_mirror_filters_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_traffic_mirror_filters_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTrafficMirrorFiltersOutput,
     crate::error::DescribeTrafficMirrorFiltersError,
 > {
@@ -7528,7 +7944,7 @@ pub fn parse_describe_traffic_mirror_filters_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_traffic_mirror_sessions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTrafficMirrorSessionsOutput,
     crate::error::DescribeTrafficMirrorSessionsError,
 > {
@@ -7542,7 +7958,7 @@ pub fn parse_describe_traffic_mirror_sessions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_traffic_mirror_sessions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTrafficMirrorSessionsOutput,
     crate::error::DescribeTrafficMirrorSessionsError,
 > {
@@ -7562,7 +7978,7 @@ pub fn parse_describe_traffic_mirror_sessions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_traffic_mirror_targets_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTrafficMirrorTargetsOutput,
     crate::error::DescribeTrafficMirrorTargetsError,
 > {
@@ -7576,7 +7992,7 @@ pub fn parse_describe_traffic_mirror_targets_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_traffic_mirror_targets_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTrafficMirrorTargetsOutput,
     crate::error::DescribeTrafficMirrorTargetsError,
 > {
@@ -7596,7 +8012,7 @@ pub fn parse_describe_traffic_mirror_targets_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateway_attachments_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTransitGatewayAttachmentsOutput,
     crate::error::DescribeTransitGatewayAttachmentsError,
 > {
@@ -7608,7 +8024,7 @@ pub fn parse_describe_transit_gateway_attachments_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateway_attachments_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTransitGatewayAttachmentsOutput,
     crate::error::DescribeTransitGatewayAttachmentsError,
 > {
@@ -7629,7 +8045,7 @@ pub fn parse_describe_transit_gateway_attachments_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateway_connect_peers_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTransitGatewayConnectPeersOutput,
     crate::error::DescribeTransitGatewayConnectPeersError,
 > {
@@ -7641,7 +8057,7 @@ pub fn parse_describe_transit_gateway_connect_peers_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateway_connect_peers_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTransitGatewayConnectPeersOutput,
     crate::error::DescribeTransitGatewayConnectPeersError,
 > {
@@ -7662,7 +8078,7 @@ pub fn parse_describe_transit_gateway_connect_peers_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateway_connects_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTransitGatewayConnectsOutput,
     crate::error::DescribeTransitGatewayConnectsError,
 > {
@@ -7676,7 +8092,7 @@ pub fn parse_describe_transit_gateway_connects_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateway_connects_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTransitGatewayConnectsOutput,
     crate::error::DescribeTransitGatewayConnectsError,
 > {
@@ -7697,7 +8113,7 @@ pub fn parse_describe_transit_gateway_connects_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateway_multicast_domains_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTransitGatewayMulticastDomainsOutput,
     crate::error::DescribeTransitGatewayMulticastDomainsError,
 > {
@@ -7709,7 +8125,7 @@ pub fn parse_describe_transit_gateway_multicast_domains_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateway_multicast_domains_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTransitGatewayMulticastDomainsOutput,
     crate::error::DescribeTransitGatewayMulticastDomainsError,
 > {
@@ -7730,7 +8146,7 @@ pub fn parse_describe_transit_gateway_multicast_domains_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateway_peering_attachments_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTransitGatewayPeeringAttachmentsOutput,
     crate::error::DescribeTransitGatewayPeeringAttachmentsError,
 > {
@@ -7742,7 +8158,7 @@ pub fn parse_describe_transit_gateway_peering_attachments_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateway_peering_attachments_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTransitGatewayPeeringAttachmentsOutput,
     crate::error::DescribeTransitGatewayPeeringAttachmentsError,
 > {
@@ -7763,7 +8179,7 @@ pub fn parse_describe_transit_gateway_peering_attachments_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateway_route_tables_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTransitGatewayRouteTablesOutput,
     crate::error::DescribeTransitGatewayRouteTablesError,
 > {
@@ -7775,7 +8191,7 @@ pub fn parse_describe_transit_gateway_route_tables_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateway_route_tables_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTransitGatewayRouteTablesOutput,
     crate::error::DescribeTransitGatewayRouteTablesError,
 > {
@@ -7796,8 +8212,10 @@ pub fn parse_describe_transit_gateway_route_tables_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateways_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeTransitGatewaysOutput, crate::error::DescribeTransitGatewaysError>
-{
+) -> std::result::Result<
+    crate::output::DescribeTransitGatewaysOutput,
+    crate::error::DescribeTransitGatewaysError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeTransitGatewaysError::unhandled)?;
     Err(crate::error::DescribeTransitGatewaysError::generic(generic))
@@ -7806,8 +8224,10 @@ pub fn parse_describe_transit_gateways_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateways_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeTransitGatewaysOutput, crate::error::DescribeTransitGatewaysError>
-{
+) -> std::result::Result<
+    crate::output::DescribeTransitGatewaysOutput,
+    crate::error::DescribeTransitGatewaysError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_transit_gateways_output::Builder::default();
@@ -7824,7 +8244,7 @@ pub fn parse_describe_transit_gateways_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateway_vpc_attachments_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTransitGatewayVpcAttachmentsOutput,
     crate::error::DescribeTransitGatewayVpcAttachmentsError,
 > {
@@ -7836,7 +8256,7 @@ pub fn parse_describe_transit_gateway_vpc_attachments_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_transit_gateway_vpc_attachments_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeTransitGatewayVpcAttachmentsOutput,
     crate::error::DescribeTransitGatewayVpcAttachmentsError,
 > {
@@ -7857,8 +8277,10 @@ pub fn parse_describe_transit_gateway_vpc_attachments_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_volume_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVolumeAttributeOutput, crate::error::DescribeVolumeAttributeError>
-{
+) -> std::result::Result<
+    crate::output::DescribeVolumeAttributeOutput,
+    crate::error::DescribeVolumeAttributeError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeVolumeAttributeError::unhandled)?;
     Err(crate::error::DescribeVolumeAttributeError::generic(generic))
@@ -7867,8 +8289,10 @@ pub fn parse_describe_volume_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_volume_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVolumeAttributeOutput, crate::error::DescribeVolumeAttributeError>
-{
+) -> std::result::Result<
+    crate::output::DescribeVolumeAttributeOutput,
+    crate::error::DescribeVolumeAttributeError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_volume_attribute_output::Builder::default();
@@ -7885,7 +8309,7 @@ pub fn parse_describe_volume_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_volumes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVolumesOutput, crate::error::DescribeVolumesError> {
+) -> std::result::Result<crate::output::DescribeVolumesOutput, crate::error::DescribeVolumesError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeVolumesError::unhandled)?;
     Err(crate::error::DescribeVolumesError::generic(generic))
@@ -7894,7 +8318,7 @@ pub fn parse_describe_volumes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_volumes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVolumesOutput, crate::error::DescribeVolumesError> {
+) -> std::result::Result<crate::output::DescribeVolumesOutput, crate::error::DescribeVolumesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_volumes_output::Builder::default();
@@ -7909,7 +8333,7 @@ pub fn parse_describe_volumes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_volumes_modifications_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeVolumesModificationsOutput,
     crate::error::DescribeVolumesModificationsError,
 > {
@@ -7923,7 +8347,7 @@ pub fn parse_describe_volumes_modifications_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_volumes_modifications_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeVolumesModificationsOutput,
     crate::error::DescribeVolumesModificationsError,
 > {
@@ -7943,7 +8367,10 @@ pub fn parse_describe_volumes_modifications_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_volume_status_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVolumeStatusOutput, crate::error::DescribeVolumeStatusError> {
+) -> std::result::Result<
+    crate::output::DescribeVolumeStatusOutput,
+    crate::error::DescribeVolumeStatusError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeVolumeStatusError::unhandled)?;
     Err(crate::error::DescribeVolumeStatusError::generic(generic))
@@ -7952,7 +8379,10 @@ pub fn parse_describe_volume_status_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_volume_status_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVolumeStatusOutput, crate::error::DescribeVolumeStatusError> {
+) -> std::result::Result<
+    crate::output::DescribeVolumeStatusOutput,
+    crate::error::DescribeVolumeStatusError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_volume_status_output::Builder::default();
@@ -7969,7 +8399,10 @@ pub fn parse_describe_volume_status_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVpcAttributeOutput, crate::error::DescribeVpcAttributeError> {
+) -> std::result::Result<
+    crate::output::DescribeVpcAttributeOutput,
+    crate::error::DescribeVpcAttributeError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeVpcAttributeError::unhandled)?;
     Err(crate::error::DescribeVpcAttributeError::generic(generic))
@@ -7978,7 +8411,10 @@ pub fn parse_describe_vpc_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVpcAttributeOutput, crate::error::DescribeVpcAttributeError> {
+) -> std::result::Result<
+    crate::output::DescribeVpcAttributeOutput,
+    crate::error::DescribeVpcAttributeError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_vpc_attribute_output::Builder::default();
@@ -7995,8 +8431,10 @@ pub fn parse_describe_vpc_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_classic_link_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVpcClassicLinkOutput, crate::error::DescribeVpcClassicLinkError>
-{
+) -> std::result::Result<
+    crate::output::DescribeVpcClassicLinkOutput,
+    crate::error::DescribeVpcClassicLinkError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeVpcClassicLinkError::unhandled)?;
     Err(crate::error::DescribeVpcClassicLinkError::generic(generic))
@@ -8005,8 +8443,10 @@ pub fn parse_describe_vpc_classic_link_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_classic_link_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVpcClassicLinkOutput, crate::error::DescribeVpcClassicLinkError>
-{
+) -> std::result::Result<
+    crate::output::DescribeVpcClassicLinkOutput,
+    crate::error::DescribeVpcClassicLinkError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_vpc_classic_link_output::Builder::default();
@@ -8023,7 +8463,7 @@ pub fn parse_describe_vpc_classic_link_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_classic_link_dns_support_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeVpcClassicLinkDnsSupportOutput,
     crate::error::DescribeVpcClassicLinkDnsSupportError,
 > {
@@ -8035,7 +8475,7 @@ pub fn parse_describe_vpc_classic_link_dns_support_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_classic_link_dns_support_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeVpcClassicLinkDnsSupportOutput,
     crate::error::DescribeVpcClassicLinkDnsSupportError,
 > {
@@ -8056,7 +8496,7 @@ pub fn parse_describe_vpc_classic_link_dns_support_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_endpoint_connection_notifications_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeVpcEndpointConnectionNotificationsOutput,
     crate::error::DescribeVpcEndpointConnectionNotificationsError,
 > {
@@ -8068,7 +8508,7 @@ pub fn parse_describe_vpc_endpoint_connection_notifications_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_endpoint_connection_notifications_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeVpcEndpointConnectionNotificationsOutput,
     crate::error::DescribeVpcEndpointConnectionNotificationsError,
 > {
@@ -8090,7 +8530,7 @@ pub fn parse_describe_vpc_endpoint_connection_notifications_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_endpoint_connections_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeVpcEndpointConnectionsOutput,
     crate::error::DescribeVpcEndpointConnectionsError,
 > {
@@ -8104,7 +8544,7 @@ pub fn parse_describe_vpc_endpoint_connections_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_endpoint_connections_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeVpcEndpointConnectionsOutput,
     crate::error::DescribeVpcEndpointConnectionsError,
 > {
@@ -8125,7 +8565,10 @@ pub fn parse_describe_vpc_endpoint_connections_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_endpoints_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVpcEndpointsOutput, crate::error::DescribeVpcEndpointsError> {
+) -> std::result::Result<
+    crate::output::DescribeVpcEndpointsOutput,
+    crate::error::DescribeVpcEndpointsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeVpcEndpointsError::unhandled)?;
     Err(crate::error::DescribeVpcEndpointsError::generic(generic))
@@ -8134,7 +8577,10 @@ pub fn parse_describe_vpc_endpoints_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_endpoints_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVpcEndpointsOutput, crate::error::DescribeVpcEndpointsError> {
+) -> std::result::Result<
+    crate::output::DescribeVpcEndpointsOutput,
+    crate::error::DescribeVpcEndpointsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_vpc_endpoints_output::Builder::default();
@@ -8151,7 +8597,7 @@ pub fn parse_describe_vpc_endpoints_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_endpoint_service_configurations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeVpcEndpointServiceConfigurationsOutput,
     crate::error::DescribeVpcEndpointServiceConfigurationsError,
 > {
@@ -8163,7 +8609,7 @@ pub fn parse_describe_vpc_endpoint_service_configurations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_endpoint_service_configurations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeVpcEndpointServiceConfigurationsOutput,
     crate::error::DescribeVpcEndpointServiceConfigurationsError,
 > {
@@ -8184,7 +8630,7 @@ pub fn parse_describe_vpc_endpoint_service_configurations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_endpoint_service_permissions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeVpcEndpointServicePermissionsOutput,
     crate::error::DescribeVpcEndpointServicePermissionsError,
 > {
@@ -8196,7 +8642,7 @@ pub fn parse_describe_vpc_endpoint_service_permissions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_endpoint_service_permissions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeVpcEndpointServicePermissionsOutput,
     crate::error::DescribeVpcEndpointServicePermissionsError,
 > {
@@ -8217,7 +8663,7 @@ pub fn parse_describe_vpc_endpoint_service_permissions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_endpoint_services_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeVpcEndpointServicesOutput,
     crate::error::DescribeVpcEndpointServicesError,
 > {
@@ -8231,7 +8677,7 @@ pub fn parse_describe_vpc_endpoint_services_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_endpoint_services_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeVpcEndpointServicesOutput,
     crate::error::DescribeVpcEndpointServicesError,
 > {
@@ -8251,7 +8697,7 @@ pub fn parse_describe_vpc_endpoint_services_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_peering_connections_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeVpcPeeringConnectionsOutput,
     crate::error::DescribeVpcPeeringConnectionsError,
 > {
@@ -8265,7 +8711,7 @@ pub fn parse_describe_vpc_peering_connections_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpc_peering_connections_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeVpcPeeringConnectionsOutput,
     crate::error::DescribeVpcPeeringConnectionsError,
 > {
@@ -8285,7 +8731,7 @@ pub fn parse_describe_vpc_peering_connections_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpcs_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVpcsOutput, crate::error::DescribeVpcsError> {
+) -> std::result::Result<crate::output::DescribeVpcsOutput, crate::error::DescribeVpcsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeVpcsError::unhandled)?;
     Err(crate::error::DescribeVpcsError::generic(generic))
@@ -8294,7 +8740,7 @@ pub fn parse_describe_vpcs_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpcs_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVpcsOutput, crate::error::DescribeVpcsError> {
+) -> std::result::Result<crate::output::DescribeVpcsOutput, crate::error::DescribeVpcsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_vpcs_output::Builder::default();
@@ -8308,8 +8754,10 @@ pub fn parse_describe_vpcs_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpn_connections_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVpnConnectionsOutput, crate::error::DescribeVpnConnectionsError>
-{
+) -> std::result::Result<
+    crate::output::DescribeVpnConnectionsOutput,
+    crate::error::DescribeVpnConnectionsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeVpnConnectionsError::unhandled)?;
     Err(crate::error::DescribeVpnConnectionsError::generic(generic))
@@ -8318,8 +8766,10 @@ pub fn parse_describe_vpn_connections_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpn_connections_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVpnConnectionsOutput, crate::error::DescribeVpnConnectionsError>
-{
+) -> std::result::Result<
+    crate::output::DescribeVpnConnectionsOutput,
+    crate::error::DescribeVpnConnectionsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_vpn_connections_output::Builder::default();
@@ -8336,7 +8786,10 @@ pub fn parse_describe_vpn_connections_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpn_gateways_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVpnGatewaysOutput, crate::error::DescribeVpnGatewaysError> {
+) -> std::result::Result<
+    crate::output::DescribeVpnGatewaysOutput,
+    crate::error::DescribeVpnGatewaysError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeVpnGatewaysError::unhandled)?;
     Err(crate::error::DescribeVpnGatewaysError::generic(generic))
@@ -8345,7 +8798,10 @@ pub fn parse_describe_vpn_gateways_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_vpn_gateways_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVpnGatewaysOutput, crate::error::DescribeVpnGatewaysError> {
+) -> std::result::Result<
+    crate::output::DescribeVpnGatewaysOutput,
+    crate::error::DescribeVpnGatewaysError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_vpn_gateways_output::Builder::default();
@@ -8362,7 +8818,10 @@ pub fn parse_describe_vpn_gateways_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_detach_classic_link_vpc_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DetachClassicLinkVpcOutput, crate::error::DetachClassicLinkVpcError> {
+) -> std::result::Result<
+    crate::output::DetachClassicLinkVpcOutput,
+    crate::error::DetachClassicLinkVpcError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DetachClassicLinkVpcError::unhandled)?;
     Err(crate::error::DetachClassicLinkVpcError::generic(generic))
@@ -8371,7 +8830,10 @@ pub fn parse_detach_classic_link_vpc_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_detach_classic_link_vpc_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DetachClassicLinkVpcOutput, crate::error::DetachClassicLinkVpcError> {
+) -> std::result::Result<
+    crate::output::DetachClassicLinkVpcOutput,
+    crate::error::DetachClassicLinkVpcError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::detach_classic_link_vpc_output::Builder::default();
@@ -8388,7 +8850,10 @@ pub fn parse_detach_classic_link_vpc_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_detach_internet_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DetachInternetGatewayOutput, crate::error::DetachInternetGatewayError> {
+) -> std::result::Result<
+    crate::output::DetachInternetGatewayOutput,
+    crate::error::DetachInternetGatewayError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DetachInternetGatewayError::unhandled)?;
     Err(crate::error::DetachInternetGatewayError::generic(generic))
@@ -8397,7 +8862,10 @@ pub fn parse_detach_internet_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_detach_internet_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DetachInternetGatewayOutput, crate::error::DetachInternetGatewayError> {
+) -> std::result::Result<
+    crate::output::DetachInternetGatewayOutput,
+    crate::error::DetachInternetGatewayError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::detach_internet_gateway_output::Builder::default();
@@ -8409,8 +8877,10 @@ pub fn parse_detach_internet_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_detach_network_interface_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DetachNetworkInterfaceOutput, crate::error::DetachNetworkInterfaceError>
-{
+) -> std::result::Result<
+    crate::output::DetachNetworkInterfaceOutput,
+    crate::error::DetachNetworkInterfaceError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DetachNetworkInterfaceError::unhandled)?;
     Err(crate::error::DetachNetworkInterfaceError::generic(generic))
@@ -8419,8 +8889,10 @@ pub fn parse_detach_network_interface_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_detach_network_interface_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DetachNetworkInterfaceOutput, crate::error::DetachNetworkInterfaceError>
-{
+) -> std::result::Result<
+    crate::output::DetachNetworkInterfaceOutput,
+    crate::error::DetachNetworkInterfaceError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::detach_network_interface_output::Builder::default();
@@ -8432,7 +8904,7 @@ pub fn parse_detach_network_interface_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_detach_volume_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DetachVolumeOutput, crate::error::DetachVolumeError> {
+) -> std::result::Result<crate::output::DetachVolumeOutput, crate::error::DetachVolumeError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DetachVolumeError::unhandled)?;
     Err(crate::error::DetachVolumeError::generic(generic))
@@ -8441,7 +8913,7 @@ pub fn parse_detach_volume_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_detach_volume_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DetachVolumeOutput, crate::error::DetachVolumeError> {
+) -> std::result::Result<crate::output::DetachVolumeOutput, crate::error::DetachVolumeError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::detach_volume_output::Builder::default();
@@ -8455,7 +8927,8 @@ pub fn parse_detach_volume_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_detach_vpn_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DetachVpnGatewayOutput, crate::error::DetachVpnGatewayError> {
+) -> std::result::Result<crate::output::DetachVpnGatewayOutput, crate::error::DetachVpnGatewayError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DetachVpnGatewayError::unhandled)?;
     Err(crate::error::DetachVpnGatewayError::generic(generic))
@@ -8464,7 +8937,8 @@ pub fn parse_detach_vpn_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_detach_vpn_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DetachVpnGatewayOutput, crate::error::DetachVpnGatewayError> {
+) -> std::result::Result<crate::output::DetachVpnGatewayOutput, crate::error::DetachVpnGatewayError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::detach_vpn_gateway_output::Builder::default();
@@ -8476,7 +8950,7 @@ pub fn parse_detach_vpn_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_ebs_encryption_by_default_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisableEbsEncryptionByDefaultOutput,
     crate::error::DisableEbsEncryptionByDefaultError,
 > {
@@ -8490,7 +8964,7 @@ pub fn parse_disable_ebs_encryption_by_default_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_ebs_encryption_by_default_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisableEbsEncryptionByDefaultOutput,
     crate::error::DisableEbsEncryptionByDefaultError,
 > {
@@ -8511,7 +8985,7 @@ pub fn parse_disable_ebs_encryption_by_default_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_fast_snapshot_restores_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisableFastSnapshotRestoresOutput,
     crate::error::DisableFastSnapshotRestoresError,
 > {
@@ -8525,7 +8999,7 @@ pub fn parse_disable_fast_snapshot_restores_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_fast_snapshot_restores_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisableFastSnapshotRestoresOutput,
     crate::error::DisableFastSnapshotRestoresError,
 > {
@@ -8545,7 +9019,7 @@ pub fn parse_disable_fast_snapshot_restores_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_serial_console_access_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisableSerialConsoleAccessOutput,
     crate::error::DisableSerialConsoleAccessError,
 > {
@@ -8559,7 +9033,7 @@ pub fn parse_disable_serial_console_access_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_serial_console_access_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisableSerialConsoleAccessOutput,
     crate::error::DisableSerialConsoleAccessError,
 > {
@@ -8579,7 +9053,7 @@ pub fn parse_disable_serial_console_access_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_transit_gateway_route_table_propagation_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisableTransitGatewayRouteTablePropagationOutput,
     crate::error::DisableTransitGatewayRouteTablePropagationError,
 > {
@@ -8591,7 +9065,7 @@ pub fn parse_disable_transit_gateway_route_table_propagation_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_transit_gateway_route_table_propagation_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisableTransitGatewayRouteTablePropagationOutput,
     crate::error::DisableTransitGatewayRouteTablePropagationError,
 > {
@@ -8613,7 +9087,7 @@ pub fn parse_disable_transit_gateway_route_table_propagation_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_vgw_route_propagation_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisableVgwRoutePropagationOutput,
     crate::error::DisableVgwRoutePropagationError,
 > {
@@ -8627,7 +9101,7 @@ pub fn parse_disable_vgw_route_propagation_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_vgw_route_propagation_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisableVgwRoutePropagationOutput,
     crate::error::DisableVgwRoutePropagationError,
 > {
@@ -8642,7 +9116,10 @@ pub fn parse_disable_vgw_route_propagation_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_vpc_classic_link_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DisableVpcClassicLinkOutput, crate::error::DisableVpcClassicLinkError> {
+) -> std::result::Result<
+    crate::output::DisableVpcClassicLinkOutput,
+    crate::error::DisableVpcClassicLinkError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DisableVpcClassicLinkError::unhandled)?;
     Err(crate::error::DisableVpcClassicLinkError::generic(generic))
@@ -8651,7 +9128,10 @@ pub fn parse_disable_vpc_classic_link_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_vpc_classic_link_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DisableVpcClassicLinkOutput, crate::error::DisableVpcClassicLinkError> {
+) -> std::result::Result<
+    crate::output::DisableVpcClassicLinkOutput,
+    crate::error::DisableVpcClassicLinkError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::disable_vpc_classic_link_output::Builder::default();
@@ -8668,7 +9148,7 @@ pub fn parse_disable_vpc_classic_link_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_vpc_classic_link_dns_support_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisableVpcClassicLinkDnsSupportOutput,
     crate::error::DisableVpcClassicLinkDnsSupportError,
 > {
@@ -8682,7 +9162,7 @@ pub fn parse_disable_vpc_classic_link_dns_support_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disable_vpc_classic_link_dns_support_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisableVpcClassicLinkDnsSupportOutput,
     crate::error::DisableVpcClassicLinkDnsSupportError,
 > {
@@ -8703,7 +9183,10 @@ pub fn parse_disable_vpc_classic_link_dns_support_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_address_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DisassociateAddressOutput, crate::error::DisassociateAddressError> {
+) -> std::result::Result<
+    crate::output::DisassociateAddressOutput,
+    crate::error::DisassociateAddressError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DisassociateAddressError::unhandled)?;
     Err(crate::error::DisassociateAddressError::generic(generic))
@@ -8712,7 +9195,10 @@ pub fn parse_disassociate_address_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_address_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DisassociateAddressOutput, crate::error::DisassociateAddressError> {
+) -> std::result::Result<
+    crate::output::DisassociateAddressOutput,
+    crate::error::DisassociateAddressError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::disassociate_address_output::Builder::default();
@@ -8724,7 +9210,7 @@ pub fn parse_disassociate_address_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_client_vpn_target_network_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisassociateClientVpnTargetNetworkOutput,
     crate::error::DisassociateClientVpnTargetNetworkError,
 > {
@@ -8736,7 +9222,7 @@ pub fn parse_disassociate_client_vpn_target_network_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_client_vpn_target_network_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisassociateClientVpnTargetNetworkOutput,
     crate::error::DisassociateClientVpnTargetNetworkError,
 > {
@@ -8757,7 +9243,7 @@ pub fn parse_disassociate_client_vpn_target_network_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_enclave_certificate_iam_role_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisassociateEnclaveCertificateIamRoleOutput,
     crate::error::DisassociateEnclaveCertificateIamRoleError,
 > {
@@ -8769,7 +9255,7 @@ pub fn parse_disassociate_enclave_certificate_iam_role_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_enclave_certificate_iam_role_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisassociateEnclaveCertificateIamRoleOutput,
     crate::error::DisassociateEnclaveCertificateIamRoleError,
 > {
@@ -8790,7 +9276,7 @@ pub fn parse_disassociate_enclave_certificate_iam_role_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_iam_instance_profile_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisassociateIamInstanceProfileOutput,
     crate::error::DisassociateIamInstanceProfileError,
 > {
@@ -8804,7 +9290,7 @@ pub fn parse_disassociate_iam_instance_profile_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_iam_instance_profile_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisassociateIamInstanceProfileOutput,
     crate::error::DisassociateIamInstanceProfileError,
 > {
@@ -8825,8 +9311,10 @@ pub fn parse_disassociate_iam_instance_profile_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_route_table_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DisassociateRouteTableOutput, crate::error::DisassociateRouteTableError>
-{
+) -> std::result::Result<
+    crate::output::DisassociateRouteTableOutput,
+    crate::error::DisassociateRouteTableError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DisassociateRouteTableError::unhandled)?;
     Err(crate::error::DisassociateRouteTableError::generic(generic))
@@ -8835,8 +9323,10 @@ pub fn parse_disassociate_route_table_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_route_table_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DisassociateRouteTableOutput, crate::error::DisassociateRouteTableError>
-{
+) -> std::result::Result<
+    crate::output::DisassociateRouteTableOutput,
+    crate::error::DisassociateRouteTableError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::disassociate_route_table_output::Builder::default();
@@ -8848,7 +9338,7 @@ pub fn parse_disassociate_route_table_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_subnet_cidr_block_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisassociateSubnetCidrBlockOutput,
     crate::error::DisassociateSubnetCidrBlockError,
 > {
@@ -8862,7 +9352,7 @@ pub fn parse_disassociate_subnet_cidr_block_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_subnet_cidr_block_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisassociateSubnetCidrBlockOutput,
     crate::error::DisassociateSubnetCidrBlockError,
 > {
@@ -8882,7 +9372,7 @@ pub fn parse_disassociate_subnet_cidr_block_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_transit_gateway_multicast_domain_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisassociateTransitGatewayMulticastDomainOutput,
     crate::error::DisassociateTransitGatewayMulticastDomainError,
 > {
@@ -8894,7 +9384,7 @@ pub fn parse_disassociate_transit_gateway_multicast_domain_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_transit_gateway_multicast_domain_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisassociateTransitGatewayMulticastDomainOutput,
     crate::error::DisassociateTransitGatewayMulticastDomainError,
 > {
@@ -8915,7 +9405,7 @@ pub fn parse_disassociate_transit_gateway_multicast_domain_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_transit_gateway_route_table_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisassociateTransitGatewayRouteTableOutput,
     crate::error::DisassociateTransitGatewayRouteTableError,
 > {
@@ -8927,7 +9417,7 @@ pub fn parse_disassociate_transit_gateway_route_table_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_transit_gateway_route_table_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisassociateTransitGatewayRouteTableOutput,
     crate::error::DisassociateTransitGatewayRouteTableError,
 > {
@@ -8948,7 +9438,7 @@ pub fn parse_disassociate_transit_gateway_route_table_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_vpc_cidr_block_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisassociateVpcCidrBlockOutput,
     crate::error::DisassociateVpcCidrBlockError,
 > {
@@ -8962,7 +9452,7 @@ pub fn parse_disassociate_vpc_cidr_block_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_vpc_cidr_block_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DisassociateVpcCidrBlockOutput,
     crate::error::DisassociateVpcCidrBlockError,
 > {
@@ -8982,7 +9472,7 @@ pub fn parse_disassociate_vpc_cidr_block_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_ebs_encryption_by_default_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::EnableEbsEncryptionByDefaultOutput,
     crate::error::EnableEbsEncryptionByDefaultError,
 > {
@@ -8996,7 +9486,7 @@ pub fn parse_enable_ebs_encryption_by_default_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_ebs_encryption_by_default_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::EnableEbsEncryptionByDefaultOutput,
     crate::error::EnableEbsEncryptionByDefaultError,
 > {
@@ -9016,7 +9506,7 @@ pub fn parse_enable_ebs_encryption_by_default_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_fast_snapshot_restores_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::EnableFastSnapshotRestoresOutput,
     crate::error::EnableFastSnapshotRestoresError,
 > {
@@ -9030,7 +9520,7 @@ pub fn parse_enable_fast_snapshot_restores_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_fast_snapshot_restores_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::EnableFastSnapshotRestoresOutput,
     crate::error::EnableFastSnapshotRestoresError,
 > {
@@ -9050,7 +9540,7 @@ pub fn parse_enable_fast_snapshot_restores_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_serial_console_access_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::EnableSerialConsoleAccessOutput,
     crate::error::EnableSerialConsoleAccessError,
 > {
@@ -9064,7 +9554,7 @@ pub fn parse_enable_serial_console_access_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_serial_console_access_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::EnableSerialConsoleAccessOutput,
     crate::error::EnableSerialConsoleAccessError,
 > {
@@ -9084,7 +9574,7 @@ pub fn parse_enable_serial_console_access_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_transit_gateway_route_table_propagation_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::EnableTransitGatewayRouteTablePropagationOutput,
     crate::error::EnableTransitGatewayRouteTablePropagationError,
 > {
@@ -9096,7 +9586,7 @@ pub fn parse_enable_transit_gateway_route_table_propagation_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_transit_gateway_route_table_propagation_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::EnableTransitGatewayRouteTablePropagationOutput,
     crate::error::EnableTransitGatewayRouteTablePropagationError,
 > {
@@ -9118,7 +9608,7 @@ pub fn parse_enable_transit_gateway_route_table_propagation_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_vgw_route_propagation_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::EnableVgwRoutePropagationOutput,
     crate::error::EnableVgwRoutePropagationError,
 > {
@@ -9132,7 +9622,7 @@ pub fn parse_enable_vgw_route_propagation_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_vgw_route_propagation_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::EnableVgwRoutePropagationOutput,
     crate::error::EnableVgwRoutePropagationError,
 > {
@@ -9147,7 +9637,7 @@ pub fn parse_enable_vgw_route_propagation_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_volume_io_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::EnableVolumeIOOutput, crate::error::EnableVolumeIOError> {
+) -> std::result::Result<crate::output::EnableVolumeIOOutput, crate::error::EnableVolumeIOError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::EnableVolumeIOError::unhandled)?;
     Err(crate::error::EnableVolumeIOError::generic(generic))
@@ -9156,7 +9646,7 @@ pub fn parse_enable_volume_io_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_volume_io_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::EnableVolumeIOOutput, crate::error::EnableVolumeIOError> {
+) -> std::result::Result<crate::output::EnableVolumeIOOutput, crate::error::EnableVolumeIOError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::enable_volume_io_output::Builder::default();
@@ -9168,7 +9658,10 @@ pub fn parse_enable_volume_io_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_vpc_classic_link_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::EnableVpcClassicLinkOutput, crate::error::EnableVpcClassicLinkError> {
+) -> std::result::Result<
+    crate::output::EnableVpcClassicLinkOutput,
+    crate::error::EnableVpcClassicLinkError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::EnableVpcClassicLinkError::unhandled)?;
     Err(crate::error::EnableVpcClassicLinkError::generic(generic))
@@ -9177,7 +9670,10 @@ pub fn parse_enable_vpc_classic_link_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_vpc_classic_link_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::EnableVpcClassicLinkOutput, crate::error::EnableVpcClassicLinkError> {
+) -> std::result::Result<
+    crate::output::EnableVpcClassicLinkOutput,
+    crate::error::EnableVpcClassicLinkError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::enable_vpc_classic_link_output::Builder::default();
@@ -9194,7 +9690,7 @@ pub fn parse_enable_vpc_classic_link_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_vpc_classic_link_dns_support_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::EnableVpcClassicLinkDnsSupportOutput,
     crate::error::EnableVpcClassicLinkDnsSupportError,
 > {
@@ -9208,7 +9704,7 @@ pub fn parse_enable_vpc_classic_link_dns_support_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_enable_vpc_classic_link_dns_support_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::EnableVpcClassicLinkDnsSupportOutput,
     crate::error::EnableVpcClassicLinkDnsSupportError,
 > {
@@ -9229,7 +9725,7 @@ pub fn parse_enable_vpc_classic_link_dns_support_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_export_client_vpn_client_certificate_revocation_list_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ExportClientVpnClientCertificateRevocationListOutput,
     crate::error::ExportClientVpnClientCertificateRevocationListError,
 > {
@@ -9241,7 +9737,7 @@ pub fn parse_export_client_vpn_client_certificate_revocation_list_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_export_client_vpn_client_certificate_revocation_list_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ExportClientVpnClientCertificateRevocationListOutput,
     crate::error::ExportClientVpnClientCertificateRevocationListError,
 > {
@@ -9263,7 +9759,7 @@ pub fn parse_export_client_vpn_client_certificate_revocation_list_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_export_client_vpn_client_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ExportClientVpnClientConfigurationOutput,
     crate::error::ExportClientVpnClientConfigurationError,
 > {
@@ -9275,7 +9771,7 @@ pub fn parse_export_client_vpn_client_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_export_client_vpn_client_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ExportClientVpnClientConfigurationOutput,
     crate::error::ExportClientVpnClientConfigurationError,
 > {
@@ -9296,7 +9792,7 @@ pub fn parse_export_client_vpn_client_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_export_image_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ExportImageOutput, crate::error::ExportImageError> {
+) -> std::result::Result<crate::output::ExportImageOutput, crate::error::ExportImageError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ExportImageError::unhandled)?;
     Err(crate::error::ExportImageError::generic(generic))
@@ -9305,7 +9801,7 @@ pub fn parse_export_image_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_export_image_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ExportImageOutput, crate::error::ExportImageError> {
+) -> std::result::Result<crate::output::ExportImageOutput, crate::error::ExportImageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::export_image_output::Builder::default();
@@ -9319,7 +9815,7 @@ pub fn parse_export_image_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_export_transit_gateway_routes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ExportTransitGatewayRoutesOutput,
     crate::error::ExportTransitGatewayRoutesError,
 > {
@@ -9333,7 +9829,7 @@ pub fn parse_export_transit_gateway_routes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_export_transit_gateway_routes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ExportTransitGatewayRoutesOutput,
     crate::error::ExportTransitGatewayRoutesError,
 > {
@@ -9353,7 +9849,7 @@ pub fn parse_export_transit_gateway_routes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_associated_enclave_certificate_iam_roles_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetAssociatedEnclaveCertificateIamRolesOutput,
     crate::error::GetAssociatedEnclaveCertificateIamRolesError,
 > {
@@ -9365,7 +9861,7 @@ pub fn parse_get_associated_enclave_certificate_iam_roles_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_associated_enclave_certificate_iam_roles_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetAssociatedEnclaveCertificateIamRolesOutput,
     crate::error::GetAssociatedEnclaveCertificateIamRolesError,
 > {
@@ -9386,7 +9882,7 @@ pub fn parse_get_associated_enclave_certificate_iam_roles_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_associated_ipv6_pool_cidrs_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetAssociatedIpv6PoolCidrsOutput,
     crate::error::GetAssociatedIpv6PoolCidrsError,
 > {
@@ -9400,7 +9896,7 @@ pub fn parse_get_associated_ipv6_pool_cidrs_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_associated_ipv6_pool_cidrs_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetAssociatedIpv6PoolCidrsOutput,
     crate::error::GetAssociatedIpv6PoolCidrsError,
 > {
@@ -9420,7 +9916,7 @@ pub fn parse_get_associated_ipv6_pool_cidrs_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_capacity_reservation_usage_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetCapacityReservationUsageOutput,
     crate::error::GetCapacityReservationUsageError,
 > {
@@ -9434,7 +9930,7 @@ pub fn parse_get_capacity_reservation_usage_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_capacity_reservation_usage_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetCapacityReservationUsageOutput,
     crate::error::GetCapacityReservationUsageError,
 > {
@@ -9454,7 +9950,8 @@ pub fn parse_get_capacity_reservation_usage_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_coip_pool_usage_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetCoipPoolUsageOutput, crate::error::GetCoipPoolUsageError> {
+) -> std::result::Result<crate::output::GetCoipPoolUsageOutput, crate::error::GetCoipPoolUsageError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetCoipPoolUsageError::unhandled)?;
     Err(crate::error::GetCoipPoolUsageError::generic(generic))
@@ -9463,7 +9960,8 @@ pub fn parse_get_coip_pool_usage_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_coip_pool_usage_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetCoipPoolUsageOutput, crate::error::GetCoipPoolUsageError> {
+) -> std::result::Result<crate::output::GetCoipPoolUsageOutput, crate::error::GetCoipPoolUsageError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_coip_pool_usage_output::Builder::default();
@@ -9478,7 +9976,8 @@ pub fn parse_get_coip_pool_usage_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_console_output_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetConsoleOutputOutput, crate::error::GetConsoleOutputError> {
+) -> std::result::Result<crate::output::GetConsoleOutputOutput, crate::error::GetConsoleOutputError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetConsoleOutputError::unhandled)?;
     Err(crate::error::GetConsoleOutputError::generic(generic))
@@ -9487,7 +9986,8 @@ pub fn parse_get_console_output_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_console_output_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetConsoleOutputOutput, crate::error::GetConsoleOutputError> {
+) -> std::result::Result<crate::output::GetConsoleOutputOutput, crate::error::GetConsoleOutputError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_console_output_output::Builder::default();
@@ -9502,7 +10002,10 @@ pub fn parse_get_console_output_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_console_screenshot_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetConsoleScreenshotOutput, crate::error::GetConsoleScreenshotError> {
+) -> std::result::Result<
+    crate::output::GetConsoleScreenshotOutput,
+    crate::error::GetConsoleScreenshotError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetConsoleScreenshotError::unhandled)?;
     Err(crate::error::GetConsoleScreenshotError::generic(generic))
@@ -9511,7 +10014,10 @@ pub fn parse_get_console_screenshot_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_console_screenshot_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetConsoleScreenshotOutput, crate::error::GetConsoleScreenshotError> {
+) -> std::result::Result<
+    crate::output::GetConsoleScreenshotOutput,
+    crate::error::GetConsoleScreenshotError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_console_screenshot_output::Builder::default();
@@ -9528,7 +10034,7 @@ pub fn parse_get_console_screenshot_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_default_credit_specification_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetDefaultCreditSpecificationOutput,
     crate::error::GetDefaultCreditSpecificationError,
 > {
@@ -9542,7 +10048,7 @@ pub fn parse_get_default_credit_specification_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_default_credit_specification_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetDefaultCreditSpecificationOutput,
     crate::error::GetDefaultCreditSpecificationError,
 > {
@@ -9562,7 +10068,10 @@ pub fn parse_get_default_credit_specification_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_ebs_default_kms_key_id_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetEbsDefaultKmsKeyIdOutput, crate::error::GetEbsDefaultKmsKeyIdError> {
+) -> std::result::Result<
+    crate::output::GetEbsDefaultKmsKeyIdOutput,
+    crate::error::GetEbsDefaultKmsKeyIdError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetEbsDefaultKmsKeyIdError::unhandled)?;
     Err(crate::error::GetEbsDefaultKmsKeyIdError::generic(generic))
@@ -9571,7 +10080,10 @@ pub fn parse_get_ebs_default_kms_key_id_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_ebs_default_kms_key_id_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetEbsDefaultKmsKeyIdOutput, crate::error::GetEbsDefaultKmsKeyIdError> {
+) -> std::result::Result<
+    crate::output::GetEbsDefaultKmsKeyIdOutput,
+    crate::error::GetEbsDefaultKmsKeyIdError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_ebs_default_kms_key_id_output::Builder::default();
@@ -9588,7 +10100,7 @@ pub fn parse_get_ebs_default_kms_key_id_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_ebs_encryption_by_default_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetEbsEncryptionByDefaultOutput,
     crate::error::GetEbsEncryptionByDefaultError,
 > {
@@ -9602,7 +10114,7 @@ pub fn parse_get_ebs_encryption_by_default_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_ebs_encryption_by_default_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetEbsEncryptionByDefaultOutput,
     crate::error::GetEbsEncryptionByDefaultError,
 > {
@@ -9622,7 +10134,7 @@ pub fn parse_get_ebs_encryption_by_default_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_flow_logs_integration_template_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetFlowLogsIntegrationTemplateOutput,
     crate::error::GetFlowLogsIntegrationTemplateError,
 > {
@@ -9636,7 +10148,7 @@ pub fn parse_get_flow_logs_integration_template_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_flow_logs_integration_template_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetFlowLogsIntegrationTemplateOutput,
     crate::error::GetFlowLogsIntegrationTemplateError,
 > {
@@ -9657,7 +10169,7 @@ pub fn parse_get_flow_logs_integration_template_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_groups_for_capacity_reservation_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetGroupsForCapacityReservationOutput,
     crate::error::GetGroupsForCapacityReservationError,
 > {
@@ -9671,7 +10183,7 @@ pub fn parse_get_groups_for_capacity_reservation_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_groups_for_capacity_reservation_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetGroupsForCapacityReservationOutput,
     crate::error::GetGroupsForCapacityReservationError,
 > {
@@ -9692,7 +10204,7 @@ pub fn parse_get_groups_for_capacity_reservation_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_host_reservation_purchase_preview_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetHostReservationPurchasePreviewOutput,
     crate::error::GetHostReservationPurchasePreviewError,
 > {
@@ -9704,7 +10216,7 @@ pub fn parse_get_host_reservation_purchase_preview_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_host_reservation_purchase_preview_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetHostReservationPurchasePreviewOutput,
     crate::error::GetHostReservationPurchasePreviewError,
 > {
@@ -9725,7 +10237,10 @@ pub fn parse_get_host_reservation_purchase_preview_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_launch_template_data_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetLaunchTemplateDataOutput, crate::error::GetLaunchTemplateDataError> {
+) -> std::result::Result<
+    crate::output::GetLaunchTemplateDataOutput,
+    crate::error::GetLaunchTemplateDataError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetLaunchTemplateDataError::unhandled)?;
     Err(crate::error::GetLaunchTemplateDataError::generic(generic))
@@ -9734,7 +10249,10 @@ pub fn parse_get_launch_template_data_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_launch_template_data_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetLaunchTemplateDataOutput, crate::error::GetLaunchTemplateDataError> {
+) -> std::result::Result<
+    crate::output::GetLaunchTemplateDataOutput,
+    crate::error::GetLaunchTemplateDataError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_launch_template_data_output::Builder::default();
@@ -9751,7 +10269,7 @@ pub fn parse_get_launch_template_data_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_managed_prefix_list_associations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetManagedPrefixListAssociationsOutput,
     crate::error::GetManagedPrefixListAssociationsError,
 > {
@@ -9763,7 +10281,7 @@ pub fn parse_get_managed_prefix_list_associations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_managed_prefix_list_associations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetManagedPrefixListAssociationsOutput,
     crate::error::GetManagedPrefixListAssociationsError,
 > {
@@ -9784,7 +10302,7 @@ pub fn parse_get_managed_prefix_list_associations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_managed_prefix_list_entries_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetManagedPrefixListEntriesOutput,
     crate::error::GetManagedPrefixListEntriesError,
 > {
@@ -9798,7 +10316,7 @@ pub fn parse_get_managed_prefix_list_entries_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_managed_prefix_list_entries_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetManagedPrefixListEntriesOutput,
     crate::error::GetManagedPrefixListEntriesError,
 > {
@@ -9818,7 +10336,7 @@ pub fn parse_get_managed_prefix_list_entries_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_password_data_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetPasswordDataOutput, crate::error::GetPasswordDataError> {
+) -> std::result::Result<crate::output::GetPasswordDataOutput, crate::error::GetPasswordDataError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetPasswordDataError::unhandled)?;
     Err(crate::error::GetPasswordDataError::generic(generic))
@@ -9827,7 +10345,7 @@ pub fn parse_get_password_data_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_password_data_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetPasswordDataOutput, crate::error::GetPasswordDataError> {
+) -> std::result::Result<crate::output::GetPasswordDataOutput, crate::error::GetPasswordDataError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_password_data_output::Builder::default();
@@ -9842,7 +10360,7 @@ pub fn parse_get_password_data_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_reserved_instances_exchange_quote_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetReservedInstancesExchangeQuoteOutput,
     crate::error::GetReservedInstancesExchangeQuoteError,
 > {
@@ -9854,7 +10372,7 @@ pub fn parse_get_reserved_instances_exchange_quote_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_reserved_instances_exchange_quote_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetReservedInstancesExchangeQuoteOutput,
     crate::error::GetReservedInstancesExchangeQuoteError,
 > {
@@ -9875,7 +10393,7 @@ pub fn parse_get_reserved_instances_exchange_quote_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_serial_console_access_status_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetSerialConsoleAccessStatusOutput,
     crate::error::GetSerialConsoleAccessStatusError,
 > {
@@ -9889,7 +10407,7 @@ pub fn parse_get_serial_console_access_status_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_serial_console_access_status_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetSerialConsoleAccessStatusOutput,
     crate::error::GetSerialConsoleAccessStatusError,
 > {
@@ -9909,7 +10427,7 @@ pub fn parse_get_serial_console_access_status_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_transit_gateway_attachment_propagations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetTransitGatewayAttachmentPropagationsOutput,
     crate::error::GetTransitGatewayAttachmentPropagationsError,
 > {
@@ -9921,7 +10439,7 @@ pub fn parse_get_transit_gateway_attachment_propagations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_transit_gateway_attachment_propagations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetTransitGatewayAttachmentPropagationsOutput,
     crate::error::GetTransitGatewayAttachmentPropagationsError,
 > {
@@ -9942,7 +10460,7 @@ pub fn parse_get_transit_gateway_attachment_propagations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_transit_gateway_multicast_domain_associations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetTransitGatewayMulticastDomainAssociationsOutput,
     crate::error::GetTransitGatewayMulticastDomainAssociationsError,
 > {
@@ -9954,7 +10472,7 @@ pub fn parse_get_transit_gateway_multicast_domain_associations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_transit_gateway_multicast_domain_associations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetTransitGatewayMulticastDomainAssociationsOutput,
     crate::error::GetTransitGatewayMulticastDomainAssociationsError,
 > {
@@ -9974,7 +10492,7 @@ pub fn parse_get_transit_gateway_multicast_domain_associations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_transit_gateway_prefix_list_references_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetTransitGatewayPrefixListReferencesOutput,
     crate::error::GetTransitGatewayPrefixListReferencesError,
 > {
@@ -9986,7 +10504,7 @@ pub fn parse_get_transit_gateway_prefix_list_references_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_transit_gateway_prefix_list_references_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetTransitGatewayPrefixListReferencesOutput,
     crate::error::GetTransitGatewayPrefixListReferencesError,
 > {
@@ -10007,7 +10525,7 @@ pub fn parse_get_transit_gateway_prefix_list_references_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_transit_gateway_route_table_associations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetTransitGatewayRouteTableAssociationsOutput,
     crate::error::GetTransitGatewayRouteTableAssociationsError,
 > {
@@ -10019,7 +10537,7 @@ pub fn parse_get_transit_gateway_route_table_associations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_transit_gateway_route_table_associations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetTransitGatewayRouteTableAssociationsOutput,
     crate::error::GetTransitGatewayRouteTableAssociationsError,
 > {
@@ -10040,7 +10558,7 @@ pub fn parse_get_transit_gateway_route_table_associations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_transit_gateway_route_table_propagations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetTransitGatewayRouteTablePropagationsOutput,
     crate::error::GetTransitGatewayRouteTablePropagationsError,
 > {
@@ -10052,7 +10570,7 @@ pub fn parse_get_transit_gateway_route_table_propagations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_transit_gateway_route_table_propagations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::GetTransitGatewayRouteTablePropagationsOutput,
     crate::error::GetTransitGatewayRouteTablePropagationsError,
 > {
@@ -10073,7 +10591,7 @@ pub fn parse_get_transit_gateway_route_table_propagations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_import_client_vpn_client_certificate_revocation_list_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ImportClientVpnClientCertificateRevocationListOutput,
     crate::error::ImportClientVpnClientCertificateRevocationListError,
 > {
@@ -10085,7 +10603,7 @@ pub fn parse_import_client_vpn_client_certificate_revocation_list_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_import_client_vpn_client_certificate_revocation_list_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ImportClientVpnClientCertificateRevocationListOutput,
     crate::error::ImportClientVpnClientCertificateRevocationListError,
 > {
@@ -10107,7 +10625,7 @@ pub fn parse_import_client_vpn_client_certificate_revocation_list_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_import_image_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ImportImageOutput, crate::error::ImportImageError> {
+) -> std::result::Result<crate::output::ImportImageOutput, crate::error::ImportImageError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ImportImageError::unhandled)?;
     Err(crate::error::ImportImageError::generic(generic))
@@ -10116,7 +10634,7 @@ pub fn parse_import_image_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_import_image_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ImportImageOutput, crate::error::ImportImageError> {
+) -> std::result::Result<crate::output::ImportImageOutput, crate::error::ImportImageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::import_image_output::Builder::default();
@@ -10130,7 +10648,7 @@ pub fn parse_import_image_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_import_instance_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ImportInstanceOutput, crate::error::ImportInstanceError> {
+) -> std::result::Result<crate::output::ImportInstanceOutput, crate::error::ImportInstanceError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ImportInstanceError::unhandled)?;
     Err(crate::error::ImportInstanceError::generic(generic))
@@ -10139,7 +10657,7 @@ pub fn parse_import_instance_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_import_instance_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ImportInstanceOutput, crate::error::ImportInstanceError> {
+) -> std::result::Result<crate::output::ImportInstanceOutput, crate::error::ImportInstanceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::import_instance_output::Builder::default();
@@ -10154,7 +10672,7 @@ pub fn parse_import_instance_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_import_key_pair_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ImportKeyPairOutput, crate::error::ImportKeyPairError> {
+) -> std::result::Result<crate::output::ImportKeyPairOutput, crate::error::ImportKeyPairError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ImportKeyPairError::unhandled)?;
     Err(crate::error::ImportKeyPairError::generic(generic))
@@ -10163,7 +10681,7 @@ pub fn parse_import_key_pair_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_import_key_pair_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ImportKeyPairOutput, crate::error::ImportKeyPairError> {
+) -> std::result::Result<crate::output::ImportKeyPairOutput, crate::error::ImportKeyPairError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::import_key_pair_output::Builder::default();
@@ -10178,7 +10696,7 @@ pub fn parse_import_key_pair_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_import_snapshot_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ImportSnapshotOutput, crate::error::ImportSnapshotError> {
+) -> std::result::Result<crate::output::ImportSnapshotOutput, crate::error::ImportSnapshotError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ImportSnapshotError::unhandled)?;
     Err(crate::error::ImportSnapshotError::generic(generic))
@@ -10187,7 +10705,7 @@ pub fn parse_import_snapshot_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_import_snapshot_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ImportSnapshotOutput, crate::error::ImportSnapshotError> {
+) -> std::result::Result<crate::output::ImportSnapshotOutput, crate::error::ImportSnapshotError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::import_snapshot_output::Builder::default();
@@ -10202,7 +10720,7 @@ pub fn parse_import_snapshot_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_import_volume_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ImportVolumeOutput, crate::error::ImportVolumeError> {
+) -> std::result::Result<crate::output::ImportVolumeOutput, crate::error::ImportVolumeError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ImportVolumeError::unhandled)?;
     Err(crate::error::ImportVolumeError::generic(generic))
@@ -10211,7 +10729,7 @@ pub fn parse_import_volume_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_import_volume_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ImportVolumeOutput, crate::error::ImportVolumeError> {
+) -> std::result::Result<crate::output::ImportVolumeOutput, crate::error::ImportVolumeError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::import_volume_output::Builder::default();
@@ -10225,8 +10743,10 @@ pub fn parse_import_volume_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_address_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyAddressAttributeOutput, crate::error::ModifyAddressAttributeError>
-{
+) -> std::result::Result<
+    crate::output::ModifyAddressAttributeOutput,
+    crate::error::ModifyAddressAttributeError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyAddressAttributeError::unhandled)?;
     Err(crate::error::ModifyAddressAttributeError::generic(generic))
@@ -10235,8 +10755,10 @@ pub fn parse_modify_address_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_address_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyAddressAttributeOutput, crate::error::ModifyAddressAttributeError>
-{
+) -> std::result::Result<
+    crate::output::ModifyAddressAttributeOutput,
+    crate::error::ModifyAddressAttributeError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_address_attribute_output::Builder::default();
@@ -10253,7 +10775,7 @@ pub fn parse_modify_address_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_availability_zone_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyAvailabilityZoneGroupOutput,
     crate::error::ModifyAvailabilityZoneGroupError,
 > {
@@ -10267,7 +10789,7 @@ pub fn parse_modify_availability_zone_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_availability_zone_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyAvailabilityZoneGroupOutput,
     crate::error::ModifyAvailabilityZoneGroupError,
 > {
@@ -10287,7 +10809,7 @@ pub fn parse_modify_availability_zone_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_capacity_reservation_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyCapacityReservationOutput,
     crate::error::ModifyCapacityReservationError,
 > {
@@ -10301,7 +10823,7 @@ pub fn parse_modify_capacity_reservation_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_capacity_reservation_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyCapacityReservationOutput,
     crate::error::ModifyCapacityReservationError,
 > {
@@ -10321,8 +10843,10 @@ pub fn parse_modify_capacity_reservation_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_client_vpn_endpoint_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyClientVpnEndpointOutput, crate::error::ModifyClientVpnEndpointError>
-{
+) -> std::result::Result<
+    crate::output::ModifyClientVpnEndpointOutput,
+    crate::error::ModifyClientVpnEndpointError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyClientVpnEndpointError::unhandled)?;
     Err(crate::error::ModifyClientVpnEndpointError::generic(generic))
@@ -10331,8 +10855,10 @@ pub fn parse_modify_client_vpn_endpoint_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_client_vpn_endpoint_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyClientVpnEndpointOutput, crate::error::ModifyClientVpnEndpointError>
-{
+) -> std::result::Result<
+    crate::output::ModifyClientVpnEndpointOutput,
+    crate::error::ModifyClientVpnEndpointError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_client_vpn_endpoint_output::Builder::default();
@@ -10349,7 +10875,7 @@ pub fn parse_modify_client_vpn_endpoint_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_default_credit_specification_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyDefaultCreditSpecificationOutput,
     crate::error::ModifyDefaultCreditSpecificationError,
 > {
@@ -10361,7 +10887,7 @@ pub fn parse_modify_default_credit_specification_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_default_credit_specification_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyDefaultCreditSpecificationOutput,
     crate::error::ModifyDefaultCreditSpecificationError,
 > {
@@ -10382,7 +10908,7 @@ pub fn parse_modify_default_credit_specification_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_ebs_default_kms_key_id_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyEbsDefaultKmsKeyIdOutput,
     crate::error::ModifyEbsDefaultKmsKeyIdError,
 > {
@@ -10396,7 +10922,7 @@ pub fn parse_modify_ebs_default_kms_key_id_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_ebs_default_kms_key_id_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyEbsDefaultKmsKeyIdOutput,
     crate::error::ModifyEbsDefaultKmsKeyIdError,
 > {
@@ -10416,7 +10942,7 @@ pub fn parse_modify_ebs_default_kms_key_id_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_fleet_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyFleetOutput, crate::error::ModifyFleetError> {
+) -> std::result::Result<crate::output::ModifyFleetOutput, crate::error::ModifyFleetError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyFleetError::unhandled)?;
     Err(crate::error::ModifyFleetError::generic(generic))
@@ -10425,7 +10951,7 @@ pub fn parse_modify_fleet_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_fleet_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyFleetOutput, crate::error::ModifyFleetError> {
+) -> std::result::Result<crate::output::ModifyFleetOutput, crate::error::ModifyFleetError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_fleet_output::Builder::default();
@@ -10439,7 +10965,7 @@ pub fn parse_modify_fleet_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_fpga_image_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyFpgaImageAttributeOutput,
     crate::error::ModifyFpgaImageAttributeError,
 > {
@@ -10453,7 +10979,7 @@ pub fn parse_modify_fpga_image_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_fpga_image_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyFpgaImageAttributeOutput,
     crate::error::ModifyFpgaImageAttributeError,
 > {
@@ -10473,7 +10999,7 @@ pub fn parse_modify_fpga_image_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_hosts_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyHostsOutput, crate::error::ModifyHostsError> {
+) -> std::result::Result<crate::output::ModifyHostsOutput, crate::error::ModifyHostsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyHostsError::unhandled)?;
     Err(crate::error::ModifyHostsError::generic(generic))
@@ -10482,7 +11008,7 @@ pub fn parse_modify_hosts_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_hosts_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyHostsOutput, crate::error::ModifyHostsError> {
+) -> std::result::Result<crate::output::ModifyHostsOutput, crate::error::ModifyHostsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_hosts_output::Builder::default();
@@ -10496,8 +11022,10 @@ pub fn parse_modify_hosts_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_identity_id_format_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyIdentityIdFormatOutput, crate::error::ModifyIdentityIdFormatError>
-{
+) -> std::result::Result<
+    crate::output::ModifyIdentityIdFormatOutput,
+    crate::error::ModifyIdentityIdFormatError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyIdentityIdFormatError::unhandled)?;
     Err(crate::error::ModifyIdentityIdFormatError::generic(generic))
@@ -10506,8 +11034,10 @@ pub fn parse_modify_identity_id_format_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_identity_id_format_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyIdentityIdFormatOutput, crate::error::ModifyIdentityIdFormatError>
-{
+) -> std::result::Result<
+    crate::output::ModifyIdentityIdFormatOutput,
+    crate::error::ModifyIdentityIdFormatError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_identity_id_format_output::Builder::default();
@@ -10519,7 +11049,7 @@ pub fn parse_modify_identity_id_format_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_id_format_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyIdFormatOutput, crate::error::ModifyIdFormatError> {
+) -> std::result::Result<crate::output::ModifyIdFormatOutput, crate::error::ModifyIdFormatError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyIdFormatError::unhandled)?;
     Err(crate::error::ModifyIdFormatError::generic(generic))
@@ -10528,7 +11058,7 @@ pub fn parse_modify_id_format_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_id_format_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyIdFormatOutput, crate::error::ModifyIdFormatError> {
+) -> std::result::Result<crate::output::ModifyIdFormatOutput, crate::error::ModifyIdFormatError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_id_format_output::Builder::default();
@@ -10540,7 +11070,10 @@ pub fn parse_modify_id_format_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_image_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyImageAttributeOutput, crate::error::ModifyImageAttributeError> {
+) -> std::result::Result<
+    crate::output::ModifyImageAttributeOutput,
+    crate::error::ModifyImageAttributeError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyImageAttributeError::unhandled)?;
     Err(crate::error::ModifyImageAttributeError::generic(generic))
@@ -10549,7 +11082,10 @@ pub fn parse_modify_image_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_image_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyImageAttributeOutput, crate::error::ModifyImageAttributeError> {
+) -> std::result::Result<
+    crate::output::ModifyImageAttributeOutput,
+    crate::error::ModifyImageAttributeError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_image_attribute_output::Builder::default();
@@ -10561,8 +11097,10 @@ pub fn parse_modify_image_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_instance_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyInstanceAttributeOutput, crate::error::ModifyInstanceAttributeError>
-{
+) -> std::result::Result<
+    crate::output::ModifyInstanceAttributeOutput,
+    crate::error::ModifyInstanceAttributeError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyInstanceAttributeError::unhandled)?;
     Err(crate::error::ModifyInstanceAttributeError::generic(generic))
@@ -10571,8 +11109,10 @@ pub fn parse_modify_instance_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_instance_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyInstanceAttributeOutput, crate::error::ModifyInstanceAttributeError>
-{
+) -> std::result::Result<
+    crate::output::ModifyInstanceAttributeOutput,
+    crate::error::ModifyInstanceAttributeError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_instance_attribute_output::Builder::default();
@@ -10584,7 +11124,7 @@ pub fn parse_modify_instance_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_instance_capacity_reservation_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyInstanceCapacityReservationAttributesOutput,
     crate::error::ModifyInstanceCapacityReservationAttributesError,
 > {
@@ -10596,7 +11136,7 @@ pub fn parse_modify_instance_capacity_reservation_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_instance_capacity_reservation_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyInstanceCapacityReservationAttributesOutput,
     crate::error::ModifyInstanceCapacityReservationAttributesError,
 > {
@@ -10618,7 +11158,7 @@ pub fn parse_modify_instance_capacity_reservation_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_instance_credit_specification_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyInstanceCreditSpecificationOutput,
     crate::error::ModifyInstanceCreditSpecificationError,
 > {
@@ -10630,7 +11170,7 @@ pub fn parse_modify_instance_credit_specification_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_instance_credit_specification_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyInstanceCreditSpecificationOutput,
     crate::error::ModifyInstanceCreditSpecificationError,
 > {
@@ -10651,7 +11191,7 @@ pub fn parse_modify_instance_credit_specification_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_instance_event_start_time_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyInstanceEventStartTimeOutput,
     crate::error::ModifyInstanceEventStartTimeError,
 > {
@@ -10665,7 +11205,7 @@ pub fn parse_modify_instance_event_start_time_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_instance_event_start_time_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyInstanceEventStartTimeOutput,
     crate::error::ModifyInstanceEventStartTimeError,
 > {
@@ -10685,7 +11225,7 @@ pub fn parse_modify_instance_event_start_time_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_instance_metadata_options_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyInstanceMetadataOptionsOutput,
     crate::error::ModifyInstanceMetadataOptionsError,
 > {
@@ -10699,7 +11239,7 @@ pub fn parse_modify_instance_metadata_options_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_instance_metadata_options_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyInstanceMetadataOptionsOutput,
     crate::error::ModifyInstanceMetadataOptionsError,
 > {
@@ -10719,8 +11259,10 @@ pub fn parse_modify_instance_metadata_options_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_instance_placement_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyInstancePlacementOutput, crate::error::ModifyInstancePlacementError>
-{
+) -> std::result::Result<
+    crate::output::ModifyInstancePlacementOutput,
+    crate::error::ModifyInstancePlacementError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyInstancePlacementError::unhandled)?;
     Err(crate::error::ModifyInstancePlacementError::generic(generic))
@@ -10729,8 +11271,10 @@ pub fn parse_modify_instance_placement_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_instance_placement_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyInstancePlacementOutput, crate::error::ModifyInstancePlacementError>
-{
+) -> std::result::Result<
+    crate::output::ModifyInstancePlacementOutput,
+    crate::error::ModifyInstancePlacementError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_instance_placement_output::Builder::default();
@@ -10747,7 +11291,10 @@ pub fn parse_modify_instance_placement_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_launch_template_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyLaunchTemplateOutput, crate::error::ModifyLaunchTemplateError> {
+) -> std::result::Result<
+    crate::output::ModifyLaunchTemplateOutput,
+    crate::error::ModifyLaunchTemplateError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyLaunchTemplateError::unhandled)?;
     Err(crate::error::ModifyLaunchTemplateError::generic(generic))
@@ -10756,7 +11303,10 @@ pub fn parse_modify_launch_template_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_launch_template_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyLaunchTemplateOutput, crate::error::ModifyLaunchTemplateError> {
+) -> std::result::Result<
+    crate::output::ModifyLaunchTemplateOutput,
+    crate::error::ModifyLaunchTemplateError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_launch_template_output::Builder::default();
@@ -10773,8 +11323,10 @@ pub fn parse_modify_launch_template_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_managed_prefix_list_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyManagedPrefixListOutput, crate::error::ModifyManagedPrefixListError>
-{
+) -> std::result::Result<
+    crate::output::ModifyManagedPrefixListOutput,
+    crate::error::ModifyManagedPrefixListError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyManagedPrefixListError::unhandled)?;
     Err(crate::error::ModifyManagedPrefixListError::generic(generic))
@@ -10783,8 +11335,10 @@ pub fn parse_modify_managed_prefix_list_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_managed_prefix_list_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyManagedPrefixListOutput, crate::error::ModifyManagedPrefixListError>
-{
+) -> std::result::Result<
+    crate::output::ModifyManagedPrefixListOutput,
+    crate::error::ModifyManagedPrefixListError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_managed_prefix_list_output::Builder::default();
@@ -10801,7 +11355,7 @@ pub fn parse_modify_managed_prefix_list_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_network_interface_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyNetworkInterfaceAttributeOutput,
     crate::error::ModifyNetworkInterfaceAttributeError,
 > {
@@ -10815,7 +11369,7 @@ pub fn parse_modify_network_interface_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_network_interface_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyNetworkInterfaceAttributeOutput,
     crate::error::ModifyNetworkInterfaceAttributeError,
 > {
@@ -10831,8 +11385,10 @@ pub fn parse_modify_network_interface_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_reserved_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyReservedInstancesOutput, crate::error::ModifyReservedInstancesError>
-{
+) -> std::result::Result<
+    crate::output::ModifyReservedInstancesOutput,
+    crate::error::ModifyReservedInstancesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyReservedInstancesError::unhandled)?;
     Err(crate::error::ModifyReservedInstancesError::generic(generic))
@@ -10841,8 +11397,10 @@ pub fn parse_modify_reserved_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_reserved_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyReservedInstancesOutput, crate::error::ModifyReservedInstancesError>
-{
+) -> std::result::Result<
+    crate::output::ModifyReservedInstancesOutput,
+    crate::error::ModifyReservedInstancesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_reserved_instances_output::Builder::default();
@@ -10859,8 +11417,10 @@ pub fn parse_modify_reserved_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_snapshot_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifySnapshotAttributeOutput, crate::error::ModifySnapshotAttributeError>
-{
+) -> std::result::Result<
+    crate::output::ModifySnapshotAttributeOutput,
+    crate::error::ModifySnapshotAttributeError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifySnapshotAttributeError::unhandled)?;
     Err(crate::error::ModifySnapshotAttributeError::generic(generic))
@@ -10869,8 +11429,10 @@ pub fn parse_modify_snapshot_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_snapshot_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifySnapshotAttributeOutput, crate::error::ModifySnapshotAttributeError>
-{
+) -> std::result::Result<
+    crate::output::ModifySnapshotAttributeOutput,
+    crate::error::ModifySnapshotAttributeError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_snapshot_attribute_output::Builder::default();
@@ -10882,8 +11444,10 @@ pub fn parse_modify_snapshot_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_spot_fleet_request_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifySpotFleetRequestOutput, crate::error::ModifySpotFleetRequestError>
-{
+) -> std::result::Result<
+    crate::output::ModifySpotFleetRequestOutput,
+    crate::error::ModifySpotFleetRequestError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifySpotFleetRequestError::unhandled)?;
     Err(crate::error::ModifySpotFleetRequestError::generic(generic))
@@ -10892,8 +11456,10 @@ pub fn parse_modify_spot_fleet_request_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_spot_fleet_request_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifySpotFleetRequestOutput, crate::error::ModifySpotFleetRequestError>
-{
+) -> std::result::Result<
+    crate::output::ModifySpotFleetRequestOutput,
+    crate::error::ModifySpotFleetRequestError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_spot_fleet_request_output::Builder::default();
@@ -10910,7 +11476,10 @@ pub fn parse_modify_spot_fleet_request_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_subnet_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifySubnetAttributeOutput, crate::error::ModifySubnetAttributeError> {
+) -> std::result::Result<
+    crate::output::ModifySubnetAttributeOutput,
+    crate::error::ModifySubnetAttributeError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifySubnetAttributeError::unhandled)?;
     Err(crate::error::ModifySubnetAttributeError::generic(generic))
@@ -10919,7 +11488,10 @@ pub fn parse_modify_subnet_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_subnet_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifySubnetAttributeOutput, crate::error::ModifySubnetAttributeError> {
+) -> std::result::Result<
+    crate::output::ModifySubnetAttributeOutput,
+    crate::error::ModifySubnetAttributeError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_subnet_attribute_output::Builder::default();
@@ -10931,7 +11503,7 @@ pub fn parse_modify_subnet_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_traffic_mirror_filter_network_services_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyTrafficMirrorFilterNetworkServicesOutput,
     crate::error::ModifyTrafficMirrorFilterNetworkServicesError,
 > {
@@ -10943,7 +11515,7 @@ pub fn parse_modify_traffic_mirror_filter_network_services_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_traffic_mirror_filter_network_services_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyTrafficMirrorFilterNetworkServicesOutput,
     crate::error::ModifyTrafficMirrorFilterNetworkServicesError,
 > {
@@ -10964,7 +11536,7 @@ pub fn parse_modify_traffic_mirror_filter_network_services_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_traffic_mirror_filter_rule_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyTrafficMirrorFilterRuleOutput,
     crate::error::ModifyTrafficMirrorFilterRuleError,
 > {
@@ -10978,7 +11550,7 @@ pub fn parse_modify_traffic_mirror_filter_rule_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_traffic_mirror_filter_rule_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyTrafficMirrorFilterRuleOutput,
     crate::error::ModifyTrafficMirrorFilterRuleError,
 > {
@@ -10999,7 +11571,7 @@ pub fn parse_modify_traffic_mirror_filter_rule_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_traffic_mirror_session_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyTrafficMirrorSessionOutput,
     crate::error::ModifyTrafficMirrorSessionError,
 > {
@@ -11013,7 +11585,7 @@ pub fn parse_modify_traffic_mirror_session_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_traffic_mirror_session_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyTrafficMirrorSessionOutput,
     crate::error::ModifyTrafficMirrorSessionError,
 > {
@@ -11033,7 +11605,10 @@ pub fn parse_modify_traffic_mirror_session_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_transit_gateway_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyTransitGatewayOutput, crate::error::ModifyTransitGatewayError> {
+) -> std::result::Result<
+    crate::output::ModifyTransitGatewayOutput,
+    crate::error::ModifyTransitGatewayError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyTransitGatewayError::unhandled)?;
     Err(crate::error::ModifyTransitGatewayError::generic(generic))
@@ -11042,7 +11617,10 @@ pub fn parse_modify_transit_gateway_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_transit_gateway_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyTransitGatewayOutput, crate::error::ModifyTransitGatewayError> {
+) -> std::result::Result<
+    crate::output::ModifyTransitGatewayOutput,
+    crate::error::ModifyTransitGatewayError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_transit_gateway_output::Builder::default();
@@ -11059,7 +11637,7 @@ pub fn parse_modify_transit_gateway_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_transit_gateway_prefix_list_reference_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyTransitGatewayPrefixListReferenceOutput,
     crate::error::ModifyTransitGatewayPrefixListReferenceError,
 > {
@@ -11071,7 +11649,7 @@ pub fn parse_modify_transit_gateway_prefix_list_reference_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_transit_gateway_prefix_list_reference_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyTransitGatewayPrefixListReferenceOutput,
     crate::error::ModifyTransitGatewayPrefixListReferenceError,
 > {
@@ -11092,7 +11670,7 @@ pub fn parse_modify_transit_gateway_prefix_list_reference_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_transit_gateway_vpc_attachment_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyTransitGatewayVpcAttachmentOutput,
     crate::error::ModifyTransitGatewayVpcAttachmentError,
 > {
@@ -11104,7 +11682,7 @@ pub fn parse_modify_transit_gateway_vpc_attachment_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_transit_gateway_vpc_attachment_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyTransitGatewayVpcAttachmentOutput,
     crate::error::ModifyTransitGatewayVpcAttachmentError,
 > {
@@ -11125,7 +11703,7 @@ pub fn parse_modify_transit_gateway_vpc_attachment_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_volume_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyVolumeOutput, crate::error::ModifyVolumeError> {
+) -> std::result::Result<crate::output::ModifyVolumeOutput, crate::error::ModifyVolumeError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyVolumeError::unhandled)?;
     Err(crate::error::ModifyVolumeError::generic(generic))
@@ -11134,7 +11712,7 @@ pub fn parse_modify_volume_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_volume_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyVolumeOutput, crate::error::ModifyVolumeError> {
+) -> std::result::Result<crate::output::ModifyVolumeOutput, crate::error::ModifyVolumeError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_volume_output::Builder::default();
@@ -11148,7 +11726,10 @@ pub fn parse_modify_volume_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_volume_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyVolumeAttributeOutput, crate::error::ModifyVolumeAttributeError> {
+) -> std::result::Result<
+    crate::output::ModifyVolumeAttributeOutput,
+    crate::error::ModifyVolumeAttributeError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyVolumeAttributeError::unhandled)?;
     Err(crate::error::ModifyVolumeAttributeError::generic(generic))
@@ -11157,7 +11738,10 @@ pub fn parse_modify_volume_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_volume_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyVolumeAttributeOutput, crate::error::ModifyVolumeAttributeError> {
+) -> std::result::Result<
+    crate::output::ModifyVolumeAttributeOutput,
+    crate::error::ModifyVolumeAttributeError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_volume_attribute_output::Builder::default();
@@ -11169,7 +11753,10 @@ pub fn parse_modify_volume_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpc_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyVpcAttributeOutput, crate::error::ModifyVpcAttributeError> {
+) -> std::result::Result<
+    crate::output::ModifyVpcAttributeOutput,
+    crate::error::ModifyVpcAttributeError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyVpcAttributeError::unhandled)?;
     Err(crate::error::ModifyVpcAttributeError::generic(generic))
@@ -11178,7 +11765,10 @@ pub fn parse_modify_vpc_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpc_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyVpcAttributeOutput, crate::error::ModifyVpcAttributeError> {
+) -> std::result::Result<
+    crate::output::ModifyVpcAttributeOutput,
+    crate::error::ModifyVpcAttributeError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_vpc_attribute_output::Builder::default();
@@ -11190,7 +11780,8 @@ pub fn parse_modify_vpc_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpc_endpoint_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyVpcEndpointOutput, crate::error::ModifyVpcEndpointError> {
+) -> std::result::Result<crate::output::ModifyVpcEndpointOutput, crate::error::ModifyVpcEndpointError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyVpcEndpointError::unhandled)?;
     Err(crate::error::ModifyVpcEndpointError::generic(generic))
@@ -11199,7 +11790,8 @@ pub fn parse_modify_vpc_endpoint_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpc_endpoint_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyVpcEndpointOutput, crate::error::ModifyVpcEndpointError> {
+) -> std::result::Result<crate::output::ModifyVpcEndpointOutput, crate::error::ModifyVpcEndpointError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_vpc_endpoint_output::Builder::default();
@@ -11214,7 +11806,7 @@ pub fn parse_modify_vpc_endpoint_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpc_endpoint_connection_notification_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyVpcEndpointConnectionNotificationOutput,
     crate::error::ModifyVpcEndpointConnectionNotificationError,
 > {
@@ -11226,7 +11818,7 @@ pub fn parse_modify_vpc_endpoint_connection_notification_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpc_endpoint_connection_notification_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyVpcEndpointConnectionNotificationOutput,
     crate::error::ModifyVpcEndpointConnectionNotificationError,
 > {
@@ -11247,7 +11839,7 @@ pub fn parse_modify_vpc_endpoint_connection_notification_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpc_endpoint_service_configuration_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyVpcEndpointServiceConfigurationOutput,
     crate::error::ModifyVpcEndpointServiceConfigurationError,
 > {
@@ -11259,7 +11851,7 @@ pub fn parse_modify_vpc_endpoint_service_configuration_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpc_endpoint_service_configuration_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyVpcEndpointServiceConfigurationOutput,
     crate::error::ModifyVpcEndpointServiceConfigurationError,
 > {
@@ -11280,7 +11872,7 @@ pub fn parse_modify_vpc_endpoint_service_configuration_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpc_endpoint_service_permissions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyVpcEndpointServicePermissionsOutput,
     crate::error::ModifyVpcEndpointServicePermissionsError,
 > {
@@ -11292,7 +11884,7 @@ pub fn parse_modify_vpc_endpoint_service_permissions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpc_endpoint_service_permissions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyVpcEndpointServicePermissionsOutput,
     crate::error::ModifyVpcEndpointServicePermissionsError,
 > {
@@ -11313,7 +11905,7 @@ pub fn parse_modify_vpc_endpoint_service_permissions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpc_peering_connection_options_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyVpcPeeringConnectionOptionsOutput,
     crate::error::ModifyVpcPeeringConnectionOptionsError,
 > {
@@ -11325,7 +11917,7 @@ pub fn parse_modify_vpc_peering_connection_options_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpc_peering_connection_options_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyVpcPeeringConnectionOptionsOutput,
     crate::error::ModifyVpcPeeringConnectionOptionsError,
 > {
@@ -11346,7 +11938,8 @@ pub fn parse_modify_vpc_peering_connection_options_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpc_tenancy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyVpcTenancyOutput, crate::error::ModifyVpcTenancyError> {
+) -> std::result::Result<crate::output::ModifyVpcTenancyOutput, crate::error::ModifyVpcTenancyError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyVpcTenancyError::unhandled)?;
     Err(crate::error::ModifyVpcTenancyError::generic(generic))
@@ -11355,7 +11948,8 @@ pub fn parse_modify_vpc_tenancy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpc_tenancy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyVpcTenancyOutput, crate::error::ModifyVpcTenancyError> {
+) -> std::result::Result<crate::output::ModifyVpcTenancyOutput, crate::error::ModifyVpcTenancyError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_vpc_tenancy_output::Builder::default();
@@ -11370,7 +11964,10 @@ pub fn parse_modify_vpc_tenancy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpn_connection_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyVpnConnectionOutput, crate::error::ModifyVpnConnectionError> {
+) -> std::result::Result<
+    crate::output::ModifyVpnConnectionOutput,
+    crate::error::ModifyVpnConnectionError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyVpnConnectionError::unhandled)?;
     Err(crate::error::ModifyVpnConnectionError::generic(generic))
@@ -11379,7 +11976,10 @@ pub fn parse_modify_vpn_connection_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpn_connection_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyVpnConnectionOutput, crate::error::ModifyVpnConnectionError> {
+) -> std::result::Result<
+    crate::output::ModifyVpnConnectionOutput,
+    crate::error::ModifyVpnConnectionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_vpn_connection_output::Builder::default();
@@ -11396,7 +11996,7 @@ pub fn parse_modify_vpn_connection_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpn_connection_options_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyVpnConnectionOptionsOutput,
     crate::error::ModifyVpnConnectionOptionsError,
 > {
@@ -11410,7 +12010,7 @@ pub fn parse_modify_vpn_connection_options_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpn_connection_options_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyVpnConnectionOptionsOutput,
     crate::error::ModifyVpnConnectionOptionsError,
 > {
@@ -11430,7 +12030,7 @@ pub fn parse_modify_vpn_connection_options_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpn_tunnel_certificate_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyVpnTunnelCertificateOutput,
     crate::error::ModifyVpnTunnelCertificateError,
 > {
@@ -11444,7 +12044,7 @@ pub fn parse_modify_vpn_tunnel_certificate_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpn_tunnel_certificate_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyVpnTunnelCertificateOutput,
     crate::error::ModifyVpnTunnelCertificateError,
 > {
@@ -11464,8 +12064,10 @@ pub fn parse_modify_vpn_tunnel_certificate_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpn_tunnel_options_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyVpnTunnelOptionsOutput, crate::error::ModifyVpnTunnelOptionsError>
-{
+) -> std::result::Result<
+    crate::output::ModifyVpnTunnelOptionsOutput,
+    crate::error::ModifyVpnTunnelOptionsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyVpnTunnelOptionsError::unhandled)?;
     Err(crate::error::ModifyVpnTunnelOptionsError::generic(generic))
@@ -11474,8 +12076,10 @@ pub fn parse_modify_vpn_tunnel_options_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_vpn_tunnel_options_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyVpnTunnelOptionsOutput, crate::error::ModifyVpnTunnelOptionsError>
-{
+) -> std::result::Result<
+    crate::output::ModifyVpnTunnelOptionsOutput,
+    crate::error::ModifyVpnTunnelOptionsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_vpn_tunnel_options_output::Builder::default();
@@ -11492,7 +12096,8 @@ pub fn parse_modify_vpn_tunnel_options_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_monitor_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::MonitorInstancesOutput, crate::error::MonitorInstancesError> {
+) -> std::result::Result<crate::output::MonitorInstancesOutput, crate::error::MonitorInstancesError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::MonitorInstancesError::unhandled)?;
     Err(crate::error::MonitorInstancesError::generic(generic))
@@ -11501,7 +12106,8 @@ pub fn parse_monitor_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_monitor_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::MonitorInstancesOutput, crate::error::MonitorInstancesError> {
+) -> std::result::Result<crate::output::MonitorInstancesOutput, crate::error::MonitorInstancesError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::monitor_instances_output::Builder::default();
@@ -11516,7 +12122,8 @@ pub fn parse_monitor_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_move_address_to_vpc_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::MoveAddressToVpcOutput, crate::error::MoveAddressToVpcError> {
+) -> std::result::Result<crate::output::MoveAddressToVpcOutput, crate::error::MoveAddressToVpcError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::MoveAddressToVpcError::unhandled)?;
     Err(crate::error::MoveAddressToVpcError::generic(generic))
@@ -11525,7 +12132,8 @@ pub fn parse_move_address_to_vpc_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_move_address_to_vpc_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::MoveAddressToVpcOutput, crate::error::MoveAddressToVpcError> {
+) -> std::result::Result<crate::output::MoveAddressToVpcOutput, crate::error::MoveAddressToVpcError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::move_address_to_vpc_output::Builder::default();
@@ -11540,7 +12148,10 @@ pub fn parse_move_address_to_vpc_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_provision_byoip_cidr_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ProvisionByoipCidrOutput, crate::error::ProvisionByoipCidrError> {
+) -> std::result::Result<
+    crate::output::ProvisionByoipCidrOutput,
+    crate::error::ProvisionByoipCidrError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
     Err(crate::error::ProvisionByoipCidrError::generic(generic))
@@ -11549,7 +12160,10 @@ pub fn parse_provision_byoip_cidr_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_provision_byoip_cidr_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ProvisionByoipCidrOutput, crate::error::ProvisionByoipCidrError> {
+) -> std::result::Result<
+    crate::output::ProvisionByoipCidrOutput,
+    crate::error::ProvisionByoipCidrError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::provision_byoip_cidr_output::Builder::default();
@@ -11566,8 +12180,10 @@ pub fn parse_provision_byoip_cidr_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_purchase_host_reservation_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PurchaseHostReservationOutput, crate::error::PurchaseHostReservationError>
-{
+) -> std::result::Result<
+    crate::output::PurchaseHostReservationOutput,
+    crate::error::PurchaseHostReservationError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PurchaseHostReservationError::unhandled)?;
     Err(crate::error::PurchaseHostReservationError::generic(generic))
@@ -11576,8 +12192,10 @@ pub fn parse_purchase_host_reservation_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_purchase_host_reservation_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PurchaseHostReservationOutput, crate::error::PurchaseHostReservationError>
-{
+) -> std::result::Result<
+    crate::output::PurchaseHostReservationOutput,
+    crate::error::PurchaseHostReservationError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::purchase_host_reservation_output::Builder::default();
@@ -11594,7 +12212,7 @@ pub fn parse_purchase_host_reservation_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_purchase_reserved_instances_offering_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PurchaseReservedInstancesOfferingOutput,
     crate::error::PurchaseReservedInstancesOfferingError,
 > {
@@ -11606,7 +12224,7 @@ pub fn parse_purchase_reserved_instances_offering_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_purchase_reserved_instances_offering_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PurchaseReservedInstancesOfferingOutput,
     crate::error::PurchaseReservedInstancesOfferingError,
 > {
@@ -11627,7 +12245,7 @@ pub fn parse_purchase_reserved_instances_offering_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_purchase_scheduled_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PurchaseScheduledInstancesOutput,
     crate::error::PurchaseScheduledInstancesError,
 > {
@@ -11641,7 +12259,7 @@ pub fn parse_purchase_scheduled_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_purchase_scheduled_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PurchaseScheduledInstancesOutput,
     crate::error::PurchaseScheduledInstancesError,
 > {
@@ -11661,7 +12279,7 @@ pub fn parse_purchase_scheduled_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reboot_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RebootInstancesOutput, crate::error::RebootInstancesError> {
+) -> std::result::Result<crate::output::RebootInstancesOutput, crate::error::RebootInstancesError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RebootInstancesError::unhandled)?;
     Err(crate::error::RebootInstancesError::generic(generic))
@@ -11670,7 +12288,7 @@ pub fn parse_reboot_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reboot_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RebootInstancesOutput, crate::error::RebootInstancesError> {
+) -> std::result::Result<crate::output::RebootInstancesOutput, crate::error::RebootInstancesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::reboot_instances_output::Builder::default();
@@ -11682,7 +12300,7 @@ pub fn parse_reboot_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_register_image_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RegisterImageOutput, crate::error::RegisterImageError> {
+) -> std::result::Result<crate::output::RegisterImageOutput, crate::error::RegisterImageError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RegisterImageError::unhandled)?;
     Err(crate::error::RegisterImageError::generic(generic))
@@ -11691,7 +12309,7 @@ pub fn parse_register_image_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_register_image_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RegisterImageOutput, crate::error::RegisterImageError> {
+) -> std::result::Result<crate::output::RegisterImageOutput, crate::error::RegisterImageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::register_image_output::Builder::default();
@@ -11705,7 +12323,7 @@ pub fn parse_register_image_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_register_instance_event_notification_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RegisterInstanceEventNotificationAttributesOutput,
     crate::error::RegisterInstanceEventNotificationAttributesError,
 > {
@@ -11717,7 +12335,7 @@ pub fn parse_register_instance_event_notification_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_register_instance_event_notification_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RegisterInstanceEventNotificationAttributesOutput,
     crate::error::RegisterInstanceEventNotificationAttributesError,
 > {
@@ -11739,7 +12357,7 @@ pub fn parse_register_instance_event_notification_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_register_transit_gateway_multicast_group_members_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RegisterTransitGatewayMulticastGroupMembersOutput,
     crate::error::RegisterTransitGatewayMulticastGroupMembersError,
 > {
@@ -11751,7 +12369,7 @@ pub fn parse_register_transit_gateway_multicast_group_members_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_register_transit_gateway_multicast_group_members_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RegisterTransitGatewayMulticastGroupMembersOutput,
     crate::error::RegisterTransitGatewayMulticastGroupMembersError,
 > {
@@ -11771,7 +12389,7 @@ pub fn parse_register_transit_gateway_multicast_group_members_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_register_transit_gateway_multicast_group_sources_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RegisterTransitGatewayMulticastGroupSourcesOutput,
     crate::error::RegisterTransitGatewayMulticastGroupSourcesError,
 > {
@@ -11783,7 +12401,7 @@ pub fn parse_register_transit_gateway_multicast_group_sources_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_register_transit_gateway_multicast_group_sources_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RegisterTransitGatewayMulticastGroupSourcesOutput,
     crate::error::RegisterTransitGatewayMulticastGroupSourcesError,
 > {
@@ -11803,7 +12421,7 @@ pub fn parse_register_transit_gateway_multicast_group_sources_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reject_transit_gateway_multicast_domain_associations_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RejectTransitGatewayMulticastDomainAssociationsOutput,
     crate::error::RejectTransitGatewayMulticastDomainAssociationsError,
 > {
@@ -11815,7 +12433,7 @@ pub fn parse_reject_transit_gateway_multicast_domain_associations_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reject_transit_gateway_multicast_domain_associations_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RejectTransitGatewayMulticastDomainAssociationsOutput,
     crate::error::RejectTransitGatewayMulticastDomainAssociationsError,
 > {
@@ -11837,7 +12455,7 @@ pub fn parse_reject_transit_gateway_multicast_domain_associations_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reject_transit_gateway_peering_attachment_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RejectTransitGatewayPeeringAttachmentOutput,
     crate::error::RejectTransitGatewayPeeringAttachmentError,
 > {
@@ -11849,7 +12467,7 @@ pub fn parse_reject_transit_gateway_peering_attachment_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reject_transit_gateway_peering_attachment_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RejectTransitGatewayPeeringAttachmentOutput,
     crate::error::RejectTransitGatewayPeeringAttachmentError,
 > {
@@ -11870,7 +12488,7 @@ pub fn parse_reject_transit_gateway_peering_attachment_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reject_transit_gateway_vpc_attachment_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RejectTransitGatewayVpcAttachmentOutput,
     crate::error::RejectTransitGatewayVpcAttachmentError,
 > {
@@ -11882,7 +12500,7 @@ pub fn parse_reject_transit_gateway_vpc_attachment_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reject_transit_gateway_vpc_attachment_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RejectTransitGatewayVpcAttachmentOutput,
     crate::error::RejectTransitGatewayVpcAttachmentError,
 > {
@@ -11903,7 +12521,7 @@ pub fn parse_reject_transit_gateway_vpc_attachment_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reject_vpc_endpoint_connections_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RejectVpcEndpointConnectionsOutput,
     crate::error::RejectVpcEndpointConnectionsError,
 > {
@@ -11917,7 +12535,7 @@ pub fn parse_reject_vpc_endpoint_connections_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reject_vpc_endpoint_connections_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RejectVpcEndpointConnectionsOutput,
     crate::error::RejectVpcEndpointConnectionsError,
 > {
@@ -11937,7 +12555,7 @@ pub fn parse_reject_vpc_endpoint_connections_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reject_vpc_peering_connection_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RejectVpcPeeringConnectionOutput,
     crate::error::RejectVpcPeeringConnectionError,
 > {
@@ -11951,7 +12569,7 @@ pub fn parse_reject_vpc_peering_connection_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reject_vpc_peering_connection_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RejectVpcPeeringConnectionOutput,
     crate::error::RejectVpcPeeringConnectionError,
 > {
@@ -11971,7 +12589,7 @@ pub fn parse_reject_vpc_peering_connection_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_release_address_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ReleaseAddressOutput, crate::error::ReleaseAddressError> {
+) -> std::result::Result<crate::output::ReleaseAddressOutput, crate::error::ReleaseAddressError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ReleaseAddressError::unhandled)?;
     Err(crate::error::ReleaseAddressError::generic(generic))
@@ -11980,7 +12598,7 @@ pub fn parse_release_address_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_release_address_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ReleaseAddressOutput, crate::error::ReleaseAddressError> {
+) -> std::result::Result<crate::output::ReleaseAddressOutput, crate::error::ReleaseAddressError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::release_address_output::Builder::default();
@@ -11992,7 +12610,7 @@ pub fn parse_release_address_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_release_hosts_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ReleaseHostsOutput, crate::error::ReleaseHostsError> {
+) -> std::result::Result<crate::output::ReleaseHostsOutput, crate::error::ReleaseHostsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ReleaseHostsError::unhandled)?;
     Err(crate::error::ReleaseHostsError::generic(generic))
@@ -12001,7 +12619,7 @@ pub fn parse_release_hosts_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_release_hosts_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ReleaseHostsOutput, crate::error::ReleaseHostsError> {
+) -> std::result::Result<crate::output::ReleaseHostsOutput, crate::error::ReleaseHostsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::release_hosts_output::Builder::default();
@@ -12015,7 +12633,7 @@ pub fn parse_release_hosts_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_replace_iam_instance_profile_association_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ReplaceIamInstanceProfileAssociationOutput,
     crate::error::ReplaceIamInstanceProfileAssociationError,
 > {
@@ -12027,7 +12645,7 @@ pub fn parse_replace_iam_instance_profile_association_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_replace_iam_instance_profile_association_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ReplaceIamInstanceProfileAssociationOutput,
     crate::error::ReplaceIamInstanceProfileAssociationError,
 > {
@@ -12048,7 +12666,7 @@ pub fn parse_replace_iam_instance_profile_association_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_replace_network_acl_association_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ReplaceNetworkAclAssociationOutput,
     crate::error::ReplaceNetworkAclAssociationError,
 > {
@@ -12062,7 +12680,7 @@ pub fn parse_replace_network_acl_association_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_replace_network_acl_association_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ReplaceNetworkAclAssociationOutput,
     crate::error::ReplaceNetworkAclAssociationError,
 > {
@@ -12082,8 +12700,10 @@ pub fn parse_replace_network_acl_association_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_replace_network_acl_entry_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ReplaceNetworkAclEntryOutput, crate::error::ReplaceNetworkAclEntryError>
-{
+) -> std::result::Result<
+    crate::output::ReplaceNetworkAclEntryOutput,
+    crate::error::ReplaceNetworkAclEntryError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ReplaceNetworkAclEntryError::unhandled)?;
     Err(crate::error::ReplaceNetworkAclEntryError::generic(generic))
@@ -12092,8 +12712,10 @@ pub fn parse_replace_network_acl_entry_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_replace_network_acl_entry_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ReplaceNetworkAclEntryOutput, crate::error::ReplaceNetworkAclEntryError>
-{
+) -> std::result::Result<
+    crate::output::ReplaceNetworkAclEntryOutput,
+    crate::error::ReplaceNetworkAclEntryError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::replace_network_acl_entry_output::Builder::default();
@@ -12105,7 +12727,7 @@ pub fn parse_replace_network_acl_entry_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_replace_route_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ReplaceRouteOutput, crate::error::ReplaceRouteError> {
+) -> std::result::Result<crate::output::ReplaceRouteOutput, crate::error::ReplaceRouteError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ReplaceRouteError::unhandled)?;
     Err(crate::error::ReplaceRouteError::generic(generic))
@@ -12114,7 +12736,7 @@ pub fn parse_replace_route_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_replace_route_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ReplaceRouteOutput, crate::error::ReplaceRouteError> {
+) -> std::result::Result<crate::output::ReplaceRouteOutput, crate::error::ReplaceRouteError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::replace_route_output::Builder::default();
@@ -12126,7 +12748,7 @@ pub fn parse_replace_route_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_replace_route_table_association_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ReplaceRouteTableAssociationOutput,
     crate::error::ReplaceRouteTableAssociationError,
 > {
@@ -12140,7 +12762,7 @@ pub fn parse_replace_route_table_association_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_replace_route_table_association_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ReplaceRouteTableAssociationOutput,
     crate::error::ReplaceRouteTableAssociationError,
 > {
@@ -12160,7 +12782,7 @@ pub fn parse_replace_route_table_association_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_replace_transit_gateway_route_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ReplaceTransitGatewayRouteOutput,
     crate::error::ReplaceTransitGatewayRouteError,
 > {
@@ -12174,7 +12796,7 @@ pub fn parse_replace_transit_gateway_route_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_replace_transit_gateway_route_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ReplaceTransitGatewayRouteOutput,
     crate::error::ReplaceTransitGatewayRouteError,
 > {
@@ -12194,7 +12816,10 @@ pub fn parse_replace_transit_gateway_route_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_report_instance_status_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ReportInstanceStatusOutput, crate::error::ReportInstanceStatusError> {
+) -> std::result::Result<
+    crate::output::ReportInstanceStatusOutput,
+    crate::error::ReportInstanceStatusError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ReportInstanceStatusError::unhandled)?;
     Err(crate::error::ReportInstanceStatusError::generic(generic))
@@ -12203,7 +12828,10 @@ pub fn parse_report_instance_status_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_report_instance_status_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ReportInstanceStatusOutput, crate::error::ReportInstanceStatusError> {
+) -> std::result::Result<
+    crate::output::ReportInstanceStatusOutput,
+    crate::error::ReportInstanceStatusError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::report_instance_status_output::Builder::default();
@@ -12215,7 +12843,8 @@ pub fn parse_report_instance_status_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_request_spot_fleet_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RequestSpotFleetOutput, crate::error::RequestSpotFleetError> {
+) -> std::result::Result<crate::output::RequestSpotFleetOutput, crate::error::RequestSpotFleetError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RequestSpotFleetError::unhandled)?;
     Err(crate::error::RequestSpotFleetError::generic(generic))
@@ -12224,7 +12853,8 @@ pub fn parse_request_spot_fleet_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_request_spot_fleet_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RequestSpotFleetOutput, crate::error::RequestSpotFleetError> {
+) -> std::result::Result<crate::output::RequestSpotFleetOutput, crate::error::RequestSpotFleetError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::request_spot_fleet_output::Builder::default();
@@ -12239,7 +12869,10 @@ pub fn parse_request_spot_fleet_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_request_spot_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RequestSpotInstancesOutput, crate::error::RequestSpotInstancesError> {
+) -> std::result::Result<
+    crate::output::RequestSpotInstancesOutput,
+    crate::error::RequestSpotInstancesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RequestSpotInstancesError::unhandled)?;
     Err(crate::error::RequestSpotInstancesError::generic(generic))
@@ -12248,7 +12881,10 @@ pub fn parse_request_spot_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_request_spot_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RequestSpotInstancesOutput, crate::error::RequestSpotInstancesError> {
+) -> std::result::Result<
+    crate::output::RequestSpotInstancesOutput,
+    crate::error::RequestSpotInstancesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::request_spot_instances_output::Builder::default();
@@ -12265,7 +12901,10 @@ pub fn parse_request_spot_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_address_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ResetAddressAttributeOutput, crate::error::ResetAddressAttributeError> {
+) -> std::result::Result<
+    crate::output::ResetAddressAttributeOutput,
+    crate::error::ResetAddressAttributeError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ResetAddressAttributeError::unhandled)?;
     Err(crate::error::ResetAddressAttributeError::generic(generic))
@@ -12274,7 +12913,10 @@ pub fn parse_reset_address_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_address_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ResetAddressAttributeOutput, crate::error::ResetAddressAttributeError> {
+) -> std::result::Result<
+    crate::output::ResetAddressAttributeOutput,
+    crate::error::ResetAddressAttributeError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::reset_address_attribute_output::Builder::default();
@@ -12291,8 +12933,10 @@ pub fn parse_reset_address_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_ebs_default_kms_key_id_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ResetEbsDefaultKmsKeyIdOutput, crate::error::ResetEbsDefaultKmsKeyIdError>
-{
+) -> std::result::Result<
+    crate::output::ResetEbsDefaultKmsKeyIdOutput,
+    crate::error::ResetEbsDefaultKmsKeyIdError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ResetEbsDefaultKmsKeyIdError::unhandled)?;
     Err(crate::error::ResetEbsDefaultKmsKeyIdError::generic(generic))
@@ -12301,8 +12945,10 @@ pub fn parse_reset_ebs_default_kms_key_id_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_ebs_default_kms_key_id_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ResetEbsDefaultKmsKeyIdOutput, crate::error::ResetEbsDefaultKmsKeyIdError>
-{
+) -> std::result::Result<
+    crate::output::ResetEbsDefaultKmsKeyIdOutput,
+    crate::error::ResetEbsDefaultKmsKeyIdError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::reset_ebs_default_kms_key_id_output::Builder::default();
@@ -12319,8 +12965,10 @@ pub fn parse_reset_ebs_default_kms_key_id_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_fpga_image_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ResetFpgaImageAttributeOutput, crate::error::ResetFpgaImageAttributeError>
-{
+) -> std::result::Result<
+    crate::output::ResetFpgaImageAttributeOutput,
+    crate::error::ResetFpgaImageAttributeError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ResetFpgaImageAttributeError::unhandled)?;
     Err(crate::error::ResetFpgaImageAttributeError::generic(generic))
@@ -12329,8 +12977,10 @@ pub fn parse_reset_fpga_image_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_fpga_image_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ResetFpgaImageAttributeOutput, crate::error::ResetFpgaImageAttributeError>
-{
+) -> std::result::Result<
+    crate::output::ResetFpgaImageAttributeOutput,
+    crate::error::ResetFpgaImageAttributeError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::reset_fpga_image_attribute_output::Builder::default();
@@ -12347,7 +12997,10 @@ pub fn parse_reset_fpga_image_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_image_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ResetImageAttributeOutput, crate::error::ResetImageAttributeError> {
+) -> std::result::Result<
+    crate::output::ResetImageAttributeOutput,
+    crate::error::ResetImageAttributeError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ResetImageAttributeError::unhandled)?;
     Err(crate::error::ResetImageAttributeError::generic(generic))
@@ -12356,7 +13009,10 @@ pub fn parse_reset_image_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_image_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ResetImageAttributeOutput, crate::error::ResetImageAttributeError> {
+) -> std::result::Result<
+    crate::output::ResetImageAttributeOutput,
+    crate::error::ResetImageAttributeError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::reset_image_attribute_output::Builder::default();
@@ -12368,8 +13024,10 @@ pub fn parse_reset_image_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_instance_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ResetInstanceAttributeOutput, crate::error::ResetInstanceAttributeError>
-{
+) -> std::result::Result<
+    crate::output::ResetInstanceAttributeOutput,
+    crate::error::ResetInstanceAttributeError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ResetInstanceAttributeError::unhandled)?;
     Err(crate::error::ResetInstanceAttributeError::generic(generic))
@@ -12378,8 +13036,10 @@ pub fn parse_reset_instance_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_instance_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ResetInstanceAttributeOutput, crate::error::ResetInstanceAttributeError>
-{
+) -> std::result::Result<
+    crate::output::ResetInstanceAttributeOutput,
+    crate::error::ResetInstanceAttributeError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::reset_instance_attribute_output::Builder::default();
@@ -12391,7 +13051,7 @@ pub fn parse_reset_instance_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_network_interface_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ResetNetworkInterfaceAttributeOutput,
     crate::error::ResetNetworkInterfaceAttributeError,
 > {
@@ -12405,7 +13065,7 @@ pub fn parse_reset_network_interface_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_network_interface_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ResetNetworkInterfaceAttributeOutput,
     crate::error::ResetNetworkInterfaceAttributeError,
 > {
@@ -12421,8 +13081,10 @@ pub fn parse_reset_network_interface_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_snapshot_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ResetSnapshotAttributeOutput, crate::error::ResetSnapshotAttributeError>
-{
+) -> std::result::Result<
+    crate::output::ResetSnapshotAttributeOutput,
+    crate::error::ResetSnapshotAttributeError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ResetSnapshotAttributeError::unhandled)?;
     Err(crate::error::ResetSnapshotAttributeError::generic(generic))
@@ -12431,8 +13093,10 @@ pub fn parse_reset_snapshot_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_snapshot_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ResetSnapshotAttributeOutput, crate::error::ResetSnapshotAttributeError>
-{
+) -> std::result::Result<
+    crate::output::ResetSnapshotAttributeOutput,
+    crate::error::ResetSnapshotAttributeError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::reset_snapshot_attribute_output::Builder::default();
@@ -12444,8 +13108,10 @@ pub fn parse_reset_snapshot_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_address_to_classic_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RestoreAddressToClassicOutput, crate::error::RestoreAddressToClassicError>
-{
+) -> std::result::Result<
+    crate::output::RestoreAddressToClassicOutput,
+    crate::error::RestoreAddressToClassicError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RestoreAddressToClassicError::unhandled)?;
     Err(crate::error::RestoreAddressToClassicError::generic(generic))
@@ -12454,8 +13120,10 @@ pub fn parse_restore_address_to_classic_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_address_to_classic_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RestoreAddressToClassicOutput, crate::error::RestoreAddressToClassicError>
-{
+) -> std::result::Result<
+    crate::output::RestoreAddressToClassicOutput,
+    crate::error::RestoreAddressToClassicError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::restore_address_to_classic_output::Builder::default();
@@ -12472,7 +13140,7 @@ pub fn parse_restore_address_to_classic_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_managed_prefix_list_version_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RestoreManagedPrefixListVersionOutput,
     crate::error::RestoreManagedPrefixListVersionError,
 > {
@@ -12486,7 +13154,7 @@ pub fn parse_restore_managed_prefix_list_version_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_managed_prefix_list_version_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RestoreManagedPrefixListVersionOutput,
     crate::error::RestoreManagedPrefixListVersionError,
 > {
@@ -12507,8 +13175,10 @@ pub fn parse_restore_managed_prefix_list_version_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_revoke_client_vpn_ingress_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RevokeClientVpnIngressOutput, crate::error::RevokeClientVpnIngressError>
-{
+) -> std::result::Result<
+    crate::output::RevokeClientVpnIngressOutput,
+    crate::error::RevokeClientVpnIngressError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RevokeClientVpnIngressError::unhandled)?;
     Err(crate::error::RevokeClientVpnIngressError::generic(generic))
@@ -12517,8 +13187,10 @@ pub fn parse_revoke_client_vpn_ingress_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_revoke_client_vpn_ingress_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RevokeClientVpnIngressOutput, crate::error::RevokeClientVpnIngressError>
-{
+) -> std::result::Result<
+    crate::output::RevokeClientVpnIngressOutput,
+    crate::error::RevokeClientVpnIngressError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::revoke_client_vpn_ingress_output::Builder::default();
@@ -12535,7 +13207,7 @@ pub fn parse_revoke_client_vpn_ingress_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_revoke_security_group_egress_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RevokeSecurityGroupEgressOutput,
     crate::error::RevokeSecurityGroupEgressError,
 > {
@@ -12549,7 +13221,7 @@ pub fn parse_revoke_security_group_egress_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_revoke_security_group_egress_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RevokeSecurityGroupEgressOutput,
     crate::error::RevokeSecurityGroupEgressError,
 > {
@@ -12569,7 +13241,7 @@ pub fn parse_revoke_security_group_egress_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_revoke_security_group_ingress_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RevokeSecurityGroupIngressOutput,
     crate::error::RevokeSecurityGroupIngressError,
 > {
@@ -12583,7 +13255,7 @@ pub fn parse_revoke_security_group_ingress_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_revoke_security_group_ingress_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RevokeSecurityGroupIngressOutput,
     crate::error::RevokeSecurityGroupIngressError,
 > {
@@ -12603,7 +13275,7 @@ pub fn parse_revoke_security_group_ingress_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_run_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RunInstancesOutput, crate::error::RunInstancesError> {
+) -> std::result::Result<crate::output::RunInstancesOutput, crate::error::RunInstancesError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RunInstancesError::unhandled)?;
     Err(crate::error::RunInstancesError::generic(generic))
@@ -12612,7 +13284,7 @@ pub fn parse_run_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_run_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RunInstancesOutput, crate::error::RunInstancesError> {
+) -> std::result::Result<crate::output::RunInstancesOutput, crate::error::RunInstancesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::run_instances_output::Builder::default();
@@ -12626,7 +13298,10 @@ pub fn parse_run_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_run_scheduled_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RunScheduledInstancesOutput, crate::error::RunScheduledInstancesError> {
+) -> std::result::Result<
+    crate::output::RunScheduledInstancesOutput,
+    crate::error::RunScheduledInstancesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RunScheduledInstancesError::unhandled)?;
     Err(crate::error::RunScheduledInstancesError::generic(generic))
@@ -12635,7 +13310,10 @@ pub fn parse_run_scheduled_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_run_scheduled_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RunScheduledInstancesOutput, crate::error::RunScheduledInstancesError> {
+) -> std::result::Result<
+    crate::output::RunScheduledInstancesOutput,
+    crate::error::RunScheduledInstancesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::run_scheduled_instances_output::Builder::default();
@@ -12652,7 +13330,7 @@ pub fn parse_run_scheduled_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_search_local_gateway_routes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::SearchLocalGatewayRoutesOutput,
     crate::error::SearchLocalGatewayRoutesError,
 > {
@@ -12666,7 +13344,7 @@ pub fn parse_search_local_gateway_routes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_search_local_gateway_routes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::SearchLocalGatewayRoutesOutput,
     crate::error::SearchLocalGatewayRoutesError,
 > {
@@ -12686,7 +13364,7 @@ pub fn parse_search_local_gateway_routes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_search_transit_gateway_multicast_groups_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::SearchTransitGatewayMulticastGroupsOutput,
     crate::error::SearchTransitGatewayMulticastGroupsError,
 > {
@@ -12698,7 +13376,7 @@ pub fn parse_search_transit_gateway_multicast_groups_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_search_transit_gateway_multicast_groups_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::SearchTransitGatewayMulticastGroupsOutput,
     crate::error::SearchTransitGatewayMulticastGroupsError,
 > {
@@ -12719,7 +13397,7 @@ pub fn parse_search_transit_gateway_multicast_groups_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_search_transit_gateway_routes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::SearchTransitGatewayRoutesOutput,
     crate::error::SearchTransitGatewayRoutesError,
 > {
@@ -12733,7 +13411,7 @@ pub fn parse_search_transit_gateway_routes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_search_transit_gateway_routes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::SearchTransitGatewayRoutesOutput,
     crate::error::SearchTransitGatewayRoutesError,
 > {
@@ -12753,8 +13431,10 @@ pub fn parse_search_transit_gateway_routes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_send_diagnostic_interrupt_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SendDiagnosticInterruptOutput, crate::error::SendDiagnosticInterruptError>
-{
+) -> std::result::Result<
+    crate::output::SendDiagnosticInterruptOutput,
+    crate::error::SendDiagnosticInterruptError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::SendDiagnosticInterruptError::unhandled)?;
     Err(crate::error::SendDiagnosticInterruptError::generic(generic))
@@ -12763,8 +13443,10 @@ pub fn parse_send_diagnostic_interrupt_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_send_diagnostic_interrupt_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SendDiagnosticInterruptOutput, crate::error::SendDiagnosticInterruptError>
-{
+) -> std::result::Result<
+    crate::output::SendDiagnosticInterruptOutput,
+    crate::error::SendDiagnosticInterruptError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::send_diagnostic_interrupt_output::Builder::default();
@@ -12776,7 +13458,7 @@ pub fn parse_send_diagnostic_interrupt_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StartInstancesOutput, crate::error::StartInstancesError> {
+) -> std::result::Result<crate::output::StartInstancesOutput, crate::error::StartInstancesError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::StartInstancesError::unhandled)?;
     Err(crate::error::StartInstancesError::generic(generic))
@@ -12785,7 +13467,7 @@ pub fn parse_start_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StartInstancesOutput, crate::error::StartInstancesError> {
+) -> std::result::Result<crate::output::StartInstancesOutput, crate::error::StartInstancesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::start_instances_output::Builder::default();
@@ -12800,7 +13482,7 @@ pub fn parse_start_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_network_insights_analysis_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::StartNetworkInsightsAnalysisOutput,
     crate::error::StartNetworkInsightsAnalysisError,
 > {
@@ -12814,7 +13496,7 @@ pub fn parse_start_network_insights_analysis_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_network_insights_analysis_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::StartNetworkInsightsAnalysisOutput,
     crate::error::StartNetworkInsightsAnalysisError,
 > {
@@ -12834,7 +13516,7 @@ pub fn parse_start_network_insights_analysis_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_vpc_endpoint_service_private_dns_verification_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::StartVpcEndpointServicePrivateDnsVerificationOutput,
     crate::error::StartVpcEndpointServicePrivateDnsVerificationError,
 > {
@@ -12846,7 +13528,7 @@ pub fn parse_start_vpc_endpoint_service_private_dns_verification_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_vpc_endpoint_service_private_dns_verification_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::StartVpcEndpointServicePrivateDnsVerificationOutput,
     crate::error::StartVpcEndpointServicePrivateDnsVerificationError,
 > {
@@ -12866,7 +13548,7 @@ pub fn parse_start_vpc_endpoint_service_private_dns_verification_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_stop_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StopInstancesOutput, crate::error::StopInstancesError> {
+) -> std::result::Result<crate::output::StopInstancesOutput, crate::error::StopInstancesError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::StopInstancesError::unhandled)?;
     Err(crate::error::StopInstancesError::generic(generic))
@@ -12875,7 +13557,7 @@ pub fn parse_stop_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_stop_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StopInstancesOutput, crate::error::StopInstancesError> {
+) -> std::result::Result<crate::output::StopInstancesOutput, crate::error::StopInstancesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::stop_instances_output::Builder::default();
@@ -12889,7 +13571,7 @@ pub fn parse_stop_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_terminate_client_vpn_connections_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::TerminateClientVpnConnectionsOutput,
     crate::error::TerminateClientVpnConnectionsError,
 > {
@@ -12903,7 +13585,7 @@ pub fn parse_terminate_client_vpn_connections_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_terminate_client_vpn_connections_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::TerminateClientVpnConnectionsOutput,
     crate::error::TerminateClientVpnConnectionsError,
 > {
@@ -12923,7 +13605,10 @@ pub fn parse_terminate_client_vpn_connections_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_terminate_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TerminateInstancesOutput, crate::error::TerminateInstancesError> {
+) -> std::result::Result<
+    crate::output::TerminateInstancesOutput,
+    crate::error::TerminateInstancesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::TerminateInstancesError::unhandled)?;
     Err(crate::error::TerminateInstancesError::generic(generic))
@@ -12932,7 +13617,10 @@ pub fn parse_terminate_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_terminate_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TerminateInstancesOutput, crate::error::TerminateInstancesError> {
+) -> std::result::Result<
+    crate::output::TerminateInstancesOutput,
+    crate::error::TerminateInstancesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::terminate_instances_output::Builder::default();
@@ -12947,7 +13635,10 @@ pub fn parse_terminate_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_unassign_ipv6_addresses_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UnassignIpv6AddressesOutput, crate::error::UnassignIpv6AddressesError> {
+) -> std::result::Result<
+    crate::output::UnassignIpv6AddressesOutput,
+    crate::error::UnassignIpv6AddressesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UnassignIpv6AddressesError::unhandled)?;
     Err(crate::error::UnassignIpv6AddressesError::generic(generic))
@@ -12956,7 +13647,10 @@ pub fn parse_unassign_ipv6_addresses_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_unassign_ipv6_addresses_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UnassignIpv6AddressesOutput, crate::error::UnassignIpv6AddressesError> {
+) -> std::result::Result<
+    crate::output::UnassignIpv6AddressesOutput,
+    crate::error::UnassignIpv6AddressesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::unassign_ipv6_addresses_output::Builder::default();
@@ -12973,7 +13667,7 @@ pub fn parse_unassign_ipv6_addresses_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_unassign_private_ip_addresses_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UnassignPrivateIpAddressesOutput,
     crate::error::UnassignPrivateIpAddressesError,
 > {
@@ -12987,7 +13681,7 @@ pub fn parse_unassign_private_ip_addresses_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_unassign_private_ip_addresses_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UnassignPrivateIpAddressesOutput,
     crate::error::UnassignPrivateIpAddressesError,
 > {
@@ -13002,7 +13696,10 @@ pub fn parse_unassign_private_ip_addresses_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_unmonitor_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UnmonitorInstancesOutput, crate::error::UnmonitorInstancesError> {
+) -> std::result::Result<
+    crate::output::UnmonitorInstancesOutput,
+    crate::error::UnmonitorInstancesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UnmonitorInstancesError::unhandled)?;
     Err(crate::error::UnmonitorInstancesError::generic(generic))
@@ -13011,7 +13708,10 @@ pub fn parse_unmonitor_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_unmonitor_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UnmonitorInstancesOutput, crate::error::UnmonitorInstancesError> {
+) -> std::result::Result<
+    crate::output::UnmonitorInstancesOutput,
+    crate::error::UnmonitorInstancesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::unmonitor_instances_output::Builder::default();
@@ -13026,7 +13726,7 @@ pub fn parse_unmonitor_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_security_group_rule_descriptions_egress_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateSecurityGroupRuleDescriptionsEgressOutput,
     crate::error::UpdateSecurityGroupRuleDescriptionsEgressError,
 > {
@@ -13038,7 +13738,7 @@ pub fn parse_update_security_group_rule_descriptions_egress_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_security_group_rule_descriptions_egress_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateSecurityGroupRuleDescriptionsEgressOutput,
     crate::error::UpdateSecurityGroupRuleDescriptionsEgressError,
 > {
@@ -13060,7 +13760,7 @@ pub fn parse_update_security_group_rule_descriptions_egress_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_security_group_rule_descriptions_ingress_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateSecurityGroupRuleDescriptionsIngressOutput,
     crate::error::UpdateSecurityGroupRuleDescriptionsIngressError,
 > {
@@ -13072,7 +13772,7 @@ pub fn parse_update_security_group_rule_descriptions_ingress_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_security_group_rule_descriptions_ingress_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateSecurityGroupRuleDescriptionsIngressOutput,
     crate::error::UpdateSecurityGroupRuleDescriptionsIngressError,
 > {
@@ -13094,7 +13794,8 @@ pub fn parse_update_security_group_rule_descriptions_ingress_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_withdraw_byoip_cidr_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::WithdrawByoipCidrOutput, crate::error::WithdrawByoipCidrError> {
+) -> std::result::Result<crate::output::WithdrawByoipCidrOutput, crate::error::WithdrawByoipCidrError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
     Err(crate::error::WithdrawByoipCidrError::generic(generic))
@@ -13103,7 +13804,8 @@ pub fn parse_withdraw_byoip_cidr_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_withdraw_byoip_cidr_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::WithdrawByoipCidrOutput, crate::error::WithdrawByoipCidrError> {
+) -> std::result::Result<crate::output::WithdrawByoipCidrOutput, crate::error::WithdrawByoipCidrError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::withdraw_byoip_cidr_output::Builder::default();

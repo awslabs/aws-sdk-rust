@@ -20,103 +20,107 @@ pub mod send_command_input {
         /// <p>To obtain a session token, run the <code>StartSession</code> command. This
         /// <code>SessionToken</code> is required for every subsequent command that is issued during
         /// the current session.</p>
-        pub fn session_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.session_token = Some(inp.into());
+        pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.session_token = Some(input.into());
             self
         }
-        pub fn set_session_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.session_token = inp;
+        pub fn set_session_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.session_token = input;
             self
         }
         /// <p>Command to start a new session. A session token is obtained as part of the
         /// response.</p>
-        pub fn start_session(mut self, inp: crate::model::StartSessionRequest) -> Self {
-            self.start_session = Some(inp);
+        pub fn start_session(mut self, input: crate::model::StartSessionRequest) -> Self {
+            self.start_session = Some(input);
             self
         }
         pub fn set_start_session(
             mut self,
-            inp: std::option::Option<crate::model::StartSessionRequest>,
+            input: std::option::Option<crate::model::StartSessionRequest>,
         ) -> Self {
-            self.start_session = inp;
+            self.start_session = input;
             self
         }
         /// <p>Command to start a new transaction.</p>
-        pub fn start_transaction(mut self, inp: crate::model::StartTransactionRequest) -> Self {
-            self.start_transaction = Some(inp);
+        pub fn start_transaction(mut self, input: crate::model::StartTransactionRequest) -> Self {
+            self.start_transaction = Some(input);
             self
         }
         pub fn set_start_transaction(
             mut self,
-            inp: std::option::Option<crate::model::StartTransactionRequest>,
+            input: std::option::Option<crate::model::StartTransactionRequest>,
         ) -> Self {
-            self.start_transaction = inp;
+            self.start_transaction = input;
             self
         }
         /// <p>Command to end the current session.</p>
-        pub fn end_session(mut self, inp: crate::model::EndSessionRequest) -> Self {
-            self.end_session = Some(inp);
+        pub fn end_session(mut self, input: crate::model::EndSessionRequest) -> Self {
+            self.end_session = Some(input);
             self
         }
         pub fn set_end_session(
             mut self,
-            inp: std::option::Option<crate::model::EndSessionRequest>,
+            input: std::option::Option<crate::model::EndSessionRequest>,
         ) -> Self {
-            self.end_session = inp;
+            self.end_session = input;
             self
         }
         /// <p>Command to commit the specified transaction.</p>
-        pub fn commit_transaction(mut self, inp: crate::model::CommitTransactionRequest) -> Self {
-            self.commit_transaction = Some(inp);
+        pub fn commit_transaction(mut self, input: crate::model::CommitTransactionRequest) -> Self {
+            self.commit_transaction = Some(input);
             self
         }
         pub fn set_commit_transaction(
             mut self,
-            inp: std::option::Option<crate::model::CommitTransactionRequest>,
+            input: std::option::Option<crate::model::CommitTransactionRequest>,
         ) -> Self {
-            self.commit_transaction = inp;
+            self.commit_transaction = input;
             self
         }
         /// <p>Command to abort the current transaction.</p>
-        pub fn abort_transaction(mut self, inp: crate::model::AbortTransactionRequest) -> Self {
-            self.abort_transaction = Some(inp);
+        pub fn abort_transaction(mut self, input: crate::model::AbortTransactionRequest) -> Self {
+            self.abort_transaction = Some(input);
             self
         }
         pub fn set_abort_transaction(
             mut self,
-            inp: std::option::Option<crate::model::AbortTransactionRequest>,
+            input: std::option::Option<crate::model::AbortTransactionRequest>,
         ) -> Self {
-            self.abort_transaction = inp;
+            self.abort_transaction = input;
             self
         }
         /// <p>Command to execute a statement in the specified transaction.</p>
-        pub fn execute_statement(mut self, inp: crate::model::ExecuteStatementRequest) -> Self {
-            self.execute_statement = Some(inp);
+        pub fn execute_statement(mut self, input: crate::model::ExecuteStatementRequest) -> Self {
+            self.execute_statement = Some(input);
             self
         }
         pub fn set_execute_statement(
             mut self,
-            inp: std::option::Option<crate::model::ExecuteStatementRequest>,
+            input: std::option::Option<crate::model::ExecuteStatementRequest>,
         ) -> Self {
-            self.execute_statement = inp;
+            self.execute_statement = input;
             self
         }
         /// <p>Command to fetch a page.</p>
-        pub fn fetch_page(mut self, inp: crate::model::FetchPageRequest) -> Self {
-            self.fetch_page = Some(inp);
+        pub fn fetch_page(mut self, input: crate::model::FetchPageRequest) -> Self {
+            self.fetch_page = Some(input);
             self
         }
         pub fn set_fetch_page(
             mut self,
-            inp: std::option::Option<crate::model::FetchPageRequest>,
+            input: std::option::Option<crate::model::FetchPageRequest>,
         ) -> Self {
-            self.fetch_page = inp;
+            self.fetch_page = input;
             self
         }
         /// Consumes the builder and constructs a [`SendCommandInput`](crate::input::SendCommandInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SendCommandInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::SendCommandInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::SendCommandInput {
                 session_token: self.session_token,
                 start_session: self.start_session,
@@ -140,7 +144,7 @@ impl SendCommandInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SendCommand,
             aws_http::AwsErrorRetryPolicy,
@@ -196,7 +200,7 @@ impl SendCommandInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")

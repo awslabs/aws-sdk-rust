@@ -74,7 +74,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::BatchExecuteStatementOutput,
             smithy_http::result::SdkError<crate::error::BatchExecuteStatementError>,
         >
@@ -91,48 +91,48 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(inp);
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input);
             self
         }
-        pub fn set_secret_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_secret_arn(inp);
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_secret_arn(input);
             self
         }
         /// <p>The SQL statement to run.</p>
-        pub fn sql(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sql(inp);
+        pub fn sql(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sql(input);
             self
         }
-        pub fn set_sql(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_sql(inp);
+        pub fn set_sql(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_sql(input);
             self
         }
         /// <p>The name of the database.</p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(inp);
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input);
             self
         }
-        pub fn set_database(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_database(inp);
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_database(input);
             self
         }
         /// <p>The name of the database schema.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(inp);
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input);
             self
         }
-        pub fn set_schema(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_schema(inp);
+        pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_schema(input);
             self
         }
         /// <p>The parameter set for the batch operation.</p>
@@ -158,9 +158,9 @@ pub mod fluent_builders {
         }
         pub fn set_parameter_sets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::SqlParameter>>>,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::SqlParameter>>>,
         ) -> Self {
-            self.inner = self.inner.set_parameter_sets(inp);
+            self.inner = self.inner.set_parameter_sets(input);
             self
         }
         /// <p>The identifier of a transaction that was started by using the
@@ -168,12 +168,15 @@ pub mod fluent_builders {
         /// transaction that you want to include the SQL statement in.</p>
         /// <p>If the SQL statement is not part of a transaction, don't set this
         /// parameter.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input);
             self
         }
-        pub fn set_transaction_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_transaction_id(inp);
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_transaction_id(input);
             self
         }
     }
@@ -192,7 +195,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::BeginTransactionOutput,
             smithy_http::result::SdkError<crate::error::BeginTransactionError>,
         >
@@ -209,39 +212,39 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(inp);
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input);
             self
         }
-        pub fn set_secret_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_secret_arn(inp);
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_secret_arn(input);
             self
         }
         /// <p>The name of the database.</p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(inp);
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input);
             self
         }
-        pub fn set_database(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_database(inp);
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_database(input);
             self
         }
         /// <p>The name of the database schema.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(inp);
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input);
             self
         }
-        pub fn set_schema(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_schema(inp);
+        pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_schema(input);
             self
         }
     }
@@ -260,7 +263,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CommitTransactionOutput,
             smithy_http::result::SdkError<crate::error::CommitTransactionError>,
         >
@@ -277,30 +280,33 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(inp);
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input);
             self
         }
-        pub fn set_secret_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_secret_arn(inp);
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_secret_arn(input);
             self
         }
         /// <p>The identifier of the transaction to end and commit.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input);
             self
         }
-        pub fn set_transaction_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_transaction_id(inp);
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_transaction_id(input);
             self
         }
     }
@@ -319,7 +325,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ExecuteSqlOutput,
             smithy_http::result::SdkError<crate::error::ExecuteSqlError>,
         >
@@ -336,57 +342,60 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Aurora Serverless DB cluster.</p>
-        pub fn db_cluster_or_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_or_instance_arn(inp);
+        pub fn db_cluster_or_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_or_instance_arn(input);
             self
         }
         pub fn set_db_cluster_or_instance_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_db_cluster_or_instance_arn(inp);
+            self.inner = self.inner.set_db_cluster_or_instance_arn(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.</p>
-        pub fn aws_secret_store_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_secret_store_arn(inp);
+        pub fn aws_secret_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_secret_store_arn(input);
             self
         }
         pub fn set_aws_secret_store_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_aws_secret_store_arn(inp);
+            self.inner = self.inner.set_aws_secret_store_arn(input);
             self
         }
         /// <p>One or more SQL statements to run on the DB cluster.</p>
         /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL
         /// statement is permitted, including data definition, data manipulation, and commit
         /// statements. </p>
-        pub fn sql_statements(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sql_statements(inp);
+        pub fn sql_statements(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sql_statements(input);
             self
         }
-        pub fn set_sql_statements(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_sql_statements(inp);
+        pub fn set_sql_statements(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_sql_statements(input);
             self
         }
         /// <p>The name of the database.</p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(inp);
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input);
             self
         }
-        pub fn set_database(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_database(inp);
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_database(input);
             self
         }
         /// <p>The name of the database schema.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(inp);
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input);
             self
         }
-        pub fn set_schema(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_schema(inp);
+        pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_schema(input);
             self
         }
     }
@@ -405,7 +414,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ExecuteStatementOutput,
             smithy_http::result::SdkError<crate::error::ExecuteStatementError>,
         >
@@ -422,51 +431,51 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(inp);
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input);
             self
         }
-        pub fn set_secret_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_secret_arn(inp);
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_secret_arn(input);
             self
         }
         /// <p>The SQL statement to run.</p>
-        pub fn sql(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sql(inp);
+        pub fn sql(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sql(input);
             self
         }
-        pub fn set_sql(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_sql(inp);
+        pub fn set_sql(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_sql(input);
             self
         }
         /// <p>The name of the database.</p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(inp);
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input);
             self
         }
-        pub fn set_database(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_database(inp);
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_database(input);
             self
         }
         /// <p>The name of the database schema.</p>
         /// <note>
         /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
         /// </note>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(inp);
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input);
             self
         }
-        pub fn set_schema(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_schema(inp);
+        pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_schema(input);
             self
         }
         /// <p>The parameters for the SQL statement.</p>
@@ -479,30 +488,33 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
         /// <p>The identifier of a transaction that was started by using the
         /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
         /// transaction that you want to include the SQL statement in.</p>
         /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input);
             self
         }
-        pub fn set_transaction_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_transaction_id(inp);
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_transaction_id(input);
             self
         }
         /// <p>A value that indicates whether to include metadata in the results.</p>
-        pub fn include_result_metadata(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_result_metadata(inp);
+        pub fn include_result_metadata(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_result_metadata(input);
             self
         }
-        pub fn set_include_result_metadata(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_include_result_metadata(inp);
+        pub fn set_include_result_metadata(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_result_metadata(input);
             self
         }
         /// <p>A value that indicates whether to continue running the statement after
@@ -513,24 +525,24 @@ pub mod fluent_builders {
         /// the call times out. When a DDL statement terminates before it is finished
         /// running, it can result in errors and possibly corrupted data structures.</p>
         /// </important>
-        pub fn continue_after_timeout(mut self, inp: bool) -> Self {
-            self.inner = self.inner.continue_after_timeout(inp);
+        pub fn continue_after_timeout(mut self, input: bool) -> Self {
+            self.inner = self.inner.continue_after_timeout(input);
             self
         }
-        pub fn set_continue_after_timeout(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_continue_after_timeout(inp);
+        pub fn set_continue_after_timeout(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_continue_after_timeout(input);
             self
         }
         /// <p>Options that control how the result set is returned.</p>
-        pub fn result_set_options(mut self, inp: crate::model::ResultSetOptions) -> Self {
-            self.inner = self.inner.result_set_options(inp);
+        pub fn result_set_options(mut self, input: crate::model::ResultSetOptions) -> Self {
+            self.inner = self.inner.result_set_options(input);
             self
         }
         pub fn set_result_set_options(
             mut self,
-            inp: std::option::Option<crate::model::ResultSetOptions>,
+            input: std::option::Option<crate::model::ResultSetOptions>,
         ) -> Self {
-            self.inner = self.inner.set_result_set_options(inp);
+            self.inner = self.inner.set_result_set_options(input);
             self
         }
     }
@@ -549,7 +561,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RollbackTransactionOutput,
             smithy_http::result::SdkError<crate::error::RollbackTransactionError>,
         >
@@ -566,30 +578,33 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(inp);
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input);
             self
         }
-        pub fn set_secret_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_secret_arn(inp);
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_secret_arn(input);
             self
         }
         /// <p>The identifier of the transaction to roll back.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(inp);
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input);
             self
         }
-        pub fn set_transaction_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_transaction_id(inp);
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_transaction_id(input);
             self
         }
     }

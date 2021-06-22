@@ -70,6 +70,21 @@ impl DeleteHumanLoopError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, DeleteHumanLoopErrorKind::InternalServerError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteHumanLoopErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_throttling_error(&self) -> bool {
+        matches!(&self.kind, DeleteHumanLoopErrorKind::ThrottlingError(_))
+    }
+    pub fn is_validation_error(&self) -> bool {
+        matches!(&self.kind, DeleteHumanLoopErrorKind::ValidationError(_))
+    }
 }
 impl std::error::Error for DeleteHumanLoopError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -154,6 +169,24 @@ impl DescribeHumanLoopError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeHumanLoopErrorKind::InternalServerError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeHumanLoopErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_throttling_error(&self) -> bool {
+        matches!(&self.kind, DescribeHumanLoopErrorKind::ThrottlingError(_))
+    }
+    pub fn is_validation_error(&self) -> bool {
+        matches!(&self.kind, DescribeHumanLoopErrorKind::ValidationError(_))
+    }
 }
 impl std::error::Error for DescribeHumanLoopError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -237,6 +270,21 @@ impl ListHumanLoopsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, ListHumanLoopsErrorKind::InternalServerError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListHumanLoopsErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_throttling_error(&self) -> bool {
+        matches!(&self.kind, ListHumanLoopsErrorKind::ThrottlingError(_))
+    }
+    pub fn is_validation_error(&self) -> bool {
+        matches!(&self.kind, ListHumanLoopsErrorKind::ValidationError(_))
     }
 }
 impl std::error::Error for ListHumanLoopsError {
@@ -324,6 +372,24 @@ impl StartHumanLoopError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, StartHumanLoopErrorKind::ConflictError(_))
+    }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, StartHumanLoopErrorKind::InternalServerError(_))
+    }
+    pub fn is_service_quota_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartHumanLoopErrorKind::ServiceQuotaExceededError(_)
+        )
+    }
+    pub fn is_throttling_error(&self) -> bool {
+        matches!(&self.kind, StartHumanLoopErrorKind::ThrottlingError(_))
+    }
+    pub fn is_validation_error(&self) -> bool {
+        matches!(&self.kind, StartHumanLoopErrorKind::ValidationError(_))
+    }
 }
 impl std::error::Error for StartHumanLoopError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -409,6 +475,18 @@ impl StopHumanLoopError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_server_error(&self) -> bool {
+        matches!(&self.kind, StopHumanLoopErrorKind::InternalServerError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, StopHumanLoopErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_throttling_error(&self) -> bool {
+        matches!(&self.kind, StopHumanLoopErrorKind::ThrottlingError(_))
+    }
+    pub fn is_validation_error(&self) -> bool {
+        matches!(&self.kind, StopHumanLoopErrorKind::ValidationError(_))
+    }
 }
 impl std::error::Error for StopHumanLoopError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -462,12 +540,12 @@ pub mod validation_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ValidationError`](crate::error::ValidationError)
@@ -526,12 +604,12 @@ pub mod throttling_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ThrottlingError`](crate::error::ThrottlingError)
@@ -589,12 +667,12 @@ pub mod resource_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
@@ -652,12 +730,12 @@ pub mod internal_server_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InternalServerError`](crate::error::InternalServerError)
@@ -722,12 +800,12 @@ pub mod service_quota_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceQuotaExceededError`](crate::error::ServiceQuotaExceededError)
@@ -785,12 +863,12 @@ pub mod conflict_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ConflictError`](crate::error::ConflictError)

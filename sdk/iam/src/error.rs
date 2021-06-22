@@ -77,6 +77,30 @@ impl AddClientIDToOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddClientIDToOpenIDConnectProviderErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddClientIDToOpenIDConnectProviderErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddClientIDToOpenIDConnectProviderErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddClientIDToOpenIDConnectProviderErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for AddClientIDToOpenIDConnectProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -165,6 +189,36 @@ impl AddRoleToInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddRoleToInstanceProfileErrorKind::EntityAlreadyExistsError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddRoleToInstanceProfileErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddRoleToInstanceProfileErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddRoleToInstanceProfileErrorKind::ServiceFailureError(_)
+        )
+    }
+    pub fn is_unmodifiable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddRoleToInstanceProfileErrorKind::UnmodifiableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for AddRoleToInstanceProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -247,6 +301,15 @@ impl AddUserToGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, AddUserToGroupErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, AddUserToGroupErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, AddUserToGroupErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for AddUserToGroupError {
@@ -332,6 +395,30 @@ impl AttachGroupPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, AttachGroupPolicyErrorKind::InvalidInputError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachGroupPolicyErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, AttachGroupPolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_policy_not_attachable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachGroupPolicyErrorKind::PolicyNotAttachableError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachGroupPolicyErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for AttachGroupPolicyError {
@@ -422,6 +509,33 @@ impl AttachRolePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, AttachRolePolicyErrorKind::InvalidInputError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, AttachRolePolicyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, AttachRolePolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_policy_not_attachable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachRolePolicyErrorKind::PolicyNotAttachableError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachRolePolicyErrorKind::ServiceFailureError(_)
+        )
+    }
+    pub fn is_unmodifiable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachRolePolicyErrorKind::UnmodifiableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for AttachRolePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -509,6 +623,27 @@ impl AttachUserPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, AttachUserPolicyErrorKind::InvalidInputError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, AttachUserPolicyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, AttachUserPolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_policy_not_attachable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachUserPolicyErrorKind::PolicyNotAttachableError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AttachUserPolicyErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for AttachUserPolicyError {
@@ -599,6 +734,30 @@ impl ChangePasswordError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_entity_temporarily_unmodifiable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangePasswordErrorKind::EntityTemporarilyUnmodifiableError(_)
+        )
+    }
+    pub fn is_invalid_user_type_error(&self) -> bool {
+        matches!(&self.kind, ChangePasswordErrorKind::InvalidUserTypeError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, ChangePasswordErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, ChangePasswordErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_password_policy_violation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ChangePasswordErrorKind::PasswordPolicyViolationError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, ChangePasswordErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for ChangePasswordError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -683,6 +842,15 @@ impl CreateAccessKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateAccessKeyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, CreateAccessKeyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, CreateAccessKeyErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for CreateAccessKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -763,6 +931,24 @@ impl CreateAccountAliasError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccountAliasErrorKind::EntityAlreadyExistsError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccountAliasErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAccountAliasErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for CreateAccountAliasError {
@@ -846,6 +1032,21 @@ impl CreateGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateGroupErrorKind::EntityAlreadyExistsError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateGroupErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, CreateGroupErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, CreateGroupErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for CreateGroupError {
@@ -933,6 +1134,36 @@ impl CreateInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInstanceProfileErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInstanceProfileErrorKind::EntityAlreadyExistsError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInstanceProfileErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInstanceProfileErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInstanceProfileErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for CreateInstanceProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1019,6 +1250,36 @@ impl CreateLoginProfileError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLoginProfileErrorKind::EntityAlreadyExistsError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLoginProfileErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLoginProfileErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_password_policy_violation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLoginProfileErrorKind::PasswordPolicyViolationError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateLoginProfileErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for CreateLoginProfileError {
@@ -1108,6 +1369,36 @@ impl CreateOpenIDConnectProviderError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOpenIDConnectProviderErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOpenIDConnectProviderErrorKind::EntityAlreadyExistsError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOpenIDConnectProviderErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOpenIDConnectProviderErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateOpenIDConnectProviderErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for CreateOpenIDConnectProviderError {
@@ -1200,6 +1491,33 @@ impl CreatePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePolicyErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePolicyErrorKind::EntityAlreadyExistsError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, CreatePolicyErrorKind::InvalidInputError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreatePolicyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePolicyErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, CreatePolicyErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for CreatePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1287,6 +1605,36 @@ impl CreatePolicyVersionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePolicyVersionErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePolicyVersionErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePolicyVersionErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePolicyVersionErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePolicyVersionErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for CreatePolicyVersionError {
@@ -1377,6 +1725,30 @@ impl CreateRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRoleErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(&self.kind, CreateRoleErrorKind::EntityAlreadyExistsError(_))
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, CreateRoleErrorKind::InvalidInputError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateRoleErrorKind::LimitExceededError(_))
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRoleErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, CreateRoleErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for CreateRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1465,6 +1837,36 @@ impl CreateSAMLProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSAMLProviderErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSAMLProviderErrorKind::EntityAlreadyExistsError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSAMLProviderErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSAMLProviderErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSAMLProviderErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for CreateSAMLProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1550,6 +1952,30 @@ impl CreateServiceLinkedRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateServiceLinkedRoleErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateServiceLinkedRoleErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateServiceLinkedRoleErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateServiceLinkedRoleErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for CreateServiceLinkedRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1633,6 +2059,24 @@ impl CreateServiceSpecificCredentialError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateServiceSpecificCredentialErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateServiceSpecificCredentialErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_not_supported_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateServiceSpecificCredentialErrorKind::ServiceNotSupportedError(_)
+        )
     }
 }
 impl std::error::Error for CreateServiceSpecificCredentialError {
@@ -1723,6 +2167,27 @@ impl CreateUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUserErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(&self.kind, CreateUserErrorKind::EntityAlreadyExistsError(_))
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, CreateUserErrorKind::InvalidInputError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateUserErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, CreateUserErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, CreateUserErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for CreateUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1811,6 +2276,36 @@ impl CreateVirtualMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVirtualMFADeviceErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVirtualMFADeviceErrorKind::EntityAlreadyExistsError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVirtualMFADeviceErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVirtualMFADeviceErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVirtualMFADeviceErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for CreateVirtualMFADeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1898,6 +2393,30 @@ impl DeactivateMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_entity_temporarily_unmodifiable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateMFADeviceErrorKind::EntityTemporarilyUnmodifiableError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateMFADeviceErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateMFADeviceErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeactivateMFADeviceErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for DeactivateMFADeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1982,6 +2501,15 @@ impl DeleteAccessKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, DeleteAccessKeyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, DeleteAccessKeyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, DeleteAccessKeyErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for DeleteAccessKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2063,6 +2591,24 @@ impl DeleteAccountAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountAliasErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountAliasErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountAliasErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteAccountAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2143,6 +2689,24 @@ impl DeleteAccountPasswordPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountPasswordPolicyErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountPasswordPolicyErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAccountPasswordPolicyErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for DeleteAccountPasswordPolicyError {
@@ -2227,6 +2791,18 @@ impl DeleteGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_delete_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteGroupErrorKind::DeleteConflictError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, DeleteGroupErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, DeleteGroupErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, DeleteGroupErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for DeleteGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2308,6 +2884,21 @@ impl DeleteGroupPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteGroupPolicyErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, DeleteGroupPolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteGroupPolicyErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for DeleteGroupPolicyError {
@@ -2391,6 +2982,30 @@ impl DeleteInstanceProfileError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_delete_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInstanceProfileErrorKind::DeleteConflictError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInstanceProfileErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInstanceProfileErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInstanceProfileErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for DeleteInstanceProfileError {
@@ -2478,6 +3093,30 @@ impl DeleteLoginProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_entity_temporarily_unmodifiable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLoginProfileErrorKind::EntityTemporarilyUnmodifiableError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLoginProfileErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLoginProfileErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLoginProfileErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteLoginProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2559,6 +3198,24 @@ impl DeleteOpenIDConnectProviderError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteOpenIDConnectProviderErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteOpenIDConnectProviderErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteOpenIDConnectProviderErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for DeleteOpenIDConnectProviderError {
@@ -2644,6 +3301,21 @@ impl DeletePolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_delete_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeletePolicyErrorKind::DeleteConflictError(_))
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, DeletePolicyErrorKind::InvalidInputError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, DeletePolicyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, DeletePolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, DeletePolicyErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for DeletePolicyError {
@@ -2731,6 +3403,36 @@ impl DeletePolicyVersionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_delete_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePolicyVersionErrorKind::DeleteConflictError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePolicyVersionErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePolicyVersionErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePolicyVersionErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePolicyVersionErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for DeletePolicyVersionError {
@@ -2821,6 +3523,27 @@ impl DeleteRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRoleErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_delete_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteRoleErrorKind::DeleteConflictError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, DeleteRoleErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, DeleteRoleErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, DeleteRoleErrorKind::ServiceFailureError(_))
+    }
+    pub fn is_unmodifiable_entity_error(&self) -> bool {
+        matches!(&self.kind, DeleteRoleErrorKind::UnmodifiableEntityError(_))
+    }
 }
 impl std::error::Error for DeleteRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2907,6 +3630,24 @@ impl DeleteRolePermissionsBoundaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRolePermissionsBoundaryErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRolePermissionsBoundaryErrorKind::ServiceFailureError(_)
+        )
+    }
+    pub fn is_unmodifiable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRolePermissionsBoundaryErrorKind::UnmodifiableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteRolePermissionsBoundaryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2989,6 +3730,24 @@ impl DeleteRolePolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, DeleteRolePolicyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, DeleteRolePolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRolePolicyErrorKind::ServiceFailureError(_)
+        )
+    }
+    pub fn is_unmodifiable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteRolePolicyErrorKind::UnmodifiableEntityError(_)
+        )
     }
 }
 impl std::error::Error for DeleteRolePolicyError {
@@ -3074,6 +3833,30 @@ impl DeleteSAMLProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSAMLProviderErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSAMLProviderErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSAMLProviderErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSAMLProviderErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteSAMLProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3158,6 +3941,30 @@ impl DeleteServerCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_delete_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteServerCertificateErrorKind::DeleteConflictError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteServerCertificateErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteServerCertificateErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteServerCertificateErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteServerCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3240,6 +4047,24 @@ impl DeleteServiceLinkedRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteServiceLinkedRoleErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteServiceLinkedRoleErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteServiceLinkedRoleErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteServiceLinkedRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3316,6 +4141,12 @@ impl DeleteServiceSpecificCredentialError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteServiceSpecificCredentialErrorKind::NoSuchEntityError(_)
+        )
     }
 }
 impl std::error::Error for DeleteServiceSpecificCredentialError {
@@ -3396,6 +4227,24 @@ impl DeleteSigningCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSigningCertificateErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSigningCertificateErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSigningCertificateErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteSigningCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3472,6 +4321,12 @@ impl DeleteSSHPublicKeyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSSHPublicKeyErrorKind::NoSuchEntityError(_)
+        )
     }
 }
 impl std::error::Error for DeleteSSHPublicKeyError {
@@ -3556,6 +4411,24 @@ impl DeleteUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUserErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_delete_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteUserErrorKind::DeleteConflictError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, DeleteUserErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, DeleteUserErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, DeleteUserErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for DeleteUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3637,6 +4510,18 @@ impl DeleteUserPermissionsBoundaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUserPermissionsBoundaryErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUserPermissionsBoundaryErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteUserPermissionsBoundaryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3716,6 +4601,18 @@ impl DeleteUserPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, DeleteUserPolicyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, DeleteUserPolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteUserPolicyErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for DeleteUserPolicyError {
@@ -3800,6 +4697,30 @@ impl DeleteVirtualMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_delete_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVirtualMFADeviceErrorKind::DeleteConflictError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVirtualMFADeviceErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVirtualMFADeviceErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteVirtualMFADeviceErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteVirtualMFADeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3883,6 +4804,24 @@ impl DetachGroupPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, DetachGroupPolicyErrorKind::InvalidInputError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetachGroupPolicyErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, DetachGroupPolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetachGroupPolicyErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for DetachGroupPolicyError {
@@ -3970,6 +4909,27 @@ impl DetachRolePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, DetachRolePolicyErrorKind::InvalidInputError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, DetachRolePolicyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, DetachRolePolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetachRolePolicyErrorKind::ServiceFailureError(_)
+        )
+    }
+    pub fn is_unmodifiable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetachRolePolicyErrorKind::UnmodifiableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for DetachRolePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4054,6 +5014,21 @@ impl DetachUserPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, DetachUserPolicyErrorKind::InvalidInputError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, DetachUserPolicyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, DetachUserPolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DetachUserPolicyErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for DetachUserPolicyError {
@@ -4143,6 +5118,33 @@ impl EnableMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableMFADeviceErrorKind::EntityAlreadyExistsError(_)
+        )
+    }
+    pub fn is_entity_temporarily_unmodifiable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableMFADeviceErrorKind::EntityTemporarilyUnmodifiableError(_)
+        )
+    }
+    pub fn is_invalid_authentication_code_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableMFADeviceErrorKind::InvalidAuthenticationCodeError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, EnableMFADeviceErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, EnableMFADeviceErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, EnableMFADeviceErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for EnableMFADeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4225,6 +5227,18 @@ impl GenerateCredentialReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateCredentialReportErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateCredentialReportErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for GenerateCredentialReportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4305,6 +5319,12 @@ impl GenerateOrganizationsAccessReportError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_report_generation_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateOrganizationsAccessReportErrorKind::ReportGenerationLimitExceededError(_)
+        )
     }
 }
 impl std::error::Error for GenerateOrganizationsAccessReportError {
@@ -4388,6 +5408,18 @@ impl GenerateServiceLastAccessedDetailsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateServiceLastAccessedDetailsErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateServiceLastAccessedDetailsErrorKind::NoSuchEntityError(_)
+        )
+    }
 }
 impl std::error::Error for GenerateServiceLastAccessedDetailsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4464,6 +5496,12 @@ impl GetAccessKeyLastUsedError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAccessKeyLastUsedErrorKind::NoSuchEntityError(_)
+        )
+    }
 }
 impl std::error::Error for GetAccessKeyLastUsedError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4538,6 +5576,12 @@ impl GetAccountAuthorizationDetailsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAccountAuthorizationDetailsErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for GetAccountAuthorizationDetailsError {
@@ -4616,6 +5660,18 @@ impl GetAccountPasswordPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAccountPasswordPolicyErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAccountPasswordPolicyErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for GetAccountPasswordPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4692,6 +5748,12 @@ impl GetAccountSummaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAccountSummaryErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for GetAccountSummaryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4766,6 +5828,12 @@ impl GetContextKeysForCustomPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetContextKeysForCustomPolicyErrorKind::InvalidInputError(_)
+        )
     }
 }
 impl std::error::Error for GetContextKeysForCustomPolicyError {
@@ -4843,6 +5911,18 @@ impl GetContextKeysForPrincipalPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetContextKeysForPrincipalPolicyErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetContextKeysForPrincipalPolicyErrorKind::NoSuchEntityError(_)
+        )
     }
 }
 impl std::error::Error for GetContextKeysForPrincipalPolicyError {
@@ -4926,6 +6006,30 @@ impl GetCredentialReportError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_credential_report_expired_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCredentialReportErrorKind::CredentialReportExpiredError(_)
+        )
+    }
+    pub fn is_credential_report_not_present_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCredentialReportErrorKind::CredentialReportNotPresentError(_)
+        )
+    }
+    pub fn is_credential_report_not_ready_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCredentialReportErrorKind::CredentialReportNotReadyError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCredentialReportErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for GetCredentialReportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5006,6 +6110,12 @@ impl GetGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, GetGroupErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, GetGroupErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for GetGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5083,6 +6193,12 @@ impl GetGroupPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, GetGroupPolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, GetGroupPolicyErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for GetGroupPolicyError {
@@ -5162,6 +6278,18 @@ impl GetInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInstanceProfileErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetInstanceProfileErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for GetInstanceProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5239,6 +6367,12 @@ impl GetLoginProfileError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, GetLoginProfileErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, GetLoginProfileErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for GetLoginProfileError {
@@ -5320,6 +6454,24 @@ impl GetOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetOpenIDConnectProviderErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetOpenIDConnectProviderErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetOpenIDConnectProviderErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for GetOpenIDConnectProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5396,6 +6548,12 @@ impl GetOrganizationsAccessReportError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetOrganizationsAccessReportErrorKind::NoSuchEntityError(_)
+        )
     }
 }
 impl std::error::Error for GetOrganizationsAccessReportError {
@@ -5475,6 +6633,15 @@ impl GetPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::InvalidInputError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for GetPolicyError {
@@ -5557,6 +6724,18 @@ impl GetPolicyVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, GetPolicyVersionErrorKind::InvalidInputError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, GetPolicyVersionErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPolicyVersionErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for GetPolicyVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5636,6 +6815,12 @@ impl GetRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, GetRoleErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, GetRoleErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for GetRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5713,6 +6898,12 @@ impl GetRolePolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, GetRolePolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, GetRolePolicyErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for GetRolePolicyError {
@@ -5794,6 +6985,15 @@ impl GetSAMLProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, GetSAMLProviderErrorKind::InvalidInputError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, GetSAMLProviderErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, GetSAMLProviderErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for GetSAMLProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5873,6 +7073,18 @@ impl GetServerCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetServerCertificateErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetServerCertificateErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for GetServerCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5950,6 +7162,18 @@ impl GetServiceLastAccessedDetailsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetServiceLastAccessedDetailsErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetServiceLastAccessedDetailsErrorKind::NoSuchEntityError(_)
+        )
     }
 }
 impl std::error::Error for GetServiceLastAccessedDetailsError {
@@ -6035,6 +7259,18 @@ impl GetServiceLastAccessedDetailsWithEntitiesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetServiceLastAccessedDetailsWithEntitiesErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetServiceLastAccessedDetailsWithEntitiesErrorKind::NoSuchEntityError(_)
+        )
     }
 }
 impl std::error::Error for GetServiceLastAccessedDetailsWithEntitiesError {
@@ -6127,6 +7363,24 @@ impl GetServiceLinkedRoleDeletionStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetServiceLinkedRoleDeletionStatusErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetServiceLinkedRoleDeletionStatusErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetServiceLinkedRoleDeletionStatusErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for GetServiceLinkedRoleDeletionStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6208,6 +7462,15 @@ impl GetSSHPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, GetSSHPublicKeyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_unrecognized_public_key_encoding_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingError(_)
+        )
+    }
 }
 impl std::error::Error for GetSSHPublicKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6285,6 +7548,12 @@ impl GetUserError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, GetUserErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, GetUserErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for GetUserError {
@@ -6364,6 +7633,12 @@ impl GetUserPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, GetUserPolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, GetUserPolicyErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for GetUserPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6442,6 +7717,12 @@ impl ListAccessKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, ListAccessKeysErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, ListAccessKeysErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for ListAccessKeysError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6517,6 +7798,12 @@ impl ListAccountAliasesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAccountAliasesErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for ListAccountAliasesError {
@@ -6596,6 +7883,24 @@ impl ListAttachedGroupPoliciesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAttachedGroupPoliciesErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAttachedGroupPoliciesErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAttachedGroupPoliciesErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for ListAttachedGroupPoliciesError {
@@ -6678,6 +7983,24 @@ impl ListAttachedRolePoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAttachedRolePoliciesErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAttachedRolePoliciesErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAttachedRolePoliciesErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for ListAttachedRolePoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6758,6 +8081,24 @@ impl ListAttachedUserPoliciesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAttachedUserPoliciesErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAttachedUserPoliciesErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAttachedUserPoliciesErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for ListAttachedUserPoliciesError {
@@ -6840,6 +8181,24 @@ impl ListEntitiesForPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEntitiesForPolicyErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEntitiesForPolicyErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEntitiesForPolicyErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for ListEntitiesForPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6919,6 +8278,15 @@ impl ListGroupPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, ListGroupPoliciesErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListGroupPoliciesErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for ListGroupPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -6994,6 +8362,9 @@ impl ListGroupsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, ListGroupsErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for ListGroupsError {
@@ -7072,6 +8443,15 @@ impl ListGroupsForUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, ListGroupsForUserErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListGroupsForUserErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for ListGroupsForUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7147,6 +8527,12 @@ impl ListInstanceProfilesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInstanceProfilesErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for ListInstanceProfilesError {
@@ -7224,6 +8610,18 @@ impl ListInstanceProfilesForRoleError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInstanceProfilesForRoleErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInstanceProfilesForRoleErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for ListInstanceProfilesForRoleError {
@@ -7303,6 +8701,18 @@ impl ListInstanceProfileTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInstanceProfileTagsErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInstanceProfileTagsErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for ListInstanceProfileTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7380,6 +8790,12 @@ impl ListMFADevicesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, ListMFADevicesErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, ListMFADevicesErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for ListMFADevicesError {
@@ -7461,6 +8877,18 @@ impl ListMFADeviceTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, ListMFADeviceTagsErrorKind::InvalidInputError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, ListMFADeviceTagsErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMFADeviceTagsErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for ListMFADeviceTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7537,6 +8965,12 @@ impl ListOpenIDConnectProvidersError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOpenIDConnectProvidersErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for ListOpenIDConnectProvidersError {
@@ -7617,6 +9051,24 @@ impl ListOpenIDConnectProviderTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOpenIDConnectProviderTagsErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOpenIDConnectProviderTagsErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOpenIDConnectProviderTagsErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for ListOpenIDConnectProviderTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7693,6 +9145,9 @@ impl ListPoliciesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, ListPoliciesErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for ListPoliciesError {
@@ -7774,6 +9229,18 @@ impl ListPoliciesGrantingServiceAccessError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPoliciesGrantingServiceAccessErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPoliciesGrantingServiceAccessErrorKind::NoSuchEntityError(_)
+        )
+    }
 }
 impl std::error::Error for ListPoliciesGrantingServiceAccessError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -7853,6 +9320,15 @@ impl ListPolicyTagsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, ListPolicyTagsErrorKind::InvalidInputError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, ListPolicyTagsErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, ListPolicyTagsErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for ListPolicyTagsError {
@@ -7935,6 +9411,24 @@ impl ListPolicyVersionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPolicyVersionsErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPolicyVersionsErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPolicyVersionsErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for ListPolicyVersionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8014,6 +9508,15 @@ impl ListRolePoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, ListRolePoliciesErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRolePoliciesErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for ListRolePoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8089,6 +9592,9 @@ impl ListRolesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, ListRolesErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for ListRolesError {
@@ -8167,6 +9673,12 @@ impl ListRoleTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, ListRoleTagsErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, ListRoleTagsErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for ListRoleTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8242,6 +9754,12 @@ impl ListSAMLProvidersError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSAMLProvidersErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for ListSAMLProvidersError {
@@ -8322,6 +9840,24 @@ impl ListSAMLProviderTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSAMLProviderTagsErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSAMLProviderTagsErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSAMLProviderTagsErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for ListSAMLProviderTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8399,6 +9935,12 @@ impl ListServerCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListServerCertificatesErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for ListServerCertificatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8475,6 +10017,18 @@ impl ListServerCertificateTagsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListServerCertificateTagsErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListServerCertificateTagsErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for ListServerCertificateTagsError {
@@ -8556,6 +10110,18 @@ impl ListServiceSpecificCredentialsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListServiceSpecificCredentialsErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_not_supported_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListServiceSpecificCredentialsErrorKind::ServiceNotSupportedError(_)
+        )
+    }
 }
 impl std::error::Error for ListServiceSpecificCredentialsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8636,6 +10202,18 @@ impl ListSigningCertificatesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSigningCertificatesErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSigningCertificatesErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for ListSigningCertificatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8711,6 +10289,9 @@ impl ListSSHPublicKeysError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, ListSSHPublicKeysErrorKind::NoSuchEntityError(_))
     }
 }
 impl std::error::Error for ListSSHPublicKeysError {
@@ -8789,6 +10370,15 @@ impl ListUserPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, ListUserPoliciesErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListUserPoliciesErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for ListUserPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -8864,6 +10454,9 @@ impl ListUsersError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, ListUsersErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for ListUsersError {
@@ -8941,6 +10534,12 @@ impl ListUserTagsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, ListUserTagsErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, ListUserTagsErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for ListUserTagsError {
@@ -9096,6 +10695,21 @@ impl PutGroupPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, PutGroupPolicyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutGroupPolicyErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, PutGroupPolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, PutGroupPolicyErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for PutGroupPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9181,6 +10795,36 @@ impl PutRolePermissionsBoundaryError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRolePermissionsBoundaryErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRolePermissionsBoundaryErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_policy_not_attachable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRolePermissionsBoundaryErrorKind::PolicyNotAttachableError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRolePermissionsBoundaryErrorKind::ServiceFailureError(_)
+        )
+    }
+    pub fn is_unmodifiable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRolePermissionsBoundaryErrorKind::UnmodifiableEntityError(_)
+        )
     }
 }
 impl std::error::Error for PutRolePermissionsBoundaryError {
@@ -9269,6 +10913,27 @@ impl PutRolePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, PutRolePolicyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRolePolicyErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, PutRolePolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, PutRolePolicyErrorKind::ServiceFailureError(_))
+    }
+    pub fn is_unmodifiable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRolePolicyErrorKind::UnmodifiableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for PutRolePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9354,6 +11019,30 @@ impl PutUserPermissionsBoundaryError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutUserPermissionsBoundaryErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutUserPermissionsBoundaryErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_policy_not_attachable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutUserPermissionsBoundaryErrorKind::PolicyNotAttachableError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutUserPermissionsBoundaryErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for PutUserPermissionsBoundaryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9437,6 +11126,21 @@ impl PutUserPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, PutUserPolicyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutUserPolicyErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, PutUserPolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, PutUserPolicyErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for PutUserPolicyError {
@@ -9528,6 +11232,24 @@ impl RemoveClientIDFromOpenIDConnectProviderError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveClientIDFromOpenIDConnectProviderErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveClientIDFromOpenIDConnectProviderErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveClientIDFromOpenIDConnectProviderErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for RemoveClientIDFromOpenIDConnectProviderError {
@@ -9622,6 +11344,30 @@ impl RemoveRoleFromInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveRoleFromInstanceProfileErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveRoleFromInstanceProfileErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveRoleFromInstanceProfileErrorKind::ServiceFailureError(_)
+        )
+    }
+    pub fn is_unmodifiable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveRoleFromInstanceProfileErrorKind::UnmodifiableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for RemoveRoleFromInstanceProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9704,6 +11450,24 @@ impl RemoveUserFromGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveUserFromGroupErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveUserFromGroupErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveUserFromGroupErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for RemoveUserFromGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -9780,6 +11544,12 @@ impl ResetServiceSpecificCredentialError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResetServiceSpecificCredentialErrorKind::NoSuchEntityError(_)
+        )
     }
 }
 impl std::error::Error for ResetServiceSpecificCredentialError {
@@ -9861,6 +11631,21 @@ impl ResyncMFADeviceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_authentication_code_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ResyncMFADeviceErrorKind::InvalidAuthenticationCodeError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, ResyncMFADeviceErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, ResyncMFADeviceErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, ResyncMFADeviceErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for ResyncMFADeviceError {
@@ -9946,6 +11731,30 @@ impl SetDefaultPolicyVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetDefaultPolicyVersionErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetDefaultPolicyVersionErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetDefaultPolicyVersionErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetDefaultPolicyVersionErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for SetDefaultPolicyVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10029,6 +11838,12 @@ impl SetSecurityTokenServicePreferencesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetSecurityTokenServicePreferencesErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for SetSecurityTokenServicePreferencesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10107,6 +11922,18 @@ impl SimulateCustomPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SimulateCustomPolicyErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_policy_evaluation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SimulateCustomPolicyErrorKind::PolicyEvaluationError(_)
+        )
     }
 }
 impl std::error::Error for SimulateCustomPolicyError {
@@ -10187,6 +12014,24 @@ impl SimulatePrincipalPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SimulatePrincipalPolicyErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SimulatePrincipalPolicyErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_policy_evaluation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SimulatePrincipalPolicyErrorKind::PolicyEvaluationError(_)
+        )
     }
 }
 impl std::error::Error for SimulatePrincipalPolicyError {
@@ -10272,6 +12117,36 @@ impl TagInstanceProfileError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagInstanceProfileErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagInstanceProfileErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagInstanceProfileErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagInstanceProfileErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagInstanceProfileErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for TagInstanceProfileError {
@@ -10360,6 +12235,24 @@ impl TagMFADeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagMFADeviceErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, TagMFADeviceErrorKind::InvalidInputError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, TagMFADeviceErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, TagMFADeviceErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, TagMFADeviceErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for TagMFADeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10446,6 +12339,36 @@ impl TagOpenIDConnectProviderError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagOpenIDConnectProviderErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagOpenIDConnectProviderErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagOpenIDConnectProviderErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagOpenIDConnectProviderErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagOpenIDConnectProviderErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for TagOpenIDConnectProviderError {
@@ -10534,6 +12457,24 @@ impl TagPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagPolicyErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, TagPolicyErrorKind::InvalidInputError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, TagPolicyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, TagPolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, TagPolicyErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for TagPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10620,6 +12561,21 @@ impl TagRoleError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(&self.kind, TagRoleErrorKind::ConcurrentModificationError(_))
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, TagRoleErrorKind::InvalidInputError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, TagRoleErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, TagRoleErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, TagRoleErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for TagRoleError {
@@ -10708,6 +12664,24 @@ impl TagSAMLProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagSAMLProviderErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, TagSAMLProviderErrorKind::InvalidInputError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, TagSAMLProviderErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, TagSAMLProviderErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, TagSAMLProviderErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for TagSAMLProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10794,6 +12768,36 @@ impl TagServerCertificateError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagServerCertificateErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagServerCertificateErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagServerCertificateErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagServerCertificateErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagServerCertificateErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for TagServerCertificateError {
@@ -10882,6 +12886,21 @@ impl TagUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(&self.kind, TagUserErrorKind::ConcurrentModificationError(_))
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, TagUserErrorKind::InvalidInputError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, TagUserErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, TagUserErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, TagUserErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for TagUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -10967,6 +12986,30 @@ impl UntagInstanceProfileError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagInstanceProfileErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagInstanceProfileErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagInstanceProfileErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagInstanceProfileErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for UntagInstanceProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -11050,6 +13093,21 @@ impl UntagMFADeviceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagMFADeviceErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, UntagMFADeviceErrorKind::InvalidInputError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, UntagMFADeviceErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, UntagMFADeviceErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for UntagMFADeviceError {
@@ -11137,6 +13195,30 @@ impl UntagOpenIDConnectProviderError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagOpenIDConnectProviderErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagOpenIDConnectProviderErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagOpenIDConnectProviderErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagOpenIDConnectProviderErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for UntagOpenIDConnectProviderError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -11223,6 +13305,21 @@ impl UntagPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagPolicyErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, UntagPolicyErrorKind::InvalidInputError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, UntagPolicyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, UntagPolicyErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for UntagPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -11304,6 +13401,18 @@ impl UntagRoleError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagRoleErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, UntagRoleErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, UntagRoleErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for UntagRoleError {
@@ -11387,6 +13496,24 @@ impl UntagSAMLProviderError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagSAMLProviderErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(&self.kind, UntagSAMLProviderErrorKind::InvalidInputError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, UntagSAMLProviderErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagSAMLProviderErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for UntagSAMLProviderError {
@@ -11472,6 +13599,30 @@ impl UntagServerCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagServerCertificateErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagServerCertificateErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagServerCertificateErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagServerCertificateErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for UntagServerCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -11554,6 +13705,18 @@ impl UntagUserError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagUserErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, UntagUserErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, UntagUserErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for UntagUserError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -11634,6 +13797,15 @@ impl UpdateAccessKeyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, UpdateAccessKeyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, UpdateAccessKeyErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, UpdateAccessKeyErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for UpdateAccessKeyError {
@@ -11719,6 +13891,30 @@ impl UpdateAccountPasswordPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAccountPasswordPolicyErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAccountPasswordPolicyErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAccountPasswordPolicyErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAccountPasswordPolicyErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for UpdateAccountPasswordPolicyError {
@@ -11808,6 +14004,36 @@ impl UpdateAssumeRolePolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssumeRolePolicyErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssumeRolePolicyErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssumeRolePolicyErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssumeRolePolicyErrorKind::ServiceFailureError(_)
+        )
+    }
+    pub fn is_unmodifiable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAssumeRolePolicyErrorKind::UnmodifiableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateAssumeRolePolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -11892,6 +14118,21 @@ impl UpdateGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGroupErrorKind::EntityAlreadyExistsError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, UpdateGroupErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, UpdateGroupErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, UpdateGroupErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for UpdateGroupError {
@@ -11980,6 +14221,36 @@ impl UpdateLoginProfileError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_entity_temporarily_unmodifiable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLoginProfileErrorKind::EntityTemporarilyUnmodifiableError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLoginProfileErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLoginProfileErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_password_policy_violation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLoginProfileErrorKind::PasswordPolicyViolationError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateLoginProfileErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for UpdateLoginProfileError {
@@ -12073,6 +14344,24 @@ impl UpdateOpenIDConnectProviderThumbprintError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOpenIDConnectProviderThumbprintErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOpenIDConnectProviderThumbprintErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateOpenIDConnectProviderThumbprintErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateOpenIDConnectProviderThumbprintError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -12162,6 +14451,15 @@ impl UpdateRoleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, UpdateRoleErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, UpdateRoleErrorKind::ServiceFailureError(_))
+    }
+    pub fn is_unmodifiable_entity_error(&self) -> bool {
+        matches!(&self.kind, UpdateRoleErrorKind::UnmodifiableEntityError(_))
+    }
 }
 impl std::error::Error for UpdateRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -12242,6 +14540,24 @@ impl UpdateRoleDescriptionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRoleDescriptionErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRoleDescriptionErrorKind::ServiceFailureError(_)
+        )
+    }
+    pub fn is_unmodifiable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRoleDescriptionErrorKind::UnmodifiableEntityError(_)
+        )
     }
 }
 impl std::error::Error for UpdateRoleDescriptionError {
@@ -12325,6 +14641,30 @@ impl UpdateSAMLProviderError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSAMLProviderErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSAMLProviderErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSAMLProviderErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSAMLProviderErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for UpdateSAMLProviderError {
@@ -12410,6 +14750,30 @@ impl UpdateServerCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServerCertificateErrorKind::EntityAlreadyExistsError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServerCertificateErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServerCertificateErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServerCertificateErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateServerCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -12487,6 +14851,12 @@ impl UpdateServiceSpecificCredentialError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateServiceSpecificCredentialErrorKind::NoSuchEntityError(_)
+        )
     }
 }
 impl std::error::Error for UpdateServiceSpecificCredentialError {
@@ -12567,6 +14937,24 @@ impl UpdateSigningCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSigningCertificateErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSigningCertificateErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSigningCertificateErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateSigningCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -12643,6 +15031,12 @@ impl UpdateSSHPublicKeyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateSSHPublicKeyErrorKind::NoSuchEntityError(_)
+        )
     }
 }
 impl std::error::Error for UpdateSSHPublicKeyError {
@@ -12728,6 +15122,30 @@ impl UpdateUserError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateUserErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(&self.kind, UpdateUserErrorKind::EntityAlreadyExistsError(_))
+    }
+    pub fn is_entity_temporarily_unmodifiable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateUserErrorKind::EntityTemporarilyUnmodifiableError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, UpdateUserErrorKind::LimitExceededError(_))
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(&self.kind, UpdateUserErrorKind::NoSuchEntityError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, UpdateUserErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for UpdateUserError {
@@ -12820,6 +15238,48 @@ impl UploadServerCertificateError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_concurrent_modification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadServerCertificateErrorKind::ConcurrentModificationError(_)
+        )
+    }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadServerCertificateErrorKind::EntityAlreadyExistsError(_)
+        )
+    }
+    pub fn is_invalid_input_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadServerCertificateErrorKind::InvalidInputError(_)
+        )
+    }
+    pub fn is_key_pair_mismatch_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadServerCertificateErrorKind::KeyPairMismatchError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadServerCertificateErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_malformed_certificate_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadServerCertificateErrorKind::MalformedCertificateError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadServerCertificateErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for UploadServerCertificateError {
@@ -12914,6 +15374,48 @@ impl UploadSigningCertificateError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_duplicate_certificate_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadSigningCertificateErrorKind::DuplicateCertificateError(_)
+        )
+    }
+    pub fn is_entity_already_exists_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadSigningCertificateErrorKind::EntityAlreadyExistsError(_)
+        )
+    }
+    pub fn is_invalid_certificate_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadSigningCertificateErrorKind::InvalidCertificateError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadSigningCertificateErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_malformed_certificate_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadSigningCertificateErrorKind::MalformedCertificateError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadSigningCertificateErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadSigningCertificateErrorKind::ServiceFailureError(_)
+        )
+    }
 }
 impl std::error::Error for UploadSigningCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -13005,6 +15507,36 @@ impl UploadSSHPublicKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_duplicate_ssh_public_key_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadSSHPublicKeyErrorKind::DuplicateSSHPublicKeyError(_)
+        )
+    }
+    pub fn is_invalid_public_key_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadSSHPublicKeyErrorKind::InvalidPublicKeyError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadSSHPublicKeyErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_no_such_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadSSHPublicKeyErrorKind::NoSuchEntityError(_)
+        )
+    }
+    pub fn is_unrecognized_public_key_encoding_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UploadSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingError(_)
+        )
+    }
 }
 impl std::error::Error for UploadSSHPublicKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -13060,12 +15592,12 @@ pub mod unrecognized_public_key_encoding_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UnrecognizedPublicKeyEncodingError`](crate::error::UnrecognizedPublicKeyEncodingError)
@@ -13121,12 +15653,12 @@ pub mod no_such_entity_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NoSuchEntityError`](crate::error::NoSuchEntityError)
@@ -13182,12 +15714,12 @@ pub mod limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
@@ -13242,12 +15774,12 @@ pub mod invalid_public_key_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidPublicKeyError`](crate::error::InvalidPublicKeyError)
@@ -13306,12 +15838,12 @@ pub mod duplicate_ssh_public_key_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DuplicateSSHPublicKeyError`](crate::error::DuplicateSSHPublicKeyError)
@@ -13367,12 +15899,12 @@ pub mod service_failure_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceFailureError`](crate::error::ServiceFailureError)
@@ -13431,12 +15963,12 @@ pub mod malformed_certificate_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`MalformedCertificateError`](crate::error::MalformedCertificateError)
@@ -13491,12 +16023,12 @@ pub mod invalid_certificate_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidCertificateError`](crate::error::InvalidCertificateError)
@@ -13552,12 +16084,12 @@ pub mod entity_already_exists_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`EntityAlreadyExistsError`](crate::error::EntityAlreadyExistsError)
@@ -13616,12 +16148,12 @@ pub mod duplicate_certificate_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DuplicateCertificateError`](crate::error::DuplicateCertificateError)
@@ -13677,12 +16209,12 @@ pub mod key_pair_mismatch_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KeyPairMismatchError`](crate::error::KeyPairMismatchError)
@@ -13738,12 +16270,12 @@ pub mod invalid_input_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidInputError`](crate::error::InvalidInputError)
@@ -13802,12 +16334,12 @@ pub mod concurrent_modification_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ConcurrentModificationError`](crate::error::ConcurrentModificationError)
@@ -13868,12 +16400,12 @@ pub mod entity_temporarily_unmodifiable_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`EntityTemporarilyUnmodifiableError`](crate::error::EntityTemporarilyUnmodifiableError)
@@ -13931,12 +16463,12 @@ pub mod unmodifiable_entity_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UnmodifiableEntityError`](crate::error::UnmodifiableEntityError)
@@ -13995,12 +16527,12 @@ pub mod password_policy_violation_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`PasswordPolicyViolationError`](crate::error::PasswordPolicyViolationError)
@@ -14059,12 +16591,12 @@ pub mod malformed_policy_document_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
@@ -14120,12 +16652,12 @@ pub mod policy_evaluation_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`PolicyEvaluationError`](crate::error::PolicyEvaluationError)
@@ -14184,12 +16716,12 @@ pub mod invalid_authentication_code_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidAuthenticationCodeError`](crate::error::InvalidAuthenticationCodeError)
@@ -14245,12 +16777,12 @@ pub mod policy_not_attachable_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`PolicyNotAttachableError`](crate::error::PolicyNotAttachableError)
@@ -14305,12 +16837,12 @@ pub mod service_not_supported_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceNotSupportedError`](crate::error::ServiceNotSupportedError)
@@ -14368,12 +16900,12 @@ pub mod credential_report_not_ready_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CredentialReportNotReadyError`](crate::error::CredentialReportNotReadyError)
@@ -14432,12 +16964,12 @@ pub mod credential_report_not_present_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CredentialReportNotPresentError`](crate::error::CredentialReportNotPresentError)
@@ -14498,12 +17030,12 @@ pub mod credential_report_expired_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CredentialReportExpiredError`](crate::error::CredentialReportExpiredError)
@@ -14562,12 +17094,12 @@ pub mod report_generation_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ReportGenerationLimitExceededError`](crate::error::ReportGenerationLimitExceededError)
@@ -14623,12 +17155,12 @@ pub mod delete_conflict_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteConflictError`](crate::error::DeleteConflictError)
@@ -14684,12 +17216,12 @@ pub mod invalid_user_type_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidUserTypeError`](crate::error::InvalidUserTypeError)

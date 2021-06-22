@@ -56,33 +56,33 @@ pub mod invoke_endpoint_output {
         /// <p>Includes the inference provided by the model.</p>
         /// <p>For information about the format of the response body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
         /// Formats-Inference</a>.</p>
-        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
-            self.body = Some(inp);
+        pub fn body(mut self, input: smithy_types::Blob) -> Self {
+            self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.body = inp;
+        pub fn set_body(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.body = input;
             self
         }
         /// <p>The MIME type of the inference returned in the response body.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(inp.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_type = inp;
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
             self
         }
         /// <p>Identifies the production variant that was invoked.</p>
-        pub fn invoked_production_variant(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.invoked_production_variant = Some(inp.into());
+        pub fn invoked_production_variant(mut self, input: impl Into<std::string::String>) -> Self {
+            self.invoked_production_variant = Some(input.into());
             self
         }
         pub fn set_invoked_production_variant(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.invoked_production_variant = inp;
+            self.invoked_production_variant = input;
             self
         }
         /// <p>Provides additional information in the response about the inference returned by a
@@ -101,15 +101,15 @@ pub mod invoke_endpoint_output {
         /// function.</p>
         /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
         /// SDK.</p>
-        pub fn custom_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_attributes = Some(inp.into());
+        pub fn custom_attributes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_attributes = Some(input.into());
             self
         }
         pub fn set_custom_attributes(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_attributes = inp;
+            self.custom_attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`InvokeEndpointOutput`](crate::output::InvokeEndpointOutput)

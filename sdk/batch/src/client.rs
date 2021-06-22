@@ -113,7 +113,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CancelJobOutput,
             smithy_http::result::SdkError<crate::error::CancelJobError>,
         >
@@ -130,23 +130,23 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The AWS Batch job ID of the job to cancel.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input);
             self
         }
-        pub fn set_job_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(inp);
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
             self
         }
         /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future
         /// <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity
         /// logs.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input);
             self
         }
-        pub fn set_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_reason(inp);
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_reason(input);
             self
         }
     }
@@ -165,7 +165,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateComputeEnvironmentOutput,
             smithy_http::result::SdkError<crate::error::CreateComputeEnvironmentError>,
         >
@@ -183,26 +183,26 @@ pub mod fluent_builders {
         }
         /// <p>The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
         /// underscores are allowed.</p>
-        pub fn compute_environment_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compute_environment_name(inp);
+        pub fn compute_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compute_environment_name(input);
             self
         }
         pub fn set_compute_environment_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_compute_environment_name(inp);
+            self.inner = self.inner.set_compute_environment_name(input);
             self
         }
         /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see
         /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
         /// <i>AWS Batch User Guide</i>.</p>
-        pub fn r#type(mut self, inp: crate::model::CeType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::CeType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::CeType>) -> Self {
-            self.inner = self.inner.set_type(inp);
+        pub fn set_type(mut self, input: std::option::Option<crate::model::CeType>) -> Self {
+            self.inner = self.inner.set_type(input);
             self
         }
         /// <p>The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts
@@ -214,25 +214,25 @@ pub mod fluent_builders {
         /// environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
         /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
         /// <code>minvCpus</code> value after instances become idle.</p>
-        pub fn state(mut self, inp: crate::model::CeState) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, input: crate::model::CeState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::CeState>) -> Self {
-            self.inner = self.inner.set_state(inp);
+        pub fn set_state(mut self, input: std::option::Option<crate::model::CeState>) -> Self {
+            self.inner = self.inner.set_state(input);
             self
         }
         /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed
         /// compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>AWS Batch User Guide</i>.</p>
-        pub fn compute_resources(mut self, inp: crate::model::ComputeResource) -> Self {
-            self.inner = self.inner.compute_resources(inp);
+        pub fn compute_resources(mut self, input: crate::model::ComputeResource) -> Self {
+            self.inner = self.inner.compute_resources(input);
             self
         }
         pub fn set_compute_resources(
             mut self,
-            inp: std::option::Option<crate::model::ComputeResource>,
+            input: std::option::Option<crate::model::ComputeResource>,
         ) -> Self {
-            self.inner = self.inner.set_compute_resources(inp);
+            self.inner = self.inner.set_compute_resources(input);
             self
         }
         /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on your behalf. For
@@ -254,12 +254,12 @@ pub mod fluent_builders {
         /// <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service
         /// role when you create compute environments.</p>
         /// </note>
-        pub fn service_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role(inp);
+        pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role(input);
             self
         }
-        pub fn set_service_role(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_service_role(inp);
+        pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_service_role(input);
             self
         }
         /// <p>The tags that you apply to the compute environment to help you categorize and organize your resources. Each tag
@@ -277,11 +277,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -300,7 +300,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateJobQueueOutput,
             smithy_http::result::SdkError<crate::error::CreateJobQueueError>,
         >
@@ -318,23 +318,26 @@ pub mod fluent_builders {
         }
         /// <p>The name of the job queue. Up to 128 letters (uppercase and lowercase), numbers, and underscores are
         /// allowed.</p>
-        pub fn job_queue_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_queue_name(inp);
+        pub fn job_queue_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_queue_name(input);
             self
         }
-        pub fn set_job_queue_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_queue_name(inp);
+        pub fn set_job_queue_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_job_queue_name(input);
             self
         }
         /// <p>The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the
         /// job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can
         /// finish.</p>
-        pub fn state(mut self, inp: crate::model::JqState) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, input: crate::model::JqState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::JqState>) -> Self {
-            self.inner = self.inner.set_state(inp);
+        pub fn set_state(mut self, input: std::option::Option<crate::model::JqState>) -> Self {
+            self.inner = self.inner.set_state(input);
             self
         }
         /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
@@ -343,12 +346,12 @@ pub mod fluent_builders {
         /// preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either
         /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and
         /// Fargate compute environments cannot be mixed.</p>
-        pub fn priority(mut self, inp: i32) -> Self {
-            self.inner = self.inner.priority(inp);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
-        pub fn set_priority(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_priority(inp);
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_priority(input);
             self
         }
         /// <p>The set of compute environments mapped to a job queue and their order relative to each other. The job scheduler
@@ -370,9 +373,9 @@ pub mod fluent_builders {
         }
         pub fn set_compute_environment_order(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentOrder>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentOrder>>,
         ) -> Self {
-            self.inner = self.inner.set_compute_environment_order(inp);
+            self.inner = self.inner.set_compute_environment_order(input);
             self
         }
         /// <p>The tags that you apply to the job queue to help you categorize and organize your resources. Each tag consists
@@ -387,11 +390,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -410,7 +413,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteComputeEnvironmentOutput,
             smithy_http::result::SdkError<crate::error::DeleteComputeEnvironmentError>,
         >
@@ -427,15 +430,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.</p>
-        pub fn compute_environment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compute_environment(inp);
+        pub fn compute_environment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compute_environment(input);
             self
         }
         pub fn set_compute_environment(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_compute_environment(inp);
+            self.inner = self.inner.set_compute_environment(input);
             self
         }
     }
@@ -454,7 +457,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteJobQueueOutput,
             smithy_http::result::SdkError<crate::error::DeleteJobQueueError>,
         >
@@ -471,12 +474,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p>
-        pub fn job_queue(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_queue(inp);
+        pub fn job_queue(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_queue(input);
             self
         }
-        pub fn set_job_queue(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_queue(inp);
+        pub fn set_job_queue(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_queue(input);
             self
         }
     }
@@ -495,7 +498,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeregisterJobDefinitionOutput,
             smithy_http::result::SdkError<crate::error::DeregisterJobDefinitionError>,
         >
@@ -512,12 +515,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.</p>
-        pub fn job_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition(inp);
+        pub fn job_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition(input);
             self
         }
-        pub fn set_job_definition(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_definition(inp);
+        pub fn set_job_definition(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_job_definition(input);
             self
         }
     }
@@ -536,7 +542,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeComputeEnvironmentsOutput,
             smithy_http::result::SdkError<crate::error::DescribeComputeEnvironmentsError>,
         >
@@ -559,9 +565,9 @@ pub mod fluent_builders {
         }
         pub fn set_compute_environments(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_compute_environments(inp);
+            self.inner = self.inner.set_compute_environments(input);
             self
         }
         /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output.
@@ -571,12 +577,12 @@ pub mod fluent_builders {
         /// value. This value can be between 1 and 100. If this parameter isn't used, then
         /// <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code>
         /// value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeComputeEnvironments</code>
@@ -587,12 +593,12 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that's only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -611,7 +617,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeJobDefinitionsOutput,
             smithy_http::result::SdkError<crate::error::DescribeJobDefinitionsError>,
         >
@@ -634,9 +640,9 @@ pub mod fluent_builders {
         }
         pub fn set_job_definitions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_job_definitions(inp);
+            self.inner = self.inner.set_job_definitions(input);
             self
         }
         /// <p>The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this
@@ -646,33 +652,33 @@ pub mod fluent_builders {
         /// between 1 and 100. If this parameter isn't used, then
         /// <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value
         /// if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The name of the job definition to describe.</p>
-        pub fn job_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(inp);
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input);
             self
         }
         pub fn set_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_job_definition_name(inp);
+            self.inner = self.inner.set_job_definition_name(input);
             self
         }
         /// <p>The status used to filter job definitions.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_status(inp);
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_status(input);
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobDefinitions</code> request
@@ -683,12 +689,12 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that's only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -707,7 +713,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeJobQueuesOutput,
             smithy_http::result::SdkError<crate::error::DescribeJobQueuesError>,
         >
@@ -730,9 +736,9 @@ pub mod fluent_builders {
         }
         pub fn set_job_queues(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_job_queues(inp);
+            self.inner = self.inner.set_job_queues(input);
             self
         }
         /// <p>The maximum number of results returned by <code>DescribeJobQueues</code> in paginated output. When this
@@ -741,12 +747,12 @@ pub mod fluent_builders {
         /// <code>DescribeJobQueues</code> request with the returned <code>nextToken</code> value. This value can be between
         /// 1 and 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns up
         /// to 100 results and a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobQueues</code> request where
@@ -757,12 +763,12 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that's only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -781,7 +787,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeJobsOutput,
             smithy_http::result::SdkError<crate::error::DescribeJobsError>,
         >
@@ -804,9 +810,9 @@ pub mod fluent_builders {
         }
         pub fn set_jobs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_jobs(inp);
+            self.inner = self.inner.set_jobs(input);
             self
         }
     }
@@ -825,7 +831,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListJobsOutput,
             smithy_http::result::SdkError<crate::error::ListJobsError>,
         >
@@ -842,45 +848,48 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.</p>
-        pub fn job_queue(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_queue(inp);
+        pub fn job_queue(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_queue(input);
             self
         }
-        pub fn set_job_queue(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_queue(inp);
+        pub fn set_job_queue(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_queue(input);
             self
         }
         /// <p>The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the
         /// specified array.</p>
-        pub fn array_job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.array_job_id(inp);
+        pub fn array_job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.array_job_id(input);
             self
         }
-        pub fn set_array_job_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_array_job_id(inp);
+        pub fn set_array_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_array_job_id(input);
             self
         }
         /// <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID with this parameter lists all
         /// nodes that are associated with the specified job.</p>
-        pub fn multi_node_job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multi_node_job_id(inp);
+        pub fn multi_node_job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multi_node_job_id(input);
             self
         }
         pub fn set_multi_node_job_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_multi_node_job_id(inp);
+            self.inner = self.inner.set_multi_node_job_id(input);
             self
         }
         /// <p>The job status used to filter jobs in the specified queue. If you don't specify a status, only
         /// <code>RUNNING</code> jobs are returned.</p>
-        pub fn job_status(mut self, inp: crate::model::JobStatus) -> Self {
-            self.inner = self.inner.job_status(inp);
+        pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
+            self.inner = self.inner.job_status(input);
             self
         }
-        pub fn set_job_status(mut self, inp: std::option::Option<crate::model::JobStatus>) -> Self {
-            self.inner = self.inner.set_job_status(inp);
+        pub fn set_job_status(
+            mut self,
+            input: std::option::Option<crate::model::JobStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_job_status(input);
             self
         }
         /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is
@@ -889,12 +898,12 @@ pub mod fluent_builders {
         /// <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between
         /// 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to
         /// 100 results and a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListJobs</code> request where
@@ -905,12 +914,12 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that's only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -929,7 +938,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTagsForResourceOutput,
             smithy_http::result::SdkError<crate::error::ListTagsForResourceError>,
         >
@@ -947,12 +956,12 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. AWS Batch resources that support tags are compute environments, jobs, job definitions, and job
         /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
     }
@@ -971,7 +980,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RegisterJobDefinitionOutput,
             smithy_http::result::SdkError<crate::error::RegisterJobDefinitionError>,
         >
@@ -989,15 +998,15 @@ pub mod fluent_builders {
         }
         /// <p>The name of the job definition to register. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
         /// underscores are allowed.</p>
-        pub fn job_definition_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(inp);
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input);
             self
         }
         pub fn set_job_definition_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_job_definition_name(inp);
+            self.inner = self.inner.set_job_definition_name(input);
             self
         }
         /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the
@@ -1005,15 +1014,15 @@ pub mod fluent_builders {
         /// <note>
         /// <p>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</p>
         /// </note>
-        pub fn r#type(mut self, inp: crate::model::JobDefinitionType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::JobDefinitionType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::JobDefinitionType>,
+            input: std::option::Option<crate::model::JobDefinitionType>,
         ) -> Self {
-            self.inner = self.inner.set_type(inp);
+            self.inner = self.inner.set_type(input);
             self
         }
         /// <p>Default parameter substitution placeholders to set in the job definition. Parameters are specified as a
@@ -1029,11 +1038,11 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
         /// <p>An object with various properties specific to single-node container-based jobs. If the job definition's
@@ -1043,15 +1052,15 @@ pub mod fluent_builders {
         /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only
         /// <code>containerProperties</code>.</p>
         /// </note>
-        pub fn container_properties(mut self, inp: crate::model::ContainerProperties) -> Self {
-            self.inner = self.inner.container_properties(inp);
+        pub fn container_properties(mut self, input: crate::model::ContainerProperties) -> Self {
+            self.inner = self.inner.container_properties(input);
             self
         }
         pub fn set_container_properties(
             mut self,
-            inp: std::option::Option<crate::model::ContainerProperties>,
+            input: std::option::Option<crate::model::ContainerProperties>,
         ) -> Self {
-            self.inner = self.inner.set_container_properties(inp);
+            self.inner = self.inner.set_container_properties(input);
             self
         }
         /// <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a
@@ -1063,53 +1072,53 @@ pub mod fluent_builders {
         /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
         /// <code>containerProperties</code> instead.</p>
         /// </note>
-        pub fn node_properties(mut self, inp: crate::model::NodeProperties) -> Self {
-            self.inner = self.inner.node_properties(inp);
+        pub fn node_properties(mut self, input: crate::model::NodeProperties) -> Self {
+            self.inner = self.inner.node_properties(input);
             self
         }
         pub fn set_node_properties(
             mut self,
-            inp: std::option::Option<crate::model::NodeProperties>,
+            input: std::option::Option<crate::model::NodeProperties>,
         ) -> Self {
-            self.inner = self.inner.set_node_properties(inp);
+            self.inner = self.inner.set_node_properties(input);
             self
         }
         /// <p>The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that's
         /// specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job is
         /// terminated due to a timeout, it isn't retried.</p>
-        pub fn retry_strategy(mut self, inp: crate::model::RetryStrategy) -> Self {
-            self.inner = self.inner.retry_strategy(inp);
+        pub fn retry_strategy(mut self, input: crate::model::RetryStrategy) -> Self {
+            self.inner = self.inner.retry_strategy(input);
             self
         }
         pub fn set_retry_strategy(
             mut self,
-            inp: std::option::Option<crate::model::RetryStrategy>,
+            input: std::option::Option<crate::model::RetryStrategy>,
         ) -> Self {
-            self.inner = self.inner.set_retry_strategy(inp);
+            self.inner = self.inner.set_retry_strategy(input);
             self
         }
         /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no
         /// value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task creation. For
         /// tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags
         /// from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
-        pub fn propagate_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.propagate_tags(inp);
+        pub fn propagate_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.propagate_tags(input);
             self
         }
-        pub fn set_propagate_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_propagate_tags(inp);
+        pub fn set_propagate_tags(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_propagate_tags(input);
             self
         }
         /// <p>The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch terminates
         /// your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for
         /// the timeout is 60 seconds. Any timeout configuration that's specified during a <a>SubmitJob</a> operation
         /// overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>AWS Batch User Guide</i>.</p>
-        pub fn timeout(mut self, inp: crate::model::JobTimeout) -> Self {
-            self.inner = self.inner.timeout(inp);
+        pub fn timeout(mut self, input: crate::model::JobTimeout) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
-        pub fn set_timeout(mut self, inp: std::option::Option<crate::model::JobTimeout>) -> Self {
-            self.inner = self.inner.set_timeout(inp);
+        pub fn set_timeout(mut self, input: std::option::Option<crate::model::JobTimeout>) -> Self {
+            self.inner = self.inner.set_timeout(input);
             self
         }
         /// <p>The tags that you apply to the job definition to help you categorize and organize your resources. Each tag
@@ -1124,11 +1133,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to
@@ -1142,9 +1151,9 @@ pub mod fluent_builders {
         }
         pub fn set_platform_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PlatformCapability>>,
         ) -> Self {
-            self.inner = self.inner.set_platform_capabilities(inp);
+            self.inner = self.inner.set_platform_capabilities(input);
             self
         }
     }
@@ -1163,7 +1172,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SubmitJobOutput,
             smithy_http::result::SdkError<crate::error::SubmitJobError>,
         >
@@ -1181,35 +1190,35 @@ pub mod fluent_builders {
         }
         /// <p>The name of the job. The first character must be alphanumeric, and up to 128 letters (uppercase and lowercase),
         /// numbers, hyphens, and underscores are allowed.</p>
-        pub fn job_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(inp);
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input);
             self
         }
-        pub fn set_job_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_name(inp);
+        pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_name(input);
             self
         }
         /// <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
-        pub fn job_queue(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_queue(inp);
+        pub fn job_queue(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_queue(input);
             self
         }
-        pub fn set_job_queue(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_queue(inp);
+        pub fn set_job_queue(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_queue(input);
             self
         }
         /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
         /// 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the
         /// <i>AWS Batch User Guide</i>.</p>
-        pub fn array_properties(mut self, inp: crate::model::ArrayProperties) -> Self {
-            self.inner = self.inner.array_properties(inp);
+        pub fn array_properties(mut self, input: crate::model::ArrayProperties) -> Self {
+            self.inner = self.inner.array_properties(input);
             self
         }
         pub fn set_array_properties(
             mut self,
-            inp: std::option::Option<crate::model::ArrayProperties>,
+            input: std::option::Option<crate::model::ArrayProperties>,
         ) -> Self {
-            self.inner = self.inner.set_array_properties(inp);
+            self.inner = self.inner.set_array_properties(input);
             self
         }
         /// <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a
@@ -1223,20 +1232,23 @@ pub mod fluent_builders {
         }
         pub fn set_depends_on(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::JobDependency>>,
+            input: std::option::Option<std::vec::Vec<crate::model::JobDependency>>,
         ) -> Self {
-            self.inner = self.inner.set_depends_on(inp);
+            self.inner = self.inner.set_depends_on(input);
             self
         }
         /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or
         /// the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then the latest active
         /// revision is used.</p>
-        pub fn job_definition(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition(inp);
+        pub fn job_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition(input);
             self
         }
-        pub fn set_job_definition(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_definition(inp);
+        pub fn set_job_definition(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_job_definition(input);
             self
         }
         /// <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job
@@ -1252,11 +1264,11 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
         /// <p>A list of container overrides in the JSON format that specify the name of a container in the specified job
@@ -1264,15 +1276,15 @@ pub mod fluent_builders {
         /// specified in the job definition or the Docker image, with a <code>command</code> override. You can also override
         /// existing environment variables on a container or add new environment variables to it with an <code>environment</code>
         /// override.</p>
-        pub fn container_overrides(mut self, inp: crate::model::ContainerOverrides) -> Self {
-            self.inner = self.inner.container_overrides(inp);
+        pub fn container_overrides(mut self, input: crate::model::ContainerOverrides) -> Self {
+            self.inner = self.inner.container_overrides(input);
             self
         }
         pub fn set_container_overrides(
             mut self,
-            inp: std::option::Option<crate::model::ContainerOverrides>,
+            input: std::option::Option<crate::model::ContainerOverrides>,
         ) -> Self {
-            self.inner = self.inner.set_container_overrides(inp);
+            self.inner = self.inner.set_container_overrides(input);
             self
         }
         /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for
@@ -1281,28 +1293,28 @@ pub mod fluent_builders {
         /// <p>This parameter isn't applicable to jobs running on Fargate resources; use <code>containerOverrides</code>
         /// instead.</p>
         /// </note>
-        pub fn node_overrides(mut self, inp: crate::model::NodeOverrides) -> Self {
-            self.inner = self.inner.node_overrides(inp);
+        pub fn node_overrides(mut self, input: crate::model::NodeOverrides) -> Self {
+            self.inner = self.inner.node_overrides(input);
             self
         }
         pub fn set_node_overrides(
             mut self,
-            inp: std::option::Option<crate::model::NodeOverrides>,
+            input: std::option::Option<crate::model::NodeOverrides>,
         ) -> Self {
-            self.inner = self.inner.set_node_overrides(inp);
+            self.inner = self.inner.set_node_overrides(input);
             self
         }
         /// <p>The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When a retry strategy
         /// is specified here, it overrides the retry strategy defined in the job definition.</p>
-        pub fn retry_strategy(mut self, inp: crate::model::RetryStrategy) -> Self {
-            self.inner = self.inner.retry_strategy(inp);
+        pub fn retry_strategy(mut self, input: crate::model::RetryStrategy) -> Self {
+            self.inner = self.inner.retry_strategy(input);
             self
         }
         pub fn set_retry_strategy(
             mut self,
-            inp: std::option::Option<crate::model::RetryStrategy>,
+            input: std::option::Option<crate::model::RetryStrategy>,
         ) -> Self {
-            self.inner = self.inner.set_retry_strategy(inp);
+            self.inner = self.inner.set_retry_strategy(input);
             self
         }
         /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no
@@ -1310,12 +1322,12 @@ pub mod fluent_builders {
         /// tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags
         /// from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When specified, this
         /// overrides the tag propagation setting in the job definition.</p>
-        pub fn propagate_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.propagate_tags(inp);
+        pub fn propagate_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.propagate_tags(input);
             self
         }
-        pub fn set_propagate_tags(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_propagate_tags(inp);
+        pub fn set_propagate_tags(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_propagate_tags(input);
             self
         }
         /// <p>The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration
@@ -1324,12 +1336,12 @@ pub mod fluent_builders {
         /// specified in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
         /// Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn timeout(mut self, inp: crate::model::JobTimeout) -> Self {
-            self.inner = self.inner.timeout(inp);
+        pub fn timeout(mut self, input: crate::model::JobTimeout) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
-        pub fn set_timeout(mut self, inp: std::option::Option<crate::model::JobTimeout>) -> Self {
-            self.inner = self.inner.set_timeout(inp);
+        pub fn set_timeout(mut self, input: std::option::Option<crate::model::JobTimeout>) -> Self {
+            self.inner = self.inner.set_timeout(input);
             self
         }
         /// <p>The tags that you apply to the job request to help you categorize and organize your resources. Each tag consists
@@ -1345,11 +1357,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1368,7 +1380,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagResourceOutput,
             smithy_http::result::SdkError<crate::error::TagResourceError>,
         >
@@ -1386,12 +1398,12 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. AWS Batch resources that support tags are compute environments, jobs, job definitions, and job
         /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The tags that you apply to the resource to help you categorize and organize your resources. Each tag consists of
@@ -1407,11 +1419,11 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -1430,7 +1442,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TerminateJobOutput,
             smithy_http::result::SdkError<crate::error::TerminateJobError>,
         >
@@ -1447,23 +1459,23 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The AWS Batch job ID of the job to terminate.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(inp);
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input);
             self
         }
-        pub fn set_job_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_id(inp);
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_id(input);
             self
         }
         /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future
         /// <a>DescribeJobs</a> operations on the job. This message is also recorded in the AWS Batch activity
         /// logs.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(inp);
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input);
             self
         }
-        pub fn set_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_reason(inp);
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_reason(input);
             self
         }
     }
@@ -1482,7 +1494,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagResourceOutput,
             smithy_http::result::SdkError<crate::error::UntagResourceError>,
         >
@@ -1500,12 +1512,12 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. AWS Batch resources that support tags are compute environments, jobs, job definitions, and job
         /// queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(inp);
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input);
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_resource_arn(inp);
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_resource_arn(input);
             self
         }
         /// <p>The keys of the tags to be removed.</p>
@@ -1515,9 +1527,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -1536,7 +1548,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateComputeEnvironmentOutput,
             smithy_http::result::SdkError<crate::error::UpdateComputeEnvironmentError>,
         >
@@ -1553,15 +1565,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or full Amazon Resource Name (ARN) of the compute environment to update.</p>
-        pub fn compute_environment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compute_environment(inp);
+        pub fn compute_environment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compute_environment(input);
             self
         }
         pub fn set_compute_environment(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_compute_environment(inp);
+            self.inner = self.inner.set_compute_environment(input);
             self
         }
         /// <p>The state of the compute environment. Compute environments in the <code>ENABLED</code> state can accept jobs
@@ -1573,26 +1585,26 @@ pub mod fluent_builders {
         /// environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
         /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
         /// <code>minvCpus</code> value after instances become idle.</p>
-        pub fn state(mut self, inp: crate::model::CeState) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, input: crate::model::CeState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::CeState>) -> Self {
-            self.inner = self.inner.set_state(inp);
+        pub fn set_state(mut self, input: std::option::Option<crate::model::CeState>) -> Self {
+            self.inner = self.inner.set_state(input);
             self
         }
         /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment.
         /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
         /// Environments</a> in the <i>AWS Batch User Guide</i>.</p>
-        pub fn compute_resources(mut self, inp: crate::model::ComputeResourceUpdate) -> Self {
-            self.inner = self.inner.compute_resources(inp);
+        pub fn compute_resources(mut self, input: crate::model::ComputeResourceUpdate) -> Self {
+            self.inner = self.inner.compute_resources(input);
             self
         }
         pub fn set_compute_resources(
             mut self,
-            inp: std::option::Option<crate::model::ComputeResourceUpdate>,
+            input: std::option::Option<crate::model::ComputeResourceUpdate>,
         ) -> Self {
-            self.inner = self.inner.set_compute_resources(inp);
+            self.inner = self.inner.set_compute_resources(input);
             self
         }
         /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on your behalf. For
@@ -1610,12 +1622,12 @@ pub mod fluent_builders {
         /// <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service
         /// role when you create compute environments.</p>
         /// </note>
-        pub fn service_role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role(inp);
+        pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role(input);
             self
         }
-        pub fn set_service_role(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_service_role(inp);
+        pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_service_role(input);
             self
         }
     }
@@ -1634,7 +1646,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateJobQueueOutput,
             smithy_http::result::SdkError<crate::error::UpdateJobQueueError>,
         >
@@ -1651,23 +1663,23 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
-        pub fn job_queue(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_queue(inp);
+        pub fn job_queue(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_queue(input);
             self
         }
-        pub fn set_job_queue(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_job_queue(inp);
+        pub fn set_job_queue(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_job_queue(input);
             self
         }
         /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept
         /// jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the
         /// queue can finish.</p>
-        pub fn state(mut self, inp: crate::model::JqState) -> Self {
-            self.inner = self.inner.state(inp);
+        pub fn state(mut self, input: crate::model::JqState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::JqState>) -> Self {
-            self.inner = self.inner.set_state(inp);
+        pub fn set_state(mut self, input: std::option::Option<crate::model::JqState>) -> Self {
+            self.inner = self.inner.set_state(input);
             self
         }
         /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
@@ -1676,12 +1688,12 @@ pub mod fluent_builders {
         /// preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either
         /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and
         /// Fargate compute environments can't be mixed.</p>
-        pub fn priority(mut self, inp: i32) -> Self {
-            self.inner = self.inner.priority(inp);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
-        pub fn set_priority(mut self, inp: i32) -> Self {
-            self.inner = self.inner.set_priority(inp);
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_priority(input);
             self
         }
         /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is
@@ -1702,9 +1714,9 @@ pub mod fluent_builders {
         }
         pub fn set_compute_environment_order(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentOrder>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ComputeEnvironmentOrder>>,
         ) -> Self {
-            self.inner = self.inner.set_compute_environment_order(inp);
+            self.inner = self.inner.set_compute_environment_order(input);
             self
         }
     }

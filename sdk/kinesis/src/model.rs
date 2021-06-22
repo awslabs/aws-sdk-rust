@@ -166,12 +166,15 @@ pub mod consumer {
     impl Builder {
         /// <p>The name of the consumer is something you choose when you register the
         /// consumer.</p>
-        pub fn consumer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.consumer_name = Some(inp.into());
+        pub fn consumer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_name = Some(input.into());
             self
         }
-        pub fn set_consumer_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.consumer_name = inp;
+        pub fn set_consumer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.consumer_name = input;
             self
         }
         /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need
@@ -179,37 +182,37 @@ pub mod consumer {
         /// <p>If you delete a consumer and then create a new one with the same name, it won't have
         /// the same ARN. That's because consumer ARNs contain the creation timestamp. This is
         /// important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
-        pub fn consumer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.consumer_arn = Some(inp.into());
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_arn = Some(input.into());
             self
         }
-        pub fn set_consumer_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.consumer_arn = inp;
+        pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.consumer_arn = input;
             self
         }
         /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code>
         /// states.</p>
-        pub fn consumer_status(mut self, inp: crate::model::ConsumerStatus) -> Self {
-            self.consumer_status = Some(inp);
+        pub fn consumer_status(mut self, input: crate::model::ConsumerStatus) -> Self {
+            self.consumer_status = Some(input);
             self
         }
         pub fn set_consumer_status(
             mut self,
-            inp: std::option::Option<crate::model::ConsumerStatus>,
+            input: std::option::Option<crate::model::ConsumerStatus>,
         ) -> Self {
-            self.consumer_status = inp;
+            self.consumer_status = input;
             self
         }
         /// <p></p>
-        pub fn consumer_creation_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.consumer_creation_timestamp = Some(inp);
+        pub fn consumer_creation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.consumer_creation_timestamp = Some(input);
             self
         }
         pub fn set_consumer_creation_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.consumer_creation_timestamp = inp;
+            self.consumer_creation_timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`Consumer`](crate::model::Consumer)
@@ -343,35 +346,35 @@ pub mod put_records_result_entry {
     }
     impl Builder {
         /// <p>The sequence number for an individual record result.</p>
-        pub fn sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sequence_number = Some(inp.into());
+        pub fn sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sequence_number = Some(input.into());
             self
         }
         pub fn set_sequence_number(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sequence_number = inp;
+            self.sequence_number = input;
             self
         }
         /// <p>The shard ID for an individual record result.</p>
-        pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.shard_id = Some(inp.into());
+        pub fn shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.shard_id = Some(input.into());
             self
         }
-        pub fn set_shard_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.shard_id = inp;
+        pub fn set_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.shard_id = input;
             self
         }
         /// <p>The error code for an individual record result. <code>ErrorCodes</code> can be
         /// either <code>ProvisionedThroughputExceededException</code> or
         /// <code>InternalFailure</code>.</p>
-        pub fn error_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.error_code = Some(inp.into());
+        pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_code = Some(input.into());
             self
         }
-        pub fn set_error_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.error_code = inp;
+        pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_code = input;
             self
         }
         /// <p>The error message for an individual record result. An <code>ErrorCode</code> value
@@ -379,12 +382,15 @@ pub mod put_records_result_entry {
         /// includes the account ID, stream name, and shard ID. An <code>ErrorCode</code> value of
         /// <code>InternalFailure</code> has the error message <code>"Internal Service
         /// Failure"</code>.</p>
-        pub fn error_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.error_message = Some(inp.into());
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
             self
         }
-        pub fn set_error_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.error_message = inp;
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
             self
         }
         /// Consumes the builder and constructs a [`PutRecordsResultEntry`](crate::model::PutRecordsResultEntry)
@@ -457,25 +463,25 @@ pub mod put_records_request_entry {
         /// serialized. When the data blob (the payload before base64-encoding) is added to the
         /// partition key size, the total size must not exceed the maximum record size (1
         /// MiB).</p>
-        pub fn data(mut self, inp: smithy_types::Blob) -> Self {
-            self.data = Some(inp);
+        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+            self.data = Some(input);
             self
         }
-        pub fn set_data(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.data = inp;
+        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.data = input;
             self
         }
         /// <p>The hash value used to determine explicitly the shard that the data record is
         /// assigned to by overriding the partition key hash.</p>
-        pub fn explicit_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.explicit_hash_key = Some(inp.into());
+        pub fn explicit_hash_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.explicit_hash_key = Some(input.into());
             self
         }
         pub fn set_explicit_hash_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.explicit_hash_key = inp;
+            self.explicit_hash_key = input;
             self
         }
         /// <p>Determines which shard in the stream the data record is assigned to. Partition keys
@@ -485,12 +491,15 @@ pub mod put_records_request_entry {
         /// function is used to map partition keys to 128-bit integer values and to map associated
         /// data records to shards. As a result of this hashing mechanism, all data records with the
         /// same partition key map to the same shard within the stream.</p>
-        pub fn partition_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.partition_key = Some(inp.into());
+        pub fn partition_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.partition_key = Some(input.into());
             self
         }
-        pub fn set_partition_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.partition_key = inp;
+        pub fn set_partition_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.partition_key = input;
             self
         }
         /// Consumes the builder and constructs a [`PutRecordsRequestEntry`](crate::model::PutRecordsRequestEntry)
@@ -546,23 +555,23 @@ pub mod tag {
     impl Builder {
         /// <p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters:
         /// Unicode letters, digits, white space, _ . / = + - % @</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>An optional string, typically used to describe or define the tag. Maximum length:
         /// 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - %
         /// @</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
@@ -632,61 +641,61 @@ pub mod shard {
     }
     impl Builder {
         /// <p>The unique identifier of the shard within the stream.</p>
-        pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.shard_id = Some(inp.into());
+        pub fn shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.shard_id = Some(input.into());
             self
         }
-        pub fn set_shard_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.shard_id = inp;
+        pub fn set_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.shard_id = input;
             self
         }
         /// <p>The shard ID of the shard's parent.</p>
-        pub fn parent_shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.parent_shard_id = Some(inp.into());
+        pub fn parent_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.parent_shard_id = Some(input.into());
             self
         }
         pub fn set_parent_shard_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.parent_shard_id = inp;
+            self.parent_shard_id = input;
             self
         }
         /// <p>The shard ID of the shard adjacent to the shard's parent.</p>
-        pub fn adjacent_parent_shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.adjacent_parent_shard_id = Some(inp.into());
+        pub fn adjacent_parent_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.adjacent_parent_shard_id = Some(input.into());
             self
         }
         pub fn set_adjacent_parent_shard_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.adjacent_parent_shard_id = inp;
+            self.adjacent_parent_shard_id = input;
             self
         }
         /// <p>The range of possible hash key values for the shard, which is a set of ordered
         /// contiguous positive integers.</p>
-        pub fn hash_key_range(mut self, inp: crate::model::HashKeyRange) -> Self {
-            self.hash_key_range = Some(inp);
+        pub fn hash_key_range(mut self, input: crate::model::HashKeyRange) -> Self {
+            self.hash_key_range = Some(input);
             self
         }
         pub fn set_hash_key_range(
             mut self,
-            inp: std::option::Option<crate::model::HashKeyRange>,
+            input: std::option::Option<crate::model::HashKeyRange>,
         ) -> Self {
-            self.hash_key_range = inp;
+            self.hash_key_range = input;
             self
         }
         /// <p>The range of possible sequence numbers for the shard.</p>
-        pub fn sequence_number_range(mut self, inp: crate::model::SequenceNumberRange) -> Self {
-            self.sequence_number_range = Some(inp);
+        pub fn sequence_number_range(mut self, input: crate::model::SequenceNumberRange) -> Self {
+            self.sequence_number_range = Some(input);
             self
         }
         pub fn set_sequence_number_range(
             mut self,
-            inp: std::option::Option<crate::model::SequenceNumberRange>,
+            input: std::option::Option<crate::model::SequenceNumberRange>,
         ) -> Self {
-            self.sequence_number_range = inp;
+            self.sequence_number_range = input;
             self
         }
         /// Consumes the builder and constructs a [`Shard`](crate::model::Shard)
@@ -741,28 +750,28 @@ pub mod sequence_number_range {
     }
     impl Builder {
         /// <p>The starting sequence number for the range.</p>
-        pub fn starting_sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.starting_sequence_number = Some(inp.into());
+        pub fn starting_sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.starting_sequence_number = Some(input.into());
             self
         }
         pub fn set_starting_sequence_number(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.starting_sequence_number = inp;
+            self.starting_sequence_number = input;
             self
         }
         /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an
         /// ending sequence number of <code>null</code>.</p>
-        pub fn ending_sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ending_sequence_number = Some(inp.into());
+        pub fn ending_sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ending_sequence_number = Some(input.into());
             self
         }
         pub fn set_ending_sequence_number(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ending_sequence_number = inp;
+            self.ending_sequence_number = input;
             self
         }
         /// Consumes the builder and constructs a [`SequenceNumberRange`](crate::model::SequenceNumberRange)
@@ -814,27 +823,27 @@ pub mod hash_key_range {
     }
     impl Builder {
         /// <p>The starting hash key of the hash key range.</p>
-        pub fn starting_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.starting_hash_key = Some(inp.into());
+        pub fn starting_hash_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.starting_hash_key = Some(input.into());
             self
         }
         pub fn set_starting_hash_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.starting_hash_key = inp;
+            self.starting_hash_key = input;
             self
         }
         /// <p>The ending hash key of the hash key range.</p>
-        pub fn ending_hash_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ending_hash_key = Some(inp.into());
+        pub fn ending_hash_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ending_hash_key = Some(input.into());
             self
         }
         pub fn set_ending_hash_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ending_hash_key = inp;
+            self.ending_hash_key = input;
             self
         }
         /// Consumes the builder and constructs a [`HashKeyRange`](crate::model::HashKeyRange)
@@ -889,28 +898,31 @@ pub mod shard_filter {
         pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: crate::model::ShardFilterType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::ShardFilterType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::ShardFilterType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ShardFilterType>,
+        ) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.shard_id = Some(inp.into());
+        pub fn shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.shard_id = Some(input.into());
             self
         }
-        pub fn set_shard_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.shard_id = inp;
+        pub fn set_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.shard_id = input;
             self
         }
-        pub fn timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.timestamp = Some(inp);
+        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.timestamp = inp;
+        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`ShardFilter`](crate::model::ShardFilter)
@@ -1098,38 +1110,38 @@ pub mod child_shard {
         pub(crate) hash_key_range: std::option::Option<crate::model::HashKeyRange>,
     }
     impl Builder {
-        pub fn shard_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.shard_id = Some(inp.into());
+        pub fn shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.shard_id = Some(input.into());
             self
         }
-        pub fn set_shard_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.shard_id = inp;
+        pub fn set_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.shard_id = input;
             self
         }
-        pub fn parent_shards(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn parent_shards(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.parent_shards.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parent_shards = Some(v);
             self
         }
         pub fn set_parent_shards(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.parent_shards = inp;
+            self.parent_shards = input;
             self
         }
         /// <p>The range of possible hash key values for the shard, which is a set of ordered
         /// contiguous positive integers.</p>
-        pub fn hash_key_range(mut self, inp: crate::model::HashKeyRange) -> Self {
-            self.hash_key_range = Some(inp);
+        pub fn hash_key_range(mut self, input: crate::model::HashKeyRange) -> Self {
+            self.hash_key_range = Some(input);
             self
         }
         pub fn set_hash_key_range(
             mut self,
-            inp: std::option::Option<crate::model::HashKeyRange>,
+            input: std::option::Option<crate::model::HashKeyRange>,
         ) -> Self {
-            self.hash_key_range = inp;
+            self.hash_key_range = input;
             self
         }
         /// Consumes the builder and constructs a [`ChildShard`](crate::model::ChildShard)
@@ -1222,48 +1234,51 @@ pub mod record {
     }
     impl Builder {
         /// <p>The unique identifier of the record within its shard.</p>
-        pub fn sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sequence_number = Some(inp.into());
+        pub fn sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sequence_number = Some(input.into());
             self
         }
         pub fn set_sequence_number(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sequence_number = inp;
+            self.sequence_number = input;
             self
         }
         /// <p>The approximate time that the record was inserted into the stream.</p>
-        pub fn approximate_arrival_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.approximate_arrival_timestamp = Some(inp);
+        pub fn approximate_arrival_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.approximate_arrival_timestamp = Some(input);
             self
         }
         pub fn set_approximate_arrival_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.approximate_arrival_timestamp = inp;
+            self.approximate_arrival_timestamp = input;
             self
         }
         /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data
         /// Streams, which does not inspect, interpret, or change the data in the blob in any way.
         /// When the data blob (the payload before base64-encoding) is added to the partition key
         /// size, the total size must not exceed the maximum record size (1 MiB).</p>
-        pub fn data(mut self, inp: smithy_types::Blob) -> Self {
-            self.data = Some(inp);
+        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+            self.data = Some(input);
             self
         }
-        pub fn set_data(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.data = inp;
+        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.data = input;
             self
         }
         /// <p>Identifies which shard in the stream the data record is assigned to.</p>
-        pub fn partition_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.partition_key = Some(inp.into());
+        pub fn partition_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.partition_key = Some(input.into());
             self
         }
-        pub fn set_partition_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.partition_key = inp;
+        pub fn set_partition_key(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.partition_key = input;
             self
         }
         /// <p>The encryption type used on the record. This parameter can be one of the following
@@ -1279,15 +1294,15 @@ pub mod record {
         /// using a customer-managed AWS KMS key.</p>
         /// </li>
         /// </ul>
-        pub fn encryption_type(mut self, inp: crate::model::EncryptionType) -> Self {
-            self.encryption_type = Some(inp);
+        pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
+            self.encryption_type = Some(input);
             self
         }
         pub fn set_encryption_type(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionType>,
+            input: std::option::Option<crate::model::EncryptionType>,
         ) -> Self {
-            self.encryption_type = inp;
+            self.encryption_type = input;
             self
         }
         /// Consumes the builder and constructs a [`Record`](crate::model::Record)
@@ -1536,21 +1551,21 @@ pub mod stream_description_summary {
     }
     impl Builder {
         /// <p>The name of the stream being described.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_arn = Some(inp.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = inp;
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
             self
         }
         /// <p>The current status of the stream being described. The stream status is one of the
@@ -1581,52 +1596,52 @@ pub mod stream_description_summary {
         /// <code>UPDATING</code> state.</p>
         /// </li>
         /// </ul>
-        pub fn stream_status(mut self, inp: crate::model::StreamStatus) -> Self {
-            self.stream_status = Some(inp);
+        pub fn stream_status(mut self, input: crate::model::StreamStatus) -> Self {
+            self.stream_status = Some(input);
             self
         }
         pub fn set_stream_status(
             mut self,
-            inp: std::option::Option<crate::model::StreamStatus>,
+            input: std::option::Option<crate::model::StreamStatus>,
         ) -> Self {
-            self.stream_status = inp;
+            self.stream_status = input;
             self
         }
         /// <p>The current retention period, in hours.</p>
-        pub fn retention_period_hours(mut self, inp: i32) -> Self {
-            self.retention_period_hours = Some(inp);
+        pub fn retention_period_hours(mut self, input: i32) -> Self {
+            self.retention_period_hours = Some(input);
             self
         }
-        pub fn set_retention_period_hours(mut self, inp: std::option::Option<i32>) -> Self {
-            self.retention_period_hours = inp;
+        pub fn set_retention_period_hours(mut self, input: std::option::Option<i32>) -> Self {
+            self.retention_period_hours = input;
             self
         }
         /// <p>The approximate time that the stream was created.</p>
-        pub fn stream_creation_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.stream_creation_timestamp = Some(inp);
+        pub fn stream_creation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.stream_creation_timestamp = Some(input);
             self
         }
         pub fn set_stream_creation_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.stream_creation_timestamp = inp;
+            self.stream_creation_timestamp = input;
             self
         }
         pub fn enhanced_monitoring(
             mut self,
-            inp: impl Into<crate::model::EnhancedMetrics>,
+            input: impl Into<crate::model::EnhancedMetrics>,
         ) -> Self {
             let mut v = self.enhanced_monitoring.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.enhanced_monitoring = Some(v);
             self
         }
         pub fn set_enhanced_monitoring(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
         ) -> Self {
-            self.enhanced_monitoring = inp;
+            self.enhanced_monitoring = input;
             self
         }
         /// <p>The encryption type used. This value is one of the following:</p>
@@ -1642,15 +1657,15 @@ pub mod stream_description_summary {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn encryption_type(mut self, inp: crate::model::EncryptionType) -> Self {
-            self.encryption_type = Some(inp);
+        pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
+            self.encryption_type = Some(input);
             self
         }
         pub fn set_encryption_type(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionType>,
+            input: std::option::Option<crate::model::EncryptionType>,
         ) -> Self {
-            self.encryption_type = inp;
+            self.encryption_type = input;
             self
         }
         /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
@@ -1683,30 +1698,30 @@ pub mod stream_description_summary {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// <p>The number of open shards in the stream.</p>
-        pub fn open_shard_count(mut self, inp: i32) -> Self {
-            self.open_shard_count = Some(inp);
+        pub fn open_shard_count(mut self, input: i32) -> Self {
+            self.open_shard_count = Some(input);
             self
         }
-        pub fn set_open_shard_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.open_shard_count = inp;
+        pub fn set_open_shard_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.open_shard_count = input;
             self
         }
         /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
-        pub fn consumer_count(mut self, inp: i32) -> Self {
-            self.consumer_count = Some(inp);
+        pub fn consumer_count(mut self, input: i32) -> Self {
+            self.consumer_count = Some(input);
             self
         }
-        pub fn set_consumer_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.consumer_count = inp;
+        pub fn set_consumer_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.consumer_count = input;
             self
         }
         /// Consumes the builder and constructs a [`StreamDescriptionSummary`](crate::model::StreamDescriptionSummary)
@@ -1806,17 +1821,17 @@ pub mod enhanced_metrics {
             std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
     }
     impl Builder {
-        pub fn shard_level_metrics(mut self, inp: impl Into<crate::model::MetricsName>) -> Self {
+        pub fn shard_level_metrics(mut self, input: impl Into<crate::model::MetricsName>) -> Self {
             let mut v = self.shard_level_metrics.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.shard_level_metrics = Some(v);
             self
         }
         pub fn set_shard_level_metrics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricsName>>,
         ) -> Self {
-            self.shard_level_metrics = inp;
+            self.shard_level_metrics = input;
             self
         }
         /// Consumes the builder and constructs a [`EnhancedMetrics`](crate::model::EnhancedMetrics)
@@ -1960,12 +1975,15 @@ pub mod consumer_description {
     impl Builder {
         /// <p>The name of the consumer is something you choose when you register the
         /// consumer.</p>
-        pub fn consumer_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.consumer_name = Some(inp.into());
+        pub fn consumer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_name = Some(input.into());
             self
         }
-        pub fn set_consumer_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.consumer_name = inp;
+        pub fn set_consumer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.consumer_name = input;
             self
         }
         /// <p>When you register a consumer, Kinesis Data Streams generates an ARN for it. You need
@@ -1973,46 +1991,46 @@ pub mod consumer_description {
         /// <p>If you delete a consumer and then create a new one with the same name, it won't have
         /// the same ARN. That's because consumer ARNs contain the creation timestamp. This is
         /// important to keep in mind if you have IAM policies that reference consumer ARNs.</p>
-        pub fn consumer_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.consumer_arn = Some(inp.into());
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_arn = Some(input.into());
             self
         }
-        pub fn set_consumer_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.consumer_arn = inp;
+        pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.consumer_arn = input;
             self
         }
         /// <p>A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code>
         /// states.</p>
-        pub fn consumer_status(mut self, inp: crate::model::ConsumerStatus) -> Self {
-            self.consumer_status = Some(inp);
+        pub fn consumer_status(mut self, input: crate::model::ConsumerStatus) -> Self {
+            self.consumer_status = Some(input);
             self
         }
         pub fn set_consumer_status(
             mut self,
-            inp: std::option::Option<crate::model::ConsumerStatus>,
+            input: std::option::Option<crate::model::ConsumerStatus>,
         ) -> Self {
-            self.consumer_status = inp;
+            self.consumer_status = input;
             self
         }
         /// <p></p>
-        pub fn consumer_creation_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.consumer_creation_timestamp = Some(inp);
+        pub fn consumer_creation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.consumer_creation_timestamp = Some(input);
             self
         }
         pub fn set_consumer_creation_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.consumer_creation_timestamp = inp;
+            self.consumer_creation_timestamp = input;
             self
         }
         /// <p>The ARN of the stream with which you registered the consumer.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_arn = Some(inp.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = inp;
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`ConsumerDescription`](crate::model::ConsumerDescription)
@@ -2188,21 +2206,21 @@ pub mod stream_description {
     }
     impl Builder {
         /// <p>The name of the stream being described.</p>
-        pub fn stream_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_name = Some(inp.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_name = Some(input.into());
             self
         }
-        pub fn set_stream_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_name = inp;
+        pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the stream being described.</p>
-        pub fn stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_arn = Some(inp.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_arn = Some(input.into());
             self
         }
-        pub fn set_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_arn = inp;
+        pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_arn = input;
             self
         }
         /// <p>The current status of the stream being described. The stream status is one of the
@@ -2233,76 +2251,76 @@ pub mod stream_description {
         /// <code>UPDATING</code> state.</p>
         /// </li>
         /// </ul>
-        pub fn stream_status(mut self, inp: crate::model::StreamStatus) -> Self {
-            self.stream_status = Some(inp);
+        pub fn stream_status(mut self, input: crate::model::StreamStatus) -> Self {
+            self.stream_status = Some(input);
             self
         }
         pub fn set_stream_status(
             mut self,
-            inp: std::option::Option<crate::model::StreamStatus>,
+            input: std::option::Option<crate::model::StreamStatus>,
         ) -> Self {
-            self.stream_status = inp;
+            self.stream_status = input;
             self
         }
-        pub fn shards(mut self, inp: impl Into<crate::model::Shard>) -> Self {
+        pub fn shards(mut self, input: impl Into<crate::model::Shard>) -> Self {
             let mut v = self.shards.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.shards = Some(v);
             self
         }
         pub fn set_shards(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Shard>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Shard>>,
         ) -> Self {
-            self.shards = inp;
+            self.shards = input;
             self
         }
         /// <p>If set to <code>true</code>, more shards in the stream are available to
         /// describe.</p>
-        pub fn has_more_shards(mut self, inp: bool) -> Self {
-            self.has_more_shards = Some(inp);
+        pub fn has_more_shards(mut self, input: bool) -> Self {
+            self.has_more_shards = Some(input);
             self
         }
-        pub fn set_has_more_shards(mut self, inp: std::option::Option<bool>) -> Self {
-            self.has_more_shards = inp;
+        pub fn set_has_more_shards(mut self, input: std::option::Option<bool>) -> Self {
+            self.has_more_shards = input;
             self
         }
         /// <p>The current retention period, in hours. Minimum value of 24. Maximum value of
         /// 168.</p>
-        pub fn retention_period_hours(mut self, inp: i32) -> Self {
-            self.retention_period_hours = Some(inp);
+        pub fn retention_period_hours(mut self, input: i32) -> Self {
+            self.retention_period_hours = Some(input);
             self
         }
-        pub fn set_retention_period_hours(mut self, inp: std::option::Option<i32>) -> Self {
-            self.retention_period_hours = inp;
+        pub fn set_retention_period_hours(mut self, input: std::option::Option<i32>) -> Self {
+            self.retention_period_hours = input;
             self
         }
         /// <p>The approximate time that the stream was created.</p>
-        pub fn stream_creation_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.stream_creation_timestamp = Some(inp);
+        pub fn stream_creation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.stream_creation_timestamp = Some(input);
             self
         }
         pub fn set_stream_creation_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.stream_creation_timestamp = inp;
+            self.stream_creation_timestamp = input;
             self
         }
         pub fn enhanced_monitoring(
             mut self,
-            inp: impl Into<crate::model::EnhancedMetrics>,
+            input: impl Into<crate::model::EnhancedMetrics>,
         ) -> Self {
             let mut v = self.enhanced_monitoring.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.enhanced_monitoring = Some(v);
             self
         }
         pub fn set_enhanced_monitoring(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EnhancedMetrics>>,
         ) -> Self {
-            self.enhanced_monitoring = inp;
+            self.enhanced_monitoring = input;
             self
         }
         /// <p>The server-side encryption type used on the stream. This parameter can be one of
@@ -2318,15 +2336,15 @@ pub mod stream_description {
         /// using a customer-managed AWS KMS key.</p>
         /// </li>
         /// </ul>
-        pub fn encryption_type(mut self, inp: crate::model::EncryptionType) -> Self {
-            self.encryption_type = Some(inp);
+        pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
+            self.encryption_type = Some(input);
             self
         }
         pub fn set_encryption_type(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionType>,
+            input: std::option::Option<crate::model::EncryptionType>,
         ) -> Self {
-            self.encryption_type = inp;
+            self.encryption_type = input;
             self
         }
         /// <p>The GUID for the customer-managed AWS KMS key to use for encryption. This value can
@@ -2359,12 +2377,12 @@ pub mod stream_description {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`StreamDescription`](crate::model::StreamDescription)

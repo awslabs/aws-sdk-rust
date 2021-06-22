@@ -50,12 +50,15 @@ pub mod synthesize_speech_output {
     }
     impl Builder {
         /// <p> Stream containing the synthesized speech. </p>
-        pub fn audio_stream(mut self, inp: smithy_http::byte_stream::ByteStream) -> Self {
-            self.audio_stream = Some(inp);
+        pub fn audio_stream(mut self, input: smithy_http::byte_stream::ByteStream) -> Self {
+            self.audio_stream = Some(input);
             self
         }
-        pub fn set_audio_stream(mut self, inp: smithy_http::byte_stream::ByteStream) -> Self {
-            self.audio_stream = Some(inp);
+        pub fn set_audio_stream(
+            mut self,
+            input: std::option::Option<smithy_http::byte_stream::ByteStream>,
+        ) -> Self {
+            self.audio_stream = input;
             self
         }
         /// <p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code>
@@ -80,21 +83,21 @@ pub mod synthesize_speech_output {
         /// </li>
         /// </ul>
         /// <p> </p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content_type = Some(inp.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content_type = inp;
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
             self
         }
         /// <p>Number of characters synthesized.</p>
-        pub fn request_characters(mut self, inp: i32) -> Self {
-            self.request_characters = Some(inp);
+        pub fn request_characters(mut self, input: i32) -> Self {
+            self.request_characters = Some(input);
             self
         }
-        pub fn set_request_characters(mut self, inp: i32) -> Self {
-            self.request_characters = Some(inp);
+        pub fn set_request_characters(mut self, input: std::option::Option<i32>) -> Self {
+            self.request_characters = input;
             self
         }
         /// Consumes the builder and constructs a [`SynthesizeSpeechOutput`](crate::output::SynthesizeSpeechOutput)
@@ -139,15 +142,15 @@ pub mod start_speech_synthesis_task_output {
     impl Builder {
         /// <p>SynthesisTask object that provides information and attributes about a newly submitted
         /// speech synthesis task.</p>
-        pub fn synthesis_task(mut self, inp: crate::model::SynthesisTask) -> Self {
-            self.synthesis_task = Some(inp);
+        pub fn synthesis_task(mut self, input: crate::model::SynthesisTask) -> Self {
+            self.synthesis_task = Some(input);
             self
         }
         pub fn set_synthesis_task(
             mut self,
-            inp: std::option::Option<crate::model::SynthesisTask>,
+            input: std::option::Option<crate::model::SynthesisTask>,
         ) -> Self {
-            self.synthesis_task = inp;
+            self.synthesis_task = input;
             self
         }
         /// Consumes the builder and constructs a [`StartSpeechSynthesisTaskOutput`](crate::output::StartSpeechSynthesisTaskOutput)
@@ -224,25 +227,25 @@ pub mod list_speech_synthesis_tasks_output {
     impl Builder {
         /// <p>An opaque pagination token returned from the previous List operation in this request. If
         /// present, this indicates where to continue the listing.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
-        pub fn synthesis_tasks(mut self, inp: impl Into<crate::model::SynthesisTask>) -> Self {
+        pub fn synthesis_tasks(mut self, input: impl Into<crate::model::SynthesisTask>) -> Self {
             let mut v = self.synthesis_tasks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.synthesis_tasks = Some(v);
             self
         }
         pub fn set_synthesis_tasks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SynthesisTask>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SynthesisTask>>,
         ) -> Self {
-            self.synthesis_tasks = inp;
+            self.synthesis_tasks = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSpeechSynthesisTasksOutput`](crate::output::ListSpeechSynthesisTasksOutput)
@@ -288,27 +291,27 @@ pub mod list_lexicons_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn lexicons(mut self, inp: impl Into<crate::model::LexiconDescription>) -> Self {
+        pub fn lexicons(mut self, input: impl Into<crate::model::LexiconDescription>) -> Self {
             let mut v = self.lexicons.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.lexicons = Some(v);
             self
         }
         pub fn set_lexicons(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LexiconDescription>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LexiconDescription>>,
         ) -> Self {
-            self.lexicons = inp;
+            self.lexicons = input;
             self
         }
         /// <p>The pagination token to use in the next request to continue the listing of lexicons.
         /// <code>NextToken</code> is returned only if the response is truncated.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListLexiconsOutput`](crate::output::ListLexiconsOutput)
@@ -352,15 +355,15 @@ pub mod get_speech_synthesis_task_output {
     impl Builder {
         /// <p>SynthesisTask object that provides information from the requested task, including output
         /// format, creation time, task status, and so on.</p>
-        pub fn synthesis_task(mut self, inp: crate::model::SynthesisTask) -> Self {
-            self.synthesis_task = Some(inp);
+        pub fn synthesis_task(mut self, input: crate::model::SynthesisTask) -> Self {
+            self.synthesis_task = Some(input);
             self
         }
         pub fn set_synthesis_task(
             mut self,
-            inp: std::option::Option<crate::model::SynthesisTask>,
+            input: std::option::Option<crate::model::SynthesisTask>,
         ) -> Self {
-            self.synthesis_task = inp;
+            self.synthesis_task = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSpeechSynthesisTaskOutput`](crate::output::GetSpeechSynthesisTaskOutput)
@@ -406,25 +409,25 @@ pub mod get_lexicon_output {
     }
     impl Builder {
         /// <p>Lexicon object that provides name and the string content of the lexicon. </p>
-        pub fn lexicon(mut self, inp: crate::model::Lexicon) -> Self {
-            self.lexicon = Some(inp);
+        pub fn lexicon(mut self, input: crate::model::Lexicon) -> Self {
+            self.lexicon = Some(input);
             self
         }
-        pub fn set_lexicon(mut self, inp: std::option::Option<crate::model::Lexicon>) -> Self {
-            self.lexicon = inp;
+        pub fn set_lexicon(mut self, input: std::option::Option<crate::model::Lexicon>) -> Self {
+            self.lexicon = input;
             self
         }
         /// <p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon
         /// ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>
-        pub fn lexicon_attributes(mut self, inp: crate::model::LexiconAttributes) -> Self {
-            self.lexicon_attributes = Some(inp);
+        pub fn lexicon_attributes(mut self, input: crate::model::LexiconAttributes) -> Self {
+            self.lexicon_attributes = Some(input);
             self
         }
         pub fn set_lexicon_attributes(
             mut self,
-            inp: std::option::Option<crate::model::LexiconAttributes>,
+            input: std::option::Option<crate::model::LexiconAttributes>,
         ) -> Self {
-            self.lexicon_attributes = inp;
+            self.lexicon_attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`GetLexiconOutput`](crate::output::GetLexiconOutput)
@@ -470,27 +473,27 @@ pub mod describe_voices_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn voices(mut self, inp: impl Into<crate::model::Voice>) -> Self {
+        pub fn voices(mut self, input: impl Into<crate::model::Voice>) -> Self {
             let mut v = self.voices.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.voices = Some(v);
             self
         }
         pub fn set_voices(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Voice>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Voice>>,
         ) -> Self {
-            self.voices = inp;
+            self.voices = input;
             self
         }
         /// <p>The pagination token to use in the next request to continue the listing of voices.
         /// <code>NextToken</code> is returned only if the response is truncated.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVoicesOutput`](crate::output::DescribeVoicesOutput)

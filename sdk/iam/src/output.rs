@@ -24,15 +24,15 @@ pub mod upload_ssh_public_key_output {
     }
     impl Builder {
         /// <p>Contains information about the SSH public key.</p>
-        pub fn ssh_public_key(mut self, inp: crate::model::SSHPublicKey) -> Self {
-            self.ssh_public_key = Some(inp);
+        pub fn ssh_public_key(mut self, input: crate::model::SSHPublicKey) -> Self {
+            self.ssh_public_key = Some(input);
             self
         }
         pub fn set_ssh_public_key(
             mut self,
-            inp: std::option::Option<crate::model::SSHPublicKey>,
+            input: std::option::Option<crate::model::SSHPublicKey>,
         ) -> Self {
-            self.ssh_public_key = inp;
+            self.ssh_public_key = input;
             self
         }
         /// Consumes the builder and constructs a [`UploadSSHPublicKeyOutput`](crate::output::UploadSSHPublicKeyOutput)
@@ -75,15 +75,15 @@ pub mod upload_signing_certificate_output {
     }
     impl Builder {
         /// <p>Information about the certificate.</p>
-        pub fn certificate(mut self, inp: crate::model::SigningCertificate) -> Self {
-            self.certificate = Some(inp);
+        pub fn certificate(mut self, input: crate::model::SigningCertificate) -> Self {
+            self.certificate = Some(input);
             self
         }
         pub fn set_certificate(
             mut self,
-            inp: std::option::Option<crate::model::SigningCertificate>,
+            input: std::option::Option<crate::model::SigningCertificate>,
         ) -> Self {
-            self.certificate = inp;
+            self.certificate = input;
             self
         }
         /// Consumes the builder and constructs a [`UploadSigningCertificateOutput`](crate::output::UploadSigningCertificateOutput)
@@ -140,29 +140,29 @@ pub mod upload_server_certificate_output {
         /// certificate chain, and private key.</p>
         pub fn server_certificate_metadata(
             mut self,
-            inp: crate::model::ServerCertificateMetadata,
+            input: crate::model::ServerCertificateMetadata,
         ) -> Self {
-            self.server_certificate_metadata = Some(inp);
+            self.server_certificate_metadata = Some(input);
             self
         }
         pub fn set_server_certificate_metadata(
             mut self,
-            inp: std::option::Option<crate::model::ServerCertificateMetadata>,
+            input: std::option::Option<crate::model::ServerCertificateMetadata>,
         ) -> Self {
-            self.server_certificate_metadata = inp;
+            self.server_certificate_metadata = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`UploadServerCertificateOutput`](crate::output::UploadServerCertificateOutput)
@@ -351,15 +351,15 @@ pub mod update_saml_provider_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the SAML provider that was updated.</p>
-        pub fn saml_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.saml_provider_arn = Some(inp.into());
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.saml_provider_arn = Some(input.into());
             self
         }
         pub fn set_saml_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.saml_provider_arn = inp;
+            self.saml_provider_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateSAMLProviderOutput`](crate::output::UpdateSAMLProviderOutput)
@@ -400,12 +400,12 @@ pub mod update_role_description_output {
     }
     impl Builder {
         /// <p>A structure that contains details about the modified role.</p>
-        pub fn role(mut self, inp: crate::model::Role) -> Self {
-            self.role = Some(inp);
+        pub fn role(mut self, input: crate::model::Role) -> Self {
+            self.role = Some(input);
             self
         }
-        pub fn set_role(mut self, inp: std::option::Option<crate::model::Role>) -> Self {
-            self.role = inp;
+        pub fn set_role(mut self, input: std::option::Option<crate::model::Role>) -> Self {
+            self.role = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateRoleDescriptionOutput`](crate::output::UpdateRoleDescriptionOutput)
@@ -1130,18 +1130,18 @@ pub mod simulate_principal_policy_output {
     impl Builder {
         pub fn evaluation_results(
             mut self,
-            inp: impl Into<crate::model::EvaluationResult>,
+            input: impl Into<crate::model::EvaluationResult>,
         ) -> Self {
             let mut v = self.evaluation_results.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.evaluation_results = Some(v);
             self
         }
         pub fn set_evaluation_results(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
         ) -> Self {
-            self.evaluation_results = inp;
+            self.evaluation_results = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -1150,23 +1150,23 @@ pub mod simulate_principal_policy_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`SimulatePrincipalPolicyOutput`](crate::output::SimulatePrincipalPolicyOutput)
@@ -1228,18 +1228,18 @@ pub mod simulate_custom_policy_output {
     impl Builder {
         pub fn evaluation_results(
             mut self,
-            inp: impl Into<crate::model::EvaluationResult>,
+            input: impl Into<crate::model::EvaluationResult>,
         ) -> Self {
             let mut v = self.evaluation_results.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.evaluation_results = Some(v);
             self
         }
         pub fn set_evaluation_results(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EvaluationResult>>,
         ) -> Self {
-            self.evaluation_results = inp;
+            self.evaluation_results = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -1248,23 +1248,23 @@ pub mod simulate_custom_policy_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`SimulateCustomPolicyOutput`](crate::output::SimulateCustomPolicyOutput)
@@ -1410,16 +1410,16 @@ pub mod reset_service_specific_credential_output {
         /// </important>
         pub fn service_specific_credential(
             mut self,
-            inp: crate::model::ServiceSpecificCredential,
+            input: crate::model::ServiceSpecificCredential,
         ) -> Self {
-            self.service_specific_credential = Some(inp);
+            self.service_specific_credential = Some(input);
             self
         }
         pub fn set_service_specific_credential(
             mut self,
-            inp: std::option::Option<crate::model::ServiceSpecificCredential>,
+            input: std::option::Option<crate::model::ServiceSpecificCredential>,
         ) -> Self {
-            self.service_specific_credential = inp;
+            self.service_specific_credential = input;
             self
         }
         /// Consumes the builder and constructs a [`ResetServiceSpecificCredentialOutput`](crate::output::ResetServiceSpecificCredentialOutput)
@@ -1713,18 +1713,18 @@ pub mod list_virtual_mfa_devices_output {
     impl Builder {
         pub fn virtual_mfa_devices(
             mut self,
-            inp: impl Into<crate::model::VirtualMFADevice>,
+            input: impl Into<crate::model::VirtualMFADevice>,
         ) -> Self {
             let mut v = self.virtual_mfa_devices.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.virtual_mfa_devices = Some(v);
             self
         }
         pub fn set_virtual_mfa_devices(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VirtualMFADevice>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VirtualMFADevice>>,
         ) -> Self {
-            self.virtual_mfa_devices = inp;
+            self.virtual_mfa_devices = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -1733,23 +1733,23 @@ pub mod list_virtual_mfa_devices_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and
         /// contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListVirtualMFADevicesOutput`](crate::output::ListVirtualMFADevicesOutput)
@@ -1804,40 +1804,40 @@ pub mod list_user_tags_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
         /// results were truncated, you can use the <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more items. Note that IAM might return fewer than the
         /// <code>MaxItems</code> number of results even when more results are available. Check <code>IsTruncated</code> after every call to ensure that you receive all of your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListUserTagsOutput`](crate::output::ListUserTagsOutput)
@@ -1895,17 +1895,17 @@ pub mod list_users_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn users(mut self, inp: impl Into<crate::model::User>) -> Self {
+        pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.users = Some(v);
             self
         }
         pub fn set_users(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::User>>,
+            input: std::option::Option<std::vec::Vec<crate::model::User>>,
         ) -> Self {
-            self.users = inp;
+            self.users = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -1914,23 +1914,23 @@ pub mod list_users_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListUsersOutput`](crate::output::ListUsersOutput)
@@ -1989,17 +1989,17 @@ pub mod list_user_policies_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn policy_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policy_names = Some(v);
             self
         }
         pub fn set_policy_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.policy_names = inp;
+            self.policy_names = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -2008,23 +2008,23 @@ pub mod list_user_policies_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListUserPoliciesOutput`](crate::output::ListUserPoliciesOutput)
@@ -2086,18 +2086,18 @@ pub mod list_ssh_public_keys_output {
     impl Builder {
         pub fn ssh_public_keys(
             mut self,
-            inp: impl Into<crate::model::SSHPublicKeyMetadata>,
+            input: impl Into<crate::model::SSHPublicKeyMetadata>,
         ) -> Self {
             let mut v = self.ssh_public_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.ssh_public_keys = Some(v);
             self
         }
         pub fn set_ssh_public_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SSHPublicKeyMetadata>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SSHPublicKeyMetadata>>,
         ) -> Self {
-            self.ssh_public_keys = inp;
+            self.ssh_public_keys = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -2106,23 +2106,23 @@ pub mod list_ssh_public_keys_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSSHPublicKeysOutput`](crate::output::ListSSHPublicKeysOutput)
@@ -2182,17 +2182,17 @@ pub mod list_signing_certificates_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn certificates(mut self, inp: impl Into<crate::model::SigningCertificate>) -> Self {
+        pub fn certificates(mut self, input: impl Into<crate::model::SigningCertificate>) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.certificates = Some(v);
             self
         }
         pub fn set_certificates(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SigningCertificate>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SigningCertificate>>,
         ) -> Self {
-            self.certificates = inp;
+            self.certificates = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -2201,23 +2201,23 @@ pub mod list_signing_certificates_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSigningCertificatesOutput`](crate::output::ListSigningCertificatesOutput)
@@ -2267,20 +2267,20 @@ pub mod list_service_specific_credentials_output {
     impl Builder {
         pub fn service_specific_credentials(
             mut self,
-            inp: impl Into<crate::model::ServiceSpecificCredentialMetadata>,
+            input: impl Into<crate::model::ServiceSpecificCredentialMetadata>,
         ) -> Self {
             let mut v = self.service_specific_credentials.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.service_specific_credentials = Some(v);
             self
         }
         pub fn set_service_specific_credentials(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::ServiceSpecificCredentialMetadata>,
             >,
         ) -> Self {
-            self.service_specific_credentials = inp;
+            self.service_specific_credentials = input;
             self
         }
         /// Consumes the builder and constructs a [`ListServiceSpecificCredentialsOutput`](crate::output::ListServiceSpecificCredentialsOutput)
@@ -2334,40 +2334,40 @@ pub mod list_server_certificate_tags_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
         /// results were truncated, you can use the <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more items. Note that IAM might return fewer than the
         /// <code>MaxItems</code> number of results even when more results are available. Check <code>IsTruncated</code> after every call to ensure that you receive all of your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListServerCertificateTagsOutput`](crate::output::ListServerCertificateTagsOutput)
@@ -2433,18 +2433,18 @@ pub mod list_server_certificates_output {
     impl Builder {
         pub fn server_certificate_metadata_list(
             mut self,
-            inp: impl Into<crate::model::ServerCertificateMetadata>,
+            input: impl Into<crate::model::ServerCertificateMetadata>,
         ) -> Self {
             let mut v = self.server_certificate_metadata_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.server_certificate_metadata_list = Some(v);
             self
         }
         pub fn set_server_certificate_metadata_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ServerCertificateMetadata>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ServerCertificateMetadata>>,
         ) -> Self {
-            self.server_certificate_metadata_list = inp;
+            self.server_certificate_metadata_list = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -2453,23 +2453,23 @@ pub mod list_server_certificates_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListServerCertificatesOutput`](crate::output::ListServerCertificatesOutput)
@@ -2525,40 +2525,40 @@ pub mod list_saml_provider_tags_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
         /// results were truncated, you can use the <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more items. Note that IAM might return fewer than the
         /// <code>MaxItems</code> number of results even when more results are available. Check <code>IsTruncated</code> after every call to ensure that you receive all of your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSAMLProviderTagsOutput`](crate::output::ListSAMLProviderTagsOutput)
@@ -2606,18 +2606,18 @@ pub mod list_saml_providers_output {
     impl Builder {
         pub fn saml_provider_list(
             mut self,
-            inp: impl Into<crate::model::SAMLProviderListEntry>,
+            input: impl Into<crate::model::SAMLProviderListEntry>,
         ) -> Self {
             let mut v = self.saml_provider_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.saml_provider_list = Some(v);
             self
         }
         pub fn set_saml_provider_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SAMLProviderListEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SAMLProviderListEntry>>,
         ) -> Self {
-            self.saml_provider_list = inp;
+            self.saml_provider_list = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSAMLProvidersOutput`](crate::output::ListSAMLProvidersOutput)
@@ -2670,40 +2670,40 @@ pub mod list_role_tags_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
         /// results were truncated, you can use the <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more items. Note that IAM might return fewer than the
         /// <code>MaxItems</code> number of results even when more results are available. Check <code>IsTruncated</code> after every call to ensure that you receive all of your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListRoleTagsOutput`](crate::output::ListRoleTagsOutput)
@@ -2761,17 +2761,17 @@ pub mod list_roles_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn roles(mut self, inp: impl Into<crate::model::Role>) -> Self {
+        pub fn roles(mut self, input: impl Into<crate::model::Role>) -> Self {
             let mut v = self.roles.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.roles = Some(v);
             self
         }
         pub fn set_roles(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Role>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Role>>,
         ) -> Self {
-            self.roles = inp;
+            self.roles = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -2780,23 +2780,23 @@ pub mod list_roles_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListRolesOutput`](crate::output::ListRolesOutput)
@@ -2855,17 +2855,17 @@ pub mod list_role_policies_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn policy_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policy_names = Some(v);
             self
         }
         pub fn set_policy_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.policy_names = inp;
+            self.policy_names = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -2874,23 +2874,23 @@ pub mod list_role_policies_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListRolePoliciesOutput`](crate::output::ListRolePoliciesOutput)
@@ -2951,17 +2951,17 @@ pub mod list_policy_versions_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn versions(mut self, inp: impl Into<crate::model::PolicyVersion>) -> Self {
+        pub fn versions(mut self, input: impl Into<crate::model::PolicyVersion>) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.versions = Some(v);
             self
         }
         pub fn set_versions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
         ) -> Self {
-            self.versions = inp;
+            self.versions = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -2970,23 +2970,23 @@ pub mod list_policy_versions_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPolicyVersionsOutput`](crate::output::ListPolicyVersionsOutput)
@@ -3042,40 +3042,40 @@ pub mod list_policy_tags_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
         /// results were truncated, you can use the <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more items. Note that IAM might return fewer than the
         /// <code>MaxItems</code> number of results even when more results are available. Check <code>IsTruncated</code> after every call to ensure that you receive all of your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPolicyTagsOutput`](crate::output::ListPolicyTagsOutput)
@@ -3141,20 +3141,20 @@ pub mod list_policies_granting_service_access_output {
     impl Builder {
         pub fn policies_granting_service_access(
             mut self,
-            inp: impl Into<crate::model::ListPoliciesGrantingServiceAccessEntry>,
+            input: impl Into<crate::model::ListPoliciesGrantingServiceAccessEntry>,
         ) -> Self {
             let mut v = self.policies_granting_service_access.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policies_granting_service_access = Some(v);
             self
         }
         pub fn set_policies_granting_service_access(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::ListPoliciesGrantingServiceAccessEntry>,
             >,
         ) -> Self {
-            self.policies_granting_service_access = inp;
+            self.policies_granting_service_access = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your results were
@@ -3162,23 +3162,23 @@ pub mod list_policies_granting_service_access_output {
         /// request parameter to retrieve more items. We recommend that you check
         /// <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPoliciesGrantingServiceAccessOutput`](crate::output::ListPoliciesGrantingServiceAccessOutput)
@@ -3237,17 +3237,17 @@ pub mod list_policies_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn policies(mut self, inp: impl Into<crate::model::Policy>) -> Self {
+        pub fn policies(mut self, input: impl Into<crate::model::Policy>) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policies = Some(v);
             self
         }
         pub fn set_policies(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Policy>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Policy>>,
         ) -> Self {
-            self.policies = inp;
+            self.policies = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -3256,23 +3256,23 @@ pub mod list_policies_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPoliciesOutput`](crate::output::ListPoliciesOutput)
@@ -3328,40 +3328,40 @@ pub mod list_open_id_connect_provider_tags_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
         /// results were truncated, you can use the <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more items. Note that IAM might return fewer than the
         /// <code>MaxItems</code> number of results even when more results are available. Check <code>IsTruncated</code> after every call to ensure that you receive all of your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListOpenIDConnectProviderTagsOutput`](crate::output::ListOpenIDConnectProviderTagsOutput)
@@ -3412,18 +3412,18 @@ pub mod list_open_id_connect_providers_output {
     impl Builder {
         pub fn open_id_connect_provider_list(
             mut self,
-            inp: impl Into<crate::model::OpenIDConnectProviderListEntry>,
+            input: impl Into<crate::model::OpenIDConnectProviderListEntry>,
         ) -> Self {
             let mut v = self.open_id_connect_provider_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.open_id_connect_provider_list = Some(v);
             self
         }
         pub fn set_open_id_connect_provider_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OpenIDConnectProviderListEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OpenIDConnectProviderListEntry>>,
         ) -> Self {
-            self.open_id_connect_provider_list = inp;
+            self.open_id_connect_provider_list = input;
             self
         }
         /// Consumes the builder and constructs a [`ListOpenIDConnectProvidersOutput`](crate::output::ListOpenIDConnectProvidersOutput)
@@ -3476,40 +3476,40 @@ pub mod list_mfa_device_tags_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
         /// results were truncated, you can use the <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more items. Note that IAM might return fewer than the
         /// <code>MaxItems</code> number of results even when more results are available. Check <code>IsTruncated</code> after every call to ensure that you receive all of your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListMFADeviceTagsOutput`](crate::output::ListMFADeviceTagsOutput)
@@ -3568,17 +3568,17 @@ pub mod list_mfa_devices_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn mfa_devices(mut self, inp: impl Into<crate::model::MFADevice>) -> Self {
+        pub fn mfa_devices(mut self, input: impl Into<crate::model::MFADevice>) -> Self {
             let mut v = self.mfa_devices.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.mfa_devices = Some(v);
             self
         }
         pub fn set_mfa_devices(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MFADevice>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MFADevice>>,
         ) -> Self {
-            self.mfa_devices = inp;
+            self.mfa_devices = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -3587,23 +3587,23 @@ pub mod list_mfa_devices_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListMFADevicesOutput`](crate::output::ListMFADevicesOutput)
@@ -3658,40 +3658,40 @@ pub mod list_instance_profile_tags_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
         /// results were truncated, you can use the <code>Marker</code> request parameter to make a subsequent pagination request that retrieves more items. Note that IAM might return fewer than the
         /// <code>MaxItems</code> number of results even when more results are available. Check <code>IsTruncated</code> after every call to ensure that you receive all of your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListInstanceProfileTagsOutput`](crate::output::ListInstanceProfileTagsOutput)
@@ -3751,17 +3751,20 @@ pub mod list_instance_profiles_for_role_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn instance_profiles(mut self, inp: impl Into<crate::model::InstanceProfile>) -> Self {
+        pub fn instance_profiles(
+            mut self,
+            input: impl Into<crate::model::InstanceProfile>,
+        ) -> Self {
             let mut v = self.instance_profiles.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.instance_profiles = Some(v);
             self
         }
         pub fn set_instance_profiles(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
         ) -> Self {
-            self.instance_profiles = inp;
+            self.instance_profiles = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -3770,23 +3773,23 @@ pub mod list_instance_profiles_for_role_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListInstanceProfilesForRoleOutput`](crate::output::ListInstanceProfilesForRoleOutput)
@@ -3846,17 +3849,20 @@ pub mod list_instance_profiles_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn instance_profiles(mut self, inp: impl Into<crate::model::InstanceProfile>) -> Self {
+        pub fn instance_profiles(
+            mut self,
+            input: impl Into<crate::model::InstanceProfile>,
+        ) -> Self {
             let mut v = self.instance_profiles.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.instance_profiles = Some(v);
             self
         }
         pub fn set_instance_profiles(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
         ) -> Self {
-            self.instance_profiles = inp;
+            self.instance_profiles = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -3865,23 +3871,23 @@ pub mod list_instance_profiles_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListInstanceProfilesOutput`](crate::output::ListInstanceProfilesOutput)
@@ -3940,17 +3946,17 @@ pub mod list_groups_for_user_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn groups(mut self, inp: impl Into<crate::model::Group>) -> Self {
+        pub fn groups(mut self, input: impl Into<crate::model::Group>) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.groups = Some(v);
             self
         }
         pub fn set_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Group>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Group>>,
         ) -> Self {
-            self.groups = inp;
+            self.groups = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -3959,23 +3965,23 @@ pub mod list_groups_for_user_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListGroupsForUserOutput`](crate::output::ListGroupsForUserOutput)
@@ -4033,17 +4039,17 @@ pub mod list_groups_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn groups(mut self, inp: impl Into<crate::model::Group>) -> Self {
+        pub fn groups(mut self, input: impl Into<crate::model::Group>) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.groups = Some(v);
             self
         }
         pub fn set_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Group>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Group>>,
         ) -> Self {
-            self.groups = inp;
+            self.groups = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -4052,23 +4058,23 @@ pub mod list_groups_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListGroupsOutput`](crate::output::ListGroupsOutput)
@@ -4129,17 +4135,17 @@ pub mod list_group_policies_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn policy_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policy_names = Some(v);
             self
         }
         pub fn set_policy_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.policy_names = inp;
+            self.policy_names = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -4148,23 +4154,23 @@ pub mod list_group_policies_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListGroupPoliciesOutput`](crate::output::ListGroupPoliciesOutput)
@@ -4231,43 +4237,43 @@ pub mod list_entities_for_policy_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn policy_groups(mut self, inp: impl Into<crate::model::PolicyGroup>) -> Self {
+        pub fn policy_groups(mut self, input: impl Into<crate::model::PolicyGroup>) -> Self {
             let mut v = self.policy_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policy_groups = Some(v);
             self
         }
         pub fn set_policy_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PolicyGroup>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PolicyGroup>>,
         ) -> Self {
-            self.policy_groups = inp;
+            self.policy_groups = input;
             self
         }
-        pub fn policy_users(mut self, inp: impl Into<crate::model::PolicyUser>) -> Self {
+        pub fn policy_users(mut self, input: impl Into<crate::model::PolicyUser>) -> Self {
             let mut v = self.policy_users.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policy_users = Some(v);
             self
         }
         pub fn set_policy_users(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PolicyUser>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PolicyUser>>,
         ) -> Self {
-            self.policy_users = inp;
+            self.policy_users = input;
             self
         }
-        pub fn policy_roles(mut self, inp: impl Into<crate::model::PolicyRole>) -> Self {
+        pub fn policy_roles(mut self, input: impl Into<crate::model::PolicyRole>) -> Self {
             let mut v = self.policy_roles.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policy_roles = Some(v);
             self
         }
         pub fn set_policy_roles(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PolicyRole>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PolicyRole>>,
         ) -> Self {
-            self.policy_roles = inp;
+            self.policy_roles = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -4276,23 +4282,23 @@ pub mod list_entities_for_policy_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListEntitiesForPolicyOutput`](crate::output::ListEntitiesForPolicyOutput)
@@ -4354,17 +4360,17 @@ pub mod list_attached_user_policies_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn attached_policies(mut self, inp: impl Into<crate::model::AttachedPolicy>) -> Self {
+        pub fn attached_policies(mut self, input: impl Into<crate::model::AttachedPolicy>) -> Self {
             let mut v = self.attached_policies.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attached_policies = Some(v);
             self
         }
         pub fn set_attached_policies(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
         ) -> Self {
-            self.attached_policies = inp;
+            self.attached_policies = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -4373,23 +4379,23 @@ pub mod list_attached_user_policies_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListAttachedUserPoliciesOutput`](crate::output::ListAttachedUserPoliciesOutput)
@@ -4449,17 +4455,17 @@ pub mod list_attached_role_policies_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn attached_policies(mut self, inp: impl Into<crate::model::AttachedPolicy>) -> Self {
+        pub fn attached_policies(mut self, input: impl Into<crate::model::AttachedPolicy>) -> Self {
             let mut v = self.attached_policies.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attached_policies = Some(v);
             self
         }
         pub fn set_attached_policies(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
         ) -> Self {
-            self.attached_policies = inp;
+            self.attached_policies = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -4468,23 +4474,23 @@ pub mod list_attached_role_policies_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListAttachedRolePoliciesOutput`](crate::output::ListAttachedRolePoliciesOutput)
@@ -4544,17 +4550,17 @@ pub mod list_attached_group_policies_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn attached_policies(mut self, inp: impl Into<crate::model::AttachedPolicy>) -> Self {
+        pub fn attached_policies(mut self, input: impl Into<crate::model::AttachedPolicy>) -> Self {
             let mut v = self.attached_policies.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attached_policies = Some(v);
             self
         }
         pub fn set_attached_policies(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
         ) -> Self {
-            self.attached_policies = inp;
+            self.attached_policies = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -4563,23 +4569,23 @@ pub mod list_attached_group_policies_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListAttachedGroupPoliciesOutput`](crate::output::ListAttachedGroupPoliciesOutput)
@@ -4639,17 +4645,17 @@ pub mod list_account_aliases_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn account_aliases(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn account_aliases(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.account_aliases.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.account_aliases = Some(v);
             self
         }
         pub fn set_account_aliases(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.account_aliases = inp;
+            self.account_aliases = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -4658,23 +4664,23 @@ pub mod list_account_aliases_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListAccountAliasesOutput`](crate::output::ListAccountAliasesOutput)
@@ -4736,18 +4742,18 @@ pub mod list_access_keys_output {
     impl Builder {
         pub fn access_key_metadata(
             mut self,
-            inp: impl Into<crate::model::AccessKeyMetadata>,
+            input: impl Into<crate::model::AccessKeyMetadata>,
         ) -> Self {
             let mut v = self.access_key_metadata.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.access_key_metadata = Some(v);
             self
         }
         pub fn set_access_key_metadata(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AccessKeyMetadata>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AccessKeyMetadata>>,
         ) -> Self {
-            self.access_key_metadata = inp;
+            self.access_key_metadata = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -4756,23 +4762,23 @@ pub mod list_access_keys_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`ListAccessKeysOutput`](crate::output::ListAccessKeysOutput)
@@ -4828,36 +4834,36 @@ pub mod get_user_policy_output {
     }
     impl Builder {
         /// <p>The user the policy is associated with.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The name of the policy.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// <p>The policy document.</p>
         /// <p>IAM stores policies in JSON format. However, resources that were created using AWS
         /// CloudFormation templates can be formatted in YAML. AWS CloudFormation always converts
         /// a YAML policy to JSON format before submitting it to IAM.</p>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_document = Some(inp.into());
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
             self
         }
         pub fn set_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.policy_document = inp;
+            self.policy_document = input;
             self
         }
         /// Consumes the builder and constructs a [`GetUserPolicyOutput`](crate::output::GetUserPolicyOutput)
@@ -4931,12 +4937,12 @@ pub mod get_user_output {
         /// access AWS programmatically you can refer to access key last used information
         /// because it is accurate for all dates. </p>
         /// </important>
-        pub fn user(mut self, inp: crate::model::User) -> Self {
-            self.user = Some(inp);
+        pub fn user(mut self, input: crate::model::User) -> Self {
+            self.user = Some(input);
             self
         }
-        pub fn set_user(mut self, inp: std::option::Option<crate::model::User>) -> Self {
-            self.user = inp;
+        pub fn set_user(mut self, input: std::option::Option<crate::model::User>) -> Self {
+            self.user = input;
             self
         }
         /// Consumes the builder and constructs a [`GetUserOutput`](crate::output::GetUserOutput)
@@ -4977,15 +4983,15 @@ pub mod get_ssh_public_key_output {
     }
     impl Builder {
         /// <p>A structure containing details about the SSH public key.</p>
-        pub fn ssh_public_key(mut self, inp: crate::model::SSHPublicKey) -> Self {
-            self.ssh_public_key = Some(inp);
+        pub fn ssh_public_key(mut self, input: crate::model::SSHPublicKey) -> Self {
+            self.ssh_public_key = Some(input);
             self
         }
         pub fn set_ssh_public_key(
             mut self,
-            inp: std::option::Option<crate::model::SSHPublicKey>,
+            input: std::option::Option<crate::model::SSHPublicKey>,
         ) -> Self {
-            self.ssh_public_key = inp;
+            self.ssh_public_key = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSSHPublicKeyOutput`](crate::output::GetSSHPublicKeyOutput)
@@ -5030,27 +5036,27 @@ pub mod get_service_linked_role_deletion_status_output {
     }
     impl Builder {
         /// <p>The status of the deletion.</p>
-        pub fn status(mut self, inp: crate::model::DeletionTaskStatusType) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::DeletionTaskStatusType) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::DeletionTaskStatusType>,
+            input: std::option::Option<crate::model::DeletionTaskStatusType>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>An object that contains details about the reason the deletion failed.</p>
-        pub fn reason(mut self, inp: crate::model::DeletionTaskFailureReasonType) -> Self {
-            self.reason = Some(inp);
+        pub fn reason(mut self, input: crate::model::DeletionTaskFailureReasonType) -> Self {
+            self.reason = Some(input);
             self
         }
         pub fn set_reason(
             mut self,
-            inp: std::option::Option<crate::model::DeletionTaskFailureReasonType>,
+            input: std::option::Option<crate::model::DeletionTaskFailureReasonType>,
         ) -> Self {
-            self.reason = inp;
+            self.reason = input;
             self
         }
         /// Consumes the builder and constructs a [`GetServiceLinkedRoleDeletionStatusOutput`](crate::output::GetServiceLinkedRoleDeletionStatusOutput)
@@ -5130,56 +5136,59 @@ pub mod get_service_last_accessed_details_with_entities_output {
     }
     impl Builder {
         /// <p>The status of the job.</p>
-        pub fn job_status(mut self, inp: crate::model::JobStatusType) -> Self {
-            self.job_status = Some(inp);
+        pub fn job_status(mut self, input: crate::model::JobStatusType) -> Self {
+            self.job_status = Some(input);
             self
         }
         pub fn set_job_status(
             mut self,
-            inp: std::option::Option<crate::model::JobStatusType>,
+            input: std::option::Option<crate::model::JobStatusType>,
         ) -> Self {
-            self.job_status = inp;
+            self.job_status = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the report job was created.</p>
-        pub fn job_creation_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.job_creation_date = Some(inp);
+        pub fn job_creation_date(mut self, input: smithy_types::Instant) -> Self {
+            self.job_creation_date = Some(input);
             self
         }
         pub fn set_job_creation_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.job_creation_date = inp;
+            self.job_creation_date = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the generated report job was completed or failed.</p>
         /// <p>This field is null if the job is still in progress, as indicated by a job status value
         /// of <code>IN_PROGRESS</code>.</p>
-        pub fn job_completion_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.job_completion_date = Some(inp);
+        pub fn job_completion_date(mut self, input: smithy_types::Instant) -> Self {
+            self.job_completion_date = Some(input);
             self
         }
         pub fn set_job_completion_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.job_completion_date = inp;
+            self.job_completion_date = input;
             self
         }
-        pub fn entity_details_list(mut self, inp: impl Into<crate::model::EntityDetails>) -> Self {
+        pub fn entity_details_list(
+            mut self,
+            input: impl Into<crate::model::EntityDetails>,
+        ) -> Self {
             let mut v = self.entity_details_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.entity_details_list = Some(v);
             self
         }
         pub fn set_entity_details_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EntityDetails>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EntityDetails>>,
         ) -> Self {
-            self.entity_details_list = inp;
+            self.entity_details_list = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -5188,32 +5197,32 @@ pub mod get_service_last_accessed_details_with_entities_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>An object that contains details about the reason the operation failed.</p>
-        pub fn error(mut self, inp: crate::model::ErrorDetails) -> Self {
-            self.error = Some(inp);
+        pub fn error(mut self, input: crate::model::ErrorDetails) -> Self {
+            self.error = Some(input);
             self
         }
-        pub fn set_error(mut self, inp: std::option::Option<crate::model::ErrorDetails>) -> Self {
-            self.error = inp;
+        pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorDetails>) -> Self {
+            self.error = input;
             self
         }
         /// Consumes the builder and constructs a [`GetServiceLastAccessedDetailsWithEntitiesOutput`](crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput)
@@ -5305,73 +5314,73 @@ pub mod get_service_last_accessed_details_output {
     }
     impl Builder {
         /// <p>The status of the job.</p>
-        pub fn job_status(mut self, inp: crate::model::JobStatusType) -> Self {
-            self.job_status = Some(inp);
+        pub fn job_status(mut self, input: crate::model::JobStatusType) -> Self {
+            self.job_status = Some(input);
             self
         }
         pub fn set_job_status(
             mut self,
-            inp: std::option::Option<crate::model::JobStatusType>,
+            input: std::option::Option<crate::model::JobStatusType>,
         ) -> Self {
-            self.job_status = inp;
+            self.job_status = input;
             self
         }
         /// <p>The type of job. Service jobs return information about when each service was last
         /// accessed. Action jobs also include information about when tracked actions within the
         /// service were last accessed.</p>
-        pub fn job_type(mut self, inp: crate::model::AccessAdvisorUsageGranularityType) -> Self {
-            self.job_type = Some(inp);
+        pub fn job_type(mut self, input: crate::model::AccessAdvisorUsageGranularityType) -> Self {
+            self.job_type = Some(input);
             self
         }
         pub fn set_job_type(
             mut self,
-            inp: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>,
+            input: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>,
         ) -> Self {
-            self.job_type = inp;
+            self.job_type = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the report job was created.</p>
-        pub fn job_creation_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.job_creation_date = Some(inp);
+        pub fn job_creation_date(mut self, input: smithy_types::Instant) -> Self {
+            self.job_creation_date = Some(input);
             self
         }
         pub fn set_job_creation_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.job_creation_date = inp;
+            self.job_creation_date = input;
             self
         }
         pub fn services_last_accessed(
             mut self,
-            inp: impl Into<crate::model::ServiceLastAccessed>,
+            input: impl Into<crate::model::ServiceLastAccessed>,
         ) -> Self {
             let mut v = self.services_last_accessed.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.services_last_accessed = Some(v);
             self
         }
         pub fn set_services_last_accessed(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ServiceLastAccessed>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ServiceLastAccessed>>,
         ) -> Self {
-            self.services_last_accessed = inp;
+            self.services_last_accessed = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the generated report job was completed or failed.</p>
         /// <p>This field is null if the job is still in progress, as indicated by a job status value
         /// of <code>IN_PROGRESS</code>.</p>
-        pub fn job_completion_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.job_completion_date = Some(inp);
+        pub fn job_completion_date(mut self, input: smithy_types::Instant) -> Self {
+            self.job_completion_date = Some(input);
             self
         }
         pub fn set_job_completion_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.job_completion_date = inp;
+            self.job_completion_date = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -5380,32 +5389,32 @@ pub mod get_service_last_accessed_details_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>An object that contains details about the reason the operation failed.</p>
-        pub fn error(mut self, inp: crate::model::ErrorDetails) -> Self {
-            self.error = Some(inp);
+        pub fn error(mut self, input: crate::model::ErrorDetails) -> Self {
+            self.error = Some(input);
             self
         }
-        pub fn set_error(mut self, inp: std::option::Option<crate::model::ErrorDetails>) -> Self {
-            self.error = inp;
+        pub fn set_error(mut self, input: std::option::Option<crate::model::ErrorDetails>) -> Self {
+            self.error = input;
             self
         }
         /// Consumes the builder and constructs a [`GetServiceLastAccessedDetailsOutput`](crate::output::GetServiceLastAccessedDetailsOutput)
@@ -5455,15 +5464,15 @@ pub mod get_server_certificate_output {
     }
     impl Builder {
         /// <p>A structure containing details about the server certificate.</p>
-        pub fn server_certificate(mut self, inp: crate::model::ServerCertificate) -> Self {
-            self.server_certificate = Some(inp);
+        pub fn server_certificate(mut self, input: crate::model::ServerCertificate) -> Self {
+            self.server_certificate = Some(input);
             self
         }
         pub fn set_server_certificate(
             mut self,
-            inp: std::option::Option<crate::model::ServerCertificate>,
+            input: std::option::Option<crate::model::ServerCertificate>,
         ) -> Self {
-            self.server_certificate = inp;
+            self.server_certificate = input;
             self
         }
         /// Consumes the builder and constructs a [`GetServerCertificateOutput`](crate::output::GetServerCertificateOutput)
@@ -5520,46 +5529,52 @@ pub mod get_saml_provider_output {
     }
     impl Builder {
         /// <p>The XML metadata document that includes information about an identity provider.</p>
-        pub fn saml_metadata_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.saml_metadata_document = Some(inp.into());
+        pub fn saml_metadata_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.saml_metadata_document = Some(input.into());
             self
         }
         pub fn set_saml_metadata_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.saml_metadata_document = inp;
+            self.saml_metadata_document = input;
             self
         }
         /// <p>The date and time when the SAML provider was created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
         /// <p>The expiration date and time for the SAML provider.</p>
-        pub fn valid_until(mut self, inp: smithy_types::Instant) -> Self {
-            self.valid_until = Some(inp);
+        pub fn valid_until(mut self, input: smithy_types::Instant) -> Self {
+            self.valid_until = Some(input);
             self
         }
-        pub fn set_valid_until(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.valid_until = inp;
+        pub fn set_valid_until(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.valid_until = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSAMLProviderOutput`](crate::output::GetSAMLProviderOutput)
@@ -5616,36 +5631,36 @@ pub mod get_role_policy_output {
     }
     impl Builder {
         /// <p>The role the policy is associated with.</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>The name of the policy.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// <p>The policy document.</p>
         /// <p>IAM stores policies in JSON format. However, resources that were created using AWS
         /// CloudFormation templates can be formatted in YAML. AWS CloudFormation always converts
         /// a YAML policy to JSON format before submitting it to IAM.</p>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_document = Some(inp.into());
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
             self
         }
         pub fn set_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.policy_document = inp;
+            self.policy_document = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRolePolicyOutput`](crate::output::GetRolePolicyOutput)
@@ -5689,12 +5704,12 @@ pub mod get_role_output {
     }
     impl Builder {
         /// <p>A structure containing details about the IAM role.</p>
-        pub fn role(mut self, inp: crate::model::Role) -> Self {
-            self.role = Some(inp);
+        pub fn role(mut self, input: crate::model::Role) -> Self {
+            self.role = Some(input);
             self
         }
-        pub fn set_role(mut self, inp: std::option::Option<crate::model::Role>) -> Self {
-            self.role = inp;
+        pub fn set_role(mut self, input: std::option::Option<crate::model::Role>) -> Self {
+            self.role = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRoleOutput`](crate::output::GetRoleOutput)
@@ -5735,15 +5750,15 @@ pub mod get_policy_version_output {
     }
     impl Builder {
         /// <p>A structure containing details about the policy version.</p>
-        pub fn policy_version(mut self, inp: crate::model::PolicyVersion) -> Self {
-            self.policy_version = Some(inp);
+        pub fn policy_version(mut self, input: crate::model::PolicyVersion) -> Self {
+            self.policy_version = Some(input);
             self
         }
         pub fn set_policy_version(
             mut self,
-            inp: std::option::Option<crate::model::PolicyVersion>,
+            input: std::option::Option<crate::model::PolicyVersion>,
         ) -> Self {
-            self.policy_version = inp;
+            self.policy_version = input;
             self
         }
         /// Consumes the builder and constructs a [`GetPolicyVersionOutput`](crate::output::GetPolicyVersionOutput)
@@ -5785,12 +5800,12 @@ pub mod get_policy_output {
     }
     impl Builder {
         /// <p>A structure containing details about the policy.</p>
-        pub fn policy(mut self, inp: crate::model::Policy) -> Self {
-            self.policy = Some(inp);
+        pub fn policy(mut self, input: crate::model::Policy) -> Self {
+            self.policy = Some(input);
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<crate::model::Policy>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
+            self.policy = input;
             self
         }
         /// Consumes the builder and constructs a [`GetPolicyOutput`](crate::output::GetPolicyOutput)
@@ -5884,79 +5899,82 @@ pub mod get_organizations_access_report_output {
     }
     impl Builder {
         /// <p>The status of the job.</p>
-        pub fn job_status(mut self, inp: crate::model::JobStatusType) -> Self {
-            self.job_status = Some(inp);
+        pub fn job_status(mut self, input: crate::model::JobStatusType) -> Self {
+            self.job_status = Some(input);
             self
         }
         pub fn set_job_status(
             mut self,
-            inp: std::option::Option<crate::model::JobStatusType>,
+            input: std::option::Option<crate::model::JobStatusType>,
         ) -> Self {
-            self.job_status = inp;
+            self.job_status = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the report job was created.</p>
-        pub fn job_creation_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.job_creation_date = Some(inp);
+        pub fn job_creation_date(mut self, input: smithy_types::Instant) -> Self {
+            self.job_creation_date = Some(input);
             self
         }
         pub fn set_job_creation_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.job_creation_date = inp;
+            self.job_creation_date = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the generated report job was completed or failed.</p>
         /// <p>This field is null if the job is still in progress, as indicated by a job status value
         /// of <code>IN_PROGRESS</code>.</p>
-        pub fn job_completion_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.job_completion_date = Some(inp);
+        pub fn job_completion_date(mut self, input: smithy_types::Instant) -> Self {
+            self.job_completion_date = Some(input);
             self
         }
         pub fn set_job_completion_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.job_completion_date = inp;
+            self.job_completion_date = input;
             self
         }
         /// <p>The number of services that the applicable SCPs allow account principals to
         /// access.</p>
-        pub fn number_of_services_accessible(mut self, inp: i32) -> Self {
-            self.number_of_services_accessible = Some(inp);
+        pub fn number_of_services_accessible(mut self, input: i32) -> Self {
+            self.number_of_services_accessible = Some(input);
             self
         }
-        pub fn set_number_of_services_accessible(mut self, inp: std::option::Option<i32>) -> Self {
-            self.number_of_services_accessible = inp;
+        pub fn set_number_of_services_accessible(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.number_of_services_accessible = input;
             self
         }
         /// <p>The number of services that account principals are allowed but did not attempt to
         /// access.</p>
-        pub fn number_of_services_not_accessed(mut self, inp: i32) -> Self {
-            self.number_of_services_not_accessed = Some(inp);
+        pub fn number_of_services_not_accessed(mut self, input: i32) -> Self {
+            self.number_of_services_not_accessed = Some(input);
             self
         }
         pub fn set_number_of_services_not_accessed(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.number_of_services_not_accessed = inp;
+            self.number_of_services_not_accessed = input;
             self
         }
-        pub fn access_details(mut self, inp: impl Into<crate::model::AccessDetail>) -> Self {
+        pub fn access_details(mut self, input: impl Into<crate::model::AccessDetail>) -> Self {
             let mut v = self.access_details.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.access_details = Some(v);
             self
         }
         pub fn set_access_details(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AccessDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AccessDetail>>,
         ) -> Self {
-            self.access_details = inp;
+            self.access_details = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -5965,36 +5983,36 @@ pub mod get_organizations_access_report_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Contains information about the reason that the operation failed.</p>
         /// <p>This data type is used as a response element in the <a>GetOrganizationsAccessReport</a>, <a>GetServiceLastAccessedDetails</a>, and <a>GetServiceLastAccessedDetailsWithEntities</a> operations.</p>
-        pub fn error_details(mut self, inp: crate::model::ErrorDetails) -> Self {
-            self.error_details = Some(inp);
+        pub fn error_details(mut self, input: crate::model::ErrorDetails) -> Self {
+            self.error_details = Some(input);
             self
         }
         pub fn set_error_details(
             mut self,
-            inp: std::option::Option<crate::model::ErrorDetails>,
+            input: std::option::Option<crate::model::ErrorDetails>,
         ) -> Self {
-            self.error_details = inp;
+            self.error_details = input;
             self
         }
         /// Consumes the builder and constructs a [`GetOrganizationsAccessReportOutput`](crate::output::GetOrganizationsAccessReportOutput)
@@ -6068,61 +6086,64 @@ pub mod get_open_id_connect_provider_output {
     impl Builder {
         /// <p>The URL that the IAM OIDC provider resource object is associated with. For more
         /// information, see <a>CreateOpenIDConnectProvider</a>.</p>
-        pub fn url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.url = Some(inp.into());
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
             self
         }
-        pub fn set_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.url = inp;
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
             self
         }
-        pub fn client_id_list(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn client_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.client_id_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.client_id_list = Some(v);
             self
         }
         pub fn set_client_id_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.client_id_list = inp;
+            self.client_id_list = input;
             self
         }
-        pub fn thumbprint_list(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn thumbprint_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.thumbprint_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.thumbprint_list = Some(v);
             self
         }
         pub fn set_thumbprint_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.thumbprint_list = inp;
+            self.thumbprint_list = input;
             self
         }
         /// <p>The date and time when the IAM OIDC provider resource object was created in the
         /// AWS account.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`GetOpenIDConnectProviderOutput`](crate::output::GetOpenIDConnectProviderOutput)
@@ -6169,15 +6190,15 @@ pub mod get_login_profile_output {
     }
     impl Builder {
         /// <p>A structure containing the user name and password create date for the user.</p>
-        pub fn login_profile(mut self, inp: crate::model::LoginProfile) -> Self {
-            self.login_profile = Some(inp);
+        pub fn login_profile(mut self, input: crate::model::LoginProfile) -> Self {
+            self.login_profile = Some(input);
             self
         }
         pub fn set_login_profile(
             mut self,
-            inp: std::option::Option<crate::model::LoginProfile>,
+            input: std::option::Option<crate::model::LoginProfile>,
         ) -> Self {
-            self.login_profile = inp;
+            self.login_profile = input;
             self
         }
         /// Consumes the builder and constructs a [`GetLoginProfileOutput`](crate::output::GetLoginProfileOutput)
@@ -6220,15 +6241,15 @@ pub mod get_instance_profile_output {
     }
     impl Builder {
         /// <p>A structure containing details about the instance profile.</p>
-        pub fn instance_profile(mut self, inp: crate::model::InstanceProfile) -> Self {
-            self.instance_profile = Some(inp);
+        pub fn instance_profile(mut self, input: crate::model::InstanceProfile) -> Self {
+            self.instance_profile = Some(input);
             self
         }
         pub fn set_instance_profile(
             mut self,
-            inp: std::option::Option<crate::model::InstanceProfile>,
+            input: std::option::Option<crate::model::InstanceProfile>,
         ) -> Self {
-            self.instance_profile = inp;
+            self.instance_profile = input;
             self
         }
         /// Consumes the builder and constructs a [`GetInstanceProfileOutput`](crate::output::GetInstanceProfileOutput)
@@ -6282,36 +6303,36 @@ pub mod get_group_policy_output {
     }
     impl Builder {
         /// <p>The group the policy is associated with.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// <p>The name of the policy.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// <p>The policy document.</p>
         /// <p>IAM stores policies in JSON format. However, resources that were created using AWS
         /// CloudFormation templates can be formatted in YAML. AWS CloudFormation always converts
         /// a YAML policy to JSON format before submitting it to IAM.</p>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_document = Some(inp.into());
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
             self
         }
         pub fn set_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.policy_document = inp;
+            self.policy_document = input;
             self
         }
         /// Consumes the builder and constructs a [`GetGroupPolicyOutput`](crate::output::GetGroupPolicyOutput)
@@ -6374,25 +6395,25 @@ pub mod get_group_output {
     }
     impl Builder {
         /// <p>A structure that contains details about the group.</p>
-        pub fn group(mut self, inp: crate::model::Group) -> Self {
-            self.group = Some(inp);
+        pub fn group(mut self, input: crate::model::Group) -> Self {
+            self.group = Some(input);
             self
         }
-        pub fn set_group(mut self, inp: std::option::Option<crate::model::Group>) -> Self {
-            self.group = inp;
+        pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
+            self.group = input;
             self
         }
-        pub fn users(mut self, inp: impl Into<crate::model::User>) -> Self {
+        pub fn users(mut self, input: impl Into<crate::model::User>) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.users = Some(v);
             self
         }
         pub fn set_users(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::User>>,
+            input: std::option::Option<std::vec::Vec<crate::model::User>>,
         ) -> Self {
-            self.users = inp;
+            self.users = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -6401,23 +6422,23 @@ pub mod get_group_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`GetGroupOutput`](crate::output::GetGroupOutput)
@@ -6471,36 +6492,36 @@ pub mod get_credential_report_output {
     }
     impl Builder {
         /// <p>Contains the credential report. The report is Base64-encoded.</p>
-        pub fn content(mut self, inp: smithy_types::Blob) -> Self {
-            self.content = Some(inp);
+        pub fn content(mut self, input: smithy_types::Blob) -> Self {
+            self.content = Some(input);
             self
         }
-        pub fn set_content(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.content = inp;
+        pub fn set_content(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.content = input;
             self
         }
         /// <p>The format (MIME type) of the credential report.</p>
-        pub fn report_format(mut self, inp: crate::model::ReportFormatType) -> Self {
-            self.report_format = Some(inp);
+        pub fn report_format(mut self, input: crate::model::ReportFormatType) -> Self {
+            self.report_format = Some(input);
             self
         }
         pub fn set_report_format(
             mut self,
-            inp: std::option::Option<crate::model::ReportFormatType>,
+            input: std::option::Option<crate::model::ReportFormatType>,
         ) -> Self {
-            self.report_format = inp;
+            self.report_format = input;
             self
         }
         /// <p> The date and time when the credential report was created, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
-        pub fn generated_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.generated_time = Some(inp);
+        pub fn generated_time(mut self, input: smithy_types::Instant) -> Self {
+            self.generated_time = Some(input);
             self
         }
         pub fn set_generated_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.generated_time = inp;
+            self.generated_time = input;
             self
         }
         /// Consumes the builder and constructs a [`GetCredentialReportOutput`](crate::output::GetCredentialReportOutput)
@@ -6543,17 +6564,17 @@ pub mod get_context_keys_for_principal_policy_output {
         pub(crate) context_key_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn context_key_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn context_key_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.context_key_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.context_key_names = Some(v);
             self
         }
         pub fn set_context_key_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.context_key_names = inp;
+            self.context_key_names = input;
             self
         }
         /// Consumes the builder and constructs a [`GetContextKeysForPrincipalPolicyOutput`](crate::output::GetContextKeysForPrincipalPolicyOutput)
@@ -6594,17 +6615,17 @@ pub mod get_context_keys_for_custom_policy_output {
         pub(crate) context_key_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn context_key_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn context_key_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.context_key_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.context_key_names = Some(v);
             self
         }
         pub fn set_context_key_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.context_key_names = inp;
+            self.context_key_names = input;
             self
         }
         /// Consumes the builder and constructs a [`GetContextKeysForCustomPolicyOutput`](crate::output::GetContextKeysForCustomPolicyOutput)
@@ -6661,9 +6682,11 @@ pub mod get_account_summary_output {
         }
         pub fn set_summary_map(
             mut self,
-            inp: std::option::Option<std::collections::HashMap<crate::model::SummaryKeyType, i32>>,
+            input: std::option::Option<
+                std::collections::HashMap<crate::model::SummaryKeyType, i32>,
+            >,
         ) -> Self {
-            self.summary_map = inp;
+            self.summary_map = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAccountSummaryOutput`](crate::output::GetAccountSummaryOutput)
@@ -6706,15 +6729,15 @@ pub mod get_account_password_policy_output {
     }
     impl Builder {
         /// <p>A structure that contains details about the account's password policy.</p>
-        pub fn password_policy(mut self, inp: crate::model::PasswordPolicy) -> Self {
-            self.password_policy = Some(inp);
+        pub fn password_policy(mut self, input: crate::model::PasswordPolicy) -> Self {
+            self.password_policy = Some(input);
             self
         }
         pub fn set_password_policy(
             mut self,
-            inp: std::option::Option<crate::model::PasswordPolicy>,
+            input: std::option::Option<crate::model::PasswordPolicy>,
         ) -> Self {
-            self.password_policy = inp;
+            self.password_policy = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAccountPasswordPolicyOutput`](crate::output::GetAccountPasswordPolicyOutput)
@@ -6783,56 +6806,56 @@ pub mod get_account_authorization_details_output {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn user_detail_list(mut self, inp: impl Into<crate::model::UserDetail>) -> Self {
+        pub fn user_detail_list(mut self, input: impl Into<crate::model::UserDetail>) -> Self {
             let mut v = self.user_detail_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.user_detail_list = Some(v);
             self
         }
         pub fn set_user_detail_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UserDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UserDetail>>,
         ) -> Self {
-            self.user_detail_list = inp;
+            self.user_detail_list = input;
             self
         }
-        pub fn group_detail_list(mut self, inp: impl Into<crate::model::GroupDetail>) -> Self {
+        pub fn group_detail_list(mut self, input: impl Into<crate::model::GroupDetail>) -> Self {
             let mut v = self.group_detail_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.group_detail_list = Some(v);
             self
         }
         pub fn set_group_detail_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GroupDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GroupDetail>>,
         ) -> Self {
-            self.group_detail_list = inp;
+            self.group_detail_list = input;
             self
         }
-        pub fn role_detail_list(mut self, inp: impl Into<crate::model::RoleDetail>) -> Self {
+        pub fn role_detail_list(mut self, input: impl Into<crate::model::RoleDetail>) -> Self {
             let mut v = self.role_detail_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.role_detail_list = Some(v);
             self
         }
         pub fn set_role_detail_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::RoleDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::RoleDetail>>,
         ) -> Self {
-            self.role_detail_list = inp;
+            self.role_detail_list = input;
             self
         }
-        pub fn policies(mut self, inp: impl Into<crate::model::ManagedPolicyDetail>) -> Self {
+        pub fn policies(mut self, input: impl Into<crate::model::ManagedPolicyDetail>) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policies = Some(v);
             self
         }
         pub fn set_policies(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ManagedPolicyDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ManagedPolicyDetail>>,
         ) -> Self {
-            self.policies = inp;
+            self.policies = input;
             self
         }
         /// <p>A flag that indicates whether there are more items to return. If your
@@ -6841,23 +6864,23 @@ pub mod get_account_authorization_details_output {
         /// <code>MaxItems</code> number of results even when there are more results available. We recommend
         /// that you check <code>IsTruncated</code> after every call to ensure that you receive all your
         /// results.</p>
-        pub fn is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn is_truncated(mut self, input: bool) -> Self {
+            self.is_truncated = Some(input);
             self
         }
-        pub fn set_is_truncated(mut self, inp: bool) -> Self {
-            self.is_truncated = Some(inp);
+        pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_truncated = input;
             self
         }
         /// <p>When <code>IsTruncated</code> is <code>true</code>, this element
         /// is present and contains the value to use for the <code>Marker</code> parameter in a subsequent
         /// pagination request.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAccountAuthorizationDetailsOutput`](crate::output::GetAccountAuthorizationDetailsOutput)
@@ -6912,24 +6935,24 @@ pub mod get_access_key_last_used_output {
     impl Builder {
         /// <p>The name of the AWS IAM user that owns this access key.</p>
         /// <p></p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>Contains information about the last time the access key was used.</p>
-        pub fn access_key_last_used(mut self, inp: crate::model::AccessKeyLastUsed) -> Self {
-            self.access_key_last_used = Some(inp);
+        pub fn access_key_last_used(mut self, input: crate::model::AccessKeyLastUsed) -> Self {
+            self.access_key_last_used = Some(input);
             self
         }
         pub fn set_access_key_last_used(
             mut self,
-            inp: std::option::Option<crate::model::AccessKeyLastUsed>,
+            input: std::option::Option<crate::model::AccessKeyLastUsed>,
         ) -> Self {
-            self.access_key_last_used = inp;
+            self.access_key_last_used = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAccessKeyLastUsedOutput`](crate::output::GetAccessKeyLastUsedOutput)
@@ -6977,12 +7000,12 @@ pub mod generate_service_last_accessed_details_output {
         /// <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code> must
         /// be used by the same role within a session, or by the same user when used to call
         /// <code>GetServiceLastAccessedDetail</code>.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.job_id = Some(inp.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
             self
         }
-        pub fn set_job_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.job_id = inp;
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GenerateServiceLastAccessedDetailsOutput`](crate::output::GenerateServiceLastAccessedDetailsOutput)
@@ -7023,12 +7046,12 @@ pub mod generate_organizations_access_report_output {
     }
     impl Builder {
         /// <p>The job identifier that you can use in the <a>GetOrganizationsAccessReport</a> operation.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.job_id = Some(inp.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
             self
         }
-        pub fn set_job_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.job_id = inp;
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GenerateOrganizationsAccessReportOutput`](crate::output::GenerateOrganizationsAccessReportOutput)
@@ -7075,24 +7098,24 @@ pub mod generate_credential_report_output {
     }
     impl Builder {
         /// <p>Information about the state of the credential report.</p>
-        pub fn state(mut self, inp: crate::model::ReportStateType) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::ReportStateType) -> Self {
+            self.state = Some(input);
             self
         }
         pub fn set_state(
             mut self,
-            inp: std::option::Option<crate::model::ReportStateType>,
+            input: std::option::Option<crate::model::ReportStateType>,
         ) -> Self {
-            self.state = inp;
+            self.state = input;
             self
         }
         /// <p>Information about the credential report.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`GenerateCredentialReportOutput`](crate::output::GenerateCredentialReportOutput)
@@ -7457,15 +7480,15 @@ pub mod delete_service_linked_role_output {
         /// <p>The deletion task identifier that you can use to check the status of the deletion.
         /// This identifier is returned in the format
         /// <code>task/aws-service-role/<service-principal-name>/<role-name>/<task-uuid></code>.</p>
-        pub fn deletion_task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.deletion_task_id = Some(inp.into());
+        pub fn deletion_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.deletion_task_id = Some(input.into());
             self
         }
         pub fn set_deletion_task_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.deletion_task_id = inp;
+            self.deletion_task_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteServiceLinkedRoleOutput`](crate::output::DeleteServiceLinkedRoleOutput)
@@ -7972,15 +7995,15 @@ pub mod create_virtual_mfa_device_output {
     }
     impl Builder {
         /// <p>A structure containing details about the new virtual MFA device.</p>
-        pub fn virtual_mfa_device(mut self, inp: crate::model::VirtualMFADevice) -> Self {
-            self.virtual_mfa_device = Some(inp);
+        pub fn virtual_mfa_device(mut self, input: crate::model::VirtualMFADevice) -> Self {
+            self.virtual_mfa_device = Some(input);
             self
         }
         pub fn set_virtual_mfa_device(
             mut self,
-            inp: std::option::Option<crate::model::VirtualMFADevice>,
+            input: std::option::Option<crate::model::VirtualMFADevice>,
         ) -> Self {
-            self.virtual_mfa_device = inp;
+            self.virtual_mfa_device = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateVirtualMFADeviceOutput`](crate::output::CreateVirtualMFADeviceOutput)
@@ -8022,12 +8045,12 @@ pub mod create_user_output {
     }
     impl Builder {
         /// <p>A structure with details about the new IAM user.</p>
-        pub fn user(mut self, inp: crate::model::User) -> Self {
-            self.user = Some(inp);
+        pub fn user(mut self, input: crate::model::User) -> Self {
+            self.user = Some(input);
             self
         }
-        pub fn set_user(mut self, inp: std::option::Option<crate::model::User>) -> Self {
-            self.user = inp;
+        pub fn set_user(mut self, input: std::option::Option<crate::model::User>) -> Self {
+            self.user = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateUserOutput`](crate::output::CreateUserOutput)
@@ -8082,16 +8105,16 @@ pub mod create_service_specific_credential_output {
         /// </important>
         pub fn service_specific_credential(
             mut self,
-            inp: crate::model::ServiceSpecificCredential,
+            input: crate::model::ServiceSpecificCredential,
         ) -> Self {
-            self.service_specific_credential = Some(inp);
+            self.service_specific_credential = Some(input);
             self
         }
         pub fn set_service_specific_credential(
             mut self,
-            inp: std::option::Option<crate::model::ServiceSpecificCredential>,
+            input: std::option::Option<crate::model::ServiceSpecificCredential>,
         ) -> Self {
-            self.service_specific_credential = inp;
+            self.service_specific_credential = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateServiceSpecificCredentialOutput`](crate::output::CreateServiceSpecificCredentialOutput)
@@ -8134,12 +8157,12 @@ pub mod create_service_linked_role_output {
     impl Builder {
         /// <p>A <a>Role</a> object that contains details about the newly created
         /// role.</p>
-        pub fn role(mut self, inp: crate::model::Role) -> Self {
-            self.role = Some(inp);
+        pub fn role(mut self, input: crate::model::Role) -> Self {
+            self.role = Some(input);
             self
         }
-        pub fn set_role(mut self, inp: std::option::Option<crate::model::Role>) -> Self {
-            self.role = inp;
+        pub fn set_role(mut self, input: std::option::Option<crate::model::Role>) -> Self {
+            self.role = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateServiceLinkedRoleOutput`](crate::output::CreateServiceLinkedRoleOutput)
@@ -8186,28 +8209,28 @@ pub mod create_saml_provider_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
-        pub fn saml_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.saml_provider_arn = Some(inp.into());
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.saml_provider_arn = Some(input.into());
             self
         }
         pub fn set_saml_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.saml_provider_arn = inp;
+            self.saml_provider_arn = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateSAMLProviderOutput`](crate::output::CreateSAMLProviderOutput)
@@ -8250,12 +8273,12 @@ pub mod create_role_output {
     }
     impl Builder {
         /// <p>A structure containing details about the new role.</p>
-        pub fn role(mut self, inp: crate::model::Role) -> Self {
-            self.role = Some(inp);
+        pub fn role(mut self, input: crate::model::Role) -> Self {
+            self.role = Some(input);
             self
         }
-        pub fn set_role(mut self, inp: std::option::Option<crate::model::Role>) -> Self {
-            self.role = inp;
+        pub fn set_role(mut self, input: std::option::Option<crate::model::Role>) -> Self {
+            self.role = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateRoleOutput`](crate::output::CreateRoleOutput)
@@ -8296,15 +8319,15 @@ pub mod create_policy_version_output {
     }
     impl Builder {
         /// <p>A structure containing details about the new policy version.</p>
-        pub fn policy_version(mut self, inp: crate::model::PolicyVersion) -> Self {
-            self.policy_version = Some(inp);
+        pub fn policy_version(mut self, input: crate::model::PolicyVersion) -> Self {
+            self.policy_version = Some(input);
             self
         }
         pub fn set_policy_version(
             mut self,
-            inp: std::option::Option<crate::model::PolicyVersion>,
+            input: std::option::Option<crate::model::PolicyVersion>,
         ) -> Self {
-            self.policy_version = inp;
+            self.policy_version = input;
             self
         }
         /// Consumes the builder and constructs a [`CreatePolicyVersionOutput`](crate::output::CreatePolicyVersionOutput)
@@ -8347,12 +8370,12 @@ pub mod create_policy_output {
     }
     impl Builder {
         /// <p>A structure containing details about the new policy.</p>
-        pub fn policy(mut self, inp: crate::model::Policy) -> Self {
-            self.policy = Some(inp);
+        pub fn policy(mut self, input: crate::model::Policy) -> Self {
+            self.policy = Some(input);
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<crate::model::Policy>) -> Self {
-            self.policy = inp;
+        pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
+            self.policy = input;
             self
         }
         /// Consumes the builder and constructs a [`CreatePolicyOutput`](crate::output::CreatePolicyOutput)
@@ -8408,28 +8431,31 @@ pub mod create_open_id_connect_provider_output {
         /// <p>The Amazon Resource Name (ARN) of the new IAM OpenID Connect provider that is
         /// created. For more information, see <a>OpenIDConnectProviderListEntry</a>.
         /// </p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.open_id_connect_provider_arn = Some(inp.into());
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.open_id_connect_provider_arn = Some(input.into());
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.open_id_connect_provider_arn = inp;
+            self.open_id_connect_provider_arn = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateOpenIDConnectProviderOutput`](crate::output::CreateOpenIDConnectProviderOutput)
@@ -8473,15 +8499,15 @@ pub mod create_login_profile_output {
     }
     impl Builder {
         /// <p>A structure containing the user name and password create date.</p>
-        pub fn login_profile(mut self, inp: crate::model::LoginProfile) -> Self {
-            self.login_profile = Some(inp);
+        pub fn login_profile(mut self, input: crate::model::LoginProfile) -> Self {
+            self.login_profile = Some(input);
             self
         }
         pub fn set_login_profile(
             mut self,
-            inp: std::option::Option<crate::model::LoginProfile>,
+            input: std::option::Option<crate::model::LoginProfile>,
         ) -> Self {
-            self.login_profile = inp;
+            self.login_profile = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateLoginProfileOutput`](crate::output::CreateLoginProfileOutput)
@@ -8524,15 +8550,15 @@ pub mod create_instance_profile_output {
     }
     impl Builder {
         /// <p>A structure containing details about the new instance profile.</p>
-        pub fn instance_profile(mut self, inp: crate::model::InstanceProfile) -> Self {
-            self.instance_profile = Some(inp);
+        pub fn instance_profile(mut self, input: crate::model::InstanceProfile) -> Self {
+            self.instance_profile = Some(input);
             self
         }
         pub fn set_instance_profile(
             mut self,
-            inp: std::option::Option<crate::model::InstanceProfile>,
+            input: std::option::Option<crate::model::InstanceProfile>,
         ) -> Self {
-            self.instance_profile = inp;
+            self.instance_profile = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateInstanceProfileOutput`](crate::output::CreateInstanceProfileOutput)
@@ -8574,12 +8600,12 @@ pub mod create_group_output {
     }
     impl Builder {
         /// <p>A structure containing details about the new group.</p>
-        pub fn group(mut self, inp: crate::model::Group) -> Self {
-            self.group = Some(inp);
+        pub fn group(mut self, input: crate::model::Group) -> Self {
+            self.group = Some(input);
             self
         }
-        pub fn set_group(mut self, inp: std::option::Option<crate::model::Group>) -> Self {
-            self.group = inp;
+        pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
+            self.group = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateGroupOutput`](crate::output::CreateGroupOutput)
@@ -8649,12 +8675,15 @@ pub mod create_access_key_output {
     }
     impl Builder {
         /// <p>A structure with details about the access key.</p>
-        pub fn access_key(mut self, inp: crate::model::AccessKey) -> Self {
-            self.access_key = Some(inp);
+        pub fn access_key(mut self, input: crate::model::AccessKey) -> Self {
+            self.access_key = Some(input);
             self
         }
-        pub fn set_access_key(mut self, inp: std::option::Option<crate::model::AccessKey>) -> Self {
-            self.access_key = inp;
+        pub fn set_access_key(
+            mut self,
+            input: std::option::Option<crate::model::AccessKey>,
+        ) -> Self {
+            self.access_key = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateAccessKeyOutput`](crate::output::CreateAccessKeyOutput)

@@ -80,6 +80,60 @@ impl AcceptInputDeviceTransferError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AcceptInputDeviceTransferErrorKind::BadGatewayError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AcceptInputDeviceTransferErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AcceptInputDeviceTransferErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AcceptInputDeviceTransferErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AcceptInputDeviceTransferErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AcceptInputDeviceTransferErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AcceptInputDeviceTransferErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AcceptInputDeviceTransferErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AcceptInputDeviceTransferErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for AcceptInputDeviceTransferError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -177,6 +231,33 @@ impl BatchDeleteError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, BatchDeleteErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, BatchDeleteErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, BatchDeleteErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, BatchDeleteErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, BatchDeleteErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchDeleteErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, BatchDeleteErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, BatchDeleteErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for BatchDeleteError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -272,6 +353,30 @@ impl BatchStartError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, BatchStartErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, BatchStartErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, BatchStartErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, BatchStartErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, BatchStartErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(&self.kind, BatchStartErrorKind::InternalServerErrorError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, BatchStartErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, BatchStartErrorKind::TooManyRequestsError(_))
     }
 }
 impl std::error::Error for BatchStartError {
@@ -369,6 +474,30 @@ impl BatchStopError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, BatchStopErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, BatchStopErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, BatchStopErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, BatchStopErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, BatchStopErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(&self.kind, BatchStopErrorKind::InternalServerErrorError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, BatchStopErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, BatchStopErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for BatchStopError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -464,6 +593,42 @@ impl BatchUpdateScheduleError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, BatchUpdateScheduleErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, BatchUpdateScheduleErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, BatchUpdateScheduleErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateScheduleErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateScheduleErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, BatchUpdateScheduleErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateScheduleErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchUpdateScheduleErrorKind::UnprocessableEntityError(_)
+        )
     }
 }
 impl std::error::Error for BatchUpdateScheduleError {
@@ -563,6 +728,60 @@ impl CancelInputDeviceTransferError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelInputDeviceTransferErrorKind::BadGatewayError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelInputDeviceTransferErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelInputDeviceTransferErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelInputDeviceTransferErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelInputDeviceTransferErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelInputDeviceTransferErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelInputDeviceTransferErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelInputDeviceTransferErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelInputDeviceTransferErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for CancelInputDeviceTransferError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -660,6 +879,36 @@ impl CreateChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, CreateChannelErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateChannelErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, CreateChannelErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, CreateChannelErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, CreateChannelErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateChannelErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, CreateChannelErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateChannelErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for CreateChannelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -752,6 +1001,27 @@ impl CreateInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, CreateInputErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateInputErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, CreateInputErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, CreateInputErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInputErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, CreateInputErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for CreateInputError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -841,6 +1111,42 @@ impl CreateInputSecurityGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInputSecurityGroupErrorKind::BadGatewayError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInputSecurityGroupErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInputSecurityGroupErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInputSecurityGroupErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInputSecurityGroupErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateInputSecurityGroupErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for CreateInputSecurityGroupError {
@@ -935,6 +1241,39 @@ impl CreateMultiplexError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, CreateMultiplexErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateMultiplexErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, CreateMultiplexErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, CreateMultiplexErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, CreateMultiplexErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMultiplexErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMultiplexErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMultiplexErrorKind::UnprocessableEntityError(_)
+        )
     }
 }
 impl std::error::Error for CreateMultiplexError {
@@ -1032,6 +1371,54 @@ impl CreateMultiplexProgramError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMultiplexProgramErrorKind::BadGatewayError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMultiplexProgramErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMultiplexProgramErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMultiplexProgramErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMultiplexProgramErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMultiplexProgramErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMultiplexProgramErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMultiplexProgramErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for CreateMultiplexProgramError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1124,6 +1511,33 @@ impl CreatePartnerInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, CreatePartnerInputErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreatePartnerInputErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, CreatePartnerInputErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePartnerInputErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePartnerInputErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePartnerInputErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for CreatePartnerInputError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1209,6 +1623,18 @@ impl CreateTagsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CreateTagsErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, CreateTagsErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(&self.kind, CreateTagsErrorKind::InternalServerErrorError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateTagsErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for CreateTagsError {
@@ -1301,6 +1727,33 @@ impl DeleteChannelError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteChannelErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, DeleteChannelErrorKind::TooManyRequestsError(_))
     }
 }
 impl std::error::Error for DeleteChannelError {
@@ -1398,6 +1851,33 @@ impl DeleteInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, DeleteInputErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteInputErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteInputErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DeleteInputErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, DeleteInputErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInputErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteInputErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, DeleteInputErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for DeleteInputError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1491,6 +1971,48 @@ impl DeleteInputSecurityGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInputSecurityGroupErrorKind::BadGatewayError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInputSecurityGroupErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInputSecurityGroupErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInputSecurityGroupErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInputSecurityGroupErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInputSecurityGroupErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteInputSecurityGroupErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for DeleteInputSecurityGroupError {
@@ -1586,6 +2108,36 @@ impl DeleteMultiplexError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, DeleteMultiplexErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteMultiplexErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteMultiplexErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DeleteMultiplexErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, DeleteMultiplexErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMultiplexErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteMultiplexErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMultiplexErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for DeleteMultiplexError {
@@ -1683,6 +2235,54 @@ impl DeleteMultiplexProgramError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMultiplexProgramErrorKind::BadGatewayError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMultiplexProgramErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMultiplexProgramErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMultiplexProgramErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMultiplexProgramErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMultiplexProgramErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMultiplexProgramErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMultiplexProgramErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteMultiplexProgramError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1779,6 +2379,39 @@ impl DeleteReservationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, DeleteReservationErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteReservationErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteReservationErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DeleteReservationErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReservationErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReservationErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteReservationErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteReservationErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteReservationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1873,6 +2506,30 @@ impl DeleteScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, DeleteScheduleErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteScheduleErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DeleteScheduleErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, DeleteScheduleErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteScheduleErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteScheduleErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, DeleteScheduleErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for DeleteScheduleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1959,6 +2616,18 @@ impl DeleteTagsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DeleteTagsErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DeleteTagsErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(&self.kind, DeleteTagsErrorKind::InternalServerErrorError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteTagsErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for DeleteTagsError {
@@ -2049,6 +2718,33 @@ impl DescribeChannelError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, DescribeChannelErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DescribeChannelErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DescribeChannelErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, DescribeChannelErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeChannelErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DescribeChannelErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeChannelErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for DescribeChannelError {
@@ -2143,6 +2839,30 @@ impl DescribeInputError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, DescribeInputErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DescribeInputErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DescribeInputErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, DescribeInputErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DescribeInputErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, DescribeInputErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for DescribeInputError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2235,6 +2955,36 @@ impl DescribeInputDeviceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, DescribeInputDeviceErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DescribeInputDeviceErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DescribeInputDeviceErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputDeviceErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputDeviceErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DescribeInputDeviceErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputDeviceErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for DescribeInputDeviceError {
@@ -2331,6 +3081,48 @@ impl DescribeInputDeviceThumbnailError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputDeviceThumbnailErrorKind::BadGatewayError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputDeviceThumbnailErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputDeviceThumbnailErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputDeviceThumbnailErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputDeviceThumbnailErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputDeviceThumbnailErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputDeviceThumbnailErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeInputDeviceThumbnailError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2423,6 +3215,48 @@ impl DescribeInputSecurityGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputSecurityGroupErrorKind::BadGatewayError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputSecurityGroupErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputSecurityGroupErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputSecurityGroupErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputSecurityGroupErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputSecurityGroupErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeInputSecurityGroupErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for DescribeInputSecurityGroupError {
@@ -2517,6 +3351,36 @@ impl DescribeMultiplexError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, DescribeMultiplexErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DescribeMultiplexErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DescribeMultiplexErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMultiplexErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMultiplexErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DescribeMultiplexErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMultiplexErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeMultiplexError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2609,6 +3473,48 @@ impl DescribeMultiplexProgramError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMultiplexProgramErrorKind::BadGatewayError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMultiplexProgramErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMultiplexProgramErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMultiplexProgramErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMultiplexProgramErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMultiplexProgramErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeMultiplexProgramErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for DescribeMultiplexProgramError {
@@ -2703,6 +3609,36 @@ impl DescribeOfferingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, DescribeOfferingErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DescribeOfferingErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DescribeOfferingErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOfferingErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOfferingErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DescribeOfferingErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeOfferingErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeOfferingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2795,6 +3731,36 @@ impl DescribeReservationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, DescribeReservationErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DescribeReservationErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DescribeReservationErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservationErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservationErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DescribeReservationErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeReservationErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for DescribeReservationError {
@@ -2889,6 +3855,36 @@ impl DescribeScheduleError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, DescribeScheduleErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, DescribeScheduleErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, DescribeScheduleErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeScheduleErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeScheduleErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DescribeScheduleErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeScheduleErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeScheduleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2980,6 +3976,27 @@ impl ListChannelsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, ListChannelsErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ListChannelsErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, ListChannelsErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, ListChannelsErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListChannelsErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, ListChannelsErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for ListChannelsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3069,6 +4086,33 @@ impl ListInputDevicesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, ListInputDevicesErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ListInputDevicesErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, ListInputDevicesErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputDevicesErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputDevicesErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputDevicesErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for ListInputDevicesError {
@@ -3162,6 +4206,48 @@ impl ListInputDeviceTransfersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputDeviceTransfersErrorKind::BadGatewayError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputDeviceTransfersErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputDeviceTransfersErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputDeviceTransfersErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputDeviceTransfersErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputDeviceTransfersErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputDeviceTransfersErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for ListInputDeviceTransfersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3253,6 +4339,24 @@ impl ListInputsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, ListInputsErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ListInputsErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, ListInputsErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, ListInputsErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(&self.kind, ListInputsErrorKind::InternalServerErrorError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, ListInputsErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for ListInputsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3343,6 +4447,42 @@ impl ListInputSecurityGroupsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputSecurityGroupsErrorKind::BadGatewayError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputSecurityGroupsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputSecurityGroupsErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputSecurityGroupsErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputSecurityGroupsErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListInputSecurityGroupsErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for ListInputSecurityGroupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3432,6 +4572,30 @@ impl ListMultiplexesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, ListMultiplexesErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ListMultiplexesErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, ListMultiplexesErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, ListMultiplexesErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMultiplexesErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMultiplexesErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for ListMultiplexesError {
@@ -3525,6 +4689,45 @@ impl ListMultiplexProgramsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMultiplexProgramsErrorKind::BadGatewayError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMultiplexProgramsErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMultiplexProgramsErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMultiplexProgramsErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMultiplexProgramsErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListMultiplexProgramsErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMultiplexProgramsErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for ListMultiplexProgramsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3616,6 +4819,27 @@ impl ListOfferingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, ListOfferingsErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ListOfferingsErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, ListOfferingsErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, ListOfferingsErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOfferingsErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, ListOfferingsErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for ListOfferingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3706,6 +4930,33 @@ impl ListReservationsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, ListReservationsErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ListReservationsErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, ListReservationsErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReservationsErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReservationsErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListReservationsErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for ListReservationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3791,6 +5042,21 @@ impl ListTagsForResourceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourceErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourceErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourceErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
@@ -3883,6 +5149,39 @@ impl PurchaseOfferingError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, PurchaseOfferingErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, PurchaseOfferingErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, PurchaseOfferingErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, PurchaseOfferingErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PurchaseOfferingErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PurchaseOfferingErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, PurchaseOfferingErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PurchaseOfferingErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for PurchaseOfferingError {
@@ -3982,6 +5281,60 @@ impl RejectInputDeviceTransferError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RejectInputDeviceTransferErrorKind::BadGatewayError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RejectInputDeviceTransferErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RejectInputDeviceTransferErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RejectInputDeviceTransferErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RejectInputDeviceTransferErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RejectInputDeviceTransferErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RejectInputDeviceTransferErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RejectInputDeviceTransferErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RejectInputDeviceTransferErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for RejectInputDeviceTransferError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4079,6 +5432,33 @@ impl StartChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, StartChannelErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, StartChannelErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, StartChannelErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, StartChannelErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, StartChannelErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartChannelErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, StartChannelErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, StartChannelErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for StartChannelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4174,6 +5554,33 @@ impl StartMultiplexError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, StartMultiplexErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, StartMultiplexErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, StartMultiplexErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, StartMultiplexErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, StartMultiplexErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMultiplexErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, StartMultiplexErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, StartMultiplexErrorKind::TooManyRequestsError(_))
     }
 }
 impl std::error::Error for StartMultiplexError {
@@ -4271,6 +5678,33 @@ impl StopChannelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, StopChannelErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, StopChannelErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, StopChannelErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, StopChannelErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, StopChannelErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopChannelErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, StopChannelErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, StopChannelErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for StopChannelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4366,6 +5800,33 @@ impl StopMultiplexError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, StopMultiplexErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, StopMultiplexErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, StopMultiplexErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, StopMultiplexErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, StopMultiplexErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopMultiplexErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, StopMultiplexErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, StopMultiplexErrorKind::TooManyRequestsError(_))
     }
 }
 impl std::error::Error for StopMultiplexError {
@@ -4465,6 +5926,45 @@ impl TransferInputDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, TransferInputDeviceErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, TransferInputDeviceErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, TransferInputDeviceErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, TransferInputDeviceErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransferInputDeviceErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransferInputDeviceErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, TransferInputDeviceErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransferInputDeviceErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TransferInputDeviceErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for TransferInputDeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4559,6 +6059,33 @@ impl UpdateChannelError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, UpdateChannelErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateChannelErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateChannelErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, UpdateChannelErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, UpdateChannelErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChannelErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChannelErrorKind::UnprocessableEntityError(_)
+        )
     }
 }
 impl std::error::Error for UpdateChannelError {
@@ -4657,6 +6184,45 @@ impl UpdateChannelClassError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, UpdateChannelClassErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateChannelClassErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateChannelClassErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, UpdateChannelClassErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChannelClassErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChannelClassErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateChannelClassErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChannelClassErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateChannelClassErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateChannelClassError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4751,6 +6317,30 @@ impl UpdateInputError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, UpdateInputErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateInputErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateInputErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, UpdateInputErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, UpdateInputErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInputErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateInputErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for UpdateInputError {
@@ -4847,6 +6437,42 @@ impl UpdateInputDeviceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, UpdateInputDeviceErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateInputDeviceErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, UpdateInputDeviceErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInputDeviceErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInputDeviceErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateInputDeviceErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInputDeviceErrorKind::TooManyRequestsError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInputDeviceErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateInputDeviceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4940,6 +6566,48 @@ impl UpdateInputSecurityGroupError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInputSecurityGroupErrorKind::BadGatewayError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInputSecurityGroupErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInputSecurityGroupErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInputSecurityGroupErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInputSecurityGroupErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInputSecurityGroupErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateInputSecurityGroupErrorKind::NotFoundError(_)
+        )
     }
 }
 impl std::error::Error for UpdateInputSecurityGroupError {
@@ -5035,6 +6703,36 @@ impl UpdateMultiplexError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, UpdateMultiplexErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateMultiplexErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateMultiplexErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, UpdateMultiplexErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(&self.kind, UpdateMultiplexErrorKind::GatewayTimeoutError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMultiplexErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateMultiplexErrorKind::NotFoundError(_))
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMultiplexErrorKind::UnprocessableEntityError(_)
+        )
     }
 }
 impl std::error::Error for UpdateMultiplexError {
@@ -5132,6 +6830,54 @@ impl UpdateMultiplexProgramError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMultiplexProgramErrorKind::BadGatewayError(_)
+        )
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMultiplexProgramErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMultiplexProgramErrorKind::ConflictError(_)
+        )
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMultiplexProgramErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMultiplexProgramErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMultiplexProgramErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMultiplexProgramErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_unprocessable_entity_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateMultiplexProgramErrorKind::UnprocessableEntityError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateMultiplexProgramError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5228,6 +6974,39 @@ impl UpdateReservationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_gateway_error(&self) -> bool {
+        matches!(&self.kind, UpdateReservationErrorKind::BadGatewayError(_))
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, UpdateReservationErrorKind::BadRequestError(_))
+    }
+    pub fn is_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateReservationErrorKind::ConflictError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, UpdateReservationErrorKind::ForbiddenError(_))
+    }
+    pub fn is_gateway_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateReservationErrorKind::GatewayTimeoutError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateReservationErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateReservationErrorKind::NotFoundError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateReservationErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateReservationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5286,12 +7065,12 @@ pub mod too_many_requests_error {
     }
     impl Builder {
         /// Placeholder documentation for __string
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TooManyRequestsError`](crate::error::TooManyRequestsError)
@@ -5350,12 +7129,12 @@ pub mod not_found_error {
     }
     impl Builder {
         /// Placeholder documentation for __string
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NotFoundError`](crate::error::NotFoundError)
@@ -5414,12 +7193,12 @@ pub mod internal_server_error_error {
     }
     impl Builder {
         /// Placeholder documentation for __string
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InternalServerErrorError`](crate::error::InternalServerErrorError)
@@ -5478,12 +7257,12 @@ pub mod gateway_timeout_error {
     }
     impl Builder {
         /// Placeholder documentation for __string
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`GatewayTimeoutError`](crate::error::GatewayTimeoutError)
@@ -5542,12 +7321,12 @@ pub mod forbidden_error {
     }
     impl Builder {
         /// Placeholder documentation for __string
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ForbiddenError`](crate::error::ForbiddenError)
@@ -5606,12 +7385,12 @@ pub mod conflict_error {
     }
     impl Builder {
         /// Placeholder documentation for __string
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ConflictError`](crate::error::ConflictError)
@@ -5670,12 +7449,12 @@ pub mod bad_request_error {
     }
     impl Builder {
         /// Placeholder documentation for __string
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`BadRequestError`](crate::error::BadRequestError)
@@ -5734,12 +7513,12 @@ pub mod bad_gateway_error {
     }
     impl Builder {
         /// Placeholder documentation for __string
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`BadGatewayError`](crate::error::BadGatewayError)
@@ -5805,25 +7584,28 @@ pub mod unprocessable_entity_error {
     }
     impl Builder {
         /// The error message.
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
-        pub fn validation_errors(mut self, inp: impl Into<crate::model::ValidationError>) -> Self {
+        pub fn validation_errors(
+            mut self,
+            input: impl Into<crate::model::ValidationError>,
+        ) -> Self {
             let mut v = self.validation_errors.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.validation_errors = Some(v);
             self
         }
         pub fn set_validation_errors(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
         ) -> Self {
-            self.validation_errors = inp;
+            self.validation_errors = input;
             self
         }
         /// Consumes the builder and constructs a [`UnprocessableEntityError`](crate::error::UnprocessableEntityError)

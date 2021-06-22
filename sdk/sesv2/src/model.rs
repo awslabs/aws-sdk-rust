@@ -39,31 +39,31 @@ pub mod email_template_content {
     }
     impl Builder {
         /// <p>The subject line of the email.</p>
-        pub fn subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subject = Some(inp.into());
+        pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subject = Some(input.into());
             self
         }
-        pub fn set_subject(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.subject = inp;
+        pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subject = input;
             self
         }
         /// <p>The email body that will be visible to recipients whose email clients do not display
         /// HTML.</p>
-        pub fn text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.text = Some(inp.into());
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text = Some(input.into());
             self
         }
-        pub fn set_text(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.text = inp;
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text = input;
             self
         }
         /// <p>The HTML body of the email.</p>
-        pub fn html(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.html = Some(inp.into());
+        pub fn html(mut self, input: impl Into<std::string::String>) -> Self {
+            self.html = Some(input.into());
             self
         }
-        pub fn set_html(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.html = inp;
+        pub fn set_html(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.html = input;
             self
         }
         /// Consumes the builder and constructs a [`EmailTemplateContent`](crate::model::EmailTemplateContent)
@@ -133,46 +133,46 @@ pub mod topic {
     }
     impl Builder {
         /// <p>The name of the topic.</p>
-        pub fn topic_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_name = Some(inp.into());
+        pub fn topic_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_name = Some(input.into());
             self
         }
-        pub fn set_topic_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_name = inp;
+        pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_name = input;
             self
         }
         /// <p>The name of the topic the contact will see.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.display_name = Some(inp.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_name = Some(input.into());
             self
         }
-        pub fn set_display_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.display_name = inp;
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_name = input;
             self
         }
         /// <p>A description of what the topic is about, which the contact will see.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The default subscription status to be applied to a contact if the contact has not
         /// noted their preference for subscribing to a topic.</p>
         pub fn default_subscription_status(
             mut self,
-            inp: crate::model::SubscriptionStatus,
+            input: crate::model::SubscriptionStatus,
         ) -> Self {
-            self.default_subscription_status = Some(inp);
+            self.default_subscription_status = Some(input);
             self
         }
         pub fn set_default_subscription_status(
             mut self,
-            inp: std::option::Option<crate::model::SubscriptionStatus>,
+            input: std::option::Option<crate::model::SubscriptionStatus>,
         ) -> Self {
-            self.default_subscription_status = inp;
+            self.default_subscription_status = input;
             self
         }
         /// Consumes the builder and constructs a [`Topic`](crate::model::Topic)
@@ -282,25 +282,25 @@ pub mod topic_preference {
     }
     impl Builder {
         /// <p>The name of the topic.</p>
-        pub fn topic_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_name = Some(inp.into());
+        pub fn topic_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_name = Some(input.into());
             self
         }
-        pub fn set_topic_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_name = inp;
+        pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_name = input;
             self
         }
         /// <p>The contact's subscription status to a topic which is either <code>OPT_IN</code> or
         /// <code>OPT_OUT</code>.</p>
-        pub fn subscription_status(mut self, inp: crate::model::SubscriptionStatus) -> Self {
-            self.subscription_status = Some(inp);
+        pub fn subscription_status(mut self, input: crate::model::SubscriptionStatus) -> Self {
+            self.subscription_status = Some(input);
             self
         }
         pub fn set_subscription_status(
             mut self,
-            inp: std::option::Option<crate::model::SubscriptionStatus>,
+            input: std::option::Option<crate::model::SubscriptionStatus>,
         ) -> Self {
-            self.subscription_status = inp;
+            self.subscription_status = input;
             self
         }
         /// Consumes the builder and constructs a [`TopicPreference`](crate::model::TopicPreference)
@@ -399,82 +399,85 @@ pub mod event_destination_definition {
         /// <code>EventDestinationDefinition</code>.</p>
         /// <p>If <code>false</code>, the event destination is disabled. When the event destination
         /// is disabled, events aren't sent to the specified destinations.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
             self
         }
-        pub fn set_enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
             self
         }
-        pub fn matching_event_types(mut self, inp: impl Into<crate::model::EventType>) -> Self {
+        pub fn matching_event_types(mut self, input: impl Into<crate::model::EventType>) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.matching_event_types = Some(v);
             self
         }
         pub fn set_matching_event_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EventType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EventType>>,
         ) -> Self {
-            self.matching_event_types = inp;
+            self.matching_event_types = input;
             self
         }
         /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to
         /// stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
         pub fn kinesis_firehose_destination(
             mut self,
-            inp: crate::model::KinesisFirehoseDestination,
+            input: crate::model::KinesisFirehoseDestination,
         ) -> Self {
-            self.kinesis_firehose_destination = Some(inp);
+            self.kinesis_firehose_destination = Some(input);
             self
         }
         pub fn set_kinesis_firehose_destination(
             mut self,
-            inp: std::option::Option<crate::model::KinesisFirehoseDestination>,
+            input: std::option::Option<crate::model::KinesisFirehoseDestination>,
         ) -> Self {
-            self.kinesis_firehose_destination = inp;
+            self.kinesis_firehose_destination = input;
             self
         }
         /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to
         /// monitor and gain insights on your email sending metrics.</p>
-        pub fn cloud_watch_destination(mut self, inp: crate::model::CloudWatchDestination) -> Self {
-            self.cloud_watch_destination = Some(inp);
+        pub fn cloud_watch_destination(
+            mut self,
+            input: crate::model::CloudWatchDestination,
+        ) -> Self {
+            self.cloud_watch_destination = Some(input);
             self
         }
         pub fn set_cloud_watch_destination(
             mut self,
-            inp: std::option::Option<crate::model::CloudWatchDestination>,
+            input: std::option::Option<crate::model::CloudWatchDestination>,
         ) -> Self {
-            self.cloud_watch_destination = inp;
+            self.cloud_watch_destination = input;
             self
         }
         /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to
         /// send notification when certain email events occur.</p>
-        pub fn sns_destination(mut self, inp: crate::model::SnsDestination) -> Self {
-            self.sns_destination = Some(inp);
+        pub fn sns_destination(mut self, input: crate::model::SnsDestination) -> Self {
+            self.sns_destination = Some(input);
             self
         }
         pub fn set_sns_destination(
             mut self,
-            inp: std::option::Option<crate::model::SnsDestination>,
+            input: std::option::Option<crate::model::SnsDestination>,
         ) -> Self {
-            self.sns_destination = inp;
+            self.sns_destination = input;
             self
         }
         /// <p>An object that defines an Amazon Pinpoint project destination for email events. You can send
         /// email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging
         /// dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional
         /// Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
-        pub fn pinpoint_destination(mut self, inp: crate::model::PinpointDestination) -> Self {
-            self.pinpoint_destination = Some(inp);
+        pub fn pinpoint_destination(mut self, input: crate::model::PinpointDestination) -> Self {
+            self.pinpoint_destination = Some(input);
             self
         }
         pub fn set_pinpoint_destination(
             mut self,
-            inp: std::option::Option<crate::model::PinpointDestination>,
+            input: std::option::Option<crate::model::PinpointDestination>,
         ) -> Self {
-            self.pinpoint_destination = inp;
+            self.pinpoint_destination = input;
             self
         }
         /// Consumes the builder and constructs a [`EventDestinationDefinition`](crate::model::EventDestinationDefinition)
@@ -528,15 +531,15 @@ pub mod pinpoint_destination {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email
         /// events to.</p>
-        pub fn application_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.application_arn = Some(inp.into());
+        pub fn application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.application_arn = Some(input.into());
             self
         }
         pub fn set_application_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.application_arn = inp;
+            self.application_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`PinpointDestination`](crate::model::PinpointDestination)
@@ -585,12 +588,12 @@ pub mod sns_destination {
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email
         /// events to. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer
         /// Guide</a>.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_arn = Some(inp.into());
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_arn = Some(input.into());
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = inp;
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`SnsDestination`](crate::model::SnsDestination)
@@ -639,18 +642,20 @@ pub mod cloud_watch_destination {
     impl Builder {
         pub fn dimension_configurations(
             mut self,
-            inp: impl Into<crate::model::CloudWatchDimensionConfiguration>,
+            input: impl Into<crate::model::CloudWatchDimensionConfiguration>,
         ) -> Self {
             let mut v = self.dimension_configurations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.dimension_configurations = Some(v);
             self
         }
         pub fn set_dimension_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CloudWatchDimensionConfiguration>>,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::CloudWatchDimensionConfiguration>,
+            >,
         ) -> Self {
-            self.dimension_configurations = inp;
+            self.dimension_configurations = input;
             self
         }
         /// Consumes the builder and constructs a [`CloudWatchDestination`](crate::model::CloudWatchDestination)
@@ -743,12 +748,15 @@ pub mod cloud_watch_dimension_configuration {
         /// <p>It can contain no more than 256 characters.</p>
         /// </li>
         /// </ul>
-        pub fn dimension_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.dimension_name = Some(inp.into());
+        pub fn dimension_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dimension_name = Some(input.into());
             self
         }
-        pub fn set_dimension_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.dimension_name = inp;
+        pub fn set_dimension_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dimension_name = input;
             self
         }
         /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. If
@@ -757,15 +765,15 @@ pub mod cloud_watch_dimension_configuration {
         /// or <code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want to use
         /// your own email headers, choose <code>emailHeader</code>. If you want to use link tags,
         /// choose <code>linkTags</code>.</p>
-        pub fn dimension_value_source(mut self, inp: crate::model::DimensionValueSource) -> Self {
-            self.dimension_value_source = Some(inp);
+        pub fn dimension_value_source(mut self, input: crate::model::DimensionValueSource) -> Self {
+            self.dimension_value_source = Some(input);
             self
         }
         pub fn set_dimension_value_source(
             mut self,
-            inp: std::option::Option<crate::model::DimensionValueSource>,
+            input: std::option::Option<crate::model::DimensionValueSource>,
         ) -> Self {
-            self.dimension_value_source = inp;
+            self.dimension_value_source = input;
             self
         }
         /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the
@@ -780,15 +788,15 @@ pub mod cloud_watch_dimension_configuration {
         /// <p>It can contain no more than 256 characters.</p>
         /// </li>
         /// </ul>
-        pub fn default_dimension_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.default_dimension_value = Some(inp.into());
+        pub fn default_dimension_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_dimension_value = Some(input.into());
             self
         }
         pub fn set_default_dimension_value(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.default_dimension_value = inp;
+            self.default_dimension_value = input;
             self
         }
         /// Consumes the builder and constructs a [`CloudWatchDimensionConfiguration`](crate::model::CloudWatchDimensionConfiguration)
@@ -909,25 +917,25 @@ pub mod kinesis_firehose_destination {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the IAM role that the Amazon SES API v2 uses to send email
         /// events to the Amazon Kinesis Data Firehose stream.</p>
-        pub fn iam_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.iam_role_arn = Some(inp.into());
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.iam_role_arn = Some(input.into());
             self
         }
-        pub fn set_iam_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = inp;
+        pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iam_role_arn = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that the Amazon SES API v2 sends email
         /// events to.</p>
-        pub fn delivery_stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.delivery_stream_arn = Some(inp.into());
+        pub fn delivery_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delivery_stream_arn = Some(input.into());
             self
         }
         pub fn set_delivery_stream_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.delivery_stream_arn = inp;
+            self.delivery_stream_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination)
@@ -1097,24 +1105,24 @@ pub mod tag {
     impl Builder {
         /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is
         /// 128 characters. The minimum length is 1 character.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag
         /// value is 256 characters. The minimum length is 0 characters. If you don't want a
         /// resource to have a specific tag value, don't specify a value for this parameter. If you
         /// don't specify a value, Amazon SES sets the value to an empty string.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
@@ -1166,24 +1174,24 @@ pub mod list_management_options {
     }
     impl Builder {
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.contact_list_name = Some(inp.into());
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_list_name = Some(input.into());
             self
         }
         pub fn set_contact_list_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.contact_list_name = inp;
+            self.contact_list_name = input;
             self
         }
         /// <p>The name of the topic.</p>
-        pub fn topic_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_name = Some(inp.into());
+        pub fn topic_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_name = Some(input.into());
             self
         }
-        pub fn set_topic_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_name = inp;
+        pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ListManagementOptions`](crate::model::ListManagementOptions)
@@ -1266,12 +1274,12 @@ pub mod message_tag {
         /// <p>It can contain no more than 256 characters.</p>
         /// </li>
         /// </ul>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The value of the message tag. The message tag value has to meet the following
@@ -1285,12 +1293,12 @@ pub mod message_tag {
         /// <p>It can contain no more than 256 characters.</p>
         /// </li>
         /// </ul>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`MessageTag`](crate::model::MessageTag)
@@ -1380,12 +1388,12 @@ pub mod email_content {
     }
     impl Builder {
         /// <p>The simple email message. The message consists of a subject and a message body.</p>
-        pub fn simple(mut self, inp: crate::model::Message) -> Self {
-            self.simple = Some(inp);
+        pub fn simple(mut self, input: crate::model::Message) -> Self {
+            self.simple = Some(input);
             self
         }
-        pub fn set_simple(mut self, inp: std::option::Option<crate::model::Message>) -> Self {
-            self.simple = inp;
+        pub fn set_simple(mut self, input: std::option::Option<crate::model::Message>) -> Self {
+            self.simple = input;
             self
         }
         /// <p>The raw email message. The message has to meet the following criteria:</p>
@@ -1418,21 +1426,21 @@ pub mod email_content {
         /// characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
         /// </li>
         /// </ul>
-        pub fn raw(mut self, inp: crate::model::RawMessage) -> Self {
-            self.raw = Some(inp);
+        pub fn raw(mut self, input: crate::model::RawMessage) -> Self {
+            self.raw = Some(input);
             self
         }
-        pub fn set_raw(mut self, inp: std::option::Option<crate::model::RawMessage>) -> Self {
-            self.raw = inp;
+        pub fn set_raw(mut self, input: std::option::Option<crate::model::RawMessage>) -> Self {
+            self.raw = input;
             self
         }
         /// <p>The template to use for the email message.</p>
-        pub fn template(mut self, inp: crate::model::Template) -> Self {
-            self.template = Some(inp);
+        pub fn template(mut self, input: crate::model::Template) -> Self {
+            self.template = Some(input);
             self
         }
-        pub fn set_template(mut self, inp: std::option::Option<crate::model::Template>) -> Self {
-            self.template = inp;
+        pub fn set_template(mut self, input: std::option::Option<crate::model::Template>) -> Self {
+            self.template = input;
             self
         }
         /// Consumes the builder and constructs a [`EmailContent`](crate::model::EmailContent)
@@ -1499,32 +1507,38 @@ pub mod template {
         /// <p>The name of the template. You will refer to this name when you send email using the
         /// <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
         /// </p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_name = Some(inp.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
             self
         }
-        pub fn set_template_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_name = inp;
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the template.</p>
-        pub fn template_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_arn = Some(inp.into());
+        pub fn template_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_arn = Some(input.into());
             self
         }
-        pub fn set_template_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_arn = inp;
+        pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_arn = input;
             self
         }
         /// <p>An object that defines the values to use for message variables in the template. This
         /// object is a set of key-value pairs. Each key defines a message variable in the template.
         /// The corresponding value defines the value to use for that variable.</p>
-        pub fn template_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_data = Some(inp.into());
+        pub fn template_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_data = Some(input.into());
             self
         }
-        pub fn set_template_data(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_data = inp;
+        pub fn set_template_data(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_data = input;
             self
         }
         /// Consumes the builder and constructs a [`Template`](crate::model::Template)
@@ -1625,12 +1639,12 @@ pub mod raw_message {
         /// characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p>
         /// </li>
         /// </ul>
-        pub fn data(mut self, inp: smithy_types::Blob) -> Self {
-            self.data = Some(inp);
+        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+            self.data = Some(input);
             self
         }
-        pub fn set_data(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.data = inp;
+        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.data = input;
             self
         }
         /// Consumes the builder and constructs a [`RawMessage`](crate::model::RawMessage)
@@ -1684,22 +1698,22 @@ pub mod message {
         /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII
         /// characters. However, you can specify non-ASCII characters in the subject line by using
         /// encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
-        pub fn subject(mut self, inp: crate::model::Content) -> Self {
-            self.subject = Some(inp);
+        pub fn subject(mut self, input: crate::model::Content) -> Self {
+            self.subject = Some(input);
             self
         }
-        pub fn set_subject(mut self, inp: std::option::Option<crate::model::Content>) -> Self {
-            self.subject = inp;
+        pub fn set_subject(mut self, input: std::option::Option<crate::model::Content>) -> Self {
+            self.subject = input;
             self
         }
         /// <p>The body of the message. You can specify an HTML version of the message, a text-only
         /// version of the message, or both.</p>
-        pub fn body(mut self, inp: crate::model::Body) -> Self {
-            self.body = Some(inp);
+        pub fn body(mut self, input: crate::model::Body) -> Self {
+            self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<crate::model::Body>) -> Self {
-            self.body = inp;
+        pub fn set_body(mut self, input: std::option::Option<crate::model::Body>) -> Self {
+            self.body = input;
             self
         }
         /// Consumes the builder and constructs a [`Message`](crate::model::Message)
@@ -1756,23 +1770,23 @@ pub mod body {
         /// <p>An object that represents the version of the message that is displayed in email
         /// clients that don't support HTML, or clients where the recipient has disabled HTML
         /// rendering.</p>
-        pub fn text(mut self, inp: crate::model::Content) -> Self {
-            self.text = Some(inp);
+        pub fn text(mut self, input: crate::model::Content) -> Self {
+            self.text = Some(input);
             self
         }
-        pub fn set_text(mut self, inp: std::option::Option<crate::model::Content>) -> Self {
-            self.text = inp;
+        pub fn set_text(mut self, input: std::option::Option<crate::model::Content>) -> Self {
+            self.text = input;
             self
         }
         /// <p>An object that represents the version of the message that is displayed in email
         /// clients that support HTML. HTML messages can include formatted text, hyperlinks, images,
         /// and more. </p>
-        pub fn html(mut self, inp: crate::model::Content) -> Self {
-            self.html = Some(inp);
+        pub fn html(mut self, input: crate::model::Content) -> Self {
+            self.html = Some(input);
             self
         }
-        pub fn set_html(mut self, inp: std::option::Option<crate::model::Content>) -> Self {
-            self.html = inp;
+        pub fn set_html(mut self, input: std::option::Option<crate::model::Content>) -> Self {
+            self.html = input;
             self
         }
         /// Consumes the builder and constructs a [`Body`](crate::model::Body)
@@ -1827,24 +1841,24 @@ pub mod content {
     }
     impl Builder {
         /// <p>The content of the message itself.</p>
-        pub fn data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.data = Some(inp.into());
+        pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data = Some(input.into());
             self
         }
-        pub fn set_data(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.data = inp;
+        pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data = input;
             self
         }
         /// <p>The character set for the content. Because of the constraints of the SMTP protocol,
         /// Amazon SES uses 7-bit ASCII by default. If the text includes characters outside of the ASCII
         /// range, you have to specify a character set. For example, you could specify
         /// <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
-        pub fn charset(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.charset = Some(inp.into());
+        pub fn charset(mut self, input: impl Into<std::string::String>) -> Self {
+            self.charset = Some(input.into());
             self
         }
-        pub fn set_charset(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.charset = inp;
+        pub fn set_charset(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.charset = input;
             self
         }
         /// Consumes the builder and constructs a [`Content`](crate::model::Content)
@@ -1903,43 +1917,43 @@ pub mod destination {
         pub(crate) bcc_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn to_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.to_addresses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.to_addresses = Some(v);
             self
         }
         pub fn set_to_addresses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.to_addresses = inp;
+            self.to_addresses = input;
             self
         }
-        pub fn cc_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn cc_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cc_addresses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.cc_addresses = Some(v);
             self
         }
         pub fn set_cc_addresses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.cc_addresses = inp;
+            self.cc_addresses = input;
             self
         }
-        pub fn bcc_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn bcc_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.bcc_addresses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.bcc_addresses = Some(v);
             self
         }
         pub fn set_bcc_addresses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.bcc_addresses = inp;
+            self.bcc_addresses = input;
             self
         }
         /// Consumes the builder and constructs a [`Destination`](crate::model::Destination)
@@ -2120,35 +2134,35 @@ pub mod bulk_email_entry_result {
         /// for additional information.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::BulkEmailStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::BulkEmailStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::BulkEmailStatus>,
+            input: std::option::Option<crate::model::BulkEmailStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>A description of an error that prevented a message being sent using the
         /// <code>SendBulkTemplatedEmail</code> operation.</p>
-        pub fn error(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.error = Some(inp.into());
+        pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error = Some(input.into());
             self
         }
-        pub fn set_error(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.error = inp;
+        pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error = input;
             self
         }
         /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code>
         /// operation.</p>
-        pub fn message_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message_id = Some(inp.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_id = Some(input.into());
             self
         }
-        pub fn set_message_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message_id = inp;
+        pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_id = input;
             self
         }
         /// Consumes the builder and constructs a [`BulkEmailEntryResult`](crate::model::BulkEmailEntryResult)
@@ -2320,44 +2334,44 @@ pub mod bulk_email_entry {
         /// contains non-ASCII characters, they must be encoded using Punycode, as described in
         /// <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.</p>
         /// </note>
-        pub fn destination(mut self, inp: crate::model::Destination) -> Self {
-            self.destination = Some(inp);
+        pub fn destination(mut self, input: crate::model::Destination) -> Self {
+            self.destination = Some(input);
             self
         }
         pub fn set_destination(
             mut self,
-            inp: std::option::Option<crate::model::Destination>,
+            input: std::option::Option<crate::model::Destination>,
         ) -> Self {
-            self.destination = inp;
+            self.destination = input;
             self
         }
-        pub fn replacement_tags(mut self, inp: impl Into<crate::model::MessageTag>) -> Self {
+        pub fn replacement_tags(mut self, input: impl Into<crate::model::MessageTag>) -> Self {
             let mut v = self.replacement_tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.replacement_tags = Some(v);
             self
         }
         pub fn set_replacement_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MessageTag>>,
         ) -> Self {
-            self.replacement_tags = inp;
+            self.replacement_tags = input;
             self
         }
         /// <p>The <code>ReplacementEmailContent</code> associated with a
         /// <code>BulkEmailEntry</code>.</p>
         pub fn replacement_email_content(
             mut self,
-            inp: crate::model::ReplacementEmailContent,
+            input: crate::model::ReplacementEmailContent,
         ) -> Self {
-            self.replacement_email_content = Some(inp);
+            self.replacement_email_content = Some(input);
             self
         }
         pub fn set_replacement_email_content(
             mut self,
-            inp: std::option::Option<crate::model::ReplacementEmailContent>,
+            input: std::option::Option<crate::model::ReplacementEmailContent>,
         ) -> Self {
-            self.replacement_email_content = inp;
+            self.replacement_email_content = input;
             self
         }
         /// Consumes the builder and constructs a [`BulkEmailEntry`](crate::model::BulkEmailEntry)
@@ -2407,15 +2421,15 @@ pub mod replacement_email_content {
     impl Builder {
         /// <p>The <code>ReplacementTemplate</code> associated with
         /// <code>ReplacementEmailContent</code>.</p>
-        pub fn replacement_template(mut self, inp: crate::model::ReplacementTemplate) -> Self {
-            self.replacement_template = Some(inp);
+        pub fn replacement_template(mut self, input: crate::model::ReplacementTemplate) -> Self {
+            self.replacement_template = Some(input);
             self
         }
         pub fn set_replacement_template(
             mut self,
-            inp: std::option::Option<crate::model::ReplacementTemplate>,
+            input: std::option::Option<crate::model::ReplacementTemplate>,
         ) -> Self {
-            self.replacement_template = inp;
+            self.replacement_template = input;
             self
         }
         /// Consumes the builder and constructs a [`ReplacementEmailContent`](crate::model::ReplacementEmailContent)
@@ -2464,15 +2478,15 @@ pub mod replacement_template {
         /// <p>A list of replacement values to apply to the template. This parameter is a JSON
         /// object, typically consisting of key-value pairs in which the keys correspond to
         /// replacement tags in the email template.</p>
-        pub fn replacement_template_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.replacement_template_data = Some(inp.into());
+        pub fn replacement_template_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.replacement_template_data = Some(input.into());
             self
         }
         pub fn set_replacement_template_data(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.replacement_template_data = inp;
+            self.replacement_template_data = input;
             self
         }
         /// Consumes the builder and constructs a [`ReplacementTemplate`](crate::model::ReplacementTemplate)
@@ -2517,12 +2531,12 @@ pub mod bulk_email_content {
     }
     impl Builder {
         /// <p>The template to use for the bulk email message.</p>
-        pub fn template(mut self, inp: crate::model::Template) -> Self {
-            self.template = Some(inp);
+        pub fn template(mut self, input: crate::model::Template) -> Self {
+            self.template = Some(input);
             self
         }
-        pub fn set_template(mut self, inp: std::option::Option<crate::model::Template>) -> Self {
-            self.template = inp;
+        pub fn set_template(mut self, input: std::option::Option<crate::model::Template>) -> Self {
+            self.template = input;
             self
         }
         /// Consumes the builder and constructs a [`BulkEmailContent`](crate::model::BulkEmailContent)
@@ -2813,29 +2827,29 @@ pub mod dkim_signing_attributes {
     impl Builder {
         /// <p>A string that's used to identify a public key in the DNS configuration for a
         /// domain.</p>
-        pub fn domain_signing_selector(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_signing_selector = Some(inp.into());
+        pub fn domain_signing_selector(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_signing_selector = Some(input.into());
             self
         }
         pub fn set_domain_signing_selector(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.domain_signing_selector = inp;
+            self.domain_signing_selector = input;
             self
         }
         /// <p>A private key that's used to generate a DKIM signature.</p>
         /// <p>The private key must use 1024-bit RSA encryption, and must be encoded using base64
         /// encoding.</p>
-        pub fn domain_signing_private_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain_signing_private_key = Some(inp.into());
+        pub fn domain_signing_private_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain_signing_private_key = Some(input.into());
             self
         }
         pub fn set_domain_signing_private_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.domain_signing_private_key = inp;
+            self.domain_signing_private_key = input;
             self
         }
         /// Consumes the builder and constructs a [`DkimSigningAttributes`](crate::model::DkimSigningAttributes)
@@ -2963,41 +2977,41 @@ pub mod domain_deliverability_tracking_option {
     impl Builder {
         /// <p>A verified domain that’s associated with your AWS account and currently has an
         /// active Deliverability dashboard subscription.</p>
-        pub fn domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.domain = Some(inp.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.domain = Some(input.into());
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.domain = inp;
+        pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.domain = input;
             self
         }
         /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the
         /// domain.</p>
-        pub fn subscription_start_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.subscription_start_date = Some(inp);
+        pub fn subscription_start_date(mut self, input: smithy_types::Instant) -> Self {
+            self.subscription_start_date = Some(input);
             self
         }
         pub fn set_subscription_start_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.subscription_start_date = inp;
+            self.subscription_start_date = input;
             self
         }
         /// <p>An object that contains information about the inbox placement data settings for the
         /// domain.</p>
         pub fn inbox_placement_tracking_option(
             mut self,
-            inp: crate::model::InboxPlacementTrackingOption,
+            input: crate::model::InboxPlacementTrackingOption,
         ) -> Self {
-            self.inbox_placement_tracking_option = Some(inp);
+            self.inbox_placement_tracking_option = Some(input);
             self
         }
         pub fn set_inbox_placement_tracking_option(
             mut self,
-            inp: std::option::Option<crate::model::InboxPlacementTrackingOption>,
+            input: std::option::Option<crate::model::InboxPlacementTrackingOption>,
         ) -> Self {
-            self.inbox_placement_tracking_option = inp;
+            self.inbox_placement_tracking_option = input;
             self
         }
         /// Consumes the builder and constructs a [`DomainDeliverabilityTrackingOption`](crate::model::DomainDeliverabilityTrackingOption)
@@ -3052,25 +3066,25 @@ pub mod inbox_placement_tracking_option {
     }
     impl Builder {
         /// <p>Specifies whether inbox placement data is being tracked for the domain.</p>
-        pub fn global(mut self, inp: bool) -> Self {
-            self.global = Some(inp);
+        pub fn global(mut self, input: bool) -> Self {
+            self.global = Some(input);
             self
         }
-        pub fn set_global(mut self, inp: bool) -> Self {
-            self.global = Some(inp);
+        pub fn set_global(mut self, input: std::option::Option<bool>) -> Self {
+            self.global = input;
             self
         }
-        pub fn tracked_isps(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tracked_isps(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tracked_isps.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tracked_isps = Some(v);
             self
         }
         pub fn set_tracked_isps(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tracked_isps = inp;
+            self.tracked_isps = input;
             self
         }
         /// Consumes the builder and constructs a [`InboxPlacementTrackingOption`](crate::model::InboxPlacementTrackingOption)
@@ -3303,37 +3317,40 @@ pub mod suppressed_destination_summary {
     }
     impl Builder {
         /// <p>The email address that's on the suppression list for your account.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_address = Some(inp.into());
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_address = Some(input.into());
             self
         }
-        pub fn set_email_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.email_address = inp;
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_address = input;
             self
         }
         /// <p>The reason that the address was added to the suppression list for your account.</p>
-        pub fn reason(mut self, inp: crate::model::SuppressionListReason) -> Self {
-            self.reason = Some(inp);
+        pub fn reason(mut self, input: crate::model::SuppressionListReason) -> Self {
+            self.reason = Some(input);
             self
         }
         pub fn set_reason(
             mut self,
-            inp: std::option::Option<crate::model::SuppressionListReason>,
+            input: std::option::Option<crate::model::SuppressionListReason>,
         ) -> Self {
-            self.reason = inp;
+            self.reason = input;
             self
         }
         /// <p>The date and time when the suppressed destination was last updated, shown in Unix time
         /// format.</p>
-        pub fn last_update_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_update_time = Some(inp);
+        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_update_time = Some(input);
             self
         }
         pub fn set_last_update_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_update_time = inp;
+            self.last_update_time = input;
             self
         }
         /// Consumes the builder and constructs a [`SuppressedDestinationSummary`](crate::model::SuppressedDestinationSummary)
@@ -3401,46 +3418,49 @@ pub mod import_job_summary {
     }
     impl Builder {
         /// <p>A string that represents the import job ID.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.job_id = Some(inp.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
             self
         }
-        pub fn set_job_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.job_id = inp;
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
             self
         }
         /// <p>An object that contains details about the resource destination the import job is going
         /// to target.</p>
-        pub fn import_destination(mut self, inp: crate::model::ImportDestination) -> Self {
-            self.import_destination = Some(inp);
+        pub fn import_destination(mut self, input: crate::model::ImportDestination) -> Self {
+            self.import_destination = Some(input);
             self
         }
         pub fn set_import_destination(
             mut self,
-            inp: std::option::Option<crate::model::ImportDestination>,
+            input: std::option::Option<crate::model::ImportDestination>,
         ) -> Self {
-            self.import_destination = inp;
+            self.import_destination = input;
             self
         }
         /// <p>The status of the import job.</p>
-        pub fn job_status(mut self, inp: crate::model::JobStatus) -> Self {
-            self.job_status = Some(inp);
+        pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
+            self.job_status = Some(input);
             self
         }
-        pub fn set_job_status(mut self, inp: std::option::Option<crate::model::JobStatus>) -> Self {
-            self.job_status = inp;
+        pub fn set_job_status(
+            mut self,
+            input: std::option::Option<crate::model::JobStatus>,
+        ) -> Self {
+            self.job_status = input;
             self
         }
         /// <p>The date and time when the import job was created.</p>
-        pub fn created_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_timestamp = Some(inp);
+        pub fn created_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.created_timestamp = Some(input);
             self
         }
         pub fn set_created_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.created_timestamp = inp;
+            self.created_timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportJobSummary`](crate::model::ImportJobSummary)
@@ -3564,31 +3584,31 @@ pub mod import_destination {
         /// <p>An object that contains the action of the import job towards suppression list.</p>
         pub fn suppression_list_destination(
             mut self,
-            inp: crate::model::SuppressionListDestination,
+            input: crate::model::SuppressionListDestination,
         ) -> Self {
-            self.suppression_list_destination = Some(inp);
+            self.suppression_list_destination = Some(input);
             self
         }
         pub fn set_suppression_list_destination(
             mut self,
-            inp: std::option::Option<crate::model::SuppressionListDestination>,
+            input: std::option::Option<crate::model::SuppressionListDestination>,
         ) -> Self {
-            self.suppression_list_destination = inp;
+            self.suppression_list_destination = input;
             self
         }
         /// <p>An object that contains the action of the import job towards a contact list.</p>
         pub fn contact_list_destination(
             mut self,
-            inp: crate::model::ContactListDestination,
+            input: crate::model::ContactListDestination,
         ) -> Self {
-            self.contact_list_destination = Some(inp);
+            self.contact_list_destination = Some(input);
             self
         }
         pub fn set_contact_list_destination(
             mut self,
-            inp: std::option::Option<crate::model::ContactListDestination>,
+            input: std::option::Option<crate::model::ContactListDestination>,
         ) -> Self {
-            self.contact_list_destination = inp;
+            self.contact_list_destination = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportDestination`](crate::model::ImportDestination)
@@ -3653,15 +3673,15 @@ pub mod contact_list_destination {
     }
     impl Builder {
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.contact_list_name = Some(inp.into());
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_list_name = Some(input.into());
             self
         }
         pub fn set_contact_list_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.contact_list_name = inp;
+            self.contact_list_name = input;
             self
         }
         /// <p>>The type of action that you want to perform on the addresses. Acceptable
@@ -3677,16 +3697,16 @@ pub mod contact_list_destination {
         /// </ul>
         pub fn contact_list_import_action(
             mut self,
-            inp: crate::model::ContactListImportAction,
+            input: crate::model::ContactListImportAction,
         ) -> Self {
-            self.contact_list_import_action = Some(inp);
+            self.contact_list_import_action = Some(input);
             self
         }
         pub fn set_contact_list_import_action(
             mut self,
-            inp: std::option::Option<crate::model::ContactListImportAction>,
+            input: std::option::Option<crate::model::ContactListImportAction>,
         ) -> Self {
-            self.contact_list_import_action = inp;
+            self.contact_list_import_action = input;
             self
         }
         /// Consumes the builder and constructs a [`ContactListDestination`](crate::model::ContactListDestination)
@@ -3812,16 +3832,16 @@ pub mod suppression_list_destination {
         /// </ul>
         pub fn suppression_list_import_action(
             mut self,
-            inp: crate::model::SuppressionListImportAction,
+            input: crate::model::SuppressionListImportAction,
         ) -> Self {
-            self.suppression_list_import_action = Some(inp);
+            self.suppression_list_import_action = Some(input);
             self
         }
         pub fn set_suppression_list_import_action(
             mut self,
-            inp: std::option::Option<crate::model::SuppressionListImportAction>,
+            input: std::option::Option<crate::model::SuppressionListImportAction>,
         ) -> Self {
-            self.suppression_list_import_action = inp;
+            self.suppression_list_import_action = input;
             self
         }
         /// Consumes the builder and constructs a [`SuppressionListDestination`](crate::model::SuppressionListDestination)
@@ -3997,24 +4017,27 @@ pub mod email_template_metadata {
     }
     impl Builder {
         /// <p>The name of the template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_name = Some(inp.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
             self
         }
-        pub fn set_template_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_name = inp;
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
             self
         }
         /// <p>The time and date the template was created.</p>
-        pub fn created_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.created_timestamp = Some(inp);
+        pub fn created_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.created_timestamp = Some(input);
             self
         }
         pub fn set_created_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.created_timestamp = inp;
+            self.created_timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`EmailTemplateMetadata`](crate::model::EmailTemplateMetadata)
@@ -4104,36 +4127,39 @@ pub mod identity_info {
         /// by AWS.</p>
         /// </li>
         /// </ul>
-        pub fn identity_type(mut self, inp: crate::model::IdentityType) -> Self {
-            self.identity_type = Some(inp);
+        pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
+            self.identity_type = Some(input);
             self
         }
         pub fn set_identity_type(
             mut self,
-            inp: std::option::Option<crate::model::IdentityType>,
+            input: std::option::Option<crate::model::IdentityType>,
         ) -> Self {
-            self.identity_type = inp;
+            self.identity_type = input;
             self
         }
         /// <p>The address or domain of the identity.</p>
-        pub fn identity_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.identity_name = Some(inp.into());
+        pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.identity_name = Some(input.into());
             self
         }
-        pub fn set_identity_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.identity_name = inp;
+        pub fn set_identity_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_name = input;
             self
         }
         /// <p>Indicates whether or not you can send email from the identity.</p>
         /// <p>An <i>identity</i> is an email address or domain that you send email
         /// from. Before you can send email from an identity, you have to demostrate that you own
         /// the identity, and that you authorize Amazon SES to send email from that identity.</p>
-        pub fn sending_enabled(mut self, inp: bool) -> Self {
-            self.sending_enabled = Some(inp);
+        pub fn sending_enabled(mut self, input: bool) -> Self {
+            self.sending_enabled = Some(input);
             self
         }
-        pub fn set_sending_enabled(mut self, inp: bool) -> Self {
-            self.sending_enabled = Some(inp);
+        pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.sending_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`IdentityInfo`](crate::model::IdentityInfo)
@@ -4350,155 +4376,155 @@ pub mod domain_deliverability_campaign {
     impl Builder {
         /// <p>The unique identifier for the campaign. The Deliverability dashboard automatically generates
         /// and assigns this identifier to a campaign.</p>
-        pub fn campaign_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.campaign_id = Some(inp.into());
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.campaign_id = Some(input.into());
             self
         }
-        pub fn set_campaign_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.campaign_id = inp;
+        pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.campaign_id = input;
             self
         }
         /// <p>The URL of an image that contains a snapshot of the email message that was
         /// sent.</p>
-        pub fn image_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.image_url = Some(inp.into());
+        pub fn image_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_url = Some(input.into());
             self
         }
-        pub fn set_image_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.image_url = inp;
+        pub fn set_image_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_url = input;
             self
         }
         /// <p>The subject line, or title, of the email message.</p>
-        pub fn subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subject = Some(inp.into());
+        pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subject = Some(input.into());
             self
         }
-        pub fn set_subject(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.subject = inp;
+        pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subject = input;
             self
         }
         /// <p>The verified email address that the email message was sent from.</p>
-        pub fn from_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.from_address = Some(inp.into());
+        pub fn from_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.from_address = Some(input.into());
             self
         }
-        pub fn set_from_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.from_address = inp;
+        pub fn set_from_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.from_address = input;
             self
         }
-        pub fn sending_ips(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn sending_ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sending_ips.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.sending_ips = Some(v);
             self
         }
         pub fn set_sending_ips(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.sending_ips = inp;
+            self.sending_ips = input;
             self
         }
         /// <p>The first time, in Unix time format, when the email message was delivered to any
         /// recipient's inbox. This value can help you determine how long it took for a campaign to
         /// deliver an email message.</p>
-        pub fn first_seen_date_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.first_seen_date_time = Some(inp);
+        pub fn first_seen_date_time(mut self, input: smithy_types::Instant) -> Self {
+            self.first_seen_date_time = Some(input);
             self
         }
         pub fn set_first_seen_date_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.first_seen_date_time = inp;
+            self.first_seen_date_time = input;
             self
         }
         /// <p>The last time, in Unix time format, when the email message was delivered to any
         /// recipient's inbox. This value can help you determine how long it took for a campaign to
         /// deliver an email message.</p>
-        pub fn last_seen_date_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_seen_date_time = Some(inp);
+        pub fn last_seen_date_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_seen_date_time = Some(input);
             self
         }
         pub fn set_last_seen_date_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_seen_date_time = inp;
+            self.last_seen_date_time = input;
             self
         }
         /// <p>The number of email messages that were delivered to recipients’ inboxes.</p>
-        pub fn inbox_count(mut self, inp: i64) -> Self {
-            self.inbox_count = Some(inp);
+        pub fn inbox_count(mut self, input: i64) -> Self {
+            self.inbox_count = Some(input);
             self
         }
-        pub fn set_inbox_count(mut self, inp: std::option::Option<i64>) -> Self {
-            self.inbox_count = inp;
+        pub fn set_inbox_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.inbox_count = input;
             self
         }
         /// <p>The number of email messages that were delivered to recipients' spam or junk mail
         /// folders.</p>
-        pub fn spam_count(mut self, inp: i64) -> Self {
-            self.spam_count = Some(inp);
+        pub fn spam_count(mut self, input: i64) -> Self {
+            self.spam_count = Some(input);
             self
         }
-        pub fn set_spam_count(mut self, inp: std::option::Option<i64>) -> Self {
-            self.spam_count = inp;
+        pub fn set_spam_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.spam_count = input;
             self
         }
         /// <p>The percentage of email messages that were opened by recipients. Due to technical
         /// limitations, this value only includes recipients who opened the message by using an
         /// email client that supports images.</p>
-        pub fn read_rate(mut self, inp: f64) -> Self {
-            self.read_rate = Some(inp);
+        pub fn read_rate(mut self, input: f64) -> Self {
+            self.read_rate = Some(input);
             self
         }
-        pub fn set_read_rate(mut self, inp: std::option::Option<f64>) -> Self {
-            self.read_rate = inp;
+        pub fn set_read_rate(mut self, input: std::option::Option<f64>) -> Self {
+            self.read_rate = input;
             self
         }
         /// <p>The percentage of email messages that were deleted by recipients, without being opened
         /// first. Due to technical limitations, this value only includes recipients who opened the
         /// message by using an email client that supports images.</p>
-        pub fn delete_rate(mut self, inp: f64) -> Self {
-            self.delete_rate = Some(inp);
+        pub fn delete_rate(mut self, input: f64) -> Self {
+            self.delete_rate = Some(input);
             self
         }
-        pub fn set_delete_rate(mut self, inp: std::option::Option<f64>) -> Self {
-            self.delete_rate = inp;
+        pub fn set_delete_rate(mut self, input: std::option::Option<f64>) -> Self {
+            self.delete_rate = input;
             self
         }
         /// <p>The percentage of email messages that were opened and then deleted by recipients. Due
         /// to technical limitations, this value only includes recipients who opened the message by
         /// using an email client that supports images.</p>
-        pub fn read_delete_rate(mut self, inp: f64) -> Self {
-            self.read_delete_rate = Some(inp);
+        pub fn read_delete_rate(mut self, input: f64) -> Self {
+            self.read_delete_rate = Some(input);
             self
         }
-        pub fn set_read_delete_rate(mut self, inp: std::option::Option<f64>) -> Self {
-            self.read_delete_rate = inp;
+        pub fn set_read_delete_rate(mut self, input: std::option::Option<f64>) -> Self {
+            self.read_delete_rate = input;
             self
         }
         /// <p>The projected number of recipients that the email message was sent to.</p>
-        pub fn projected_volume(mut self, inp: i64) -> Self {
-            self.projected_volume = Some(inp);
+        pub fn projected_volume(mut self, input: i64) -> Self {
+            self.projected_volume = Some(input);
             self
         }
-        pub fn set_projected_volume(mut self, inp: std::option::Option<i64>) -> Self {
-            self.projected_volume = inp;
+        pub fn set_projected_volume(mut self, input: std::option::Option<i64>) -> Self {
+            self.projected_volume = input;
             self
         }
-        pub fn esps(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn esps(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.esps.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.esps = Some(v);
             self
         }
         pub fn set_esps(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.esps = inp;
+            self.esps = input;
             self
         }
         /// Consumes the builder and constructs a [`DomainDeliverabilityCampaign`](crate::model::DomainDeliverabilityCampaign)
@@ -4595,51 +4621,54 @@ pub mod deliverability_test_report {
     }
     impl Builder {
         /// <p>A unique string that identifies the predictive inbox placement test.</p>
-        pub fn report_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.report_id = Some(inp.into());
+        pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.report_id = Some(input.into());
             self
         }
-        pub fn set_report_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.report_id = inp;
+        pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.report_id = input;
             self
         }
         /// <p>A name that helps you identify a predictive inbox placement test report.</p>
-        pub fn report_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.report_name = Some(inp.into());
+        pub fn report_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.report_name = Some(input.into());
             self
         }
-        pub fn set_report_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.report_name = inp;
+        pub fn set_report_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.report_name = input;
             self
         }
         /// <p>The subject line for an email that you submitted in a predictive inbox placement test.</p>
-        pub fn subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subject = Some(inp.into());
+        pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subject = Some(input.into());
             self
         }
-        pub fn set_subject(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.subject = inp;
+        pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subject = input;
             self
         }
         /// <p>The sender address that you specified for the predictive inbox placement test.</p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.from_email_address = Some(inp.into());
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.from_email_address = Some(input.into());
             self
         }
         pub fn set_from_email_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.from_email_address = inp;
+            self.from_email_address = input;
             self
         }
         /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
         /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test
@@ -4648,16 +4677,16 @@ pub mod deliverability_test_report {
         /// the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
         pub fn deliverability_test_status(
             mut self,
-            inp: crate::model::DeliverabilityTestStatus,
+            input: crate::model::DeliverabilityTestStatus,
         ) -> Self {
-            self.deliverability_test_status = Some(inp);
+            self.deliverability_test_status = Some(input);
             self
         }
         pub fn set_deliverability_test_status(
             mut self,
-            inp: std::option::Option<crate::model::DeliverabilityTestStatus>,
+            input: std::option::Option<crate::model::DeliverabilityTestStatus>,
         ) -> Self {
-            self.deliverability_test_status = inp;
+            self.deliverability_test_status = input;
             self
         }
         /// Consumes the builder and constructs a [`DeliverabilityTestReport`](crate::model::DeliverabilityTestReport)
@@ -4793,62 +4822,65 @@ pub mod custom_verification_email_template_metadata {
     }
     impl Builder {
         /// <p>The name of the custom verification email template.</p>
-        pub fn template_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_name = Some(inp.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_name = Some(input.into());
             self
         }
-        pub fn set_template_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.template_name = inp;
+        pub fn set_template_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.template_name = input;
             self
         }
         /// <p>The email address that the custom verification email is sent from.</p>
-        pub fn from_email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.from_email_address = Some(inp.into());
+        pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.from_email_address = Some(input.into());
             self
         }
         pub fn set_from_email_address(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.from_email_address = inp;
+            self.from_email_address = input;
             self
         }
         /// <p>The subject line of the custom verification email.</p>
-        pub fn template_subject(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.template_subject = Some(inp.into());
+        pub fn template_subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.template_subject = Some(input.into());
             self
         }
         pub fn set_template_subject(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.template_subject = inp;
+            self.template_subject = input;
             self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
         /// is successfully verified.</p>
-        pub fn success_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.success_redirection_url = Some(inp.into());
+        pub fn success_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.success_redirection_url = Some(input.into());
             self
         }
         pub fn set_success_redirection_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.success_redirection_url = inp;
+            self.success_redirection_url = input;
             self
         }
         /// <p>The URL that the recipient of the verification email is sent to if his or her address
         /// is not successfully verified.</p>
-        pub fn failure_redirection_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.failure_redirection_url = Some(inp.into());
+        pub fn failure_redirection_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_redirection_url = Some(input.into());
             self
         }
         pub fn set_failure_redirection_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.failure_redirection_url = inp;
+            self.failure_redirection_url = input;
             self
         }
         /// Consumes the builder and constructs a [`CustomVerificationEmailTemplateMetadata`](crate::model::CustomVerificationEmailTemplateMetadata)
@@ -4927,63 +4959,69 @@ pub mod contact {
     }
     impl Builder {
         /// <p>The contact's email address.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_address = Some(inp.into());
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_address = Some(input.into());
             self
         }
-        pub fn set_email_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.email_address = inp;
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_address = input;
             self
         }
-        pub fn topic_preferences(mut self, inp: impl Into<crate::model::TopicPreference>) -> Self {
+        pub fn topic_preferences(
+            mut self,
+            input: impl Into<crate::model::TopicPreference>,
+        ) -> Self {
             let mut v = self.topic_preferences.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.topic_preferences = Some(v);
             self
         }
         pub fn set_topic_preferences(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
         ) -> Self {
-            self.topic_preferences = inp;
+            self.topic_preferences = input;
             self
         }
         pub fn topic_default_preferences(
             mut self,
-            inp: impl Into<crate::model::TopicPreference>,
+            input: impl Into<crate::model::TopicPreference>,
         ) -> Self {
             let mut v = self.topic_default_preferences.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.topic_default_preferences = Some(v);
             self
         }
         pub fn set_topic_default_preferences(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TopicPreference>>,
         ) -> Self {
-            self.topic_default_preferences = inp;
+            self.topic_default_preferences = input;
             self
         }
         /// <p>A boolean value status noting if the contact is unsubscribed from all contact list
         /// topics.</p>
-        pub fn unsubscribe_all(mut self, inp: bool) -> Self {
-            self.unsubscribe_all = Some(inp);
+        pub fn unsubscribe_all(mut self, input: bool) -> Self {
+            self.unsubscribe_all = Some(input);
             self
         }
-        pub fn set_unsubscribe_all(mut self, inp: bool) -> Self {
-            self.unsubscribe_all = Some(inp);
+        pub fn set_unsubscribe_all(mut self, input: std::option::Option<bool>) -> Self {
+            self.unsubscribe_all = input;
             self
         }
         /// <p>A timestamp noting the last time the contact's information was updated.</p>
-        pub fn last_updated_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_updated_timestamp = Some(inp);
+        pub fn last_updated_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated_timestamp = Some(input);
             self
         }
         pub fn set_last_updated_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_updated_timestamp = inp;
+            self.last_updated_timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`Contact`](crate::model::Contact)
@@ -5039,27 +5077,27 @@ pub mod list_contacts_filter {
     impl Builder {
         /// <p>The status by which you are filtering: <code>OPT_IN</code> or
         /// <code>OPT_OUT</code>.</p>
-        pub fn filtered_status(mut self, inp: crate::model::SubscriptionStatus) -> Self {
-            self.filtered_status = Some(inp);
+        pub fn filtered_status(mut self, input: crate::model::SubscriptionStatus) -> Self {
+            self.filtered_status = Some(input);
             self
         }
         pub fn set_filtered_status(
             mut self,
-            inp: std::option::Option<crate::model::SubscriptionStatus>,
+            input: std::option::Option<crate::model::SubscriptionStatus>,
         ) -> Self {
-            self.filtered_status = inp;
+            self.filtered_status = input;
             self
         }
         /// <p>Used for filtering by a specific topic preference.</p>
-        pub fn topic_filter(mut self, inp: crate::model::TopicFilter) -> Self {
-            self.topic_filter = Some(inp);
+        pub fn topic_filter(mut self, input: crate::model::TopicFilter) -> Self {
+            self.topic_filter = Some(input);
             self
         }
         pub fn set_topic_filter(
             mut self,
-            inp: std::option::Option<crate::model::TopicFilter>,
+            input: std::option::Option<crate::model::TopicFilter>,
         ) -> Self {
-            self.topic_filter = inp;
+            self.topic_filter = input;
             self
         }
         /// Consumes the builder and constructs a [`ListContactsFilter`](crate::model::ListContactsFilter)
@@ -5114,22 +5152,25 @@ pub mod topic_filter {
     }
     impl Builder {
         /// <p>The name of a topic on which you wish to apply the filter.</p>
-        pub fn topic_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_name = Some(inp.into());
+        pub fn topic_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_name = Some(input.into());
             self
         }
-        pub fn set_topic_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_name = inp;
+        pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_name = input;
             self
         }
         /// <p>Notes that the default subscription status should be applied to a contact because the
         /// contact has not noted their preference for subscribing to a topic.</p>
-        pub fn use_default_if_preference_unavailable(mut self, inp: bool) -> Self {
-            self.use_default_if_preference_unavailable = Some(inp);
+        pub fn use_default_if_preference_unavailable(mut self, input: bool) -> Self {
+            self.use_default_if_preference_unavailable = Some(input);
             self
         }
-        pub fn set_use_default_if_preference_unavailable(mut self, inp: bool) -> Self {
-            self.use_default_if_preference_unavailable = Some(inp);
+        pub fn set_use_default_if_preference_unavailable(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.use_default_if_preference_unavailable = input;
             self
         }
         /// Consumes the builder and constructs a [`TopicFilter`](crate::model::TopicFilter)
@@ -5186,27 +5227,27 @@ pub mod contact_list {
     }
     impl Builder {
         /// <p>The name of the contact list.</p>
-        pub fn contact_list_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.contact_list_name = Some(inp.into());
+        pub fn contact_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.contact_list_name = Some(input.into());
             self
         }
         pub fn set_contact_list_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.contact_list_name = inp;
+            self.contact_list_name = input;
             self
         }
         /// <p>A timestamp noting the last time the contact list was updated.</p>
-        pub fn last_updated_timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_updated_timestamp = Some(inp);
+        pub fn last_updated_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated_timestamp = Some(input);
             self
         }
         pub fn set_last_updated_timestamp(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_updated_timestamp = inp;
+            self.last_updated_timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`ContactList`](crate::model::ContactList)
@@ -5275,50 +5316,53 @@ pub mod suppressed_destination {
     }
     impl Builder {
         /// <p>The email address that is on the suppression list for your account.</p>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_address = Some(inp.into());
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_address = Some(input.into());
             self
         }
-        pub fn set_email_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.email_address = inp;
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_address = input;
             self
         }
         /// <p>The reason that the address was added to the suppression list for your account.</p>
-        pub fn reason(mut self, inp: crate::model::SuppressionListReason) -> Self {
-            self.reason = Some(inp);
+        pub fn reason(mut self, input: crate::model::SuppressionListReason) -> Self {
+            self.reason = Some(input);
             self
         }
         pub fn set_reason(
             mut self,
-            inp: std::option::Option<crate::model::SuppressionListReason>,
+            input: std::option::Option<crate::model::SuppressionListReason>,
         ) -> Self {
-            self.reason = inp;
+            self.reason = input;
             self
         }
         /// <p>The date and time when the suppressed destination was last updated, shown in Unix time
         /// format.</p>
-        pub fn last_update_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_update_time = Some(inp);
+        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_update_time = Some(input);
             self
         }
         pub fn set_last_update_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_update_time = inp;
+            self.last_update_time = input;
             self
         }
         /// <p>An optional value that can contain additional information about the reasons that the
         /// address was added to the suppression list for your account.</p>
-        pub fn attributes(mut self, inp: crate::model::SuppressedDestinationAttributes) -> Self {
-            self.attributes = Some(inp);
+        pub fn attributes(mut self, input: crate::model::SuppressedDestinationAttributes) -> Self {
+            self.attributes = Some(input);
             self
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<crate::model::SuppressedDestinationAttributes>,
+            input: std::option::Option<crate::model::SuppressedDestinationAttributes>,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`SuppressedDestination`](crate::model::SuppressedDestination)
@@ -5375,22 +5419,22 @@ pub mod suppressed_destination_attributes {
     impl Builder {
         /// <p>The unique identifier of the email message that caused the email address to be added
         /// to the suppression list for your account.</p>
-        pub fn message_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message_id = Some(inp.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_id = Some(input.into());
             self
         }
-        pub fn set_message_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message_id = inp;
+        pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_id = input;
             self
         }
         /// <p>A unique identifier that's generated when an email address is added to the suppression
         /// list for your account.</p>
-        pub fn feedback_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.feedback_id = Some(inp.into());
+        pub fn feedback_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feedback_id = Some(input.into());
             self
         }
-        pub fn set_feedback_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.feedback_id = inp;
+        pub fn set_feedback_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.feedback_id = input;
             self
         }
         /// Consumes the builder and constructs a [`SuppressedDestinationAttributes`](crate::model::SuppressedDestinationAttributes)
@@ -5443,24 +5487,27 @@ pub mod failure_info {
     impl Builder {
         /// <p>An Amazon S3 presigned URL that contains all the failed records and related
         /// information.</p>
-        pub fn failed_records_s3_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.failed_records_s3_url = Some(inp.into());
+        pub fn failed_records_s3_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failed_records_s3_url = Some(input.into());
             self
         }
         pub fn set_failed_records_s3_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.failed_records_s3_url = inp;
+            self.failed_records_s3_url = input;
             self
         }
         /// <p>A message about why the import job failed.</p>
-        pub fn error_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.error_message = Some(inp.into());
+        pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_message = Some(input.into());
             self
         }
-        pub fn set_error_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.error_message = inp;
+        pub fn set_error_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.error_message = input;
             self
         }
         /// Consumes the builder and constructs a [`FailureInfo`](crate::model::FailureInfo)
@@ -5513,24 +5560,24 @@ pub mod import_data_source {
     impl Builder {
         /// <p>An Amazon S3 URL in the format
         /// s3://<i><bucket_name></i>/<i><object></i>.</p>
-        pub fn s3_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_url = Some(inp.into());
+        pub fn s3_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_url = Some(input.into());
             self
         }
-        pub fn set_s3_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_url = inp;
+        pub fn set_s3_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_url = input;
             self
         }
         /// <p>The data format of the import job's data source.</p>
-        pub fn data_format(mut self, inp: crate::model::DataFormat) -> Self {
-            self.data_format = Some(inp);
+        pub fn data_format(mut self, input: crate::model::DataFormat) -> Self {
+            self.data_format = Some(input);
             self
         }
         pub fn set_data_format(
             mut self,
-            inp: std::option::Option<crate::model::DataFormat>,
+            input: std::option::Option<crate::model::DataFormat>,
         ) -> Self {
-            self.data_format = inp;
+            self.data_format = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportDataSource`](crate::model::ImportDataSource)
@@ -5674,15 +5721,15 @@ pub mod mail_from_attributes {
     }
     impl Builder {
         /// <p>The name of a domain that an email identity uses as a custom MAIL FROM domain.</p>
-        pub fn mail_from_domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.mail_from_domain = Some(inp.into());
+        pub fn mail_from_domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.mail_from_domain = Some(input.into());
             self
         }
         pub fn set_mail_from_domain(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.mail_from_domain = inp;
+            self.mail_from_domain = input;
             self
         }
         /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
@@ -5708,15 +5755,18 @@ pub mod mail_from_attributes {
         /// prevented Amazon SES from determining the status of the MAIL FROM domain.</p>
         /// </li>
         /// </ul>
-        pub fn mail_from_domain_status(mut self, inp: crate::model::MailFromDomainStatus) -> Self {
-            self.mail_from_domain_status = Some(inp);
+        pub fn mail_from_domain_status(
+            mut self,
+            input: crate::model::MailFromDomainStatus,
+        ) -> Self {
+            self.mail_from_domain_status = Some(input);
             self
         }
         pub fn set_mail_from_domain_status(
             mut self,
-            inp: std::option::Option<crate::model::MailFromDomainStatus>,
+            input: std::option::Option<crate::model::MailFromDomainStatus>,
         ) -> Self {
-            self.mail_from_domain_status = inp;
+            self.mail_from_domain_status = input;
             self
         }
         /// <p>The action that you want to take if the required MX record can't be found when you
@@ -5728,15 +5778,15 @@ pub mod mail_from_attributes {
         /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the
         /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
         /// states.</p>
-        pub fn behavior_on_mx_failure(mut self, inp: crate::model::BehaviorOnMxFailure) -> Self {
-            self.behavior_on_mx_failure = Some(inp);
+        pub fn behavior_on_mx_failure(mut self, input: crate::model::BehaviorOnMxFailure) -> Self {
+            self.behavior_on_mx_failure = Some(input);
             self
         }
         pub fn set_behavior_on_mx_failure(
             mut self,
-            inp: std::option::Option<crate::model::BehaviorOnMxFailure>,
+            input: std::option::Option<crate::model::BehaviorOnMxFailure>,
         ) -> Self {
-            self.behavior_on_mx_failure = inp;
+            self.behavior_on_mx_failure = input;
             self
         }
         /// Consumes the builder and constructs a [`MailFromAttributes`](crate::model::MailFromAttributes)
@@ -5949,12 +5999,12 @@ pub mod dkim_attributes {
         /// <p>If the value is <code>true</code>, then the messages that you send from the identity
         /// are signed using DKIM. If the value is <code>false</code>, then the messages that you
         /// send from the identity aren't DKIM-signed.</p>
-        pub fn signing_enabled(mut self, inp: bool) -> Self {
-            self.signing_enabled = Some(inp);
+        pub fn signing_enabled(mut self, input: bool) -> Self {
+            self.signing_enabled = Some(input);
             self
         }
-        pub fn set_signing_enabled(mut self, inp: bool) -> Self {
-            self.signing_enabled = Some(inp);
+        pub fn set_signing_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.signing_enabled = input;
             self
         }
         /// <p>Describes whether or not Amazon SES has successfully located the DKIM records in the DNS
@@ -5988,25 +6038,25 @@ pub mod dkim_attributes {
         /// initiated for the domain.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::DkimStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::DkimStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::DkimStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DkimStatus>) -> Self {
+            self.status = input;
             self
         }
-        pub fn tokens(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tokens.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tokens = Some(v);
             self
         }
         pub fn set_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tokens = inp;
+            self.tokens = input;
             self
         }
         /// <p>A string that indicates how DKIM was configured for the identity. There are two
@@ -6025,16 +6075,16 @@ pub mod dkim_attributes {
         /// </ul>
         pub fn signing_attributes_origin(
             mut self,
-            inp: crate::model::DkimSigningAttributesOrigin,
+            input: crate::model::DkimSigningAttributesOrigin,
         ) -> Self {
-            self.signing_attributes_origin = Some(inp);
+            self.signing_attributes_origin = Some(input);
             self
         }
         pub fn set_signing_attributes_origin(
             mut self,
-            inp: std::option::Option<crate::model::DkimSigningAttributesOrigin>,
+            input: std::option::Option<crate::model::DkimSigningAttributesOrigin>,
         ) -> Self {
-            self.signing_attributes_origin = inp;
+            self.signing_attributes_origin = input;
             self
         }
         /// Consumes the builder and constructs a [`DkimAttributes`](crate::model::DkimAttributes)
@@ -6100,41 +6150,41 @@ pub mod daily_volume {
     }
     impl Builder {
         /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
-        pub fn start_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.start_date = Some(inp);
+        pub fn start_date(mut self, input: smithy_types::Instant) -> Self {
+            self.start_date = Some(input);
             self
         }
-        pub fn set_start_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.start_date = inp;
+        pub fn set_start_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_date = input;
             self
         }
         /// <p>An object that contains inbox placement metrics for a specific day in the analysis
         /// period.</p>
-        pub fn volume_statistics(mut self, inp: crate::model::VolumeStatistics) -> Self {
-            self.volume_statistics = Some(inp);
+        pub fn volume_statistics(mut self, input: crate::model::VolumeStatistics) -> Self {
+            self.volume_statistics = Some(input);
             self
         }
         pub fn set_volume_statistics(
             mut self,
-            inp: std::option::Option<crate::model::VolumeStatistics>,
+            input: std::option::Option<crate::model::VolumeStatistics>,
         ) -> Self {
-            self.volume_statistics = inp;
+            self.volume_statistics = input;
             self
         }
         pub fn domain_isp_placements(
             mut self,
-            inp: impl Into<crate::model::DomainIspPlacement>,
+            input: impl Into<crate::model::DomainIspPlacement>,
         ) -> Self {
             let mut v = self.domain_isp_placements.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.domain_isp_placements = Some(v);
             self
         }
         pub fn set_domain_isp_placements(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
         ) -> Self {
-            self.domain_isp_placements = inp;
+            self.domain_isp_placements = input;
             self
         }
         /// Consumes the builder and constructs a [`DailyVolume`](crate::model::DailyVolume)
@@ -6209,52 +6259,52 @@ pub mod domain_isp_placement {
     }
     impl Builder {
         /// <p>The name of the email provider that the inbox placement data applies to.</p>
-        pub fn isp_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.isp_name = Some(inp.into());
+        pub fn isp_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.isp_name = Some(input.into());
             self
         }
-        pub fn set_isp_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.isp_name = inp;
+        pub fn set_isp_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.isp_name = input;
             self
         }
         /// <p>The total number of messages that were sent from the selected domain to the specified
         /// email provider that arrived in recipients' inboxes.</p>
-        pub fn inbox_raw_count(mut self, inp: i64) -> Self {
-            self.inbox_raw_count = Some(inp);
+        pub fn inbox_raw_count(mut self, input: i64) -> Self {
+            self.inbox_raw_count = Some(input);
             self
         }
-        pub fn set_inbox_raw_count(mut self, inp: std::option::Option<i64>) -> Self {
-            self.inbox_raw_count = inp;
+        pub fn set_inbox_raw_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.inbox_raw_count = input;
             self
         }
         /// <p>The total number of messages that were sent from the selected domain to the specified
         /// email provider that arrived in recipients' spam or junk mail folders.</p>
-        pub fn spam_raw_count(mut self, inp: i64) -> Self {
-            self.spam_raw_count = Some(inp);
+        pub fn spam_raw_count(mut self, input: i64) -> Self {
+            self.spam_raw_count = Some(input);
             self
         }
-        pub fn set_spam_raw_count(mut self, inp: std::option::Option<i64>) -> Self {
-            self.spam_raw_count = inp;
+        pub fn set_spam_raw_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.spam_raw_count = input;
             self
         }
         /// <p>The percentage of messages that were sent from the selected domain to the specified
         /// email provider that arrived in recipients' inboxes.</p>
-        pub fn inbox_percentage(mut self, inp: f64) -> Self {
-            self.inbox_percentage = Some(inp);
+        pub fn inbox_percentage(mut self, input: f64) -> Self {
+            self.inbox_percentage = Some(input);
             self
         }
-        pub fn set_inbox_percentage(mut self, inp: std::option::Option<f64>) -> Self {
-            self.inbox_percentage = inp;
+        pub fn set_inbox_percentage(mut self, input: std::option::Option<f64>) -> Self {
+            self.inbox_percentage = input;
             self
         }
         /// <p>The percentage of messages that were sent from the selected domain to the specified
         /// email provider that arrived in recipients' spam or junk mail folders.</p>
-        pub fn spam_percentage(mut self, inp: f64) -> Self {
-            self.spam_percentage = Some(inp);
+        pub fn spam_percentage(mut self, input: f64) -> Self {
+            self.spam_percentage = Some(input);
             self
         }
-        pub fn set_spam_percentage(mut self, inp: std::option::Option<f64>) -> Self {
-            self.spam_percentage = inp;
+        pub fn set_spam_percentage(mut self, input: std::option::Option<f64>) -> Self {
+            self.spam_percentage = input;
             self
         }
         /// Consumes the builder and constructs a [`DomainIspPlacement`](crate::model::DomainIspPlacement)
@@ -6324,42 +6374,42 @@ pub mod volume_statistics {
     }
     impl Builder {
         /// <p>The total number of emails that arrived in recipients' inboxes.</p>
-        pub fn inbox_raw_count(mut self, inp: i64) -> Self {
-            self.inbox_raw_count = Some(inp);
+        pub fn inbox_raw_count(mut self, input: i64) -> Self {
+            self.inbox_raw_count = Some(input);
             self
         }
-        pub fn set_inbox_raw_count(mut self, inp: std::option::Option<i64>) -> Self {
-            self.inbox_raw_count = inp;
+        pub fn set_inbox_raw_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.inbox_raw_count = input;
             self
         }
         /// <p>The total number of emails that arrived in recipients' spam or junk mail
         /// folders.</p>
-        pub fn spam_raw_count(mut self, inp: i64) -> Self {
-            self.spam_raw_count = Some(inp);
+        pub fn spam_raw_count(mut self, input: i64) -> Self {
+            self.spam_raw_count = Some(input);
             self
         }
-        pub fn set_spam_raw_count(mut self, inp: std::option::Option<i64>) -> Self {
-            self.spam_raw_count = inp;
+        pub fn set_spam_raw_count(mut self, input: std::option::Option<i64>) -> Self {
+            self.spam_raw_count = input;
             self
         }
         /// <p>An estimate of the percentage of emails sent from the current domain that will arrive
         /// in recipients' inboxes.</p>
-        pub fn projected_inbox(mut self, inp: i64) -> Self {
-            self.projected_inbox = Some(inp);
+        pub fn projected_inbox(mut self, input: i64) -> Self {
+            self.projected_inbox = Some(input);
             self
         }
-        pub fn set_projected_inbox(mut self, inp: std::option::Option<i64>) -> Self {
-            self.projected_inbox = inp;
+        pub fn set_projected_inbox(mut self, input: std::option::Option<i64>) -> Self {
+            self.projected_inbox = input;
             self
         }
         /// <p>An estimate of the percentage of emails sent from the current domain that will arrive
         /// in recipients' spam or junk mail folders.</p>
-        pub fn projected_spam(mut self, inp: i64) -> Self {
-            self.projected_spam = Some(inp);
+        pub fn projected_spam(mut self, input: i64) -> Self {
+            self.projected_spam = Some(input);
             self
         }
-        pub fn set_projected_spam(mut self, inp: std::option::Option<i64>) -> Self {
-            self.projected_spam = inp;
+        pub fn set_projected_spam(mut self, input: std::option::Option<i64>) -> Self {
+            self.projected_spam = input;
             self
         }
         /// Consumes the builder and constructs a [`VolumeStatistics`](crate::model::VolumeStatistics)
@@ -6424,41 +6474,41 @@ pub mod overall_volume {
     impl Builder {
         /// <p>An object that contains information about the numbers of messages that arrived in
         /// recipients' inboxes and junk mail folders.</p>
-        pub fn volume_statistics(mut self, inp: crate::model::VolumeStatistics) -> Self {
-            self.volume_statistics = Some(inp);
+        pub fn volume_statistics(mut self, input: crate::model::VolumeStatistics) -> Self {
+            self.volume_statistics = Some(input);
             self
         }
         pub fn set_volume_statistics(
             mut self,
-            inp: std::option::Option<crate::model::VolumeStatistics>,
+            input: std::option::Option<crate::model::VolumeStatistics>,
         ) -> Self {
-            self.volume_statistics = inp;
+            self.volume_statistics = input;
             self
         }
         /// <p>The percentage of emails that were sent from the domain that were read by their
         /// recipients.</p>
-        pub fn read_rate_percent(mut self, inp: f64) -> Self {
-            self.read_rate_percent = Some(inp);
+        pub fn read_rate_percent(mut self, input: f64) -> Self {
+            self.read_rate_percent = Some(input);
             self
         }
-        pub fn set_read_rate_percent(mut self, inp: std::option::Option<f64>) -> Self {
-            self.read_rate_percent = inp;
+        pub fn set_read_rate_percent(mut self, input: std::option::Option<f64>) -> Self {
+            self.read_rate_percent = input;
             self
         }
         pub fn domain_isp_placements(
             mut self,
-            inp: impl Into<crate::model::DomainIspPlacement>,
+            input: impl Into<crate::model::DomainIspPlacement>,
         ) -> Self {
             let mut v = self.domain_isp_placements.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.domain_isp_placements = Some(v);
             self
         }
         pub fn set_domain_isp_placements(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
         ) -> Self {
-            self.domain_isp_placements = inp;
+            self.domain_isp_placements = input;
             self
         }
         /// Consumes the builder and constructs a [`OverallVolume`](crate::model::OverallVolume)
@@ -6511,24 +6561,24 @@ pub mod isp_placement {
     }
     impl Builder {
         /// <p>The name of the email provider that the inbox placement data applies to.</p>
-        pub fn isp_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.isp_name = Some(inp.into());
+        pub fn isp_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.isp_name = Some(input.into());
             self
         }
-        pub fn set_isp_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.isp_name = inp;
+        pub fn set_isp_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.isp_name = input;
             self
         }
         /// <p>An object that contains inbox placement metrics for a specific email provider.</p>
-        pub fn placement_statistics(mut self, inp: crate::model::PlacementStatistics) -> Self {
-            self.placement_statistics = Some(inp);
+        pub fn placement_statistics(mut self, input: crate::model::PlacementStatistics) -> Self {
+            self.placement_statistics = Some(input);
             self
         }
         pub fn set_placement_statistics(
             mut self,
-            inp: std::option::Option<crate::model::PlacementStatistics>,
+            input: std::option::Option<crate::model::PlacementStatistics>,
         ) -> Self {
-            self.placement_statistics = inp;
+            self.placement_statistics = input;
             self
         }
         /// Consumes the builder and constructs a [`IspPlacement`](crate::model::IspPlacement)
@@ -6601,52 +6651,52 @@ pub mod placement_statistics {
     }
     impl Builder {
         /// <p>The percentage of emails that arrived in recipients' inboxes during the predictive inbox placement test.</p>
-        pub fn inbox_percentage(mut self, inp: f64) -> Self {
-            self.inbox_percentage = Some(inp);
+        pub fn inbox_percentage(mut self, input: f64) -> Self {
+            self.inbox_percentage = Some(input);
             self
         }
-        pub fn set_inbox_percentage(mut self, inp: std::option::Option<f64>) -> Self {
-            self.inbox_percentage = inp;
+        pub fn set_inbox_percentage(mut self, input: std::option::Option<f64>) -> Self {
+            self.inbox_percentage = input;
             self
         }
         /// <p>The percentage of emails that arrived in recipients' spam or junk mail folders during
         /// the predictive inbox placement test.</p>
-        pub fn spam_percentage(mut self, inp: f64) -> Self {
-            self.spam_percentage = Some(inp);
+        pub fn spam_percentage(mut self, input: f64) -> Self {
+            self.spam_percentage = Some(input);
             self
         }
-        pub fn set_spam_percentage(mut self, inp: std::option::Option<f64>) -> Self {
-            self.spam_percentage = inp;
+        pub fn set_spam_percentage(mut self, input: std::option::Option<f64>) -> Self {
+            self.spam_percentage = input;
             self
         }
         /// <p>The percentage of emails that didn't arrive in recipients' inboxes at all during the
         /// predictive inbox placement test.</p>
-        pub fn missing_percentage(mut self, inp: f64) -> Self {
-            self.missing_percentage = Some(inp);
+        pub fn missing_percentage(mut self, input: f64) -> Self {
+            self.missing_percentage = Some(input);
             self
         }
-        pub fn set_missing_percentage(mut self, inp: std::option::Option<f64>) -> Self {
-            self.missing_percentage = inp;
+        pub fn set_missing_percentage(mut self, input: std::option::Option<f64>) -> Self {
+            self.missing_percentage = input;
             self
         }
         /// <p>The percentage of emails that were authenticated by using Sender Policy Framework
         /// (SPF) during the predictive inbox placement test.</p>
-        pub fn spf_percentage(mut self, inp: f64) -> Self {
-            self.spf_percentage = Some(inp);
+        pub fn spf_percentage(mut self, input: f64) -> Self {
+            self.spf_percentage = Some(input);
             self
         }
-        pub fn set_spf_percentage(mut self, inp: std::option::Option<f64>) -> Self {
-            self.spf_percentage = inp;
+        pub fn set_spf_percentage(mut self, input: std::option::Option<f64>) -> Self {
+            self.spf_percentage = input;
             self
         }
         /// <p>The percentage of emails that were authenticated by using DomainKeys Identified Mail
         /// (DKIM) during the predictive inbox placement test.</p>
-        pub fn dkim_percentage(mut self, inp: f64) -> Self {
-            self.dkim_percentage = Some(inp);
+        pub fn dkim_percentage(mut self, input: f64) -> Self {
+            self.dkim_percentage = Some(input);
             self
         }
-        pub fn set_dkim_percentage(mut self, inp: std::option::Option<f64>) -> Self {
-            self.dkim_percentage = inp;
+        pub fn set_dkim_percentage(mut self, input: std::option::Option<f64>) -> Self {
+            self.dkim_percentage = input;
             self
         }
         /// Consumes the builder and constructs a [`PlacementStatistics`](crate::model::PlacementStatistics)
@@ -6792,12 +6842,12 @@ pub mod dedicated_ip {
     }
     impl Builder {
         /// <p>An IPv4 address.</p>
-        pub fn ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ip = Some(inp.into());
+        pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip = Some(input.into());
             self
         }
-        pub fn set_ip(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ip = inp;
+        pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip = input;
             self
         }
         /// <p>The warm-up status of a dedicated IP address. The status can have one of the following
@@ -6814,34 +6864,34 @@ pub mod dedicated_ip {
         /// the IP address is ready to use.</p>
         /// </li>
         /// </ul>
-        pub fn warmup_status(mut self, inp: crate::model::WarmupStatus) -> Self {
-            self.warmup_status = Some(inp);
+        pub fn warmup_status(mut self, input: crate::model::WarmupStatus) -> Self {
+            self.warmup_status = Some(input);
             self
         }
         pub fn set_warmup_status(
             mut self,
-            inp: std::option::Option<crate::model::WarmupStatus>,
+            input: std::option::Option<crate::model::WarmupStatus>,
         ) -> Self {
-            self.warmup_status = inp;
+            self.warmup_status = input;
             self
         }
         /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1,
         /// the address has completed the warm-up process and is ready for use.</p>
-        pub fn warmup_percentage(mut self, inp: i32) -> Self {
-            self.warmup_percentage = Some(inp);
+        pub fn warmup_percentage(mut self, input: i32) -> Self {
+            self.warmup_percentage = Some(input);
             self
         }
-        pub fn set_warmup_percentage(mut self, inp: std::option::Option<i32>) -> Self {
-            self.warmup_percentage = inp;
+        pub fn set_warmup_percentage(mut self, input: std::option::Option<i32>) -> Self {
+            self.warmup_percentage = input;
             self
         }
         /// <p>The name of the dedicated IP pool that the IP address is associated with.</p>
-        pub fn pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.pool_name = Some(inp.into());
+        pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pool_name = Some(input.into());
             self
         }
-        pub fn set_pool_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.pool_name = inp;
+        pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pool_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DedicatedIp`](crate::model::DedicatedIp)
@@ -7001,12 +7051,12 @@ pub mod event_destination {
     }
     impl Builder {
         /// <p>A name that identifies the event destination.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>If <code>true</code>, the event destination is enabled. When the event destination is
@@ -7014,82 +7064,85 @@ pub mod event_destination {
         /// <code>EventDestinationDefinition</code>.</p>
         /// <p>If <code>false</code>, the event destination is disabled. When the event destination
         /// is disabled, events aren't sent to the specified destinations.</p>
-        pub fn enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
             self
         }
-        pub fn set_enabled(mut self, inp: bool) -> Self {
-            self.enabled = Some(inp);
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
             self
         }
-        pub fn matching_event_types(mut self, inp: impl Into<crate::model::EventType>) -> Self {
+        pub fn matching_event_types(mut self, input: impl Into<crate::model::EventType>) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.matching_event_types = Some(v);
             self
         }
         pub fn set_matching_event_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EventType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EventType>>,
         ) -> Self {
-            self.matching_event_types = inp;
+            self.matching_event_types = input;
             self
         }
         /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to
         /// stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
         pub fn kinesis_firehose_destination(
             mut self,
-            inp: crate::model::KinesisFirehoseDestination,
+            input: crate::model::KinesisFirehoseDestination,
         ) -> Self {
-            self.kinesis_firehose_destination = Some(inp);
+            self.kinesis_firehose_destination = Some(input);
             self
         }
         pub fn set_kinesis_firehose_destination(
             mut self,
-            inp: std::option::Option<crate::model::KinesisFirehoseDestination>,
+            input: std::option::Option<crate::model::KinesisFirehoseDestination>,
         ) -> Self {
-            self.kinesis_firehose_destination = inp;
+            self.kinesis_firehose_destination = input;
             self
         }
         /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to
         /// monitor and gain insights on your email sending metrics.</p>
-        pub fn cloud_watch_destination(mut self, inp: crate::model::CloudWatchDestination) -> Self {
-            self.cloud_watch_destination = Some(inp);
+        pub fn cloud_watch_destination(
+            mut self,
+            input: crate::model::CloudWatchDestination,
+        ) -> Self {
+            self.cloud_watch_destination = Some(input);
             self
         }
         pub fn set_cloud_watch_destination(
             mut self,
-            inp: std::option::Option<crate::model::CloudWatchDestination>,
+            input: std::option::Option<crate::model::CloudWatchDestination>,
         ) -> Self {
-            self.cloud_watch_destination = inp;
+            self.cloud_watch_destination = input;
             self
         }
         /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to
         /// send notification when certain email events occur.</p>
-        pub fn sns_destination(mut self, inp: crate::model::SnsDestination) -> Self {
-            self.sns_destination = Some(inp);
+        pub fn sns_destination(mut self, input: crate::model::SnsDestination) -> Self {
+            self.sns_destination = Some(input);
             self
         }
         pub fn set_sns_destination(
             mut self,
-            inp: std::option::Option<crate::model::SnsDestination>,
+            input: std::option::Option<crate::model::SnsDestination>,
         ) -> Self {
-            self.sns_destination = inp;
+            self.sns_destination = input;
             self
         }
         /// <p>An object that defines an Amazon Pinpoint project destination for email events. You can send
         /// email event data to a Amazon Pinpoint project to view metrics using the Transactional Messaging
         /// dashboards that are built in to Amazon Pinpoint. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/analytics-transactional-messages.html">Transactional
         /// Messaging Charts</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
-        pub fn pinpoint_destination(mut self, inp: crate::model::PinpointDestination) -> Self {
-            self.pinpoint_destination = Some(inp);
+        pub fn pinpoint_destination(mut self, input: crate::model::PinpointDestination) -> Self {
+            self.pinpoint_destination = Some(input);
             self
         }
         pub fn set_pinpoint_destination(
             mut self,
-            inp: std::option::Option<crate::model::PinpointDestination>,
+            input: std::option::Option<crate::model::PinpointDestination>,
         ) -> Self {
-            self.pinpoint_destination = inp;
+            self.pinpoint_destination = input;
             self
         }
         /// Consumes the builder and constructs a [`EventDestination`](crate::model::EventDestination)
@@ -7158,18 +7211,18 @@ pub mod suppression_options {
     impl Builder {
         pub fn suppressed_reasons(
             mut self,
-            inp: impl Into<crate::model::SuppressionListReason>,
+            input: impl Into<crate::model::SuppressionListReason>,
         ) -> Self {
             let mut v = self.suppressed_reasons.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.suppressed_reasons = Some(v);
             self
         }
         pub fn set_suppressed_reasons(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
         ) -> Self {
-            self.suppressed_reasons = inp;
+            self.suppressed_reasons = input;
             self
         }
         /// Consumes the builder and constructs a [`SuppressionOptions`](crate::model::SuppressionOptions)
@@ -7216,12 +7269,12 @@ pub mod sending_options {
     impl Builder {
         /// <p>If <code>true</code>, email sending is enabled for the configuration set. If
         /// <code>false</code>, email sending is disabled for the configuration set.</p>
-        pub fn sending_enabled(mut self, inp: bool) -> Self {
-            self.sending_enabled = Some(inp);
+        pub fn sending_enabled(mut self, input: bool) -> Self {
+            self.sending_enabled = Some(input);
             self
         }
-        pub fn set_sending_enabled(mut self, inp: bool) -> Self {
-            self.sending_enabled = Some(inp);
+        pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.sending_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`SendingOptions`](crate::model::SendingOptions)
@@ -7284,26 +7337,26 @@ pub mod reputation_options {
         /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration
         /// set. If <code>false</code>, tracking of reputation metrics is disabled for the
         /// configuration set.</p>
-        pub fn reputation_metrics_enabled(mut self, inp: bool) -> Self {
-            self.reputation_metrics_enabled = Some(inp);
+        pub fn reputation_metrics_enabled(mut self, input: bool) -> Self {
+            self.reputation_metrics_enabled = Some(input);
             self
         }
-        pub fn set_reputation_metrics_enabled(mut self, inp: bool) -> Self {
-            self.reputation_metrics_enabled = Some(inp);
+        pub fn set_reputation_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.reputation_metrics_enabled = input;
             self
         }
         /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh
         /// start. When your account is given a fresh start, your reputation metrics are calculated
         /// starting from the date of the fresh start.</p>
-        pub fn last_fresh_start(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_fresh_start = Some(inp);
+        pub fn last_fresh_start(mut self, input: smithy_types::Instant) -> Self {
+            self.last_fresh_start = Some(input);
             self
         }
         pub fn set_last_fresh_start(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_fresh_start = inp;
+            self.last_fresh_start = input;
             self
         }
         /// Consumes the builder and constructs a [`ReputationOptions`](crate::model::ReputationOptions)
@@ -7361,25 +7414,28 @@ pub mod delivery_options {
         /// Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only
         /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
         /// messages can be delivered in plain text if a TLS connection can't be established.</p>
-        pub fn tls_policy(mut self, inp: crate::model::TlsPolicy) -> Self {
-            self.tls_policy = Some(inp);
+        pub fn tls_policy(mut self, input: crate::model::TlsPolicy) -> Self {
+            self.tls_policy = Some(input);
             self
         }
-        pub fn set_tls_policy(mut self, inp: std::option::Option<crate::model::TlsPolicy>) -> Self {
-            self.tls_policy = inp;
+        pub fn set_tls_policy(
+            mut self,
+            input: std::option::Option<crate::model::TlsPolicy>,
+        ) -> Self {
+            self.tls_policy = input;
             self
         }
         /// <p>The name of the dedicated IP pool that you want to associate with the configuration
         /// set.</p>
-        pub fn sending_pool_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sending_pool_name = Some(inp.into());
+        pub fn sending_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sending_pool_name = Some(input.into());
             self
         }
         pub fn set_sending_pool_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sending_pool_name = inp;
+            self.sending_pool_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeliveryOptions`](crate::model::DeliveryOptions)
@@ -7430,15 +7486,15 @@ pub mod tracking_options {
     }
     impl Builder {
         /// <p>The domain that you want to use for tracking open and click events.</p>
-        pub fn custom_redirect_domain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_redirect_domain = Some(inp.into());
+        pub fn custom_redirect_domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_redirect_domain = Some(input.into());
             self
         }
         pub fn set_custom_redirect_domain(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.custom_redirect_domain = inp;
+            self.custom_redirect_domain = input;
             self
         }
         /// Consumes the builder and constructs a [`TrackingOptions`](crate::model::TrackingOptions)
@@ -7499,31 +7555,34 @@ pub mod blacklist_entry {
     }
     impl Builder {
         /// <p>The name of the blacklist that the IP address appears on.</p>
-        pub fn rbl_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rbl_name = Some(inp.into());
+        pub fn rbl_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rbl_name = Some(input.into());
             self
         }
-        pub fn set_rbl_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.rbl_name = inp;
+        pub fn set_rbl_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rbl_name = input;
             self
         }
         /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
-        pub fn listing_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.listing_time = Some(inp);
+        pub fn listing_time(mut self, input: smithy_types::Instant) -> Self {
+            self.listing_time = Some(input);
             self
         }
-        pub fn set_listing_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.listing_time = inp;
+        pub fn set_listing_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.listing_time = input;
             self
         }
         /// <p>Additional information about the blacklisting event, as provided by the blacklist
         /// maintainer.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`BlacklistEntry`](crate::model::BlacklistEntry)
@@ -7632,75 +7691,75 @@ pub mod account_details {
         /// communicate during a transaction with a customer.</p>
         /// </li>
         /// </ul>
-        pub fn mail_type(mut self, inp: crate::model::MailType) -> Self {
-            self.mail_type = Some(inp);
+        pub fn mail_type(mut self, input: crate::model::MailType) -> Self {
+            self.mail_type = Some(input);
             self
         }
-        pub fn set_mail_type(mut self, inp: std::option::Option<crate::model::MailType>) -> Self {
-            self.mail_type = inp;
+        pub fn set_mail_type(mut self, input: std::option::Option<crate::model::MailType>) -> Self {
+            self.mail_type = input;
             self
         }
         /// <p>The URL of your website. This information helps us better understand the type of
         /// content that you plan to send.</p>
-        pub fn website_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.website_url = Some(inp.into());
+        pub fn website_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.website_url = Some(input.into());
             self
         }
-        pub fn set_website_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.website_url = inp;
+        pub fn set_website_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.website_url = input;
             self
         }
         /// <p>The language you would prefer for the case. The contact language can be one of
         /// <code>ENGLISH</code> or <code>JAPANESE</code>.</p>
-        pub fn contact_language(mut self, inp: crate::model::ContactLanguage) -> Self {
-            self.contact_language = Some(inp);
+        pub fn contact_language(mut self, input: crate::model::ContactLanguage) -> Self {
+            self.contact_language = Some(input);
             self
         }
         pub fn set_contact_language(
             mut self,
-            inp: std::option::Option<crate::model::ContactLanguage>,
+            input: std::option::Option<crate::model::ContactLanguage>,
         ) -> Self {
-            self.contact_language = inp;
+            self.contact_language = input;
             self
         }
         /// <p>A description of the types of email that you plan to send.</p>
-        pub fn use_case_description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.use_case_description = Some(inp.into());
+        pub fn use_case_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.use_case_description = Some(input.into());
             self
         }
         pub fn set_use_case_description(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.use_case_description = inp;
+            self.use_case_description = input;
             self
         }
         pub fn additional_contact_email_addresses(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self.additional_contact_email_addresses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.additional_contact_email_addresses = Some(v);
             self
         }
         pub fn set_additional_contact_email_addresses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.additional_contact_email_addresses = inp;
+            self.additional_contact_email_addresses = input;
             self
         }
         /// <p>Information about the review of the latest details you submitted.</p>
-        pub fn review_details(mut self, inp: crate::model::ReviewDetails) -> Self {
-            self.review_details = Some(inp);
+        pub fn review_details(mut self, input: crate::model::ReviewDetails) -> Self {
+            self.review_details = Some(input);
             self
         }
         pub fn set_review_details(
             mut self,
-            inp: std::option::Option<crate::model::ReviewDetails>,
+            input: std::option::Option<crate::model::ReviewDetails>,
         ) -> Self {
-            self.review_details = inp;
+            self.review_details = input;
             self
         }
         /// Consumes the builder and constructs a [`AccountDetails`](crate::model::AccountDetails)
@@ -7801,21 +7860,24 @@ pub mod review_details {
         /// your appeal. You can submit your appeal again.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, inp: crate::model::ReviewStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ReviewStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::ReviewStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::ReviewStatus>,
+        ) -> Self {
+            self.status = input;
             self
         }
         /// <p>The associated support center case ID (if any).</p>
-        pub fn case_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.case_id = Some(inp.into());
+        pub fn case_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.case_id = Some(input.into());
             self
         }
-        pub fn set_case_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.case_id = inp;
+        pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.case_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ReviewDetails`](crate::model::ReviewDetails)
@@ -7941,18 +8003,18 @@ pub mod suppression_attributes {
     impl Builder {
         pub fn suppressed_reasons(
             mut self,
-            inp: impl Into<crate::model::SuppressionListReason>,
+            input: impl Into<crate::model::SuppressionListReason>,
         ) -> Self {
             let mut v = self.suppressed_reasons.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.suppressed_reasons = Some(v);
             self
         }
         pub fn set_suppressed_reasons(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SuppressionListReason>>,
         ) -> Self {
-            self.suppressed_reasons = inp;
+            self.suppressed_reasons = input;
             self
         }
         /// Consumes the builder and constructs a [`SuppressionAttributes`](crate::model::SuppressionAttributes)
@@ -8016,33 +8078,33 @@ pub mod send_quota {
         /// <p>The maximum number of emails that you can send in the current AWS Region over a
         /// 24-hour period. This value is also called your <i>sending
         /// quota</i>.</p>
-        pub fn max24_hour_send(mut self, inp: f64) -> Self {
-            self.max24_hour_send = Some(inp);
+        pub fn max24_hour_send(mut self, input: f64) -> Self {
+            self.max24_hour_send = Some(input);
             self
         }
-        pub fn set_max24_hour_send(mut self, inp: f64) -> Self {
-            self.max24_hour_send = Some(inp);
+        pub fn set_max24_hour_send(mut self, input: std::option::Option<f64>) -> Self {
+            self.max24_hour_send = input;
             self
         }
         /// <p>The maximum number of emails that you can send per second in the current AWS Region.
         /// This value is also called your <i>maximum sending rate</i> or your
         /// <i>maximum TPS (transactions per second) rate</i>.</p>
-        pub fn max_send_rate(mut self, inp: f64) -> Self {
-            self.max_send_rate = Some(inp);
+        pub fn max_send_rate(mut self, input: f64) -> Self {
+            self.max_send_rate = Some(input);
             self
         }
-        pub fn set_max_send_rate(mut self, inp: f64) -> Self {
-            self.max_send_rate = Some(inp);
+        pub fn set_max_send_rate(mut self, input: std::option::Option<f64>) -> Self {
+            self.max_send_rate = input;
             self
         }
         /// <p>The number of emails sent from your Amazon SES account in the current AWS Region over the
         /// past 24 hours.</p>
-        pub fn sent_last24_hours(mut self, inp: f64) -> Self {
-            self.sent_last24_hours = Some(inp);
+        pub fn sent_last24_hours(mut self, input: f64) -> Self {
+            self.sent_last24_hours = Some(input);
             self
         }
-        pub fn set_sent_last24_hours(mut self, inp: f64) -> Self {
-            self.sent_last24_hours = Some(inp);
+        pub fn set_sent_last24_hours(mut self, input: std::option::Option<f64>) -> Self {
+            self.sent_last24_hours = input;
             self
         }
         /// Consumes the builder and constructs a [`SendQuota`](crate::model::SendQuota)

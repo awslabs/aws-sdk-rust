@@ -5,6 +5,7 @@
 
 use std::process::exit;
 
+/// Sends a message to and receives the message from a queue.
 #[tokio::main]
 async fn main() -> Result<(), sqs::Error> {
     tracing_subscriber::fmt::init();
@@ -18,25 +19,31 @@ async fn main() -> Result<(), sqs::Error> {
             exit(1);
         }
     };
-    println!("sending a receiving on `{}`", queue_url);
+
+    println!(
+        "Sending and receiving messages on with URL: `{}`",
+        queue_url
+    );
 
     let rsp = client
         .send_message()
         .queue_url(&queue_url)
         .message_body("hello from my queue")
+        .message_group_id("MyGroup")
         .send()
         .await?;
-    println!("sent a message: {:#?}", rsp);
+
+    println!("Response from sending a message: {:#?}", rsp);
 
     let rcv_message_output = client
         .receive_message()
-        // TODO: this should not be required, https://github.com/awslabs/smithy-rs/issues/439
-        .max_number_of_messages(1)
         .queue_url(&queue_url)
         .send()
         .await?;
+
     for message in rcv_message_output.messages.unwrap_or_default() {
-        println!("got a message: {:#?}", message);
+        println!("Got the message: {:#?}", message);
     }
+
     Ok(())
 }

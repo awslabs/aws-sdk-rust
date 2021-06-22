@@ -61,7 +61,7 @@ pub fn serialize_operation_create_function(
 
 pub fn ser_payload_invoke_input(
     payload: std::option::Option<smithy_types::Blob>,
-) -> Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
+) -> std::result::Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
     let payload = match payload {
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
@@ -72,7 +72,7 @@ pub fn ser_payload_invoke_input(
 
 pub fn ser_payload_invoke_async_input(
     payload: smithy_http::byte_stream::ByteStream,
-) -> Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
+) -> std::result::Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
     #[allow(clippy::useless_conversion)]
     Ok(smithy_http::body::SdkBody::from(payload.into_inner()))
 }

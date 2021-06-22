@@ -2,7 +2,10 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_role_to_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AddRoleToDBClusterOutput, crate::error::AddRoleToDBClusterError> {
+) -> std::result::Result<
+    crate::output::AddRoleToDBClusterOutput,
+    crate::error::AddRoleToDBClusterError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AddRoleToDBClusterError::unhandled)?;
     let error_code = match generic.code() {
@@ -71,7 +74,10 @@ pub fn parse_add_role_to_db_cluster_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_role_to_db_cluster_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AddRoleToDBClusterOutput, crate::error::AddRoleToDBClusterError> {
+) -> std::result::Result<
+    crate::output::AddRoleToDBClusterOutput,
+    crate::error::AddRoleToDBClusterError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::add_role_to_db_cluster_output::Builder::default();
@@ -83,7 +89,10 @@ pub fn parse_add_role_to_db_cluster_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_role_to_db_instance_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AddRoleToDBInstanceOutput, crate::error::AddRoleToDBInstanceError> {
+) -> std::result::Result<
+    crate::output::AddRoleToDBInstanceOutput,
+    crate::error::AddRoleToDBInstanceError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AddRoleToDBInstanceError::unhandled)?;
     let error_code = match generic.code() {
@@ -148,7 +157,10 @@ pub fn parse_add_role_to_db_instance_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_role_to_db_instance_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AddRoleToDBInstanceOutput, crate::error::AddRoleToDBInstanceError> {
+) -> std::result::Result<
+    crate::output::AddRoleToDBInstanceOutput,
+    crate::error::AddRoleToDBInstanceError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::add_role_to_db_instance_output::Builder::default();
@@ -160,7 +172,7 @@ pub fn parse_add_role_to_db_instance_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_source_identifier_to_subscription_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AddSourceIdentifierToSubscriptionOutput,
     crate::error::AddSourceIdentifierToSubscriptionError,
 > {
@@ -215,7 +227,7 @@ pub fn parse_add_source_identifier_to_subscription_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_source_identifier_to_subscription_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AddSourceIdentifierToSubscriptionOutput,
     crate::error::AddSourceIdentifierToSubscriptionError,
 > {
@@ -236,7 +248,8 @@ pub fn parse_add_source_identifier_to_subscription_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_tags_to_resource_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AddTagsToResourceOutput, crate::error::AddTagsToResourceError> {
+) -> std::result::Result<crate::output::AddTagsToResourceOutput, crate::error::AddTagsToResourceError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AddTagsToResourceError::unhandled)?;
     let error_code = match generic.code() {
@@ -318,7 +331,8 @@ pub fn parse_add_tags_to_resource_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_tags_to_resource_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AddTagsToResourceOutput, crate::error::AddTagsToResourceError> {
+) -> std::result::Result<crate::output::AddTagsToResourceOutput, crate::error::AddTagsToResourceError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::add_tags_to_resource_output::Builder::default();
@@ -330,7 +344,7 @@ pub fn parse_add_tags_to_resource_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_apply_pending_maintenance_action_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ApplyPendingMaintenanceActionOutput,
     crate::error::ApplyPendingMaintenanceActionError,
 > {
@@ -400,7 +414,7 @@ pub fn parse_apply_pending_maintenance_action_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_apply_pending_maintenance_action_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ApplyPendingMaintenanceActionOutput,
     crate::error::ApplyPendingMaintenanceActionError,
 > {
@@ -420,7 +434,7 @@ pub fn parse_apply_pending_maintenance_action_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_authorize_db_security_group_ingress_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AuthorizeDBSecurityGroupIngressOutput,
     crate::error::AuthorizeDBSecurityGroupIngressError,
 > {
@@ -462,7 +476,7 @@ pub fn parse_authorize_db_security_group_ingress_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_authorize_db_security_group_ingress_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::AuthorizeDBSecurityGroupIngressOutput,
     crate::error::AuthorizeDBSecurityGroupIngressError,
 > {
@@ -483,7 +497,10 @@ pub fn parse_authorize_db_security_group_ingress_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_backtrack_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::BacktrackDBClusterOutput, crate::error::BacktrackDBClusterError> {
+) -> std::result::Result<
+    crate::output::BacktrackDBClusterOutput,
+    crate::error::BacktrackDBClusterError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::BacktrackDBClusterError::unhandled)?;
     let error_code = match generic.code() {
@@ -526,7 +543,10 @@ pub fn parse_backtrack_db_cluster_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_backtrack_db_cluster_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::BacktrackDBClusterOutput, crate::error::BacktrackDBClusterError> {
+) -> std::result::Result<
+    crate::output::BacktrackDBClusterOutput,
+    crate::error::BacktrackDBClusterError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::backtrack_db_cluster_output::Builder::default();
@@ -543,7 +563,8 @@ pub fn parse_backtrack_db_cluster_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_export_task_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CancelExportTaskOutput, crate::error::CancelExportTaskError> {
+) -> std::result::Result<crate::output::CancelExportTaskOutput, crate::error::CancelExportTaskError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CancelExportTaskError::unhandled)?;
     let error_code = match generic.code() {
@@ -586,7 +607,8 @@ pub fn parse_cancel_export_task_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_export_task_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CancelExportTaskOutput, crate::error::CancelExportTaskError> {
+) -> std::result::Result<crate::output::CancelExportTaskOutput, crate::error::CancelExportTaskError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_export_task_output::Builder::default();
@@ -601,7 +623,7 @@ pub fn parse_cancel_export_task_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_db_cluster_parameter_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CopyDBClusterParameterGroupOutput,
     crate::error::CopyDBClusterParameterGroupError,
 > {
@@ -641,7 +663,7 @@ pub fn parse_copy_db_cluster_parameter_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_db_cluster_parameter_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CopyDBClusterParameterGroupOutput,
     crate::error::CopyDBClusterParameterGroupError,
 > {
@@ -661,7 +683,10 @@ pub fn parse_copy_db_cluster_parameter_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_db_cluster_snapshot_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CopyDBClusterSnapshotOutput, crate::error::CopyDBClusterSnapshotError> {
+) -> std::result::Result<
+    crate::output::CopyDBClusterSnapshotOutput,
+    crate::error::CopyDBClusterSnapshotError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CopyDBClusterSnapshotError::unhandled)?;
     let error_code = match generic.code() {
@@ -759,7 +784,10 @@ pub fn parse_copy_db_cluster_snapshot_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_db_cluster_snapshot_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CopyDBClusterSnapshotOutput, crate::error::CopyDBClusterSnapshotError> {
+) -> std::result::Result<
+    crate::output::CopyDBClusterSnapshotOutput,
+    crate::error::CopyDBClusterSnapshotError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::copy_db_cluster_snapshot_output::Builder::default();
@@ -776,7 +804,10 @@ pub fn parse_copy_db_cluster_snapshot_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_db_parameter_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CopyDBParameterGroupOutput, crate::error::CopyDBParameterGroupError> {
+) -> std::result::Result<
+    crate::output::CopyDBParameterGroupOutput,
+    crate::error::CopyDBParameterGroupError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CopyDBParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -830,7 +861,10 @@ pub fn parse_copy_db_parameter_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_db_parameter_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CopyDBParameterGroupOutput, crate::error::CopyDBParameterGroupError> {
+) -> std::result::Result<
+    crate::output::CopyDBParameterGroupOutput,
+    crate::error::CopyDBParameterGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::copy_db_parameter_group_output::Builder::default();
@@ -847,7 +881,7 @@ pub fn parse_copy_db_parameter_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_db_snapshot_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CopyDBSnapshotOutput, crate::error::CopyDBSnapshotError> {
+) -> std::result::Result<crate::output::CopyDBSnapshotOutput, crate::error::CopyDBSnapshotError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CopyDBSnapshotError::unhandled)?;
     let error_code = match generic.code() {
@@ -944,7 +978,7 @@ pub fn parse_copy_db_snapshot_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_db_snapshot_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CopyDBSnapshotOutput, crate::error::CopyDBSnapshotError> {
+) -> std::result::Result<crate::output::CopyDBSnapshotOutput, crate::error::CopyDBSnapshotError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::copy_db_snapshot_output::Builder::default();
@@ -959,7 +993,7 @@ pub fn parse_copy_db_snapshot_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_option_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CopyOptionGroupOutput, crate::error::CopyOptionGroupError> {
+) -> std::result::Result<crate::output::CopyOptionGroupOutput, crate::error::CopyOptionGroupError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CopyOptionGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -1014,7 +1048,7 @@ pub fn parse_copy_option_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_copy_option_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CopyOptionGroupOutput, crate::error::CopyOptionGroupError> {
+) -> std::result::Result<crate::output::CopyOptionGroupOutput, crate::error::CopyOptionGroupError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::copy_option_group_output::Builder::default();
@@ -1029,7 +1063,7 @@ pub fn parse_copy_option_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_custom_availability_zone_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateCustomAvailabilityZoneOutput,
     crate::error::CreateCustomAvailabilityZoneError,
 > {
@@ -1069,7 +1103,7 @@ pub fn parse_create_custom_availability_zone_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_custom_availability_zone_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateCustomAvailabilityZoneOutput,
     crate::error::CreateCustomAvailabilityZoneError,
 > {
@@ -1089,7 +1123,7 @@ pub fn parse_create_custom_availability_zone_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBClusterOutput, crate::error::CreateDBClusterError> {
+) -> std::result::Result<crate::output::CreateDBClusterOutput, crate::error::CreateDBClusterError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateDBClusterError::unhandled)?;
     let error_code = match generic.code() {
@@ -1348,7 +1382,7 @@ pub fn parse_create_db_cluster_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_cluster_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBClusterOutput, crate::error::CreateDBClusterError> {
+) -> std::result::Result<crate::output::CreateDBClusterOutput, crate::error::CreateDBClusterError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_db_cluster_output::Builder::default();
@@ -1363,8 +1397,10 @@ pub fn parse_create_db_cluster_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_cluster_endpoint_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBClusterEndpointOutput, crate::error::CreateDBClusterEndpointError>
-{
+) -> std::result::Result<
+    crate::output::CreateDBClusterEndpointOutput,
+    crate::error::CreateDBClusterEndpointError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
     let error_code = match generic.code() {
@@ -1463,8 +1499,10 @@ pub fn parse_create_db_cluster_endpoint_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_cluster_endpoint_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBClusterEndpointOutput, crate::error::CreateDBClusterEndpointError>
-{
+) -> std::result::Result<
+    crate::output::CreateDBClusterEndpointOutput,
+    crate::error::CreateDBClusterEndpointError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_db_cluster_endpoint_output::Builder::default();
@@ -1481,7 +1519,7 @@ pub fn parse_create_db_cluster_endpoint_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_cluster_parameter_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateDBClusterParameterGroupOutput,
     crate::error::CreateDBClusterParameterGroupError,
 > {
@@ -1515,7 +1553,7 @@ pub fn parse_create_db_cluster_parameter_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_cluster_parameter_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateDBClusterParameterGroupOutput,
     crate::error::CreateDBClusterParameterGroupError,
 > {
@@ -1536,8 +1574,10 @@ pub fn parse_create_db_cluster_parameter_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_cluster_snapshot_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBClusterSnapshotOutput, crate::error::CreateDBClusterSnapshotError>
-{
+) -> std::result::Result<
+    crate::output::CreateDBClusterSnapshotOutput,
+    crate::error::CreateDBClusterSnapshotError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateDBClusterSnapshotError::unhandled)?;
     let error_code = match generic.code() {
@@ -1625,8 +1665,10 @@ pub fn parse_create_db_cluster_snapshot_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_cluster_snapshot_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBClusterSnapshotOutput, crate::error::CreateDBClusterSnapshotError>
-{
+) -> std::result::Result<
+    crate::output::CreateDBClusterSnapshotOutput,
+    crate::error::CreateDBClusterSnapshotError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_db_cluster_snapshot_output::Builder::default();
@@ -1643,7 +1685,8 @@ pub fn parse_create_db_cluster_snapshot_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_instance_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBInstanceOutput, crate::error::CreateDBInstanceError> {
+) -> std::result::Result<crate::output::CreateDBInstanceOutput, crate::error::CreateDBInstanceError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateDBInstanceError::unhandled)?;
     let error_code = match generic.code() {
@@ -1915,7 +1958,8 @@ pub fn parse_create_db_instance_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_instance_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBInstanceOutput, crate::error::CreateDBInstanceError> {
+) -> std::result::Result<crate::output::CreateDBInstanceOutput, crate::error::CreateDBInstanceError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_db_instance_output::Builder::default();
@@ -1930,7 +1974,7 @@ pub fn parse_create_db_instance_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_instance_read_replica_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateDBInstanceReadReplicaOutput,
     crate::error::CreateDBInstanceReadReplicaError,
 > {
@@ -2066,7 +2110,7 @@ pub fn parse_create_db_instance_read_replica_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_instance_read_replica_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateDBInstanceReadReplicaOutput,
     crate::error::CreateDBInstanceReadReplicaError,
 > {
@@ -2086,8 +2130,10 @@ pub fn parse_create_db_instance_read_replica_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_parameter_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBParameterGroupOutput, crate::error::CreateDBParameterGroupError>
-{
+) -> std::result::Result<
+    crate::output::CreateDBParameterGroupOutput,
+    crate::error::CreateDBParameterGroupError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateDBParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -2132,8 +2178,10 @@ pub fn parse_create_db_parameter_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_parameter_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBParameterGroupOutput, crate::error::CreateDBParameterGroupError>
-{
+) -> std::result::Result<
+    crate::output::CreateDBParameterGroupOutput,
+    crate::error::CreateDBParameterGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_db_parameter_group_output::Builder::default();
@@ -2150,7 +2198,7 @@ pub fn parse_create_db_parameter_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_proxy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBProxyOutput, crate::error::CreateDBProxyError> {
+) -> std::result::Result<crate::output::CreateDBProxyOutput, crate::error::CreateDBProxyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateDBProxyError::unhandled)?;
     let error_code = match generic.code() {
@@ -2207,7 +2255,7 @@ pub fn parse_create_db_proxy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_proxy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBProxyOutput, crate::error::CreateDBProxyError> {
+) -> std::result::Result<crate::output::CreateDBProxyOutput, crate::error::CreateDBProxyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_db_proxy_output::Builder::default();
@@ -2222,7 +2270,10 @@ pub fn parse_create_db_proxy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_proxy_endpoint_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBProxyEndpointOutput, crate::error::CreateDBProxyEndpointError> {
+) -> std::result::Result<
+    crate::output::CreateDBProxyEndpointOutput,
+    crate::error::CreateDBProxyEndpointError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateDBProxyEndpointError::unhandled)?;
     let error_code = match generic.code() {
@@ -2305,7 +2356,10 @@ pub fn parse_create_db_proxy_endpoint_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_proxy_endpoint_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBProxyEndpointOutput, crate::error::CreateDBProxyEndpointError> {
+) -> std::result::Result<
+    crate::output::CreateDBProxyEndpointOutput,
+    crate::error::CreateDBProxyEndpointError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_db_proxy_endpoint_output::Builder::default();
@@ -2322,7 +2376,10 @@ pub fn parse_create_db_proxy_endpoint_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_security_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBSecurityGroupOutput, crate::error::CreateDBSecurityGroupError> {
+) -> std::result::Result<
+    crate::output::CreateDBSecurityGroupOutput,
+    crate::error::CreateDBSecurityGroupError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateDBSecurityGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -2374,7 +2431,10 @@ pub fn parse_create_db_security_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_security_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBSecurityGroupOutput, crate::error::CreateDBSecurityGroupError> {
+) -> std::result::Result<
+    crate::output::CreateDBSecurityGroupOutput,
+    crate::error::CreateDBSecurityGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_db_security_group_output::Builder::default();
@@ -2391,7 +2451,8 @@ pub fn parse_create_db_security_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_snapshot_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBSnapshotOutput, crate::error::CreateDBSnapshotError> {
+) -> std::result::Result<crate::output::CreateDBSnapshotOutput, crate::error::CreateDBSnapshotError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateDBSnapshotError::unhandled)?;
     let error_code = match generic.code() {
@@ -2463,7 +2524,8 @@ pub fn parse_create_db_snapshot_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_snapshot_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBSnapshotOutput, crate::error::CreateDBSnapshotError> {
+) -> std::result::Result<crate::output::CreateDBSnapshotOutput, crate::error::CreateDBSnapshotError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_db_snapshot_output::Builder::default();
@@ -2478,7 +2540,10 @@ pub fn parse_create_db_snapshot_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_subnet_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBSubnetGroupOutput, crate::error::CreateDBSubnetGroupError> {
+) -> std::result::Result<
+    crate::output::CreateDBSubnetGroupOutput,
+    crate::error::CreateDBSubnetGroupError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -2562,7 +2627,10 @@ pub fn parse_create_db_subnet_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_db_subnet_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateDBSubnetGroupOutput, crate::error::CreateDBSubnetGroupError> {
+) -> std::result::Result<
+    crate::output::CreateDBSubnetGroupOutput,
+    crate::error::CreateDBSubnetGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_db_subnet_group_output::Builder::default();
@@ -2579,8 +2647,10 @@ pub fn parse_create_db_subnet_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_event_subscription_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateEventSubscriptionOutput, crate::error::CreateEventSubscriptionError>
-{
+) -> std::result::Result<
+    crate::output::CreateEventSubscriptionOutput,
+    crate::error::CreateEventSubscriptionError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
     let error_code = match generic.code() {
@@ -2698,8 +2768,10 @@ pub fn parse_create_event_subscription_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_event_subscription_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateEventSubscriptionOutput, crate::error::CreateEventSubscriptionError>
-{
+) -> std::result::Result<
+    crate::output::CreateEventSubscriptionOutput,
+    crate::error::CreateEventSubscriptionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_event_subscription_output::Builder::default();
@@ -2716,7 +2788,10 @@ pub fn parse_create_event_subscription_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_global_cluster_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateGlobalClusterOutput, crate::error::CreateGlobalClusterError> {
+) -> std::result::Result<
+    crate::output::CreateGlobalClusterOutput,
+    crate::error::CreateGlobalClusterError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateGlobalClusterError::unhandled)?;
     let error_code = match generic.code() {
@@ -2789,7 +2864,10 @@ pub fn parse_create_global_cluster_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_global_cluster_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateGlobalClusterOutput, crate::error::CreateGlobalClusterError> {
+) -> std::result::Result<
+    crate::output::CreateGlobalClusterOutput,
+    crate::error::CreateGlobalClusterError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_global_cluster_output::Builder::default();
@@ -2806,7 +2884,8 @@ pub fn parse_create_global_cluster_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_option_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateOptionGroupOutput, crate::error::CreateOptionGroupError> {
+) -> std::result::Result<crate::output::CreateOptionGroupOutput, crate::error::CreateOptionGroupError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateOptionGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -2847,7 +2926,8 @@ pub fn parse_create_option_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_option_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateOptionGroupOutput, crate::error::CreateOptionGroupError> {
+) -> std::result::Result<crate::output::CreateOptionGroupOutput, crate::error::CreateOptionGroupError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_option_group_output::Builder::default();
@@ -2862,7 +2942,7 @@ pub fn parse_create_option_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_custom_availability_zone_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteCustomAvailabilityZoneOutput,
     crate::error::DeleteCustomAvailabilityZoneError,
 > {
@@ -2896,7 +2976,7 @@ pub fn parse_delete_custom_availability_zone_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_custom_availability_zone_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteCustomAvailabilityZoneOutput,
     crate::error::DeleteCustomAvailabilityZoneError,
 > {
@@ -2916,7 +2996,7 @@ pub fn parse_delete_custom_availability_zone_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBClusterOutput, crate::error::DeleteDBClusterError> {
+) -> std::result::Result<crate::output::DeleteDBClusterOutput, crate::error::DeleteDBClusterError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteDBClusterError::unhandled)?;
     let error_code = match generic.code() {
@@ -2995,7 +3075,7 @@ pub fn parse_delete_db_cluster_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_cluster_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBClusterOutput, crate::error::DeleteDBClusterError> {
+) -> std::result::Result<crate::output::DeleteDBClusterOutput, crate::error::DeleteDBClusterError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_db_cluster_output::Builder::default();
@@ -3010,8 +3090,10 @@ pub fn parse_delete_db_cluster_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_cluster_endpoint_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBClusterEndpointOutput, crate::error::DeleteDBClusterEndpointError>
-{
+) -> std::result::Result<
+    crate::output::DeleteDBClusterEndpointOutput,
+    crate::error::DeleteDBClusterEndpointError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteDBClusterEndpointError::unhandled)?;
     let error_code = match generic.code() {
@@ -3075,8 +3157,10 @@ pub fn parse_delete_db_cluster_endpoint_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_cluster_endpoint_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBClusterEndpointOutput, crate::error::DeleteDBClusterEndpointError>
-{
+) -> std::result::Result<
+    crate::output::DeleteDBClusterEndpointOutput,
+    crate::error::DeleteDBClusterEndpointError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_db_cluster_endpoint_output::Builder::default();
@@ -3093,7 +3177,7 @@ pub fn parse_delete_db_cluster_endpoint_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_cluster_parameter_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteDBClusterParameterGroupOutput,
     crate::error::DeleteDBClusterParameterGroupError,
 > {
@@ -3127,7 +3211,7 @@ pub fn parse_delete_db_cluster_parameter_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_cluster_parameter_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteDBClusterParameterGroupOutput,
     crate::error::DeleteDBClusterParameterGroupError,
 > {
@@ -3143,8 +3227,10 @@ pub fn parse_delete_db_cluster_parameter_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_cluster_snapshot_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBClusterSnapshotOutput, crate::error::DeleteDBClusterSnapshotError>
-{
+) -> std::result::Result<
+    crate::output::DeleteDBClusterSnapshotOutput,
+    crate::error::DeleteDBClusterSnapshotError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteDBClusterSnapshotError::unhandled)?;
     let error_code = match generic.code() {
@@ -3194,8 +3280,10 @@ pub fn parse_delete_db_cluster_snapshot_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_cluster_snapshot_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBClusterSnapshotOutput, crate::error::DeleteDBClusterSnapshotError>
-{
+) -> std::result::Result<
+    crate::output::DeleteDBClusterSnapshotOutput,
+    crate::error::DeleteDBClusterSnapshotError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_db_cluster_snapshot_output::Builder::default();
@@ -3212,7 +3300,8 @@ pub fn parse_delete_db_cluster_snapshot_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_instance_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBInstanceOutput, crate::error::DeleteDBInstanceError> {
+) -> std::result::Result<crate::output::DeleteDBInstanceOutput, crate::error::DeleteDBInstanceError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteDBInstanceError::unhandled)?;
     let error_code = match generic.code() {
@@ -3310,7 +3399,8 @@ pub fn parse_delete_db_instance_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_instance_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBInstanceOutput, crate::error::DeleteDBInstanceError> {
+) -> std::result::Result<crate::output::DeleteDBInstanceOutput, crate::error::DeleteDBInstanceError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_db_instance_output::Builder::default();
@@ -3325,7 +3415,7 @@ pub fn parse_delete_db_instance_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_instance_automated_backup_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteDBInstanceAutomatedBackupOutput,
     crate::error::DeleteDBInstanceAutomatedBackupError,
 > {
@@ -3355,7 +3445,7 @@ pub fn parse_delete_db_instance_automated_backup_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_instance_automated_backup_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteDBInstanceAutomatedBackupOutput,
     crate::error::DeleteDBInstanceAutomatedBackupError,
 > {
@@ -3376,8 +3466,10 @@ pub fn parse_delete_db_instance_automated_backup_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_parameter_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBParameterGroupOutput, crate::error::DeleteDBParameterGroupError>
-{
+) -> std::result::Result<
+    crate::output::DeleteDBParameterGroupOutput,
+    crate::error::DeleteDBParameterGroupError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteDBParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -3424,8 +3516,10 @@ pub fn parse_delete_db_parameter_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_parameter_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBParameterGroupOutput, crate::error::DeleteDBParameterGroupError>
-{
+) -> std::result::Result<
+    crate::output::DeleteDBParameterGroupOutput,
+    crate::error::DeleteDBParameterGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_db_parameter_group_output::Builder::default();
@@ -3437,7 +3531,7 @@ pub fn parse_delete_db_parameter_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_proxy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBProxyOutput, crate::error::DeleteDBProxyError> {
+) -> std::result::Result<crate::output::DeleteDBProxyOutput, crate::error::DeleteDBProxyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteDBProxyError::unhandled)?;
     let error_code = match generic.code() {
@@ -3480,7 +3574,7 @@ pub fn parse_delete_db_proxy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_proxy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBProxyOutput, crate::error::DeleteDBProxyError> {
+) -> std::result::Result<crate::output::DeleteDBProxyOutput, crate::error::DeleteDBProxyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_db_proxy_output::Builder::default();
@@ -3495,7 +3589,10 @@ pub fn parse_delete_db_proxy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_proxy_endpoint_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBProxyEndpointOutput, crate::error::DeleteDBProxyEndpointError> {
+) -> std::result::Result<
+    crate::output::DeleteDBProxyEndpointOutput,
+    crate::error::DeleteDBProxyEndpointError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteDBProxyEndpointError::unhandled)?;
     let error_code = match generic.code() {
@@ -3534,7 +3631,10 @@ pub fn parse_delete_db_proxy_endpoint_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_proxy_endpoint_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBProxyEndpointOutput, crate::error::DeleteDBProxyEndpointError> {
+) -> std::result::Result<
+    crate::output::DeleteDBProxyEndpointOutput,
+    crate::error::DeleteDBProxyEndpointError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_db_proxy_endpoint_output::Builder::default();
@@ -3551,7 +3651,10 @@ pub fn parse_delete_db_proxy_endpoint_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_security_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBSecurityGroupOutput, crate::error::DeleteDBSecurityGroupError> {
+) -> std::result::Result<
+    crate::output::DeleteDBSecurityGroupOutput,
+    crate::error::DeleteDBSecurityGroupError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteDBSecurityGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -3590,7 +3693,10 @@ pub fn parse_delete_db_security_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_security_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBSecurityGroupOutput, crate::error::DeleteDBSecurityGroupError> {
+) -> std::result::Result<
+    crate::output::DeleteDBSecurityGroupOutput,
+    crate::error::DeleteDBSecurityGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_db_security_group_output::Builder::default();
@@ -3602,7 +3708,8 @@ pub fn parse_delete_db_security_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_snapshot_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBSnapshotOutput, crate::error::DeleteDBSnapshotError> {
+) -> std::result::Result<crate::output::DeleteDBSnapshotOutput, crate::error::DeleteDBSnapshotError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteDBSnapshotError::unhandled)?;
     let error_code = match generic.code() {
@@ -3645,7 +3752,8 @@ pub fn parse_delete_db_snapshot_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_snapshot_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBSnapshotOutput, crate::error::DeleteDBSnapshotError> {
+) -> std::result::Result<crate::output::DeleteDBSnapshotOutput, crate::error::DeleteDBSnapshotError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_db_snapshot_output::Builder::default();
@@ -3660,7 +3768,10 @@ pub fn parse_delete_db_snapshot_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_subnet_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBSubnetGroupOutput, crate::error::DeleteDBSubnetGroupError> {
+) -> std::result::Result<
+    crate::output::DeleteDBSubnetGroupOutput,
+    crate::error::DeleteDBSubnetGroupError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteDBSubnetGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -3716,7 +3827,10 @@ pub fn parse_delete_db_subnet_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_db_subnet_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteDBSubnetGroupOutput, crate::error::DeleteDBSubnetGroupError> {
+) -> std::result::Result<
+    crate::output::DeleteDBSubnetGroupOutput,
+    crate::error::DeleteDBSubnetGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_db_subnet_group_output::Builder::default();
@@ -3728,8 +3842,10 @@ pub fn parse_delete_db_subnet_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_event_subscription_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteEventSubscriptionOutput, crate::error::DeleteEventSubscriptionError>
-{
+) -> std::result::Result<
+    crate::output::DeleteEventSubscriptionOutput,
+    crate::error::DeleteEventSubscriptionError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteEventSubscriptionError::unhandled)?;
     let error_code = match generic.code() {
@@ -3777,8 +3893,10 @@ pub fn parse_delete_event_subscription_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_event_subscription_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteEventSubscriptionOutput, crate::error::DeleteEventSubscriptionError>
-{
+) -> std::result::Result<
+    crate::output::DeleteEventSubscriptionOutput,
+    crate::error::DeleteEventSubscriptionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_event_subscription_output::Builder::default();
@@ -3795,7 +3913,10 @@ pub fn parse_delete_event_subscription_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_global_cluster_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteGlobalClusterOutput, crate::error::DeleteGlobalClusterError> {
+) -> std::result::Result<
+    crate::output::DeleteGlobalClusterOutput,
+    crate::error::DeleteGlobalClusterError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteGlobalClusterError::unhandled)?;
     let error_code = match generic.code() {
@@ -3837,7 +3958,10 @@ pub fn parse_delete_global_cluster_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_global_cluster_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteGlobalClusterOutput, crate::error::DeleteGlobalClusterError> {
+) -> std::result::Result<
+    crate::output::DeleteGlobalClusterOutput,
+    crate::error::DeleteGlobalClusterError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_global_cluster_output::Builder::default();
@@ -3854,8 +3978,10 @@ pub fn parse_delete_global_cluster_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_installation_media_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteInstallationMediaOutput, crate::error::DeleteInstallationMediaError>
-{
+) -> std::result::Result<
+    crate::output::DeleteInstallationMediaOutput,
+    crate::error::DeleteInstallationMediaError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteInstallationMediaError::unhandled)?;
     let error_code = match generic.code() {
@@ -3890,8 +4016,10 @@ pub fn parse_delete_installation_media_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_installation_media_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteInstallationMediaOutput, crate::error::DeleteInstallationMediaError>
-{
+) -> std::result::Result<
+    crate::output::DeleteInstallationMediaOutput,
+    crate::error::DeleteInstallationMediaError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_installation_media_output::Builder::default();
@@ -3908,7 +4036,8 @@ pub fn parse_delete_installation_media_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_option_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteOptionGroupOutput, crate::error::DeleteOptionGroupError> {
+) -> std::result::Result<crate::output::DeleteOptionGroupOutput, crate::error::DeleteOptionGroupError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteOptionGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -3952,7 +4081,8 @@ pub fn parse_delete_option_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_option_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteOptionGroupOutput, crate::error::DeleteOptionGroupError> {
+) -> std::result::Result<crate::output::DeleteOptionGroupOutput, crate::error::DeleteOptionGroupError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_option_group_output::Builder::default();
@@ -3964,7 +4094,7 @@ pub fn parse_delete_option_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deregister_db_proxy_targets_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeregisterDBProxyTargetsOutput,
     crate::error::DeregisterDBProxyTargetsError,
 > {
@@ -4041,7 +4171,7 @@ pub fn parse_deregister_db_proxy_targets_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deregister_db_proxy_targets_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeregisterDBProxyTargetsOutput,
     crate::error::DeregisterDBProxyTargetsError,
 > {
@@ -4056,7 +4186,7 @@ pub fn parse_deregister_db_proxy_targets_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_account_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeAccountAttributesOutput,
     crate::error::DescribeAccountAttributesError,
 > {
@@ -4070,7 +4200,7 @@ pub fn parse_describe_account_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_account_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeAccountAttributesOutput,
     crate::error::DescribeAccountAttributesError,
 > {
@@ -4090,7 +4220,10 @@ pub fn parse_describe_account_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_certificates_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeCertificatesOutput, crate::error::DescribeCertificatesError> {
+) -> std::result::Result<
+    crate::output::DescribeCertificatesOutput,
+    crate::error::DescribeCertificatesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeCertificatesError::unhandled)?;
     let error_code = match generic.code() {
@@ -4119,7 +4252,10 @@ pub fn parse_describe_certificates_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_certificates_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeCertificatesOutput, crate::error::DescribeCertificatesError> {
+) -> std::result::Result<
+    crate::output::DescribeCertificatesOutput,
+    crate::error::DescribeCertificatesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_certificates_output::Builder::default();
@@ -4136,7 +4272,7 @@ pub fn parse_describe_certificates_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_custom_availability_zones_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeCustomAvailabilityZonesOutput,
     crate::error::DescribeCustomAvailabilityZonesError,
 > {
@@ -4160,7 +4296,7 @@ pub fn parse_describe_custom_availability_zones_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_custom_availability_zones_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeCustomAvailabilityZonesOutput,
     crate::error::DescribeCustomAvailabilityZonesError,
 > {
@@ -4181,7 +4317,7 @@ pub fn parse_describe_custom_availability_zones_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_cluster_backtracks_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBClusterBacktracksOutput,
     crate::error::DescribeDBClusterBacktracksError,
 > {
@@ -4231,7 +4367,7 @@ pub fn parse_describe_db_cluster_backtracks_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_cluster_backtracks_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBClusterBacktracksOutput,
     crate::error::DescribeDBClusterBacktracksError,
 > {
@@ -4251,7 +4387,7 @@ pub fn parse_describe_db_cluster_backtracks_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_cluster_endpoints_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBClusterEndpointsOutput,
     crate::error::DescribeDBClusterEndpointsError,
 > {
@@ -4287,7 +4423,7 @@ pub fn parse_describe_db_cluster_endpoints_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_cluster_endpoints_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBClusterEndpointsOutput,
     crate::error::DescribeDBClusterEndpointsError,
 > {
@@ -4307,7 +4443,7 @@ pub fn parse_describe_db_cluster_endpoints_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_cluster_parameter_groups_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBClusterParameterGroupsOutput,
     crate::error::DescribeDBClusterParameterGroupsError,
 > {
@@ -4333,7 +4469,7 @@ pub fn parse_describe_db_cluster_parameter_groups_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_cluster_parameter_groups_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBClusterParameterGroupsOutput,
     crate::error::DescribeDBClusterParameterGroupsError,
 > {
@@ -4354,7 +4490,7 @@ pub fn parse_describe_db_cluster_parameter_groups_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_cluster_parameters_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBClusterParametersOutput,
     crate::error::DescribeDBClusterParametersError,
 > {
@@ -4389,7 +4525,7 @@ pub fn parse_describe_db_cluster_parameters_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_cluster_parameters_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBClusterParametersOutput,
     crate::error::DescribeDBClusterParametersError,
 > {
@@ -4409,7 +4545,10 @@ pub fn parse_describe_db_cluster_parameters_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_clusters_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDBClustersOutput, crate::error::DescribeDBClustersError> {
+) -> std::result::Result<
+    crate::output::DescribeDBClustersOutput,
+    crate::error::DescribeDBClustersError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeDBClustersError::unhandled)?;
     let error_code = match generic.code() {
@@ -4438,7 +4577,10 @@ pub fn parse_describe_db_clusters_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_clusters_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDBClustersOutput, crate::error::DescribeDBClustersError> {
+) -> std::result::Result<
+    crate::output::DescribeDBClustersOutput,
+    crate::error::DescribeDBClustersError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_db_clusters_output::Builder::default();
@@ -4455,7 +4597,7 @@ pub fn parse_describe_db_clusters_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_cluster_snapshot_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBClusterSnapshotAttributesOutput,
     crate::error::DescribeDBClusterSnapshotAttributesError,
 > {
@@ -4481,7 +4623,7 @@ pub fn parse_describe_db_cluster_snapshot_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_cluster_snapshot_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBClusterSnapshotAttributesOutput,
     crate::error::DescribeDBClusterSnapshotAttributesError,
 > {
@@ -4502,7 +4644,7 @@ pub fn parse_describe_db_cluster_snapshot_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_cluster_snapshots_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBClusterSnapshotsOutput,
     crate::error::DescribeDBClusterSnapshotsError,
 > {
@@ -4537,7 +4679,7 @@ pub fn parse_describe_db_cluster_snapshots_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_cluster_snapshots_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBClusterSnapshotsOutput,
     crate::error::DescribeDBClusterSnapshotsError,
 > {
@@ -4557,7 +4699,7 @@ pub fn parse_describe_db_cluster_snapshots_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_engine_versions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBEngineVersionsOutput,
     crate::error::DescribeDBEngineVersionsError,
 > {
@@ -4571,7 +4713,7 @@ pub fn parse_describe_db_engine_versions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_engine_versions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBEngineVersionsOutput,
     crate::error::DescribeDBEngineVersionsError,
 > {
@@ -4591,7 +4733,7 @@ pub fn parse_describe_db_engine_versions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_instance_automated_backups_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBInstanceAutomatedBackupsOutput,
     crate::error::DescribeDBInstanceAutomatedBackupsError,
 > {
@@ -4617,7 +4759,7 @@ pub fn parse_describe_db_instance_automated_backups_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_instance_automated_backups_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBInstanceAutomatedBackupsOutput,
     crate::error::DescribeDBInstanceAutomatedBackupsError,
 > {
@@ -4638,7 +4780,10 @@ pub fn parse_describe_db_instance_automated_backups_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDBInstancesOutput, crate::error::DescribeDBInstancesError> {
+) -> std::result::Result<
+    crate::output::DescribeDBInstancesOutput,
+    crate::error::DescribeDBInstancesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeDBInstancesError::unhandled)?;
     let error_code = match generic.code() {
@@ -4667,7 +4812,10 @@ pub fn parse_describe_db_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDBInstancesOutput, crate::error::DescribeDBInstancesError> {
+) -> std::result::Result<
+    crate::output::DescribeDBInstancesOutput,
+    crate::error::DescribeDBInstancesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_db_instances_output::Builder::default();
@@ -4684,7 +4832,10 @@ pub fn parse_describe_db_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_log_files_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDBLogFilesOutput, crate::error::DescribeDBLogFilesError> {
+) -> std::result::Result<
+    crate::output::DescribeDBLogFilesOutput,
+    crate::error::DescribeDBLogFilesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeDBLogFilesError::unhandled)?;
     let error_code = match generic.code() {
@@ -4713,7 +4864,10 @@ pub fn parse_describe_db_log_files_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_log_files_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDBLogFilesOutput, crate::error::DescribeDBLogFilesError> {
+) -> std::result::Result<
+    crate::output::DescribeDBLogFilesOutput,
+    crate::error::DescribeDBLogFilesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_db_log_files_output::Builder::default();
@@ -4730,7 +4884,7 @@ pub fn parse_describe_db_log_files_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_parameter_groups_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBParameterGroupsOutput,
     crate::error::DescribeDBParameterGroupsError,
 > {
@@ -4765,7 +4919,7 @@ pub fn parse_describe_db_parameter_groups_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_parameter_groups_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBParameterGroupsOutput,
     crate::error::DescribeDBParameterGroupsError,
 > {
@@ -4785,7 +4939,10 @@ pub fn parse_describe_db_parameter_groups_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_parameters_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDBParametersOutput, crate::error::DescribeDBParametersError> {
+) -> std::result::Result<
+    crate::output::DescribeDBParametersOutput,
+    crate::error::DescribeDBParametersError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeDBParametersError::unhandled)?;
     let error_code = match generic.code() {
@@ -4813,7 +4970,10 @@ pub fn parse_describe_db_parameters_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_parameters_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDBParametersOutput, crate::error::DescribeDBParametersError> {
+) -> std::result::Result<
+    crate::output::DescribeDBParametersOutput,
+    crate::error::DescribeDBParametersError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_db_parameters_output::Builder::default();
@@ -4830,7 +4990,8 @@ pub fn parse_describe_db_parameters_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_proxies_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDBProxiesOutput, crate::error::DescribeDBProxiesError> {
+) -> std::result::Result<crate::output::DescribeDBProxiesOutput, crate::error::DescribeDBProxiesError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeDBProxiesError::unhandled)?;
     let error_code = match generic.code() {
@@ -4859,7 +5020,8 @@ pub fn parse_describe_db_proxies_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_proxies_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDBProxiesOutput, crate::error::DescribeDBProxiesError> {
+) -> std::result::Result<crate::output::DescribeDBProxiesOutput, crate::error::DescribeDBProxiesError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_db_proxies_output::Builder::default();
@@ -4874,7 +5036,7 @@ pub fn parse_describe_db_proxies_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_proxy_endpoints_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBProxyEndpointsOutput,
     crate::error::DescribeDBProxyEndpointsError,
 > {
@@ -4925,7 +5087,7 @@ pub fn parse_describe_db_proxy_endpoints_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_proxy_endpoints_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBProxyEndpointsOutput,
     crate::error::DescribeDBProxyEndpointsError,
 > {
@@ -4945,7 +5107,7 @@ pub fn parse_describe_db_proxy_endpoints_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_proxy_target_groups_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBProxyTargetGroupsOutput,
     crate::error::DescribeDBProxyTargetGroupsError,
 > {
@@ -5009,7 +5171,7 @@ pub fn parse_describe_db_proxy_target_groups_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_proxy_target_groups_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBProxyTargetGroupsOutput,
     crate::error::DescribeDBProxyTargetGroupsError,
 > {
@@ -5029,8 +5191,10 @@ pub fn parse_describe_db_proxy_target_groups_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_proxy_targets_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDBProxyTargetsOutput, crate::error::DescribeDBProxyTargetsError>
-{
+) -> std::result::Result<
+    crate::output::DescribeDBProxyTargetsOutput,
+    crate::error::DescribeDBProxyTargetsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeDBProxyTargetsError::unhandled)?;
     let error_code = match generic.code() {
@@ -5102,8 +5266,10 @@ pub fn parse_describe_db_proxy_targets_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_proxy_targets_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDBProxyTargetsOutput, crate::error::DescribeDBProxyTargetsError>
-{
+) -> std::result::Result<
+    crate::output::DescribeDBProxyTargetsOutput,
+    crate::error::DescribeDBProxyTargetsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_db_proxy_targets_output::Builder::default();
@@ -5120,7 +5286,7 @@ pub fn parse_describe_db_proxy_targets_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_security_groups_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBSecurityGroupsOutput,
     crate::error::DescribeDBSecurityGroupsError,
 > {
@@ -5157,7 +5323,7 @@ pub fn parse_describe_db_security_groups_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_security_groups_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBSecurityGroupsOutput,
     crate::error::DescribeDBSecurityGroupsError,
 > {
@@ -5177,7 +5343,7 @@ pub fn parse_describe_db_security_groups_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_snapshot_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBSnapshotAttributesOutput,
     crate::error::DescribeDBSnapshotAttributesError,
 > {
@@ -5213,7 +5379,7 @@ pub fn parse_describe_db_snapshot_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_snapshot_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeDBSnapshotAttributesOutput,
     crate::error::DescribeDBSnapshotAttributesError,
 > {
@@ -5233,7 +5399,10 @@ pub fn parse_describe_db_snapshot_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_snapshots_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDBSnapshotsOutput, crate::error::DescribeDBSnapshotsError> {
+) -> std::result::Result<
+    crate::output::DescribeDBSnapshotsOutput,
+    crate::error::DescribeDBSnapshotsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeDBSnapshotsError::unhandled)?;
     let error_code = match generic.code() {
@@ -5262,7 +5431,10 @@ pub fn parse_describe_db_snapshots_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_snapshots_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDBSnapshotsOutput, crate::error::DescribeDBSnapshotsError> {
+) -> std::result::Result<
+    crate::output::DescribeDBSnapshotsOutput,
+    crate::error::DescribeDBSnapshotsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_db_snapshots_output::Builder::default();
@@ -5279,8 +5451,10 @@ pub fn parse_describe_db_snapshots_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_subnet_groups_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDBSubnetGroupsOutput, crate::error::DescribeDBSubnetGroupsError>
-{
+) -> std::result::Result<
+    crate::output::DescribeDBSubnetGroupsOutput,
+    crate::error::DescribeDBSubnetGroupsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeDBSubnetGroupsError::unhandled)?;
     let error_code = match generic.code() {
@@ -5313,8 +5487,10 @@ pub fn parse_describe_db_subnet_groups_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_db_subnet_groups_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeDBSubnetGroupsOutput, crate::error::DescribeDBSubnetGroupsError>
-{
+) -> std::result::Result<
+    crate::output::DescribeDBSubnetGroupsOutput,
+    crate::error::DescribeDBSubnetGroupsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_db_subnet_groups_output::Builder::default();
@@ -5331,7 +5507,7 @@ pub fn parse_describe_db_subnet_groups_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_engine_default_cluster_parameters_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeEngineDefaultClusterParametersOutput,
     crate::error::DescribeEngineDefaultClusterParametersError,
 > {
@@ -5343,7 +5519,7 @@ pub fn parse_describe_engine_default_cluster_parameters_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_engine_default_cluster_parameters_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeEngineDefaultClusterParametersOutput,
     crate::error::DescribeEngineDefaultClusterParametersError,
 > {
@@ -5364,7 +5540,7 @@ pub fn parse_describe_engine_default_cluster_parameters_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_engine_default_parameters_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeEngineDefaultParametersOutput,
     crate::error::DescribeEngineDefaultParametersError,
 > {
@@ -5378,7 +5554,7 @@ pub fn parse_describe_engine_default_parameters_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_engine_default_parameters_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeEngineDefaultParametersOutput,
     crate::error::DescribeEngineDefaultParametersError,
 > {
@@ -5399,8 +5575,10 @@ pub fn parse_describe_engine_default_parameters_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_event_categories_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeEventCategoriesOutput, crate::error::DescribeEventCategoriesError>
-{
+) -> std::result::Result<
+    crate::output::DescribeEventCategoriesOutput,
+    crate::error::DescribeEventCategoriesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeEventCategoriesError::unhandled)?;
     Err(crate::error::DescribeEventCategoriesError::generic(generic))
@@ -5409,8 +5587,10 @@ pub fn parse_describe_event_categories_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_event_categories_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeEventCategoriesOutput, crate::error::DescribeEventCategoriesError>
-{
+) -> std::result::Result<
+    crate::output::DescribeEventCategoriesOutput,
+    crate::error::DescribeEventCategoriesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_event_categories_output::Builder::default();
@@ -5427,7 +5607,7 @@ pub fn parse_describe_event_categories_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_events_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeEventsOutput, crate::error::DescribeEventsError> {
+) -> std::result::Result<crate::output::DescribeEventsOutput, crate::error::DescribeEventsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeEventsError::unhandled)?;
     Err(crate::error::DescribeEventsError::generic(generic))
@@ -5436,7 +5616,7 @@ pub fn parse_describe_events_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_events_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeEventsOutput, crate::error::DescribeEventsError> {
+) -> std::result::Result<crate::output::DescribeEventsOutput, crate::error::DescribeEventsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_events_output::Builder::default();
@@ -5451,7 +5631,7 @@ pub fn parse_describe_events_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_event_subscriptions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeEventSubscriptionsOutput,
     crate::error::DescribeEventSubscriptionsError,
 > {
@@ -5487,7 +5667,7 @@ pub fn parse_describe_event_subscriptions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_event_subscriptions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeEventSubscriptionsOutput,
     crate::error::DescribeEventSubscriptionsError,
 > {
@@ -5507,7 +5687,10 @@ pub fn parse_describe_event_subscriptions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_export_tasks_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeExportTasksOutput, crate::error::DescribeExportTasksError> {
+) -> std::result::Result<
+    crate::output::DescribeExportTasksOutput,
+    crate::error::DescribeExportTasksError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeExportTasksError::unhandled)?;
     let error_code = match generic.code() {
@@ -5536,7 +5719,10 @@ pub fn parse_describe_export_tasks_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_export_tasks_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeExportTasksOutput, crate::error::DescribeExportTasksError> {
+) -> std::result::Result<
+    crate::output::DescribeExportTasksOutput,
+    crate::error::DescribeExportTasksError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_export_tasks_output::Builder::default();
@@ -5553,8 +5739,10 @@ pub fn parse_describe_export_tasks_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_global_clusters_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeGlobalClustersOutput, crate::error::DescribeGlobalClustersError>
-{
+) -> std::result::Result<
+    crate::output::DescribeGlobalClustersOutput,
+    crate::error::DescribeGlobalClustersError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeGlobalClustersError::unhandled)?;
     let error_code = match generic.code() {
@@ -5587,8 +5775,10 @@ pub fn parse_describe_global_clusters_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_global_clusters_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeGlobalClustersOutput, crate::error::DescribeGlobalClustersError>
-{
+) -> std::result::Result<
+    crate::output::DescribeGlobalClustersOutput,
+    crate::error::DescribeGlobalClustersError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_global_clusters_output::Builder::default();
@@ -5605,7 +5795,7 @@ pub fn parse_describe_global_clusters_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_installation_media_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeInstallationMediaOutput,
     crate::error::DescribeInstallationMediaError,
 > {
@@ -5640,7 +5830,7 @@ pub fn parse_describe_installation_media_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_installation_media_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeInstallationMediaOutput,
     crate::error::DescribeInstallationMediaError,
 > {
@@ -5660,7 +5850,7 @@ pub fn parse_describe_installation_media_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_option_group_options_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeOptionGroupOptionsOutput,
     crate::error::DescribeOptionGroupOptionsError,
 > {
@@ -5674,7 +5864,7 @@ pub fn parse_describe_option_group_options_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_option_group_options_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeOptionGroupOptionsOutput,
     crate::error::DescribeOptionGroupOptionsError,
 > {
@@ -5694,7 +5884,10 @@ pub fn parse_describe_option_group_options_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_option_groups_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeOptionGroupsOutput, crate::error::DescribeOptionGroupsError> {
+) -> std::result::Result<
+    crate::output::DescribeOptionGroupsOutput,
+    crate::error::DescribeOptionGroupsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeOptionGroupsError::unhandled)?;
     let error_code = match generic.code() {
@@ -5723,7 +5916,10 @@ pub fn parse_describe_option_groups_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_option_groups_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeOptionGroupsOutput, crate::error::DescribeOptionGroupsError> {
+) -> std::result::Result<
+    crate::output::DescribeOptionGroupsOutput,
+    crate::error::DescribeOptionGroupsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_option_groups_output::Builder::default();
@@ -5740,7 +5936,7 @@ pub fn parse_describe_option_groups_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_orderable_db_instance_options_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeOrderableDBInstanceOptionsOutput,
     crate::error::DescribeOrderableDBInstanceOptionsError,
 > {
@@ -5752,7 +5948,7 @@ pub fn parse_describe_orderable_db_instance_options_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_orderable_db_instance_options_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeOrderableDBInstanceOptionsOutput,
     crate::error::DescribeOrderableDBInstanceOptionsError,
 > {
@@ -5773,7 +5969,7 @@ pub fn parse_describe_orderable_db_instance_options_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_pending_maintenance_actions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribePendingMaintenanceActionsOutput,
     crate::error::DescribePendingMaintenanceActionsError,
 > {
@@ -5809,7 +6005,7 @@ pub fn parse_describe_pending_maintenance_actions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_pending_maintenance_actions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribePendingMaintenanceActionsOutput,
     crate::error::DescribePendingMaintenanceActionsError,
 > {
@@ -5830,7 +6026,7 @@ pub fn parse_describe_pending_maintenance_actions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_reserved_db_instances_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeReservedDBInstancesOutput,
     crate::error::DescribeReservedDBInstancesError,
 > {
@@ -5866,7 +6062,7 @@ pub fn parse_describe_reserved_db_instances_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_reserved_db_instances_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeReservedDBInstancesOutput,
     crate::error::DescribeReservedDBInstancesError,
 > {
@@ -5886,7 +6082,7 @@ pub fn parse_describe_reserved_db_instances_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_reserved_db_instances_offerings_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeReservedDBInstancesOfferingsOutput,
     crate::error::DescribeReservedDBInstancesOfferingsError,
 > {
@@ -5912,7 +6108,7 @@ pub fn parse_describe_reserved_db_instances_offerings_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_reserved_db_instances_offerings_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeReservedDBInstancesOfferingsOutput,
     crate::error::DescribeReservedDBInstancesOfferingsError,
 > {
@@ -5933,7 +6129,10 @@ pub fn parse_describe_reserved_db_instances_offerings_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_source_regions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeSourceRegionsOutput, crate::error::DescribeSourceRegionsError> {
+) -> std::result::Result<
+    crate::output::DescribeSourceRegionsOutput,
+    crate::error::DescribeSourceRegionsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeSourceRegionsError::unhandled)?;
     Err(crate::error::DescribeSourceRegionsError::generic(generic))
@@ -5942,7 +6141,10 @@ pub fn parse_describe_source_regions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_source_regions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeSourceRegionsOutput, crate::error::DescribeSourceRegionsError> {
+) -> std::result::Result<
+    crate::output::DescribeSourceRegionsOutput,
+    crate::error::DescribeSourceRegionsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_source_regions_output::Builder::default();
@@ -5959,7 +6161,7 @@ pub fn parse_describe_source_regions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_valid_db_instance_modifications_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeValidDBInstanceModificationsOutput,
     crate::error::DescribeValidDBInstanceModificationsError,
 > {
@@ -5991,7 +6193,7 @@ pub fn parse_describe_valid_db_instance_modifications_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_valid_db_instance_modifications_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeValidDBInstanceModificationsOutput,
     crate::error::DescribeValidDBInstanceModificationsError,
 > {
@@ -6012,7 +6214,7 @@ pub fn parse_describe_valid_db_instance_modifications_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_download_db_log_file_portion_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DownloadDBLogFilePortionOutput,
     crate::error::DownloadDBLogFilePortionError,
 > {
@@ -6062,7 +6264,7 @@ pub fn parse_download_db_log_file_portion_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_download_db_log_file_portion_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DownloadDBLogFilePortionOutput,
     crate::error::DownloadDBLogFilePortionError,
 > {
@@ -6082,7 +6284,8 @@ pub fn parse_download_db_log_file_portion_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_failover_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::FailoverDBClusterOutput, crate::error::FailoverDBClusterError> {
+) -> std::result::Result<crate::output::FailoverDBClusterOutput, crate::error::FailoverDBClusterError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::FailoverDBClusterError::unhandled)?;
     let error_code = match generic.code() {
@@ -6139,7 +6342,8 @@ pub fn parse_failover_db_cluster_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_failover_db_cluster_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::FailoverDBClusterOutput, crate::error::FailoverDBClusterError> {
+) -> std::result::Result<crate::output::FailoverDBClusterOutput, crate::error::FailoverDBClusterError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::failover_db_cluster_output::Builder::default();
@@ -6154,7 +6358,10 @@ pub fn parse_failover_db_cluster_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_failover_global_cluster_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::FailoverGlobalClusterOutput, crate::error::FailoverGlobalClusterError> {
+) -> std::result::Result<
+    crate::output::FailoverGlobalClusterOutput,
+    crate::error::FailoverGlobalClusterError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
     let error_code = match generic.code() {
@@ -6226,7 +6433,10 @@ pub fn parse_failover_global_cluster_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_failover_global_cluster_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::FailoverGlobalClusterOutput, crate::error::FailoverGlobalClusterError> {
+) -> std::result::Result<
+    crate::output::FailoverGlobalClusterOutput,
+    crate::error::FailoverGlobalClusterError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::failover_global_cluster_output::Builder::default();
@@ -6243,8 +6453,10 @@ pub fn parse_failover_global_cluster_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_import_installation_media_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ImportInstallationMediaOutput, crate::error::ImportInstallationMediaError>
-{
+) -> std::result::Result<
+    crate::output::ImportInstallationMediaOutput,
+    crate::error::ImportInstallationMediaError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ImportInstallationMediaError::unhandled)?;
     let error_code = match generic.code() {
@@ -6290,8 +6502,10 @@ pub fn parse_import_installation_media_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_import_installation_media_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ImportInstallationMediaOutput, crate::error::ImportInstallationMediaError>
-{
+) -> std::result::Result<
+    crate::output::ImportInstallationMediaOutput,
+    crate::error::ImportInstallationMediaError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::import_installation_media_output::Builder::default();
@@ -6308,7 +6522,10 @@ pub fn parse_import_installation_media_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_for_resource_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError> {
+) -> std::result::Result<
+    crate::output::ListTagsForResourceOutput,
+    crate::error::ListTagsForResourceError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
@@ -6390,7 +6607,10 @@ pub fn parse_list_tags_for_resource_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_for_resource_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError> {
+) -> std::result::Result<
+    crate::output::ListTagsForResourceOutput,
+    crate::error::ListTagsForResourceError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resource_output::Builder::default();
@@ -6407,7 +6627,10 @@ pub fn parse_list_tags_for_resource_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_certificates_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyCertificatesOutput, crate::error::ModifyCertificatesError> {
+) -> std::result::Result<
+    crate::output::ModifyCertificatesOutput,
+    crate::error::ModifyCertificatesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyCertificatesError::unhandled)?;
     let error_code = match generic.code() {
@@ -6436,7 +6659,10 @@ pub fn parse_modify_certificates_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_certificates_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyCertificatesOutput, crate::error::ModifyCertificatesError> {
+) -> std::result::Result<
+    crate::output::ModifyCertificatesOutput,
+    crate::error::ModifyCertificatesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_certificates_output::Builder::default();
@@ -6451,7 +6677,7 @@ pub fn parse_modify_certificates_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_current_db_cluster_capacity_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyCurrentDBClusterCapacityOutput,
     crate::error::ModifyCurrentDBClusterCapacityError,
 > {
@@ -6515,7 +6741,7 @@ pub fn parse_modify_current_db_cluster_capacity_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_current_db_cluster_capacity_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyCurrentDBClusterCapacityOutput,
     crate::error::ModifyCurrentDBClusterCapacityError,
 > {
@@ -6536,7 +6762,7 @@ pub fn parse_modify_current_db_cluster_capacity_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyDBClusterOutput, crate::error::ModifyDBClusterError> {
+) -> std::result::Result<crate::output::ModifyDBClusterOutput, crate::error::ModifyDBClusterError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyDBClusterError::unhandled)?;
     let error_code = match generic.code() {
@@ -6712,7 +6938,7 @@ pub fn parse_modify_db_cluster_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_cluster_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyDBClusterOutput, crate::error::ModifyDBClusterError> {
+) -> std::result::Result<crate::output::ModifyDBClusterOutput, crate::error::ModifyDBClusterError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_db_cluster_output::Builder::default();
@@ -6727,8 +6953,10 @@ pub fn parse_modify_db_cluster_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_cluster_endpoint_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyDBClusterEndpointOutput, crate::error::ModifyDBClusterEndpointError>
-{
+) -> std::result::Result<
+    crate::output::ModifyDBClusterEndpointOutput,
+    crate::error::ModifyDBClusterEndpointError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyDBClusterEndpointError::unhandled)?;
     let error_code = match generic.code() {
@@ -6820,8 +7048,10 @@ pub fn parse_modify_db_cluster_endpoint_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_cluster_endpoint_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyDBClusterEndpointOutput, crate::error::ModifyDBClusterEndpointError>
-{
+) -> std::result::Result<
+    crate::output::ModifyDBClusterEndpointOutput,
+    crate::error::ModifyDBClusterEndpointError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_db_cluster_endpoint_output::Builder::default();
@@ -6838,7 +7068,7 @@ pub fn parse_modify_db_cluster_endpoint_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_cluster_parameter_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyDBClusterParameterGroupOutput,
     crate::error::ModifyDBClusterParameterGroupError,
 > {
@@ -6872,7 +7102,7 @@ pub fn parse_modify_db_cluster_parameter_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_cluster_parameter_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyDBClusterParameterGroupOutput,
     crate::error::ModifyDBClusterParameterGroupError,
 > {
@@ -6893,7 +7123,7 @@ pub fn parse_modify_db_cluster_parameter_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_cluster_snapshot_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyDBClusterSnapshotAttributeOutput,
     crate::error::ModifyDBClusterSnapshotAttributeError,
 > {
@@ -6931,7 +7161,7 @@ pub fn parse_modify_db_cluster_snapshot_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_cluster_snapshot_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyDBClusterSnapshotAttributeOutput,
     crate::error::ModifyDBClusterSnapshotAttributeError,
 > {
@@ -6952,7 +7182,8 @@ pub fn parse_modify_db_cluster_snapshot_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_instance_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyDBInstanceOutput, crate::error::ModifyDBInstanceError> {
+) -> std::result::Result<crate::output::ModifyDBInstanceOutput, crate::error::ModifyDBInstanceError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyDBInstanceError::unhandled)?;
     let error_code = match generic.code() {
@@ -7223,7 +7454,8 @@ pub fn parse_modify_db_instance_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_instance_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyDBInstanceOutput, crate::error::ModifyDBInstanceError> {
+) -> std::result::Result<crate::output::ModifyDBInstanceOutput, crate::error::ModifyDBInstanceError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_db_instance_output::Builder::default();
@@ -7238,8 +7470,10 @@ pub fn parse_modify_db_instance_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_parameter_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyDBParameterGroupOutput, crate::error::ModifyDBParameterGroupError>
-{
+) -> std::result::Result<
+    crate::output::ModifyDBParameterGroupOutput,
+    crate::error::ModifyDBParameterGroupError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyDBParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -7286,8 +7520,10 @@ pub fn parse_modify_db_parameter_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_parameter_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyDBParameterGroupOutput, crate::error::ModifyDBParameterGroupError>
-{
+) -> std::result::Result<
+    crate::output::ModifyDBParameterGroupOutput,
+    crate::error::ModifyDBParameterGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_db_parameter_group_output::Builder::default();
@@ -7304,7 +7540,7 @@ pub fn parse_modify_db_parameter_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_proxy_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyDBProxyOutput, crate::error::ModifyDBProxyError> {
+) -> std::result::Result<crate::output::ModifyDBProxyOutput, crate::error::ModifyDBProxyError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyDBProxyError::unhandled)?;
     let error_code = match generic.code() {
@@ -7361,7 +7597,7 @@ pub fn parse_modify_db_proxy_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_proxy_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyDBProxyOutput, crate::error::ModifyDBProxyError> {
+) -> std::result::Result<crate::output::ModifyDBProxyOutput, crate::error::ModifyDBProxyError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_db_proxy_output::Builder::default();
@@ -7376,7 +7612,10 @@ pub fn parse_modify_db_proxy_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_proxy_endpoint_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyDBProxyEndpointOutput, crate::error::ModifyDBProxyEndpointError> {
+) -> std::result::Result<
+    crate::output::ModifyDBProxyEndpointOutput,
+    crate::error::ModifyDBProxyEndpointError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyDBProxyEndpointError::unhandled)?;
     let error_code = match generic.code() {
@@ -7442,7 +7681,10 @@ pub fn parse_modify_db_proxy_endpoint_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_proxy_endpoint_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyDBProxyEndpointOutput, crate::error::ModifyDBProxyEndpointError> {
+) -> std::result::Result<
+    crate::output::ModifyDBProxyEndpointOutput,
+    crate::error::ModifyDBProxyEndpointError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_db_proxy_endpoint_output::Builder::default();
@@ -7459,7 +7701,7 @@ pub fn parse_modify_db_proxy_endpoint_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_proxy_target_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyDBProxyTargetGroupOutput,
     crate::error::ModifyDBProxyTargetGroupError,
 > {
@@ -7522,7 +7764,7 @@ pub fn parse_modify_db_proxy_target_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_proxy_target_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyDBProxyTargetGroupOutput,
     crate::error::ModifyDBProxyTargetGroupError,
 > {
@@ -7542,7 +7784,8 @@ pub fn parse_modify_db_proxy_target_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_snapshot_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyDBSnapshotOutput, crate::error::ModifyDBSnapshotError> {
+) -> std::result::Result<crate::output::ModifyDBSnapshotOutput, crate::error::ModifyDBSnapshotError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyDBSnapshotError::unhandled)?;
     let error_code = match generic.code() {
@@ -7571,7 +7814,8 @@ pub fn parse_modify_db_snapshot_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_snapshot_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyDBSnapshotOutput, crate::error::ModifyDBSnapshotError> {
+) -> std::result::Result<crate::output::ModifyDBSnapshotOutput, crate::error::ModifyDBSnapshotError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_db_snapshot_output::Builder::default();
@@ -7586,7 +7830,7 @@ pub fn parse_modify_db_snapshot_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_snapshot_attribute_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyDBSnapshotAttributeOutput,
     crate::error::ModifyDBSnapshotAttributeError,
 > {
@@ -7650,7 +7894,7 @@ pub fn parse_modify_db_snapshot_attribute_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_snapshot_attribute_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ModifyDBSnapshotAttributeOutput,
     crate::error::ModifyDBSnapshotAttributeError,
 > {
@@ -7670,7 +7914,10 @@ pub fn parse_modify_db_snapshot_attribute_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_subnet_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyDBSubnetGroupOutput, crate::error::ModifyDBSubnetGroupError> {
+) -> std::result::Result<
+    crate::output::ModifyDBSubnetGroupOutput,
+    crate::error::ModifyDBSubnetGroupError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyDBSubnetGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -7752,7 +7999,10 @@ pub fn parse_modify_db_subnet_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_db_subnet_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyDBSubnetGroupOutput, crate::error::ModifyDBSubnetGroupError> {
+) -> std::result::Result<
+    crate::output::ModifyDBSubnetGroupOutput,
+    crate::error::ModifyDBSubnetGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_db_subnet_group_output::Builder::default();
@@ -7769,8 +8019,10 @@ pub fn parse_modify_db_subnet_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_event_subscription_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyEventSubscriptionOutput, crate::error::ModifyEventSubscriptionError>
-{
+) -> std::result::Result<
+    crate::output::ModifyEventSubscriptionOutput,
+    crate::error::ModifyEventSubscriptionError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
     let error_code = match generic.code() {
@@ -7873,8 +8125,10 @@ pub fn parse_modify_event_subscription_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_event_subscription_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyEventSubscriptionOutput, crate::error::ModifyEventSubscriptionError>
-{
+) -> std::result::Result<
+    crate::output::ModifyEventSubscriptionOutput,
+    crate::error::ModifyEventSubscriptionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_event_subscription_output::Builder::default();
@@ -7891,7 +8145,10 @@ pub fn parse_modify_event_subscription_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_global_cluster_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyGlobalClusterOutput, crate::error::ModifyGlobalClusterError> {
+) -> std::result::Result<
+    crate::output::ModifyGlobalClusterOutput,
+    crate::error::ModifyGlobalClusterError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyGlobalClusterError::unhandled)?;
     let error_code = match generic.code() {
@@ -7961,7 +8218,10 @@ pub fn parse_modify_global_cluster_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_global_cluster_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyGlobalClusterOutput, crate::error::ModifyGlobalClusterError> {
+) -> std::result::Result<
+    crate::output::ModifyGlobalClusterOutput,
+    crate::error::ModifyGlobalClusterError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_global_cluster_output::Builder::default();
@@ -7978,7 +8238,8 @@ pub fn parse_modify_global_cluster_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_option_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyOptionGroupOutput, crate::error::ModifyOptionGroupError> {
+) -> std::result::Result<crate::output::ModifyOptionGroupOutput, crate::error::ModifyOptionGroupError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ModifyOptionGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -8022,7 +8283,8 @@ pub fn parse_modify_option_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_option_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ModifyOptionGroupOutput, crate::error::ModifyOptionGroupError> {
+) -> std::result::Result<crate::output::ModifyOptionGroupOutput, crate::error::ModifyOptionGroupError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::modify_option_group_output::Builder::default();
@@ -8037,7 +8299,10 @@ pub fn parse_modify_option_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_promote_read_replica_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PromoteReadReplicaOutput, crate::error::PromoteReadReplicaError> {
+) -> std::result::Result<
+    crate::output::PromoteReadReplicaOutput,
+    crate::error::PromoteReadReplicaError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PromoteReadReplicaError::unhandled)?;
     let error_code = match generic.code() {
@@ -8080,7 +8345,10 @@ pub fn parse_promote_read_replica_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_promote_read_replica_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PromoteReadReplicaOutput, crate::error::PromoteReadReplicaError> {
+) -> std::result::Result<
+    crate::output::PromoteReadReplicaOutput,
+    crate::error::PromoteReadReplicaError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::promote_read_replica_output::Builder::default();
@@ -8097,7 +8365,7 @@ pub fn parse_promote_read_replica_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_promote_read_replica_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PromoteReadReplicaDBClusterOutput,
     crate::error::PromoteReadReplicaDBClusterError,
 > {
@@ -8147,7 +8415,7 @@ pub fn parse_promote_read_replica_db_cluster_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_promote_read_replica_db_cluster_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PromoteReadReplicaDBClusterOutput,
     crate::error::PromoteReadReplicaDBClusterError,
 > {
@@ -8167,7 +8435,7 @@ pub fn parse_promote_read_replica_db_cluster_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_purchase_reserved_db_instances_offering_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PurchaseReservedDBInstancesOfferingOutput,
     crate::error::PurchaseReservedDBInstancesOfferingError,
 > {
@@ -8205,7 +8473,7 @@ pub fn parse_purchase_reserved_db_instances_offering_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_purchase_reserved_db_instances_offering_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::PurchaseReservedDBInstancesOfferingOutput,
     crate::error::PurchaseReservedDBInstancesOfferingError,
 > {
@@ -8226,7 +8494,8 @@ pub fn parse_purchase_reserved_db_instances_offering_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reboot_db_instance_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RebootDBInstanceOutput, crate::error::RebootDBInstanceError> {
+) -> std::result::Result<crate::output::RebootDBInstanceOutput, crate::error::RebootDBInstanceError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RebootDBInstanceError::unhandled)?;
     let error_code = match generic.code() {
@@ -8269,7 +8538,8 @@ pub fn parse_reboot_db_instance_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reboot_db_instance_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RebootDBInstanceOutput, crate::error::RebootDBInstanceError> {
+) -> std::result::Result<crate::output::RebootDBInstanceOutput, crate::error::RebootDBInstanceError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::reboot_db_instance_output::Builder::default();
@@ -8284,8 +8554,10 @@ pub fn parse_reboot_db_instance_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_register_db_proxy_targets_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RegisterDBProxyTargetsOutput, crate::error::RegisterDBProxyTargetsError>
-{
+) -> std::result::Result<
+    crate::output::RegisterDBProxyTargetsOutput,
+    crate::error::RegisterDBProxyTargetsError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RegisterDBProxyTargetsError::unhandled)?;
     let error_code = match generic.code() {
@@ -8423,8 +8695,10 @@ pub fn parse_register_db_proxy_targets_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_register_db_proxy_targets_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RegisterDBProxyTargetsOutput, crate::error::RegisterDBProxyTargetsError>
-{
+) -> std::result::Result<
+    crate::output::RegisterDBProxyTargetsOutput,
+    crate::error::RegisterDBProxyTargetsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::register_db_proxy_targets_output::Builder::default();
@@ -8441,8 +8715,10 @@ pub fn parse_register_db_proxy_targets_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_from_global_cluster_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RemoveFromGlobalClusterOutput, crate::error::RemoveFromGlobalClusterError>
-{
+) -> std::result::Result<
+    crate::output::RemoveFromGlobalClusterOutput,
+    crate::error::RemoveFromGlobalClusterError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
     let error_code = match generic.code() {
@@ -8505,8 +8781,10 @@ pub fn parse_remove_from_global_cluster_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_from_global_cluster_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RemoveFromGlobalClusterOutput, crate::error::RemoveFromGlobalClusterError>
-{
+) -> std::result::Result<
+    crate::output::RemoveFromGlobalClusterOutput,
+    crate::error::RemoveFromGlobalClusterError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::remove_from_global_cluster_output::Builder::default();
@@ -8523,8 +8801,10 @@ pub fn parse_remove_from_global_cluster_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_role_from_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RemoveRoleFromDBClusterOutput, crate::error::RemoveRoleFromDBClusterError>
-{
+) -> std::result::Result<
+    crate::output::RemoveRoleFromDBClusterOutput,
+    crate::error::RemoveRoleFromDBClusterError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RemoveRoleFromDBClusterError::unhandled)?;
     let error_code = match generic.code() {
@@ -8585,8 +8865,10 @@ pub fn parse_remove_role_from_db_cluster_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_role_from_db_cluster_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RemoveRoleFromDBClusterOutput, crate::error::RemoveRoleFromDBClusterError>
-{
+) -> std::result::Result<
+    crate::output::RemoveRoleFromDBClusterOutput,
+    crate::error::RemoveRoleFromDBClusterError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::remove_role_from_db_cluster_output::Builder::default();
@@ -8598,7 +8880,7 @@ pub fn parse_remove_role_from_db_cluster_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_role_from_db_instance_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RemoveRoleFromDBInstanceOutput,
     crate::error::RemoveRoleFromDBInstanceError,
 > {
@@ -8663,7 +8945,7 @@ pub fn parse_remove_role_from_db_instance_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_role_from_db_instance_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RemoveRoleFromDBInstanceOutput,
     crate::error::RemoveRoleFromDBInstanceError,
 > {
@@ -8678,7 +8960,7 @@ pub fn parse_remove_role_from_db_instance_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_source_identifier_from_subscription_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RemoveSourceIdentifierFromSubscriptionOutput,
     crate::error::RemoveSourceIdentifierFromSubscriptionError,
 > {
@@ -8712,7 +8994,7 @@ pub fn parse_remove_source_identifier_from_subscription_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_source_identifier_from_subscription_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RemoveSourceIdentifierFromSubscriptionOutput,
     crate::error::RemoveSourceIdentifierFromSubscriptionError,
 > {
@@ -8733,8 +9015,10 @@ pub fn parse_remove_source_identifier_from_subscription_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_tags_from_resource_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RemoveTagsFromResourceOutput, crate::error::RemoveTagsFromResourceError>
-{
+) -> std::result::Result<
+    crate::output::RemoveTagsFromResourceOutput,
+    crate::error::RemoveTagsFromResourceError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
     let error_code = match generic.code() {
@@ -8820,8 +9104,10 @@ pub fn parse_remove_tags_from_resource_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_tags_from_resource_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RemoveTagsFromResourceOutput, crate::error::RemoveTagsFromResourceError>
-{
+) -> std::result::Result<
+    crate::output::RemoveTagsFromResourceOutput,
+    crate::error::RemoveTagsFromResourceError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::remove_tags_from_resource_output::Builder::default();
@@ -8833,7 +9119,7 @@ pub fn parse_remove_tags_from_resource_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_db_cluster_parameter_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ResetDBClusterParameterGroupOutput,
     crate::error::ResetDBClusterParameterGroupError,
 > {
@@ -8867,7 +9153,7 @@ pub fn parse_reset_db_cluster_parameter_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_db_cluster_parameter_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ResetDBClusterParameterGroupOutput,
     crate::error::ResetDBClusterParameterGroupError,
 > {
@@ -8887,7 +9173,10 @@ pub fn parse_reset_db_cluster_parameter_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_db_parameter_group_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ResetDBParameterGroupOutput, crate::error::ResetDBParameterGroupError> {
+) -> std::result::Result<
+    crate::output::ResetDBParameterGroupOutput,
+    crate::error::ResetDBParameterGroupError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ResetDBParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
@@ -8930,7 +9219,10 @@ pub fn parse_reset_db_parameter_group_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_reset_db_parameter_group_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ResetDBParameterGroupOutput, crate::error::ResetDBParameterGroupError> {
+) -> std::result::Result<
+    crate::output::ResetDBParameterGroupOutput,
+    crate::error::ResetDBParameterGroupError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::reset_db_parameter_group_output::Builder::default();
@@ -8947,8 +9239,10 @@ pub fn parse_reset_db_parameter_group_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_db_cluster_from_s3_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RestoreDBClusterFromS3Output, crate::error::RestoreDBClusterFromS3Error>
-{
+) -> std::result::Result<
+    crate::output::RestoreDBClusterFromS3Output,
+    crate::error::RestoreDBClusterFromS3Error,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RestoreDBClusterFromS3Error::unhandled)?;
     let error_code = match generic.code() {
@@ -9051,8 +9345,10 @@ pub fn parse_restore_db_cluster_from_s3_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_db_cluster_from_s3_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RestoreDBClusterFromS3Output, crate::error::RestoreDBClusterFromS3Error>
-{
+) -> std::result::Result<
+    crate::output::RestoreDBClusterFromS3Output,
+    crate::error::RestoreDBClusterFromS3Error,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::restore_db_cluster_from_s3_output::Builder::default();
@@ -9069,7 +9365,7 @@ pub fn parse_restore_db_cluster_from_s3_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_db_cluster_from_snapshot_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RestoreDBClusterFromSnapshotOutput,
     crate::error::RestoreDBClusterFromSnapshotError,
 > {
@@ -9193,7 +9489,7 @@ pub fn parse_restore_db_cluster_from_snapshot_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_db_cluster_from_snapshot_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RestoreDBClusterFromSnapshotOutput,
     crate::error::RestoreDBClusterFromSnapshotError,
 > {
@@ -9213,7 +9509,7 @@ pub fn parse_restore_db_cluster_from_snapshot_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_db_cluster_to_point_in_time_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RestoreDBClusterToPointInTimeOutput,
     crate::error::RestoreDBClusterToPointInTimeError,
 > {
@@ -9343,7 +9639,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_db_cluster_to_point_in_time_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RestoreDBClusterToPointInTimeOutput,
     crate::error::RestoreDBClusterToPointInTimeError,
 > {
@@ -9364,7 +9660,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_db_instance_from_db_snapshot_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RestoreDBInstanceFromDBSnapshotOutput,
     crate::error::RestoreDBInstanceFromDBSnapshotError,
 > {
@@ -9502,7 +9798,7 @@ pub fn parse_restore_db_instance_from_db_snapshot_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_db_instance_from_db_snapshot_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RestoreDBInstanceFromDBSnapshotOutput,
     crate::error::RestoreDBInstanceFromDBSnapshotError,
 > {
@@ -9523,8 +9819,10 @@ pub fn parse_restore_db_instance_from_db_snapshot_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_db_instance_from_s3_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RestoreDBInstanceFromS3Output, crate::error::RestoreDBInstanceFromS3Error>
-{
+) -> std::result::Result<
+    crate::output::RestoreDBInstanceFromS3Output,
+    crate::error::RestoreDBInstanceFromS3Error,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RestoreDBInstanceFromS3Error::unhandled)?;
     let error_code = match generic.code() {
@@ -9782,8 +10080,10 @@ pub fn parse_restore_db_instance_from_s3_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_db_instance_from_s3_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RestoreDBInstanceFromS3Output, crate::error::RestoreDBInstanceFromS3Error>
-{
+) -> std::result::Result<
+    crate::output::RestoreDBInstanceFromS3Output,
+    crate::error::RestoreDBInstanceFromS3Error,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::restore_db_instance_from_s3_output::Builder::default();
@@ -9800,7 +10100,7 @@ pub fn parse_restore_db_instance_from_s3_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_db_instance_to_point_in_time_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RestoreDBInstanceToPointInTimeOutput,
     crate::error::RestoreDBInstanceToPointInTimeError,
 > {
@@ -9950,7 +10250,7 @@ pub fn parse_restore_db_instance_to_point_in_time_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_restore_db_instance_to_point_in_time_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RestoreDBInstanceToPointInTimeOutput,
     crate::error::RestoreDBInstanceToPointInTimeError,
 > {
@@ -9971,7 +10271,7 @@ pub fn parse_restore_db_instance_to_point_in_time_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_revoke_db_security_group_ingress_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RevokeDBSecurityGroupIngressOutput,
     crate::error::RevokeDBSecurityGroupIngressError,
 > {
@@ -10011,7 +10311,7 @@ pub fn parse_revoke_db_security_group_ingress_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_revoke_db_security_group_ingress_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::RevokeDBSecurityGroupIngressOutput,
     crate::error::RevokeDBSecurityGroupIngressError,
 > {
@@ -10031,7 +10331,10 @@ pub fn parse_revoke_db_security_group_ingress_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_activity_stream_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StartActivityStreamOutput, crate::error::StartActivityStreamError> {
+) -> std::result::Result<
+    crate::output::StartActivityStreamOutput,
+    crate::error::StartActivityStreamError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::StartActivityStreamError::unhandled)?;
     let error_code = match generic.code() {
@@ -10130,7 +10433,10 @@ pub fn parse_start_activity_stream_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_activity_stream_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StartActivityStreamOutput, crate::error::StartActivityStreamError> {
+) -> std::result::Result<
+    crate::output::StartActivityStreamOutput,
+    crate::error::StartActivityStreamError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::start_activity_stream_output::Builder::default();
@@ -10147,7 +10453,7 @@ pub fn parse_start_activity_stream_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StartDBClusterOutput, crate::error::StartDBClusterError> {
+) -> std::result::Result<crate::output::StartDBClusterOutput, crate::error::StartDBClusterError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::StartDBClusterError::unhandled)?;
     let error_code = match generic.code() {
@@ -10204,7 +10510,7 @@ pub fn parse_start_db_cluster_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_db_cluster_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StartDBClusterOutput, crate::error::StartDBClusterError> {
+) -> std::result::Result<crate::output::StartDBClusterOutput, crate::error::StartDBClusterError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::start_db_cluster_output::Builder::default();
@@ -10219,7 +10525,7 @@ pub fn parse_start_db_cluster_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_db_instance_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StartDBInstanceOutput, crate::error::StartDBInstanceError> {
+) -> std::result::Result<crate::output::StartDBInstanceOutput, crate::error::StartDBInstanceError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::StartDBInstanceError::unhandled)?;
     let error_code = match generic.code() {
@@ -10382,7 +10688,7 @@ pub fn parse_start_db_instance_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_db_instance_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StartDBInstanceOutput, crate::error::StartDBInstanceError> {
+) -> std::result::Result<crate::output::StartDBInstanceOutput, crate::error::StartDBInstanceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::start_db_instance_output::Builder::default();
@@ -10397,7 +10703,7 @@ pub fn parse_start_db_instance_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_db_instance_automated_backups_replication_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::StartDBInstanceAutomatedBackupsReplicationOutput,
     crate::error::StartDBInstanceAutomatedBackupsReplicationError,
 > {
@@ -10449,7 +10755,7 @@ pub fn parse_start_db_instance_automated_backups_replication_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_db_instance_automated_backups_replication_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::StartDBInstanceAutomatedBackupsReplicationOutput,
     crate::error::StartDBInstanceAutomatedBackupsReplicationError,
 > {
@@ -10471,7 +10777,7 @@ pub fn parse_start_db_instance_automated_backups_replication_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_export_task_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StartExportTaskOutput, crate::error::StartExportTaskError> {
+) -> std::result::Result<crate::output::StartExportTaskOutput, crate::error::StartExportTaskError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::StartExportTaskError::unhandled)?;
     let error_code = match generic.code() {
@@ -10610,7 +10916,7 @@ pub fn parse_start_export_task_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_export_task_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StartExportTaskOutput, crate::error::StartExportTaskError> {
+) -> std::result::Result<crate::output::StartExportTaskOutput, crate::error::StartExportTaskError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::start_export_task_output::Builder::default();
@@ -10625,7 +10931,10 @@ pub fn parse_start_export_task_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_stop_activity_stream_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StopActivityStreamOutput, crate::error::StopActivityStreamError> {
+) -> std::result::Result<
+    crate::output::StopActivityStreamOutput,
+    crate::error::StopActivityStreamError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::StopActivityStreamError::unhandled)?;
     let error_code = match generic.code() {
@@ -10710,7 +11019,10 @@ pub fn parse_stop_activity_stream_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_stop_activity_stream_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StopActivityStreamOutput, crate::error::StopActivityStreamError> {
+) -> std::result::Result<
+    crate::output::StopActivityStreamOutput,
+    crate::error::StopActivityStreamError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::stop_activity_stream_output::Builder::default();
@@ -10727,7 +11039,7 @@ pub fn parse_stop_activity_stream_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_stop_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StopDBClusterOutput, crate::error::StopDBClusterError> {
+) -> std::result::Result<crate::output::StopDBClusterOutput, crate::error::StopDBClusterError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::StopDBClusterError::unhandled)?;
     let error_code = match generic.code() {
@@ -10784,7 +11096,7 @@ pub fn parse_stop_db_cluster_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_stop_db_cluster_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StopDBClusterOutput, crate::error::StopDBClusterError> {
+) -> std::result::Result<crate::output::StopDBClusterOutput, crate::error::StopDBClusterError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::stop_db_cluster_output::Builder::default();
@@ -10799,7 +11111,7 @@ pub fn parse_stop_db_cluster_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_stop_db_instance_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StopDBInstanceOutput, crate::error::StopDBInstanceError> {
+) -> std::result::Result<crate::output::StopDBInstanceOutput, crate::error::StopDBInstanceError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::StopDBInstanceError::unhandled)?;
     let error_code = match generic.code() {
@@ -10885,7 +11197,7 @@ pub fn parse_stop_db_instance_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_stop_db_instance_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::StopDBInstanceOutput, crate::error::StopDBInstanceError> {
+) -> std::result::Result<crate::output::StopDBInstanceOutput, crate::error::StopDBInstanceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::stop_db_instance_output::Builder::default();
@@ -10900,7 +11212,7 @@ pub fn parse_stop_db_instance_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_stop_db_instance_automated_backups_replication_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::StopDBInstanceAutomatedBackupsReplicationOutput,
     crate::error::StopDBInstanceAutomatedBackupsReplicationError,
 > {
@@ -10934,7 +11246,7 @@ pub fn parse_stop_db_instance_automated_backups_replication_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_stop_db_instance_automated_backups_replication_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::StopDBInstanceAutomatedBackupsReplicationOutput,
     crate::error::StopDBInstanceAutomatedBackupsReplicationError,
 > {

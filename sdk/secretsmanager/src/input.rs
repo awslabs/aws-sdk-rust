@@ -24,19 +24,21 @@ pub mod cancel_rotate_secret_input {
         /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
         /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
         /// </note>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CancelRotateSecretInput`](crate::input::CancelRotateSecretInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CancelRotateSecretInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CancelRotateSecretInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CancelRotateSecretInput {
                 secret_id: self.secret_id,
             })
@@ -53,7 +55,7 @@ impl CancelRotateSecretInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CancelRotateSecret,
             aws_http::AwsErrorRetryPolicy,
@@ -109,7 +111,7 @@ impl CancelRotateSecretInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -157,12 +159,12 @@ pub mod create_secret_input {
         /// risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager
         /// automatically adds a hyphen and six random characters at the end of the ARN.</p>
         /// </note>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>(Optional) If you include <code>SecretString</code> or <code>SecretBinary</code>, then an
@@ -198,24 +200,24 @@ pub mod create_secret_input {
         /// </li>
         /// </ul>
         /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(inp.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_request_token = inp;
+            self.client_request_token = input;
             self
         }
         /// <p>(Optional) Specifies a user-provided description of the secret.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>(Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master key (CMK) to
@@ -233,12 +235,12 @@ pub mod create_secret_input {
         /// resides in a different account, then you must create a custom CMK and specify the ARN in
         /// this field. </p>
         /// </important>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
@@ -249,12 +251,12 @@ pub mod create_secret_input {
         /// both. They cannot both be empty.</p>
         /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by
         /// using the AWS CLI or one of the AWS SDKs.</p>
-        pub fn secret_binary(mut self, inp: smithy_types::Blob) -> Self {
-            self.secret_binary = Some(inp);
+        pub fn secret_binary(mut self, input: smithy_types::Blob) -> Self {
+            self.secret_binary = Some(input);
             self
         }
-        pub fn set_secret_binary(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.secret_binary = inp;
+        pub fn set_secret_binary(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.secret_binary = input;
             self
         }
         /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
@@ -274,57 +276,64 @@ pub mod create_secret_input {
         /// </p>
         /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should
         /// use single quotes to avoid confusion with the double quotes required in the JSON text. </p>
-        pub fn secret_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_string = Some(inp.into());
+        pub fn secret_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_string = Some(input.into());
             self
         }
-        pub fn set_secret_string(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_string = inp;
+        pub fn set_secret_string(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.secret_string = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         pub fn add_replica_regions(
             mut self,
-            inp: impl Into<crate::model::ReplicaRegionType>,
+            input: impl Into<crate::model::ReplicaRegionType>,
         ) -> Self {
             let mut v = self.add_replica_regions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.add_replica_regions = Some(v);
             self
         }
         pub fn set_add_replica_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReplicaRegionType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReplicaRegionType>>,
         ) -> Self {
-            self.add_replica_regions = inp;
+            self.add_replica_regions = input;
             self
         }
         /// <p>(Optional) If set, the replication overwrites a secret with the same name in the
         /// destination region.</p>
-        pub fn force_overwrite_replica_secret(mut self, inp: bool) -> Self {
-            self.force_overwrite_replica_secret = Some(inp);
+        pub fn force_overwrite_replica_secret(mut self, input: bool) -> Self {
+            self.force_overwrite_replica_secret = Some(input);
             self
         }
-        pub fn set_force_overwrite_replica_secret(mut self, inp: bool) -> Self {
-            self.force_overwrite_replica_secret = Some(inp);
+        pub fn set_force_overwrite_replica_secret(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.force_overwrite_replica_secret = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateSecretInput`](crate::input::CreateSecretInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateSecretInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateSecretInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateSecretInput {
                 name: self.name,
                 client_request_token: self.client_request_token,
@@ -351,7 +360,7 @@ impl CreateSecretInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateSecret,
             aws_http::AwsErrorRetryPolicy,
@@ -410,7 +419,7 @@ impl CreateSecretInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -457,19 +466,21 @@ pub mod delete_resource_policy_input {
         /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
         /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
         /// </note>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::input::DeleteResourcePolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteResourcePolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteResourcePolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteResourcePolicyInput {
                 secret_id: self.secret_id,
             })
@@ -486,7 +497,7 @@ impl DeleteResourcePolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteResourcePolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -542,7 +553,7 @@ impl DeleteResourcePolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -591,24 +602,24 @@ pub mod delete_secret_input {
         /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
         /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
         /// </note>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
         /// <p>(Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the
         /// secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code>
         /// parameter in the same API call.</p>
         /// <p>This value can range from 7 to 30 days with a default value of 30.</p>
-        pub fn recovery_window_in_days(mut self, inp: i64) -> Self {
-            self.recovery_window_in_days = Some(inp);
+        pub fn recovery_window_in_days(mut self, input: i64) -> Self {
+            self.recovery_window_in_days = Some(input);
             self
         }
-        pub fn set_recovery_window_in_days(mut self, inp: std::option::Option<i64>) -> Self {
-            self.recovery_window_in_days = inp;
+        pub fn set_recovery_window_in_days(mut self, input: std::option::Option<i64>) -> Self {
+            self.recovery_window_in_days = input;
             self
         }
         /// <p>(Optional) Specifies that the secret is to be deleted without any recovery window. You
@@ -630,18 +641,22 @@ pub mod delete_secret_input {
         /// operation does not return the error <code>ResourceNotFoundException</code> in order to
         /// correctly handle retries.</p>
         /// </important>
-        pub fn force_delete_without_recovery(mut self, inp: bool) -> Self {
-            self.force_delete_without_recovery = Some(inp);
+        pub fn force_delete_without_recovery(mut self, input: bool) -> Self {
+            self.force_delete_without_recovery = Some(input);
             self
         }
-        pub fn set_force_delete_without_recovery(mut self, inp: std::option::Option<bool>) -> Self {
-            self.force_delete_without_recovery = inp;
+        pub fn set_force_delete_without_recovery(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.force_delete_without_recovery = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteSecretInput`](crate::input::DeleteSecretInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteSecretInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteSecretInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteSecretInput {
                 secret_id: self.secret_id,
                 recovery_window_in_days: self.recovery_window_in_days,
@@ -660,7 +675,7 @@ impl DeleteSecretInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteSecret,
             aws_http::AwsErrorRetryPolicy,
@@ -716,7 +731,7 @@ impl DeleteSecretInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -763,18 +778,21 @@ pub mod describe_secret_input {
         /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
         /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
         /// </note>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeSecretInput`](crate::input::DescribeSecretInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeSecretInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::DescribeSecretInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeSecretInput {
                 secret_id: self.secret_id,
             })
@@ -791,7 +809,7 @@ impl DescribeSecretInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeSecret,
             aws_http::AwsErrorRetryPolicy,
@@ -846,7 +864,7 @@ impl DescribeSecretInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -886,35 +904,35 @@ pub mod get_random_password_input {
     impl Builder {
         /// <p>The desired length of the generated password. The default value if you do not include this
         /// parameter is 32 characters.</p>
-        pub fn password_length(mut self, inp: i64) -> Self {
-            self.password_length = Some(inp);
+        pub fn password_length(mut self, input: i64) -> Self {
+            self.password_length = Some(input);
             self
         }
-        pub fn set_password_length(mut self, inp: std::option::Option<i64>) -> Self {
-            self.password_length = inp;
+        pub fn set_password_length(mut self, input: std::option::Option<i64>) -> Self {
+            self.password_length = input;
             self
         }
         /// <p>A string that includes characters that should not be included in the generated password.
         /// The default is that all characters from the included sets can be used.</p>
-        pub fn exclude_characters(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.exclude_characters = Some(inp.into());
+        pub fn exclude_characters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.exclude_characters = Some(input.into());
             self
         }
         pub fn set_exclude_characters(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.exclude_characters = inp;
+            self.exclude_characters = input;
             self
         }
         /// <p>Specifies that the generated password should not include digits. The default if you do not
         /// include this switch parameter is that digits can be included.</p>
-        pub fn exclude_numbers(mut self, inp: bool) -> Self {
-            self.exclude_numbers = Some(inp);
+        pub fn exclude_numbers(mut self, input: bool) -> Self {
+            self.exclude_numbers = Some(input);
             self
         }
-        pub fn set_exclude_numbers(mut self, inp: std::option::Option<bool>) -> Self {
-            self.exclude_numbers = inp;
+        pub fn set_exclude_numbers(mut self, input: std::option::Option<bool>) -> Self {
+            self.exclude_numbers = input;
             self
         }
         /// <p>Specifies that the generated password should not include punctuation characters. The
@@ -927,60 +945,62 @@ pub mod get_random_password_input {
         /// <code>! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | }
         /// ~</code>
         /// </p>
-        pub fn exclude_punctuation(mut self, inp: bool) -> Self {
-            self.exclude_punctuation = Some(inp);
+        pub fn exclude_punctuation(mut self, input: bool) -> Self {
+            self.exclude_punctuation = Some(input);
             self
         }
-        pub fn set_exclude_punctuation(mut self, inp: std::option::Option<bool>) -> Self {
-            self.exclude_punctuation = inp;
+        pub fn set_exclude_punctuation(mut self, input: std::option::Option<bool>) -> Self {
+            self.exclude_punctuation = input;
             self
         }
         /// <p>Specifies that the generated password should not include uppercase letters. The default if
         /// you do not include this switch parameter is that uppercase letters can be included.</p>
-        pub fn exclude_uppercase(mut self, inp: bool) -> Self {
-            self.exclude_uppercase = Some(inp);
+        pub fn exclude_uppercase(mut self, input: bool) -> Self {
+            self.exclude_uppercase = Some(input);
             self
         }
-        pub fn set_exclude_uppercase(mut self, inp: std::option::Option<bool>) -> Self {
-            self.exclude_uppercase = inp;
+        pub fn set_exclude_uppercase(mut self, input: std::option::Option<bool>) -> Self {
+            self.exclude_uppercase = input;
             self
         }
         /// <p>Specifies that the generated password should not include lowercase letters. The default if
         /// you do not include this switch parameter is that lowercase letters can be included.</p>
-        pub fn exclude_lowercase(mut self, inp: bool) -> Self {
-            self.exclude_lowercase = Some(inp);
+        pub fn exclude_lowercase(mut self, input: bool) -> Self {
+            self.exclude_lowercase = Some(input);
             self
         }
-        pub fn set_exclude_lowercase(mut self, inp: std::option::Option<bool>) -> Self {
-            self.exclude_lowercase = inp;
+        pub fn set_exclude_lowercase(mut self, input: std::option::Option<bool>) -> Self {
+            self.exclude_lowercase = input;
             self
         }
         /// <p>Specifies that the generated password can include the space character. The default if you
         /// do not include this switch parameter is that the space character is not included.</p>
-        pub fn include_space(mut self, inp: bool) -> Self {
-            self.include_space = Some(inp);
+        pub fn include_space(mut self, input: bool) -> Self {
+            self.include_space = Some(input);
             self
         }
-        pub fn set_include_space(mut self, inp: std::option::Option<bool>) -> Self {
-            self.include_space = inp;
+        pub fn set_include_space(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_space = input;
             self
         }
         /// <p>A boolean value that specifies whether the generated password must include at least one of
         /// every allowed character type. The default value is <code>True</code> and the operation
         /// requires at least one of every character type.</p>
-        pub fn require_each_included_type(mut self, inp: bool) -> Self {
-            self.require_each_included_type = Some(inp);
+        pub fn require_each_included_type(mut self, input: bool) -> Self {
+            self.require_each_included_type = Some(input);
             self
         }
-        pub fn set_require_each_included_type(mut self, inp: std::option::Option<bool>) -> Self {
-            self.require_each_included_type = inp;
+        pub fn set_require_each_included_type(mut self, input: std::option::Option<bool>) -> Self {
+            self.require_each_included_type = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRandomPasswordInput`](crate::input::GetRandomPasswordInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRandomPasswordInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetRandomPasswordInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetRandomPasswordInput {
                 password_length: self.password_length,
                 exclude_characters: self.exclude_characters,
@@ -1004,7 +1024,7 @@ impl GetRandomPasswordInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetRandomPassword,
             aws_http::AwsErrorRetryPolicy,
@@ -1060,7 +1080,7 @@ impl GetRandomPasswordInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1107,19 +1127,21 @@ pub mod get_resource_policy_input {
         /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
         /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
         /// </note>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetResourcePolicyInput`](crate::input::GetResourcePolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetResourcePolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetResourcePolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetResourcePolicyInput {
                 secret_id: self.secret_id,
             })
@@ -1136,7 +1158,7 @@ impl GetResourcePolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetResourcePolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -1192,7 +1214,7 @@ impl GetResourcePolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1241,12 +1263,12 @@ pub mod get_secret_value_input {
         /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
         /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
         /// </note>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
         /// <p>Specifies the unique identifier of the version of the secret that you want to retrieve. If
@@ -1256,12 +1278,12 @@ pub mod get_secret_value_input {
         /// <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
         /// <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with
         /// 32 hexadecimal digits.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>Specifies the secret version that you want to retrieve by the staging label attached to
@@ -1271,18 +1293,24 @@ pub mod get_secret_value_input {
         /// to the same secret version . If you don't specify either a <code>VersionStage</code> or
         /// <code>VersionId</code>, then the default is to perform the operation on the version with the
         /// <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
-        pub fn version_stage(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_stage = Some(inp.into());
+        pub fn version_stage(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_stage = Some(input.into());
             self
         }
-        pub fn set_version_stage(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_stage = inp;
+        pub fn set_version_stage(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.version_stage = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSecretValueInput`](crate::input::GetSecretValueInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSecretValueInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::GetSecretValueInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetSecretValueInput {
                 secret_id: self.secret_id,
                 version_id: self.version_id,
@@ -1301,7 +1329,7 @@ impl GetSecretValueInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetSecretValue,
             aws_http::AwsErrorRetryPolicy,
@@ -1356,7 +1384,7 @@ impl GetSecretValueInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1398,55 +1426,56 @@ pub mod list_secrets_input {
         /// get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
         /// even when there are more results available. You should check <code>NextToken</code> after every
         /// operation to ensure that you receive all of the results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>(Optional) Use this parameter in a request if you receive a
         /// <code>NextToken</code> response in a previous request indicating there's more
         /// output available. In a subsequent call, set it to the value of the previous call
         /// <code>NextToken</code> response to indicate where the output should continue from.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
-        pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
+        pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filters = Some(v);
             self
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Filter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
         ) -> Self {
-            self.filters = inp;
+            self.filters = input;
             self
         }
         /// <p>Lists secrets in the requested order. </p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrderType) -> Self {
-            self.sort_order = Some(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
+            self.sort_order = Some(input);
             self
         }
         pub fn set_sort_order(
             mut self,
-            inp: std::option::Option<crate::model::SortOrderType>,
+            input: std::option::Option<crate::model::SortOrderType>,
         ) -> Self {
-            self.sort_order = inp;
+            self.sort_order = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSecretsInput`](crate::input::ListSecretsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSecretsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListSecretsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListSecretsInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -1466,7 +1495,7 @@ impl ListSecretsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListSecrets,
             aws_http::AwsErrorRetryPolicy,
@@ -1522,7 +1551,7 @@ impl ListSecretsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1572,12 +1601,12 @@ pub mod list_secret_version_ids_input {
         /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
         /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
         /// </note>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
         /// <p>(Optional) Limits the number of results you want to include in
@@ -1588,42 +1617,44 @@ pub mod list_secret_version_ids_input {
         /// get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
         /// even when there are more results available. You should check <code>NextToken</code> after every
         /// operation to ensure that you receive all of the results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>(Optional) Use this parameter in a request if you receive a
         /// <code>NextToken</code> response in a previous request indicating there's more
         /// output available. In a subsequent call, set it to the value of the previous call
         /// <code>NextToken</code> response to indicate where the output should continue from.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>(Optional) Specifies that you want the results to include versions that do not have any
         /// staging labels attached to them. Such versions are considered deprecated and are subject to
         /// deletion by Secrets Manager as needed.</p>
-        pub fn include_deprecated(mut self, inp: bool) -> Self {
-            self.include_deprecated = Some(inp);
+        pub fn include_deprecated(mut self, input: bool) -> Self {
+            self.include_deprecated = Some(input);
             self
         }
-        pub fn set_include_deprecated(mut self, inp: std::option::Option<bool>) -> Self {
-            self.include_deprecated = inp;
+        pub fn set_include_deprecated(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_deprecated = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSecretVersionIdsInput`](crate::input::ListSecretVersionIdsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSecretVersionIdsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListSecretVersionIdsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListSecretVersionIdsInput {
                 secret_id: self.secret_id,
                 max_results: self.max_results,
@@ -1643,7 +1674,7 @@ impl ListSecretVersionIdsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListSecretVersionIds,
             aws_http::AwsErrorRetryPolicy,
@@ -1699,7 +1730,7 @@ impl ListSecretVersionIdsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1748,12 +1779,12 @@ pub mod put_resource_policy_input {
         /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
         /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
         /// </note>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
         /// <p>A JSON-formatted string constructed according to the grammar and syntax for an AWS
@@ -1761,32 +1792,34 @@ pub mod put_resource_policy_input {
         /// secret and its versions. For information on how to format a JSON parameter for the various
         /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
         /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
-        pub fn resource_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_policy = Some(inp.into());
+        pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_policy = Some(input.into());
             self
         }
         pub fn set_resource_policy(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.resource_policy = inp;
+            self.resource_policy = input;
             self
         }
         /// <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you
         /// block resource-based policies that allow broad access to the secret.</p>
-        pub fn block_public_policy(mut self, inp: bool) -> Self {
-            self.block_public_policy = Some(inp);
+        pub fn block_public_policy(mut self, input: bool) -> Self {
+            self.block_public_policy = Some(input);
             self
         }
-        pub fn set_block_public_policy(mut self, inp: std::option::Option<bool>) -> Self {
-            self.block_public_policy = inp;
+        pub fn set_block_public_policy(mut self, input: std::option::Option<bool>) -> Self {
+            self.block_public_policy = input;
             self
         }
         /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::input::PutResourcePolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutResourcePolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutResourcePolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutResourcePolicyInput {
                 secret_id: self.secret_id,
                 resource_policy: self.resource_policy,
@@ -1805,7 +1838,7 @@ impl PutResourcePolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutResourcePolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -1861,7 +1894,7 @@ impl PutResourcePolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -1913,12 +1946,12 @@ pub mod put_secret_value_input {
         /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
         /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
         /// </note>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
         /// <p>(Optional) Specifies a unique identifier for the new version of the secret. </p>
@@ -1951,15 +1984,15 @@ pub mod put_secret_value_input {
         /// </li>
         /// </ul>
         /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(inp.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_request_token = inp;
+            self.client_request_token = input;
             self
         }
         /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
@@ -1969,12 +2002,12 @@ pub mod put_secret_value_input {
         /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
         /// <p>This parameter is not accessible if the secret using the Secrets Manager console.</p>
         /// <p></p>
-        pub fn secret_binary(mut self, inp: smithy_types::Blob) -> Self {
-            self.secret_binary = Some(inp);
+        pub fn secret_binary(mut self, input: smithy_types::Blob) -> Self {
+            self.secret_binary = Some(input);
             self
         }
-        pub fn set_secret_binary(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.secret_binary = inp;
+        pub fn set_secret_binary(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.secret_binary = input;
             self
         }
         /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
@@ -1994,31 +2027,37 @@ pub mod put_secret_value_input {
         /// </p>
         /// <p>If your command-line tool or SDK requires quotation marks around the parameter, you should
         /// use single quotes to avoid confusion with the double quotes required in the JSON text.</p>
-        pub fn secret_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_string = Some(inp.into());
+        pub fn secret_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_string = Some(input.into());
             self
         }
-        pub fn set_secret_string(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_string = inp;
+        pub fn set_secret_string(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.secret_string = input;
             self
         }
-        pub fn version_stages(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn version_stages(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.version_stages.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.version_stages = Some(v);
             self
         }
         pub fn set_version_stages(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.version_stages = inp;
+            self.version_stages = input;
             self
         }
         /// Consumes the builder and constructs a [`PutSecretValueInput`](crate::input::PutSecretValueInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutSecretValueInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::PutSecretValueInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutSecretValueInput {
                 secret_id: self.secret_id,
                 client_request_token: self.client_request_token,
@@ -2039,7 +2078,7 @@ impl PutSecretValueInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutSecretValue,
             aws_http::AwsErrorRetryPolicy,
@@ -2097,7 +2136,7 @@ impl PutSecretValueInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2130,31 +2169,31 @@ pub mod remove_regions_from_replication_input {
     }
     impl Builder {
         /// <p>Remove a secret by <code>SecretId</code> from replica Regions.</p>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
-        pub fn remove_replica_regions(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn remove_replica_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.remove_replica_regions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.remove_replica_regions = Some(v);
             self
         }
         pub fn set_remove_replica_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.remove_replica_regions = inp;
+            self.remove_replica_regions = input;
             self
         }
         /// Consumes the builder and constructs a [`RemoveRegionsFromReplicationInput`](crate::input::RemoveRegionsFromReplicationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::RemoveRegionsFromReplicationInput,
             smithy_http::operation::BuildError,
         > {
@@ -2176,7 +2215,7 @@ impl RemoveRegionsFromReplicationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RemoveRegionsFromReplication,
             aws_http::AwsErrorRetryPolicy,
@@ -2233,7 +2272,7 @@ impl RemoveRegionsFromReplicationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2271,45 +2310,50 @@ pub mod replicate_secret_to_regions_input {
     }
     impl Builder {
         /// <p>Use the <code>Secret Id</code> to replicate a secret to regions.</p>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
         pub fn add_replica_regions(
             mut self,
-            inp: impl Into<crate::model::ReplicaRegionType>,
+            input: impl Into<crate::model::ReplicaRegionType>,
         ) -> Self {
             let mut v = self.add_replica_regions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.add_replica_regions = Some(v);
             self
         }
         pub fn set_add_replica_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReplicaRegionType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReplicaRegionType>>,
         ) -> Self {
-            self.add_replica_regions = inp;
+            self.add_replica_regions = input;
             self
         }
         /// <p>(Optional) If set, Secrets Manager replication overwrites a secret with the same name in the
         /// destination region.</p>
-        pub fn force_overwrite_replica_secret(mut self, inp: bool) -> Self {
-            self.force_overwrite_replica_secret = Some(inp);
+        pub fn force_overwrite_replica_secret(mut self, input: bool) -> Self {
+            self.force_overwrite_replica_secret = Some(input);
             self
         }
-        pub fn set_force_overwrite_replica_secret(mut self, inp: bool) -> Self {
-            self.force_overwrite_replica_secret = Some(inp);
+        pub fn set_force_overwrite_replica_secret(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.force_overwrite_replica_secret = input;
             self
         }
         /// Consumes the builder and constructs a [`ReplicateSecretToRegionsInput`](crate::input::ReplicateSecretToRegionsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ReplicateSecretToRegionsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ReplicateSecretToRegionsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ReplicateSecretToRegionsInput {
                 secret_id: self.secret_id,
                 add_replica_regions: self.add_replica_regions,
@@ -2331,7 +2375,7 @@ impl ReplicateSecretToRegionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ReplicateSecretToRegions,
             aws_http::AwsErrorRetryPolicy,
@@ -2387,7 +2431,7 @@ impl ReplicateSecretToRegionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2434,18 +2478,19 @@ pub mod restore_secret_input {
         /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
         /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
         /// </note>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreSecretInput`](crate::input::RestoreSecretInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RestoreSecretInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::RestoreSecretInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::RestoreSecretInput {
                 secret_id: self.secret_id,
             })
@@ -2462,7 +2507,7 @@ impl RestoreSecretInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RestoreSecret,
             aws_http::AwsErrorRetryPolicy,
@@ -2518,7 +2563,7 @@ impl RestoreSecretInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2568,12 +2613,12 @@ pub mod rotate_secret_input {
         /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
         /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
         /// </note>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
         /// <p>(Optional) Specifies a unique identifier for the new version of the secret that helps
@@ -2590,45 +2635,46 @@ pub mod rotate_secret_input {
         /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if
         /// there are failures and retries during the function's processing. This value becomes the
         /// <code>VersionId</code> of the new version.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(inp.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_request_token = inp;
+            self.client_request_token = input;
             self
         }
         /// <p>(Optional) Specifies the ARN of the Lambda function that can rotate the secret.</p>
-        pub fn rotation_lambda_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.rotation_lambda_arn = Some(inp.into());
+        pub fn rotation_lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.rotation_lambda_arn = Some(input.into());
             self
         }
         pub fn set_rotation_lambda_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.rotation_lambda_arn = inp;
+            self.rotation_lambda_arn = input;
             self
         }
         /// <p>A structure that defines the rotation configuration for this secret.</p>
-        pub fn rotation_rules(mut self, inp: crate::model::RotationRulesType) -> Self {
-            self.rotation_rules = Some(inp);
+        pub fn rotation_rules(mut self, input: crate::model::RotationRulesType) -> Self {
+            self.rotation_rules = Some(input);
             self
         }
         pub fn set_rotation_rules(
             mut self,
-            inp: std::option::Option<crate::model::RotationRulesType>,
+            input: std::option::Option<crate::model::RotationRulesType>,
         ) -> Self {
-            self.rotation_rules = inp;
+            self.rotation_rules = input;
             self
         }
         /// Consumes the builder and constructs a [`RotateSecretInput`](crate::input::RotateSecretInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RotateSecretInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::RotateSecretInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::RotateSecretInput {
                 secret_id: self.secret_id,
                 client_request_token: self.client_request_token,
@@ -2648,7 +2694,7 @@ impl RotateSecretInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RotateSecret,
             aws_http::AwsErrorRetryPolicy,
@@ -2707,7 +2753,7 @@ impl RotateSecretInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2739,19 +2785,21 @@ pub mod stop_replication_to_replica_input {
     }
     impl Builder {
         /// <p>Response to <code>StopReplicationToReplica</code> of a secret, based on the <code>SecretId</code>.</p>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
         /// Consumes the builder and constructs a [`StopReplicationToReplicaInput`](crate::input::StopReplicationToReplicaInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StopReplicationToReplicaInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StopReplicationToReplicaInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StopReplicationToReplicaInput {
                 secret_id: self.secret_id,
             })
@@ -2769,7 +2817,7 @@ impl StopReplicationToReplicaInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StopReplicationToReplica,
             aws_http::AwsErrorRetryPolicy,
@@ -2825,7 +2873,7 @@ impl StopReplicationToReplicaInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -2873,31 +2921,32 @@ pub mod tag_resource_input {
         /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
         /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
         /// </note>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TagResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::TagResourceInput {
                 secret_id: self.secret_id,
                 tags: self.tags,
@@ -2915,7 +2964,7 @@ impl TagResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
@@ -2971,7 +3020,7 @@ impl TagResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3019,31 +3068,32 @@ pub mod untag_resource_input {
         /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
         /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
         /// </note>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UntagResourceInput {
                 secret_id: self.secret_id,
                 tag_keys: self.tag_keys,
@@ -3061,7 +3111,7 @@ impl UntagResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
@@ -3117,7 +3167,7 @@ impl UntagResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3170,12 +3220,12 @@ pub mod update_secret_input {
         /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
         /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
         /// </note>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
         /// <p>(Optional) If you want to add a new version to the secret, this parameter specifies a
@@ -3208,24 +3258,24 @@ pub mod update_secret_input {
         /// </li>
         /// </ul>
         /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_request_token = Some(inp.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_request_token = Some(input.into());
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_request_token = inp;
+            self.client_request_token = input;
             self
         }
         /// <p>(Optional) Specifies an updated user-provided description of the secret.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master key (CMK) to be
@@ -3237,12 +3287,12 @@ pub mod update_secret_input {
         /// this field. The user making the call must have permissions to both the secret and the CMK in
         /// their respective accounts.</p>
         /// </important>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>(Optional) Specifies updated binary data that you want to encrypt and store in the new
@@ -3251,12 +3301,12 @@ pub mod update_secret_input {
         /// the contents of the file as a parameter. Either <code>SecretBinary</code> or
         /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
         /// <p>This parameter is not accessible using the Secrets Manager console.</p>
-        pub fn secret_binary(mut self, inp: smithy_types::Blob) -> Self {
-            self.secret_binary = Some(inp);
+        pub fn secret_binary(mut self, input: smithy_types::Blob) -> Self {
+            self.secret_binary = Some(input);
             self
         }
-        pub fn set_secret_binary(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.secret_binary = inp;
+        pub fn set_secret_binary(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.secret_binary = input;
             self
         }
         /// <p>(Optional) Specifies updated text data that you want to encrypt and store in this new
@@ -3281,18 +3331,22 @@ pub mod update_secret_input {
         /// <p>
         /// <code>"[{\"username\":\"bob\"},{\"password\":\"abc123xyz456\"}]"</code>
         /// </p>
-        pub fn secret_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_string = Some(inp.into());
+        pub fn secret_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_string = Some(input.into());
             self
         }
-        pub fn set_secret_string(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_string = inp;
+        pub fn set_secret_string(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.secret_string = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateSecretInput`](crate::input::UpdateSecretInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateSecretInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateSecretInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateSecretInput {
                 secret_id: self.secret_id,
                 client_request_token: self.client_request_token,
@@ -3314,7 +3368,7 @@ impl UpdateSecretInput {
     pub fn make_operation(
         mut self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateSecret,
             aws_http::AwsErrorRetryPolicy,
@@ -3373,7 +3427,7 @@ impl UpdateSecretInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3424,21 +3478,24 @@ pub mod update_secret_version_stage_input {
         /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
         /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
         /// </note>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
         /// <p>The staging label to add to this version.</p>
-        pub fn version_stage(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_stage = Some(inp.into());
+        pub fn version_stage(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_stage = Some(input.into());
             self
         }
-        pub fn set_version_stage(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_stage = inp;
+        pub fn set_version_stage(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.version_stage = input;
             self
         }
         /// <p>Specifies the secret version ID of the version that the staging label is to be removed
@@ -3446,37 +3503,39 @@ pub mod update_secret_version_stage_input {
         /// different version, then you must include this parameter and specify the version that the label
         /// is to be removed from. If the label is attached and you either do not specify this parameter,
         /// or the version ID does not match, then the operation fails.</p>
-        pub fn remove_from_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.remove_from_version_id = Some(inp.into());
+        pub fn remove_from_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.remove_from_version_id = Some(input.into());
             self
         }
         pub fn set_remove_from_version_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.remove_from_version_id = inp;
+            self.remove_from_version_id = input;
             self
         }
         /// <p>(Optional) The secret version ID that you want to add the staging label. If you want to
         /// remove a label from a version, then do not specify this parameter.</p>
         /// <p>If the staging label is already attached to a different version of the secret, then you
         /// must also specify the <code>RemoveFromVersionId</code> parameter. </p>
-        pub fn move_to_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.move_to_version_id = Some(inp.into());
+        pub fn move_to_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.move_to_version_id = Some(input.into());
             self
         }
         pub fn set_move_to_version_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.move_to_version_id = inp;
+            self.move_to_version_id = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateSecretVersionStageInput`](crate::input::UpdateSecretVersionStageInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateSecretVersionStageInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateSecretVersionStageInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateSecretVersionStageInput {
                 secret_id: self.secret_id,
                 version_stage: self.version_stage,
@@ -3497,7 +3556,7 @@ impl UpdateSecretVersionStageInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateSecretVersionStage,
             aws_http::AwsErrorRetryPolicy,
@@ -3553,7 +3612,7 @@ impl UpdateSecretVersionStageInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")
@@ -3602,12 +3661,12 @@ pub mod validate_resource_policy_input {
         /// 'friendly name', you <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
         /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
         /// </note>
-        pub fn secret_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_id = Some(inp.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_id = Some(input.into());
             self
         }
-        pub fn set_secret_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_id = inp;
+        pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_id = input;
             self
         }
         /// <p>A JSON-formatted string constructed according to the grammar and syntax for an AWS
@@ -3615,22 +3674,24 @@ pub mod validate_resource_policy_input {
         /// secret and its versions. For information on how to format a JSON parameter for the various
         /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
         /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.publi</p>
-        pub fn resource_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_policy = Some(inp.into());
+        pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_policy = Some(input.into());
             self
         }
         pub fn set_resource_policy(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.resource_policy = inp;
+            self.resource_policy = input;
             self
         }
         /// Consumes the builder and constructs a [`ValidateResourcePolicyInput`](crate::input::ValidateResourcePolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ValidateResourcePolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ValidateResourcePolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ValidateResourcePolicyInput {
                 secret_id: self.secret_id,
                 resource_policy: self.resource_policy,
@@ -3648,7 +3709,7 @@ impl ValidateResourcePolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ValidateResourcePolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -3704,7 +3765,7 @@ impl ValidateResourcePolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         Ok(builder
             .method("POST")

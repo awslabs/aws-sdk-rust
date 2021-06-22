@@ -198,7 +198,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CancelKeyDeletionOutput,
             smithy_http::result::SdkError<crate::error::CancelKeyDeletionError>,
         >
@@ -229,12 +229,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
     }
@@ -253,7 +253,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ConnectCustomKeyStoreOutput,
             smithy_http::result::SdkError<crate::error::ConnectCustomKeyStoreError>,
         >
@@ -271,15 +271,15 @@ pub mod fluent_builders {
         }
         /// <p>Enter the key store ID of the custom key store that you want to connect.
         /// To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
-        pub fn custom_key_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_key_store_id(inp);
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_key_store_id(input);
             self
         }
         pub fn set_custom_key_store_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_custom_key_store_id(inp);
+            self.inner = self.inner.set_custom_key_store_id(input);
             self
         }
     }
@@ -298,7 +298,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateAliasOutput,
             smithy_http::result::SdkError<crate::error::CreateAliasError>,
         >
@@ -319,12 +319,12 @@ pub mod fluent_builders {
         /// <p>The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters,
         /// forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved
         /// for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed CMKs</a>.</p>
-        pub fn alias_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_name(inp);
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_name(input);
             self
         }
-        pub fn set_alias_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_alias_name(inp);
+        pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias_name(input);
             self
         }
         /// <p>Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed CMK</a>. The CMK must be
@@ -346,12 +346,15 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn target_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_key_id(inp);
+        pub fn target_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_key_id(input);
             self
         }
-        pub fn set_target_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_target_key_id(inp);
+        pub fn set_target_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_target_key_id(input);
             self
         }
     }
@@ -370,7 +373,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateCustomKeyStoreOutput,
             smithy_http::result::SdkError<crate::error::CreateCustomKeyStoreError>,
         >
@@ -388,42 +391,42 @@ pub mod fluent_builders {
         }
         /// <p>Specifies a friendly name for the custom key store. The name must be unique in your AWS
         /// account.</p>
-        pub fn custom_key_store_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_key_store_name(inp);
+        pub fn custom_key_store_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_key_store_name(input);
             self
         }
         pub fn set_custom_key_store_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_custom_key_store_name(inp);
+            self.inner = self.inner.set_custom_key_store_name(input);
             self
         }
         /// <p>Identifies the AWS CloudHSM cluster for the custom key store. Enter the cluster ID of any active
         /// AWS CloudHSM cluster that is not already associated with a custom key store. To find the cluster ID,
         /// use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
-        pub fn cloud_hsm_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cloud_hsm_cluster_id(inp);
+        pub fn cloud_hsm_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cloud_hsm_cluster_id(input);
             self
         }
         pub fn set_cloud_hsm_cluster_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_cloud_hsm_cluster_id(inp);
+            self.inner = self.inner.set_cloud_hsm_cluster_id(input);
             self
         }
         /// <p>Enter the content of the trust anchor certificate for the cluster. This is the content of
         /// the <code>customerCA.crt</code> file that you created when you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html">initialized the cluster</a>.</p>
-        pub fn trust_anchor_certificate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_anchor_certificate(inp);
+        pub fn trust_anchor_certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_anchor_certificate(input);
             self
         }
         pub fn set_trust_anchor_certificate(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_trust_anchor_certificate(inp);
+            self.inner = self.inner.set_trust_anchor_certificate(input);
             self
         }
         /// <p>Enter the password of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
@@ -433,15 +436,15 @@ pub mod fluent_builders {
         /// <p>The password must be a string of 7 to 32 characters. Its value is case sensitive.</p>
         /// <p>This parameter tells AWS KMS the <code>kmsuser</code> account password; it does not change
         /// the password in the AWS CloudHSM cluster.</p>
-        pub fn key_store_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_store_password(inp);
+        pub fn key_store_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_store_password(input);
             self
         }
         pub fn set_key_store_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_key_store_password(inp);
+            self.inner = self.inner.set_key_store_password(input);
             self
         }
     }
@@ -460,7 +463,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateGrantOutput,
             smithy_http::result::SdkError<crate::error::CreateGrantError>,
         >
@@ -491,12 +494,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>The principal that is given permission to perform the operations that the grant
@@ -507,15 +510,15 @@ pub mod fluent_builders {
         /// principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access
         /// Management (IAM)</a> in the Example ARNs section of the <i>AWS General
         /// Reference</i>.</p>
-        pub fn grantee_principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grantee_principal(inp);
+        pub fn grantee_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grantee_principal(input);
             self
         }
         pub fn set_grantee_principal(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_grantee_principal(inp);
+            self.inner = self.inner.set_grantee_principal(input);
             self
         }
         /// <p>The principal that is given permission to retire the grant by using <a>RetireGrant</a> operation.</p>
@@ -524,15 +527,15 @@ pub mod fluent_builders {
         /// assumed role users. For examples of the ARN syntax to use for specifying a principal, see
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM)</a> in the Example ARNs section of the
         /// <i>AWS General Reference</i>.</p>
-        pub fn retiring_principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.retiring_principal(inp);
+        pub fn retiring_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.retiring_principal(input);
             self
         }
         pub fn set_retiring_principal(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_retiring_principal(inp);
+            self.inner = self.inner.set_retiring_principal(input);
             self
         }
         /// <p>A list of operations that the grant permits.</p>
@@ -542,9 +545,9 @@ pub mod fluent_builders {
         }
         pub fn set_operations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GrantOperation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GrantOperation>>,
         ) -> Self {
-            self.inner = self.inner.set_operations(inp);
+            self.inner = self.inner.set_operations(input);
             self
         }
         /// <p>Allows a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> only when the encryption context matches or includes the encryption
@@ -555,15 +558,15 @@ pub mod fluent_builders {
         /// <p>Grant constraints are not applied to operations that do not support an encryption context,
         /// such as cryptographic operations with asymmetric CMKs and management operations, such as
         /// <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
-        pub fn constraints(mut self, inp: crate::model::GrantConstraints) -> Self {
-            self.inner = self.inner.constraints(inp);
+        pub fn constraints(mut self, input: crate::model::GrantConstraints) -> Self {
+            self.inner = self.inner.constraints(input);
             self
         }
         pub fn set_constraints(
             mut self,
-            inp: std::option::Option<crate::model::GrantConstraints>,
+            input: std::option::Option<crate::model::GrantConstraints>,
         ) -> Self {
-            self.inner = self.inner.set_constraints(inp);
+            self.inner = self.inner.set_constraints(input);
             self
         }
         /// <p>A list of grant tokens.</p>
@@ -575,9 +578,9 @@ pub mod fluent_builders {
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_grant_tokens(inp);
+            self.inner = self.inner.set_grant_tokens(input);
             self
         }
         /// <p>A friendly name for the grant. Use this value to prevent the unintended
@@ -590,12 +593,12 @@ pub mod fluent_builders {
         /// returned without creating a new grant. Note that the returned grant token is unique with every
         /// <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code> is returned.
         /// All grant tokens for the same grant ID can be used interchangeably.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -614,7 +617,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateKeyOutput,
             smithy_http::result::SdkError<crate::error::CreateKeyError>,
         >
@@ -657,22 +660,22 @@ pub mod fluent_builders {
         /// <p>For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i>
         /// <i>IAM User Guide</i>
         /// </i>.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input);
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy(inp);
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy(input);
             self
         }
         /// <p>A description of the CMK.</p>
         /// <p>Use a description that helps you decide whether the CMK is appropriate for a task.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>Determines the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the CMK. The default value
@@ -691,15 +694,15 @@ pub mod fluent_builders {
         /// <p>For asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
         /// </li>
         /// </ul>
-        pub fn key_usage(mut self, inp: crate::model::KeyUsageType) -> Self {
-            self.inner = self.inner.key_usage(inp);
+        pub fn key_usage(mut self, input: crate::model::KeyUsageType) -> Self {
+            self.inner = self.inner.key_usage(input);
             self
         }
         pub fn set_key_usage(
             mut self,
-            inp: std::option::Option<crate::model::KeyUsageType>,
+            input: std::option::Option<crate::model::KeyUsageType>,
         ) -> Self {
-            self.inner = self.inner.set_key_usage(inp);
+            self.inner = self.inner.set_key_usage(input);
             self
         }
         /// <p>Specifies the type of CMK to create. The default value, <code>SYMMETRIC_DEFAULT</code>,
@@ -783,16 +786,16 @@ pub mod fluent_builders {
         /// </ul>
         pub fn customer_master_key_spec(
             mut self,
-            inp: crate::model::CustomerMasterKeySpec,
+            input: crate::model::CustomerMasterKeySpec,
         ) -> Self {
-            self.inner = self.inner.customer_master_key_spec(inp);
+            self.inner = self.inner.customer_master_key_spec(input);
             self
         }
         pub fn set_customer_master_key_spec(
             mut self,
-            inp: std::option::Option<crate::model::CustomerMasterKeySpec>,
+            input: std::option::Option<crate::model::CustomerMasterKeySpec>,
         ) -> Self {
-            self.inner = self.inner.set_customer_master_key_spec(inp);
+            self.inner = self.inner.set_customer_master_key_spec(input);
             self
         }
         /// <p>The source of the key material for the CMK. You cannot change the origin after you create
@@ -806,12 +809,12 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and creates its key material in the associated AWS CloudHSM cluster. You must also
         /// use the <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value
         /// is valid only for symmetric CMKs.</p>
-        pub fn origin(mut self, inp: crate::model::OriginType) -> Self {
-            self.inner = self.inner.origin(inp);
+        pub fn origin(mut self, input: crate::model::OriginType) -> Self {
+            self.inner = self.inner.origin(input);
             self
         }
-        pub fn set_origin(mut self, inp: std::option::Option<crate::model::OriginType>) -> Self {
-            self.inner = self.inner.set_origin(inp);
+        pub fn set_origin(mut self, input: std::option::Option<crate::model::OriginType>) -> Self {
+            self.inner = self.inner.set_origin(input);
             self
         }
         /// <p>Creates the CMK in the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and the key material in its associated
@@ -826,15 +829,15 @@ pub mod fluent_builders {
         /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key Store feature</a> feature in AWS KMS, which
         /// combines the convenience and extensive integration of AWS KMS with the isolation and control of a
         /// single-tenant key store.</p>
-        pub fn custom_key_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_key_store_id(inp);
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_key_store_id(input);
             self
         }
         pub fn set_custom_key_store_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_custom_key_store_id(inp);
+            self.inner = self.inner.set_custom_key_store_id(input);
             self
         }
         /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
@@ -848,12 +851,15 @@ pub mod fluent_builders {
         /// <p>Use this parameter only when you include a policy in the request and you intend to prevent
         /// the principal that is making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.</p>
         /// <p>The default value is false.</p>
-        pub fn bypass_policy_lockout_safety_check(mut self, inp: bool) -> Self {
-            self.inner = self.inner.bypass_policy_lockout_safety_check(inp);
+        pub fn bypass_policy_lockout_safety_check(mut self, input: bool) -> Self {
+            self.inner = self.inner.bypass_policy_lockout_safety_check(input);
             self
         }
-        pub fn set_bypass_policy_lockout_safety_check(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_bypass_policy_lockout_safety_check(inp);
+        pub fn set_bypass_policy_lockout_safety_check(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_bypass_policy_lockout_safety_check(input);
             self
         }
         /// <p>One or more tags. Each tag consists of a tag key and a tag value. Both the tag key and the
@@ -870,9 +876,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -891,7 +897,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DecryptOutput,
             smithy_http::result::SdkError<crate::error::DecryptError>,
         >
@@ -908,12 +914,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Ciphertext to be decrypted. The blob includes metadata.</p>
-        pub fn ciphertext_blob(mut self, inp: smithy_types::Blob) -> Self {
-            self.inner = self.inner.ciphertext_blob(inp);
+        pub fn ciphertext_blob(mut self, input: smithy_types::Blob) -> Self {
+            self.inner = self.inner.ciphertext_blob(input);
             self
         }
-        pub fn set_ciphertext_blob(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_ciphertext_blob(inp);
+        pub fn set_ciphertext_blob(
+            mut self,
+            input: std::option::Option<smithy_types::Blob>,
+        ) -> Self {
+            self.inner = self.inner.set_ciphertext_blob(input);
             self
         }
         /// <p>Specifies the encryption context to use when decrypting the data.
@@ -932,11 +941,11 @@ pub mod fluent_builders {
         }
         pub fn set_encryption_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_encryption_context(inp);
+            self.inner = self.inner.set_encryption_context(input);
             self
         }
         /// <p>A list of grant tokens.</p>
@@ -948,9 +957,9 @@ pub mod fluent_builders {
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_grant_tokens(inp);
+            self.inner = self.inner.set_grant_tokens(input);
             self
         }
         /// <p>Specifies the customer master key (CMK) that AWS KMS uses to decrypt the ciphertext. Enter a
@@ -980,12 +989,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>Specifies the encryption algorithm that will be used to decrypt the ciphertext. Specify
@@ -994,15 +1003,18 @@ pub mod fluent_builders {
         /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
         /// The default value, <code>SYMMETRIC_DEFAULT</code>, represents the only supported algorithm
         /// that is valid for symmetric CMKs.</p>
-        pub fn encryption_algorithm(mut self, inp: crate::model::EncryptionAlgorithmSpec) -> Self {
-            self.inner = self.inner.encryption_algorithm(inp);
+        pub fn encryption_algorithm(
+            mut self,
+            input: crate::model::EncryptionAlgorithmSpec,
+        ) -> Self {
+            self.inner = self.inner.encryption_algorithm(input);
             self
         }
         pub fn set_encryption_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+            input: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
         ) -> Self {
-            self.inner = self.inner.set_encryption_algorithm(inp);
+            self.inner = self.inner.set_encryption_algorithm(input);
             self
         }
     }
@@ -1021,7 +1033,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteAliasOutput,
             smithy_http::result::SdkError<crate::error::DeleteAliasError>,
         >
@@ -1039,12 +1051,12 @@ pub mod fluent_builders {
         }
         /// <p>The alias to be deleted. The alias name must begin with <code>alias/</code> followed by
         /// the alias name, such as <code>alias/ExampleAlias</code>.</p>
-        pub fn alias_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_name(inp);
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_name(input);
             self
         }
-        pub fn set_alias_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_alias_name(inp);
+        pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias_name(input);
             self
         }
     }
@@ -1063,7 +1075,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteCustomKeyStoreOutput,
             smithy_http::result::SdkError<crate::error::DeleteCustomKeyStoreError>,
         >
@@ -1080,15 +1092,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Enter the ID of the custom key store you want to delete. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
-        pub fn custom_key_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_key_store_id(inp);
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_key_store_id(input);
             self
         }
         pub fn set_custom_key_store_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_custom_key_store_id(inp);
+            self.inner = self.inner.set_custom_key_store_id(input);
             self
         }
     }
@@ -1107,7 +1119,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteImportedKeyMaterialOutput,
             smithy_http::result::SdkError<crate::error::DeleteImportedKeyMaterialError>,
         >
@@ -1138,12 +1150,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
     }
@@ -1162,7 +1174,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeCustomKeyStoresOutput,
             smithy_http::result::SdkError<crate::error::DescribeCustomKeyStoresError>,
         >
@@ -1183,15 +1195,15 @@ pub mod fluent_builders {
         /// region. To limit the output to a particular custom key store, you can use either the
         /// <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not
         /// both.</p>
-        pub fn custom_key_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_key_store_id(inp);
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_key_store_id(input);
             self
         }
         pub fn set_custom_key_store_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_custom_key_store_id(inp);
+            self.inner = self.inner.set_custom_key_store_id(input);
             self
         }
         /// <p>Gets only information about the specified custom key store. Enter the friendly name of the
@@ -1200,37 +1212,37 @@ pub mod fluent_builders {
         /// region. To limit the output to a particular custom key store, you can use either the
         /// <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not
         /// both.</p>
-        pub fn custom_key_store_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_key_store_name(inp);
+        pub fn custom_key_store_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_key_store_name(input);
             self
         }
         pub fn set_custom_key_store_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_custom_key_store_name(inp);
+            self.inner = self.inner.set_custom_key_store_name(input);
             self
         }
         /// <p>Use this parameter to specify the maximum number of items to return. When this
         /// value is present, AWS KMS does not return more than the specified number of items, but it might
         /// return fewer.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>Use this parameter in a subsequent request after you receive a response with
         /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
         /// you just received.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -1249,7 +1261,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeKeyOutput,
             smithy_http::result::SdkError<crate::error::DescribeKeyError>,
         >
@@ -1291,12 +1303,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>A list of grant tokens.</p>
@@ -1308,9 +1320,9 @@ pub mod fluent_builders {
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_grant_tokens(inp);
+            self.inner = self.inner.set_grant_tokens(input);
             self
         }
     }
@@ -1329,7 +1341,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DisableKeyOutput,
             smithy_http::result::SdkError<crate::error::DisableKeyError>,
         >
@@ -1359,12 +1371,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
     }
@@ -1383,7 +1395,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DisableKeyRotationOutput,
             smithy_http::result::SdkError<crate::error::DisableKeyRotationError>,
         >
@@ -1416,12 +1428,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
     }
@@ -1440,7 +1452,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DisconnectCustomKeyStoreOutput,
             smithy_http::result::SdkError<crate::error::DisconnectCustomKeyStoreError>,
         >
@@ -1457,15 +1469,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Enter the ID of the custom key store you want to disconnect. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
-        pub fn custom_key_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_key_store_id(inp);
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_key_store_id(input);
             self
         }
         pub fn set_custom_key_store_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_custom_key_store_id(inp);
+            self.inner = self.inner.set_custom_key_store_id(input);
             self
         }
     }
@@ -1484,7 +1496,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::EnableKeyOutput,
             smithy_http::result::SdkError<crate::error::EnableKeyError>,
         >
@@ -1514,12 +1526,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
     }
@@ -1538,7 +1550,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::EnableKeyRotationOutput,
             smithy_http::result::SdkError<crate::error::EnableKeyRotationError>,
         >
@@ -1568,12 +1580,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
     }
@@ -1592,7 +1604,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::EncryptOutput,
             smithy_http::result::SdkError<crate::error::EncryptError>,
         >
@@ -1630,21 +1642,21 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>Data to be encrypted.</p>
-        pub fn plaintext(mut self, inp: smithy_types::Blob) -> Self {
-            self.inner = self.inner.plaintext(inp);
+        pub fn plaintext(mut self, input: smithy_types::Blob) -> Self {
+            self.inner = self.inner.plaintext(input);
             self
         }
-        pub fn set_plaintext(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_plaintext(inp);
+        pub fn set_plaintext(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_plaintext(input);
             self
         }
         /// <p>Specifies the encryption context that will be used to encrypt the data.
@@ -1663,11 +1675,11 @@ pub mod fluent_builders {
         }
         pub fn set_encryption_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_encryption_context(inp);
+            self.inner = self.inner.set_encryption_context(input);
             self
         }
         /// <p>A list of grant tokens.</p>
@@ -1679,9 +1691,9 @@ pub mod fluent_builders {
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_grant_tokens(inp);
+            self.inner = self.inner.set_grant_tokens(input);
             self
         }
         /// <p>Specifies the encryption algorithm that AWS KMS will use to encrypt the plaintext message.
@@ -1689,15 +1701,18 @@ pub mod fluent_builders {
         /// <p>This parameter is required only for asymmetric CMKs. The default value,
         /// <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric CMKs. If you are using
         /// an asymmetric CMK, we recommend RSAES_OAEP_SHA_256.</p>
-        pub fn encryption_algorithm(mut self, inp: crate::model::EncryptionAlgorithmSpec) -> Self {
-            self.inner = self.inner.encryption_algorithm(inp);
+        pub fn encryption_algorithm(
+            mut self,
+            input: crate::model::EncryptionAlgorithmSpec,
+        ) -> Self {
+            self.inner = self.inner.encryption_algorithm(input);
             self
         }
         pub fn set_encryption_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+            input: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
         ) -> Self {
-            self.inner = self.inner.set_encryption_algorithm(inp);
+            self.inner = self.inner.set_encryption_algorithm(input);
             self
         }
     }
@@ -1716,7 +1731,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GenerateDataKeyOutput,
             smithy_http::result::SdkError<crate::error::GenerateDataKeyError>,
         >
@@ -1754,12 +1769,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>Specifies the encryption context that will be used when encrypting the data key.</p>
@@ -1777,11 +1792,11 @@ pub mod fluent_builders {
         }
         pub fn set_encryption_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_encryption_context(inp);
+            self.inner = self.inner.set_encryption_context(input);
             self
         }
         /// <p>Specifies the length of the data key in bytes. For example, use the value 64 to generate a
@@ -1789,24 +1804,27 @@ pub mod fluent_builders {
         /// keys, use the <code>KeySpec</code> parameter.</p>
         /// <p>You must specify either the <code>KeySpec</code> or the <code>NumberOfBytes</code>
         /// parameter (but not both) in every <code>GenerateDataKey</code> request.</p>
-        pub fn number_of_bytes(mut self, inp: i32) -> Self {
-            self.inner = self.inner.number_of_bytes(inp);
+        pub fn number_of_bytes(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_bytes(input);
             self
         }
-        pub fn set_number_of_bytes(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_number_of_bytes(inp);
+        pub fn set_number_of_bytes(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_number_of_bytes(input);
             self
         }
         /// <p>Specifies the length of the data key. Use <code>AES_128</code> to generate a 128-bit
         /// symmetric key, or <code>AES_256</code> to generate a 256-bit symmetric key.</p>
         /// <p>You must specify either the <code>KeySpec</code> or the <code>NumberOfBytes</code>
         /// parameter (but not both) in every <code>GenerateDataKey</code> request.</p>
-        pub fn key_spec(mut self, inp: crate::model::DataKeySpec) -> Self {
-            self.inner = self.inner.key_spec(inp);
+        pub fn key_spec(mut self, input: crate::model::DataKeySpec) -> Self {
+            self.inner = self.inner.key_spec(input);
             self
         }
-        pub fn set_key_spec(mut self, inp: std::option::Option<crate::model::DataKeySpec>) -> Self {
-            self.inner = self.inner.set_key_spec(inp);
+        pub fn set_key_spec(
+            mut self,
+            input: std::option::Option<crate::model::DataKeySpec>,
+        ) -> Self {
+            self.inner = self.inner.set_key_spec(input);
             self
         }
         /// <p>A list of grant tokens.</p>
@@ -1818,9 +1836,9 @@ pub mod fluent_builders {
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_grant_tokens(inp);
+            self.inner = self.inner.set_grant_tokens(input);
             self
         }
     }
@@ -1839,7 +1857,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GenerateDataKeyPairOutput,
             smithy_http::result::SdkError<crate::error::GenerateDataKeyPairError>,
         >
@@ -1871,11 +1889,11 @@ pub mod fluent_builders {
         }
         pub fn set_encryption_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_encryption_context(inp);
+            self.inner = self.inner.set_encryption_context(input);
             self
         }
         /// <p>Specifies the symmetric CMK that encrypts the private key in the data key pair. You cannot
@@ -1902,25 +1920,25 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>Determines the type of data key pair that is generated. </p>
         /// <p>The AWS KMS rule that restricts the use of asymmetric RSA CMKs to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC CMKs only to sign and verify, are not effective outside of AWS KMS.</p>
-        pub fn key_pair_spec(mut self, inp: crate::model::DataKeyPairSpec) -> Self {
-            self.inner = self.inner.key_pair_spec(inp);
+        pub fn key_pair_spec(mut self, input: crate::model::DataKeyPairSpec) -> Self {
+            self.inner = self.inner.key_pair_spec(input);
             self
         }
         pub fn set_key_pair_spec(
             mut self,
-            inp: std::option::Option<crate::model::DataKeyPairSpec>,
+            input: std::option::Option<crate::model::DataKeyPairSpec>,
         ) -> Self {
-            self.inner = self.inner.set_key_pair_spec(inp);
+            self.inner = self.inner.set_key_pair_spec(input);
             self
         }
         /// <p>A list of grant tokens.</p>
@@ -1932,9 +1950,9 @@ pub mod fluent_builders {
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_grant_tokens(inp);
+            self.inner = self.inner.set_grant_tokens(input);
             self
         }
     }
@@ -1953,7 +1971,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GenerateDataKeyPairWithoutPlaintextOutput,
             smithy_http::result::SdkError<crate::error::GenerateDataKeyPairWithoutPlaintextError>,
         >
@@ -1985,11 +2003,11 @@ pub mod fluent_builders {
         }
         pub fn set_encryption_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_encryption_context(inp);
+            self.inner = self.inner.set_encryption_context(input);
             self
         }
         /// <p>Specifies the CMK that encrypts the private key in the data key pair. You must specify a
@@ -2016,25 +2034,25 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>Determines the type of data key pair that is generated.</p>
         /// <p>The AWS KMS rule that restricts the use of asymmetric RSA CMKs to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC CMKs only to sign and verify, are not effective outside of AWS KMS.</p>
-        pub fn key_pair_spec(mut self, inp: crate::model::DataKeyPairSpec) -> Self {
-            self.inner = self.inner.key_pair_spec(inp);
+        pub fn key_pair_spec(mut self, input: crate::model::DataKeyPairSpec) -> Self {
+            self.inner = self.inner.key_pair_spec(input);
             self
         }
         pub fn set_key_pair_spec(
             mut self,
-            inp: std::option::Option<crate::model::DataKeyPairSpec>,
+            input: std::option::Option<crate::model::DataKeyPairSpec>,
         ) -> Self {
-            self.inner = self.inner.set_key_pair_spec(inp);
+            self.inner = self.inner.set_key_pair_spec(input);
             self
         }
         /// <p>A list of grant tokens.</p>
@@ -2046,9 +2064,9 @@ pub mod fluent_builders {
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_grant_tokens(inp);
+            self.inner = self.inner.set_grant_tokens(input);
             self
         }
     }
@@ -2067,7 +2085,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GenerateDataKeyWithoutPlaintextOutput,
             smithy_http::result::SdkError<crate::error::GenerateDataKeyWithoutPlaintextError>,
         >
@@ -2106,12 +2124,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>Specifies the encryption context that will be used when encrypting the data key.</p>
@@ -2129,32 +2147,35 @@ pub mod fluent_builders {
         }
         pub fn set_encryption_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_encryption_context(inp);
+            self.inner = self.inner.set_encryption_context(input);
             self
         }
         /// <p>The length of the data key. Use <code>AES_128</code> to generate a 128-bit symmetric key,
         /// or <code>AES_256</code> to generate a 256-bit symmetric key.</p>
-        pub fn key_spec(mut self, inp: crate::model::DataKeySpec) -> Self {
-            self.inner = self.inner.key_spec(inp);
+        pub fn key_spec(mut self, input: crate::model::DataKeySpec) -> Self {
+            self.inner = self.inner.key_spec(input);
             self
         }
-        pub fn set_key_spec(mut self, inp: std::option::Option<crate::model::DataKeySpec>) -> Self {
-            self.inner = self.inner.set_key_spec(inp);
+        pub fn set_key_spec(
+            mut self,
+            input: std::option::Option<crate::model::DataKeySpec>,
+        ) -> Self {
+            self.inner = self.inner.set_key_spec(input);
             self
         }
         /// <p>The length of the data key in bytes. For example, use the value 64 to generate a 512-bit
         /// data key (64 bytes is 512 bits). For common key lengths (128-bit and 256-bit symmetric keys),
         /// we recommend that you use the <code>KeySpec</code> field instead of this one.</p>
-        pub fn number_of_bytes(mut self, inp: i32) -> Self {
-            self.inner = self.inner.number_of_bytes(inp);
+        pub fn number_of_bytes(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_bytes(input);
             self
         }
-        pub fn set_number_of_bytes(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_number_of_bytes(inp);
+        pub fn set_number_of_bytes(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_number_of_bytes(input);
             self
         }
         /// <p>A list of grant tokens.</p>
@@ -2166,9 +2187,9 @@ pub mod fluent_builders {
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_grant_tokens(inp);
+            self.inner = self.inner.set_grant_tokens(input);
             self
         }
     }
@@ -2187,7 +2208,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GenerateRandomOutput,
             smithy_http::result::SdkError<crate::error::GenerateRandomError>,
         >
@@ -2204,25 +2225,25 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The length of the byte string.</p>
-        pub fn number_of_bytes(mut self, inp: i32) -> Self {
-            self.inner = self.inner.number_of_bytes(inp);
+        pub fn number_of_bytes(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_bytes(input);
             self
         }
-        pub fn set_number_of_bytes(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_number_of_bytes(inp);
+        pub fn set_number_of_bytes(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_number_of_bytes(input);
             self
         }
         /// <p>Generates the random byte string in the AWS CloudHSM cluster that is associated with the
         /// specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
-        pub fn custom_key_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_key_store_id(inp);
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_key_store_id(input);
             self
         }
         pub fn set_custom_key_store_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_custom_key_store_id(inp);
+            self.inner = self.inner.set_custom_key_store_id(input);
             self
         }
     }
@@ -2241,7 +2262,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetKeyPolicyOutput,
             smithy_http::result::SdkError<crate::error::GetKeyPolicyError>,
         >
@@ -2271,22 +2292,22 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>Specifies the name of the key policy. The only valid name is <code>default</code>. To get
         /// the names of key policies, use <a>ListKeyPolicies</a>.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input);
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_name(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
             self
         }
     }
@@ -2305,7 +2326,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetKeyRotationStatusOutput,
             smithy_http::result::SdkError<crate::error::GetKeyRotationStatusError>,
         >
@@ -2336,12 +2357,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
     }
@@ -2360,7 +2381,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetParametersForImportOutput,
             smithy_http::result::SdkError<crate::error::GetParametersForImportError>,
         >
@@ -2391,38 +2412,38 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the Key Material</a>
         /// in the <i>AWS Key Management Service Developer Guide</i>.</p>
-        pub fn wrapping_algorithm(mut self, inp: crate::model::AlgorithmSpec) -> Self {
-            self.inner = self.inner.wrapping_algorithm(inp);
+        pub fn wrapping_algorithm(mut self, input: crate::model::AlgorithmSpec) -> Self {
+            self.inner = self.inner.wrapping_algorithm(input);
             self
         }
         pub fn set_wrapping_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::AlgorithmSpec>,
+            input: std::option::Option<crate::model::AlgorithmSpec>,
         ) -> Self {
-            self.inner = self.inner.set_wrapping_algorithm(inp);
+            self.inner = self.inner.set_wrapping_algorithm(input);
             self
         }
         /// <p>The type of wrapping key (public key) to return in the response. Only 2048-bit RSA public
         /// keys are supported.</p>
-        pub fn wrapping_key_spec(mut self, inp: crate::model::WrappingKeySpec) -> Self {
-            self.inner = self.inner.wrapping_key_spec(inp);
+        pub fn wrapping_key_spec(mut self, input: crate::model::WrappingKeySpec) -> Self {
+            self.inner = self.inner.wrapping_key_spec(input);
             self
         }
         pub fn set_wrapping_key_spec(
             mut self,
-            inp: std::option::Option<crate::model::WrappingKeySpec>,
+            input: std::option::Option<crate::model::WrappingKeySpec>,
         ) -> Self {
-            self.inner = self.inner.set_wrapping_key_spec(inp);
+            self.inner = self.inner.set_wrapping_key_spec(input);
             self
         }
     }
@@ -2441,7 +2462,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetPublicKeyOutput,
             smithy_http::result::SdkError<crate::error::GetPublicKeyError>,
         >
@@ -2479,12 +2500,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>A list of grant tokens.</p>
@@ -2496,9 +2517,9 @@ pub mod fluent_builders {
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_grant_tokens(inp);
+            self.inner = self.inner.set_grant_tokens(input);
             self
         }
     }
@@ -2517,7 +2538,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ImportKeyMaterialOutput,
             smithy_http::result::SdkError<crate::error::ImportKeyMaterialError>,
         >
@@ -2550,63 +2571,63 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>The import token that you received in the response to a previous <a>GetParametersForImport</a> request. It must be from the same response that contained
         /// the public key that you used to encrypt the key material.</p>
-        pub fn import_token(mut self, inp: smithy_types::Blob) -> Self {
-            self.inner = self.inner.import_token(inp);
+        pub fn import_token(mut self, input: smithy_types::Blob) -> Self {
+            self.inner = self.inner.import_token(input);
             self
         }
-        pub fn set_import_token(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_import_token(inp);
+        pub fn set_import_token(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_import_token(input);
             self
         }
         /// <p>The encrypted key material to import. The key material must be encrypted with the public
         /// wrapping key that <a>GetParametersForImport</a> returned, using the wrapping
         /// algorithm that you specified in the same <code>GetParametersForImport</code> request.</p>
-        pub fn encrypted_key_material(mut self, inp: smithy_types::Blob) -> Self {
-            self.inner = self.inner.encrypted_key_material(inp);
+        pub fn encrypted_key_material(mut self, input: smithy_types::Blob) -> Self {
+            self.inner = self.inner.encrypted_key_material(input);
             self
         }
         pub fn set_encrypted_key_material(
             mut self,
-            inp: std::option::Option<smithy_types::Blob>,
+            input: std::option::Option<smithy_types::Blob>,
         ) -> Self {
-            self.inner = self.inner.set_encrypted_key_material(inp);
+            self.inner = self.inner.set_encrypted_key_material(input);
             self
         }
         /// <p>The time at which the imported key material expires. When the key material expires, AWS KMS
         /// deletes the key material and the CMK becomes unusable. You must omit this parameter when the
         /// <code>ExpirationModel</code> parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>.
         /// Otherwise it is required.</p>
-        pub fn valid_to(mut self, inp: smithy_types::Instant) -> Self {
-            self.inner = self.inner.valid_to(inp);
+        pub fn valid_to(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.valid_to(input);
             self
         }
-        pub fn set_valid_to(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.inner = self.inner.set_valid_to(inp);
+        pub fn set_valid_to(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_valid_to(input);
             self
         }
         /// <p>Specifies whether the key material expires. The default is
         /// <code>KEY_MATERIAL_EXPIRES</code>, in which case you must include the <code>ValidTo</code>
         /// parameter. When this parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must
         /// omit the <code>ValidTo</code> parameter.</p>
-        pub fn expiration_model(mut self, inp: crate::model::ExpirationModelType) -> Self {
-            self.inner = self.inner.expiration_model(inp);
+        pub fn expiration_model(mut self, input: crate::model::ExpirationModelType) -> Self {
+            self.inner = self.inner.expiration_model(input);
             self
         }
         pub fn set_expiration_model(
             mut self,
-            inp: std::option::Option<crate::model::ExpirationModelType>,
+            input: std::option::Option<crate::model::ExpirationModelType>,
         ) -> Self {
-            self.inner = self.inner.set_expiration_model(inp);
+            self.inner = self.inner.set_expiration_model(input);
             self
         }
     }
@@ -2625,7 +2646,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListAliasesOutput,
             smithy_http::result::SdkError<crate::error::ListAliasesError>,
         >
@@ -2658,12 +2679,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>Use this parameter to specify the maximum number of items to return. When this
@@ -2671,23 +2692,23 @@ pub mod fluent_builders {
         /// return fewer.</p>
         /// <p>This value is optional. If you include a value, it must be between 1
         /// and 100, inclusive. If you do not include a value, it defaults to 50.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>Use this parameter in a subsequent request after you receive a response with
         /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
         /// you just received.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -2706,7 +2727,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListGrantsOutput,
             smithy_http::result::SdkError<crate::error::ListGrantsError>,
         >
@@ -2727,23 +2748,23 @@ pub mod fluent_builders {
         /// return fewer.</p>
         /// <p>This value is optional. If you include a value, it must be between 1
         /// and 100, inclusive. If you do not include a value, it defaults to 50.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>Use this parameter in a subsequent request after you receive a response with
         /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
         /// you just received.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>Returns only grants for the specified customer master key (CMK). This parameter is
@@ -2762,35 +2783,35 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>Returns only the grant with the specified grant ID. The grant ID uniquely identifies the
         /// grant. </p>
-        pub fn grant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_id(inp);
+        pub fn grant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_id(input);
             self
         }
-        pub fn set_grant_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_grant_id(inp);
+        pub fn set_grant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_grant_id(input);
             self
         }
         /// <p>Returns only grants where the specified principal is the grantee principal for the
         /// grant.</p>
-        pub fn grantee_principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grantee_principal(inp);
+        pub fn grantee_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grantee_principal(input);
             self
         }
         pub fn set_grantee_principal(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_grantee_principal(inp);
+            self.inner = self.inner.set_grantee_principal(input);
             self
         }
     }
@@ -2809,7 +2830,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListKeyPoliciesOutput,
             smithy_http::result::SdkError<crate::error::ListKeyPoliciesError>,
         >
@@ -2839,12 +2860,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>Use this parameter to specify the maximum number of items to return. When this
@@ -2853,23 +2874,23 @@ pub mod fluent_builders {
         /// <p>This value is optional. If you include a value, it must be between
         /// 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
         /// <p>Only one policy can be attached to a key.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>Use this parameter in a subsequent request after you receive a response with
         /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
         /// you just received.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -2888,7 +2909,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListKeysOutput,
             smithy_http::result::SdkError<crate::error::ListKeysError>,
         >
@@ -2909,23 +2930,23 @@ pub mod fluent_builders {
         /// return fewer.</p>
         /// <p>This value is optional. If you include a value, it must be between
         /// 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>Use this parameter in a subsequent request after you receive a response with
         /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
         /// you just received.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -2944,7 +2965,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListResourceTagsOutput,
             smithy_http::result::SdkError<crate::error::ListResourceTagsError>,
         >
@@ -2974,12 +2995,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>Use this parameter to specify the maximum number of items to return. When this
@@ -2987,12 +3008,12 @@ pub mod fluent_builders {
         /// return fewer.</p>
         /// <p>This value is optional. If you include a value, it must be between 1 and 50, inclusive. If
         /// you do not include a value, it defaults to 50.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>Use this parameter in a subsequent request after you receive a response with
@@ -3000,12 +3021,12 @@ pub mod fluent_builders {
         /// you just received.</p>
         /// <p>Do not attempt to construct this value. Use only the value of <code>NextMarker</code> from
         /// the truncated response you just received.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
     }
@@ -3024,7 +3045,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListRetirableGrantsOutput,
             smithy_http::result::SdkError<crate::error::ListRetirableGrantsError>,
         >
@@ -3045,23 +3066,23 @@ pub mod fluent_builders {
         /// return fewer.</p>
         /// <p>This value is optional. If you include a value, it must be between 1
         /// and 100, inclusive. If you do not include a value, it defaults to 50.</p>
-        pub fn limit(mut self, inp: i32) -> Self {
-            self.inner = self.inner.limit(inp);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
-        pub fn set_limit(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_limit(inp);
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
             self
         }
         /// <p>Use this parameter in a subsequent request after you receive a response with
         /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
         /// you just received.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(inp);
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_marker(inp);
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
             self
         }
         /// <p>The retiring principal for which to list grants. Enter a principal in your AWS
@@ -3071,15 +3092,15 @@ pub mod fluent_builders {
         /// assumed role users. For examples of the ARN syntax for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
         /// Identity and Access Management (IAM)</a> in the Example ARNs section of the
         /// <i>Amazon Web Services General Reference</i>.</p>
-        pub fn retiring_principal(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.retiring_principal(inp);
+        pub fn retiring_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.retiring_principal(input);
             self
         }
         pub fn set_retiring_principal(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_retiring_principal(inp);
+            self.inner = self.inner.set_retiring_principal(input);
             self
         }
     }
@@ -3098,7 +3119,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutKeyPolicyOutput,
             smithy_http::result::SdkError<crate::error::PutKeyPolicyError>,
         >
@@ -3128,21 +3149,21 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>The name of the key policy. The only valid value is <code>default</code>.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(inp);
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input);
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy_name(inp);
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy_name(input);
             self
         }
         /// <p>The key policy to attach to the CMK.</p>
@@ -3164,12 +3185,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>The key policy cannot exceed 32 kilobytes (32768 bytes). For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource Quotas</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-        pub fn policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(inp);
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input);
             self
         }
-        pub fn set_policy(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_policy(inp);
+        pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_policy(input);
             self
         }
         /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
@@ -3181,12 +3202,15 @@ pub mod fluent_builders {
         /// <p>Use this parameter only when you intend to prevent the principal that is making the
         /// request from making a subsequent <code>PutKeyPolicy</code> request on the CMK.</p>
         /// <p>The default value is false.</p>
-        pub fn bypass_policy_lockout_safety_check(mut self, inp: bool) -> Self {
-            self.inner = self.inner.bypass_policy_lockout_safety_check(inp);
+        pub fn bypass_policy_lockout_safety_check(mut self, input: bool) -> Self {
+            self.inner = self.inner.bypass_policy_lockout_safety_check(input);
             self
         }
-        pub fn set_bypass_policy_lockout_safety_check(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_bypass_policy_lockout_safety_check(inp);
+        pub fn set_bypass_policy_lockout_safety_check(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_bypass_policy_lockout_safety_check(input);
             self
         }
     }
@@ -3205,7 +3229,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ReEncryptOutput,
             smithy_http::result::SdkError<crate::error::ReEncryptError>,
         >
@@ -3222,12 +3246,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Ciphertext of the data to reencrypt.</p>
-        pub fn ciphertext_blob(mut self, inp: smithy_types::Blob) -> Self {
-            self.inner = self.inner.ciphertext_blob(inp);
+        pub fn ciphertext_blob(mut self, input: smithy_types::Blob) -> Self {
+            self.inner = self.inner.ciphertext_blob(input);
             self
         }
-        pub fn set_ciphertext_blob(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_ciphertext_blob(inp);
+        pub fn set_ciphertext_blob(
+            mut self,
+            input: std::option::Option<smithy_types::Blob>,
+        ) -> Self {
+            self.inner = self.inner.set_ciphertext_blob(input);
             self
         }
         /// <p>Specifies the encryption context to use to decrypt the ciphertext. Enter the same
@@ -3246,11 +3273,11 @@ pub mod fluent_builders {
         }
         pub fn set_source_encryption_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_source_encryption_context(inp);
+            self.inner = self.inner.set_source_encryption_context(input);
             self
         }
         /// <p>Specifies the customer master key (CMK) that
@@ -3281,12 +3308,15 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn source_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_key_id(inp);
+        pub fn source_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_key_id(input);
             self
         }
-        pub fn set_source_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_source_key_id(inp);
+        pub fn set_source_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_source_key_id(input);
             self
         }
         /// <p>A unique identifier for the CMK that is used to reencrypt the data. Specify a symmetric or
@@ -3314,15 +3344,15 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn destination_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_key_id(inp);
+        pub fn destination_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_key_id(input);
             self
         }
         pub fn set_destination_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_destination_key_id(inp);
+            self.inner = self.inner.set_destination_key_id(input);
             self
         }
         /// <p>Specifies that encryption context to use when the reencrypting the data.</p>
@@ -3343,11 +3373,11 @@ pub mod fluent_builders {
         }
         pub fn set_destination_encryption_context(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, std::string::String>,
             >,
         ) -> Self {
-            self.inner = self.inner.set_destination_encryption_context(inp);
+            self.inner = self.inner.set_destination_encryption_context(input);
             self
         }
         /// <p>Specifies the encryption algorithm that AWS KMS will use to decrypt the ciphertext before it
@@ -3359,16 +3389,16 @@ pub mod fluent_builders {
         /// CMK.</p>
         pub fn source_encryption_algorithm(
             mut self,
-            inp: crate::model::EncryptionAlgorithmSpec,
+            input: crate::model::EncryptionAlgorithmSpec,
         ) -> Self {
-            self.inner = self.inner.source_encryption_algorithm(inp);
+            self.inner = self.inner.source_encryption_algorithm(input);
             self
         }
         pub fn set_source_encryption_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+            input: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
         ) -> Self {
-            self.inner = self.inner.set_source_encryption_algorithm(inp);
+            self.inner = self.inner.set_source_encryption_algorithm(input);
             self
         }
         /// <p>Specifies the encryption algorithm that AWS KMS will use to reecrypt the data after it has
@@ -3377,16 +3407,16 @@ pub mod fluent_builders {
         /// <p>This parameter is required only when the destination CMK is an asymmetric CMK.</p>
         pub fn destination_encryption_algorithm(
             mut self,
-            inp: crate::model::EncryptionAlgorithmSpec,
+            input: crate::model::EncryptionAlgorithmSpec,
         ) -> Self {
-            self.inner = self.inner.destination_encryption_algorithm(inp);
+            self.inner = self.inner.destination_encryption_algorithm(input);
             self
         }
         pub fn set_destination_encryption_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
+            input: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
         ) -> Self {
-            self.inner = self.inner.set_destination_encryption_algorithm(inp);
+            self.inner = self.inner.set_destination_encryption_algorithm(input);
             self
         }
         /// <p>A list of grant tokens.</p>
@@ -3398,9 +3428,9 @@ pub mod fluent_builders {
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_grant_tokens(inp);
+            self.inner = self.inner.set_grant_tokens(input);
             self
         }
     }
@@ -3419,7 +3449,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RetireGrantOutput,
             smithy_http::result::SdkError<crate::error::RetireGrantError>,
         >
@@ -3436,23 +3466,23 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Token that identifies the grant to be retired.</p>
-        pub fn grant_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_token(inp);
+        pub fn grant_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_token(input);
             self
         }
-        pub fn set_grant_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_grant_token(inp);
+        pub fn set_grant_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_grant_token(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the CMK associated with the grant. </p>
         /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
         /// </p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>Unique identifier of the grant to retire. The grant ID is returned in the response to a
@@ -3463,12 +3493,12 @@ pub mod fluent_builders {
         /// 0123456789012345678901234567890123456789012345678901234567890123</p>
         /// </li>
         /// </ul>
-        pub fn grant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_id(inp);
+        pub fn grant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_id(input);
             self
         }
-        pub fn set_grant_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_grant_id(inp);
+        pub fn set_grant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_grant_id(input);
             self
         }
     }
@@ -3487,7 +3517,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RevokeGrantOutput,
             smithy_http::result::SdkError<crate::error::RevokeGrantError>,
         >
@@ -3518,21 +3548,21 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>Identifier of the grant to be revoked.</p>
-        pub fn grant_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_id(inp);
+        pub fn grant_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_id(input);
             self
         }
-        pub fn set_grant_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_grant_id(inp);
+        pub fn set_grant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_grant_id(input);
             self
         }
     }
@@ -3551,7 +3581,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ScheduleKeyDeletionOutput,
             smithy_http::result::SdkError<crate::error::ScheduleKeyDeletionError>,
         >
@@ -3581,24 +3611,24 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>The waiting period, specified in number of days. After the waiting period ends, AWS KMS
         /// deletes the customer master key (CMK).</p>
         /// <p>This value is optional. If you include a value, it must be between 7 and 30, inclusive. If
         /// you do not include a value, it defaults to 30.</p>
-        pub fn pending_window_in_days(mut self, inp: i32) -> Self {
-            self.inner = self.inner.pending_window_in_days(inp);
+        pub fn pending_window_in_days(mut self, input: i32) -> Self {
+            self.inner = self.inner.pending_window_in_days(input);
             self
         }
-        pub fn set_pending_window_in_days(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_pending_window_in_days(inp);
+        pub fn set_pending_window_in_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_pending_window_in_days(input);
             self
         }
     }
@@ -3617,7 +3647,10 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<crate::output::SignOutput, smithy_http::result::SdkError<crate::error::SignError>>
+        ) -> std::result::Result<
+            crate::output::SignOutput,
+            smithy_http::result::SdkError<crate::error::SignError>,
+        >
         where
             C: aws_hyper::SmithyConnector,
         {
@@ -3654,38 +3687,38 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>Specifies the message or message digest to sign. Messages can be 0-4096 bytes. To sign a
         /// larger message, provide the message digest.</p>
         /// <p>If you provide a message, AWS KMS generates a hash digest of the message and then signs
         /// it.</p>
-        pub fn message(mut self, inp: smithy_types::Blob) -> Self {
-            self.inner = self.inner.message(inp);
+        pub fn message(mut self, input: smithy_types::Blob) -> Self {
+            self.inner = self.inner.message(input);
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_message(inp);
+        pub fn set_message(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_message(input);
             self
         }
         /// <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a message or
         /// message digest. The default value, RAW, indicates a message. To indicate a message digest,
         /// enter <code>DIGEST</code>.</p>
-        pub fn message_type(mut self, inp: crate::model::MessageType) -> Self {
-            self.inner = self.inner.message_type(inp);
+        pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
+            self.inner = self.inner.message_type(input);
             self
         }
         pub fn set_message_type(
             mut self,
-            inp: std::option::Option<crate::model::MessageType>,
+            input: std::option::Option<crate::model::MessageType>,
         ) -> Self {
-            self.inner = self.inner.set_message_type(inp);
+            self.inner = self.inner.set_message_type(input);
             self
         }
         /// <p>A list of grant tokens.</p>
@@ -3697,23 +3730,23 @@ pub mod fluent_builders {
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_grant_tokens(inp);
+            self.inner = self.inner.set_grant_tokens(input);
             self
         }
         /// <p>Specifies the signing algorithm to use when signing the message. </p>
         /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric
         /// CMK.</p>
-        pub fn signing_algorithm(mut self, inp: crate::model::SigningAlgorithmSpec) -> Self {
-            self.inner = self.inner.signing_algorithm(inp);
+        pub fn signing_algorithm(mut self, input: crate::model::SigningAlgorithmSpec) -> Self {
+            self.inner = self.inner.signing_algorithm(input);
             self
         }
         pub fn set_signing_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::SigningAlgorithmSpec>,
+            input: std::option::Option<crate::model::SigningAlgorithmSpec>,
         ) -> Self {
-            self.inner = self.inner.set_signing_algorithm(inp);
+            self.inner = self.inner.set_signing_algorithm(input);
             self
         }
     }
@@ -3732,7 +3765,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::TagResourceOutput,
             smithy_http::result::SdkError<crate::error::TagResourceError>,
         >
@@ -3762,12 +3795,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>One or more tags. </p>
@@ -3782,9 +3815,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
     }
@@ -3803,7 +3836,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UntagResourceOutput,
             smithy_http::result::SdkError<crate::error::UntagResourceError>,
         >
@@ -3833,12 +3866,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
@@ -3848,9 +3881,9 @@ pub mod fluent_builders {
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_tag_keys(inp);
+            self.inner = self.inner.set_tag_keys(input);
             self
         }
     }
@@ -3869,7 +3902,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateAliasOutput,
             smithy_http::result::SdkError<crate::error::UpdateAliasError>,
         >
@@ -3888,12 +3921,12 @@ pub mod fluent_builders {
         /// <p>Identifies the alias that is changing its CMK. This value must begin with
         /// <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You
         /// cannot use UpdateAlias to change the alias name.</p>
-        pub fn alias_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_name(inp);
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_name(input);
             self
         }
-        pub fn set_alias_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_alias_name(inp);
+        pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias_name(input);
             self
         }
         /// <p>Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed CMK</a> to associate with the alias. You don't have permission
@@ -3916,12 +3949,15 @@ pub mod fluent_builders {
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         /// <p>To verify that the alias
         /// is mapped to the correct CMK, use <a>ListAliases</a>.</p>
-        pub fn target_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_key_id(inp);
+        pub fn target_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_key_id(input);
             self
         }
-        pub fn set_target_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_target_key_id(inp);
+        pub fn set_target_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_target_key_id(input);
             self
         }
     }
@@ -3940,7 +3976,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateCustomKeyStoreOutput,
             smithy_http::result::SdkError<crate::error::UpdateCustomKeyStoreError>,
         >
@@ -3958,43 +3994,43 @@ pub mod fluent_builders {
         }
         /// <p>Identifies the custom key store that you want to update. Enter the ID of the custom key
         /// store. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
-        pub fn custom_key_store_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_key_store_id(inp);
+        pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_key_store_id(input);
             self
         }
         pub fn set_custom_key_store_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_custom_key_store_id(inp);
+            self.inner = self.inner.set_custom_key_store_id(input);
             self
         }
         /// <p>Changes the friendly name of the custom key store to the value that you specify. The
         /// custom key store name must be unique in the AWS account.</p>
-        pub fn new_custom_key_store_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_custom_key_store_name(inp);
+        pub fn new_custom_key_store_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_custom_key_store_name(input);
             self
         }
         pub fn set_new_custom_key_store_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_new_custom_key_store_name(inp);
+            self.inner = self.inner.set_new_custom_key_store_name(input);
             self
         }
         /// <p>Enter the current password of the <code>kmsuser</code> crypto user (CU) in the AWS CloudHSM
         /// cluster that is associated with the custom key store.</p>
         /// <p>This parameter tells AWS KMS the current password of the <code>kmsuser</code> crypto user
         /// (CU). It does not set or change the password of any users in the AWS CloudHSM cluster.</p>
-        pub fn key_store_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_store_password(inp);
+        pub fn key_store_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_store_password(input);
             self
         }
         pub fn set_key_store_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_key_store_password(inp);
+            self.inner = self.inner.set_key_store_password(input);
             self
         }
         /// <p>Associates the custom key store with a related AWS CloudHSM cluster. </p>
@@ -4004,15 +4040,15 @@ pub mod fluent_builders {
         /// cluster. In addition, the replacement cluster must <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">fulfill the requirements</a> for
         /// a cluster associated with a custom key store. To view the cluster certificate of a cluster,
         /// use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
-        pub fn cloud_hsm_cluster_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cloud_hsm_cluster_id(inp);
+        pub fn cloud_hsm_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cloud_hsm_cluster_id(input);
             self
         }
         pub fn set_cloud_hsm_cluster_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_cloud_hsm_cluster_id(inp);
+            self.inner = self.inner.set_cloud_hsm_cluster_id(input);
             self
         }
     }
@@ -4031,7 +4067,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateKeyDescriptionOutput,
             smithy_http::result::SdkError<crate::error::UpdateKeyDescriptionError>,
         >
@@ -4061,21 +4097,21 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>New description for the CMK.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
     }
@@ -4094,7 +4130,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::VerifyOutput,
             smithy_http::result::SdkError<crate::error::VerifyError>,
         >
@@ -4134,12 +4170,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(inp);
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input);
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_key_id(inp);
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_key_id(input);
             self
         }
         /// <p>Specifies the message that was signed. You can submit a raw message of up to 4096 bytes,
@@ -4148,12 +4184,12 @@ pub mod fluent_builders {
         /// <p>If the message specified here is different from the message that was signed, the signature
         /// verification fails. A message and its hash digest are considered to be the same
         /// message.</p>
-        pub fn message(mut self, inp: smithy_types::Blob) -> Self {
-            self.inner = self.inner.message(inp);
+        pub fn message(mut self, input: smithy_types::Blob) -> Self {
+            self.inner = self.inner.message(input);
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_message(inp);
+        pub fn set_message(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_message(input);
             self
         }
         /// <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a message or
@@ -4164,37 +4200,37 @@ pub mod fluent_builders {
         /// parameter is a message digest. If you use the <code>DIGEST</code> value with a raw message,
         /// the security of the verification operation can be compromised.</p>
         /// </important>
-        pub fn message_type(mut self, inp: crate::model::MessageType) -> Self {
-            self.inner = self.inner.message_type(inp);
+        pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
+            self.inner = self.inner.message_type(input);
             self
         }
         pub fn set_message_type(
             mut self,
-            inp: std::option::Option<crate::model::MessageType>,
+            input: std::option::Option<crate::model::MessageType>,
         ) -> Self {
-            self.inner = self.inner.set_message_type(inp);
+            self.inner = self.inner.set_message_type(input);
             self
         }
         /// <p>The signature that the <code>Sign</code> operation generated.</p>
-        pub fn signature(mut self, inp: smithy_types::Blob) -> Self {
-            self.inner = self.inner.signature(inp);
+        pub fn signature(mut self, input: smithy_types::Blob) -> Self {
+            self.inner = self.inner.signature(input);
             self
         }
-        pub fn set_signature(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_signature(inp);
+        pub fn set_signature(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_signature(input);
             self
         }
         /// <p>The signing algorithm that was used to sign the message. If you submit a different
         /// algorithm, the signature verification fails.</p>
-        pub fn signing_algorithm(mut self, inp: crate::model::SigningAlgorithmSpec) -> Self {
-            self.inner = self.inner.signing_algorithm(inp);
+        pub fn signing_algorithm(mut self, input: crate::model::SigningAlgorithmSpec) -> Self {
+            self.inner = self.inner.signing_algorithm(input);
             self
         }
         pub fn set_signing_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::SigningAlgorithmSpec>,
+            input: std::option::Option<crate::model::SigningAlgorithmSpec>,
         ) -> Self {
-            self.inner = self.inner.set_signing_algorithm(inp);
+            self.inner = self.inner.set_signing_algorithm(input);
             self
         }
         /// <p>A list of grant tokens.</p>
@@ -4206,9 +4242,9 @@ pub mod fluent_builders {
         }
         pub fn set_grant_tokens(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_grant_tokens(inp);
+            self.inner = self.inner.set_grant_tokens(input);
             self
         }
     }

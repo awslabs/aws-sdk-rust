@@ -70,6 +70,24 @@ impl AddTagsToStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddTagsToStreamErrorKind::InvalidArgumentError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(&self.kind, AddTagsToStreamErrorKind::ResourceInUseError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, AddTagsToStreamErrorKind::LimitExceededError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddTagsToStreamErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for AddTagsToStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -151,6 +169,15 @@ impl CreateStreamError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(&self.kind, CreateStreamErrorKind::InvalidArgumentError(_))
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(&self.kind, CreateStreamErrorKind::ResourceInUseError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateStreamErrorKind::LimitExceededError(_))
     }
 }
 impl std::error::Error for CreateStreamError {
@@ -235,6 +262,30 @@ impl DecreaseStreamRetentionPeriodError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DecreaseStreamRetentionPeriodErrorKind::InvalidArgumentError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DecreaseStreamRetentionPeriodErrorKind::ResourceInUseError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DecreaseStreamRetentionPeriodErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DecreaseStreamRetentionPeriodErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for DecreaseStreamRetentionPeriodError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -317,6 +368,15 @@ impl DeleteStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(&self.kind, DeleteStreamErrorKind::ResourceInUseError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, DeleteStreamErrorKind::LimitExceededError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteStreamErrorKind::ResourceNotFoundError(_))
+    }
 }
 impl std::error::Error for DeleteStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -398,6 +458,24 @@ impl DeregisterStreamConsumerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterStreamConsumerErrorKind::InvalidArgumentError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterStreamConsumerErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeregisterStreamConsumerErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for DeregisterStreamConsumerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -475,6 +553,9 @@ impl DescribeLimitsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, DescribeLimitsErrorKind::LimitExceededError(_))
+    }
 }
 impl std::error::Error for DescribeLimitsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -551,6 +632,15 @@ impl DescribeStreamError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, DescribeStreamErrorKind::LimitExceededError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStreamErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for DescribeStreamError {
@@ -632,6 +722,24 @@ impl DescribeStreamConsumerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStreamConsumerErrorKind::InvalidArgumentError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStreamConsumerErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStreamConsumerErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeStreamConsumerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -710,6 +818,18 @@ impl DescribeStreamSummaryError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStreamSummaryErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStreamSummaryErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for DescribeStreamSummaryError {
@@ -792,6 +912,30 @@ impl DisableEnhancedMonitoringError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableEnhancedMonitoringErrorKind::InvalidArgumentError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableEnhancedMonitoringErrorKind::ResourceInUseError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableEnhancedMonitoringErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableEnhancedMonitoringErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for DisableEnhancedMonitoringError {
@@ -876,6 +1020,30 @@ impl EnableEnhancedMonitoringError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableEnhancedMonitoringErrorKind::InvalidArgumentError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableEnhancedMonitoringErrorKind::ResourceInUseError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableEnhancedMonitoringErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableEnhancedMonitoringErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for EnableEnhancedMonitoringError {
@@ -973,6 +1141,39 @@ impl GetRecordsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_kms_access_denied_error(&self) -> bool {
+        matches!(&self.kind, GetRecordsErrorKind::KMSAccessDeniedError(_))
+    }
+    pub fn is_kms_disabled_error(&self) -> bool {
+        matches!(&self.kind, GetRecordsErrorKind::KMSDisabledError(_))
+    }
+    pub fn is_kms_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetRecordsErrorKind::KMSNotFoundError(_))
+    }
+    pub fn is_expired_iterator_error(&self) -> bool {
+        matches!(&self.kind, GetRecordsErrorKind::ExpiredIteratorError(_))
+    }
+    pub fn is_kms_opt_in_required(&self) -> bool {
+        matches!(&self.kind, GetRecordsErrorKind::KMSOptInRequired(_))
+    }
+    pub fn is_kms_throttling_error(&self) -> bool {
+        matches!(&self.kind, GetRecordsErrorKind::KMSThrottlingError(_))
+    }
+    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRecordsErrorKind::ProvisionedThroughputExceededError(_)
+        )
+    }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(&self.kind, GetRecordsErrorKind::InvalidArgumentError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, GetRecordsErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetRecordsErrorKind::ResourceNotFoundError(_))
+    }
 }
 impl std::error::Error for GetRecordsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1061,6 +1262,24 @@ impl GetShardIteratorError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetShardIteratorErrorKind::ProvisionedThroughputExceededError(_)
+        )
+    }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetShardIteratorErrorKind::InvalidArgumentError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetShardIteratorErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for GetShardIteratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1143,6 +1362,30 @@ impl IncreaseStreamRetentionPeriodError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            IncreaseStreamRetentionPeriodErrorKind::InvalidArgumentError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            IncreaseStreamRetentionPeriodErrorKind::ResourceInUseError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            IncreaseStreamRetentionPeriodErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            IncreaseStreamRetentionPeriodErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for IncreaseStreamRetentionPeriodError {
@@ -1229,6 +1472,21 @@ impl ListShardsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_expired_next_token_error(&self) -> bool {
+        matches!(&self.kind, ListShardsErrorKind::ExpiredNextTokenError(_))
+    }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(&self.kind, ListShardsErrorKind::InvalidArgumentError(_))
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(&self.kind, ListShardsErrorKind::ResourceInUseError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, ListShardsErrorKind::LimitExceededError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListShardsErrorKind::ResourceNotFoundError(_))
     }
 }
 impl std::error::Error for ListShardsError {
@@ -1317,6 +1575,36 @@ impl ListStreamConsumersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_expired_next_token_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStreamConsumersErrorKind::ExpiredNextTokenError(_)
+        )
+    }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStreamConsumersErrorKind::InvalidArgumentError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStreamConsumersErrorKind::ResourceInUseError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStreamConsumersErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListStreamConsumersErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for ListStreamConsumersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1396,6 +1684,9 @@ impl ListStreamsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, ListStreamsErrorKind::LimitExceededError(_))
+    }
 }
 impl std::error::Error for ListStreamsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1474,6 +1765,24 @@ impl ListTagsForStreamError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForStreamErrorKind::InvalidArgumentError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForStreamErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForStreamErrorKind::ResourceNotFoundError(_)
+        )
     }
 }
 impl std::error::Error for ListTagsForStreamError {
@@ -1557,6 +1866,18 @@ impl MergeShardsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(&self.kind, MergeShardsErrorKind::InvalidArgumentError(_))
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(&self.kind, MergeShardsErrorKind::ResourceInUseError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, MergeShardsErrorKind::LimitExceededError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, MergeShardsErrorKind::ResourceNotFoundError(_))
     }
 }
 impl std::error::Error for MergeShardsError {
@@ -1651,6 +1972,36 @@ impl PutRecordError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_kms_access_denied_error(&self) -> bool {
+        matches!(&self.kind, PutRecordErrorKind::KMSAccessDeniedError(_))
+    }
+    pub fn is_kms_disabled_error(&self) -> bool {
+        matches!(&self.kind, PutRecordErrorKind::KMSDisabledError(_))
+    }
+    pub fn is_kms_not_found_error(&self) -> bool {
+        matches!(&self.kind, PutRecordErrorKind::KMSNotFoundError(_))
+    }
+    pub fn is_kms_opt_in_required(&self) -> bool {
+        matches!(&self.kind, PutRecordErrorKind::KMSOptInRequired(_))
+    }
+    pub fn is_kms_throttling_error(&self) -> bool {
+        matches!(&self.kind, PutRecordErrorKind::KMSThrottlingError(_))
+    }
+    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRecordErrorKind::ProvisionedThroughputExceededError(_)
+        )
+    }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(&self.kind, PutRecordErrorKind::InvalidArgumentError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, PutRecordErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, PutRecordErrorKind::ResourceNotFoundError(_))
     }
 }
 impl std::error::Error for PutRecordError {
@@ -1751,6 +2102,36 @@ impl PutRecordsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_kms_access_denied_error(&self) -> bool {
+        matches!(&self.kind, PutRecordsErrorKind::KMSAccessDeniedError(_))
+    }
+    pub fn is_kms_disabled_error(&self) -> bool {
+        matches!(&self.kind, PutRecordsErrorKind::KMSDisabledError(_))
+    }
+    pub fn is_kms_not_found_error(&self) -> bool {
+        matches!(&self.kind, PutRecordsErrorKind::KMSNotFoundError(_))
+    }
+    pub fn is_kms_opt_in_required(&self) -> bool {
+        matches!(&self.kind, PutRecordsErrorKind::KMSOptInRequired(_))
+    }
+    pub fn is_kms_throttling_error(&self) -> bool {
+        matches!(&self.kind, PutRecordsErrorKind::KMSThrottlingError(_))
+    }
+    pub fn is_provisioned_throughput_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutRecordsErrorKind::ProvisionedThroughputExceededError(_)
+        )
+    }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(&self.kind, PutRecordsErrorKind::InvalidArgumentError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, PutRecordsErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, PutRecordsErrorKind::ResourceNotFoundError(_))
+    }
 }
 impl std::error::Error for PutRecordsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1840,6 +2221,30 @@ impl RegisterStreamConsumerError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterStreamConsumerErrorKind::InvalidArgumentError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterStreamConsumerErrorKind::ResourceInUseError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterStreamConsumerErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RegisterStreamConsumerErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for RegisterStreamConsumerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1924,6 +2329,30 @@ impl RemoveTagsFromStreamError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsFromStreamErrorKind::InvalidArgumentError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsFromStreamErrorKind::ResourceInUseError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsFromStreamErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveTagsFromStreamErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for RemoveTagsFromStreamError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2007,6 +2436,18 @@ impl SplitShardError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(&self.kind, SplitShardErrorKind::InvalidArgumentError(_))
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(&self.kind, SplitShardErrorKind::ResourceInUseError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, SplitShardErrorKind::LimitExceededError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, SplitShardErrorKind::ResourceNotFoundError(_))
     }
 }
 impl std::error::Error for SplitShardError {
@@ -2104,6 +2545,66 @@ impl StartStreamEncryptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_kms_access_denied_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamEncryptionErrorKind::KMSAccessDeniedError(_)
+        )
+    }
+    pub fn is_kms_disabled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamEncryptionErrorKind::KMSDisabledError(_)
+        )
+    }
+    pub fn is_kms_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamEncryptionErrorKind::KMSNotFoundError(_)
+        )
+    }
+    pub fn is_kms_opt_in_required(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamEncryptionErrorKind::KMSOptInRequired(_)
+        )
+    }
+    pub fn is_kms_throttling_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamEncryptionErrorKind::KMSThrottlingError(_)
+        )
+    }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamEncryptionErrorKind::InvalidArgumentError(_)
+        )
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamEncryptionErrorKind::KMSInvalidStateError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamEncryptionErrorKind::ResourceInUseError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamEncryptionErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartStreamEncryptionErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for StartStreamEncryptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2194,6 +2695,30 @@ impl StopStreamEncryptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopStreamEncryptionErrorKind::InvalidArgumentError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopStreamEncryptionErrorKind::ResourceInUseError(_)
+        )
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopStreamEncryptionErrorKind::LimitExceededError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopStreamEncryptionErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for StopStreamEncryptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2278,6 +2803,24 @@ impl UpdateShardCountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_argument_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateShardCountErrorKind::InvalidArgumentError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(&self.kind, UpdateShardCountErrorKind::ResourceInUseError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, UpdateShardCountErrorKind::LimitExceededError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateShardCountErrorKind::ResourceNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateShardCountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2333,12 +2876,12 @@ pub mod resource_not_found_error {
     }
     impl Builder {
         /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
@@ -2398,12 +2941,12 @@ pub mod limit_exceeded_error {
     }
     impl Builder {
         /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
@@ -2463,12 +3006,12 @@ pub mod resource_in_use_error {
     }
     impl Builder {
         /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceInUseError`](crate::error::ResourceInUseError)
@@ -2528,12 +3071,12 @@ pub mod invalid_argument_error {
     }
     impl Builder {
         /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidArgumentError`](crate::error::InvalidArgumentError)
@@ -2595,12 +3138,12 @@ pub mod kms_invalid_state_error {
     }
     impl Builder {
         /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
@@ -2661,12 +3204,12 @@ pub mod kms_throttling_error {
     }
     impl Builder {
         /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSThrottlingError`](crate::error::KMSThrottlingError)
@@ -2725,12 +3268,12 @@ pub mod kms_opt_in_required {
     }
     impl Builder {
         /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSOptInRequired`](crate::error::KMSOptInRequired)
@@ -2790,12 +3333,12 @@ pub mod kms_not_found_error {
     }
     impl Builder {
         /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSNotFoundError`](crate::error::KMSNotFoundError)
@@ -2855,12 +3398,12 @@ pub mod kms_disabled_error {
     }
     impl Builder {
         /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSDisabledError`](crate::error::KMSDisabledError)
@@ -2920,12 +3463,12 @@ pub mod kms_access_denied_error {
     }
     impl Builder {
         /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
@@ -2992,12 +3535,12 @@ pub mod provisioned_throughput_exceeded_error {
     }
     impl Builder {
         /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ProvisionedThroughputExceededError`](crate::error::ProvisionedThroughputExceededError)
@@ -3054,12 +3597,12 @@ pub mod expired_next_token_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ExpiredNextTokenError`](crate::error::ExpiredNextTokenError)
@@ -3118,12 +3661,12 @@ pub mod expired_iterator_error {
     }
     impl Builder {
         /// <p>A message that provides information about the error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ExpiredIteratorError`](crate::error::ExpiredIteratorError)

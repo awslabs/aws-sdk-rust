@@ -72,6 +72,36 @@ impl BatchExecuteStatementError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchExecuteStatementErrorKind::BadRequestError(_)
+        )
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchExecuteStatementErrorKind::ForbiddenError(_)
+        )
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchExecuteStatementErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchExecuteStatementErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_statement_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BatchExecuteStatementErrorKind::StatementTimeoutError(_)
+        )
+    }
 }
 impl std::error::Error for BatchExecuteStatementError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -158,6 +188,30 @@ impl BeginTransactionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, BeginTransactionErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, BeginTransactionErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BeginTransactionErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BeginTransactionErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_statement_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            BeginTransactionErrorKind::StatementTimeoutError(_)
+        )
     }
 }
 impl std::error::Error for BeginTransactionError {
@@ -248,6 +302,33 @@ impl CommitTransactionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, CommitTransactionErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, CommitTransactionErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CommitTransactionErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CommitTransactionErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CommitTransactionErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_statement_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CommitTransactionErrorKind::StatementTimeoutError(_)
+        )
+    }
 }
 impl std::error::Error for CommitTransactionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -334,6 +415,18 @@ impl ExecuteSqlError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ExecuteSqlErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, ExecuteSqlErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(&self.kind, ExecuteSqlErrorKind::InternalServerErrorError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(&self.kind, ExecuteSqlErrorKind::ServiceUnavailableError(_))
+    }
 }
 impl std::error::Error for ExecuteSqlError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -419,6 +512,30 @@ impl ExecuteStatementError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, ExecuteStatementErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, ExecuteStatementErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteStatementErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteStatementErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_statement_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ExecuteStatementErrorKind::StatementTimeoutError(_)
+        )
     }
 }
 impl std::error::Error for ExecuteStatementError {
@@ -509,6 +626,33 @@ impl RollbackTransactionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_error(&self) -> bool {
+        matches!(&self.kind, RollbackTransactionErrorKind::BadRequestError(_))
+    }
+    pub fn is_forbidden_error(&self) -> bool {
+        matches!(&self.kind, RollbackTransactionErrorKind::ForbiddenError(_))
+    }
+    pub fn is_internal_server_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RollbackTransactionErrorKind::InternalServerErrorError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, RollbackTransactionErrorKind::NotFoundError(_))
+    }
+    pub fn is_service_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RollbackTransactionErrorKind::ServiceUnavailableError(_)
+        )
+    }
+    pub fn is_statement_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RollbackTransactionErrorKind::StatementTimeoutError(_)
+        )
+    }
 }
 impl std::error::Error for RollbackTransactionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -571,21 +715,21 @@ pub mod statement_timeout_error {
     }
     impl Builder {
         /// <p>The error message returned by this <code>StatementTimeoutException</code> error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// <p>The database connection ID that executed the SQL statement.</p>
-        pub fn db_connection_id(mut self, inp: i64) -> Self {
-            self.db_connection_id = Some(inp);
+        pub fn db_connection_id(mut self, input: i64) -> Self {
+            self.db_connection_id = Some(input);
             self
         }
-        pub fn set_db_connection_id(mut self, inp: i64) -> Self {
-            self.db_connection_id = Some(inp);
+        pub fn set_db_connection_id(mut self, input: std::option::Option<i64>) -> Self {
+            self.db_connection_id = input;
             self
         }
         /// Consumes the builder and constructs a [`StatementTimeoutError`](crate::error::StatementTimeoutError)
@@ -688,12 +832,12 @@ pub mod not_found_error {
     }
     impl Builder {
         /// <p>The error message returned by this <code>NotFoundException</code> error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NotFoundError`](crate::error::NotFoundError)
@@ -794,12 +938,12 @@ pub mod forbidden_error {
     }
     impl Builder {
         /// <p>The error message returned by this <code>ForbiddenException</code> error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ForbiddenError`](crate::error::ForbiddenError)
@@ -858,12 +1002,12 @@ pub mod bad_request_error {
     }
     impl Builder {
         /// <p>The error message returned by this <code>BadRequestException</code> error.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`BadRequestError`](crate::error::BadRequestError)

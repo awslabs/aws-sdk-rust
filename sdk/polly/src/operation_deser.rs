@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_lexicon_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteLexiconOutput, crate::error::DeleteLexiconError> {
+) -> std::result::Result<crate::output::DeleteLexiconOutput, crate::error::DeleteLexiconError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteLexiconError::unhandled)?;
     let error_code = match generic.code() {
@@ -43,7 +43,7 @@ pub fn parse_delete_lexicon_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_lexicon_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteLexiconOutput, crate::error::DeleteLexiconError> {
+) -> std::result::Result<crate::output::DeleteLexiconOutput, crate::error::DeleteLexiconError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_lexicon_output::Builder::default();
@@ -55,7 +55,7 @@ pub fn parse_delete_lexicon_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_voices_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVoicesOutput, crate::error::DescribeVoicesError> {
+) -> std::result::Result<crate::output::DescribeVoicesOutput, crate::error::DescribeVoicesError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeVoicesError::unhandled)?;
     let error_code = match generic.code() {
@@ -96,7 +96,7 @@ pub fn parse_describe_voices_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_voices_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeVoicesOutput, crate::error::DescribeVoicesError> {
+) -> std::result::Result<crate::output::DescribeVoicesOutput, crate::error::DescribeVoicesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_voices_output::Builder::default();
@@ -111,7 +111,7 @@ pub fn parse_describe_voices_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_lexicon_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetLexiconOutput, crate::error::GetLexiconError> {
+) -> std::result::Result<crate::output::GetLexiconOutput, crate::error::GetLexiconError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetLexiconError::unhandled)?;
     let error_code = match generic.code() {
@@ -152,7 +152,7 @@ pub fn parse_get_lexicon_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_lexicon_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetLexiconOutput, crate::error::GetLexiconError> {
+) -> std::result::Result<crate::output::GetLexiconOutput, crate::error::GetLexiconError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_lexicon_output::Builder::default();
@@ -166,8 +166,10 @@ pub fn parse_get_lexicon_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_speech_synthesis_task_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetSpeechSynthesisTaskOutput, crate::error::GetSpeechSynthesisTaskError>
-{
+) -> std::result::Result<
+    crate::output::GetSpeechSynthesisTaskOutput,
+    crate::error::GetSpeechSynthesisTaskError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::GetSpeechSynthesisTaskError::unhandled)?;
     let error_code = match generic.code() {
@@ -224,8 +226,10 @@ pub fn parse_get_speech_synthesis_task_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_speech_synthesis_task_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetSpeechSynthesisTaskOutput, crate::error::GetSpeechSynthesisTaskError>
-{
+) -> std::result::Result<
+    crate::output::GetSpeechSynthesisTaskOutput,
+    crate::error::GetSpeechSynthesisTaskError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_speech_synthesis_task_output::Builder::default();
@@ -242,7 +246,7 @@ pub fn parse_get_speech_synthesis_task_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_lexicons_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListLexiconsOutput, crate::error::ListLexiconsError> {
+) -> std::result::Result<crate::output::ListLexiconsOutput, crate::error::ListLexiconsError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListLexiconsError::unhandled)?;
     let error_code = match generic.code() {
@@ -283,7 +287,7 @@ pub fn parse_list_lexicons_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_lexicons_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListLexiconsOutput, crate::error::ListLexiconsError> {
+) -> std::result::Result<crate::output::ListLexiconsOutput, crate::error::ListLexiconsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_lexicons_output::Builder::default();
@@ -297,7 +301,7 @@ pub fn parse_list_lexicons_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_speech_synthesis_tasks_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListSpeechSynthesisTasksOutput,
     crate::error::ListSpeechSynthesisTasksError,
 > {
@@ -345,7 +349,7 @@ pub fn parse_list_speech_synthesis_tasks_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_speech_synthesis_tasks_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListSpeechSynthesisTasksOutput,
     crate::error::ListSpeechSynthesisTasksError,
 > {
@@ -365,7 +369,7 @@ pub fn parse_list_speech_synthesis_tasks_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_lexicon_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutLexiconOutput, crate::error::PutLexiconError> {
+) -> std::result::Result<crate::output::PutLexiconOutput, crate::error::PutLexiconError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::PutLexiconError::unhandled)?;
     let error_code = match generic.code() {
@@ -475,7 +479,7 @@ pub fn parse_put_lexicon_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_lexicon_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PutLexiconOutput, crate::error::PutLexiconError> {
+) -> std::result::Result<crate::output::PutLexiconOutput, crate::error::PutLexiconError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::put_lexicon_output::Builder::default();
@@ -487,7 +491,7 @@ pub fn parse_put_lexicon_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_speech_synthesis_task_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::StartSpeechSynthesisTaskOutput,
     crate::error::StartSpeechSynthesisTaskError,
 > {
@@ -581,7 +585,7 @@ pub fn parse_start_speech_synthesis_task_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_speech_synthesis_task_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::StartSpeechSynthesisTaskOutput,
     crate::error::StartSpeechSynthesisTaskError,
 > {
@@ -601,14 +605,15 @@ pub fn parse_start_speech_synthesis_task_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_synthesize_speech(
     response: &mut http::Response<smithy_http::body::SdkBody>,
-) -> Result<crate::output::SynthesizeSpeechOutput, crate::error::SynthesizeSpeechError> {
+) -> std::result::Result<crate::output::SynthesizeSpeechOutput, crate::error::SynthesizeSpeechError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::synthesize_speech_output::Builder::default();
         let _ = response;
-        output = output.set_audio_stream(
+        output = output.set_audio_stream(Some(
             crate::http_serde::deser_payload_synthesize_speech_audio_stream(response.body_mut())?,
-        );
+        ));
         output = output.set_content_type(
             crate::http_serde::deser_header_synthesize_speech_content_type(response.headers())
                 .map_err(|_| {
@@ -634,7 +639,8 @@ pub fn parse_synthesize_speech(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_synthesize_speech_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SynthesizeSpeechOutput, crate::error::SynthesizeSpeechError> {
+) -> std::result::Result<crate::output::SynthesizeSpeechOutput, crate::error::SynthesizeSpeechError>
+{
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::SynthesizeSpeechError::unhandled)?;
     let error_code = match generic.code() {

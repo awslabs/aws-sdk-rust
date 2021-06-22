@@ -70,6 +70,18 @@ impl InvokeEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_internal_failure(&self) -> bool {
+        matches!(&self.kind, InvokeEndpointErrorKind::InternalFailure(_))
+    }
+    pub fn is_model_error(&self) -> bool {
+        matches!(&self.kind, InvokeEndpointErrorKind::ModelError(_))
+    }
+    pub fn is_service_unavailable(&self) -> bool {
+        matches!(&self.kind, InvokeEndpointErrorKind::ServiceUnavailable(_))
+    }
+    pub fn is_validation_error(&self) -> bool {
+        matches!(&self.kind, InvokeEndpointErrorKind::ValidationError(_))
+    }
 }
 impl std::error::Error for InvokeEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -122,12 +134,12 @@ pub mod validation_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ValidationError`](crate::error::ValidationError)
@@ -184,12 +196,12 @@ pub mod service_unavailable {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceUnavailable`](crate::error::ServiceUnavailable)
@@ -265,42 +277,45 @@ pub mod model_error {
         pub(crate) log_stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// <p> Original status code. </p>
-        pub fn original_status_code(mut self, inp: i32) -> Self {
-            self.original_status_code = Some(inp);
+        pub fn original_status_code(mut self, input: i32) -> Self {
+            self.original_status_code = Some(input);
             self
         }
-        pub fn set_original_status_code(mut self, inp: std::option::Option<i32>) -> Self {
-            self.original_status_code = inp;
+        pub fn set_original_status_code(mut self, input: std::option::Option<i32>) -> Self {
+            self.original_status_code = input;
             self
         }
         /// <p> Original message. </p>
-        pub fn original_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.original_message = Some(inp.into());
+        pub fn original_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.original_message = Some(input.into());
             self
         }
         pub fn set_original_message(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.original_message = inp;
+            self.original_message = input;
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the log stream. </p>
-        pub fn log_stream_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.log_stream_arn = Some(inp.into());
+        pub fn log_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.log_stream_arn = Some(input.into());
             self
         }
-        pub fn set_log_stream_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.log_stream_arn = inp;
+        pub fn set_log_stream_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.log_stream_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`ModelError`](crate::error::ModelError)
@@ -360,12 +375,12 @@ pub mod internal_failure {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InternalFailure`](crate::error::InternalFailure)

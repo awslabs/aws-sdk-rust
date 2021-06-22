@@ -51,12 +51,15 @@ pub mod start_human_loop_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
-        pub fn human_loop_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.human_loop_arn = Some(inp.into());
+        pub fn human_loop_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.human_loop_arn = Some(input.into());
             self
         }
-        pub fn set_human_loop_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.human_loop_arn = inp;
+        pub fn set_human_loop_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.human_loop_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`StartHumanLoopOutput`](crate::output::StartHumanLoopOutput)
@@ -103,27 +106,27 @@ pub mod list_human_loops_output {
     impl Builder {
         pub fn human_loop_summaries(
             mut self,
-            inp: impl Into<crate::model::HumanLoopSummary>,
+            input: impl Into<crate::model::HumanLoopSummary>,
         ) -> Self {
             let mut v = self.human_loop_summaries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.human_loop_summaries = Some(v);
             self
         }
         pub fn set_human_loop_summaries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HumanLoopSummary>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HumanLoopSummary>>,
         ) -> Self {
-            self.human_loop_summaries = inp;
+            self.human_loop_summaries = input;
             self
         }
         /// <p>A token to display the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListHumanLoopsOutput`](crate::output::ListHumanLoopsOutput)
@@ -198,95 +201,101 @@ pub mod describe_human_loop_output {
     }
     impl Builder {
         /// <p>The creation time when Amazon Augmented AI created the human loop.</p>
-        pub fn creation_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_time = Some(inp);
+        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time = Some(input);
             self
         }
         pub fn set_creation_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_time = inp;
+            self.creation_time = input;
             self
         }
         /// <p>The reason why a human loop failed. The failure reason is returned when the status of the
         /// human loop is <code>Failed</code>.</p>
-        pub fn failure_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.failure_reason = Some(inp.into());
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
             self
         }
-        pub fn set_failure_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.failure_reason = inp;
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
             self
         }
         /// <p>A failure code that identifies the type of failure.</p>
         /// <p>Possible values: <code>ValidationError</code>, <code>Expired</code>,
         /// <code>InternalError</code>
         /// </p>
-        pub fn failure_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.failure_code = Some(inp.into());
+        pub fn failure_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_code = Some(input.into());
             self
         }
-        pub fn set_failure_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.failure_code = inp;
+        pub fn set_failure_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_code = input;
             self
         }
         /// <p>The status of the human loop. </p>
-        pub fn human_loop_status(mut self, inp: crate::model::HumanLoopStatus) -> Self {
-            self.human_loop_status = Some(inp);
+        pub fn human_loop_status(mut self, input: crate::model::HumanLoopStatus) -> Self {
+            self.human_loop_status = Some(input);
             self
         }
         pub fn set_human_loop_status(
             mut self,
-            inp: std::option::Option<crate::model::HumanLoopStatus>,
+            input: std::option::Option<crate::model::HumanLoopStatus>,
         ) -> Self {
-            self.human_loop_status = inp;
+            self.human_loop_status = input;
             self
         }
         /// <p>The name of the human loop. The name must be lowercase, unique within the Region in your
         /// account, and can have up to 63 characters. Valid characters: a-z, 0-9, and - (hyphen).</p>
-        pub fn human_loop_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.human_loop_name = Some(inp.into());
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.human_loop_name = Some(input.into());
             self
         }
         pub fn set_human_loop_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.human_loop_name = inp;
+            self.human_loop_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the human loop.</p>
-        pub fn human_loop_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.human_loop_arn = Some(inp.into());
+        pub fn human_loop_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.human_loop_arn = Some(input.into());
             self
         }
-        pub fn set_human_loop_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.human_loop_arn = inp;
+        pub fn set_human_loop_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.human_loop_arn = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
-        pub fn flow_definition_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.flow_definition_arn = Some(inp.into());
+        pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.flow_definition_arn = Some(input.into());
             self
         }
         pub fn set_flow_definition_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.flow_definition_arn = inp;
+            self.flow_definition_arn = input;
             self
         }
         /// <p>An object that contains information about the output of the human loop.</p>
-        pub fn human_loop_output(mut self, inp: crate::model::HumanLoopOutput) -> Self {
-            self.human_loop_output = Some(inp);
+        pub fn human_loop_output(mut self, input: crate::model::HumanLoopOutput) -> Self {
+            self.human_loop_output = Some(input);
             self
         }
         pub fn set_human_loop_output(
             mut self,
-            inp: std::option::Option<crate::model::HumanLoopOutput>,
+            input: std::option::Option<crate::model::HumanLoopOutput>,
         ) -> Self {
-            self.human_loop_output = inp;
+            self.human_loop_output = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeHumanLoopOutput`](crate::output::DescribeHumanLoopOutput)

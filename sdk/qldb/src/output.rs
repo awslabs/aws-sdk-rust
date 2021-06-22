@@ -30,33 +30,33 @@ pub mod update_ledger_permissions_mode_output {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The current permissions mode of the ledger.</p>
-        pub fn permissions_mode(mut self, inp: crate::model::PermissionsMode) -> Self {
-            self.permissions_mode = Some(inp);
+        pub fn permissions_mode(mut self, input: crate::model::PermissionsMode) -> Self {
+            self.permissions_mode = Some(input);
             self
         }
         pub fn set_permissions_mode(
             mut self,
-            inp: std::option::Option<crate::model::PermissionsMode>,
+            input: std::option::Option<crate::model::PermissionsMode>,
         ) -> Self {
-            self.permissions_mode = inp;
+            self.permissions_mode = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput)
@@ -119,55 +119,55 @@ pub mod update_ledger_output {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The current status of the ledger.</p>
-        pub fn state(mut self, inp: crate::model::LedgerState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::LedgerState) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::LedgerState>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<crate::model::LedgerState>) -> Self {
+            self.state = input;
             self
         }
         /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
         /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-        pub fn creation_date_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_date_time = Some(inp);
+        pub fn creation_date_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_date_time = Some(input);
             self
         }
         pub fn set_creation_date_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_date_time = inp;
+            self.creation_date_time = input;
             self
         }
         /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
         /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
         /// <p>If deletion protection is enabled, you must first disable it before you can delete the
         /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput)
@@ -272,12 +272,12 @@ pub mod stream_journal_to_kinesis_output {
     impl Builder {
         /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal
         /// stream.</p>
-        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_id = Some(inp.into());
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_id = Some(input.into());
             self
         }
-        pub fn set_stream_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_id = inp;
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_id = input;
             self
         }
         /// Consumes the builder and constructs a [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput)
@@ -336,14 +336,14 @@ pub mod list_tags_for_resource_output {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     std::option::Option<std::string::String>,
                 >,
             >,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
@@ -397,17 +397,17 @@ pub mod list_ledgers_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn ledgers(mut self, inp: impl Into<crate::model::LedgerSummary>) -> Self {
+        pub fn ledgers(mut self, input: impl Into<crate::model::LedgerSummary>) -> Self {
             let mut v = self.ledgers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.ledgers = Some(v);
             self
         }
         pub fn set_ledgers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LedgerSummary>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LedgerSummary>>,
         ) -> Self {
-            self.ledgers = inp;
+            self.ledgers = input;
             self
         }
         /// <p>A pagination token, indicating whether there are more results available:</p>
@@ -422,12 +422,12 @@ pub mod list_ledgers_output {
         /// <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p>
         /// </li>
         /// </ul>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListLedgersOutput`](crate::output::ListLedgersOutput)
@@ -488,18 +488,18 @@ pub mod list_journal_s3_exports_for_ledger_output {
     impl Builder {
         pub fn journal_s3_exports(
             mut self,
-            inp: impl Into<crate::model::JournalS3ExportDescription>,
+            input: impl Into<crate::model::JournalS3ExportDescription>,
         ) -> Self {
             let mut v = self.journal_s3_exports.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.journal_s3_exports = Some(v);
             self
         }
         pub fn set_journal_s3_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
+            input: std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
         ) -> Self {
-            self.journal_s3_exports = inp;
+            self.journal_s3_exports = input;
             self
         }
         /// <ul>
@@ -514,12 +514,12 @@ pub mod list_journal_s3_exports_for_ledger_output {
         /// call.</p>
         /// </li>
         /// </ul>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput)
@@ -580,18 +580,18 @@ pub mod list_journal_s3_exports_output {
     impl Builder {
         pub fn journal_s3_exports(
             mut self,
-            inp: impl Into<crate::model::JournalS3ExportDescription>,
+            input: impl Into<crate::model::JournalS3ExportDescription>,
         ) -> Self {
             let mut v = self.journal_s3_exports.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.journal_s3_exports = Some(v);
             self
         }
         pub fn set_journal_s3_exports(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
+            input: std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
         ) -> Self {
-            self.journal_s3_exports = inp;
+            self.journal_s3_exports = input;
             self
         }
         /// <ul>
@@ -606,12 +606,12 @@ pub mod list_journal_s3_exports_output {
         /// call.</p>
         /// </li>
         /// </ul>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput)
@@ -671,18 +671,20 @@ pub mod list_journal_kinesis_streams_for_ledger_output {
     impl Builder {
         pub fn streams(
             mut self,
-            inp: impl Into<crate::model::JournalKinesisStreamDescription>,
+            input: impl Into<crate::model::JournalKinesisStreamDescription>,
         ) -> Self {
             let mut v = self.streams.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.streams = Some(v);
             self
         }
         pub fn set_streams(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::JournalKinesisStreamDescription>>,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::JournalKinesisStreamDescription>,
+            >,
         ) -> Self {
-            self.streams = inp;
+            self.streams = input;
             self
         }
         /// <ul>
@@ -697,12 +699,12 @@ pub mod list_journal_kinesis_streams_for_ledger_output {
         /// <code>ListJournalKinesisStreamsForLedger</code> call.</p>
         /// </li>
         /// </ul>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput)
@@ -752,21 +754,24 @@ pub mod get_revision_output {
         /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A
         /// proof contains the list of hash values that are required to recalculate the specified
         /// digest using a Merkle tree, starting with the specified document revision.</p>
-        pub fn proof(mut self, inp: crate::model::ValueHolder) -> Self {
-            self.proof = Some(inp);
+        pub fn proof(mut self, input: crate::model::ValueHolder) -> Self {
+            self.proof = Some(input);
             self
         }
-        pub fn set_proof(mut self, inp: std::option::Option<crate::model::ValueHolder>) -> Self {
-            self.proof = inp;
+        pub fn set_proof(mut self, input: std::option::Option<crate::model::ValueHolder>) -> Self {
+            self.proof = input;
             self
         }
         /// <p>The document revision data object in Amazon Ion format.</p>
-        pub fn revision(mut self, inp: crate::model::ValueHolder) -> Self {
-            self.revision = Some(inp);
+        pub fn revision(mut self, input: crate::model::ValueHolder) -> Self {
+            self.revision = Some(input);
             self
         }
-        pub fn set_revision(mut self, inp: std::option::Option<crate::model::ValueHolder>) -> Self {
-            self.revision = inp;
+        pub fn set_revision(
+            mut self,
+            input: std::option::Option<crate::model::ValueHolder>,
+        ) -> Self {
+            self.revision = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRevisionOutput`](crate::output::GetRevisionOutput)
@@ -816,26 +821,26 @@ pub mod get_digest_output {
     impl Builder {
         /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code>
         /// request.</p>
-        pub fn digest(mut self, inp: smithy_types::Blob) -> Self {
-            self.digest = Some(inp);
+        pub fn digest(mut self, input: smithy_types::Blob) -> Self {
+            self.digest = Some(input);
             self
         }
-        pub fn set_digest(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.digest = inp;
+        pub fn set_digest(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.digest = input;
             self
         }
         /// <p>The latest block location covered by the digest that you requested. An address is an
         /// Amazon Ion structure that has two fields: <code>strandId</code> and
         /// <code>sequenceNo</code>.</p>
-        pub fn digest_tip_address(mut self, inp: crate::model::ValueHolder) -> Self {
-            self.digest_tip_address = Some(inp);
+        pub fn digest_tip_address(mut self, input: crate::model::ValueHolder) -> Self {
+            self.digest_tip_address = Some(input);
             self
         }
         pub fn set_digest_tip_address(
             mut self,
-            inp: std::option::Option<crate::model::ValueHolder>,
+            input: std::option::Option<crate::model::ValueHolder>,
         ) -> Self {
-            self.digest_tip_address = inp;
+            self.digest_tip_address = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDigestOutput`](crate::output::GetDigestOutput)
@@ -883,23 +888,23 @@ pub mod get_block_output {
     }
     impl Builder {
         /// <p>The block data object in Amazon Ion format.</p>
-        pub fn block(mut self, inp: crate::model::ValueHolder) -> Self {
-            self.block = Some(inp);
+        pub fn block(mut self, input: crate::model::ValueHolder) -> Self {
+            self.block = Some(input);
             self
         }
-        pub fn set_block(mut self, inp: std::option::Option<crate::model::ValueHolder>) -> Self {
-            self.block = inp;
+        pub fn set_block(mut self, input: std::option::Option<crate::model::ValueHolder>) -> Self {
+            self.block = input;
             self
         }
         /// <p>The proof object in Amazon Ion format returned by a <code>GetBlock</code> request. A
         /// proof contains the list of hash values required to recalculate the specified digest using a
         /// Merkle tree, starting with the specified block.</p>
-        pub fn proof(mut self, inp: crate::model::ValueHolder) -> Self {
-            self.proof = Some(inp);
+        pub fn proof(mut self, input: crate::model::ValueHolder) -> Self {
+            self.proof = Some(input);
             self
         }
-        pub fn set_proof(mut self, inp: std::option::Option<crate::model::ValueHolder>) -> Self {
-            self.proof = inp;
+        pub fn set_proof(mut self, input: std::option::Option<crate::model::ValueHolder>) -> Self {
+            self.proof = input;
             self
         }
         /// Consumes the builder and constructs a [`GetBlockOutput`](crate::output::GetBlockOutput)
@@ -947,12 +952,12 @@ pub mod export_journal_to_s3_output {
         /// job.</p>
         /// <p>To describe your export request and check the status of the job, you can use
         /// <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
-        pub fn export_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.export_id = Some(inp.into());
+        pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.export_id = Some(input.into());
             self
         }
-        pub fn set_export_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.export_id = inp;
+        pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.export_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output)
@@ -1017,67 +1022,67 @@ pub mod describe_ledger_output {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The current status of the ledger.</p>
-        pub fn state(mut self, inp: crate::model::LedgerState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::LedgerState) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::LedgerState>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<crate::model::LedgerState>) -> Self {
+            self.state = input;
             self
         }
         /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
         /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-        pub fn creation_date_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_date_time = Some(inp);
+        pub fn creation_date_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_date_time = Some(input);
             self
         }
         pub fn set_creation_date_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_date_time = inp;
+            self.creation_date_time = input;
             self
         }
         /// <p>The permissions mode of the ledger.</p>
-        pub fn permissions_mode(mut self, inp: crate::model::PermissionsMode) -> Self {
-            self.permissions_mode = Some(inp);
+        pub fn permissions_mode(mut self, input: crate::model::PermissionsMode) -> Self {
+            self.permissions_mode = Some(input);
             self
         }
         pub fn set_permissions_mode(
             mut self,
-            inp: std::option::Option<crate::model::PermissionsMode>,
+            input: std::option::Option<crate::model::PermissionsMode>,
         ) -> Self {
-            self.permissions_mode = inp;
+            self.permissions_mode = input;
             self
         }
         /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
         /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
         /// <p>If deletion protection is enabled, you must first disable it before you can delete the
         /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput)
@@ -1126,15 +1131,18 @@ pub mod describe_journal_s3_export_output {
     impl Builder {
         /// <p>Information about the journal export job returned by a
         /// <code>DescribeJournalS3Export</code> request.</p>
-        pub fn export_description(mut self, inp: crate::model::JournalS3ExportDescription) -> Self {
-            self.export_description = Some(inp);
+        pub fn export_description(
+            mut self,
+            input: crate::model::JournalS3ExportDescription,
+        ) -> Self {
+            self.export_description = Some(input);
             self
         }
         pub fn set_export_description(
             mut self,
-            inp: std::option::Option<crate::model::JournalS3ExportDescription>,
+            input: std::option::Option<crate::model::JournalS3ExportDescription>,
         ) -> Self {
-            self.export_description = inp;
+            self.export_description = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput)
@@ -1177,15 +1185,15 @@ pub mod describe_journal_kinesis_stream_output {
     impl Builder {
         /// <p>Information about the QLDB journal stream returned by a
         /// <code>DescribeJournalS3Export</code> request.</p>
-        pub fn stream(mut self, inp: crate::model::JournalKinesisStreamDescription) -> Self {
-            self.stream = Some(inp);
+        pub fn stream(mut self, input: crate::model::JournalKinesisStreamDescription) -> Self {
+            self.stream = Some(input);
             self
         }
         pub fn set_stream(
             mut self,
-            inp: std::option::Option<crate::model::JournalKinesisStreamDescription>,
+            input: std::option::Option<crate::model::JournalKinesisStreamDescription>,
         ) -> Self {
-            self.stream = inp;
+            self.stream = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput)
@@ -1279,67 +1287,67 @@ pub mod create_ledger_output {
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The current status of the ledger.</p>
-        pub fn state(mut self, inp: crate::model::LedgerState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::LedgerState) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::LedgerState>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<crate::model::LedgerState>) -> Self {
+            self.state = input;
             self
         }
         /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format
         /// is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-        pub fn creation_date_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_date_time = Some(inp);
+        pub fn creation_date_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_date_time = Some(input);
             self
         }
         pub fn set_creation_date_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_date_time = inp;
+            self.creation_date_time = input;
             self
         }
         /// <p>The permissions mode of the ledger that you created.</p>
-        pub fn permissions_mode(mut self, inp: crate::model::PermissionsMode) -> Self {
-            self.permissions_mode = Some(inp);
+        pub fn permissions_mode(mut self, input: crate::model::PermissionsMode) -> Self {
+            self.permissions_mode = Some(input);
             self
         }
         pub fn set_permissions_mode(
             mut self,
-            inp: std::option::Option<crate::model::PermissionsMode>,
+            input: std::option::Option<crate::model::PermissionsMode>,
         ) -> Self {
-            self.permissions_mode = inp;
+            self.permissions_mode = input;
             self
         }
         /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
         /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
         /// <p>If deletion protection is enabled, you must first disable it before you can delete the
         /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
-        pub fn deletion_protection(mut self, inp: bool) -> Self {
-            self.deletion_protection = Some(inp);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.deletion_protection = Some(input);
             self
         }
-        pub fn set_deletion_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.deletion_protection = inp;
+        pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.deletion_protection = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateLedgerOutput`](crate::output::CreateLedgerOutput)
@@ -1385,12 +1393,12 @@ pub mod cancel_journal_kinesis_stream_output {
     }
     impl Builder {
         /// <p>The UUID (Base62-encoded text) of the canceled QLDB journal stream.</p>
-        pub fn stream_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.stream_id = Some(inp.into());
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stream_id = Some(input.into());
             self
         }
-        pub fn set_stream_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.stream_id = inp;
+        pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stream_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput)

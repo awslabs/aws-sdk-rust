@@ -66,6 +66,12 @@ impl DeleteLexiconError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_lexicon_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteLexiconErrorKind::LexiconNotFoundError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, DeleteLexiconErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for DeleteLexiconError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -144,6 +150,15 @@ impl DescribeVoicesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_next_token_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeVoicesErrorKind::InvalidNextTokenError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, DescribeVoicesErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for DescribeVoicesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -221,6 +236,12 @@ impl GetLexiconError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_lexicon_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetLexiconErrorKind::LexiconNotFoundError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, GetLexiconErrorKind::ServiceFailureError(_))
     }
 }
 impl std::error::Error for GetLexiconError {
@@ -302,6 +323,24 @@ impl GetSpeechSynthesisTaskError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_task_id_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSpeechSynthesisTaskErrorKind::InvalidTaskIdError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSpeechSynthesisTaskErrorKind::ServiceFailureError(_)
+        )
+    }
+    pub fn is_synthesis_task_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for GetSpeechSynthesisTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -381,6 +420,12 @@ impl ListLexiconsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_next_token_error(&self) -> bool {
+        matches!(&self.kind, ListLexiconsErrorKind::InvalidNextTokenError(_))
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, ListLexiconsErrorKind::ServiceFailureError(_))
+    }
 }
 impl std::error::Error for ListLexiconsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -458,6 +503,18 @@ impl ListSpeechSynthesisTasksError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_next_token_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSpeechSynthesisTasksErrorKind::InvalidNextTokenError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSpeechSynthesisTasksErrorKind::ServiceFailureError(_)
+        )
     }
 }
 impl std::error::Error for ListSpeechSynthesisTasksError {
@@ -546,6 +603,39 @@ impl PutLexiconError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_lexicon_error(&self) -> bool {
+        matches!(&self.kind, PutLexiconErrorKind::InvalidLexiconError(_))
+    }
+    pub fn is_lexicon_size_exceeded_error(&self) -> bool {
+        matches!(&self.kind, PutLexiconErrorKind::LexiconSizeExceededError(_))
+    }
+    pub fn is_max_lexeme_length_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutLexiconErrorKind::MaxLexemeLengthExceededError(_)
+        )
+    }
+    pub fn is_max_lexicons_number_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutLexiconErrorKind::MaxLexiconsNumberExceededError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(&self.kind, PutLexiconErrorKind::ServiceFailureError(_))
+    }
+    pub fn is_unsupported_pls_alphabet_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutLexiconErrorKind::UnsupportedPlsAlphabetError(_)
+        )
+    }
+    pub fn is_unsupported_pls_language_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutLexiconErrorKind::UnsupportedPlsLanguageError(_)
+        )
     }
 }
 impl std::error::Error for PutLexiconError {
@@ -653,6 +743,78 @@ impl StartSpeechSynthesisTaskError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_engine_not_supported_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSpeechSynthesisTaskErrorKind::EngineNotSupportedError(_)
+        )
+    }
+    pub fn is_invalid_s3_bucket_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSpeechSynthesisTaskErrorKind::InvalidS3BucketError(_)
+        )
+    }
+    pub fn is_invalid_s3_key_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSpeechSynthesisTaskErrorKind::InvalidS3KeyError(_)
+        )
+    }
+    pub fn is_invalid_sample_rate_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSpeechSynthesisTaskErrorKind::InvalidSampleRateError(_)
+        )
+    }
+    pub fn is_invalid_sns_topic_arn_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnError(_)
+        )
+    }
+    pub fn is_invalid_ssml_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSpeechSynthesisTaskErrorKind::InvalidSsmlError(_)
+        )
+    }
+    pub fn is_language_not_supported_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedError(_)
+        )
+    }
+    pub fn is_lexicon_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSpeechSynthesisTaskErrorKind::LexiconNotFoundError(_)
+        )
+    }
+    pub fn is_marks_not_supported_for_format_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSpeechSynthesisTaskErrorKind::ServiceFailureError(_)
+        )
+    }
+    pub fn is_ssml_marks_not_supported_for_text_type_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeError(_)
+        )
+    }
+    pub fn is_text_length_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSpeechSynthesisTaskErrorKind::TextLengthExceededError(_)
+        )
     }
 }
 impl std::error::Error for StartSpeechSynthesisTaskError {
@@ -762,6 +924,57 @@ impl SynthesizeSpeechError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_engine_not_supported_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SynthesizeSpeechErrorKind::EngineNotSupportedError(_)
+        )
+    }
+    pub fn is_invalid_sample_rate_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SynthesizeSpeechErrorKind::InvalidSampleRateError(_)
+        )
+    }
+    pub fn is_invalid_ssml_error(&self) -> bool {
+        matches!(&self.kind, SynthesizeSpeechErrorKind::InvalidSsmlError(_))
+    }
+    pub fn is_language_not_supported_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SynthesizeSpeechErrorKind::LanguageNotSupportedError(_)
+        )
+    }
+    pub fn is_lexicon_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SynthesizeSpeechErrorKind::LexiconNotFoundError(_)
+        )
+    }
+    pub fn is_marks_not_supported_for_format_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SynthesizeSpeechErrorKind::MarksNotSupportedForFormatError(_)
+        )
+    }
+    pub fn is_service_failure_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SynthesizeSpeechErrorKind::ServiceFailureError(_)
+        )
+    }
+    pub fn is_ssml_marks_not_supported_for_text_type_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeError(_)
+        )
+    }
+    pub fn is_text_length_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SynthesizeSpeechErrorKind::TextLengthExceededError(_)
+        )
+    }
 }
 impl std::error::Error for SynthesizeSpeechError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -826,12 +1039,12 @@ pub mod text_length_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TextLengthExceededError`](crate::error::TextLengthExceededError)
@@ -891,12 +1104,12 @@ pub mod ssml_marks_not_supported_for_text_type_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`SsmlMarksNotSupportedForTextTypeError`](crate::error::SsmlMarksNotSupportedForTextTypeError)
@@ -953,12 +1166,12 @@ pub mod service_failure_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceFailureError`](crate::error::ServiceFailureError)
@@ -1019,12 +1232,12 @@ pub mod marks_not_supported_for_format_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`MarksNotSupportedForFormatError`](crate::error::MarksNotSupportedForFormatError)
@@ -1085,12 +1298,12 @@ pub mod lexicon_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`LexiconNotFoundError`](crate::error::LexiconNotFoundError)
@@ -1150,12 +1363,12 @@ pub mod language_not_supported_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`LanguageNotSupportedError`](crate::error::LanguageNotSupportedError)
@@ -1213,12 +1426,12 @@ pub mod invalid_ssml_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidSsmlError`](crate::error::InvalidSsmlError)
@@ -1275,12 +1488,12 @@ pub mod invalid_sample_rate_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidSampleRateError`](crate::error::InvalidSampleRateError)
@@ -1338,12 +1551,12 @@ pub mod engine_not_supported_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`EngineNotSupportedError`](crate::error::EngineNotSupportedError)
@@ -1401,12 +1614,12 @@ pub mod invalid_sns_topic_arn_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidSnsTopicArnError`](crate::error::InvalidSnsTopicArnError)
@@ -1464,12 +1677,12 @@ pub mod invalid_s3_key_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidS3KeyError`](crate::error::InvalidS3KeyError)
@@ -1527,12 +1740,12 @@ pub mod invalid_s3_bucket_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidS3BucketError`](crate::error::InvalidS3BucketError)
@@ -1594,12 +1807,12 @@ pub mod unsupported_pls_language_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UnsupportedPlsLanguageError`](crate::error::UnsupportedPlsLanguageError)
@@ -1660,12 +1873,12 @@ pub mod unsupported_pls_alphabet_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UnsupportedPlsAlphabetError`](crate::error::UnsupportedPlsAlphabetError)
@@ -1725,12 +1938,12 @@ pub mod max_lexicons_number_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`MaxLexiconsNumberExceededError`](crate::error::MaxLexiconsNumberExceededError)
@@ -1790,12 +2003,12 @@ pub mod max_lexeme_length_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`MaxLexemeLengthExceededError`](crate::error::MaxLexemeLengthExceededError)
@@ -1853,12 +2066,12 @@ pub mod lexicon_size_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`LexiconSizeExceededError`](crate::error::LexiconSizeExceededError)
@@ -1916,12 +2129,12 @@ pub mod invalid_lexicon_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidLexiconError`](crate::error::InvalidLexiconError)
@@ -1979,12 +2192,12 @@ pub mod invalid_next_token_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidNextTokenError`](crate::error::InvalidNextTokenError)
@@ -2044,12 +2257,12 @@ pub mod synthesis_task_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`SynthesisTaskNotFoundError`](crate::error::SynthesisTaskNotFoundError)
@@ -2106,12 +2319,12 @@ pub mod invalid_task_id_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidTaskIdError`](crate::error::InvalidTaskIdError)

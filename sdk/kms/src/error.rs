@@ -72,6 +72,27 @@ impl CancelKeyDeletionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelKeyDeletionErrorKind::DependencyTimeoutError(_)
+        )
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, CancelKeyDeletionErrorKind::InvalidArnError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, CancelKeyDeletionErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CancelKeyDeletionErrorKind::KMSInvalidStateError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CancelKeyDeletionErrorKind::NotFoundError(_))
+    }
 }
 impl std::error::Error for CancelKeyDeletionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -165,6 +186,36 @@ impl ConnectCustomKeyStoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_cloud_hsm_cluster_invalid_configuration_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationError(_)
+        )
+    }
+    pub fn is_cloud_hsm_cluster_not_active_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveError(_)
+        )
+    }
+    pub fn is_custom_key_store_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateError(_)
+        )
+    }
+    pub fn is_custom_key_store_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundError(_)
+        )
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConnectCustomKeyStoreErrorKind::KMSInternalError(_)
+        )
+    }
 }
 impl std::error::Error for ConnectCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -257,6 +308,27 @@ impl CreateAliasError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_already_exists_error(&self) -> bool {
+        matches!(&self.kind, CreateAliasErrorKind::AlreadyExistsError(_))
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, CreateAliasErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_invalid_alias_name_error(&self) -> bool {
+        matches!(&self.kind, CreateAliasErrorKind::InvalidAliasNameError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, CreateAliasErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, CreateAliasErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateAliasErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateAliasErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for CreateAliasError {
@@ -355,6 +427,48 @@ impl CreateCustomKeyStoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_cloud_hsm_cluster_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseError(_)
+        )
+    }
+    pub fn is_cloud_hsm_cluster_invalid_configuration_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationError(_)
+        )
+    }
+    pub fn is_cloud_hsm_cluster_not_active_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveError(_)
+        )
+    }
+    pub fn is_cloud_hsm_cluster_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundError(_)
+        )
+    }
+    pub fn is_custom_key_store_name_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseError(_)
+        )
+    }
+    pub fn is_incorrect_trust_anchor_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorError(_)
+        )
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCustomKeyStoreErrorKind::KMSInternalError(_)
+        )
+    }
 }
 impl std::error::Error for CreateCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -451,6 +565,30 @@ impl CreateGrantError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, CreateGrantErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_disabled_error(&self) -> bool {
+        matches!(&self.kind, CreateGrantErrorKind::DisabledError(_))
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, CreateGrantErrorKind::InvalidArnError(_))
+    }
+    pub fn is_invalid_grant_token_error(&self) -> bool {
+        matches!(&self.kind, CreateGrantErrorKind::InvalidGrantTokenError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, CreateGrantErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, CreateGrantErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateGrantErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateGrantErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for CreateGrantError {
@@ -554,6 +692,48 @@ impl CreateKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_cloud_hsm_cluster_invalid_configuration_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationError(_)
+        )
+    }
+    pub fn is_custom_key_store_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateKeyErrorKind::CustomKeyStoreInvalidStateError(_)
+        )
+    }
+    pub fn is_custom_key_store_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateKeyErrorKind::CustomKeyStoreNotFoundError(_)
+        )
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, CreateKeyErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, CreateKeyErrorKind::InvalidArnError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, CreateKeyErrorKind::KMSInternalError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateKeyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateKeyErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_tag_error(&self) -> bool {
+        matches!(&self.kind, CreateKeyErrorKind::TagError(_))
+    }
+    pub fn is_unsupported_operation_error(&self) -> bool {
+        matches!(&self.kind, CreateKeyErrorKind::UnsupportedOperationError(_))
+    }
 }
 impl std::error::Error for CreateKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -656,6 +836,36 @@ impl DecryptError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_disabled_error(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::DisabledError(_))
+    }
+    pub fn is_incorrect_key_error(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::IncorrectKeyError(_))
+    }
+    pub fn is_invalid_ciphertext_error(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::InvalidCiphertextError(_))
+    }
+    pub fn is_invalid_grant_token_error(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::InvalidGrantTokenError(_))
+    }
+    pub fn is_invalid_key_usage_error(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::InvalidKeyUsageError(_))
+    }
+    pub fn is_key_unavailable_error(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::KeyUnavailableError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DecryptErrorKind::NotFoundError(_))
+    }
 }
 impl std::error::Error for DecryptError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -746,6 +956,18 @@ impl DeleteAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, DeleteAliasErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, DeleteAliasErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, DeleteAliasErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteAliasErrorKind::NotFoundError(_))
+    }
 }
 impl std::error::Error for DeleteAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -829,6 +1051,30 @@ impl DeleteCustomKeyStoreError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_custom_key_store_has_cm_ks_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCMKsError(_)
+        )
+    }
+    pub fn is_custom_key_store_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateError(_)
+        )
+    }
+    pub fn is_custom_key_store_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundError(_)
+        )
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCustomKeyStoreErrorKind::KMSInternalError(_)
+        )
     }
 }
 impl std::error::Error for DeleteCustomKeyStoreError {
@@ -918,6 +1164,42 @@ impl DeleteImportedKeyMaterialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteImportedKeyMaterialErrorKind::DependencyTimeoutError(_)
+        )
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteImportedKeyMaterialErrorKind::InvalidArnError(_)
+        )
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteImportedKeyMaterialErrorKind::KMSInternalError(_)
+        )
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteImportedKeyMaterialErrorKind::KMSInvalidStateError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteImportedKeyMaterialErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_unsupported_operation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteImportedKeyMaterialErrorKind::UnsupportedOperationError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteImportedKeyMaterialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1000,6 +1282,18 @@ impl DescribeCustomKeyStoresError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_custom_key_store_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundError(_)
+        )
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeCustomKeyStoresErrorKind::KMSInternalError(_)
+        )
+    }
 }
 impl std::error::Error for DescribeCustomKeyStoresError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1081,6 +1375,18 @@ impl DescribeKeyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, DescribeKeyErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, DescribeKeyErrorKind::InvalidArnError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, DescribeKeyErrorKind::KMSInternalError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DescribeKeyErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for DescribeKeyError {
@@ -1167,6 +1473,21 @@ impl DisableKeyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, DisableKeyErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, DisableKeyErrorKind::InvalidArnError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, DisableKeyErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, DisableKeyErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DisableKeyErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for DisableKeyError {
@@ -1259,6 +1580,36 @@ impl DisableKeyRotationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableKeyRotationErrorKind::DependencyTimeoutError(_)
+        )
+    }
+    pub fn is_disabled_error(&self) -> bool {
+        matches!(&self.kind, DisableKeyRotationErrorKind::DisabledError(_))
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, DisableKeyRotationErrorKind::InvalidArnError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, DisableKeyRotationErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableKeyRotationErrorKind::KMSInvalidStateError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DisableKeyRotationErrorKind::NotFoundError(_))
+    }
+    pub fn is_unsupported_operation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisableKeyRotationErrorKind::UnsupportedOperationError(_)
+        )
+    }
 }
 impl std::error::Error for DisableKeyRotationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1345,6 +1696,24 @@ impl DisconnectCustomKeyStoreError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_custom_key_store_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateError(_)
+        )
+    }
+    pub fn is_custom_key_store_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundError(_)
+        )
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisconnectCustomKeyStoreErrorKind::KMSInternalError(_)
+        )
     }
 }
 impl std::error::Error for DisconnectCustomKeyStoreError {
@@ -1434,6 +1803,24 @@ impl EnableKeyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, EnableKeyErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, EnableKeyErrorKind::InvalidArnError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, EnableKeyErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, EnableKeyErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, EnableKeyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, EnableKeyErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for EnableKeyError {
@@ -1526,6 +1913,36 @@ impl EnableKeyRotationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableKeyRotationErrorKind::DependencyTimeoutError(_)
+        )
+    }
+    pub fn is_disabled_error(&self) -> bool {
+        matches!(&self.kind, EnableKeyRotationErrorKind::DisabledError(_))
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, EnableKeyRotationErrorKind::InvalidArnError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, EnableKeyRotationErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableKeyRotationErrorKind::KMSInvalidStateError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, EnableKeyRotationErrorKind::NotFoundError(_))
+    }
+    pub fn is_unsupported_operation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            EnableKeyRotationErrorKind::UnsupportedOperationError(_)
+        )
     }
 }
 impl std::error::Error for EnableKeyRotationError {
@@ -1622,6 +2039,30 @@ impl EncryptError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, EncryptErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_disabled_error(&self) -> bool {
+        matches!(&self.kind, EncryptErrorKind::DisabledError(_))
+    }
+    pub fn is_invalid_grant_token_error(&self) -> bool {
+        matches!(&self.kind, EncryptErrorKind::InvalidGrantTokenError(_))
+    }
+    pub fn is_invalid_key_usage_error(&self) -> bool {
+        matches!(&self.kind, EncryptErrorKind::InvalidKeyUsageError(_))
+    }
+    pub fn is_key_unavailable_error(&self) -> bool {
+        matches!(&self.kind, EncryptErrorKind::KeyUnavailableError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, EncryptErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, EncryptErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, EncryptErrorKind::NotFoundError(_))
+    }
 }
 impl std::error::Error for EncryptError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1717,6 +2158,42 @@ impl GenerateDataKeyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyErrorKind::DependencyTimeoutError(_)
+        )
+    }
+    pub fn is_disabled_error(&self) -> bool {
+        matches!(&self.kind, GenerateDataKeyErrorKind::DisabledError(_))
+    }
+    pub fn is_invalid_grant_token_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyErrorKind::InvalidGrantTokenError(_)
+        )
+    }
+    pub fn is_invalid_key_usage_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyErrorKind::InvalidKeyUsageError(_)
+        )
+    }
+    pub fn is_key_unavailable_error(&self) -> bool {
+        matches!(&self.kind, GenerateDataKeyErrorKind::KeyUnavailableError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, GenerateDataKeyErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyErrorKind::KMSInvalidStateError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GenerateDataKeyErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for GenerateDataKeyError {
@@ -1815,6 +2292,54 @@ impl GenerateDataKeyPairError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairErrorKind::DependencyTimeoutError(_)
+        )
+    }
+    pub fn is_disabled_error(&self) -> bool {
+        matches!(&self.kind, GenerateDataKeyPairErrorKind::DisabledError(_))
+    }
+    pub fn is_invalid_grant_token_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairErrorKind::InvalidGrantTokenError(_)
+        )
+    }
+    pub fn is_invalid_key_usage_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairErrorKind::InvalidKeyUsageError(_)
+        )
+    }
+    pub fn is_key_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairErrorKind::KeyUnavailableError(_)
+        )
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairErrorKind::KMSInternalError(_)
+        )
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairErrorKind::KMSInvalidStateError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GenerateDataKeyPairErrorKind::NotFoundError(_))
+    }
+    pub fn is_unsupported_operation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairErrorKind::UnsupportedOperationError(_)
+        )
     }
 }
 impl std::error::Error for GenerateDataKeyPairError {
@@ -1929,6 +2454,60 @@ impl GenerateDataKeyPairWithoutPlaintextError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutError(_)
+        )
+    }
+    pub fn is_disabled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledError(_)
+        )
+    }
+    pub fn is_invalid_grant_token_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenError(_)
+        )
+    }
+    pub fn is_invalid_key_usage_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageError(_)
+        )
+    }
+    pub fn is_key_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableError(_)
+        )
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KMSInternalError(_)
+        )
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KMSInvalidStateError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_unsupported_operation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationError(_)
+        )
     }
 }
 impl std::error::Error for GenerateDataKeyPairWithoutPlaintextError {
@@ -2045,6 +2624,54 @@ impl GenerateDataKeyWithoutPlaintextError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutError(_)
+        )
+    }
+    pub fn is_disabled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyWithoutPlaintextErrorKind::DisabledError(_)
+        )
+    }
+    pub fn is_invalid_grant_token_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenError(_)
+        )
+    }
+    pub fn is_invalid_key_usage_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageError(_)
+        )
+    }
+    pub fn is_key_unavailable_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableError(_)
+        )
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyWithoutPlaintextErrorKind::KMSInternalError(_)
+        )
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyWithoutPlaintextErrorKind::KMSInvalidStateError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateDataKeyWithoutPlaintextErrorKind::NotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for GenerateDataKeyWithoutPlaintextError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2137,6 +2764,27 @@ impl GenerateRandomError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_custom_key_store_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateRandomErrorKind::CustomKeyStoreInvalidStateError(_)
+        )
+    }
+    pub fn is_custom_key_store_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateRandomErrorKind::CustomKeyStoreNotFoundError(_)
+        )
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateRandomErrorKind::DependencyTimeoutError(_)
+        )
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, GenerateRandomErrorKind::KMSInternalError(_))
+    }
 }
 impl std::error::Error for GenerateRandomError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2222,6 +2870,21 @@ impl GetKeyPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, GetKeyPolicyErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, GetKeyPolicyErrorKind::InvalidArnError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, GetKeyPolicyErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, GetKeyPolicyErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetKeyPolicyErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for GetKeyPolicyError {
@@ -2312,6 +2975,39 @@ impl GetKeyRotationStatusError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetKeyRotationStatusErrorKind::DependencyTimeoutError(_)
+        )
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetKeyRotationStatusErrorKind::InvalidArnError(_)
+        )
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetKeyRotationStatusErrorKind::KMSInternalError(_)
+        )
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetKeyRotationStatusErrorKind::KMSInvalidStateError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetKeyRotationStatusErrorKind::NotFoundError(_))
+    }
+    pub fn is_unsupported_operation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetKeyRotationStatusErrorKind::UnsupportedOperationError(_)
+        )
+    }
 }
 impl std::error::Error for GetKeyRotationStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2401,6 +3097,42 @@ impl GetParametersForImportError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetParametersForImportErrorKind::DependencyTimeoutError(_)
+        )
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetParametersForImportErrorKind::InvalidArnError(_)
+        )
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetParametersForImportErrorKind::KMSInternalError(_)
+        )
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetParametersForImportErrorKind::KMSInvalidStateError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetParametersForImportErrorKind::NotFoundError(_)
+        )
+    }
+    pub fn is_unsupported_operation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetParametersForImportErrorKind::UnsupportedOperationError(_)
+        )
     }
 }
 impl std::error::Error for GetParametersForImportError {
@@ -2499,6 +3231,39 @@ impl GetPublicKeyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, GetPublicKeyErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_disabled_error(&self) -> bool {
+        matches!(&self.kind, GetPublicKeyErrorKind::DisabledError(_))
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, GetPublicKeyErrorKind::InvalidArnError(_))
+    }
+    pub fn is_invalid_grant_token_error(&self) -> bool {
+        matches!(&self.kind, GetPublicKeyErrorKind::InvalidGrantTokenError(_))
+    }
+    pub fn is_invalid_key_usage_error(&self) -> bool {
+        matches!(&self.kind, GetPublicKeyErrorKind::InvalidKeyUsageError(_))
+    }
+    pub fn is_key_unavailable_error(&self) -> bool {
+        matches!(&self.kind, GetPublicKeyErrorKind::KeyUnavailableError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, GetPublicKeyErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, GetPublicKeyErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetPublicKeyErrorKind::NotFoundError(_))
+    }
+    pub fn is_unsupported_operation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPublicKeyErrorKind::UnsupportedOperationError(_)
+        )
     }
 }
 impl std::error::Error for GetPublicKeyError {
@@ -2602,6 +3367,57 @@ impl ImportKeyMaterialError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportKeyMaterialErrorKind::DependencyTimeoutError(_)
+        )
+    }
+    pub fn is_expired_import_token_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportKeyMaterialErrorKind::ExpiredImportTokenError(_)
+        )
+    }
+    pub fn is_incorrect_key_material_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportKeyMaterialErrorKind::IncorrectKeyMaterialError(_)
+        )
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, ImportKeyMaterialErrorKind::InvalidArnError(_))
+    }
+    pub fn is_invalid_ciphertext_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportKeyMaterialErrorKind::InvalidCiphertextError(_)
+        )
+    }
+    pub fn is_invalid_import_token_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportKeyMaterialErrorKind::InvalidImportTokenError(_)
+        )
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, ImportKeyMaterialErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportKeyMaterialErrorKind::KMSInvalidStateError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ImportKeyMaterialErrorKind::NotFoundError(_))
+    }
+    pub fn is_unsupported_operation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportKeyMaterialErrorKind::UnsupportedOperationError(_)
+        )
+    }
 }
 impl std::error::Error for ImportKeyMaterialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2694,6 +3510,21 @@ impl ListAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, ListAliasesErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, ListAliasesErrorKind::InvalidArnError(_))
+    }
+    pub fn is_invalid_marker_error(&self) -> bool {
+        matches!(&self.kind, ListAliasesErrorKind::InvalidMarkerError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, ListAliasesErrorKind::KMSInternalError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListAliasesErrorKind::NotFoundError(_))
+    }
 }
 impl std::error::Error for ListAliasesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2785,6 +3616,27 @@ impl ListGrantsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, ListGrantsErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, ListGrantsErrorKind::InvalidArnError(_))
+    }
+    pub fn is_invalid_grant_id_error(&self) -> bool {
+        matches!(&self.kind, ListGrantsErrorKind::InvalidGrantIdError(_))
+    }
+    pub fn is_invalid_marker_error(&self) -> bool {
+        matches!(&self.kind, ListGrantsErrorKind::InvalidMarkerError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, ListGrantsErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, ListGrantsErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListGrantsErrorKind::NotFoundError(_))
+    }
 }
 impl std::error::Error for ListGrantsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2874,6 +3726,27 @@ impl ListKeyPoliciesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListKeyPoliciesErrorKind::DependencyTimeoutError(_)
+        )
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, ListKeyPoliciesErrorKind::InvalidArnError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, ListKeyPoliciesErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListKeyPoliciesErrorKind::KMSInvalidStateError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListKeyPoliciesErrorKind::NotFoundError(_))
+    }
 }
 impl std::error::Error for ListKeyPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2957,6 +3830,15 @@ impl ListKeysError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, ListKeysErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_invalid_marker_error(&self) -> bool {
+        matches!(&self.kind, ListKeysErrorKind::InvalidMarkerError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, ListKeysErrorKind::KMSInternalError(_))
+    }
 }
 impl std::error::Error for ListKeysError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3039,6 +3921,18 @@ impl ListResourceTagsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, ListResourceTagsErrorKind::InvalidArnError(_))
+    }
+    pub fn is_invalid_marker_error(&self) -> bool {
+        matches!(&self.kind, ListResourceTagsErrorKind::InvalidMarkerError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, ListResourceTagsErrorKind::KMSInternalError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListResourceTagsErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for ListResourceTagsError {
@@ -3125,6 +4019,30 @@ impl ListRetirableGrantsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRetirableGrantsErrorKind::DependencyTimeoutError(_)
+        )
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, ListRetirableGrantsErrorKind::InvalidArnError(_))
+    }
+    pub fn is_invalid_marker_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRetirableGrantsErrorKind::InvalidMarkerError(_)
+        )
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListRetirableGrantsErrorKind::KMSInternalError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListRetirableGrantsErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for ListRetirableGrantsError {
@@ -3218,6 +4136,36 @@ impl PutKeyPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, PutKeyPolicyErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, PutKeyPolicyErrorKind::InvalidArnError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, PutKeyPolicyErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, PutKeyPolicyErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, PutKeyPolicyErrorKind::LimitExceededError(_))
+    }
+    pub fn is_malformed_policy_document_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutKeyPolicyErrorKind::MalformedPolicyDocumentError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, PutKeyPolicyErrorKind::NotFoundError(_))
+    }
+    pub fn is_unsupported_operation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutKeyPolicyErrorKind::UnsupportedOperationError(_)
+        )
     }
 }
 impl std::error::Error for PutKeyPolicyError {
@@ -3319,6 +4267,36 @@ impl ReEncryptError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_disabled_error(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::DisabledError(_))
+    }
+    pub fn is_incorrect_key_error(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::IncorrectKeyError(_))
+    }
+    pub fn is_invalid_ciphertext_error(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::InvalidCiphertextError(_))
+    }
+    pub fn is_invalid_grant_token_error(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::InvalidGrantTokenError(_))
+    }
+    pub fn is_invalid_key_usage_error(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::InvalidKeyUsageError(_))
+    }
+    pub fn is_key_unavailable_error(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::KeyUnavailableError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ReEncryptErrorKind::NotFoundError(_))
+    }
 }
 impl std::error::Error for ReEncryptError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3415,6 +4393,27 @@ impl RetireGrantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, RetireGrantErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, RetireGrantErrorKind::InvalidArnError(_))
+    }
+    pub fn is_invalid_grant_id_error(&self) -> bool {
+        matches!(&self.kind, RetireGrantErrorKind::InvalidGrantIdError(_))
+    }
+    pub fn is_invalid_grant_token_error(&self) -> bool {
+        matches!(&self.kind, RetireGrantErrorKind::InvalidGrantTokenError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, RetireGrantErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, RetireGrantErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, RetireGrantErrorKind::NotFoundError(_))
+    }
 }
 impl std::error::Error for RetireGrantError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3506,6 +4505,24 @@ impl RevokeGrantError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, RevokeGrantErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, RevokeGrantErrorKind::InvalidArnError(_))
+    }
+    pub fn is_invalid_grant_id_error(&self) -> bool {
+        matches!(&self.kind, RevokeGrantErrorKind::InvalidGrantIdError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, RevokeGrantErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, RevokeGrantErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, RevokeGrantErrorKind::NotFoundError(_))
+    }
 }
 impl std::error::Error for RevokeGrantError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3593,6 +4610,30 @@ impl ScheduleKeyDeletionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ScheduleKeyDeletionErrorKind::DependencyTimeoutError(_)
+        )
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, ScheduleKeyDeletionErrorKind::InvalidArnError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ScheduleKeyDeletionErrorKind::KMSInternalError(_)
+        )
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ScheduleKeyDeletionErrorKind::KMSInvalidStateError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ScheduleKeyDeletionErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for ScheduleKeyDeletionError {
@@ -3687,6 +4728,30 @@ impl SignError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, SignErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_disabled_error(&self) -> bool {
+        matches!(&self.kind, SignErrorKind::DisabledError(_))
+    }
+    pub fn is_invalid_grant_token_error(&self) -> bool {
+        matches!(&self.kind, SignErrorKind::InvalidGrantTokenError(_))
+    }
+    pub fn is_invalid_key_usage_error(&self) -> bool {
+        matches!(&self.kind, SignErrorKind::InvalidKeyUsageError(_))
+    }
+    pub fn is_key_unavailable_error(&self) -> bool {
+        matches!(&self.kind, SignErrorKind::KeyUnavailableError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, SignErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, SignErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, SignErrorKind::NotFoundError(_))
+    }
 }
 impl std::error::Error for SignError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3779,6 +4844,24 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InvalidArnError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::NotFoundError(_))
+    }
+    pub fn is_tag_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::TagError(_))
+    }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3867,6 +4950,21 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::InvalidArnError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::NotFoundError(_))
+    }
+    pub fn is_tag_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::TagError(_))
+    }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3953,6 +5051,21 @@ impl UpdateAliasError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, UpdateAliasErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, UpdateAliasErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, UpdateAliasErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, UpdateAliasErrorKind::LimitExceededError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateAliasErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for UpdateAliasError {
@@ -4051,6 +5164,54 @@ impl UpdateCustomKeyStoreError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_cloud_hsm_cluster_invalid_configuration_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationError(_)
+        )
+    }
+    pub fn is_cloud_hsm_cluster_not_active_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveError(_)
+        )
+    }
+    pub fn is_cloud_hsm_cluster_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundError(_)
+        )
+    }
+    pub fn is_cloud_hsm_cluster_not_related_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedError(_)
+        )
+    }
+    pub fn is_custom_key_store_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateError(_)
+        )
+    }
+    pub fn is_custom_key_store_name_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseError(_)
+        )
+    }
+    pub fn is_custom_key_store_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundError(_)
+        )
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCustomKeyStoreErrorKind::KMSInternalError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4142,6 +5303,33 @@ impl UpdateKeyDescriptionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateKeyDescriptionErrorKind::DependencyTimeoutError(_)
+        )
+    }
+    pub fn is_invalid_arn_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateKeyDescriptionErrorKind::InvalidArnError(_)
+        )
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateKeyDescriptionErrorKind::KMSInternalError(_)
+        )
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateKeyDescriptionErrorKind::KMSInvalidStateError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateKeyDescriptionErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for UpdateKeyDescriptionError {
@@ -4238,6 +5426,33 @@ impl VerifyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_dependency_timeout_error(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::DependencyTimeoutError(_))
+    }
+    pub fn is_disabled_error(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::DisabledError(_))
+    }
+    pub fn is_invalid_grant_token_error(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::InvalidGrantTokenError(_))
+    }
+    pub fn is_invalid_key_usage_error(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::InvalidKeyUsageError(_))
+    }
+    pub fn is_key_unavailable_error(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::KeyUnavailableError(_))
+    }
+    pub fn is_kms_internal_error(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::KMSInternalError(_))
+    }
+    pub fn is_kms_invalid_signature_error(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::KMSInvalidSignatureError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, VerifyErrorKind::NotFoundError(_))
+    }
 }
 impl std::error::Error for VerifyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4296,12 +5511,12 @@ pub mod not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NotFoundError`](crate::error::NotFoundError)
@@ -4363,12 +5578,12 @@ pub mod kms_invalid_state_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
@@ -4427,12 +5642,12 @@ pub mod kms_invalid_signature_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSInvalidSignatureError`](crate::error::KMSInvalidSignatureError)
@@ -4490,12 +5705,12 @@ pub mod kms_internal_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSInternalError`](crate::error::KMSInternalError)
@@ -4553,12 +5768,12 @@ pub mod key_unavailable_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KeyUnavailableError`](crate::error::KeyUnavailableError)
@@ -4631,12 +5846,12 @@ pub mod invalid_key_usage_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidKeyUsageError`](crate::error::InvalidKeyUsageError)
@@ -4693,12 +5908,12 @@ pub mod invalid_grant_token_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidGrantTokenError`](crate::error::InvalidGrantTokenError)
@@ -4755,12 +5970,12 @@ pub mod disabled_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DisabledError`](crate::error::DisabledError)
@@ -4818,12 +6033,12 @@ pub mod dependency_timeout_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`DependencyTimeoutError`](crate::error::DependencyTimeoutError)
@@ -4881,12 +6096,12 @@ pub mod invalid_arn_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidArnError`](crate::error::InvalidArnError)
@@ -4947,12 +6162,12 @@ pub mod custom_key_store_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CustomKeyStoreNotFoundError`](crate::error::CustomKeyStoreNotFoundError)
@@ -5014,12 +6229,12 @@ pub mod custom_key_store_name_in_use_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CustomKeyStoreNameInUseError`](crate::error::CustomKeyStoreNameInUseError)
@@ -5099,12 +6314,12 @@ pub mod custom_key_store_invalid_state_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CustomKeyStoreInvalidStateError`](crate::error::CustomKeyStoreInvalidStateError)
@@ -5171,12 +6386,12 @@ pub mod cloud_hsm_cluster_not_related_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CloudHsmClusterNotRelatedError`](crate::error::CloudHsmClusterNotRelatedError)
@@ -5237,12 +6452,12 @@ pub mod cloud_hsm_cluster_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CloudHsmClusterNotFoundError`](crate::error::CloudHsmClusterNotFoundError)
@@ -5304,12 +6519,12 @@ pub mod cloud_hsm_cluster_not_active_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CloudHsmClusterNotActiveError`](crate::error::CloudHsmClusterNotActiveError)
@@ -5397,12 +6612,12 @@ pub mod cloud_hsm_cluster_invalid_configuration_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CloudHsmClusterInvalidConfigurationError`](crate::error::CloudHsmClusterInvalidConfigurationError)
@@ -5460,12 +6675,12 @@ pub mod limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`LimitExceededError`](crate::error::LimitExceededError)
@@ -5522,12 +6737,12 @@ pub mod tag_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TagError`](crate::error::TagError)
@@ -5584,12 +6799,12 @@ pub mod invalid_grant_id_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidGrantIdError`](crate::error::InvalidGrantIdError)
@@ -5651,12 +6866,12 @@ pub mod invalid_ciphertext_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidCiphertextError`](crate::error::InvalidCiphertextError)
@@ -5716,12 +6931,12 @@ pub mod incorrect_key_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`IncorrectKeyError`](crate::error::IncorrectKeyError)
@@ -5782,12 +6997,12 @@ pub mod unsupported_operation_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UnsupportedOperationError`](crate::error::UnsupportedOperationError)
@@ -5848,12 +7063,12 @@ pub mod malformed_policy_document_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`MalformedPolicyDocumentError`](crate::error::MalformedPolicyDocumentError)
@@ -5911,12 +7126,12 @@ pub mod invalid_marker_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidMarkerError`](crate::error::InvalidMarkerError)
@@ -5974,12 +7189,12 @@ pub mod invalid_import_token_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidImportTokenError`](crate::error::InvalidImportTokenError)
@@ -6041,12 +7256,12 @@ pub mod incorrect_key_material_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`IncorrectKeyMaterialError`](crate::error::IncorrectKeyMaterialError)
@@ -6104,12 +7319,12 @@ pub mod expired_import_token_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ExpiredImportTokenError`](crate::error::ExpiredImportTokenError)
@@ -6171,12 +7386,12 @@ pub mod custom_key_store_has_cm_ks_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CustomKeyStoreHasCMKsError`](crate::error::CustomKeyStoreHasCMKsError)
@@ -6239,12 +7454,12 @@ pub mod incorrect_trust_anchor_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`IncorrectTrustAnchorError`](crate::error::IncorrectTrustAnchorError)
@@ -6308,12 +7523,12 @@ pub mod cloud_hsm_cluster_in_use_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CloudHsmClusterInUseError`](crate::error::CloudHsmClusterInUseError)
@@ -6370,12 +7585,12 @@ pub mod invalid_alias_name_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidAliasNameError`](crate::error::InvalidAliasNameError)
@@ -6433,12 +7648,12 @@ pub mod already_exists_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AlreadyExistsError`](crate::error::AlreadyExistsError)

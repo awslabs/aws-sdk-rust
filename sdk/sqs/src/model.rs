@@ -154,39 +154,39 @@ pub mod batch_result_error_entry {
     }
     impl Builder {
         /// <p>The <code>Id</code> of an entry in a batch request.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
-        pub fn sender_fault(mut self, inp: bool) -> Self {
-            self.sender_fault = Some(inp);
+        pub fn sender_fault(mut self, input: bool) -> Self {
+            self.sender_fault = Some(input);
             self
         }
-        pub fn set_sender_fault(mut self, inp: bool) -> Self {
-            self.sender_fault = Some(inp);
+        pub fn set_sender_fault(mut self, input: std::option::Option<bool>) -> Self {
+            self.sender_fault = input;
             self
         }
         /// <p>An error code representing why the action failed on this entry.</p>
-        pub fn code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.code = Some(inp.into());
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
             self
         }
-        pub fn set_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.code = inp;
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
             self
         }
         /// <p>A message explaining why the action failed on this entry.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchResultErrorEntry`](crate::model::BatchResultErrorEntry)
@@ -258,74 +258,74 @@ pub mod send_message_batch_result_entry {
     }
     impl Builder {
         /// <p>An identifier for the message in this batch.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>An identifier for the message.</p>
-        pub fn message_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message_id = Some(inp.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_id = Some(input.into());
             self
         }
-        pub fn set_message_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message_id = inp;
+        pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_id = input;
             self
         }
         /// <p>An MD5 digest of the non-URL-encoded message body string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
-        pub fn md5_of_message_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.md5_of_message_body = Some(inp.into());
+        pub fn md5_of_message_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.md5_of_message_body = Some(input.into());
             self
         }
         pub fn set_md5_of_message_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.md5_of_message_body = inp;
+            self.md5_of_message_body = input;
             self
         }
         /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
-        pub fn md5_of_message_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.md5_of_message_attributes = Some(inp.into());
+        pub fn md5_of_message_attributes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.md5_of_message_attributes = Some(input.into());
             self
         }
         pub fn set_md5_of_message_attributes(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.md5_of_message_attributes = inp;
+            self.md5_of_message_attributes = input;
             self
         }
         /// <p>An MD5 digest of the non-URL-encoded message system attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
         pub fn md5_of_message_system_attributes(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.md5_of_message_system_attributes = Some(inp.into());
+            self.md5_of_message_system_attributes = Some(input.into());
             self
         }
         pub fn set_md5_of_message_system_attributes(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.md5_of_message_system_attributes = inp;
+            self.md5_of_message_system_attributes = input;
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
         /// <p>The large, non-consecutive number that Amazon SQS assigns to each message.</p>
         /// <p>The length of <code>SequenceNumber</code> is 128 bits. As <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
-        pub fn sequence_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sequence_number = Some(inp.into());
+        pub fn sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sequence_number = Some(input.into());
             self
         }
         pub fn set_sequence_number(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.sequence_number = inp;
+            self.sequence_number = input;
             self
         }
         /// Consumes the builder and constructs a [`SendMessageBatchResultEntry`](crate::model::SendMessageBatchResultEntry)
@@ -507,21 +507,21 @@ pub mod send_message_batch_request_entry {
         /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
         /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
         /// </note>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The body of the message.</p>
-        pub fn message_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message_body = Some(inp.into());
+        pub fn message_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_body = Some(input.into());
             self
         }
-        pub fn set_message_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message_body = inp;
+        pub fn set_message_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_body = input;
             self
         }
         /// <p>The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period is finished.
@@ -530,12 +530,12 @@ pub mod send_message_batch_request_entry {
         /// <note>
         /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
         /// </note>
-        pub fn delay_seconds(mut self, inp: i32) -> Self {
-            self.delay_seconds = Some(inp);
+        pub fn delay_seconds(mut self, input: i32) -> Self {
+            self.delay_seconds = Some(input);
             self
         }
-        pub fn set_delay_seconds(mut self, inp: i32) -> Self {
-            self.delay_seconds = Some(inp);
+        pub fn set_delay_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.delay_seconds = input;
             self
         }
         pub fn message_attributes(
@@ -550,11 +550,11 @@ pub mod send_message_batch_request_entry {
         }
         pub fn set_message_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
             >,
         ) -> Self {
-            self.message_attributes = inp;
+            self.message_attributes = input;
             self
         }
         pub fn message_system_attributes(
@@ -569,14 +569,14 @@ pub mod send_message_batch_request_entry {
         }
         pub fn set_message_system_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     crate::model::MessageSystemAttributeNameForSends,
                     crate::model::MessageSystemAttributeValue,
                 >,
             >,
         ) -> Self {
-            self.message_system_attributes = inp;
+            self.message_system_attributes = input;
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -627,15 +627,15 @@ pub mod send_message_batch_request_entry {
         /// <p>For best practices of using <code>MessageDeduplicationId</code>, see
         /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a>
         /// in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-        pub fn message_deduplication_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message_deduplication_id = Some(inp.into());
+        pub fn message_deduplication_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_deduplication_id = Some(input.into());
             self
         }
         pub fn set_message_deduplication_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.message_deduplication_id = inp;
+            self.message_deduplication_id = input;
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -664,15 +664,15 @@ pub mod send_message_batch_request_entry {
         /// <p>
         /// <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
         /// </important>
-        pub fn message_group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message_group_id = Some(inp.into());
+        pub fn message_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_group_id = Some(input.into());
             self
         }
         pub fn set_message_group_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.message_group_id = inp;
+            self.message_group_id = input;
             self
         }
         /// Consumes the builder and constructs a [`SendMessageBatchRequestEntry`](crate::model::SendMessageBatchRequestEntry)
@@ -741,57 +741,57 @@ pub mod message_system_attribute_value {
     }
     impl Builder {
         /// <p>Strings are Unicode with UTF-8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
-        pub fn string_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.string_value = Some(inp.into());
+        pub fn string_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.string_value = Some(input.into());
             self
         }
-        pub fn set_string_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.string_value = inp;
+        pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.string_value = input;
             self
         }
         /// <p>Binary type attributes can store any binary data, such as compressed data, encrypted data, or images.</p>
-        pub fn binary_value(mut self, inp: smithy_types::Blob) -> Self {
-            self.binary_value = Some(inp);
+        pub fn binary_value(mut self, input: smithy_types::Blob) -> Self {
+            self.binary_value = Some(input);
             self
         }
-        pub fn set_binary_value(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.binary_value = inp;
+        pub fn set_binary_value(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.binary_value = input;
             self
         }
-        pub fn string_list_values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn string_list_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.string_list_values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.string_list_values = Some(v);
             self
         }
         pub fn set_string_list_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.string_list_values = inp;
+            self.string_list_values = input;
             self
         }
-        pub fn binary_list_values(mut self, inp: impl Into<smithy_types::Blob>) -> Self {
+        pub fn binary_list_values(mut self, input: impl Into<smithy_types::Blob>) -> Self {
             let mut v = self.binary_list_values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.binary_list_values = Some(v);
             self
         }
         pub fn set_binary_list_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<smithy_types::Blob>>,
+            input: std::option::Option<std::vec::Vec<smithy_types::Blob>>,
         ) -> Self {
-            self.binary_list_values = inp;
+            self.binary_list_values = input;
             self
         }
         /// <p>Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
         /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-        pub fn data_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.data_type = Some(inp.into());
+        pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_type = Some(input.into());
             self
         }
-        pub fn set_data_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.data_type = inp;
+        pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_type = input;
             self
         }
         /// Consumes the builder and constructs a [`MessageSystemAttributeValue`](crate::model::MessageSystemAttributeValue)
@@ -911,57 +911,57 @@ pub mod message_attribute_value {
     }
     impl Builder {
         /// <p>Strings are Unicode with UTF-8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable Characters</a>.</p>
-        pub fn string_value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.string_value = Some(inp.into());
+        pub fn string_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.string_value = Some(input.into());
             self
         }
-        pub fn set_string_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.string_value = inp;
+        pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.string_value = input;
             self
         }
         /// <p>Binary type attributes can store any binary data, such as compressed data, encrypted data, or images.</p>
-        pub fn binary_value(mut self, inp: smithy_types::Blob) -> Self {
-            self.binary_value = Some(inp);
+        pub fn binary_value(mut self, input: smithy_types::Blob) -> Self {
+            self.binary_value = Some(input);
             self
         }
-        pub fn set_binary_value(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.binary_value = inp;
+        pub fn set_binary_value(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.binary_value = input;
             self
         }
-        pub fn string_list_values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn string_list_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.string_list_values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.string_list_values = Some(v);
             self
         }
         pub fn set_string_list_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.string_list_values = inp;
+            self.string_list_values = input;
             self
         }
-        pub fn binary_list_values(mut self, inp: impl Into<smithy_types::Blob>) -> Self {
+        pub fn binary_list_values(mut self, input: impl Into<smithy_types::Blob>) -> Self {
             let mut v = self.binary_list_values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.binary_list_values = Some(v);
             self
         }
         pub fn set_binary_list_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<smithy_types::Blob>>,
+            input: std::option::Option<std::vec::Vec<smithy_types::Blob>>,
         ) -> Self {
-            self.binary_list_values = inp;
+            self.binary_list_values = input;
             self
         }
         /// <p>Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>, and <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
         /// <p>You can also append custom labels. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-        pub fn data_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.data_type = Some(inp.into());
+        pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_type = Some(input.into());
             self
         }
-        pub fn set_data_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.data_type = inp;
+        pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_type = input;
             self
         }
         /// Consumes the builder and constructs a [`MessageAttributeValue`](crate::model::MessageAttributeValue)
@@ -1085,39 +1085,42 @@ pub mod message {
     }
     impl Builder {
         /// <p>A unique identifier for the message. A <code>MessageId</code>is considered unique across all AWS accounts for an extended period of time.</p>
-        pub fn message_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message_id = Some(inp.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message_id = Some(input.into());
             self
         }
-        pub fn set_message_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message_id = inp;
+        pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_id = input;
             self
         }
         /// <p>An identifier associated with the act of receiving the message. A new receipt handle is returned every time you receive a message. When deleting a message, you provide the last received receipt handle to delete the message.</p>
-        pub fn receipt_handle(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.receipt_handle = Some(inp.into());
+        pub fn receipt_handle(mut self, input: impl Into<std::string::String>) -> Self {
+            self.receipt_handle = Some(input.into());
             self
         }
-        pub fn set_receipt_handle(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.receipt_handle = inp;
+        pub fn set_receipt_handle(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.receipt_handle = input;
             self
         }
         /// <p>An MD5 digest of the non-URL-encoded message body string.</p>
-        pub fn md5_of_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.md5_of_body = Some(inp.into());
+        pub fn md5_of_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.md5_of_body = Some(input.into());
             self
         }
-        pub fn set_md5_of_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.md5_of_body = inp;
+        pub fn set_md5_of_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.md5_of_body = input;
             self
         }
         /// <p>The message's contents (not URL-encoded).</p>
-        pub fn body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.body = Some(inp.into());
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.body = Some(input.into());
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.body = inp;
+        pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.body = input;
             self
         }
         pub fn attributes(
@@ -1132,26 +1135,26 @@ pub mod message {
         }
         pub fn set_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     crate::model::MessageSystemAttributeName,
                     std::string::String,
                 >,
             >,
         ) -> Self {
-            self.attributes = inp;
+            self.attributes = input;
             self
         }
         /// <p>An MD5 digest of the non-URL-encoded message attribute string. You can use this attribute to verify that Amazon SQS received the message correctly. Amazon SQS URL-decodes the message before creating the MD5 digest. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.</p>
-        pub fn md5_of_message_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.md5_of_message_attributes = Some(inp.into());
+        pub fn md5_of_message_attributes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.md5_of_message_attributes = Some(input.into());
             self
         }
         pub fn set_md5_of_message_attributes(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.md5_of_message_attributes = inp;
+            self.md5_of_message_attributes = input;
             self
         }
         pub fn message_attributes(
@@ -1166,11 +1169,11 @@ pub mod message {
         }
         pub fn set_message_attributes(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<std::string::String, crate::model::MessageAttributeValue>,
             >,
         ) -> Self {
-            self.message_attributes = inp;
+            self.message_attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`Message`](crate::model::Message)
@@ -1298,12 +1301,12 @@ pub mod delete_message_batch_result_entry {
     }
     impl Builder {
         /// <p>Represents a successfully deleted message.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteMessageBatchResultEntry`](crate::model::DeleteMessageBatchResultEntry)
@@ -1355,21 +1358,24 @@ pub mod delete_message_batch_request_entry {
         /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
         /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
         /// </note>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>A receipt handle.</p>
-        pub fn receipt_handle(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.receipt_handle = Some(inp.into());
+        pub fn receipt_handle(mut self, input: impl Into<std::string::String>) -> Self {
+            self.receipt_handle = Some(input.into());
             self
         }
-        pub fn set_receipt_handle(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.receipt_handle = inp;
+        pub fn set_receipt_handle(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.receipt_handle = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteMessageBatchRequestEntry`](crate::model::DeleteMessageBatchRequestEntry)
@@ -1414,12 +1420,12 @@ pub mod change_message_visibility_batch_result_entry {
     }
     impl Builder {
         /// <p>Represents a message whose visibility timeout has been changed successfully.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`ChangeMessageVisibilityBatchResultEntry`](crate::model::ChangeMessageVisibilityBatchResultEntry)
@@ -1489,30 +1495,33 @@ pub mod change_message_visibility_batch_request_entry {
         /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
         /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
         /// </note>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>A receipt handle.</p>
-        pub fn receipt_handle(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.receipt_handle = Some(inp.into());
+        pub fn receipt_handle(mut self, input: impl Into<std::string::String>) -> Self {
+            self.receipt_handle = Some(input.into());
             self
         }
-        pub fn set_receipt_handle(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.receipt_handle = inp;
+        pub fn set_receipt_handle(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.receipt_handle = input;
             self
         }
         /// <p>The new value (in seconds) for the message's visibility timeout.</p>
-        pub fn visibility_timeout(mut self, inp: i32) -> Self {
-            self.visibility_timeout = Some(inp);
+        pub fn visibility_timeout(mut self, input: i32) -> Self {
+            self.visibility_timeout = Some(input);
             self
         }
-        pub fn set_visibility_timeout(mut self, inp: i32) -> Self {
-            self.visibility_timeout = Some(inp);
+        pub fn set_visibility_timeout(mut self, input: std::option::Option<i32>) -> Self {
+            self.visibility_timeout = input;
             self
         }
         /// Consumes the builder and constructs a [`ChangeMessageVisibilityBatchRequestEntry`](crate::model::ChangeMessageVisibilityBatchRequestEntry)

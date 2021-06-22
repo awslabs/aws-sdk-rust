@@ -55,58 +55,61 @@ pub mod model {
     }
     impl Builder {
         /// <p>The name of the model.</p>
-        pub fn model_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.model_name = Some(inp.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_name = Some(input.into());
             self
         }
-        pub fn set_model_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.model_name = inp;
+        pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_name = input;
             self
         }
         /// <p>The version of the model.</p>
-        pub fn model_version(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.model_version = Some(inp.into());
+        pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.model_version = Some(input.into());
             self
         }
-        pub fn set_model_version(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.model_version = inp;
+        pub fn set_model_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.model_version = input;
             self
         }
         /// <p>The timestamp of the last data sample taken.</p>
-        pub fn latest_sample_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.latest_sample_time = Some(inp);
+        pub fn latest_sample_time(mut self, input: smithy_types::Instant) -> Self {
+            self.latest_sample_time = Some(input);
             self
         }
         pub fn set_latest_sample_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.latest_sample_time = inp;
+            self.latest_sample_time = input;
             self
         }
         /// <p>The timestamp of the last inference that was made.</p>
-        pub fn latest_inference(mut self, inp: smithy_types::Instant) -> Self {
-            self.latest_inference = Some(inp);
+        pub fn latest_inference(mut self, input: smithy_types::Instant) -> Self {
+            self.latest_inference = Some(input);
             self
         }
         pub fn set_latest_inference(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.latest_inference = inp;
+            self.latest_inference = input;
             self
         }
-        pub fn model_metrics(mut self, inp: impl Into<crate::model::EdgeMetric>) -> Self {
+        pub fn model_metrics(mut self, input: impl Into<crate::model::EdgeMetric>) -> Self {
             let mut v = self.model_metrics.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.model_metrics = Some(v);
             self
         }
         pub fn set_model_metrics(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EdgeMetric>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EdgeMetric>>,
         ) -> Self {
-            self.model_metrics = inp;
+            self.model_metrics = input;
             self
         }
         /// Consumes the builder and constructs a [`Model`](crate::model::Model)
@@ -175,39 +178,39 @@ pub mod edge_metric {
     }
     impl Builder {
         /// <p>The dimension of metrics published.</p>
-        pub fn dimension(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.dimension = Some(inp.into());
+        pub fn dimension(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dimension = Some(input.into());
             self
         }
-        pub fn set_dimension(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.dimension = inp;
+        pub fn set_dimension(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dimension = input;
             self
         }
         /// <p>Returns the name of the metric.</p>
-        pub fn metric_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.metric_name = Some(inp.into());
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.metric_name = Some(input.into());
             self
         }
-        pub fn set_metric_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = inp;
+        pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_name = input;
             self
         }
         /// <p>Returns the value of the metric.</p>
-        pub fn value(mut self, inp: f64) -> Self {
-            self.value = Some(inp);
+        pub fn value(mut self, input: f64) -> Self {
+            self.value = Some(input);
             self
         }
-        pub fn set_value(mut self, inp: f64) -> Self {
-            self.value = Some(inp);
+        pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+            self.value = input;
             self
         }
         /// <p>Timestamp of when the metric was requested.</p>
-        pub fn timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.timestamp = Some(inp);
+        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.timestamp = inp;
+        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`EdgeMetric`](crate::model::EdgeMetric)

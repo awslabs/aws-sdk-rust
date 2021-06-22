@@ -22,12 +22,15 @@ pub mod withdraw_byoip_cidr_output {
     }
     impl Builder {
         /// <p>Information about the address pool.</p>
-        pub fn byoip_cidr(mut self, inp: crate::model::ByoipCidr) -> Self {
-            self.byoip_cidr = Some(inp);
+        pub fn byoip_cidr(mut self, input: crate::model::ByoipCidr) -> Self {
+            self.byoip_cidr = Some(input);
             self
         }
-        pub fn set_byoip_cidr(mut self, inp: std::option::Option<crate::model::ByoipCidr>) -> Self {
-            self.byoip_cidr = inp;
+        pub fn set_byoip_cidr(
+            mut self,
+            input: std::option::Option<crate::model::ByoipCidr>,
+        ) -> Self {
+            self.byoip_cidr = input;
             self
         }
         /// Consumes the builder and constructs a [`WithdrawByoipCidrOutput`](crate::output::WithdrawByoipCidrOutput)
@@ -68,12 +71,12 @@ pub mod update_security_group_rule_descriptions_ingress_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateSecurityGroupRuleDescriptionsIngressOutput`](crate::output::UpdateSecurityGroupRuleDescriptionsIngressOutput)
@@ -115,12 +118,12 @@ pub mod update_security_group_rule_descriptions_egress_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateSecurityGroupRuleDescriptionsEgressOutput`](crate::output::UpdateSecurityGroupRuleDescriptionsEgressOutput)
@@ -164,18 +167,18 @@ pub mod unmonitor_instances_output {
     impl Builder {
         pub fn instance_monitorings(
             mut self,
-            inp: impl Into<crate::model::InstanceMonitoring>,
+            input: impl Into<crate::model::InstanceMonitoring>,
         ) -> Self {
             let mut v = self.instance_monitorings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.instance_monitorings = Some(v);
             self
         }
         pub fn set_instance_monitorings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InstanceMonitoring>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceMonitoring>>,
         ) -> Self {
-            self.instance_monitorings = inp;
+            self.instance_monitorings = input;
             self
         }
         /// Consumes the builder and constructs a [`UnmonitorInstancesOutput`](crate::output::UnmonitorInstancesOutput)
@@ -250,28 +253,28 @@ pub mod unassign_ipv6_addresses_output {
     }
     impl Builder {
         /// <p>The ID of the network interface.</p>
-        pub fn network_interface_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.network_interface_id = Some(inp.into());
+        pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_interface_id = Some(input.into());
             self
         }
         pub fn set_network_interface_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.network_interface_id = inp;
+            self.network_interface_id = input;
             self
         }
-        pub fn unassigned_ipv6_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn unassigned_ipv6_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.unassigned_ipv6_addresses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unassigned_ipv6_addresses = Some(v);
             self
         }
         pub fn set_unassigned_ipv6_addresses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.unassigned_ipv6_addresses = inp;
+            self.unassigned_ipv6_addresses = input;
             self
         }
         /// Consumes the builder and constructs a [`UnassignIpv6AddressesOutput`](crate::output::UnassignIpv6AddressesOutput)
@@ -316,18 +319,18 @@ pub mod terminate_instances_output {
     impl Builder {
         pub fn terminating_instances(
             mut self,
-            inp: impl Into<crate::model::InstanceStateChange>,
+            input: impl Into<crate::model::InstanceStateChange>,
         ) -> Self {
             let mut v = self.terminating_instances.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.terminating_instances = Some(v);
             self
         }
         pub fn set_terminating_instances(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InstanceStateChange>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceStateChange>>,
         ) -> Self {
-            self.terminating_instances = inp;
+            self.terminating_instances = input;
             self
         }
         /// Consumes the builder and constructs a [`TerminateInstancesOutput`](crate::output::TerminateInstancesOutput)
@@ -378,40 +381,40 @@ pub mod terminate_client_vpn_connections_output {
     }
     impl Builder {
         /// <p>The ID of the Client VPN endpoint.</p>
-        pub fn client_vpn_endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_vpn_endpoint_id = Some(inp.into());
+        pub fn client_vpn_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_vpn_endpoint_id = Some(input.into());
             self
         }
         pub fn set_client_vpn_endpoint_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_vpn_endpoint_id = inp;
+            self.client_vpn_endpoint_id = input;
             self
         }
         /// <p>The user who established the terminated client connections.</p>
-        pub fn username(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.username = Some(inp.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.username = Some(input.into());
             self
         }
-        pub fn set_username(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.username = inp;
+        pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.username = input;
             self
         }
         pub fn connection_statuses(
             mut self,
-            inp: impl Into<crate::model::TerminateConnectionStatus>,
+            input: impl Into<crate::model::TerminateConnectionStatus>,
         ) -> Self {
             let mut v = self.connection_statuses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.connection_statuses = Some(v);
             self
         }
         pub fn set_connection_statuses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TerminateConnectionStatus>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TerminateConnectionStatus>>,
         ) -> Self {
-            self.connection_statuses = inp;
+            self.connection_statuses = input;
             self
         }
         /// Consumes the builder and constructs a [`TerminateClientVpnConnectionsOutput`](crate::output::TerminateClientVpnConnectionsOutput)
@@ -456,18 +459,18 @@ pub mod stop_instances_output {
     impl Builder {
         pub fn stopping_instances(
             mut self,
-            inp: impl Into<crate::model::InstanceStateChange>,
+            input: impl Into<crate::model::InstanceStateChange>,
         ) -> Self {
             let mut v = self.stopping_instances.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.stopping_instances = Some(v);
             self
         }
         pub fn set_stopping_instances(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InstanceStateChange>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceStateChange>>,
         ) -> Self {
-            self.stopping_instances = inp;
+            self.stopping_instances = input;
             self
         }
         /// Consumes the builder and constructs a [`StopInstancesOutput`](crate::output::StopInstancesOutput)
@@ -508,12 +511,12 @@ pub mod start_vpc_endpoint_service_private_dns_verification_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn return_value(mut self, inp: bool) -> Self {
-            self.return_value = Some(inp);
+        pub fn return_value(mut self, input: bool) -> Self {
+            self.return_value = Some(input);
             self
         }
-        pub fn set_return_value(mut self, inp: std::option::Option<bool>) -> Self {
-            self.return_value = inp;
+        pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
+            self.return_value = input;
             self
         }
         /// Consumes the builder and constructs a [`StartVpcEndpointServicePrivateDnsVerificationOutput`](crate::output::StartVpcEndpointServicePrivateDnsVerificationOutput)
@@ -559,16 +562,16 @@ pub mod start_network_insights_analysis_output {
         /// <p>Information about the network insights analysis.</p>
         pub fn network_insights_analysis(
             mut self,
-            inp: crate::model::NetworkInsightsAnalysis,
+            input: crate::model::NetworkInsightsAnalysis,
         ) -> Self {
-            self.network_insights_analysis = Some(inp);
+            self.network_insights_analysis = Some(input);
             self
         }
         pub fn set_network_insights_analysis(
             mut self,
-            inp: std::option::Option<crate::model::NetworkInsightsAnalysis>,
+            input: std::option::Option<crate::model::NetworkInsightsAnalysis>,
         ) -> Self {
-            self.network_insights_analysis = inp;
+            self.network_insights_analysis = input;
             self
         }
         /// Consumes the builder and constructs a [`StartNetworkInsightsAnalysisOutput`](crate::output::StartNetworkInsightsAnalysisOutput)
@@ -611,18 +614,18 @@ pub mod start_instances_output {
     impl Builder {
         pub fn starting_instances(
             mut self,
-            inp: impl Into<crate::model::InstanceStateChange>,
+            input: impl Into<crate::model::InstanceStateChange>,
         ) -> Self {
             let mut v = self.starting_instances.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.starting_instances = Some(v);
             self
         }
         pub fn set_starting_instances(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InstanceStateChange>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceStateChange>>,
         ) -> Self {
-            self.starting_instances = inp;
+            self.starting_instances = input;
             self
         }
         /// Consumes the builder and constructs a [`StartInstancesOutput`](crate::output::StartInstancesOutput)
@@ -698,26 +701,26 @@ pub mod search_transit_gateway_routes_output {
         pub(crate) additional_routes_available: std::option::Option<bool>,
     }
     impl Builder {
-        pub fn routes(mut self, inp: impl Into<crate::model::TransitGatewayRoute>) -> Self {
+        pub fn routes(mut self, input: impl Into<crate::model::TransitGatewayRoute>) -> Self {
             let mut v = self.routes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.routes = Some(v);
             self
         }
         pub fn set_routes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TransitGatewayRoute>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TransitGatewayRoute>>,
         ) -> Self {
-            self.routes = inp;
+            self.routes = input;
             self
         }
         /// <p>Indicates whether there are additional routes available.</p>
-        pub fn additional_routes_available(mut self, inp: bool) -> Self {
-            self.additional_routes_available = Some(inp);
+        pub fn additional_routes_available(mut self, input: bool) -> Self {
+            self.additional_routes_available = Some(input);
             self
         }
-        pub fn set_additional_routes_available(mut self, inp: std::option::Option<bool>) -> Self {
-            self.additional_routes_available = inp;
+        pub fn set_additional_routes_available(mut self, input: std::option::Option<bool>) -> Self {
+            self.additional_routes_available = input;
             self
         }
         /// Consumes the builder and constructs a [`SearchTransitGatewayRoutesOutput`](crate::output::SearchTransitGatewayRoutesOutput)
@@ -766,27 +769,27 @@ pub mod search_transit_gateway_multicast_groups_output {
     impl Builder {
         pub fn multicast_groups(
             mut self,
-            inp: impl Into<crate::model::TransitGatewayMulticastGroup>,
+            input: impl Into<crate::model::TransitGatewayMulticastGroup>,
         ) -> Self {
             let mut v = self.multicast_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.multicast_groups = Some(v);
             self
         }
         pub fn set_multicast_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TransitGatewayMulticastGroup>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TransitGatewayMulticastGroup>>,
         ) -> Self {
-            self.multicast_groups = inp;
+            self.multicast_groups = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`SearchTransitGatewayMulticastGroupsOutput`](crate::output::SearchTransitGatewayMulticastGroupsOutput)
@@ -831,26 +834,26 @@ pub mod search_local_gateway_routes_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn routes(mut self, inp: impl Into<crate::model::LocalGatewayRoute>) -> Self {
+        pub fn routes(mut self, input: impl Into<crate::model::LocalGatewayRoute>) -> Self {
             let mut v = self.routes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.routes = Some(v);
             self
         }
         pub fn set_routes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LocalGatewayRoute>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LocalGatewayRoute>>,
         ) -> Self {
-            self.routes = inp;
+            self.routes = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`SearchLocalGatewayRoutesOutput`](crate::output::SearchLocalGatewayRoutesOutput)
@@ -892,17 +895,17 @@ pub mod run_scheduled_instances_output {
         pub(crate) instance_id_set: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn instance_id_set(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn instance_id_set(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_id_set.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.instance_id_set = Some(v);
             self
         }
         pub fn set_instance_id_set(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.instance_id_set = inp;
+            self.instance_id_set = input;
             self
         }
         /// Consumes the builder and constructs a [`RunScheduledInstancesOutput`](crate::output::RunScheduledInstancesOutput)
@@ -962,58 +965,61 @@ pub mod run_instances_output {
         pub(crate) reservation_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn groups(mut self, inp: impl Into<crate::model::GroupIdentifier>) -> Self {
+        pub fn groups(mut self, input: impl Into<crate::model::GroupIdentifier>) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.groups = Some(v);
             self
         }
         pub fn set_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
         ) -> Self {
-            self.groups = inp;
+            self.groups = input;
             self
         }
-        pub fn instances(mut self, inp: impl Into<crate::model::Instance>) -> Self {
+        pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.instances = Some(v);
             self
         }
         pub fn set_instances(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Instance>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Instance>>,
         ) -> Self {
-            self.instances = inp;
+            self.instances = input;
             self
         }
         /// <p>The ID of the AWS account that owns the reservation.</p>
-        pub fn owner_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.owner_id = Some(inp.into());
+        pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_id = Some(input.into());
             self
         }
-        pub fn set_owner_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.owner_id = inp;
+        pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_id = input;
             self
         }
         /// <p>The ID of the requester that launched the instances on your behalf (for example, AWS
         /// Management Console or Auto Scaling).</p>
-        pub fn requester_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.requester_id = Some(inp.into());
+        pub fn requester_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.requester_id = Some(input.into());
             self
         }
-        pub fn set_requester_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.requester_id = inp;
+        pub fn set_requester_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.requester_id = input;
             self
         }
         /// <p>The ID of the reservation.</p>
-        pub fn reservation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reservation_id = Some(inp.into());
+        pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reservation_id = Some(input.into());
             self
         }
-        pub fn set_reservation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.reservation_id = inp;
+        pub fn set_reservation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.reservation_id = input;
             self
         }
         /// Consumes the builder and constructs a [`RunInstancesOutput`](crate::output::RunInstancesOutput)
@@ -1065,28 +1071,28 @@ pub mod revoke_security_group_ingress_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         pub fn unknown_ip_permissions(
             mut self,
-            inp: impl Into<crate::model::IpPermission>,
+            input: impl Into<crate::model::IpPermission>,
         ) -> Self {
             let mut v = self.unknown_ip_permissions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unknown_ip_permissions = Some(v);
             self
         }
         pub fn set_unknown_ip_permissions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
+            input: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
         ) -> Self {
-            self.unknown_ip_permissions = inp;
+            self.unknown_ip_permissions = input;
             self
         }
         /// Consumes the builder and constructs a [`RevokeSecurityGroupIngressOutput`](crate::output::RevokeSecurityGroupIngressOutput)
@@ -1135,28 +1141,28 @@ pub mod revoke_security_group_egress_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         pub fn unknown_ip_permissions(
             mut self,
-            inp: impl Into<crate::model::IpPermission>,
+            input: impl Into<crate::model::IpPermission>,
         ) -> Self {
             let mut v = self.unknown_ip_permissions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unknown_ip_permissions = Some(v);
             self
         }
         pub fn set_unknown_ip_permissions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
+            input: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
         ) -> Self {
-            self.unknown_ip_permissions = inp;
+            self.unknown_ip_permissions = input;
             self
         }
         /// Consumes the builder and constructs a [`RevokeSecurityGroupEgressOutput`](crate::output::RevokeSecurityGroupEgressOutput)
@@ -1198,15 +1204,15 @@ pub mod revoke_client_vpn_ingress_output {
     }
     impl Builder {
         /// <p>The current state of the authorization rule.</p>
-        pub fn status(mut self, inp: crate::model::ClientVpnAuthorizationRuleStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ClientVpnAuthorizationRuleStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ClientVpnAuthorizationRuleStatus>,
+            input: std::option::Option<crate::model::ClientVpnAuthorizationRuleStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`RevokeClientVpnIngressOutput`](crate::output::RevokeClientVpnIngressOutput)
@@ -1247,15 +1253,15 @@ pub mod restore_managed_prefix_list_version_output {
     }
     impl Builder {
         /// <p>Information about the prefix list.</p>
-        pub fn prefix_list(mut self, inp: crate::model::ManagedPrefixList) -> Self {
-            self.prefix_list = Some(inp);
+        pub fn prefix_list(mut self, input: crate::model::ManagedPrefixList) -> Self {
+            self.prefix_list = Some(input);
             self
         }
         pub fn set_prefix_list(
             mut self,
-            inp: std::option::Option<crate::model::ManagedPrefixList>,
+            input: std::option::Option<crate::model::ManagedPrefixList>,
         ) -> Self {
-            self.prefix_list = inp;
+            self.prefix_list = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreManagedPrefixListVersionOutput`](crate::output::RestoreManagedPrefixListVersionOutput)
@@ -1300,21 +1306,21 @@ pub mod restore_address_to_classic_output {
     }
     impl Builder {
         /// <p>The Elastic IP address.</p>
-        pub fn public_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.public_ip = Some(inp.into());
+        pub fn public_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.public_ip = Some(input.into());
             self
         }
-        pub fn set_public_ip(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.public_ip = inp;
+        pub fn set_public_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_ip = input;
             self
         }
         /// <p>The move status for the IP address.</p>
-        pub fn status(mut self, inp: crate::model::Status) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::Status) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::Status>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreAddressToClassicOutput`](crate::output::RestoreAddressToClassicOutput)
@@ -1472,12 +1478,12 @@ pub mod reset_fpga_image_attribute_output {
     }
     impl Builder {
         /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`ResetFpgaImageAttributeOutput`](crate::output::ResetFpgaImageAttributeOutput)
@@ -1518,12 +1524,12 @@ pub mod reset_ebs_default_kms_key_id_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the default CMK for EBS encryption by default.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ResetEbsDefaultKmsKeyIdOutput`](crate::output::ResetEbsDefaultKmsKeyIdOutput)
@@ -1564,15 +1570,15 @@ pub mod reset_address_attribute_output {
     }
     impl Builder {
         /// <p>Information about the IP address.</p>
-        pub fn address(mut self, inp: crate::model::AddressAttribute) -> Self {
-            self.address = Some(inp);
+        pub fn address(mut self, input: crate::model::AddressAttribute) -> Self {
+            self.address = Some(input);
             self
         }
         pub fn set_address(
             mut self,
-            inp: std::option::Option<crate::model::AddressAttribute>,
+            input: std::option::Option<crate::model::AddressAttribute>,
         ) -> Self {
-            self.address = inp;
+            self.address = input;
             self
         }
         /// Consumes the builder and constructs a [`ResetAddressAttributeOutput`](crate::output::ResetAddressAttributeOutput)
@@ -1617,18 +1623,18 @@ pub mod request_spot_instances_output {
     impl Builder {
         pub fn spot_instance_requests(
             mut self,
-            inp: impl Into<crate::model::SpotInstanceRequest>,
+            input: impl Into<crate::model::SpotInstanceRequest>,
         ) -> Self {
             let mut v = self.spot_instance_requests.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.spot_instance_requests = Some(v);
             self
         }
         pub fn set_spot_instance_requests(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SpotInstanceRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SpotInstanceRequest>>,
         ) -> Self {
-            self.spot_instance_requests = inp;
+            self.spot_instance_requests = input;
             self
         }
         /// Consumes the builder and constructs a [`RequestSpotInstancesOutput`](crate::output::RequestSpotInstancesOutput)
@@ -1670,15 +1676,15 @@ pub mod request_spot_fleet_output {
     }
     impl Builder {
         /// <p>The ID of the Spot Fleet request.</p>
-        pub fn spot_fleet_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.spot_fleet_request_id = Some(inp.into());
+        pub fn spot_fleet_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.spot_fleet_request_id = Some(input.into());
             self
         }
         pub fn set_spot_fleet_request_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.spot_fleet_request_id = inp;
+            self.spot_fleet_request_id = input;
             self
         }
         /// Consumes the builder and constructs a [`RequestSpotFleetOutput`](crate::output::RequestSpotFleetOutput)
@@ -1748,15 +1754,15 @@ pub mod replace_transit_gateway_route_output {
     }
     impl Builder {
         /// <p>Information about the modified route.</p>
-        pub fn route(mut self, inp: crate::model::TransitGatewayRoute) -> Self {
-            self.route = Some(inp);
+        pub fn route(mut self, input: crate::model::TransitGatewayRoute) -> Self {
+            self.route = Some(input);
             self
         }
         pub fn set_route(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayRoute>,
+            input: std::option::Option<crate::model::TransitGatewayRoute>,
         ) -> Self {
-            self.route = inp;
+            self.route = input;
             self
         }
         /// Consumes the builder and constructs a [`ReplaceTransitGatewayRouteOutput`](crate::output::ReplaceTransitGatewayRouteOutput)
@@ -1799,27 +1805,30 @@ pub mod replace_route_table_association_output {
     }
     impl Builder {
         /// <p>The ID of the new association.</p>
-        pub fn new_association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_association_id = Some(inp.into());
+        pub fn new_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_association_id = Some(input.into());
             self
         }
         pub fn set_new_association_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.new_association_id = inp;
+            self.new_association_id = input;
             self
         }
         /// <p>The state of the association.</p>
-        pub fn association_state(mut self, inp: crate::model::RouteTableAssociationState) -> Self {
-            self.association_state = Some(inp);
+        pub fn association_state(
+            mut self,
+            input: crate::model::RouteTableAssociationState,
+        ) -> Self {
+            self.association_state = Some(input);
             self
         }
         pub fn set_association_state(
             mut self,
-            inp: std::option::Option<crate::model::RouteTableAssociationState>,
+            input: std::option::Option<crate::model::RouteTableAssociationState>,
         ) -> Self {
-            self.association_state = inp;
+            self.association_state = input;
             self
         }
         /// Consumes the builder and constructs a [`ReplaceRouteTableAssociationOutput`](crate::output::ReplaceRouteTableAssociationOutput)
@@ -1919,15 +1928,15 @@ pub mod replace_network_acl_association_output {
     }
     impl Builder {
         /// <p>The ID of the new association.</p>
-        pub fn new_association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_association_id = Some(inp.into());
+        pub fn new_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_association_id = Some(input.into());
             self
         }
         pub fn set_new_association_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.new_association_id = inp;
+            self.new_association_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ReplaceNetworkAclAssociationOutput`](crate::output::ReplaceNetworkAclAssociationOutput)
@@ -1975,16 +1984,16 @@ pub mod replace_iam_instance_profile_association_output {
         /// <p>Information about the IAM instance profile association.</p>
         pub fn iam_instance_profile_association(
             mut self,
-            inp: crate::model::IamInstanceProfileAssociation,
+            input: crate::model::IamInstanceProfileAssociation,
         ) -> Self {
-            self.iam_instance_profile_association = Some(inp);
+            self.iam_instance_profile_association = Some(input);
             self
         }
         pub fn set_iam_instance_profile_association(
             mut self,
-            inp: std::option::Option<crate::model::IamInstanceProfileAssociation>,
+            input: std::option::Option<crate::model::IamInstanceProfileAssociation>,
         ) -> Self {
-            self.iam_instance_profile_association = inp;
+            self.iam_instance_profile_association = input;
             self
         }
         /// Consumes the builder and constructs a [`ReplaceIamInstanceProfileAssociationOutput`](crate::output::ReplaceIamInstanceProfileAssociationOutput)
@@ -2029,30 +2038,30 @@ pub mod release_hosts_output {
         pub(crate) unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
     }
     impl Builder {
-        pub fn successful(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn successful(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.successful = Some(v);
             self
         }
         pub fn set_successful(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.successful = inp;
+            self.successful = input;
             self
         }
-        pub fn unsuccessful(mut self, inp: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unsuccessful = Some(v);
             self
         }
         pub fn set_unsuccessful(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
         ) -> Self {
-            self.unsuccessful = inp;
+            self.unsuccessful = input;
             self
         }
         /// Consumes the builder and constructs a [`ReleaseHostsOutput`](crate::output::ReleaseHostsOutput)
@@ -2123,12 +2132,12 @@ pub mod reject_vpc_peering_connection_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`RejectVpcPeeringConnectionOutput`](crate::output::RejectVpcPeeringConnectionOutput)
@@ -2168,17 +2177,17 @@ pub mod reject_vpc_endpoint_connections_output {
         pub(crate) unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
     }
     impl Builder {
-        pub fn unsuccessful(mut self, inp: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unsuccessful = Some(v);
             self
         }
         pub fn set_unsuccessful(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
         ) -> Self {
-            self.unsuccessful = inp;
+            self.unsuccessful = input;
             self
         }
         /// Consumes the builder and constructs a [`RejectVpcEndpointConnectionsOutput`](crate::output::RejectVpcEndpointConnectionsOutput)
@@ -2226,16 +2235,16 @@ pub mod reject_transit_gateway_vpc_attachment_output {
         /// <p>Information about the attachment.</p>
         pub fn transit_gateway_vpc_attachment(
             mut self,
-            inp: crate::model::TransitGatewayVpcAttachment,
+            input: crate::model::TransitGatewayVpcAttachment,
         ) -> Self {
-            self.transit_gateway_vpc_attachment = Some(inp);
+            self.transit_gateway_vpc_attachment = Some(input);
             self
         }
         pub fn set_transit_gateway_vpc_attachment(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayVpcAttachment>,
+            input: std::option::Option<crate::model::TransitGatewayVpcAttachment>,
         ) -> Self {
-            self.transit_gateway_vpc_attachment = inp;
+            self.transit_gateway_vpc_attachment = input;
             self
         }
         /// Consumes the builder and constructs a [`RejectTransitGatewayVpcAttachmentOutput`](crate::output::RejectTransitGatewayVpcAttachmentOutput)
@@ -2283,16 +2292,16 @@ pub mod reject_transit_gateway_peering_attachment_output {
         /// <p>The transit gateway peering attachment.</p>
         pub fn transit_gateway_peering_attachment(
             mut self,
-            inp: crate::model::TransitGatewayPeeringAttachment,
+            input: crate::model::TransitGatewayPeeringAttachment,
         ) -> Self {
-            self.transit_gateway_peering_attachment = Some(inp);
+            self.transit_gateway_peering_attachment = Some(input);
             self
         }
         pub fn set_transit_gateway_peering_attachment(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayPeeringAttachment>,
+            input: std::option::Option<crate::model::TransitGatewayPeeringAttachment>,
         ) -> Self {
-            self.transit_gateway_peering_attachment = inp;
+            self.transit_gateway_peering_attachment = input;
             self
         }
         /// Consumes the builder and constructs a [`RejectTransitGatewayPeeringAttachmentOutput`](crate::output::RejectTransitGatewayPeeringAttachmentOutput)
@@ -2336,16 +2345,16 @@ pub mod reject_transit_gateway_multicast_domain_associations_output {
         /// <p>Describes the multicast domain associations.</p>
         pub fn associations(
             mut self,
-            inp: crate::model::TransitGatewayMulticastDomainAssociations,
+            input: crate::model::TransitGatewayMulticastDomainAssociations,
         ) -> Self {
-            self.associations = Some(inp);
+            self.associations = Some(input);
             self
         }
         pub fn set_associations(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
+            input: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
         ) -> Self {
-            self.associations = inp;
+            self.associations = input;
             self
         }
         /// Consumes the builder and constructs a [`RejectTransitGatewayMulticastDomainAssociationsOutput`](crate::output::RejectTransitGatewayMulticastDomainAssociationsOutput)
@@ -2395,16 +2404,16 @@ pub mod register_transit_gateway_multicast_group_sources_output {
         /// <p>Information about the  transit gateway multicast group sources.</p>
         pub fn registered_multicast_group_sources(
             mut self,
-            inp: crate::model::TransitGatewayMulticastRegisteredGroupSources,
+            input: crate::model::TransitGatewayMulticastRegisteredGroupSources,
         ) -> Self {
-            self.registered_multicast_group_sources = Some(inp);
+            self.registered_multicast_group_sources = Some(input);
             self
         }
         pub fn set_registered_multicast_group_sources(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupSources>,
+            input: std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupSources>,
         ) -> Self {
-            self.registered_multicast_group_sources = inp;
+            self.registered_multicast_group_sources = input;
             self
         }
         /// Consumes the builder and constructs a [`RegisterTransitGatewayMulticastGroupSourcesOutput`](crate::output::RegisterTransitGatewayMulticastGroupSourcesOutput)
@@ -2453,16 +2462,16 @@ pub mod register_transit_gateway_multicast_group_members_output {
         /// <p>Information about the registered  transit gateway multicast group members.</p>
         pub fn registered_multicast_group_members(
             mut self,
-            inp: crate::model::TransitGatewayMulticastRegisteredGroupMembers,
+            input: crate::model::TransitGatewayMulticastRegisteredGroupMembers,
         ) -> Self {
-            self.registered_multicast_group_members = Some(inp);
+            self.registered_multicast_group_members = Some(input);
             self
         }
         pub fn set_registered_multicast_group_members(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupMembers>,
+            input: std::option::Option<crate::model::TransitGatewayMulticastRegisteredGroupMembers>,
         ) -> Self {
-            self.registered_multicast_group_members = inp;
+            self.registered_multicast_group_members = input;
             self
         }
         /// Consumes the builder and constructs a [`RegisterTransitGatewayMulticastGroupMembersOutput`](crate::output::RegisterTransitGatewayMulticastGroupMembersOutput)
@@ -2507,16 +2516,16 @@ pub mod register_instance_event_notification_attributes_output {
         /// <p>The resulting set of tag keys.</p>
         pub fn instance_tag_attribute(
             mut self,
-            inp: crate::model::InstanceTagNotificationAttribute,
+            input: crate::model::InstanceTagNotificationAttribute,
         ) -> Self {
-            self.instance_tag_attribute = Some(inp);
+            self.instance_tag_attribute = Some(input);
             self
         }
         pub fn set_instance_tag_attribute(
             mut self,
-            inp: std::option::Option<crate::model::InstanceTagNotificationAttribute>,
+            input: std::option::Option<crate::model::InstanceTagNotificationAttribute>,
         ) -> Self {
-            self.instance_tag_attribute = inp;
+            self.instance_tag_attribute = input;
             self
         }
         /// Consumes the builder and constructs a [`RegisterInstanceEventNotificationAttributesOutput`](crate::output::RegisterInstanceEventNotificationAttributesOutput)
@@ -2559,12 +2568,12 @@ pub mod register_image_output {
     }
     impl Builder {
         /// <p>The ID of the newly registered AMI.</p>
-        pub fn image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.image_id = Some(inp.into());
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_id = Some(input.into());
             self
         }
-        pub fn set_image_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.image_id = inp;
+        pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_id = input;
             self
         }
         /// Consumes the builder and constructs a [`RegisterImageOutput`](crate::output::RegisterImageOutput)
@@ -2637,18 +2646,18 @@ pub mod purchase_scheduled_instances_output {
     impl Builder {
         pub fn scheduled_instance_set(
             mut self,
-            inp: impl Into<crate::model::ScheduledInstance>,
+            input: impl Into<crate::model::ScheduledInstance>,
         ) -> Self {
             let mut v = self.scheduled_instance_set.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.scheduled_instance_set = Some(v);
             self
         }
         pub fn set_scheduled_instance_set(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ScheduledInstance>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ScheduledInstance>>,
         ) -> Self {
-            self.scheduled_instance_set = inp;
+            self.scheduled_instance_set = input;
             self
         }
         /// Consumes the builder and constructs a [`PurchaseScheduledInstancesOutput`](crate::output::PurchaseScheduledInstancesOutput)
@@ -2690,15 +2699,15 @@ pub mod purchase_reserved_instances_offering_output {
     }
     impl Builder {
         /// <p>The IDs of the purchased Reserved Instances.</p>
-        pub fn reserved_instances_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reserved_instances_id = Some(inp.into());
+        pub fn reserved_instances_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reserved_instances_id = Some(input.into());
             self
         }
         pub fn set_reserved_instances_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.reserved_instances_id = inp;
+            self.reserved_instances_id = input;
             self
         }
         /// Consumes the builder and constructs a [`PurchaseReservedInstancesOfferingOutput`](crate::output::PurchaseReservedInstancesOfferingOutput)
@@ -2757,63 +2766,63 @@ pub mod purchase_host_reservation_output {
     }
     impl Builder {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_token = Some(inp.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_token = inp;
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
             self
         }
         /// <p>The currency in which the <code>totalUpfrontPrice</code> and
         /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
         /// supported currency is <code>USD</code>.</p>
-        pub fn currency_code(mut self, inp: crate::model::CurrencyCodeValues) -> Self {
-            self.currency_code = Some(inp);
+        pub fn currency_code(mut self, input: crate::model::CurrencyCodeValues) -> Self {
+            self.currency_code = Some(input);
             self
         }
         pub fn set_currency_code(
             mut self,
-            inp: std::option::Option<crate::model::CurrencyCodeValues>,
+            input: std::option::Option<crate::model::CurrencyCodeValues>,
         ) -> Self {
-            self.currency_code = inp;
+            self.currency_code = input;
             self
         }
-        pub fn purchase(mut self, inp: impl Into<crate::model::Purchase>) -> Self {
+        pub fn purchase(mut self, input: impl Into<crate::model::Purchase>) -> Self {
             let mut v = self.purchase.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.purchase = Some(v);
             self
         }
         pub fn set_purchase(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Purchase>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Purchase>>,
         ) -> Self {
-            self.purchase = inp;
+            self.purchase = input;
             self
         }
         /// <p>The total hourly price of the reservation calculated per hour.</p>
-        pub fn total_hourly_price(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.total_hourly_price = Some(inp.into());
+        pub fn total_hourly_price(mut self, input: impl Into<std::string::String>) -> Self {
+            self.total_hourly_price = Some(input.into());
             self
         }
         pub fn set_total_hourly_price(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.total_hourly_price = inp;
+            self.total_hourly_price = input;
             self
         }
         /// <p>The total amount charged to your account when you purchase the reservation.</p>
-        pub fn total_upfront_price(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.total_upfront_price = Some(inp.into());
+        pub fn total_upfront_price(mut self, input: impl Into<std::string::String>) -> Self {
+            self.total_upfront_price = Some(input.into());
             self
         }
         pub fn set_total_upfront_price(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.total_upfront_price = inp;
+            self.total_upfront_price = input;
             self
         }
         /// Consumes the builder and constructs a [`PurchaseHostReservationOutput`](crate::output::PurchaseHostReservationOutput)
@@ -2858,12 +2867,15 @@ pub mod provision_byoip_cidr_output {
     }
     impl Builder {
         /// <p>Information about the address range.</p>
-        pub fn byoip_cidr(mut self, inp: crate::model::ByoipCidr) -> Self {
-            self.byoip_cidr = Some(inp);
+        pub fn byoip_cidr(mut self, input: crate::model::ByoipCidr) -> Self {
+            self.byoip_cidr = Some(input);
             self
         }
-        pub fn set_byoip_cidr(mut self, inp: std::option::Option<crate::model::ByoipCidr>) -> Self {
-            self.byoip_cidr = inp;
+        pub fn set_byoip_cidr(
+            mut self,
+            input: std::option::Option<crate::model::ByoipCidr>,
+        ) -> Self {
+            self.byoip_cidr = input;
             self
         }
         /// Consumes the builder and constructs a [`ProvisionByoipCidrOutput`](crate::output::ProvisionByoipCidrOutput)
@@ -2908,21 +2920,24 @@ pub mod move_address_to_vpc_output {
     }
     impl Builder {
         /// <p>The allocation ID for the Elastic IP address.</p>
-        pub fn allocation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.allocation_id = Some(inp.into());
+        pub fn allocation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.allocation_id = Some(input.into());
             self
         }
-        pub fn set_allocation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.allocation_id = inp;
+        pub fn set_allocation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.allocation_id = input;
             self
         }
         /// <p>The status of the move of the IP address.</p>
-        pub fn status(mut self, inp: crate::model::Status) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::Status) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::Status>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`MoveAddressToVpcOutput`](crate::output::MoveAddressToVpcOutput)
@@ -2966,18 +2981,18 @@ pub mod monitor_instances_output {
     impl Builder {
         pub fn instance_monitorings(
             mut self,
-            inp: impl Into<crate::model::InstanceMonitoring>,
+            input: impl Into<crate::model::InstanceMonitoring>,
         ) -> Self {
             let mut v = self.instance_monitorings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.instance_monitorings = Some(v);
             self
         }
         pub fn set_instance_monitorings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InstanceMonitoring>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceMonitoring>>,
         ) -> Self {
-            self.instance_monitorings = inp;
+            self.instance_monitorings = input;
             self
         }
         /// Consumes the builder and constructs a [`MonitorInstancesOutput`](crate::output::MonitorInstancesOutput)
@@ -3018,15 +3033,15 @@ pub mod modify_vpn_tunnel_options_output {
     }
     impl Builder {
         /// <p>Describes a VPN connection.</p>
-        pub fn vpn_connection(mut self, inp: crate::model::VpnConnection) -> Self {
-            self.vpn_connection = Some(inp);
+        pub fn vpn_connection(mut self, input: crate::model::VpnConnection) -> Self {
+            self.vpn_connection = Some(input);
             self
         }
         pub fn set_vpn_connection(
             mut self,
-            inp: std::option::Option<crate::model::VpnConnection>,
+            input: std::option::Option<crate::model::VpnConnection>,
         ) -> Self {
-            self.vpn_connection = inp;
+            self.vpn_connection = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyVpnTunnelOptionsOutput`](crate::output::ModifyVpnTunnelOptionsOutput)
@@ -3067,15 +3082,15 @@ pub mod modify_vpn_tunnel_certificate_output {
     }
     impl Builder {
         /// <p>Describes a VPN connection.</p>
-        pub fn vpn_connection(mut self, inp: crate::model::VpnConnection) -> Self {
-            self.vpn_connection = Some(inp);
+        pub fn vpn_connection(mut self, input: crate::model::VpnConnection) -> Self {
+            self.vpn_connection = Some(input);
             self
         }
         pub fn set_vpn_connection(
             mut self,
-            inp: std::option::Option<crate::model::VpnConnection>,
+            input: std::option::Option<crate::model::VpnConnection>,
         ) -> Self {
-            self.vpn_connection = inp;
+            self.vpn_connection = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyVpnTunnelCertificateOutput`](crate::output::ModifyVpnTunnelCertificateOutput)
@@ -3116,15 +3131,15 @@ pub mod modify_vpn_connection_options_output {
     }
     impl Builder {
         /// <p>Describes a VPN connection.</p>
-        pub fn vpn_connection(mut self, inp: crate::model::VpnConnection) -> Self {
-            self.vpn_connection = Some(inp);
+        pub fn vpn_connection(mut self, input: crate::model::VpnConnection) -> Self {
+            self.vpn_connection = Some(input);
             self
         }
         pub fn set_vpn_connection(
             mut self,
-            inp: std::option::Option<crate::model::VpnConnection>,
+            input: std::option::Option<crate::model::VpnConnection>,
         ) -> Self {
-            self.vpn_connection = inp;
+            self.vpn_connection = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyVpnConnectionOptionsOutput`](crate::output::ModifyVpnConnectionOptionsOutput)
@@ -3165,15 +3180,15 @@ pub mod modify_vpn_connection_output {
     }
     impl Builder {
         /// <p>Describes a VPN connection.</p>
-        pub fn vpn_connection(mut self, inp: crate::model::VpnConnection) -> Self {
-            self.vpn_connection = Some(inp);
+        pub fn vpn_connection(mut self, input: crate::model::VpnConnection) -> Self {
+            self.vpn_connection = Some(input);
             self
         }
         pub fn set_vpn_connection(
             mut self,
-            inp: std::option::Option<crate::model::VpnConnection>,
+            input: std::option::Option<crate::model::VpnConnection>,
         ) -> Self {
-            self.vpn_connection = inp;
+            self.vpn_connection = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyVpnConnectionOutput`](crate::output::ModifyVpnConnectionOutput)
@@ -3216,12 +3231,12 @@ pub mod modify_vpc_tenancy_output {
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
         /// error.</p>
-        pub fn return_value(mut self, inp: bool) -> Self {
-            self.return_value = Some(inp);
+        pub fn return_value(mut self, input: bool) -> Self {
+            self.return_value = Some(input);
             self
         }
-        pub fn set_return_value(mut self, inp: std::option::Option<bool>) -> Self {
-            self.return_value = inp;
+        pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
+            self.return_value = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyVpcTenancyOutput`](crate::output::ModifyVpcTenancyOutput)
@@ -3278,31 +3293,31 @@ pub mod modify_vpc_peering_connection_options_output {
         /// <p>Information about the VPC peering connection options for the accepter VPC.</p>
         pub fn accepter_peering_connection_options(
             mut self,
-            inp: crate::model::PeeringConnectionOptions,
+            input: crate::model::PeeringConnectionOptions,
         ) -> Self {
-            self.accepter_peering_connection_options = Some(inp);
+            self.accepter_peering_connection_options = Some(input);
             self
         }
         pub fn set_accepter_peering_connection_options(
             mut self,
-            inp: std::option::Option<crate::model::PeeringConnectionOptions>,
+            input: std::option::Option<crate::model::PeeringConnectionOptions>,
         ) -> Self {
-            self.accepter_peering_connection_options = inp;
+            self.accepter_peering_connection_options = input;
             self
         }
         /// <p>Information about the VPC peering connection options for the requester VPC.</p>
         pub fn requester_peering_connection_options(
             mut self,
-            inp: crate::model::PeeringConnectionOptions,
+            input: crate::model::PeeringConnectionOptions,
         ) -> Self {
-            self.requester_peering_connection_options = Some(inp);
+            self.requester_peering_connection_options = Some(input);
             self
         }
         pub fn set_requester_peering_connection_options(
             mut self,
-            inp: std::option::Option<crate::model::PeeringConnectionOptions>,
+            input: std::option::Option<crate::model::PeeringConnectionOptions>,
         ) -> Self {
-            self.requester_peering_connection_options = inp;
+            self.requester_peering_connection_options = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyVpcPeeringConnectionOptionsOutput`](crate::output::ModifyVpcPeeringConnectionOptionsOutput)
@@ -3344,12 +3359,12 @@ pub mod modify_vpc_endpoint_service_permissions_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn return_value(mut self, inp: bool) -> Self {
-            self.return_value = Some(inp);
+        pub fn return_value(mut self, input: bool) -> Self {
+            self.return_value = Some(input);
             self
         }
-        pub fn set_return_value(mut self, inp: std::option::Option<bool>) -> Self {
-            self.return_value = inp;
+        pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
+            self.return_value = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyVpcEndpointServicePermissionsOutput`](crate::output::ModifyVpcEndpointServicePermissionsOutput)
@@ -3390,12 +3405,12 @@ pub mod modify_vpc_endpoint_service_configuration_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyVpcEndpointServiceConfigurationOutput`](crate::output::ModifyVpcEndpointServiceConfigurationOutput)
@@ -3436,12 +3451,12 @@ pub mod modify_vpc_endpoint_connection_notification_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn return_value(mut self, inp: bool) -> Self {
-            self.return_value = Some(inp);
+        pub fn return_value(mut self, input: bool) -> Self {
+            self.return_value = Some(input);
             self
         }
-        pub fn set_return_value(mut self, inp: std::option::Option<bool>) -> Self {
-            self.return_value = inp;
+        pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
+            self.return_value = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyVpcEndpointConnectionNotificationOutput`](crate::output::ModifyVpcEndpointConnectionNotificationOutput)
@@ -3482,12 +3497,12 @@ pub mod modify_vpc_endpoint_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyVpcEndpointOutput`](crate::output::ModifyVpcEndpointOutput)
@@ -3586,15 +3601,15 @@ pub mod modify_volume_output {
     }
     impl Builder {
         /// <p>Information about the volume modification.</p>
-        pub fn volume_modification(mut self, inp: crate::model::VolumeModification) -> Self {
-            self.volume_modification = Some(inp);
+        pub fn volume_modification(mut self, input: crate::model::VolumeModification) -> Self {
+            self.volume_modification = Some(input);
             self
         }
         pub fn set_volume_modification(
             mut self,
-            inp: std::option::Option<crate::model::VolumeModification>,
+            input: std::option::Option<crate::model::VolumeModification>,
         ) -> Self {
-            self.volume_modification = inp;
+            self.volume_modification = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyVolumeOutput`](crate::output::ModifyVolumeOutput)
@@ -3642,16 +3657,16 @@ pub mod modify_transit_gateway_vpc_attachment_output {
         /// <p>Information about the modified attachment.</p>
         pub fn transit_gateway_vpc_attachment(
             mut self,
-            inp: crate::model::TransitGatewayVpcAttachment,
+            input: crate::model::TransitGatewayVpcAttachment,
         ) -> Self {
-            self.transit_gateway_vpc_attachment = Some(inp);
+            self.transit_gateway_vpc_attachment = Some(input);
             self
         }
         pub fn set_transit_gateway_vpc_attachment(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayVpcAttachment>,
+            input: std::option::Option<crate::model::TransitGatewayVpcAttachment>,
         ) -> Self {
-            self.transit_gateway_vpc_attachment = inp;
+            self.transit_gateway_vpc_attachment = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyTransitGatewayVpcAttachmentOutput`](crate::output::ModifyTransitGatewayVpcAttachmentOutput)
@@ -3699,16 +3714,16 @@ pub mod modify_transit_gateway_prefix_list_reference_output {
         /// <p>Information about the prefix list reference.</p>
         pub fn transit_gateway_prefix_list_reference(
             mut self,
-            inp: crate::model::TransitGatewayPrefixListReference,
+            input: crate::model::TransitGatewayPrefixListReference,
         ) -> Self {
-            self.transit_gateway_prefix_list_reference = Some(inp);
+            self.transit_gateway_prefix_list_reference = Some(input);
             self
         }
         pub fn set_transit_gateway_prefix_list_reference(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayPrefixListReference>,
+            input: std::option::Option<crate::model::TransitGatewayPrefixListReference>,
         ) -> Self {
-            self.transit_gateway_prefix_list_reference = inp;
+            self.transit_gateway_prefix_list_reference = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyTransitGatewayPrefixListReferenceOutput`](crate::output::ModifyTransitGatewayPrefixListReferenceOutput)
@@ -3750,15 +3765,15 @@ pub mod modify_transit_gateway_output {
     }
     impl Builder {
         /// <p>Describes a transit gateway.</p>
-        pub fn transit_gateway(mut self, inp: crate::model::TransitGateway) -> Self {
-            self.transit_gateway = Some(inp);
+        pub fn transit_gateway(mut self, input: crate::model::TransitGateway) -> Self {
+            self.transit_gateway = Some(input);
             self
         }
         pub fn set_transit_gateway(
             mut self,
-            inp: std::option::Option<crate::model::TransitGateway>,
+            input: std::option::Option<crate::model::TransitGateway>,
         ) -> Self {
-            self.transit_gateway = inp;
+            self.transit_gateway = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyTransitGatewayOutput`](crate::output::ModifyTransitGatewayOutput)
@@ -3799,15 +3814,15 @@ pub mod modify_traffic_mirror_session_output {
     }
     impl Builder {
         /// <p>Information about the Traffic Mirror session.</p>
-        pub fn traffic_mirror_session(mut self, inp: crate::model::TrafficMirrorSession) -> Self {
-            self.traffic_mirror_session = Some(inp);
+        pub fn traffic_mirror_session(mut self, input: crate::model::TrafficMirrorSession) -> Self {
+            self.traffic_mirror_session = Some(input);
             self
         }
         pub fn set_traffic_mirror_session(
             mut self,
-            inp: std::option::Option<crate::model::TrafficMirrorSession>,
+            input: std::option::Option<crate::model::TrafficMirrorSession>,
         ) -> Self {
-            self.traffic_mirror_session = inp;
+            self.traffic_mirror_session = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyTrafficMirrorSessionOutput`](crate::output::ModifyTrafficMirrorSessionOutput)
@@ -3854,16 +3869,16 @@ pub mod modify_traffic_mirror_filter_rule_output {
         /// <p>Modifies a Traffic Mirror rule.</p>
         pub fn traffic_mirror_filter_rule(
             mut self,
-            inp: crate::model::TrafficMirrorFilterRule,
+            input: crate::model::TrafficMirrorFilterRule,
         ) -> Self {
-            self.traffic_mirror_filter_rule = Some(inp);
+            self.traffic_mirror_filter_rule = Some(input);
             self
         }
         pub fn set_traffic_mirror_filter_rule(
             mut self,
-            inp: std::option::Option<crate::model::TrafficMirrorFilterRule>,
+            input: std::option::Option<crate::model::TrafficMirrorFilterRule>,
         ) -> Self {
-            self.traffic_mirror_filter_rule = inp;
+            self.traffic_mirror_filter_rule = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyTrafficMirrorFilterRuleOutput`](crate::output::ModifyTrafficMirrorFilterRuleOutput)
@@ -3904,15 +3919,15 @@ pub mod modify_traffic_mirror_filter_network_services_output {
     }
     impl Builder {
         /// <p>The Traffic Mirror filter that the network service is associated with.</p>
-        pub fn traffic_mirror_filter(mut self, inp: crate::model::TrafficMirrorFilter) -> Self {
-            self.traffic_mirror_filter = Some(inp);
+        pub fn traffic_mirror_filter(mut self, input: crate::model::TrafficMirrorFilter) -> Self {
+            self.traffic_mirror_filter = Some(input);
             self
         }
         pub fn set_traffic_mirror_filter(
             mut self,
-            inp: std::option::Option<crate::model::TrafficMirrorFilter>,
+            input: std::option::Option<crate::model::TrafficMirrorFilter>,
         ) -> Self {
-            self.traffic_mirror_filter = inp;
+            self.traffic_mirror_filter = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyTrafficMirrorFilterNetworkServicesOutput`](crate::output::ModifyTrafficMirrorFilterNetworkServicesOutput)
@@ -3984,12 +3999,12 @@ pub mod modify_spot_fleet_request_output {
     }
     impl Builder {
         /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifySpotFleetRequestOutput`](crate::output::ModifySpotFleetRequestOutput)
@@ -4065,16 +4080,16 @@ pub mod modify_reserved_instances_output {
         /// <p>The ID for the modification.</p>
         pub fn reserved_instances_modification_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.reserved_instances_modification_id = Some(inp.into());
+            self.reserved_instances_modification_id = Some(input.into());
             self
         }
         pub fn set_reserved_instances_modification_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.reserved_instances_modification_id = inp;
+            self.reserved_instances_modification_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyReservedInstancesOutput`](crate::output::ModifyReservedInstancesOutput)
@@ -4144,15 +4159,15 @@ pub mod modify_managed_prefix_list_output {
     }
     impl Builder {
         /// <p>Information about the prefix list.</p>
-        pub fn prefix_list(mut self, inp: crate::model::ManagedPrefixList) -> Self {
-            self.prefix_list = Some(inp);
+        pub fn prefix_list(mut self, input: crate::model::ManagedPrefixList) -> Self {
+            self.prefix_list = Some(input);
             self
         }
         pub fn set_prefix_list(
             mut self,
-            inp: std::option::Option<crate::model::ManagedPrefixList>,
+            input: std::option::Option<crate::model::ManagedPrefixList>,
         ) -> Self {
-            self.prefix_list = inp;
+            self.prefix_list = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyManagedPrefixListOutput`](crate::output::ModifyManagedPrefixListOutput)
@@ -4193,15 +4208,15 @@ pub mod modify_launch_template_output {
     }
     impl Builder {
         /// <p>Information about the launch template.</p>
-        pub fn launch_template(mut self, inp: crate::model::LaunchTemplate) -> Self {
-            self.launch_template = Some(inp);
+        pub fn launch_template(mut self, input: crate::model::LaunchTemplate) -> Self {
+            self.launch_template = Some(input);
             self
         }
         pub fn set_launch_template(
             mut self,
-            inp: std::option::Option<crate::model::LaunchTemplate>,
+            input: std::option::Option<crate::model::LaunchTemplate>,
         ) -> Self {
-            self.launch_template = inp;
+            self.launch_template = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyLaunchTemplateOutput`](crate::output::ModifyLaunchTemplateOutput)
@@ -4242,12 +4257,12 @@ pub mod modify_instance_placement_output {
     }
     impl Builder {
         /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyInstancePlacementOutput`](crate::output::ModifyInstancePlacementOutput)
@@ -4294,27 +4309,27 @@ pub mod modify_instance_metadata_options_output {
     }
     impl Builder {
         /// <p>The ID of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(inp.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
             self
         }
-        pub fn set_instance_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = inp;
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
             self
         }
         /// <p>The metadata options for the instance.</p>
         pub fn instance_metadata_options(
             mut self,
-            inp: crate::model::InstanceMetadataOptionsResponse,
+            input: crate::model::InstanceMetadataOptionsResponse,
         ) -> Self {
-            self.instance_metadata_options = Some(inp);
+            self.instance_metadata_options = Some(input);
             self
         }
         pub fn set_instance_metadata_options(
             mut self,
-            inp: std::option::Option<crate::model::InstanceMetadataOptionsResponse>,
+            input: std::option::Option<crate::model::InstanceMetadataOptionsResponse>,
         ) -> Self {
-            self.instance_metadata_options = inp;
+            self.instance_metadata_options = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyInstanceMetadataOptionsOutput`](crate::output::ModifyInstanceMetadataOptionsOutput)
@@ -4356,15 +4371,15 @@ pub mod modify_instance_event_start_time_output {
     }
     impl Builder {
         /// <p>Describes a scheduled event for an instance.</p>
-        pub fn event(mut self, inp: crate::model::InstanceStatusEvent) -> Self {
-            self.event = Some(inp);
+        pub fn event(mut self, input: crate::model::InstanceStatusEvent) -> Self {
+            self.event = Some(input);
             self
         }
         pub fn set_event(
             mut self,
-            inp: std::option::Option<crate::model::InstanceStatusEvent>,
+            input: std::option::Option<crate::model::InstanceStatusEvent>,
         ) -> Self {
-            self.event = inp;
+            self.event = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyInstanceEventStartTimeOutput`](crate::output::ModifyInstanceEventStartTimeOutput)
@@ -4423,42 +4438,42 @@ pub mod modify_instance_credit_specification_output {
     impl Builder {
         pub fn successful_instance_credit_specifications(
             mut self,
-            inp: impl Into<crate::model::SuccessfulInstanceCreditSpecificationItem>,
+            input: impl Into<crate::model::SuccessfulInstanceCreditSpecificationItem>,
         ) -> Self {
             let mut v = self
                 .successful_instance_credit_specifications
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.successful_instance_credit_specifications = Some(v);
             self
         }
         pub fn set_successful_instance_credit_specifications(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::SuccessfulInstanceCreditSpecificationItem>,
             >,
         ) -> Self {
-            self.successful_instance_credit_specifications = inp;
+            self.successful_instance_credit_specifications = input;
             self
         }
         pub fn unsuccessful_instance_credit_specifications(
             mut self,
-            inp: impl Into<crate::model::UnsuccessfulInstanceCreditSpecificationItem>,
+            input: impl Into<crate::model::UnsuccessfulInstanceCreditSpecificationItem>,
         ) -> Self {
             let mut v = self
                 .unsuccessful_instance_credit_specifications
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unsuccessful_instance_credit_specifications = Some(v);
             self
         }
         pub fn set_unsuccessful_instance_credit_specifications(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::UnsuccessfulInstanceCreditSpecificationItem>,
             >,
         ) -> Self {
-            self.unsuccessful_instance_credit_specifications = inp;
+            self.unsuccessful_instance_credit_specifications = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyInstanceCreditSpecificationOutput`](crate::output::ModifyInstanceCreditSpecificationOutput)
@@ -4502,12 +4517,12 @@ pub mod modify_instance_capacity_reservation_attributes_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyInstanceCapacityReservationAttributesOutput`](crate::output::ModifyInstanceCapacityReservationAttributesOutput)
@@ -4669,30 +4684,30 @@ pub mod modify_hosts_output {
         pub(crate) unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
     }
     impl Builder {
-        pub fn successful(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn successful(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.successful = Some(v);
             self
         }
         pub fn set_successful(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.successful = inp;
+            self.successful = input;
             self
         }
-        pub fn unsuccessful(mut self, inp: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unsuccessful = Some(v);
             self
         }
         pub fn set_unsuccessful(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
         ) -> Self {
-            self.unsuccessful = inp;
+            self.unsuccessful = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyHostsOutput`](crate::output::ModifyHostsOutput)
@@ -4734,15 +4749,15 @@ pub mod modify_fpga_image_attribute_output {
     }
     impl Builder {
         /// <p>Information about the attribute.</p>
-        pub fn fpga_image_attribute(mut self, inp: crate::model::FpgaImageAttribute) -> Self {
-            self.fpga_image_attribute = Some(inp);
+        pub fn fpga_image_attribute(mut self, input: crate::model::FpgaImageAttribute) -> Self {
+            self.fpga_image_attribute = Some(input);
             self
         }
         pub fn set_fpga_image_attribute(
             mut self,
-            inp: std::option::Option<crate::model::FpgaImageAttribute>,
+            input: std::option::Option<crate::model::FpgaImageAttribute>,
         ) -> Self {
-            self.fpga_image_attribute = inp;
+            self.fpga_image_attribute = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyFpgaImageAttributeOutput`](crate::output::ModifyFpgaImageAttributeOutput)
@@ -4783,12 +4798,12 @@ pub mod modify_fleet_output {
     }
     impl Builder {
         /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyFleetOutput`](crate::output::ModifyFleetOutput)
@@ -4829,12 +4844,12 @@ pub mod modify_ebs_default_kms_key_id_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the default CMK for encryption by default.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyEbsDefaultKmsKeyIdOutput`](crate::output::ModifyEbsDefaultKmsKeyIdOutput)
@@ -4882,16 +4897,16 @@ pub mod modify_default_credit_specification_output {
         /// <p>The default credit option for CPU usage of the instance family.</p>
         pub fn instance_family_credit_specification(
             mut self,
-            inp: crate::model::InstanceFamilyCreditSpecification,
+            input: crate::model::InstanceFamilyCreditSpecification,
         ) -> Self {
-            self.instance_family_credit_specification = Some(inp);
+            self.instance_family_credit_specification = Some(input);
             self
         }
         pub fn set_instance_family_credit_specification(
             mut self,
-            inp: std::option::Option<crate::model::InstanceFamilyCreditSpecification>,
+            input: std::option::Option<crate::model::InstanceFamilyCreditSpecification>,
         ) -> Self {
-            self.instance_family_credit_specification = inp;
+            self.instance_family_credit_specification = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyDefaultCreditSpecificationOutput`](crate::output::ModifyDefaultCreditSpecificationOutput)
@@ -4932,12 +4947,12 @@ pub mod modify_client_vpn_endpoint_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyClientVpnEndpointOutput`](crate::output::ModifyClientVpnEndpointOutput)
@@ -4978,12 +4993,12 @@ pub mod modify_capacity_reservation_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyCapacityReservationOutput`](crate::output::ModifyCapacityReservationOutput)
@@ -5024,12 +5039,12 @@ pub mod modify_availability_zone_group_output {
     }
     impl Builder {
         /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyAvailabilityZoneGroupOutput`](crate::output::ModifyAvailabilityZoneGroupOutput)
@@ -5070,15 +5085,15 @@ pub mod modify_address_attribute_output {
     }
     impl Builder {
         /// <p>Information about the Elastic IP address.</p>
-        pub fn address(mut self, inp: crate::model::AddressAttribute) -> Self {
-            self.address = Some(inp);
+        pub fn address(mut self, input: crate::model::AddressAttribute) -> Self {
+            self.address = Some(input);
             self
         }
         pub fn set_address(
             mut self,
-            inp: std::option::Option<crate::model::AddressAttribute>,
+            input: std::option::Option<crate::model::AddressAttribute>,
         ) -> Self {
-            self.address = inp;
+            self.address = input;
             self
         }
         /// Consumes the builder and constructs a [`ModifyAddressAttributeOutput`](crate::output::ModifyAddressAttributeOutput)
@@ -5119,15 +5134,15 @@ pub mod import_volume_output {
     }
     impl Builder {
         /// <p>Information about the conversion task.</p>
-        pub fn conversion_task(mut self, inp: crate::model::ConversionTask) -> Self {
-            self.conversion_task = Some(inp);
+        pub fn conversion_task(mut self, input: crate::model::ConversionTask) -> Self {
+            self.conversion_task = Some(input);
             self
         }
         pub fn set_conversion_task(
             mut self,
-            inp: std::option::Option<crate::model::ConversionTask>,
+            input: std::option::Option<crate::model::ConversionTask>,
         ) -> Self {
-            self.conversion_task = inp;
+            self.conversion_task = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportVolumeOutput`](crate::output::ImportVolumeOutput)
@@ -5180,46 +5195,49 @@ pub mod import_snapshot_output {
     }
     impl Builder {
         /// <p>A description of the import snapshot task.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The ID of the import snapshot task.</p>
-        pub fn import_task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.import_task_id = Some(inp.into());
+        pub fn import_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.import_task_id = Some(input.into());
             self
         }
-        pub fn set_import_task_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.import_task_id = inp;
+        pub fn set_import_task_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.import_task_id = input;
             self
         }
         /// <p>Information about the import snapshot task.</p>
-        pub fn snapshot_task_detail(mut self, inp: crate::model::SnapshotTaskDetail) -> Self {
-            self.snapshot_task_detail = Some(inp);
+        pub fn snapshot_task_detail(mut self, input: crate::model::SnapshotTaskDetail) -> Self {
+            self.snapshot_task_detail = Some(input);
             self
         }
         pub fn set_snapshot_task_detail(
             mut self,
-            inp: std::option::Option<crate::model::SnapshotTaskDetail>,
+            input: std::option::Option<crate::model::SnapshotTaskDetail>,
         ) -> Self {
-            self.snapshot_task_detail = inp;
+            self.snapshot_task_detail = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportSnapshotOutput`](crate::output::ImportSnapshotOutput)
@@ -5275,46 +5293,46 @@ pub mod import_key_pair_output {
     }
     impl Builder {
         /// <p>The MD5 public key fingerprint as specified in section 4 of RFC 4716.</p>
-        pub fn key_fingerprint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_fingerprint = Some(inp.into());
+        pub fn key_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_fingerprint = Some(input.into());
             self
         }
         pub fn set_key_fingerprint(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.key_fingerprint = inp;
+            self.key_fingerprint = input;
             self
         }
         /// <p>The key pair name you provided.</p>
-        pub fn key_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_name = Some(inp.into());
+        pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_name = Some(input.into());
             self
         }
-        pub fn set_key_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_name = inp;
+        pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_name = input;
             self
         }
         /// <p>The ID of the resulting key pair.</p>
-        pub fn key_pair_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_pair_id = Some(inp.into());
+        pub fn key_pair_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_pair_id = Some(input.into());
             self
         }
-        pub fn set_key_pair_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_pair_id = inp;
+        pub fn set_key_pair_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_pair_id = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportKeyPairOutput`](crate::output::ImportKeyPairOutput)
@@ -5358,15 +5376,15 @@ pub mod import_instance_output {
     }
     impl Builder {
         /// <p>Information about the conversion task.</p>
-        pub fn conversion_task(mut self, inp: crate::model::ConversionTask) -> Self {
-            self.conversion_task = Some(inp);
+        pub fn conversion_task(mut self, input: crate::model::ConversionTask) -> Self {
+            self.conversion_task = Some(input);
             self
         }
         pub fn set_conversion_task(
             mut self,
-            inp: std::option::Option<crate::model::ConversionTask>,
+            input: std::option::Option<crate::model::ConversionTask>,
         ) -> Self {
-            self.conversion_task = inp;
+            self.conversion_task = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportInstanceOutput`](crate::output::ImportInstanceOutput)
@@ -5468,156 +5486,162 @@ pub mod import_image_output {
     }
     impl Builder {
         /// <p>The architecture of the virtual machine.</p>
-        pub fn architecture(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.architecture = Some(inp.into());
+        pub fn architecture(mut self, input: impl Into<std::string::String>) -> Self {
+            self.architecture = Some(input.into());
             self
         }
-        pub fn set_architecture(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.architecture = inp;
+        pub fn set_architecture(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.architecture = input;
             self
         }
         /// <p>A description of the import task.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Indicates whether the AMI is encrypted.</p>
-        pub fn encrypted(mut self, inp: bool) -> Self {
-            self.encrypted = Some(inp);
+        pub fn encrypted(mut self, input: bool) -> Self {
+            self.encrypted = Some(input);
             self
         }
-        pub fn set_encrypted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.encrypted = inp;
+        pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.encrypted = input;
             self
         }
         /// <p>The target hypervisor of the import task.</p>
-        pub fn hypervisor(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hypervisor = Some(inp.into());
+        pub fn hypervisor(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hypervisor = Some(input.into());
             self
         }
-        pub fn set_hypervisor(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hypervisor = inp;
+        pub fn set_hypervisor(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hypervisor = input;
             self
         }
         /// <p>The ID of the Amazon Machine Image (AMI) created by the import task.</p>
-        pub fn image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.image_id = Some(inp.into());
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_id = Some(input.into());
             self
         }
-        pub fn set_image_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.image_id = inp;
+        pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_id = input;
             self
         }
         /// <p>The task ID of the import image task.</p>
-        pub fn import_task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.import_task_id = Some(inp.into());
+        pub fn import_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.import_task_id = Some(input.into());
             self
         }
-        pub fn set_import_task_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.import_task_id = inp;
+        pub fn set_import_task_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.import_task_id = input;
             self
         }
         /// <p>The identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key
         /// (CMK) that was used to create the encrypted AMI.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The license type of the virtual machine.</p>
-        pub fn license_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.license_type = Some(inp.into());
+        pub fn license_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.license_type = Some(input.into());
             self
         }
-        pub fn set_license_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.license_type = inp;
+        pub fn set_license_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.license_type = input;
             self
         }
         /// <p>The operating system of the virtual machine.</p>
-        pub fn platform(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.platform = Some(inp.into());
+        pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform = Some(input.into());
             self
         }
-        pub fn set_platform(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.platform = inp;
+        pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform = input;
             self
         }
         /// <p>The progress of the task.</p>
-        pub fn progress(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.progress = Some(inp.into());
+        pub fn progress(mut self, input: impl Into<std::string::String>) -> Self {
+            self.progress = Some(input.into());
             self
         }
-        pub fn set_progress(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.progress = inp;
+        pub fn set_progress(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.progress = input;
             self
         }
-        pub fn snapshot_details(mut self, inp: impl Into<crate::model::SnapshotDetail>) -> Self {
+        pub fn snapshot_details(mut self, input: impl Into<crate::model::SnapshotDetail>) -> Self {
             let mut v = self.snapshot_details.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.snapshot_details = Some(v);
             self
         }
         pub fn set_snapshot_details(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SnapshotDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SnapshotDetail>>,
         ) -> Self {
-            self.snapshot_details = inp;
+            self.snapshot_details = input;
             self
         }
         /// <p>A brief status of the task.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>A detailed status message of the import task.</p>
-        pub fn status_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_message = Some(inp.into());
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
             self
         }
-        pub fn set_status_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_message = inp;
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
             self
         }
         pub fn license_specifications(
             mut self,
-            inp: impl Into<crate::model::ImportImageLicenseConfigurationResponse>,
+            input: impl Into<crate::model::ImportImageLicenseConfigurationResponse>,
         ) -> Self {
             let mut v = self.license_specifications.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.license_specifications = Some(v);
             self
         }
         pub fn set_license_specifications(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::ImportImageLicenseConfigurationResponse>,
             >,
         ) -> Self {
-            self.license_specifications = inp;
+            self.license_specifications = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportImageOutput`](crate::output::ImportImageOutput)
@@ -5672,12 +5696,12 @@ pub mod import_client_vpn_client_certificate_revocation_list_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`ImportClientVpnClientCertificateRevocationListOutput`](crate::output::ImportClientVpnClientCertificateRevocationListOutput)
@@ -5730,31 +5754,31 @@ pub mod get_transit_gateway_route_table_propagations_output {
     impl Builder {
         pub fn transit_gateway_route_table_propagations(
             mut self,
-            inp: impl Into<crate::model::TransitGatewayRouteTablePropagation>,
+            input: impl Into<crate::model::TransitGatewayRouteTablePropagation>,
         ) -> Self {
             let mut v = self
                 .transit_gateway_route_table_propagations
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.transit_gateway_route_table_propagations = Some(v);
             self
         }
         pub fn set_transit_gateway_route_table_propagations(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::TransitGatewayRouteTablePropagation>,
             >,
         ) -> Self {
-            self.transit_gateway_route_table_propagations = inp;
+            self.transit_gateway_route_table_propagations = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTransitGatewayRouteTablePropagationsOutput`](crate::output::GetTransitGatewayRouteTablePropagationsOutput)
@@ -5805,29 +5829,29 @@ pub mod get_transit_gateway_route_table_associations_output {
     impl Builder {
         pub fn associations(
             mut self,
-            inp: impl Into<crate::model::TransitGatewayRouteTableAssociation>,
+            input: impl Into<crate::model::TransitGatewayRouteTableAssociation>,
         ) -> Self {
             let mut v = self.associations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.associations = Some(v);
             self
         }
         pub fn set_associations(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::TransitGatewayRouteTableAssociation>,
             >,
         ) -> Self {
-            self.associations = inp;
+            self.associations = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTransitGatewayRouteTableAssociationsOutput`](crate::output::GetTransitGatewayRouteTableAssociationsOutput)
@@ -5880,31 +5904,31 @@ pub mod get_transit_gateway_prefix_list_references_output {
     impl Builder {
         pub fn transit_gateway_prefix_list_references(
             mut self,
-            inp: impl Into<crate::model::TransitGatewayPrefixListReference>,
+            input: impl Into<crate::model::TransitGatewayPrefixListReference>,
         ) -> Self {
             let mut v = self
                 .transit_gateway_prefix_list_references
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.transit_gateway_prefix_list_references = Some(v);
             self
         }
         pub fn set_transit_gateway_prefix_list_references(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::TransitGatewayPrefixListReference>,
             >,
         ) -> Self {
-            self.transit_gateway_prefix_list_references = inp;
+            self.transit_gateway_prefix_list_references = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTransitGatewayPrefixListReferencesOutput`](crate::output::GetTransitGatewayPrefixListReferencesOutput)
@@ -5957,29 +5981,29 @@ pub mod get_transit_gateway_multicast_domain_associations_output {
     impl Builder {
         pub fn multicast_domain_associations(
             mut self,
-            inp: impl Into<crate::model::TransitGatewayMulticastDomainAssociation>,
+            input: impl Into<crate::model::TransitGatewayMulticastDomainAssociation>,
         ) -> Self {
             let mut v = self.multicast_domain_associations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.multicast_domain_associations = Some(v);
             self
         }
         pub fn set_multicast_domain_associations(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::TransitGatewayMulticastDomainAssociation>,
             >,
         ) -> Self {
-            self.multicast_domain_associations = inp;
+            self.multicast_domain_associations = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTransitGatewayMulticastDomainAssociationsOutput`](crate::output::GetTransitGatewayMulticastDomainAssociationsOutput)
@@ -6032,31 +6056,31 @@ pub mod get_transit_gateway_attachment_propagations_output {
     impl Builder {
         pub fn transit_gateway_attachment_propagations(
             mut self,
-            inp: impl Into<crate::model::TransitGatewayAttachmentPropagation>,
+            input: impl Into<crate::model::TransitGatewayAttachmentPropagation>,
         ) -> Self {
             let mut v = self
                 .transit_gateway_attachment_propagations
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.transit_gateway_attachment_propagations = Some(v);
             self
         }
         pub fn set_transit_gateway_attachment_propagations(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::TransitGatewayAttachmentPropagation>,
             >,
         ) -> Self {
-            self.transit_gateway_attachment_propagations = inp;
+            self.transit_gateway_attachment_propagations = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTransitGatewayAttachmentPropagationsOutput`](crate::output::GetTransitGatewayAttachmentPropagationsOutput)
@@ -6106,12 +6130,15 @@ pub mod get_serial_console_access_status_output {
         /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
         /// your account. If <code>false</code>, access to the EC2 serial console of all instances
         /// is disabled for your account.</p>
-        pub fn serial_console_access_enabled(mut self, inp: bool) -> Self {
-            self.serial_console_access_enabled = Some(inp);
+        pub fn serial_console_access_enabled(mut self, input: bool) -> Self {
+            self.serial_console_access_enabled = Some(input);
             self
         }
-        pub fn set_serial_console_access_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.serial_console_access_enabled = inp;
+        pub fn set_serial_console_access_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.serial_console_access_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSerialConsoleAccessStatusOutput`](crate::output::GetSerialConsoleAccessStatusOutput)
@@ -6207,119 +6234,124 @@ pub mod get_reserved_instances_exchange_quote_output {
     }
     impl Builder {
         /// <p>The currency of the transaction.</p>
-        pub fn currency_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.currency_code = Some(inp.into());
+        pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.currency_code = Some(input.into());
             self
         }
-        pub fn set_currency_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.currency_code = inp;
+        pub fn set_currency_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.currency_code = input;
             self
         }
         /// <p>If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.</p>
-        pub fn is_valid_exchange(mut self, inp: bool) -> Self {
-            self.is_valid_exchange = Some(inp);
+        pub fn is_valid_exchange(mut self, input: bool) -> Self {
+            self.is_valid_exchange = Some(input);
             self
         }
-        pub fn set_is_valid_exchange(mut self, inp: std::option::Option<bool>) -> Self {
-            self.is_valid_exchange = inp;
+        pub fn set_is_valid_exchange(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_valid_exchange = input;
             self
         }
         /// <p>The new end date of the reservation term.</p>
         pub fn output_reserved_instances_will_expire_at(
             mut self,
-            inp: smithy_types::Instant,
+            input: smithy_types::Instant,
         ) -> Self {
-            self.output_reserved_instances_will_expire_at = Some(inp);
+            self.output_reserved_instances_will_expire_at = Some(input);
             self
         }
         pub fn set_output_reserved_instances_will_expire_at(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.output_reserved_instances_will_expire_at = inp;
+            self.output_reserved_instances_will_expire_at = input;
             self
         }
         /// <p>The total true upfront charge for the exchange.</p>
-        pub fn payment_due(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.payment_due = Some(inp.into());
+        pub fn payment_due(mut self, input: impl Into<std::string::String>) -> Self {
+            self.payment_due = Some(input.into());
             self
         }
-        pub fn set_payment_due(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.payment_due = inp;
+        pub fn set_payment_due(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.payment_due = input;
             self
         }
         /// <p>The cost associated with the Reserved Instance.</p>
         pub fn reserved_instance_value_rollup(
             mut self,
-            inp: crate::model::ReservationValue,
+            input: crate::model::ReservationValue,
         ) -> Self {
-            self.reserved_instance_value_rollup = Some(inp);
+            self.reserved_instance_value_rollup = Some(input);
             self
         }
         pub fn set_reserved_instance_value_rollup(
             mut self,
-            inp: std::option::Option<crate::model::ReservationValue>,
+            input: std::option::Option<crate::model::ReservationValue>,
         ) -> Self {
-            self.reserved_instance_value_rollup = inp;
+            self.reserved_instance_value_rollup = input;
             self
         }
         pub fn reserved_instance_value_set(
             mut self,
-            inp: impl Into<crate::model::ReservedInstanceReservationValue>,
+            input: impl Into<crate::model::ReservedInstanceReservationValue>,
         ) -> Self {
             let mut v = self.reserved_instance_value_set.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.reserved_instance_value_set = Some(v);
             self
         }
         pub fn set_reserved_instance_value_set(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReservedInstanceReservationValue>>,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::ReservedInstanceReservationValue>,
+            >,
         ) -> Self {
-            self.reserved_instance_value_set = inp;
+            self.reserved_instance_value_set = input;
             self
         }
         /// <p>The cost associated with the Reserved Instance.</p>
         pub fn target_configuration_value_rollup(
             mut self,
-            inp: crate::model::ReservationValue,
+            input: crate::model::ReservationValue,
         ) -> Self {
-            self.target_configuration_value_rollup = Some(inp);
+            self.target_configuration_value_rollup = Some(input);
             self
         }
         pub fn set_target_configuration_value_rollup(
             mut self,
-            inp: std::option::Option<crate::model::ReservationValue>,
+            input: std::option::Option<crate::model::ReservationValue>,
         ) -> Self {
-            self.target_configuration_value_rollup = inp;
+            self.target_configuration_value_rollup = input;
             self
         }
         pub fn target_configuration_value_set(
             mut self,
-            inp: impl Into<crate::model::TargetReservationValue>,
+            input: impl Into<crate::model::TargetReservationValue>,
         ) -> Self {
             let mut v = self.target_configuration_value_set.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.target_configuration_value_set = Some(v);
             self
         }
         pub fn set_target_configuration_value_set(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TargetReservationValue>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TargetReservationValue>>,
         ) -> Self {
-            self.target_configuration_value_set = inp;
+            self.target_configuration_value_set = input;
             self
         }
         /// <p>Describes the reason why the exchange cannot be completed.</p>
-        pub fn validation_failure_reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.validation_failure_reason = Some(inp.into());
+        pub fn validation_failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.validation_failure_reason = Some(input.into());
             self
         }
         pub fn set_validation_failure_reason(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.validation_failure_reason = inp;
+            self.validation_failure_reason = input;
             self
         }
         /// Consumes the builder and constructs a [`GetReservedInstancesExchangeQuoteOutput`](crate::output::GetReservedInstancesExchangeQuoteOutput)
@@ -6378,31 +6410,34 @@ pub mod get_password_data_output {
     }
     impl Builder {
         /// <p>The ID of the Windows instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(inp.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
             self
         }
-        pub fn set_instance_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = inp;
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
             self
         }
         /// <p>The password of the instance. Returns an empty string if the password is not
         /// available.</p>
-        pub fn password_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.password_data = Some(inp.into());
+        pub fn password_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.password_data = Some(input.into());
             self
         }
-        pub fn set_password_data(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.password_data = inp;
+        pub fn set_password_data(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.password_data = input;
             self
         }
         /// <p>The time the data was last updated.</p>
-        pub fn timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.timestamp = Some(inp);
+        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.timestamp = inp;
+        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`GetPasswordDataOutput`](crate::output::GetPasswordDataOutput)
@@ -6448,26 +6483,26 @@ pub mod get_managed_prefix_list_entries_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn entries(mut self, inp: impl Into<crate::model::PrefixListEntry>) -> Self {
+        pub fn entries(mut self, input: impl Into<crate::model::PrefixListEntry>) -> Self {
             let mut v = self.entries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.entries = Some(v);
             self
         }
         pub fn set_entries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PrefixListEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PrefixListEntry>>,
         ) -> Self {
-            self.entries = inp;
+            self.entries = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`GetManagedPrefixListEntriesOutput`](crate::output::GetManagedPrefixListEntriesOutput)
@@ -6516,27 +6551,27 @@ pub mod get_managed_prefix_list_associations_output {
     impl Builder {
         pub fn prefix_list_associations(
             mut self,
-            inp: impl Into<crate::model::PrefixListAssociation>,
+            input: impl Into<crate::model::PrefixListAssociation>,
         ) -> Self {
             let mut v = self.prefix_list_associations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.prefix_list_associations = Some(v);
             self
         }
         pub fn set_prefix_list_associations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PrefixListAssociation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PrefixListAssociation>>,
         ) -> Self {
-            self.prefix_list_associations = inp;
+            self.prefix_list_associations = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`GetManagedPrefixListAssociationsOutput`](crate::output::GetManagedPrefixListAssociationsOutput)
@@ -6581,16 +6616,16 @@ pub mod get_launch_template_data_output {
         /// <p>The instance data.</p>
         pub fn launch_template_data(
             mut self,
-            inp: crate::model::ResponseLaunchTemplateData,
+            input: crate::model::ResponseLaunchTemplateData,
         ) -> Self {
-            self.launch_template_data = Some(inp);
+            self.launch_template_data = Some(input);
             self
         }
         pub fn set_launch_template_data(
             mut self,
-            inp: std::option::Option<crate::model::ResponseLaunchTemplateData>,
+            input: std::option::Option<crate::model::ResponseLaunchTemplateData>,
         ) -> Self {
-            self.launch_template_data = inp;
+            self.launch_template_data = input;
             self
         }
         /// Consumes the builder and constructs a [`GetLaunchTemplateDataOutput`](crate::output::GetLaunchTemplateDataOutput)
@@ -6648,52 +6683,52 @@ pub mod get_host_reservation_purchase_preview_output {
         /// <p>The currency in which the <code>totalUpfrontPrice</code> and
         /// <code>totalHourlyPrice</code> amounts are specified. At this time, the only
         /// supported currency is <code>USD</code>.</p>
-        pub fn currency_code(mut self, inp: crate::model::CurrencyCodeValues) -> Self {
-            self.currency_code = Some(inp);
+        pub fn currency_code(mut self, input: crate::model::CurrencyCodeValues) -> Self {
+            self.currency_code = Some(input);
             self
         }
         pub fn set_currency_code(
             mut self,
-            inp: std::option::Option<crate::model::CurrencyCodeValues>,
+            input: std::option::Option<crate::model::CurrencyCodeValues>,
         ) -> Self {
-            self.currency_code = inp;
+            self.currency_code = input;
             self
         }
-        pub fn purchase(mut self, inp: impl Into<crate::model::Purchase>) -> Self {
+        pub fn purchase(mut self, input: impl Into<crate::model::Purchase>) -> Self {
             let mut v = self.purchase.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.purchase = Some(v);
             self
         }
         pub fn set_purchase(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Purchase>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Purchase>>,
         ) -> Self {
-            self.purchase = inp;
+            self.purchase = input;
             self
         }
         /// <p>The potential total hourly price of the reservation per hour.</p>
-        pub fn total_hourly_price(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.total_hourly_price = Some(inp.into());
+        pub fn total_hourly_price(mut self, input: impl Into<std::string::String>) -> Self {
+            self.total_hourly_price = Some(input.into());
             self
         }
         pub fn set_total_hourly_price(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.total_hourly_price = inp;
+            self.total_hourly_price = input;
             self
         }
         /// <p>The potential total upfront price. This is billed immediately.</p>
-        pub fn total_upfront_price(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.total_upfront_price = Some(inp.into());
+        pub fn total_upfront_price(mut self, input: impl Into<std::string::String>) -> Self {
+            self.total_upfront_price = Some(input.into());
             self
         }
         pub fn set_total_upfront_price(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.total_upfront_price = inp;
+            self.total_upfront_price = input;
             self
         }
         /// Consumes the builder and constructs a [`GetHostReservationPurchasePreviewOutput`](crate::output::GetHostReservationPurchasePreviewOutput)
@@ -6746,28 +6781,28 @@ pub mod get_groups_for_capacity_reservation_output {
     }
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         pub fn capacity_reservation_groups(
             mut self,
-            inp: impl Into<crate::model::CapacityReservationGroup>,
+            input: impl Into<crate::model::CapacityReservationGroup>,
         ) -> Self {
             let mut v = self.capacity_reservation_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capacity_reservation_groups = Some(v);
             self
         }
         pub fn set_capacity_reservation_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CapacityReservationGroup>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CapacityReservationGroup>>,
         ) -> Self {
-            self.capacity_reservation_groups = inp;
+            self.capacity_reservation_groups = input;
             self
         }
         /// Consumes the builder and constructs a [`GetGroupsForCapacityReservationOutput`](crate::output::GetGroupsForCapacityReservationOutput)
@@ -6809,12 +6844,12 @@ pub mod get_flow_logs_integration_template_output {
     }
     impl Builder {
         /// <p>The generated CloudFormation template.</p>
-        pub fn result(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.result = Some(inp.into());
+        pub fn result(mut self, input: impl Into<std::string::String>) -> Self {
+            self.result = Some(input.into());
             self
         }
-        pub fn set_result(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.result = inp;
+        pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.result = input;
             self
         }
         /// Consumes the builder and constructs a [`GetFlowLogsIntegrationTemplateOutput`](crate::output::GetFlowLogsIntegrationTemplateOutput)
@@ -6855,12 +6890,12 @@ pub mod get_ebs_encryption_by_default_output {
     }
     impl Builder {
         /// <p>Indicates whether encryption by default is enabled.</p>
-        pub fn ebs_encryption_by_default(mut self, inp: bool) -> Self {
-            self.ebs_encryption_by_default = Some(inp);
+        pub fn ebs_encryption_by_default(mut self, input: bool) -> Self {
+            self.ebs_encryption_by_default = Some(input);
             self
         }
-        pub fn set_ebs_encryption_by_default(mut self, inp: std::option::Option<bool>) -> Self {
-            self.ebs_encryption_by_default = inp;
+        pub fn set_ebs_encryption_by_default(mut self, input: std::option::Option<bool>) -> Self {
+            self.ebs_encryption_by_default = input;
             self
         }
         /// Consumes the builder and constructs a [`GetEbsEncryptionByDefaultOutput`](crate::output::GetEbsEncryptionByDefaultOutput)
@@ -6901,12 +6936,12 @@ pub mod get_ebs_default_kms_key_id_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the default CMK for encryption by default.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetEbsDefaultKmsKeyIdOutput`](crate::output::GetEbsDefaultKmsKeyIdOutput)
@@ -6954,16 +6989,16 @@ pub mod get_default_credit_specification_output {
         /// <p>The default credit option for CPU usage of the instance family.</p>
         pub fn instance_family_credit_specification(
             mut self,
-            inp: crate::model::InstanceFamilyCreditSpecification,
+            input: crate::model::InstanceFamilyCreditSpecification,
         ) -> Self {
-            self.instance_family_credit_specification = Some(inp);
+            self.instance_family_credit_specification = Some(input);
             self
         }
         pub fn set_instance_family_credit_specification(
             mut self,
-            inp: std::option::Option<crate::model::InstanceFamilyCreditSpecification>,
+            input: std::option::Option<crate::model::InstanceFamilyCreditSpecification>,
         ) -> Self {
-            self.instance_family_credit_specification = inp;
+            self.instance_family_credit_specification = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDefaultCreditSpecificationOutput`](crate::output::GetDefaultCreditSpecificationOutput)
@@ -7008,21 +7043,21 @@ pub mod get_console_screenshot_output {
     }
     impl Builder {
         /// <p>The data that comprises the image.</p>
-        pub fn image_data(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.image_data = Some(inp.into());
+        pub fn image_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_data = Some(input.into());
             self
         }
-        pub fn set_image_data(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.image_data = inp;
+        pub fn set_image_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_data = input;
             self
         }
         /// <p>The ID of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(inp.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
             self
         }
-        pub fn set_instance_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = inp;
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetConsoleScreenshotOutput`](crate::output::GetConsoleScreenshotOutput)
@@ -7073,31 +7108,31 @@ pub mod get_console_output_output {
     }
     impl Builder {
         /// <p>The ID of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(inp.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
             self
         }
-        pub fn set_instance_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = inp;
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
             self
         }
         /// <p>The console output, base64-encoded. If you are using a command line tool, the tool
         /// decodes the output for you.</p>
-        pub fn output(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output = Some(inp.into());
+        pub fn output(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output = Some(input.into());
             self
         }
-        pub fn set_output(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.output = inp;
+        pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output = input;
             self
         }
         /// <p>The time at which the output was last updated.</p>
-        pub fn timestamp(mut self, inp: smithy_types::Instant) -> Self {
-            self.timestamp = Some(inp);
+        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.timestamp = inp;
+        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.timestamp = input;
             self
         }
         /// Consumes the builder and constructs a [`GetConsoleOutputOutput`](crate::output::GetConsoleOutputOutput)
@@ -7152,40 +7187,43 @@ pub mod get_coip_pool_usage_output {
     }
     impl Builder {
         /// <p>The ID of the customer-owned address pool.</p>
-        pub fn coip_pool_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.coip_pool_id = Some(inp.into());
+        pub fn coip_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.coip_pool_id = Some(input.into());
             self
         }
-        pub fn set_coip_pool_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.coip_pool_id = inp;
+        pub fn set_coip_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.coip_pool_id = input;
             self
         }
         pub fn coip_address_usages(
             mut self,
-            inp: impl Into<crate::model::CoipAddressUsage>,
+            input: impl Into<crate::model::CoipAddressUsage>,
         ) -> Self {
             let mut v = self.coip_address_usages.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.coip_address_usages = Some(v);
             self
         }
         pub fn set_coip_address_usages(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CoipAddressUsage>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CoipAddressUsage>>,
         ) -> Self {
-            self.coip_address_usages = inp;
+            self.coip_address_usages = input;
             self
         }
         /// <p>The ID of the local gateway route table.</p>
-        pub fn local_gateway_route_table_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.local_gateway_route_table_id = Some(inp.into());
+        pub fn local_gateway_route_table_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.local_gateway_route_table_id = Some(input.into());
             self
         }
         pub fn set_local_gateway_route_table_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.local_gateway_route_table_id = inp;
+            self.local_gateway_route_table_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetCoipPoolUsageOutput`](crate::output::GetCoipPoolUsageOutput)
@@ -7279,51 +7317,54 @@ pub mod get_capacity_reservation_usage_output {
     }
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The ID of the Capacity Reservation.</p>
-        pub fn capacity_reservation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.capacity_reservation_id = Some(inp.into());
+        pub fn capacity_reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.capacity_reservation_id = Some(input.into());
             self
         }
         pub fn set_capacity_reservation_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.capacity_reservation_id = inp;
+            self.capacity_reservation_id = input;
             self
         }
         /// <p>The type of instance for which the Capacity Reservation reserves capacity.</p>
-        pub fn instance_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_type = Some(inp.into());
+        pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_type = Some(input.into());
             self
         }
-        pub fn set_instance_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_type = inp;
+        pub fn set_instance_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.instance_type = input;
             self
         }
         /// <p>The number of instances for which the Capacity Reservation reserves capacity.</p>
-        pub fn total_instance_count(mut self, inp: i32) -> Self {
-            self.total_instance_count = Some(inp);
+        pub fn total_instance_count(mut self, input: i32) -> Self {
+            self.total_instance_count = Some(input);
             self
         }
-        pub fn set_total_instance_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.total_instance_count = inp;
+        pub fn set_total_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_instance_count = input;
             self
         }
         /// <p>The remaining capacity. Indicates the number of instances that can be launched in the Capacity Reservation.</p>
-        pub fn available_instance_count(mut self, inp: i32) -> Self {
-            self.available_instance_count = Some(inp);
+        pub fn available_instance_count(mut self, input: i32) -> Self {
+            self.available_instance_count = Some(input);
             self
         }
-        pub fn set_available_instance_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.available_instance_count = inp;
+        pub fn set_available_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.available_instance_count = input;
             self
         }
         /// <p>The current state of the Capacity Reservation. A Capacity Reservation can be in one of the following states:</p>
@@ -7354,28 +7395,28 @@ pub mod get_capacity_reservation_usage_output {
         /// Failed requests are retained for 60 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn state(mut self, inp: crate::model::CapacityReservationState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::CapacityReservationState) -> Self {
+            self.state = Some(input);
             self
         }
         pub fn set_state(
             mut self,
-            inp: std::option::Option<crate::model::CapacityReservationState>,
+            input: std::option::Option<crate::model::CapacityReservationState>,
         ) -> Self {
-            self.state = inp;
+            self.state = input;
             self
         }
-        pub fn instance_usages(mut self, inp: impl Into<crate::model::InstanceUsage>) -> Self {
+        pub fn instance_usages(mut self, input: impl Into<crate::model::InstanceUsage>) -> Self {
             let mut v = self.instance_usages.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.instance_usages = Some(v);
             self
         }
         pub fn set_instance_usages(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InstanceUsage>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceUsage>>,
         ) -> Self {
-            self.instance_usages = inp;
+            self.instance_usages = input;
             self
         }
         /// Consumes the builder and constructs a [`GetCapacityReservationUsageOutput`](crate::output::GetCapacityReservationUsageOutput)
@@ -7429,27 +7470,27 @@ pub mod get_associated_ipv6_pool_cidrs_output {
     impl Builder {
         pub fn ipv6_cidr_associations(
             mut self,
-            inp: impl Into<crate::model::Ipv6CidrAssociation>,
+            input: impl Into<crate::model::Ipv6CidrAssociation>,
         ) -> Self {
             let mut v = self.ipv6_cidr_associations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.ipv6_cidr_associations = Some(v);
             self
         }
         pub fn set_ipv6_cidr_associations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Ipv6CidrAssociation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Ipv6CidrAssociation>>,
         ) -> Self {
-            self.ipv6_cidr_associations = inp;
+            self.ipv6_cidr_associations = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAssociatedIpv6PoolCidrsOutput`](crate::output::GetAssociatedIpv6PoolCidrsOutput)
@@ -7491,17 +7532,17 @@ pub mod get_associated_enclave_certificate_iam_roles_output {
             std::option::Option<std::vec::Vec<crate::model::AssociatedRole>>,
     }
     impl Builder {
-        pub fn associated_roles(mut self, inp: impl Into<crate::model::AssociatedRole>) -> Self {
+        pub fn associated_roles(mut self, input: impl Into<crate::model::AssociatedRole>) -> Self {
             let mut v = self.associated_roles.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.associated_roles = Some(v);
             self
         }
         pub fn set_associated_roles(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AssociatedRole>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AssociatedRole>>,
         ) -> Self {
-            self.associated_roles = inp;
+            self.associated_roles = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAssociatedEnclaveCertificateIamRolesOutput`](crate::output::GetAssociatedEnclaveCertificateIamRolesOutput)
@@ -7545,12 +7586,12 @@ pub mod export_transit_gateway_routes_output {
     impl Builder {
         /// <p>The URL of the exported file in Amazon S3. For example,
         /// s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
-        pub fn s3_location(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.s3_location = Some(inp.into());
+        pub fn s3_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_location = Some(input.into());
             self
         }
-        pub fn set_s3_location(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.s3_location = inp;
+        pub fn set_s3_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_location = input;
             self
         }
         /// Consumes the builder and constructs a [`ExportTransitGatewayRoutesOutput`](crate::output::ExportTransitGatewayRoutesOutput)
@@ -7629,108 +7670,111 @@ pub mod export_image_output {
     }
     impl Builder {
         /// <p>A description of the image being exported.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The disk image format for the exported image.</p>
-        pub fn disk_image_format(mut self, inp: crate::model::DiskImageFormat) -> Self {
-            self.disk_image_format = Some(inp);
+        pub fn disk_image_format(mut self, input: crate::model::DiskImageFormat) -> Self {
+            self.disk_image_format = Some(input);
             self
         }
         pub fn set_disk_image_format(
             mut self,
-            inp: std::option::Option<crate::model::DiskImageFormat>,
+            input: std::option::Option<crate::model::DiskImageFormat>,
         ) -> Self {
-            self.disk_image_format = inp;
+            self.disk_image_format = input;
             self
         }
         /// <p>The ID of the export image task.</p>
-        pub fn export_image_task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.export_image_task_id = Some(inp.into());
+        pub fn export_image_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.export_image_task_id = Some(input.into());
             self
         }
         pub fn set_export_image_task_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.export_image_task_id = inp;
+            self.export_image_task_id = input;
             self
         }
         /// <p>The ID of the image.</p>
-        pub fn image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.image_id = Some(inp.into());
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_id = Some(input.into());
             self
         }
-        pub fn set_image_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.image_id = inp;
+        pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_id = input;
             self
         }
         /// <p>The name of the role that grants VM Import/Export permission to export images to your Amazon
         /// S3 bucket.</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>The percent complete of the export image task.</p>
-        pub fn progress(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.progress = Some(inp.into());
+        pub fn progress(mut self, input: impl Into<std::string::String>) -> Self {
+            self.progress = Some(input.into());
             self
         }
-        pub fn set_progress(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.progress = inp;
+        pub fn set_progress(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.progress = input;
             self
         }
         /// <p>Information about the destination Amazon S3 bucket.</p>
-        pub fn s3_export_location(mut self, inp: crate::model::ExportTaskS3Location) -> Self {
-            self.s3_export_location = Some(inp);
+        pub fn s3_export_location(mut self, input: crate::model::ExportTaskS3Location) -> Self {
+            self.s3_export_location = Some(input);
             self
         }
         pub fn set_s3_export_location(
             mut self,
-            inp: std::option::Option<crate::model::ExportTaskS3Location>,
+            input: std::option::Option<crate::model::ExportTaskS3Location>,
         ) -> Self {
-            self.s3_export_location = inp;
+            self.s3_export_location = input;
             self
         }
         /// <p>The status of the export image task. The possible values are <code>active</code>, <code>completed</code>,
         /// <code>deleting</code>, and <code>deleted</code>.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The status message for the export image task.</p>
-        pub fn status_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status_message = Some(inp.into());
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status_message = Some(input.into());
             self
         }
-        pub fn set_status_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status_message = inp;
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.status_message = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`ExportImageOutput`](crate::output::ExportImageOutput)
@@ -7780,15 +7824,15 @@ pub mod export_client_vpn_client_configuration_output {
     }
     impl Builder {
         /// <p>The contents of the Client VPN endpoint configuration file.</p>
-        pub fn client_configuration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_configuration = Some(inp.into());
+        pub fn client_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_configuration = Some(input.into());
             self
         }
         pub fn set_client_configuration(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_configuration = inp;
+            self.client_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`ExportClientVpnClientConfigurationOutput`](crate::output::ExportClientVpnClientConfigurationOutput)
@@ -7836,27 +7880,33 @@ pub mod export_client_vpn_client_certificate_revocation_list_output {
     }
     impl Builder {
         /// <p>Information about the client certificate revocation list.</p>
-        pub fn certificate_revocation_list(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_revocation_list = Some(inp.into());
+        pub fn certificate_revocation_list(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.certificate_revocation_list = Some(input.into());
             self
         }
         pub fn set_certificate_revocation_list(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_revocation_list = inp;
+            self.certificate_revocation_list = input;
             self
         }
         /// <p>The current state of the client certificate revocation list.</p>
-        pub fn status(mut self, inp: crate::model::ClientCertificateRevocationListStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(
+            mut self,
+            input: crate::model::ClientCertificateRevocationListStatus,
+        ) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ClientCertificateRevocationListStatus>,
+            input: std::option::Option<crate::model::ClientCertificateRevocationListStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`ExportClientVpnClientCertificateRevocationListOutput`](crate::output::ExportClientVpnClientCertificateRevocationListOutput)
@@ -7900,12 +7950,12 @@ pub mod enable_vpc_classic_link_dns_support_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`EnableVpcClassicLinkDnsSupportOutput`](crate::output::EnableVpcClassicLinkDnsSupportOutput)
@@ -7946,12 +7996,12 @@ pub mod enable_vpc_classic_link_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`EnableVpcClassicLinkOutput`](crate::output::EnableVpcClassicLinkOutput)
@@ -8050,15 +8100,15 @@ pub mod enable_transit_gateway_route_table_propagation_output {
     }
     impl Builder {
         /// <p>Information about route propagation.</p>
-        pub fn propagation(mut self, inp: crate::model::TransitGatewayPropagation) -> Self {
-            self.propagation = Some(inp);
+        pub fn propagation(mut self, input: crate::model::TransitGatewayPropagation) -> Self {
+            self.propagation = Some(input);
             self
         }
         pub fn set_propagation(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayPropagation>,
+            input: std::option::Option<crate::model::TransitGatewayPropagation>,
         ) -> Self {
-            self.propagation = inp;
+            self.propagation = input;
             self
         }
         /// Consumes the builder and constructs a [`EnableTransitGatewayRouteTablePropagationOutput`](crate::output::EnableTransitGatewayRouteTablePropagationOutput)
@@ -8107,12 +8157,15 @@ pub mod enable_serial_console_access_output {
         /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
         /// your account. If <code>false</code>, access to the EC2 serial console of all instances
         /// is disabled for your account.</p>
-        pub fn serial_console_access_enabled(mut self, inp: bool) -> Self {
-            self.serial_console_access_enabled = Some(inp);
+        pub fn serial_console_access_enabled(mut self, input: bool) -> Self {
+            self.serial_console_access_enabled = Some(input);
             self
         }
-        pub fn set_serial_console_access_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.serial_console_access_enabled = inp;
+        pub fn set_serial_console_access_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.serial_console_access_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`EnableSerialConsoleAccessOutput`](crate::output::EnableSerialConsoleAccessOutput)
@@ -8162,38 +8215,38 @@ pub mod enable_fast_snapshot_restores_output {
     impl Builder {
         pub fn successful(
             mut self,
-            inp: impl Into<crate::model::EnableFastSnapshotRestoreSuccessItem>,
+            input: impl Into<crate::model::EnableFastSnapshotRestoreSuccessItem>,
         ) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.successful = Some(v);
             self
         }
         pub fn set_successful(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::EnableFastSnapshotRestoreSuccessItem>,
             >,
         ) -> Self {
-            self.successful = inp;
+            self.successful = input;
             self
         }
         pub fn unsuccessful(
             mut self,
-            inp: impl Into<crate::model::EnableFastSnapshotRestoreErrorItem>,
+            input: impl Into<crate::model::EnableFastSnapshotRestoreErrorItem>,
         ) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unsuccessful = Some(v);
             self
         }
         pub fn set_unsuccessful(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::EnableFastSnapshotRestoreErrorItem>,
             >,
         ) -> Self {
-            self.unsuccessful = inp;
+            self.unsuccessful = input;
             self
         }
         /// Consumes the builder and constructs a [`EnableFastSnapshotRestoresOutput`](crate::output::EnableFastSnapshotRestoresOutput)
@@ -8235,12 +8288,12 @@ pub mod enable_ebs_encryption_by_default_output {
     }
     impl Builder {
         /// <p>The updated status of encryption by default.</p>
-        pub fn ebs_encryption_by_default(mut self, inp: bool) -> Self {
-            self.ebs_encryption_by_default = Some(inp);
+        pub fn ebs_encryption_by_default(mut self, input: bool) -> Self {
+            self.ebs_encryption_by_default = Some(input);
             self
         }
-        pub fn set_ebs_encryption_by_default(mut self, inp: std::option::Option<bool>) -> Self {
-            self.ebs_encryption_by_default = inp;
+        pub fn set_ebs_encryption_by_default(mut self, input: std::option::Option<bool>) -> Self {
+            self.ebs_encryption_by_default = input;
             self
         }
         /// Consumes the builder and constructs a [`EnableEbsEncryptionByDefaultOutput`](crate::output::EnableEbsEncryptionByDefaultOutput)
@@ -8296,40 +8349,40 @@ pub mod disassociate_vpc_cidr_block_output {
         /// <p>Information about the IPv6 CIDR block association.</p>
         pub fn ipv6_cidr_block_association(
             mut self,
-            inp: crate::model::VpcIpv6CidrBlockAssociation,
+            input: crate::model::VpcIpv6CidrBlockAssociation,
         ) -> Self {
-            self.ipv6_cidr_block_association = Some(inp);
+            self.ipv6_cidr_block_association = Some(input);
             self
         }
         pub fn set_ipv6_cidr_block_association(
             mut self,
-            inp: std::option::Option<crate::model::VpcIpv6CidrBlockAssociation>,
+            input: std::option::Option<crate::model::VpcIpv6CidrBlockAssociation>,
         ) -> Self {
-            self.ipv6_cidr_block_association = inp;
+            self.ipv6_cidr_block_association = input;
             self
         }
         /// <p>Information about the IPv4 CIDR block association.</p>
         pub fn cidr_block_association(
             mut self,
-            inp: crate::model::VpcCidrBlockAssociation,
+            input: crate::model::VpcCidrBlockAssociation,
         ) -> Self {
-            self.cidr_block_association = Some(inp);
+            self.cidr_block_association = Some(input);
             self
         }
         pub fn set_cidr_block_association(
             mut self,
-            inp: std::option::Option<crate::model::VpcCidrBlockAssociation>,
+            input: std::option::Option<crate::model::VpcCidrBlockAssociation>,
         ) -> Self {
-            self.cidr_block_association = inp;
+            self.cidr_block_association = input;
             self
         }
         /// <p>The ID of the VPC.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_id = Some(inp.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
             self
         }
-        pub fn set_vpc_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = inp;
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DisassociateVpcCidrBlockOutput`](crate::output::DisassociateVpcCidrBlockOutput)
@@ -8372,15 +8425,15 @@ pub mod disassociate_transit_gateway_route_table_output {
     }
     impl Builder {
         /// <p>Information about the association.</p>
-        pub fn association(mut self, inp: crate::model::TransitGatewayAssociation) -> Self {
-            self.association = Some(inp);
+        pub fn association(mut self, input: crate::model::TransitGatewayAssociation) -> Self {
+            self.association = Some(input);
             self
         }
         pub fn set_association(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayAssociation>,
+            input: std::option::Option<crate::model::TransitGatewayAssociation>,
         ) -> Self {
-            self.association = inp;
+            self.association = input;
             self
         }
         /// Consumes the builder and constructs a [`DisassociateTransitGatewayRouteTableOutput`](crate::output::DisassociateTransitGatewayRouteTableOutput)
@@ -8424,16 +8477,16 @@ pub mod disassociate_transit_gateway_multicast_domain_output {
         /// <p>Information about the association.</p>
         pub fn associations(
             mut self,
-            inp: crate::model::TransitGatewayMulticastDomainAssociations,
+            input: crate::model::TransitGatewayMulticastDomainAssociations,
         ) -> Self {
-            self.associations = Some(inp);
+            self.associations = Some(input);
             self
         }
         pub fn set_associations(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
+            input: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
         ) -> Self {
-            self.associations = inp;
+            self.associations = input;
             self
         }
         /// Consumes the builder and constructs a [`DisassociateTransitGatewayMulticastDomainOutput`](crate::output::DisassociateTransitGatewayMulticastDomainOutput)
@@ -8486,25 +8539,25 @@ pub mod disassociate_subnet_cidr_block_output {
         /// <p>Information about the IPv6 CIDR block association.</p>
         pub fn ipv6_cidr_block_association(
             mut self,
-            inp: crate::model::SubnetIpv6CidrBlockAssociation,
+            input: crate::model::SubnetIpv6CidrBlockAssociation,
         ) -> Self {
-            self.ipv6_cidr_block_association = Some(inp);
+            self.ipv6_cidr_block_association = Some(input);
             self
         }
         pub fn set_ipv6_cidr_block_association(
             mut self,
-            inp: std::option::Option<crate::model::SubnetIpv6CidrBlockAssociation>,
+            input: std::option::Option<crate::model::SubnetIpv6CidrBlockAssociation>,
         ) -> Self {
-            self.ipv6_cidr_block_association = inp;
+            self.ipv6_cidr_block_association = input;
             self
         }
         /// <p>The ID of the subnet.</p>
-        pub fn subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subnet_id = Some(inp.into());
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subnet_id = Some(input.into());
             self
         }
-        pub fn set_subnet_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.subnet_id = inp;
+        pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subnet_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DisassociateSubnetCidrBlockOutput`](crate::output::DisassociateSubnetCidrBlockOutput)
@@ -8582,16 +8635,16 @@ pub mod disassociate_iam_instance_profile_output {
         /// <p>Information about the IAM instance profile association.</p>
         pub fn iam_instance_profile_association(
             mut self,
-            inp: crate::model::IamInstanceProfileAssociation,
+            input: crate::model::IamInstanceProfileAssociation,
         ) -> Self {
-            self.iam_instance_profile_association = Some(inp);
+            self.iam_instance_profile_association = Some(input);
             self
         }
         pub fn set_iam_instance_profile_association(
             mut self,
-            inp: std::option::Option<crate::model::IamInstanceProfileAssociation>,
+            input: std::option::Option<crate::model::IamInstanceProfileAssociation>,
         ) -> Self {
-            self.iam_instance_profile_association = inp;
+            self.iam_instance_profile_association = input;
             self
         }
         /// Consumes the builder and constructs a [`DisassociateIamInstanceProfileOutput`](crate::output::DisassociateIamInstanceProfileOutput)
@@ -8632,12 +8685,12 @@ pub mod disassociate_enclave_certificate_iam_role_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`DisassociateEnclaveCertificateIamRoleOutput`](crate::output::DisassociateEnclaveCertificateIamRoleOutput)
@@ -8682,24 +8735,27 @@ pub mod disassociate_client_vpn_target_network_output {
     }
     impl Builder {
         /// <p>The ID of the target network association.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_id = Some(inp.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_id = Some(input.into());
             self
         }
-        pub fn set_association_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.association_id = inp;
+        pub fn set_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.association_id = input;
             self
         }
         /// <p>The current state of the target network association.</p>
-        pub fn status(mut self, inp: crate::model::AssociationStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::AssociationStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::AssociationStatus>,
+            input: std::option::Option<crate::model::AssociationStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`DisassociateClientVpnTargetNetworkOutput`](crate::output::DisassociateClientVpnTargetNetworkOutput)
@@ -8770,12 +8826,12 @@ pub mod disable_vpc_classic_link_dns_support_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`DisableVpcClassicLinkDnsSupportOutput`](crate::output::DisableVpcClassicLinkDnsSupportOutput)
@@ -8816,12 +8872,12 @@ pub mod disable_vpc_classic_link_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`DisableVpcClassicLinkOutput`](crate::output::DisableVpcClassicLinkOutput)
@@ -8891,15 +8947,15 @@ pub mod disable_transit_gateway_route_table_propagation_output {
     }
     impl Builder {
         /// <p>Information about route propagation.</p>
-        pub fn propagation(mut self, inp: crate::model::TransitGatewayPropagation) -> Self {
-            self.propagation = Some(inp);
+        pub fn propagation(mut self, input: crate::model::TransitGatewayPropagation) -> Self {
+            self.propagation = Some(input);
             self
         }
         pub fn set_propagation(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayPropagation>,
+            input: std::option::Option<crate::model::TransitGatewayPropagation>,
         ) -> Self {
-            self.propagation = inp;
+            self.propagation = input;
             self
         }
         /// Consumes the builder and constructs a [`DisableTransitGatewayRouteTablePropagationOutput`](crate::output::DisableTransitGatewayRouteTablePropagationOutput)
@@ -8948,12 +9004,15 @@ pub mod disable_serial_console_access_output {
         /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for
         /// your account. If <code>false</code>, access to the EC2 serial console of all instances
         /// is disabled for your account.</p>
-        pub fn serial_console_access_enabled(mut self, inp: bool) -> Self {
-            self.serial_console_access_enabled = Some(inp);
+        pub fn serial_console_access_enabled(mut self, input: bool) -> Self {
+            self.serial_console_access_enabled = Some(input);
             self
         }
-        pub fn set_serial_console_access_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.serial_console_access_enabled = inp;
+        pub fn set_serial_console_access_enabled(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.serial_console_access_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`DisableSerialConsoleAccessOutput`](crate::output::DisableSerialConsoleAccessOutput)
@@ -9003,38 +9062,38 @@ pub mod disable_fast_snapshot_restores_output {
     impl Builder {
         pub fn successful(
             mut self,
-            inp: impl Into<crate::model::DisableFastSnapshotRestoreSuccessItem>,
+            input: impl Into<crate::model::DisableFastSnapshotRestoreSuccessItem>,
         ) -> Self {
             let mut v = self.successful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.successful = Some(v);
             self
         }
         pub fn set_successful(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::DisableFastSnapshotRestoreSuccessItem>,
             >,
         ) -> Self {
-            self.successful = inp;
+            self.successful = input;
             self
         }
         pub fn unsuccessful(
             mut self,
-            inp: impl Into<crate::model::DisableFastSnapshotRestoreErrorItem>,
+            input: impl Into<crate::model::DisableFastSnapshotRestoreErrorItem>,
         ) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unsuccessful = Some(v);
             self
         }
         pub fn set_unsuccessful(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::DisableFastSnapshotRestoreErrorItem>,
             >,
         ) -> Self {
-            self.unsuccessful = inp;
+            self.unsuccessful = input;
             self
         }
         /// Consumes the builder and constructs a [`DisableFastSnapshotRestoresOutput`](crate::output::DisableFastSnapshotRestoresOutput)
@@ -9076,12 +9135,12 @@ pub mod disable_ebs_encryption_by_default_output {
     }
     impl Builder {
         /// <p>The updated status of encryption by default.</p>
-        pub fn ebs_encryption_by_default(mut self, inp: bool) -> Self {
-            self.ebs_encryption_by_default = Some(inp);
+        pub fn ebs_encryption_by_default(mut self, input: bool) -> Self {
+            self.ebs_encryption_by_default = Some(input);
             self
         }
-        pub fn set_ebs_encryption_by_default(mut self, inp: std::option::Option<bool>) -> Self {
-            self.ebs_encryption_by_default = inp;
+        pub fn set_ebs_encryption_by_default(mut self, input: std::option::Option<bool>) -> Self {
+            self.ebs_encryption_by_default = input;
             self
         }
         /// Consumes the builder and constructs a [`DisableEbsEncryptionByDefaultOutput`](crate::output::DisableEbsEncryptionByDefaultOutput)
@@ -9172,60 +9231,63 @@ pub mod detach_volume_output {
     }
     impl Builder {
         /// <p>The time stamp when the attachment initiated.</p>
-        pub fn attach_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.attach_time = Some(inp);
+        pub fn attach_time(mut self, input: smithy_types::Instant) -> Self {
+            self.attach_time = Some(input);
             self
         }
-        pub fn set_attach_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.attach_time = inp;
+        pub fn set_attach_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.attach_time = input;
             self
         }
         /// <p>The device name.</p>
-        pub fn device(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.device = Some(inp.into());
+        pub fn device(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device = Some(input.into());
             self
         }
-        pub fn set_device(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.device = inp;
+        pub fn set_device(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device = input;
             self
         }
         /// <p>The ID of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(inp.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
             self
         }
-        pub fn set_instance_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = inp;
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
             self
         }
         /// <p>The attachment state of the volume.</p>
-        pub fn state(mut self, inp: crate::model::VolumeAttachmentState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::VolumeAttachmentState) -> Self {
+            self.state = Some(input);
             self
         }
         pub fn set_state(
             mut self,
-            inp: std::option::Option<crate::model::VolumeAttachmentState>,
+            input: std::option::Option<crate::model::VolumeAttachmentState>,
         ) -> Self {
-            self.state = inp;
+            self.state = input;
             self
         }
         /// <p>The ID of the volume.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.volume_id = Some(inp.into());
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_id = Some(input.into());
             self
         }
-        pub fn set_volume_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.volume_id = inp;
+        pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_id = input;
             self
         }
         /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
-        pub fn delete_on_termination(mut self, inp: bool) -> Self {
-            self.delete_on_termination = Some(inp);
+        pub fn delete_on_termination(mut self, input: bool) -> Self {
+            self.delete_on_termination = Some(input);
             self
         }
-        pub fn set_delete_on_termination(mut self, inp: std::option::Option<bool>) -> Self {
-            self.delete_on_termination = inp;
+        pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
+            self.delete_on_termination = input;
             self
         }
         /// Consumes the builder and constructs a [`DetachVolumeOutput`](crate::output::DetachVolumeOutput)
@@ -9329,12 +9391,12 @@ pub mod detach_classic_link_vpc_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`DetachClassicLinkVpcOutput`](crate::output::DetachClassicLinkVpcOutput)
@@ -9375,17 +9437,17 @@ pub mod describe_vpn_gateways_output {
         pub(crate) vpn_gateways: std::option::Option<std::vec::Vec<crate::model::VpnGateway>>,
     }
     impl Builder {
-        pub fn vpn_gateways(mut self, inp: impl Into<crate::model::VpnGateway>) -> Self {
+        pub fn vpn_gateways(mut self, input: impl Into<crate::model::VpnGateway>) -> Self {
             let mut v = self.vpn_gateways.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpn_gateways = Some(v);
             self
         }
         pub fn set_vpn_gateways(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VpnGateway>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VpnGateway>>,
         ) -> Self {
-            self.vpn_gateways = inp;
+            self.vpn_gateways = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVpnGatewaysOutput`](crate::output::DescribeVpnGatewaysOutput)
@@ -9426,17 +9488,17 @@ pub mod describe_vpn_connections_output {
         pub(crate) vpn_connections: std::option::Option<std::vec::Vec<crate::model::VpnConnection>>,
     }
     impl Builder {
-        pub fn vpn_connections(mut self, inp: impl Into<crate::model::VpnConnection>) -> Self {
+        pub fn vpn_connections(mut self, input: impl Into<crate::model::VpnConnection>) -> Self {
             let mut v = self.vpn_connections.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpn_connections = Some(v);
             self
         }
         pub fn set_vpn_connections(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VpnConnection>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VpnConnection>>,
         ) -> Self {
-            self.vpn_connections = inp;
+            self.vpn_connections = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVpnConnectionsOutput`](crate::output::DescribeVpnConnectionsOutput)
@@ -9480,26 +9542,26 @@ pub mod describe_vpcs_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn vpcs(mut self, inp: impl Into<crate::model::Vpc>) -> Self {
+        pub fn vpcs(mut self, input: impl Into<crate::model::Vpc>) -> Self {
             let mut v = self.vpcs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpcs = Some(v);
             self
         }
         pub fn set_vpcs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Vpc>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Vpc>>,
         ) -> Self {
-            self.vpcs = inp;
+            self.vpcs = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVpcsOutput`](crate::output::DescribeVpcsOutput)
@@ -9548,27 +9610,27 @@ pub mod describe_vpc_peering_connections_output {
     impl Builder {
         pub fn vpc_peering_connections(
             mut self,
-            inp: impl Into<crate::model::VpcPeeringConnection>,
+            input: impl Into<crate::model::VpcPeeringConnection>,
         ) -> Self {
             let mut v = self.vpc_peering_connections.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_peering_connections = Some(v);
             self
         }
         pub fn set_vpc_peering_connections(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VpcPeeringConnection>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcPeeringConnection>>,
         ) -> Self {
-            self.vpc_peering_connections = inp;
+            self.vpc_peering_connections = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVpcPeeringConnectionsOutput`](crate::output::DescribeVpcPeeringConnectionsOutput)
@@ -9618,39 +9680,39 @@ pub mod describe_vpc_endpoint_services_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn service_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn service_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.service_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.service_names = Some(v);
             self
         }
         pub fn set_service_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.service_names = inp;
+            self.service_names = input;
             self
         }
-        pub fn service_details(mut self, inp: impl Into<crate::model::ServiceDetail>) -> Self {
+        pub fn service_details(mut self, input: impl Into<crate::model::ServiceDetail>) -> Self {
             let mut v = self.service_details.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.service_details = Some(v);
             self
         }
         pub fn set_service_details(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ServiceDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ServiceDetail>>,
         ) -> Self {
-            self.service_details = inp;
+            self.service_details = input;
             self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVpcEndpointServicesOutput`](crate::output::DescribeVpcEndpointServicesOutput)
@@ -9699,27 +9761,27 @@ pub mod describe_vpc_endpoint_service_permissions_output {
     impl Builder {
         pub fn allowed_principals(
             mut self,
-            inp: impl Into<crate::model::AllowedPrincipal>,
+            input: impl Into<crate::model::AllowedPrincipal>,
         ) -> Self {
             let mut v = self.allowed_principals.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.allowed_principals = Some(v);
             self
         }
         pub fn set_allowed_principals(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AllowedPrincipal>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AllowedPrincipal>>,
         ) -> Self {
-            self.allowed_principals = inp;
+            self.allowed_principals = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVpcEndpointServicePermissionsOutput`](crate::output::DescribeVpcEndpointServicePermissionsOutput)
@@ -9768,27 +9830,27 @@ pub mod describe_vpc_endpoint_service_configurations_output {
     impl Builder {
         pub fn service_configurations(
             mut self,
-            inp: impl Into<crate::model::ServiceConfiguration>,
+            input: impl Into<crate::model::ServiceConfiguration>,
         ) -> Self {
             let mut v = self.service_configurations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.service_configurations = Some(v);
             self
         }
         pub fn set_service_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ServiceConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ServiceConfiguration>>,
         ) -> Self {
-            self.service_configurations = inp;
+            self.service_configurations = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVpcEndpointServiceConfigurationsOutput`](crate::output::DescribeVpcEndpointServiceConfigurationsOutput)
@@ -9835,26 +9897,26 @@ pub mod describe_vpc_endpoints_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn vpc_endpoints(mut self, inp: impl Into<crate::model::VpcEndpoint>) -> Self {
+        pub fn vpc_endpoints(mut self, input: impl Into<crate::model::VpcEndpoint>) -> Self {
             let mut v = self.vpc_endpoints.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_endpoints = Some(v);
             self
         }
         pub fn set_vpc_endpoints(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcEndpoint>>,
         ) -> Self {
-            self.vpc_endpoints = inp;
+            self.vpc_endpoints = input;
             self
         }
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVpcEndpointsOutput`](crate::output::DescribeVpcEndpointsOutput)
@@ -9903,27 +9965,27 @@ pub mod describe_vpc_endpoint_connections_output {
     impl Builder {
         pub fn vpc_endpoint_connections(
             mut self,
-            inp: impl Into<crate::model::VpcEndpointConnection>,
+            input: impl Into<crate::model::VpcEndpointConnection>,
         ) -> Self {
             let mut v = self.vpc_endpoint_connections.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpc_endpoint_connections = Some(v);
             self
         }
         pub fn set_vpc_endpoint_connections(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VpcEndpointConnection>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcEndpointConnection>>,
         ) -> Self {
-            self.vpc_endpoint_connections = inp;
+            self.vpc_endpoint_connections = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVpcEndpointConnectionsOutput`](crate::output::DescribeVpcEndpointConnectionsOutput)
@@ -9976,28 +10038,28 @@ pub mod describe_vpc_endpoint_connection_notifications_output {
     impl Builder {
         pub fn connection_notification_set(
             mut self,
-            inp: impl Into<crate::model::ConnectionNotification>,
+            input: impl Into<crate::model::ConnectionNotification>,
         ) -> Self {
             let mut v = self.connection_notification_set.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.connection_notification_set = Some(v);
             self
         }
         pub fn set_connection_notification_set(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ConnectionNotification>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ConnectionNotification>>,
         ) -> Self {
-            self.connection_notification_set = inp;
+            self.connection_notification_set = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is
         /// <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVpcEndpointConnectionNotificationsOutput`](crate::output::DescribeVpcEndpointConnectionNotificationsOutput)
@@ -10044,25 +10106,25 @@ pub mod describe_vpc_classic_link_dns_support_output {
     }
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
-        pub fn vpcs(mut self, inp: impl Into<crate::model::ClassicLinkDnsSupport>) -> Self {
+        pub fn vpcs(mut self, input: impl Into<crate::model::ClassicLinkDnsSupport>) -> Self {
             let mut v = self.vpcs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpcs = Some(v);
             self
         }
         pub fn set_vpcs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ClassicLinkDnsSupport>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ClassicLinkDnsSupport>>,
         ) -> Self {
-            self.vpcs = inp;
+            self.vpcs = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVpcClassicLinkDnsSupportOutput`](crate::output::DescribeVpcClassicLinkDnsSupportOutput)
@@ -10103,17 +10165,17 @@ pub mod describe_vpc_classic_link_output {
         pub(crate) vpcs: std::option::Option<std::vec::Vec<crate::model::VpcClassicLink>>,
     }
     impl Builder {
-        pub fn vpcs(mut self, inp: impl Into<crate::model::VpcClassicLink>) -> Self {
+        pub fn vpcs(mut self, input: impl Into<crate::model::VpcClassicLink>) -> Self {
             let mut v = self.vpcs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.vpcs = Some(v);
             self
         }
         pub fn set_vpcs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VpcClassicLink>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VpcClassicLink>>,
         ) -> Self {
-            self.vpcs = inp;
+            self.vpcs = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVpcClassicLinkOutput`](crate::output::DescribeVpcClassicLinkOutput)
@@ -10165,41 +10227,41 @@ pub mod describe_vpc_attribute_output {
     }
     impl Builder {
         /// <p>The ID of the VPC.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_id = Some(inp.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
             self
         }
-        pub fn set_vpc_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = inp;
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
             self
         }
         /// <p>Indicates whether the instances launched in the VPC get DNS hostnames.
         /// If this attribute is <code>true</code>, instances in the VPC get DNS hostnames;
         /// otherwise, they do not.</p>
-        pub fn enable_dns_hostnames(mut self, inp: crate::model::AttributeBooleanValue) -> Self {
-            self.enable_dns_hostnames = Some(inp);
+        pub fn enable_dns_hostnames(mut self, input: crate::model::AttributeBooleanValue) -> Self {
+            self.enable_dns_hostnames = Some(input);
             self
         }
         pub fn set_enable_dns_hostnames(
             mut self,
-            inp: std::option::Option<crate::model::AttributeBooleanValue>,
+            input: std::option::Option<crate::model::AttributeBooleanValue>,
         ) -> Self {
-            self.enable_dns_hostnames = inp;
+            self.enable_dns_hostnames = input;
             self
         }
         /// <p>Indicates whether DNS resolution is enabled for
         /// the VPC. If this attribute is <code>true</code>, the Amazon DNS server
         /// resolves DNS hostnames for your instances to their corresponding
         /// IP addresses; otherwise, it does not.</p>
-        pub fn enable_dns_support(mut self, inp: crate::model::AttributeBooleanValue) -> Self {
-            self.enable_dns_support = Some(inp);
+        pub fn enable_dns_support(mut self, input: crate::model::AttributeBooleanValue) -> Self {
+            self.enable_dns_support = Some(input);
             self
         }
         pub fn set_enable_dns_support(
             mut self,
-            inp: std::option::Option<crate::model::AttributeBooleanValue>,
+            input: std::option::Option<crate::model::AttributeBooleanValue>,
         ) -> Self {
-            self.enable_dns_support = inp;
+            self.enable_dns_support = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVpcAttributeOutput`](crate::output::DescribeVpcAttributeOutput)
@@ -10249,25 +10311,25 @@ pub mod describe_volume_status_output {
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
         /// when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
-        pub fn volume_statuses(mut self, inp: impl Into<crate::model::VolumeStatusItem>) -> Self {
+        pub fn volume_statuses(mut self, input: impl Into<crate::model::VolumeStatusItem>) -> Self {
             let mut v = self.volume_statuses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.volume_statuses = Some(v);
             self
         }
         pub fn set_volume_statuses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VolumeStatusItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VolumeStatusItem>>,
         ) -> Self {
-            self.volume_statuses = inp;
+            self.volume_statuses = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVolumeStatusOutput`](crate::output::DescribeVolumeStatusOutput)
@@ -10315,27 +10377,27 @@ pub mod describe_volumes_modifications_output {
     impl Builder {
         pub fn volumes_modifications(
             mut self,
-            inp: impl Into<crate::model::VolumeModification>,
+            input: impl Into<crate::model::VolumeModification>,
         ) -> Self {
             let mut v = self.volumes_modifications.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.volumes_modifications = Some(v);
             self
         }
         pub fn set_volumes_modifications(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VolumeModification>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VolumeModification>>,
         ) -> Self {
-            self.volumes_modifications = inp;
+            self.volumes_modifications = input;
             self
         }
         /// <p>Token for pagination, null if there are no more results </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVolumesModificationsOutput`](crate::output::DescribeVolumesModificationsOutput)
@@ -10383,29 +10445,29 @@ pub mod describe_volumes_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn volumes(mut self, inp: impl Into<crate::model::Volume>) -> Self {
+        pub fn volumes(mut self, input: impl Into<crate::model::Volume>) -> Self {
             let mut v = self.volumes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.volumes = Some(v);
             self
         }
         pub fn set_volumes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Volume>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Volume>>,
         ) -> Self {
-            self.volumes = inp;
+            self.volumes = input;
             self
         }
         /// <p>The <code>NextToken</code> value to include in a future <code>DescribeVolumes</code>
         /// request. When the results of a <code>DescribeVolumes</code> request exceed
         /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
         /// value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVolumesOutput`](crate::output::DescribeVolumesOutput)
@@ -10455,37 +10517,37 @@ pub mod describe_volume_attribute_output {
     }
     impl Builder {
         /// <p>The state of <code>autoEnableIO</code> attribute.</p>
-        pub fn auto_enable_io(mut self, inp: crate::model::AttributeBooleanValue) -> Self {
-            self.auto_enable_io = Some(inp);
+        pub fn auto_enable_io(mut self, input: crate::model::AttributeBooleanValue) -> Self {
+            self.auto_enable_io = Some(input);
             self
         }
         pub fn set_auto_enable_io(
             mut self,
-            inp: std::option::Option<crate::model::AttributeBooleanValue>,
+            input: std::option::Option<crate::model::AttributeBooleanValue>,
         ) -> Self {
-            self.auto_enable_io = inp;
+            self.auto_enable_io = input;
             self
         }
-        pub fn product_codes(mut self, inp: impl Into<crate::model::ProductCode>) -> Self {
+        pub fn product_codes(mut self, input: impl Into<crate::model::ProductCode>) -> Self {
             let mut v = self.product_codes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.product_codes = Some(v);
             self
         }
         pub fn set_product_codes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
         ) -> Self {
-            self.product_codes = inp;
+            self.product_codes = input;
             self
         }
         /// <p>The ID of the volume.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.volume_id = Some(inp.into());
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_id = Some(input.into());
             self
         }
-        pub fn set_volume_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.volume_id = inp;
+        pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVolumeAttributeOutput`](crate::output::DescribeVolumeAttributeOutput)
@@ -10538,27 +10600,27 @@ pub mod describe_transit_gateway_vpc_attachments_output {
     impl Builder {
         pub fn transit_gateway_vpc_attachments(
             mut self,
-            inp: impl Into<crate::model::TransitGatewayVpcAttachment>,
+            input: impl Into<crate::model::TransitGatewayVpcAttachment>,
         ) -> Self {
             let mut v = self.transit_gateway_vpc_attachments.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.transit_gateway_vpc_attachments = Some(v);
             self
         }
         pub fn set_transit_gateway_vpc_attachments(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TransitGatewayVpcAttachment>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TransitGatewayVpcAttachment>>,
         ) -> Self {
-            self.transit_gateway_vpc_attachments = inp;
+            self.transit_gateway_vpc_attachments = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTransitGatewayVpcAttachmentsOutput`](crate::output::DescribeTransitGatewayVpcAttachmentsOutput)
@@ -10604,26 +10666,26 @@ pub mod describe_transit_gateways_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn transit_gateways(mut self, inp: impl Into<crate::model::TransitGateway>) -> Self {
+        pub fn transit_gateways(mut self, input: impl Into<crate::model::TransitGateway>) -> Self {
             let mut v = self.transit_gateways.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.transit_gateways = Some(v);
             self
         }
         pub fn set_transit_gateways(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TransitGateway>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TransitGateway>>,
         ) -> Self {
-            self.transit_gateways = inp;
+            self.transit_gateways = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTransitGatewaysOutput`](crate::output::DescribeTransitGatewaysOutput)
@@ -10675,27 +10737,27 @@ pub mod describe_transit_gateway_route_tables_output {
     impl Builder {
         pub fn transit_gateway_route_tables(
             mut self,
-            inp: impl Into<crate::model::TransitGatewayRouteTable>,
+            input: impl Into<crate::model::TransitGatewayRouteTable>,
         ) -> Self {
             let mut v = self.transit_gateway_route_tables.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.transit_gateway_route_tables = Some(v);
             self
         }
         pub fn set_transit_gateway_route_tables(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TransitGatewayRouteTable>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TransitGatewayRouteTable>>,
         ) -> Self {
-            self.transit_gateway_route_tables = inp;
+            self.transit_gateway_route_tables = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTransitGatewayRouteTablesOutput`](crate::output::DescribeTransitGatewayRouteTablesOutput)
@@ -10747,27 +10809,29 @@ pub mod describe_transit_gateway_peering_attachments_output {
     impl Builder {
         pub fn transit_gateway_peering_attachments(
             mut self,
-            inp: impl Into<crate::model::TransitGatewayPeeringAttachment>,
+            input: impl Into<crate::model::TransitGatewayPeeringAttachment>,
         ) -> Self {
             let mut v = self.transit_gateway_peering_attachments.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.transit_gateway_peering_attachments = Some(v);
             self
         }
         pub fn set_transit_gateway_peering_attachments(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TransitGatewayPeeringAttachment>>,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::TransitGatewayPeeringAttachment>,
+            >,
         ) -> Self {
-            self.transit_gateway_peering_attachments = inp;
+            self.transit_gateway_peering_attachments = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTransitGatewayPeeringAttachmentsOutput`](crate::output::DescribeTransitGatewayPeeringAttachmentsOutput)
@@ -10820,27 +10884,27 @@ pub mod describe_transit_gateway_multicast_domains_output {
     impl Builder {
         pub fn transit_gateway_multicast_domains(
             mut self,
-            inp: impl Into<crate::model::TransitGatewayMulticastDomain>,
+            input: impl Into<crate::model::TransitGatewayMulticastDomain>,
         ) -> Self {
             let mut v = self.transit_gateway_multicast_domains.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.transit_gateway_multicast_domains = Some(v);
             self
         }
         pub fn set_transit_gateway_multicast_domains(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TransitGatewayMulticastDomain>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TransitGatewayMulticastDomain>>,
         ) -> Self {
-            self.transit_gateway_multicast_domains = inp;
+            self.transit_gateway_multicast_domains = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTransitGatewayMulticastDomainsOutput`](crate::output::DescribeTransitGatewayMulticastDomainsOutput)
@@ -10889,27 +10953,27 @@ pub mod describe_transit_gateway_connects_output {
     impl Builder {
         pub fn transit_gateway_connects(
             mut self,
-            inp: impl Into<crate::model::TransitGatewayConnect>,
+            input: impl Into<crate::model::TransitGatewayConnect>,
         ) -> Self {
             let mut v = self.transit_gateway_connects.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.transit_gateway_connects = Some(v);
             self
         }
         pub fn set_transit_gateway_connects(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TransitGatewayConnect>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TransitGatewayConnect>>,
         ) -> Self {
-            self.transit_gateway_connects = inp;
+            self.transit_gateway_connects = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTransitGatewayConnectsOutput`](crate::output::DescribeTransitGatewayConnectsOutput)
@@ -10961,27 +11025,27 @@ pub mod describe_transit_gateway_connect_peers_output {
     impl Builder {
         pub fn transit_gateway_connect_peers(
             mut self,
-            inp: impl Into<crate::model::TransitGatewayConnectPeer>,
+            input: impl Into<crate::model::TransitGatewayConnectPeer>,
         ) -> Self {
             let mut v = self.transit_gateway_connect_peers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.transit_gateway_connect_peers = Some(v);
             self
         }
         pub fn set_transit_gateway_connect_peers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TransitGatewayConnectPeer>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TransitGatewayConnectPeer>>,
         ) -> Self {
-            self.transit_gateway_connect_peers = inp;
+            self.transit_gateway_connect_peers = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTransitGatewayConnectPeersOutput`](crate::output::DescribeTransitGatewayConnectPeersOutput)
@@ -11033,27 +11097,27 @@ pub mod describe_transit_gateway_attachments_output {
     impl Builder {
         pub fn transit_gateway_attachments(
             mut self,
-            inp: impl Into<crate::model::TransitGatewayAttachment>,
+            input: impl Into<crate::model::TransitGatewayAttachment>,
         ) -> Self {
             let mut v = self.transit_gateway_attachments.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.transit_gateway_attachments = Some(v);
             self
         }
         pub fn set_transit_gateway_attachments(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TransitGatewayAttachment>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TransitGatewayAttachment>>,
         ) -> Self {
-            self.transit_gateway_attachments = inp;
+            self.transit_gateway_attachments = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTransitGatewayAttachmentsOutput`](crate::output::DescribeTransitGatewayAttachmentsOutput)
@@ -11102,27 +11166,27 @@ pub mod describe_traffic_mirror_targets_output {
     impl Builder {
         pub fn traffic_mirror_targets(
             mut self,
-            inp: impl Into<crate::model::TrafficMirrorTarget>,
+            input: impl Into<crate::model::TrafficMirrorTarget>,
         ) -> Self {
             let mut v = self.traffic_mirror_targets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.traffic_mirror_targets = Some(v);
             self
         }
         pub fn set_traffic_mirror_targets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TrafficMirrorTarget>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TrafficMirrorTarget>>,
         ) -> Self {
-            self.traffic_mirror_targets = inp;
+            self.traffic_mirror_targets = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTrafficMirrorTargetsOutput`](crate::output::DescribeTrafficMirrorTargetsOutput)
@@ -11171,27 +11235,27 @@ pub mod describe_traffic_mirror_sessions_output {
     impl Builder {
         pub fn traffic_mirror_sessions(
             mut self,
-            inp: impl Into<crate::model::TrafficMirrorSession>,
+            input: impl Into<crate::model::TrafficMirrorSession>,
         ) -> Self {
             let mut v = self.traffic_mirror_sessions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.traffic_mirror_sessions = Some(v);
             self
         }
         pub fn set_traffic_mirror_sessions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TrafficMirrorSession>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TrafficMirrorSession>>,
         ) -> Self {
-            self.traffic_mirror_sessions = inp;
+            self.traffic_mirror_sessions = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTrafficMirrorSessionsOutput`](crate::output::DescribeTrafficMirrorSessionsOutput)
@@ -11240,27 +11304,27 @@ pub mod describe_traffic_mirror_filters_output {
     impl Builder {
         pub fn traffic_mirror_filters(
             mut self,
-            inp: impl Into<crate::model::TrafficMirrorFilter>,
+            input: impl Into<crate::model::TrafficMirrorFilter>,
         ) -> Self {
             let mut v = self.traffic_mirror_filters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.traffic_mirror_filters = Some(v);
             self
         }
         pub fn set_traffic_mirror_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TrafficMirrorFilter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TrafficMirrorFilter>>,
         ) -> Self {
-            self.traffic_mirror_filters = inp;
+            self.traffic_mirror_filters = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTrafficMirrorFiltersOutput`](crate::output::DescribeTrafficMirrorFiltersOutput)
@@ -11308,25 +11372,25 @@ pub mod describe_tags_output {
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is
         /// <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::TagDescription>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::TagDescription>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeTagsOutput`](crate::output::DescribeTagsOutput)
@@ -11371,26 +11435,26 @@ pub mod describe_subnets_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn subnets(mut self, inp: impl Into<crate::model::Subnet>) -> Self {
+        pub fn subnets(mut self, input: impl Into<crate::model::Subnet>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.subnets = Some(v);
             self
         }
         pub fn set_subnets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
         ) -> Self {
-            self.subnets = inp;
+            self.subnets = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeSubnetsOutput`](crate::output::DescribeSubnetsOutput)
@@ -11440,28 +11504,28 @@ pub mod describe_store_image_tasks_output {
     impl Builder {
         pub fn store_image_task_results(
             mut self,
-            inp: impl Into<crate::model::StoreImageTaskResult>,
+            input: impl Into<crate::model::StoreImageTaskResult>,
         ) -> Self {
             let mut v = self.store_image_task_results.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.store_image_task_results = Some(v);
             self
         }
         pub fn set_store_image_task_results(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StoreImageTaskResult>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StoreImageTaskResult>>,
         ) -> Self {
-            self.store_image_task_results = inp;
+            self.store_image_task_results = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
         /// when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStoreImageTasksOutput`](crate::output::DescribeStoreImageTasksOutput)
@@ -11509,28 +11573,28 @@ pub mod describe_stale_security_groups_output {
     }
     impl Builder {
         /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         pub fn stale_security_group_set(
             mut self,
-            inp: impl Into<crate::model::StaleSecurityGroup>,
+            input: impl Into<crate::model::StaleSecurityGroup>,
         ) -> Self {
             let mut v = self.stale_security_group_set.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.stale_security_group_set = Some(v);
             self
         }
         pub fn set_stale_security_group_set(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StaleSecurityGroup>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StaleSecurityGroup>>,
         ) -> Self {
-            self.stale_security_group_set = inp;
+            self.stale_security_group_set = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeStaleSecurityGroupsOutput`](crate::output::DescribeStaleSecurityGroupsOutput)
@@ -11579,25 +11643,25 @@ pub mod describe_spot_price_history_output {
     impl Builder {
         /// <p>The token required to retrieve the next set of results. This value is null or an empty
         /// string when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
-        pub fn spot_price_history(mut self, inp: impl Into<crate::model::SpotPrice>) -> Self {
+        pub fn spot_price_history(mut self, input: impl Into<crate::model::SpotPrice>) -> Self {
             let mut v = self.spot_price_history.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.spot_price_history = Some(v);
             self
         }
         pub fn set_spot_price_history(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SpotPrice>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SpotPrice>>,
         ) -> Self {
-            self.spot_price_history = inp;
+            self.spot_price_history = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeSpotPriceHistoryOutput`](crate::output::DescribeSpotPriceHistoryOutput)
@@ -11648,28 +11712,28 @@ pub mod describe_spot_instance_requests_output {
     impl Builder {
         pub fn spot_instance_requests(
             mut self,
-            inp: impl Into<crate::model::SpotInstanceRequest>,
+            input: impl Into<crate::model::SpotInstanceRequest>,
         ) -> Self {
             let mut v = self.spot_instance_requests.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.spot_instance_requests = Some(v);
             self
         }
         pub fn set_spot_instance_requests(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SpotInstanceRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SpotInstanceRequest>>,
         ) -> Self {
-            self.spot_instance_requests = inp;
+            self.spot_instance_requests = input;
             self
         }
         /// <p>The token to use to retrieve the next set of results. This value is <code>null</code>
         /// when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeSpotInstanceRequestsOutput`](crate::output::DescribeSpotInstanceRequestsOutput)
@@ -11721,28 +11785,28 @@ pub mod describe_spot_fleet_requests_output {
     }
     impl Builder {
         /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         pub fn spot_fleet_request_configs(
             mut self,
-            inp: impl Into<crate::model::SpotFleetRequestConfig>,
+            input: impl Into<crate::model::SpotFleetRequestConfig>,
         ) -> Self {
             let mut v = self.spot_fleet_request_configs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.spot_fleet_request_configs = Some(v);
             self
         }
         pub fn set_spot_fleet_request_configs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SpotFleetRequestConfig>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SpotFleetRequestConfig>>,
         ) -> Self {
-            self.spot_fleet_request_configs = inp;
+            self.spot_fleet_request_configs = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeSpotFleetRequestsOutput`](crate::output::DescribeSpotFleetRequestsOutput)
@@ -11802,61 +11866,61 @@ pub mod describe_spot_fleet_request_history_output {
         pub(crate) start_time: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        pub fn history_records(mut self, inp: impl Into<crate::model::HistoryRecord>) -> Self {
+        pub fn history_records(mut self, input: impl Into<crate::model::HistoryRecord>) -> Self {
             let mut v = self.history_records.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.history_records = Some(v);
             self
         }
         pub fn set_history_records(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HistoryRecord>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HistoryRecord>>,
         ) -> Self {
-            self.history_records = inp;
+            self.history_records = input;
             self
         }
         /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// All records up to this time were retrieved.</p>
         /// <p>If <code>nextToken</code> indicates that there are more results, this value is not present.</p>
-        pub fn last_evaluated_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_evaluated_time = Some(inp);
+        pub fn last_evaluated_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_evaluated_time = Some(input);
             self
         }
         pub fn set_last_evaluated_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_evaluated_time = inp;
+            self.last_evaluated_time = input;
             self
         }
         /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The ID of the Spot Fleet request.</p>
-        pub fn spot_fleet_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.spot_fleet_request_id = Some(inp.into());
+        pub fn spot_fleet_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.spot_fleet_request_id = Some(input.into());
             self
         }
         pub fn set_spot_fleet_request_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.spot_fleet_request_id = inp;
+            self.spot_fleet_request_id = input;
             self
         }
         /// <p>The starting date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-        pub fn start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.start_time = Some(inp);
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.start_time = inp;
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_time = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeSpotFleetRequestHistoryOutput`](crate::output::DescribeSpotFleetRequestHistoryOutput)
@@ -11911,38 +11975,38 @@ pub mod describe_spot_fleet_instances_output {
         pub(crate) spot_fleet_request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn active_instances(mut self, inp: impl Into<crate::model::ActiveInstance>) -> Self {
+        pub fn active_instances(mut self, input: impl Into<crate::model::ActiveInstance>) -> Self {
             let mut v = self.active_instances.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.active_instances = Some(v);
             self
         }
         pub fn set_active_instances(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ActiveInstance>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ActiveInstance>>,
         ) -> Self {
-            self.active_instances = inp;
+            self.active_instances = input;
             self
         }
         /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The ID of the Spot Fleet request.</p>
-        pub fn spot_fleet_request_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.spot_fleet_request_id = Some(inp.into());
+        pub fn spot_fleet_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.spot_fleet_request_id = Some(input.into());
             self
         }
         pub fn set_spot_fleet_request_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.spot_fleet_request_id = inp;
+            self.spot_fleet_request_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeSpotFleetInstancesOutput`](crate::output::DescribeSpotFleetInstancesOutput)
@@ -11992,16 +12056,16 @@ pub mod describe_spot_datafeed_subscription_output {
         /// <p>The Spot Instance data feed subscription.</p>
         pub fn spot_datafeed_subscription(
             mut self,
-            inp: crate::model::SpotDatafeedSubscription,
+            input: crate::model::SpotDatafeedSubscription,
         ) -> Self {
-            self.spot_datafeed_subscription = Some(inp);
+            self.spot_datafeed_subscription = Some(input);
             self
         }
         pub fn set_spot_datafeed_subscription(
             mut self,
-            inp: std::option::Option<crate::model::SpotDatafeedSubscription>,
+            input: std::option::Option<crate::model::SpotDatafeedSubscription>,
         ) -> Self {
-            self.spot_datafeed_subscription = inp;
+            self.spot_datafeed_subscription = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeSpotDatafeedSubscriptionOutput`](crate::output::DescribeSpotDatafeedSubscriptionOutput)
@@ -12048,29 +12112,29 @@ pub mod describe_snapshots_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn snapshots(mut self, inp: impl Into<crate::model::Snapshot>) -> Self {
+        pub fn snapshots(mut self, input: impl Into<crate::model::Snapshot>) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.snapshots = Some(v);
             self
         }
         pub fn set_snapshots(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Snapshot>>,
         ) -> Self {
-            self.snapshots = inp;
+            self.snapshots = input;
             self
         }
         /// <p>The <code>NextToken</code> value to include in a future <code>DescribeSnapshots</code>
         /// request. When the results of a <code>DescribeSnapshots</code> request exceed
         /// <code>MaxResults</code>, this value can be used to retrieve the next page of results. This
         /// value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeSnapshotsOutput`](crate::output::DescribeSnapshotsOutput)
@@ -12124,40 +12188,40 @@ pub mod describe_snapshot_attribute_output {
     impl Builder {
         pub fn create_volume_permissions(
             mut self,
-            inp: impl Into<crate::model::CreateVolumePermission>,
+            input: impl Into<crate::model::CreateVolumePermission>,
         ) -> Self {
             let mut v = self.create_volume_permissions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.create_volume_permissions = Some(v);
             self
         }
         pub fn set_create_volume_permissions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CreateVolumePermission>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CreateVolumePermission>>,
         ) -> Self {
-            self.create_volume_permissions = inp;
+            self.create_volume_permissions = input;
             self
         }
-        pub fn product_codes(mut self, inp: impl Into<crate::model::ProductCode>) -> Self {
+        pub fn product_codes(mut self, input: impl Into<crate::model::ProductCode>) -> Self {
             let mut v = self.product_codes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.product_codes = Some(v);
             self
         }
         pub fn set_product_codes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
         ) -> Self {
-            self.product_codes = inp;
+            self.product_codes = input;
             self
         }
         /// <p>The ID of the EBS snapshot.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.snapshot_id = Some(inp.into());
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_id = Some(input.into());
             self
         }
-        pub fn set_snapshot_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = inp;
+        pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeSnapshotAttributeOutput`](crate::output::DescribeSnapshotAttributeOutput)
@@ -12203,26 +12267,26 @@ pub mod describe_security_groups_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn security_groups(mut self, inp: impl Into<crate::model::SecurityGroup>) -> Self {
+        pub fn security_groups(mut self, input: impl Into<crate::model::SecurityGroup>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.security_groups = Some(v);
             self
         }
         pub fn set_security_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SecurityGroup>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SecurityGroup>>,
         ) -> Self {
-            self.security_groups = inp;
+            self.security_groups = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeSecurityGroupsOutput`](crate::output::DescribeSecurityGroupsOutput)
@@ -12270,18 +12334,18 @@ pub mod describe_security_group_references_output {
     impl Builder {
         pub fn security_group_reference_set(
             mut self,
-            inp: impl Into<crate::model::SecurityGroupReference>,
+            input: impl Into<crate::model::SecurityGroupReference>,
         ) -> Self {
             let mut v = self.security_group_reference_set.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.security_group_reference_set = Some(v);
             self
         }
         pub fn set_security_group_reference_set(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SecurityGroupReference>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SecurityGroupReference>>,
         ) -> Self {
-            self.security_group_reference_set = inp;
+            self.security_group_reference_set = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeSecurityGroupReferencesOutput`](crate::output::DescribeSecurityGroupReferencesOutput)
@@ -12328,28 +12392,28 @@ pub mod describe_scheduled_instances_output {
     }
     impl Builder {
         /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         pub fn scheduled_instance_set(
             mut self,
-            inp: impl Into<crate::model::ScheduledInstance>,
+            input: impl Into<crate::model::ScheduledInstance>,
         ) -> Self {
             let mut v = self.scheduled_instance_set.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.scheduled_instance_set = Some(v);
             self
         }
         pub fn set_scheduled_instance_set(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ScheduledInstance>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ScheduledInstance>>,
         ) -> Self {
-            self.scheduled_instance_set = inp;
+            self.scheduled_instance_set = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeScheduledInstancesOutput`](crate::output::DescribeScheduledInstancesOutput)
@@ -12401,28 +12465,28 @@ pub mod describe_scheduled_instance_availability_output {
     }
     impl Builder {
         /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         pub fn scheduled_instance_availability_set(
             mut self,
-            inp: impl Into<crate::model::ScheduledInstanceAvailability>,
+            input: impl Into<crate::model::ScheduledInstanceAvailability>,
         ) -> Self {
             let mut v = self.scheduled_instance_availability_set.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.scheduled_instance_availability_set = Some(v);
             self
         }
         pub fn set_scheduled_instance_availability_set(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ScheduledInstanceAvailability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ScheduledInstanceAvailability>>,
         ) -> Self {
-            self.scheduled_instance_availability_set = inp;
+            self.scheduled_instance_availability_set = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeScheduledInstanceAvailabilityOutput`](crate::output::DescribeScheduledInstanceAvailabilityOutput)
@@ -12468,26 +12532,26 @@ pub mod describe_route_tables_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn route_tables(mut self, inp: impl Into<crate::model::RouteTable>) -> Self {
+        pub fn route_tables(mut self, input: impl Into<crate::model::RouteTable>) -> Self {
             let mut v = self.route_tables.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.route_tables = Some(v);
             self
         }
         pub fn set_route_tables(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::RouteTable>>,
+            input: std::option::Option<std::vec::Vec<crate::model::RouteTable>>,
         ) -> Self {
-            self.route_tables = inp;
+            self.route_tables = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeRouteTablesOutput`](crate::output::DescribeRouteTablesOutput)
@@ -12541,28 +12605,28 @@ pub mod describe_reserved_instances_offerings_output {
     impl Builder {
         pub fn reserved_instances_offerings(
             mut self,
-            inp: impl Into<crate::model::ReservedInstancesOffering>,
+            input: impl Into<crate::model::ReservedInstancesOffering>,
         ) -> Self {
             let mut v = self.reserved_instances_offerings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.reserved_instances_offerings = Some(v);
             self
         }
         pub fn set_reserved_instances_offerings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReservedInstancesOffering>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReservedInstancesOffering>>,
         ) -> Self {
-            self.reserved_instances_offerings = inp;
+            self.reserved_instances_offerings = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
         /// there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeReservedInstancesOfferingsOutput`](crate::output::DescribeReservedInstancesOfferingsOutput)
@@ -12616,28 +12680,28 @@ pub mod describe_reserved_instances_modifications_output {
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when
         /// there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         pub fn reserved_instances_modifications(
             mut self,
-            inp: impl Into<crate::model::ReservedInstancesModification>,
+            input: impl Into<crate::model::ReservedInstancesModification>,
         ) -> Self {
             let mut v = self.reserved_instances_modifications.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.reserved_instances_modifications = Some(v);
             self
         }
         pub fn set_reserved_instances_modifications(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReservedInstancesModification>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReservedInstancesModification>>,
         ) -> Self {
-            self.reserved_instances_modifications = inp;
+            self.reserved_instances_modifications = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeReservedInstancesModificationsOutput`](crate::output::DescribeReservedInstancesModificationsOutput)
@@ -12686,18 +12750,18 @@ pub mod describe_reserved_instances_listings_output {
     impl Builder {
         pub fn reserved_instances_listings(
             mut self,
-            inp: impl Into<crate::model::ReservedInstancesListing>,
+            input: impl Into<crate::model::ReservedInstancesListing>,
         ) -> Self {
             let mut v = self.reserved_instances_listings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.reserved_instances_listings = Some(v);
             self
         }
         pub fn set_reserved_instances_listings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReservedInstancesListing>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReservedInstancesListing>>,
         ) -> Self {
-            self.reserved_instances_listings = inp;
+            self.reserved_instances_listings = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeReservedInstancesListingsOutput`](crate::output::DescribeReservedInstancesListingsOutput)
@@ -12741,18 +12805,18 @@ pub mod describe_reserved_instances_output {
     impl Builder {
         pub fn reserved_instances(
             mut self,
-            inp: impl Into<crate::model::ReservedInstances>,
+            input: impl Into<crate::model::ReservedInstances>,
         ) -> Self {
             let mut v = self.reserved_instances.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.reserved_instances = Some(v);
             self
         }
         pub fn set_reserved_instances(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReservedInstances>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReservedInstances>>,
         ) -> Self {
-            self.reserved_instances = inp;
+            self.reserved_instances = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeReservedInstancesOutput`](crate::output::DescribeReservedInstancesOutput)
@@ -12801,28 +12865,28 @@ pub mod describe_replace_root_volume_tasks_output {
     impl Builder {
         pub fn replace_root_volume_tasks(
             mut self,
-            inp: impl Into<crate::model::ReplaceRootVolumeTask>,
+            input: impl Into<crate::model::ReplaceRootVolumeTask>,
         ) -> Self {
             let mut v = self.replace_root_volume_tasks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.replace_root_volume_tasks = Some(v);
             self
         }
         pub fn set_replace_root_volume_tasks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReplaceRootVolumeTask>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReplaceRootVolumeTask>>,
         ) -> Self {
-            self.replace_root_volume_tasks = inp;
+            self.replace_root_volume_tasks = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
         /// more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeReplaceRootVolumeTasksOutput`](crate::output::DescribeReplaceRootVolumeTasksOutput)
@@ -12863,17 +12927,17 @@ pub mod describe_regions_output {
         pub(crate) regions: std::option::Option<std::vec::Vec<crate::model::Region>>,
     }
     impl Builder {
-        pub fn regions(mut self, inp: impl Into<crate::model::Region>) -> Self {
+        pub fn regions(mut self, input: impl Into<crate::model::Region>) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.regions = Some(v);
             self
         }
         pub fn set_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Region>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Region>>,
         ) -> Self {
-            self.regions = inp;
+            self.regions = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeRegionsOutput`](crate::output::DescribeRegionsOutput)
@@ -12918,26 +12982,26 @@ pub mod describe_public_ipv4_pools_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn public_ipv4_pools(mut self, inp: impl Into<crate::model::PublicIpv4Pool>) -> Self {
+        pub fn public_ipv4_pools(mut self, input: impl Into<crate::model::PublicIpv4Pool>) -> Self {
             let mut v = self.public_ipv4_pools.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.public_ipv4_pools = Some(v);
             self
         }
         pub fn set_public_ipv4_pools(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PublicIpv4Pool>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PublicIpv4Pool>>,
         ) -> Self {
-            self.public_ipv4_pools = inp;
+            self.public_ipv4_pools = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribePublicIpv4PoolsOutput`](crate::output::DescribePublicIpv4PoolsOutput)
@@ -12982,26 +13046,26 @@ pub mod describe_principal_id_format_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn principals(mut self, inp: impl Into<crate::model::PrincipalIdFormat>) -> Self {
+        pub fn principals(mut self, input: impl Into<crate::model::PrincipalIdFormat>) -> Self {
             let mut v = self.principals.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.principals = Some(v);
             self
         }
         pub fn set_principals(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PrincipalIdFormat>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PrincipalIdFormat>>,
         ) -> Self {
-            self.principals = inp;
+            self.principals = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribePrincipalIdFormatOutput`](crate::output::DescribePrincipalIdFormatOutput)
@@ -13047,25 +13111,25 @@ pub mod describe_prefix_lists_output {
     }
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
-        pub fn prefix_lists(mut self, inp: impl Into<crate::model::PrefixList>) -> Self {
+        pub fn prefix_lists(mut self, input: impl Into<crate::model::PrefixList>) -> Self {
             let mut v = self.prefix_lists.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.prefix_lists = Some(v);
             self
         }
         pub fn set_prefix_lists(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PrefixList>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PrefixList>>,
         ) -> Self {
-            self.prefix_lists = inp;
+            self.prefix_lists = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribePrefixListsOutput`](crate::output::DescribePrefixListsOutput)
@@ -13107,17 +13171,17 @@ pub mod describe_placement_groups_output {
             std::option::Option<std::vec::Vec<crate::model::PlacementGroup>>,
     }
     impl Builder {
-        pub fn placement_groups(mut self, inp: impl Into<crate::model::PlacementGroup>) -> Self {
+        pub fn placement_groups(mut self, input: impl Into<crate::model::PlacementGroup>) -> Self {
             let mut v = self.placement_groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.placement_groups = Some(v);
             self
         }
         pub fn set_placement_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PlacementGroup>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PlacementGroup>>,
         ) -> Self {
-            self.placement_groups = inp;
+            self.placement_groups = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribePlacementGroupsOutput`](crate::output::DescribePlacementGroupsOutput)
@@ -13165,27 +13229,27 @@ pub mod describe_network_interfaces_output {
     impl Builder {
         pub fn network_interfaces(
             mut self,
-            inp: impl Into<crate::model::NetworkInterface>,
+            input: impl Into<crate::model::NetworkInterface>,
         ) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.network_interfaces = Some(v);
             self
         }
         pub fn set_network_interfaces(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
+            input: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
         ) -> Self {
-            self.network_interfaces = inp;
+            self.network_interfaces = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeNetworkInterfacesOutput`](crate::output::DescribeNetworkInterfacesOutput)
@@ -13238,27 +13302,27 @@ pub mod describe_network_interface_permissions_output {
     impl Builder {
         pub fn network_interface_permissions(
             mut self,
-            inp: impl Into<crate::model::NetworkInterfacePermission>,
+            input: impl Into<crate::model::NetworkInterfacePermission>,
         ) -> Self {
             let mut v = self.network_interface_permissions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.network_interface_permissions = Some(v);
             self
         }
         pub fn set_network_interface_permissions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NetworkInterfacePermission>>,
+            input: std::option::Option<std::vec::Vec<crate::model::NetworkInterfacePermission>>,
         ) -> Self {
-            self.network_interface_permissions = inp;
+            self.network_interface_permissions = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeNetworkInterfacePermissionsOutput`](crate::output::DescribeNetworkInterfacePermissionsOutput)
@@ -13317,64 +13381,64 @@ pub mod describe_network_interface_attribute_output {
     }
     impl Builder {
         /// <p>The attachment (if any) of the network interface.</p>
-        pub fn attachment(mut self, inp: crate::model::NetworkInterfaceAttachment) -> Self {
-            self.attachment = Some(inp);
+        pub fn attachment(mut self, input: crate::model::NetworkInterfaceAttachment) -> Self {
+            self.attachment = Some(input);
             self
         }
         pub fn set_attachment(
             mut self,
-            inp: std::option::Option<crate::model::NetworkInterfaceAttachment>,
+            input: std::option::Option<crate::model::NetworkInterfaceAttachment>,
         ) -> Self {
-            self.attachment = inp;
+            self.attachment = input;
             self
         }
         /// <p>The description of the network interface.</p>
-        pub fn description(mut self, inp: crate::model::AttributeValue) -> Self {
-            self.description = Some(inp);
+        pub fn description(mut self, input: crate::model::AttributeValue) -> Self {
+            self.description = Some(input);
             self
         }
         pub fn set_description(
             mut self,
-            inp: std::option::Option<crate::model::AttributeValue>,
+            input: std::option::Option<crate::model::AttributeValue>,
         ) -> Self {
-            self.description = inp;
+            self.description = input;
             self
         }
-        pub fn groups(mut self, inp: impl Into<crate::model::GroupIdentifier>) -> Self {
+        pub fn groups(mut self, input: impl Into<crate::model::GroupIdentifier>) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.groups = Some(v);
             self
         }
         pub fn set_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
         ) -> Self {
-            self.groups = inp;
+            self.groups = input;
             self
         }
         /// <p>The ID of the network interface.</p>
-        pub fn network_interface_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.network_interface_id = Some(inp.into());
+        pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_interface_id = Some(input.into());
             self
         }
         pub fn set_network_interface_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.network_interface_id = inp;
+            self.network_interface_id = input;
             self
         }
         /// <p>Indicates whether source/destination checking is enabled.</p>
-        pub fn source_dest_check(mut self, inp: crate::model::AttributeBooleanValue) -> Self {
-            self.source_dest_check = Some(inp);
+        pub fn source_dest_check(mut self, input: crate::model::AttributeBooleanValue) -> Self {
+            self.source_dest_check = Some(input);
             self
         }
         pub fn set_source_dest_check(
             mut self,
-            inp: std::option::Option<crate::model::AttributeBooleanValue>,
+            input: std::option::Option<crate::model::AttributeBooleanValue>,
         ) -> Self {
-            self.source_dest_check = inp;
+            self.source_dest_check = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeNetworkInterfaceAttributeOutput`](crate::output::DescribeNetworkInterfaceAttributeOutput)
@@ -13426,27 +13490,27 @@ pub mod describe_network_insights_paths_output {
     impl Builder {
         pub fn network_insights_paths(
             mut self,
-            inp: impl Into<crate::model::NetworkInsightsPath>,
+            input: impl Into<crate::model::NetworkInsightsPath>,
         ) -> Self {
             let mut v = self.network_insights_paths.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.network_insights_paths = Some(v);
             self
         }
         pub fn set_network_insights_paths(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NetworkInsightsPath>>,
+            input: std::option::Option<std::vec::Vec<crate::model::NetworkInsightsPath>>,
         ) -> Self {
-            self.network_insights_paths = inp;
+            self.network_insights_paths = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeNetworkInsightsPathsOutput`](crate::output::DescribeNetworkInsightsPathsOutput)
@@ -13495,27 +13559,27 @@ pub mod describe_network_insights_analyses_output {
     impl Builder {
         pub fn network_insights_analyses(
             mut self,
-            inp: impl Into<crate::model::NetworkInsightsAnalysis>,
+            input: impl Into<crate::model::NetworkInsightsAnalysis>,
         ) -> Self {
             let mut v = self.network_insights_analyses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.network_insights_analyses = Some(v);
             self
         }
         pub fn set_network_insights_analyses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NetworkInsightsAnalysis>>,
+            input: std::option::Option<std::vec::Vec<crate::model::NetworkInsightsAnalysis>>,
         ) -> Self {
-            self.network_insights_analyses = inp;
+            self.network_insights_analyses = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeNetworkInsightsAnalysesOutput`](crate::output::DescribeNetworkInsightsAnalysesOutput)
@@ -13560,26 +13624,26 @@ pub mod describe_network_acls_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn network_acls(mut self, inp: impl Into<crate::model::NetworkAcl>) -> Self {
+        pub fn network_acls(mut self, input: impl Into<crate::model::NetworkAcl>) -> Self {
             let mut v = self.network_acls.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.network_acls = Some(v);
             self
         }
         pub fn set_network_acls(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NetworkAcl>>,
+            input: std::option::Option<std::vec::Vec<crate::model::NetworkAcl>>,
         ) -> Self {
-            self.network_acls = inp;
+            self.network_acls = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeNetworkAclsOutput`](crate::output::DescribeNetworkAclsOutput)
@@ -13624,26 +13688,26 @@ pub mod describe_nat_gateways_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn nat_gateways(mut self, inp: impl Into<crate::model::NatGateway>) -> Self {
+        pub fn nat_gateways(mut self, input: impl Into<crate::model::NatGateway>) -> Self {
             let mut v = self.nat_gateways.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.nat_gateways = Some(v);
             self
         }
         pub fn set_nat_gateways(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NatGateway>>,
+            input: std::option::Option<std::vec::Vec<crate::model::NatGateway>>,
         ) -> Self {
-            self.nat_gateways = inp;
+            self.nat_gateways = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeNatGatewaysOutput`](crate::output::DescribeNatGatewaysOutput)
@@ -13692,27 +13756,27 @@ pub mod describe_moving_addresses_output {
     impl Builder {
         pub fn moving_address_statuses(
             mut self,
-            inp: impl Into<crate::model::MovingAddressStatus>,
+            input: impl Into<crate::model::MovingAddressStatus>,
         ) -> Self {
             let mut v = self.moving_address_statuses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.moving_address_statuses = Some(v);
             self
         }
         pub fn set_moving_address_statuses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MovingAddressStatus>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MovingAddressStatus>>,
         ) -> Self {
-            self.moving_address_statuses = inp;
+            self.moving_address_statuses = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeMovingAddressesOutput`](crate::output::DescribeMovingAddressesOutput)
@@ -13759,25 +13823,25 @@ pub mod describe_managed_prefix_lists_output {
     }
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
-        pub fn prefix_lists(mut self, inp: impl Into<crate::model::ManagedPrefixList>) -> Self {
+        pub fn prefix_lists(mut self, input: impl Into<crate::model::ManagedPrefixList>) -> Self {
             let mut v = self.prefix_lists.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.prefix_lists = Some(v);
             self
         }
         pub fn set_prefix_lists(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ManagedPrefixList>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ManagedPrefixList>>,
         ) -> Self {
-            self.prefix_lists = inp;
+            self.prefix_lists = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeManagedPrefixListsOutput`](crate::output::DescribeManagedPrefixListsOutput)
@@ -13829,27 +13893,27 @@ pub mod describe_local_gateway_virtual_interfaces_output {
     impl Builder {
         pub fn local_gateway_virtual_interfaces(
             mut self,
-            inp: impl Into<crate::model::LocalGatewayVirtualInterface>,
+            input: impl Into<crate::model::LocalGatewayVirtualInterface>,
         ) -> Self {
             let mut v = self.local_gateway_virtual_interfaces.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.local_gateway_virtual_interfaces = Some(v);
             self
         }
         pub fn set_local_gateway_virtual_interfaces(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LocalGatewayVirtualInterface>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LocalGatewayVirtualInterface>>,
         ) -> Self {
-            self.local_gateway_virtual_interfaces = inp;
+            self.local_gateway_virtual_interfaces = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeLocalGatewayVirtualInterfacesOutput`](crate::output::DescribeLocalGatewayVirtualInterfacesOutput)
@@ -13901,31 +13965,31 @@ pub mod describe_local_gateway_virtual_interface_groups_output {
     impl Builder {
         pub fn local_gateway_virtual_interface_groups(
             mut self,
-            inp: impl Into<crate::model::LocalGatewayVirtualInterfaceGroup>,
+            input: impl Into<crate::model::LocalGatewayVirtualInterfaceGroup>,
         ) -> Self {
             let mut v = self
                 .local_gateway_virtual_interface_groups
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.local_gateway_virtual_interface_groups = Some(v);
             self
         }
         pub fn set_local_gateway_virtual_interface_groups(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::LocalGatewayVirtualInterfaceGroup>,
             >,
         ) -> Self {
-            self.local_gateway_virtual_interface_groups = inp;
+            self.local_gateway_virtual_interface_groups = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeLocalGatewayVirtualInterfaceGroupsOutput`](crate::output::DescribeLocalGatewayVirtualInterfaceGroupsOutput)
@@ -13971,26 +14035,26 @@ pub mod describe_local_gateways_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn local_gateways(mut self, inp: impl Into<crate::model::LocalGateway>) -> Self {
+        pub fn local_gateways(mut self, input: impl Into<crate::model::LocalGateway>) -> Self {
             let mut v = self.local_gateways.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.local_gateways = Some(v);
             self
         }
         pub fn set_local_gateways(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LocalGateway>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LocalGateway>>,
         ) -> Self {
-            self.local_gateways = inp;
+            self.local_gateways = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeLocalGatewaysOutput`](crate::output::DescribeLocalGatewaysOutput)
@@ -14042,31 +14106,31 @@ pub mod describe_local_gateway_route_table_vpc_associations_output {
     impl Builder {
         pub fn local_gateway_route_table_vpc_associations(
             mut self,
-            inp: impl Into<crate::model::LocalGatewayRouteTableVpcAssociation>,
+            input: impl Into<crate::model::LocalGatewayRouteTableVpcAssociation>,
         ) -> Self {
             let mut v = self
                 .local_gateway_route_table_vpc_associations
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.local_gateway_route_table_vpc_associations = Some(v);
             self
         }
         pub fn set_local_gateway_route_table_vpc_associations(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::LocalGatewayRouteTableVpcAssociation>,
             >,
         ) -> Self {
-            self.local_gateway_route_table_vpc_associations = inp;
+            self.local_gateway_route_table_vpc_associations = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeLocalGatewayRouteTableVpcAssociationsOutput`](crate::output::DescribeLocalGatewayRouteTableVpcAssociationsOutput)
@@ -14125,31 +14189,31 @@ pub mod describe_local_gateway_route_table_virtual_interface_group_associations_
     impl Builder {
         pub fn local_gateway_route_table_virtual_interface_group_associations(
             mut self,
-            inp: impl Into<crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
+            input: impl Into<crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
         ) -> Self {
             let mut v = self
                 .local_gateway_route_table_virtual_interface_group_associations
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.local_gateway_route_table_virtual_interface_group_associations = Some(v);
             self
         }
         pub fn set_local_gateway_route_table_virtual_interface_group_associations(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::LocalGatewayRouteTableVirtualInterfaceGroupAssociation>,
             >,
         ) -> Self {
-            self.local_gateway_route_table_virtual_interface_group_associations = inp;
+            self.local_gateway_route_table_virtual_interface_group_associations = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput`](crate::output::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput)
@@ -14205,27 +14269,27 @@ pub mod describe_local_gateway_route_tables_output {
     impl Builder {
         pub fn local_gateway_route_tables(
             mut self,
-            inp: impl Into<crate::model::LocalGatewayRouteTable>,
+            input: impl Into<crate::model::LocalGatewayRouteTable>,
         ) -> Self {
             let mut v = self.local_gateway_route_tables.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.local_gateway_route_tables = Some(v);
             self
         }
         pub fn set_local_gateway_route_tables(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LocalGatewayRouteTable>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LocalGatewayRouteTable>>,
         ) -> Self {
-            self.local_gateway_route_tables = inp;
+            self.local_gateway_route_tables = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeLocalGatewayRouteTablesOutput`](crate::output::DescribeLocalGatewayRouteTablesOutput)
@@ -14275,28 +14339,28 @@ pub mod describe_launch_template_versions_output {
     impl Builder {
         pub fn launch_template_versions(
             mut self,
-            inp: impl Into<crate::model::LaunchTemplateVersion>,
+            input: impl Into<crate::model::LaunchTemplateVersion>,
         ) -> Self {
             let mut v = self.launch_template_versions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.launch_template_versions = Some(v);
             self
         }
         pub fn set_launch_template_versions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LaunchTemplateVersion>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LaunchTemplateVersion>>,
         ) -> Self {
-            self.launch_template_versions = inp;
+            self.launch_template_versions = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is
         /// <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeLaunchTemplateVersionsOutput`](crate::output::DescribeLaunchTemplateVersionsOutput)
@@ -14343,27 +14407,27 @@ pub mod describe_launch_templates_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn launch_templates(mut self, inp: impl Into<crate::model::LaunchTemplate>) -> Self {
+        pub fn launch_templates(mut self, input: impl Into<crate::model::LaunchTemplate>) -> Self {
             let mut v = self.launch_templates.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.launch_templates = Some(v);
             self
         }
         pub fn set_launch_templates(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LaunchTemplate>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LaunchTemplate>>,
         ) -> Self {
-            self.launch_templates = inp;
+            self.launch_templates = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is
         /// <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeLaunchTemplatesOutput`](crate::output::DescribeLaunchTemplatesOutput)
@@ -14404,17 +14468,17 @@ pub mod describe_key_pairs_output {
         pub(crate) key_pairs: std::option::Option<std::vec::Vec<crate::model::KeyPairInfo>>,
     }
     impl Builder {
-        pub fn key_pairs(mut self, inp: impl Into<crate::model::KeyPairInfo>) -> Self {
+        pub fn key_pairs(mut self, input: impl Into<crate::model::KeyPairInfo>) -> Self {
             let mut v = self.key_pairs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.key_pairs = Some(v);
             self
         }
         pub fn set_key_pairs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::KeyPairInfo>>,
+            input: std::option::Option<std::vec::Vec<crate::model::KeyPairInfo>>,
         ) -> Self {
-            self.key_pairs = inp;
+            self.key_pairs = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeKeyPairsOutput`](crate::output::DescribeKeyPairsOutput)
@@ -14458,26 +14522,26 @@ pub mod describe_ipv6_pools_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn ipv6_pools(mut self, inp: impl Into<crate::model::Ipv6Pool>) -> Self {
+        pub fn ipv6_pools(mut self, input: impl Into<crate::model::Ipv6Pool>) -> Self {
             let mut v = self.ipv6_pools.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.ipv6_pools = Some(v);
             self
         }
         pub fn set_ipv6_pools(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Ipv6Pool>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Ipv6Pool>>,
         ) -> Self {
-            self.ipv6_pools = inp;
+            self.ipv6_pools = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeIpv6PoolsOutput`](crate::output::DescribeIpv6PoolsOutput)
@@ -14523,26 +14587,29 @@ pub mod describe_internet_gateways_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn internet_gateways(mut self, inp: impl Into<crate::model::InternetGateway>) -> Self {
+        pub fn internet_gateways(
+            mut self,
+            input: impl Into<crate::model::InternetGateway>,
+        ) -> Self {
             let mut v = self.internet_gateways.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.internet_gateways = Some(v);
             self
         }
         pub fn set_internet_gateways(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InternetGateway>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InternetGateway>>,
         ) -> Self {
-            self.internet_gateways = inp;
+            self.internet_gateways = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeInternetGatewaysOutput`](crate::output::DescribeInternetGatewaysOutput)
@@ -14589,27 +14656,27 @@ pub mod describe_instance_types_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn instance_types(mut self, inp: impl Into<crate::model::InstanceTypeInfo>) -> Self {
+        pub fn instance_types(mut self, input: impl Into<crate::model::InstanceTypeInfo>) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.instance_types = Some(v);
             self
         }
         pub fn set_instance_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InstanceTypeInfo>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceTypeInfo>>,
         ) -> Self {
-            self.instance_types = inp;
+            self.instance_types = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
         /// are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeInstanceTypesOutput`](crate::output::DescribeInstanceTypesOutput)
@@ -14659,28 +14726,28 @@ pub mod describe_instance_type_offerings_output {
     impl Builder {
         pub fn instance_type_offerings(
             mut self,
-            inp: impl Into<crate::model::InstanceTypeOffering>,
+            input: impl Into<crate::model::InstanceTypeOffering>,
         ) -> Self {
             let mut v = self.instance_type_offerings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.instance_type_offerings = Some(v);
             self
         }
         pub fn set_instance_type_offerings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InstanceTypeOffering>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceTypeOffering>>,
         ) -> Self {
-            self.instance_type_offerings = inp;
+            self.instance_type_offerings = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there
         /// are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeInstanceTypeOfferingsOutput`](crate::output::DescribeInstanceTypeOfferingsOutput)
@@ -14727,27 +14794,27 @@ pub mod describe_instance_status_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn instance_statuses(mut self, inp: impl Into<crate::model::InstanceStatus>) -> Self {
+        pub fn instance_statuses(mut self, input: impl Into<crate::model::InstanceStatus>) -> Self {
             let mut v = self.instance_statuses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.instance_statuses = Some(v);
             self
         }
         pub fn set_instance_statuses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InstanceStatus>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceStatus>>,
         ) -> Self {
-            self.instance_statuses = inp;
+            self.instance_statuses = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
         /// when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeInstanceStatusOutput`](crate::output::DescribeInstanceStatusOutput)
@@ -14793,27 +14860,27 @@ pub mod describe_instances_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn reservations(mut self, inp: impl Into<crate::model::Reservation>) -> Self {
+        pub fn reservations(mut self, input: impl Into<crate::model::Reservation>) -> Self {
             let mut v = self.reservations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.reservations = Some(v);
             self
         }
         pub fn set_reservations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Reservation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Reservation>>,
         ) -> Self {
-            self.reservations = inp;
+            self.reservations = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
         /// when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeInstancesOutput`](crate::output::DescribeInstancesOutput)
@@ -14858,16 +14925,16 @@ pub mod describe_instance_event_notification_attributes_output {
         /// <p>Information about the registered tag keys.</p>
         pub fn instance_tag_attribute(
             mut self,
-            inp: crate::model::InstanceTagNotificationAttribute,
+            input: crate::model::InstanceTagNotificationAttribute,
         ) -> Self {
-            self.instance_tag_attribute = Some(inp);
+            self.instance_tag_attribute = Some(input);
             self
         }
         pub fn set_instance_tag_attribute(
             mut self,
-            inp: std::option::Option<crate::model::InstanceTagNotificationAttribute>,
+            input: std::option::Option<crate::model::InstanceTagNotificationAttribute>,
         ) -> Self {
-            self.instance_tag_attribute = inp;
+            self.instance_tag_attribute = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeInstanceEventNotificationAttributesOutput`](crate::output::DescribeInstanceEventNotificationAttributesOutput)
@@ -14920,28 +14987,28 @@ pub mod describe_instance_credit_specifications_output {
     impl Builder {
         pub fn instance_credit_specifications(
             mut self,
-            inp: impl Into<crate::model::InstanceCreditSpecification>,
+            input: impl Into<crate::model::InstanceCreditSpecification>,
         ) -> Self {
             let mut v = self.instance_credit_specifications.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.instance_credit_specifications = Some(v);
             self
         }
         pub fn set_instance_credit_specifications(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InstanceCreditSpecification>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceCreditSpecification>>,
         ) -> Self {
-            self.instance_credit_specifications = inp;
+            self.instance_credit_specifications = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code>
         /// when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeInstanceCreditSpecificationsOutput`](crate::output::DescribeInstanceCreditSpecificationsOutput)
@@ -15060,170 +15127,173 @@ pub mod describe_instance_attribute_output {
         pub(crate) user_data: std::option::Option<crate::model::AttributeValue>,
     }
     impl Builder {
-        pub fn groups(mut self, inp: impl Into<crate::model::GroupIdentifier>) -> Self {
+        pub fn groups(mut self, input: impl Into<crate::model::GroupIdentifier>) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.groups = Some(v);
             self
         }
         pub fn set_groups(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
+            input: std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
         ) -> Self {
-            self.groups = inp;
+            self.groups = input;
             self
         }
         pub fn block_device_mappings(
             mut self,
-            inp: impl Into<crate::model::InstanceBlockDeviceMapping>,
+            input: impl Into<crate::model::InstanceBlockDeviceMapping>,
         ) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.block_device_mappings = Some(v);
             self
         }
         pub fn set_block_device_mappings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
         ) -> Self {
-            self.block_device_mappings = inp;
+            self.block_device_mappings = input;
             self
         }
         /// <p>If the value is <code>true</code>, you can't terminate the instance through the Amazon
         /// EC2 console, CLI, or API; otherwise, you can.</p>
-        pub fn disable_api_termination(mut self, inp: crate::model::AttributeBooleanValue) -> Self {
-            self.disable_api_termination = Some(inp);
+        pub fn disable_api_termination(
+            mut self,
+            input: crate::model::AttributeBooleanValue,
+        ) -> Self {
+            self.disable_api_termination = Some(input);
             self
         }
         pub fn set_disable_api_termination(
             mut self,
-            inp: std::option::Option<crate::model::AttributeBooleanValue>,
+            input: std::option::Option<crate::model::AttributeBooleanValue>,
         ) -> Self {
-            self.disable_api_termination = inp;
+            self.disable_api_termination = input;
             self
         }
         /// <p>Indicates whether enhanced networking with ENA is enabled.</p>
-        pub fn ena_support(mut self, inp: crate::model::AttributeBooleanValue) -> Self {
-            self.ena_support = Some(inp);
+        pub fn ena_support(mut self, input: crate::model::AttributeBooleanValue) -> Self {
+            self.ena_support = Some(input);
             self
         }
         pub fn set_ena_support(
             mut self,
-            inp: std::option::Option<crate::model::AttributeBooleanValue>,
+            input: std::option::Option<crate::model::AttributeBooleanValue>,
         ) -> Self {
-            self.ena_support = inp;
+            self.ena_support = input;
             self
         }
         /// <p>To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise,
         /// set it to <code>false</code>.</p>
-        pub fn enclave_options(mut self, inp: crate::model::EnclaveOptions) -> Self {
-            self.enclave_options = Some(inp);
+        pub fn enclave_options(mut self, input: crate::model::EnclaveOptions) -> Self {
+            self.enclave_options = Some(input);
             self
         }
         pub fn set_enclave_options(
             mut self,
-            inp: std::option::Option<crate::model::EnclaveOptions>,
+            input: std::option::Option<crate::model::EnclaveOptions>,
         ) -> Self {
-            self.enclave_options = inp;
+            self.enclave_options = input;
             self
         }
         /// <p>Indicates whether the instance is optimized for Amazon EBS I/O.</p>
-        pub fn ebs_optimized(mut self, inp: crate::model::AttributeBooleanValue) -> Self {
-            self.ebs_optimized = Some(inp);
+        pub fn ebs_optimized(mut self, input: crate::model::AttributeBooleanValue) -> Self {
+            self.ebs_optimized = Some(input);
             self
         }
         pub fn set_ebs_optimized(
             mut self,
-            inp: std::option::Option<crate::model::AttributeBooleanValue>,
+            input: std::option::Option<crate::model::AttributeBooleanValue>,
         ) -> Self {
-            self.ebs_optimized = inp;
+            self.ebs_optimized = input;
             self
         }
         /// <p>The ID of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(inp.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
             self
         }
-        pub fn set_instance_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = inp;
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
             self
         }
         /// <p>Indicates whether an instance stops or terminates when you initiate shutdown from the
         /// instance (using the operating system command for system shutdown).</p>
         pub fn instance_initiated_shutdown_behavior(
             mut self,
-            inp: crate::model::AttributeValue,
+            input: crate::model::AttributeValue,
         ) -> Self {
-            self.instance_initiated_shutdown_behavior = Some(inp);
+            self.instance_initiated_shutdown_behavior = Some(input);
             self
         }
         pub fn set_instance_initiated_shutdown_behavior(
             mut self,
-            inp: std::option::Option<crate::model::AttributeValue>,
+            input: std::option::Option<crate::model::AttributeValue>,
         ) -> Self {
-            self.instance_initiated_shutdown_behavior = inp;
+            self.instance_initiated_shutdown_behavior = input;
             self
         }
         /// <p>The instance type.</p>
-        pub fn instance_type(mut self, inp: crate::model::AttributeValue) -> Self {
-            self.instance_type = Some(inp);
+        pub fn instance_type(mut self, input: crate::model::AttributeValue) -> Self {
+            self.instance_type = Some(input);
             self
         }
         pub fn set_instance_type(
             mut self,
-            inp: std::option::Option<crate::model::AttributeValue>,
+            input: std::option::Option<crate::model::AttributeValue>,
         ) -> Self {
-            self.instance_type = inp;
+            self.instance_type = input;
             self
         }
         /// <p>The kernel ID.</p>
-        pub fn kernel_id(mut self, inp: crate::model::AttributeValue) -> Self {
-            self.kernel_id = Some(inp);
+        pub fn kernel_id(mut self, input: crate::model::AttributeValue) -> Self {
+            self.kernel_id = Some(input);
             self
         }
         pub fn set_kernel_id(
             mut self,
-            inp: std::option::Option<crate::model::AttributeValue>,
+            input: std::option::Option<crate::model::AttributeValue>,
         ) -> Self {
-            self.kernel_id = inp;
+            self.kernel_id = input;
             self
         }
-        pub fn product_codes(mut self, inp: impl Into<crate::model::ProductCode>) -> Self {
+        pub fn product_codes(mut self, input: impl Into<crate::model::ProductCode>) -> Self {
             let mut v = self.product_codes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.product_codes = Some(v);
             self
         }
         pub fn set_product_codes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
         ) -> Self {
-            self.product_codes = inp;
+            self.product_codes = input;
             self
         }
         /// <p>The RAM disk ID.</p>
-        pub fn ramdisk_id(mut self, inp: crate::model::AttributeValue) -> Self {
-            self.ramdisk_id = Some(inp);
+        pub fn ramdisk_id(mut self, input: crate::model::AttributeValue) -> Self {
+            self.ramdisk_id = Some(input);
             self
         }
         pub fn set_ramdisk_id(
             mut self,
-            inp: std::option::Option<crate::model::AttributeValue>,
+            input: std::option::Option<crate::model::AttributeValue>,
         ) -> Self {
-            self.ramdisk_id = inp;
+            self.ramdisk_id = input;
             self
         }
         /// <p>The device name of the root device volume (for example,
         /// <code>/dev/sda1</code>).</p>
-        pub fn root_device_name(mut self, inp: crate::model::AttributeValue) -> Self {
-            self.root_device_name = Some(inp);
+        pub fn root_device_name(mut self, input: crate::model::AttributeValue) -> Self {
+            self.root_device_name = Some(input);
             self
         }
         pub fn set_root_device_name(
             mut self,
-            inp: std::option::Option<crate::model::AttributeValue>,
+            input: std::option::Option<crate::model::AttributeValue>,
         ) -> Self {
-            self.root_device_name = inp;
+            self.root_device_name = input;
             self
         }
         /// <p>Enable or disable source/destination checks, which ensure that the instance
@@ -15232,40 +15302,40 @@ pub mod describe_instance_attribute_output {
         /// otherwise, they are disabled. The default value is <code>true</code>.
         /// You must disable source/destination checks if the instance runs services
         /// such as network address translation, routing, or firewalls.</p>
-        pub fn source_dest_check(mut self, inp: crate::model::AttributeBooleanValue) -> Self {
-            self.source_dest_check = Some(inp);
+        pub fn source_dest_check(mut self, input: crate::model::AttributeBooleanValue) -> Self {
+            self.source_dest_check = Some(input);
             self
         }
         pub fn set_source_dest_check(
             mut self,
-            inp: std::option::Option<crate::model::AttributeBooleanValue>,
+            input: std::option::Option<crate::model::AttributeBooleanValue>,
         ) -> Self {
-            self.source_dest_check = inp;
+            self.source_dest_check = input;
             self
         }
         /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface
         /// is enabled.</p>
-        pub fn sriov_net_support(mut self, inp: crate::model::AttributeValue) -> Self {
-            self.sriov_net_support = Some(inp);
+        pub fn sriov_net_support(mut self, input: crate::model::AttributeValue) -> Self {
+            self.sriov_net_support = Some(input);
             self
         }
         pub fn set_sriov_net_support(
             mut self,
-            inp: std::option::Option<crate::model::AttributeValue>,
+            input: std::option::Option<crate::model::AttributeValue>,
         ) -> Self {
-            self.sriov_net_support = inp;
+            self.sriov_net_support = input;
             self
         }
         /// <p>The user data.</p>
-        pub fn user_data(mut self, inp: crate::model::AttributeValue) -> Self {
-            self.user_data = Some(inp);
+        pub fn user_data(mut self, input: crate::model::AttributeValue) -> Self {
+            self.user_data = Some(input);
             self
         }
         pub fn set_user_data(
             mut self,
-            inp: std::option::Option<crate::model::AttributeValue>,
+            input: std::option::Option<crate::model::AttributeValue>,
         ) -> Self {
-            self.user_data = inp;
+            self.user_data = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeInstanceAttributeOutput`](crate::output::DescribeInstanceAttributeOutput)
@@ -15329,28 +15399,28 @@ pub mod describe_import_snapshot_tasks_output {
     impl Builder {
         pub fn import_snapshot_tasks(
             mut self,
-            inp: impl Into<crate::model::ImportSnapshotTask>,
+            input: impl Into<crate::model::ImportSnapshotTask>,
         ) -> Self {
             let mut v = self.import_snapshot_tasks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.import_snapshot_tasks = Some(v);
             self
         }
         pub fn set_import_snapshot_tasks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ImportSnapshotTask>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ImportSnapshotTask>>,
         ) -> Self {
-            self.import_snapshot_tasks = inp;
+            self.import_snapshot_tasks = input;
             self
         }
         /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
         /// to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeImportSnapshotTasksOutput`](crate::output::DescribeImportSnapshotTasksOutput)
@@ -15398,27 +15468,30 @@ pub mod describe_import_image_tasks_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn import_image_tasks(mut self, inp: impl Into<crate::model::ImportImageTask>) -> Self {
+        pub fn import_image_tasks(
+            mut self,
+            input: impl Into<crate::model::ImportImageTask>,
+        ) -> Self {
             let mut v = self.import_image_tasks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.import_image_tasks = Some(v);
             self
         }
         pub fn set_import_image_tasks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ImportImageTask>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ImportImageTask>>,
         ) -> Self {
-            self.import_image_tasks = inp;
+            self.import_image_tasks = input;
             self
         }
         /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
         /// to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeImportImageTasksOutput`](crate::output::DescribeImportImageTasksOutput)
@@ -15459,17 +15532,17 @@ pub mod describe_images_output {
         pub(crate) images: std::option::Option<std::vec::Vec<crate::model::Image>>,
     }
     impl Builder {
-        pub fn images(mut self, inp: impl Into<crate::model::Image>) -> Self {
+        pub fn images(mut self, input: impl Into<crate::model::Image>) -> Self {
             let mut v = self.images.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.images = Some(v);
             self
         }
         pub fn set_images(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Image>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Image>>,
         ) -> Self {
-            self.images = inp;
+            self.images = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeImagesOutput`](crate::output::DescribeImagesOutput)
@@ -15546,116 +15619,116 @@ pub mod describe_image_attribute_output {
     impl Builder {
         pub fn block_device_mappings(
             mut self,
-            inp: impl Into<crate::model::BlockDeviceMapping>,
+            input: impl Into<crate::model::BlockDeviceMapping>,
         ) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.block_device_mappings = Some(v);
             self
         }
         pub fn set_block_device_mappings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
+            input: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
         ) -> Self {
-            self.block_device_mappings = inp;
+            self.block_device_mappings = input;
             self
         }
         /// <p>The ID of the AMI.</p>
-        pub fn image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.image_id = Some(inp.into());
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_id = Some(input.into());
             self
         }
-        pub fn set_image_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.image_id = inp;
+        pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_id = input;
             self
         }
         pub fn launch_permissions(
             mut self,
-            inp: impl Into<crate::model::LaunchPermission>,
+            input: impl Into<crate::model::LaunchPermission>,
         ) -> Self {
             let mut v = self.launch_permissions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.launch_permissions = Some(v);
             self
         }
         pub fn set_launch_permissions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LaunchPermission>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LaunchPermission>>,
         ) -> Self {
-            self.launch_permissions = inp;
+            self.launch_permissions = input;
             self
         }
-        pub fn product_codes(mut self, inp: impl Into<crate::model::ProductCode>) -> Self {
+        pub fn product_codes(mut self, input: impl Into<crate::model::ProductCode>) -> Self {
             let mut v = self.product_codes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.product_codes = Some(v);
             self
         }
         pub fn set_product_codes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ProductCode>>,
         ) -> Self {
-            self.product_codes = inp;
+            self.product_codes = input;
             self
         }
         /// <p>A description for the AMI.</p>
-        pub fn description(mut self, inp: crate::model::AttributeValue) -> Self {
-            self.description = Some(inp);
+        pub fn description(mut self, input: crate::model::AttributeValue) -> Self {
+            self.description = Some(input);
             self
         }
         pub fn set_description(
             mut self,
-            inp: std::option::Option<crate::model::AttributeValue>,
+            input: std::option::Option<crate::model::AttributeValue>,
         ) -> Self {
-            self.description = inp;
+            self.description = input;
             self
         }
         /// <p>The kernel ID.</p>
-        pub fn kernel_id(mut self, inp: crate::model::AttributeValue) -> Self {
-            self.kernel_id = Some(inp);
+        pub fn kernel_id(mut self, input: crate::model::AttributeValue) -> Self {
+            self.kernel_id = Some(input);
             self
         }
         pub fn set_kernel_id(
             mut self,
-            inp: std::option::Option<crate::model::AttributeValue>,
+            input: std::option::Option<crate::model::AttributeValue>,
         ) -> Self {
-            self.kernel_id = inp;
+            self.kernel_id = input;
             self
         }
         /// <p>The RAM disk ID.</p>
-        pub fn ramdisk_id(mut self, inp: crate::model::AttributeValue) -> Self {
-            self.ramdisk_id = Some(inp);
+        pub fn ramdisk_id(mut self, input: crate::model::AttributeValue) -> Self {
+            self.ramdisk_id = Some(input);
             self
         }
         pub fn set_ramdisk_id(
             mut self,
-            inp: std::option::Option<crate::model::AttributeValue>,
+            input: std::option::Option<crate::model::AttributeValue>,
         ) -> Self {
-            self.ramdisk_id = inp;
+            self.ramdisk_id = input;
             self
         }
         /// <p>Indicates whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
-        pub fn sriov_net_support(mut self, inp: crate::model::AttributeValue) -> Self {
-            self.sriov_net_support = Some(inp);
+        pub fn sriov_net_support(mut self, input: crate::model::AttributeValue) -> Self {
+            self.sriov_net_support = Some(input);
             self
         }
         pub fn set_sriov_net_support(
             mut self,
-            inp: std::option::Option<crate::model::AttributeValue>,
+            input: std::option::Option<crate::model::AttributeValue>,
         ) -> Self {
-            self.sriov_net_support = inp;
+            self.sriov_net_support = input;
             self
         }
         /// <p>Describes a value for a resource attribute that is a String.</p>
-        pub fn boot_mode(mut self, inp: crate::model::AttributeValue) -> Self {
-            self.boot_mode = Some(inp);
+        pub fn boot_mode(mut self, input: crate::model::AttributeValue) -> Self {
+            self.boot_mode = Some(input);
             self
         }
         pub fn set_boot_mode(
             mut self,
-            inp: std::option::Option<crate::model::AttributeValue>,
+            input: std::option::Option<crate::model::AttributeValue>,
         ) -> Self {
-            self.boot_mode = inp;
+            self.boot_mode = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeImageAttributeOutput`](crate::output::DescribeImageAttributeOutput)
@@ -15703,17 +15776,17 @@ pub mod describe_id_format_output {
         pub(crate) statuses: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
     }
     impl Builder {
-        pub fn statuses(mut self, inp: impl Into<crate::model::IdFormat>) -> Self {
+        pub fn statuses(mut self, input: impl Into<crate::model::IdFormat>) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.statuses = Some(v);
             self
         }
         pub fn set_statuses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
+            input: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
         ) -> Self {
-            self.statuses = inp;
+            self.statuses = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeIdFormatOutput`](crate::output::DescribeIdFormatOutput)
@@ -15753,17 +15826,17 @@ pub mod describe_identity_id_format_output {
         pub(crate) statuses: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
     }
     impl Builder {
-        pub fn statuses(mut self, inp: impl Into<crate::model::IdFormat>) -> Self {
+        pub fn statuses(mut self, input: impl Into<crate::model::IdFormat>) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.statuses = Some(v);
             self
         }
         pub fn set_statuses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
+            input: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
         ) -> Self {
-            self.statuses = inp;
+            self.statuses = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeIdentityIdFormatOutput`](crate::output::DescribeIdentityIdFormatOutput)
@@ -15814,27 +15887,27 @@ pub mod describe_iam_instance_profile_associations_output {
     impl Builder {
         pub fn iam_instance_profile_associations(
             mut self,
-            inp: impl Into<crate::model::IamInstanceProfileAssociation>,
+            input: impl Into<crate::model::IamInstanceProfileAssociation>,
         ) -> Self {
             let mut v = self.iam_instance_profile_associations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.iam_instance_profile_associations = Some(v);
             self
         }
         pub fn set_iam_instance_profile_associations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::IamInstanceProfileAssociation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::IamInstanceProfileAssociation>>,
         ) -> Self {
-            self.iam_instance_profile_associations = inp;
+            self.iam_instance_profile_associations = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeIamInstanceProfileAssociationsOutput`](crate::output::DescribeIamInstanceProfileAssociationsOutput)
@@ -15879,26 +15952,26 @@ pub mod describe_hosts_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn hosts(mut self, inp: impl Into<crate::model::Host>) -> Self {
+        pub fn hosts(mut self, input: impl Into<crate::model::Host>) -> Self {
             let mut v = self.hosts.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.hosts = Some(v);
             self
         }
         pub fn set_hosts(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Host>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Host>>,
         ) -> Self {
-            self.hosts = inp;
+            self.hosts = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeHostsOutput`](crate::output::DescribeHostsOutput)
@@ -15946,27 +16019,27 @@ pub mod describe_host_reservations_output {
     impl Builder {
         pub fn host_reservation_set(
             mut self,
-            inp: impl Into<crate::model::HostReservation>,
+            input: impl Into<crate::model::HostReservation>,
         ) -> Self {
             let mut v = self.host_reservation_set.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.host_reservation_set = Some(v);
             self
         }
         pub fn set_host_reservation_set(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HostReservation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HostReservation>>,
         ) -> Self {
-            self.host_reservation_set = inp;
+            self.host_reservation_set = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeHostReservationsOutput`](crate::output::DescribeHostReservationsOutput)
@@ -16012,25 +16085,25 @@ pub mod describe_host_reservation_offerings_output {
     }
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
-        pub fn offering_set(mut self, inp: impl Into<crate::model::HostOffering>) -> Self {
+        pub fn offering_set(mut self, input: impl Into<crate::model::HostOffering>) -> Self {
             let mut v = self.offering_set.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.offering_set = Some(v);
             self
         }
         pub fn set_offering_set(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HostOffering>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HostOffering>>,
         ) -> Self {
-            self.offering_set = inp;
+            self.offering_set = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeHostReservationOfferingsOutput`](crate::output::DescribeHostReservationOfferingsOutput)
@@ -16075,26 +16148,26 @@ pub mod describe_fpga_images_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn fpga_images(mut self, inp: impl Into<crate::model::FpgaImage>) -> Self {
+        pub fn fpga_images(mut self, input: impl Into<crate::model::FpgaImage>) -> Self {
             let mut v = self.fpga_images.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.fpga_images = Some(v);
             self
         }
         pub fn set_fpga_images(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FpgaImage>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FpgaImage>>,
         ) -> Self {
-            self.fpga_images = inp;
+            self.fpga_images = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeFpgaImagesOutput`](crate::output::DescribeFpgaImagesOutput)
@@ -16136,15 +16209,15 @@ pub mod describe_fpga_image_attribute_output {
     }
     impl Builder {
         /// <p>Information about the attribute.</p>
-        pub fn fpga_image_attribute(mut self, inp: crate::model::FpgaImageAttribute) -> Self {
-            self.fpga_image_attribute = Some(inp);
+        pub fn fpga_image_attribute(mut self, input: crate::model::FpgaImageAttribute) -> Self {
+            self.fpga_image_attribute = Some(input);
             self
         }
         pub fn set_fpga_image_attribute(
             mut self,
-            inp: std::option::Option<crate::model::FpgaImageAttribute>,
+            input: std::option::Option<crate::model::FpgaImageAttribute>,
         ) -> Self {
-            self.fpga_image_attribute = inp;
+            self.fpga_image_attribute = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeFpgaImageAttributeOutput`](crate::output::DescribeFpgaImageAttributeOutput)
@@ -16188,26 +16261,26 @@ pub mod describe_flow_logs_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn flow_logs(mut self, inp: impl Into<crate::model::FlowLog>) -> Self {
+        pub fn flow_logs(mut self, input: impl Into<crate::model::FlowLog>) -> Self {
             let mut v = self.flow_logs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.flow_logs = Some(v);
             self
         }
         pub fn set_flow_logs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FlowLog>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FlowLog>>,
         ) -> Self {
-            self.flow_logs = inp;
+            self.flow_logs = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeFlowLogsOutput`](crate::output::DescribeFlowLogsOutput)
@@ -16253,25 +16326,25 @@ pub mod describe_fleets_output {
     }
     impl Builder {
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
-        pub fn fleets(mut self, inp: impl Into<crate::model::FleetData>) -> Self {
+        pub fn fleets(mut self, input: impl Into<crate::model::FleetData>) -> Self {
             let mut v = self.fleets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.fleets = Some(v);
             self
         }
         pub fn set_fleets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FleetData>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FleetData>>,
         ) -> Self {
-            self.fleets = inp;
+            self.fleets = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeFleetsOutput`](crate::output::DescribeFleetsOutput)
@@ -16322,35 +16395,35 @@ pub mod describe_fleet_instances_output {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn active_instances(mut self, inp: impl Into<crate::model::ActiveInstance>) -> Self {
+        pub fn active_instances(mut self, input: impl Into<crate::model::ActiveInstance>) -> Self {
             let mut v = self.active_instances.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.active_instances = Some(v);
             self
         }
         pub fn set_active_instances(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ActiveInstance>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ActiveInstance>>,
         ) -> Self {
-            self.active_instances = inp;
+            self.active_instances = input;
             self
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The ID of the EC2 Fleet.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.fleet_id = Some(inp.into());
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fleet_id = Some(input.into());
             self
         }
-        pub fn set_fleet_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = inp;
+        pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fleet_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeFleetInstancesOutput`](crate::output::DescribeFleetInstancesOutput)
@@ -16414,17 +16487,20 @@ pub mod describe_fleet_history_output {
         pub(crate) start_time: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        pub fn history_records(mut self, inp: impl Into<crate::model::HistoryRecordEntry>) -> Self {
+        pub fn history_records(
+            mut self,
+            input: impl Into<crate::model::HistoryRecordEntry>,
+        ) -> Self {
             let mut v = self.history_records.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.history_records = Some(v);
             self
         }
         pub fn set_history_records(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HistoryRecordEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HistoryRecordEntry>>,
         ) -> Self {
-            self.history_records = inp;
+            self.history_records = input;
             self
         }
         /// <p>The last date and time for the events, in UTC format (for example,
@@ -16432,43 +16508,43 @@ pub mod describe_fleet_history_output {
         /// All records up to this time were retrieved.</p>
         /// <p>If <code>nextToken</code> indicates that there are more results, this value is not
         /// present.</p>
-        pub fn last_evaluated_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_evaluated_time = Some(inp);
+        pub fn last_evaluated_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_evaluated_time = Some(input);
             self
         }
         pub fn set_last_evaluated_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_evaluated_time = inp;
+            self.last_evaluated_time = input;
             self
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The ID of the EC Fleet.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.fleet_id = Some(inp.into());
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fleet_id = Some(input.into());
             self
         }
-        pub fn set_fleet_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = inp;
+        pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fleet_id = input;
             self
         }
         /// <p>The start date and time for the events, in UTC format (for example,
         /// <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-        pub fn start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.start_time = Some(inp);
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.start_time = inp;
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_time = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeFleetHistoryOutput`](crate::output::DescribeFleetHistoryOutput)
@@ -16521,29 +16597,29 @@ pub mod describe_fast_snapshot_restores_output {
     impl Builder {
         pub fn fast_snapshot_restores(
             mut self,
-            inp: impl Into<crate::model::DescribeFastSnapshotRestoreSuccessItem>,
+            input: impl Into<crate::model::DescribeFastSnapshotRestoreSuccessItem>,
         ) -> Self {
             let mut v = self.fast_snapshot_restores.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.fast_snapshot_restores = Some(v);
             self
         }
         pub fn set_fast_snapshot_restores(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::DescribeFastSnapshotRestoreSuccessItem>,
             >,
         ) -> Self {
-            self.fast_snapshot_restores = inp;
+            self.fast_snapshot_restores = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeFastSnapshotRestoresOutput`](crate::output::DescribeFastSnapshotRestoresOutput)
@@ -16584,17 +16660,17 @@ pub mod describe_export_tasks_output {
         pub(crate) export_tasks: std::option::Option<std::vec::Vec<crate::model::ExportTask>>,
     }
     impl Builder {
-        pub fn export_tasks(mut self, inp: impl Into<crate::model::ExportTask>) -> Self {
+        pub fn export_tasks(mut self, input: impl Into<crate::model::ExportTask>) -> Self {
             let mut v = self.export_tasks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.export_tasks = Some(v);
             self
         }
         pub fn set_export_tasks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ExportTask>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ExportTask>>,
         ) -> Self {
-            self.export_tasks = inp;
+            self.export_tasks = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeExportTasksOutput`](crate::output::DescribeExportTasksOutput)
@@ -16640,27 +16716,30 @@ pub mod describe_export_image_tasks_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn export_image_tasks(mut self, inp: impl Into<crate::model::ExportImageTask>) -> Self {
+        pub fn export_image_tasks(
+            mut self,
+            input: impl Into<crate::model::ExportImageTask>,
+        ) -> Self {
             let mut v = self.export_image_tasks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.export_image_tasks = Some(v);
             self
         }
         pub fn set_export_image_tasks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ExportImageTask>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ExportImageTask>>,
         ) -> Self {
-            self.export_image_tasks = inp;
+            self.export_image_tasks = input;
             self
         }
         /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results
         /// to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeExportImageTasksOutput`](crate::output::DescribeExportImageTasksOutput)
@@ -16712,38 +16791,38 @@ pub mod describe_elastic_gpus_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn elastic_gpu_set(mut self, inp: impl Into<crate::model::ElasticGpus>) -> Self {
+        pub fn elastic_gpu_set(mut self, input: impl Into<crate::model::ElasticGpus>) -> Self {
             let mut v = self.elastic_gpu_set.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.elastic_gpu_set = Some(v);
             self
         }
         pub fn set_elastic_gpu_set(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ElasticGpus>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ElasticGpus>>,
         ) -> Self {
-            self.elastic_gpu_set = inp;
+            self.elastic_gpu_set = input;
             self
         }
         /// <p>The total number of items to return. If the total number of items available is more
         /// than the value specified in max-items then a Next-Token will be provided in the output
         /// that you can use to resume pagination.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is
         /// <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeElasticGpusOutput`](crate::output::DescribeElasticGpusOutput)
@@ -16796,27 +16875,27 @@ pub mod describe_egress_only_internet_gateways_output {
     impl Builder {
         pub fn egress_only_internet_gateways(
             mut self,
-            inp: impl Into<crate::model::EgressOnlyInternetGateway>,
+            input: impl Into<crate::model::EgressOnlyInternetGateway>,
         ) -> Self {
             let mut v = self.egress_only_internet_gateways.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.egress_only_internet_gateways = Some(v);
             self
         }
         pub fn set_egress_only_internet_gateways(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EgressOnlyInternetGateway>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EgressOnlyInternetGateway>>,
         ) -> Self {
-            self.egress_only_internet_gateways = inp;
+            self.egress_only_internet_gateways = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeEgressOnlyInternetGatewaysOutput`](crate::output::DescribeEgressOnlyInternetGatewaysOutput)
@@ -16861,26 +16940,26 @@ pub mod describe_dhcp_options_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn dhcp_options(mut self, inp: impl Into<crate::model::DhcpOptions>) -> Self {
+        pub fn dhcp_options(mut self, input: impl Into<crate::model::DhcpOptions>) -> Self {
             let mut v = self.dhcp_options.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.dhcp_options = Some(v);
             self
         }
         pub fn set_dhcp_options(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DhcpOptions>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DhcpOptions>>,
         ) -> Self {
-            self.dhcp_options = inp;
+            self.dhcp_options = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeDhcpOptionsOutput`](crate::output::DescribeDhcpOptionsOutput)
@@ -16923,17 +17002,20 @@ pub mod describe_customer_gateways_output {
             std::option::Option<std::vec::Vec<crate::model::CustomerGateway>>,
     }
     impl Builder {
-        pub fn customer_gateways(mut self, inp: impl Into<crate::model::CustomerGateway>) -> Self {
+        pub fn customer_gateways(
+            mut self,
+            input: impl Into<crate::model::CustomerGateway>,
+        ) -> Self {
             let mut v = self.customer_gateways.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.customer_gateways = Some(v);
             self
         }
         pub fn set_customer_gateways(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CustomerGateway>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CustomerGateway>>,
         ) -> Self {
-            self.customer_gateways = inp;
+            self.customer_gateways = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeCustomerGatewaysOutput`](crate::output::DescribeCustomerGatewaysOutput)
@@ -16974,17 +17056,17 @@ pub mod describe_conversion_tasks_output {
             std::option::Option<std::vec::Vec<crate::model::ConversionTask>>,
     }
     impl Builder {
-        pub fn conversion_tasks(mut self, inp: impl Into<crate::model::ConversionTask>) -> Self {
+        pub fn conversion_tasks(mut self, input: impl Into<crate::model::ConversionTask>) -> Self {
             let mut v = self.conversion_tasks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.conversion_tasks = Some(v);
             self
         }
         pub fn set_conversion_tasks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ConversionTask>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ConversionTask>>,
         ) -> Self {
-            self.conversion_tasks = inp;
+            self.conversion_tasks = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeConversionTasksOutput`](crate::output::DescribeConversionTasksOutput)
@@ -17028,26 +17110,26 @@ pub mod describe_coip_pools_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn coip_pools(mut self, inp: impl Into<crate::model::CoipPool>) -> Self {
+        pub fn coip_pools(mut self, input: impl Into<crate::model::CoipPool>) -> Self {
             let mut v = self.coip_pools.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.coip_pools = Some(v);
             self
         }
         pub fn set_coip_pools(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CoipPool>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CoipPool>>,
         ) -> Self {
-            self.coip_pools = inp;
+            self.coip_pools = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeCoipPoolsOutput`](crate::output::DescribeCoipPoolsOutput)
@@ -17098,27 +17180,27 @@ pub mod describe_client_vpn_target_networks_output {
     impl Builder {
         pub fn client_vpn_target_networks(
             mut self,
-            inp: impl Into<crate::model::TargetNetwork>,
+            input: impl Into<crate::model::TargetNetwork>,
         ) -> Self {
             let mut v = self.client_vpn_target_networks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.client_vpn_target_networks = Some(v);
             self
         }
         pub fn set_client_vpn_target_networks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TargetNetwork>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TargetNetwork>>,
         ) -> Self {
-            self.client_vpn_target_networks = inp;
+            self.client_vpn_target_networks = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeClientVpnTargetNetworksOutput`](crate::output::DescribeClientVpnTargetNetworksOutput)
@@ -17163,26 +17245,26 @@ pub mod describe_client_vpn_routes_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn routes(mut self, inp: impl Into<crate::model::ClientVpnRoute>) -> Self {
+        pub fn routes(mut self, input: impl Into<crate::model::ClientVpnRoute>) -> Self {
             let mut v = self.routes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.routes = Some(v);
             self
         }
         pub fn set_routes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ClientVpnRoute>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ClientVpnRoute>>,
         ) -> Self {
-            self.routes = inp;
+            self.routes = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeClientVpnRoutesOutput`](crate::output::DescribeClientVpnRoutesOutput)
@@ -17230,27 +17312,27 @@ pub mod describe_client_vpn_endpoints_output {
     impl Builder {
         pub fn client_vpn_endpoints(
             mut self,
-            inp: impl Into<crate::model::ClientVpnEndpoint>,
+            input: impl Into<crate::model::ClientVpnEndpoint>,
         ) -> Self {
             let mut v = self.client_vpn_endpoints.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.client_vpn_endpoints = Some(v);
             self
         }
         pub fn set_client_vpn_endpoints(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ClientVpnEndpoint>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ClientVpnEndpoint>>,
         ) -> Self {
-            self.client_vpn_endpoints = inp;
+            self.client_vpn_endpoints = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeClientVpnEndpointsOutput`](crate::output::DescribeClientVpnEndpointsOutput)
@@ -17296,26 +17378,26 @@ pub mod describe_client_vpn_connections_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn connections(mut self, inp: impl Into<crate::model::ClientVpnConnection>) -> Self {
+        pub fn connections(mut self, input: impl Into<crate::model::ClientVpnConnection>) -> Self {
             let mut v = self.connections.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.connections = Some(v);
             self
         }
         pub fn set_connections(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ClientVpnConnection>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ClientVpnConnection>>,
         ) -> Self {
-            self.connections = inp;
+            self.connections = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeClientVpnConnectionsOutput`](crate::output::DescribeClientVpnConnectionsOutput)
@@ -17363,27 +17445,27 @@ pub mod describe_client_vpn_authorization_rules_output {
     impl Builder {
         pub fn authorization_rules(
             mut self,
-            inp: impl Into<crate::model::AuthorizationRule>,
+            input: impl Into<crate::model::AuthorizationRule>,
         ) -> Self {
             let mut v = self.authorization_rules.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.authorization_rules = Some(v);
             self
         }
         pub fn set_authorization_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AuthorizationRule>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AuthorizationRule>>,
         ) -> Self {
-            self.authorization_rules = inp;
+            self.authorization_rules = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeClientVpnAuthorizationRulesOutput`](crate::output::DescribeClientVpnAuthorizationRulesOutput)
@@ -17428,26 +17510,26 @@ pub mod describe_classic_link_instances_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn instances(mut self, inp: impl Into<crate::model::ClassicLinkInstance>) -> Self {
+        pub fn instances(mut self, input: impl Into<crate::model::ClassicLinkInstance>) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.instances = Some(v);
             self
         }
         pub fn set_instances(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ClassicLinkInstance>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ClassicLinkInstance>>,
         ) -> Self {
-            self.instances = inp;
+            self.instances = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeClassicLinkInstancesOutput`](crate::output::DescribeClassicLinkInstancesOutput)
@@ -17493,26 +17575,26 @@ pub mod describe_carrier_gateways_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn carrier_gateways(mut self, inp: impl Into<crate::model::CarrierGateway>) -> Self {
+        pub fn carrier_gateways(mut self, input: impl Into<crate::model::CarrierGateway>) -> Self {
             let mut v = self.carrier_gateways.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.carrier_gateways = Some(v);
             self
         }
         pub fn set_carrier_gateways(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CarrierGateway>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CarrierGateway>>,
         ) -> Self {
-            self.carrier_gateways = inp;
+            self.carrier_gateways = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeCarrierGatewaysOutput`](crate::output::DescribeCarrierGatewaysOutput)
@@ -17560,28 +17642,28 @@ pub mod describe_capacity_reservations_output {
     }
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         pub fn capacity_reservations(
             mut self,
-            inp: impl Into<crate::model::CapacityReservation>,
+            input: impl Into<crate::model::CapacityReservation>,
         ) -> Self {
             let mut v = self.capacity_reservations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.capacity_reservations = Some(v);
             self
         }
         pub fn set_capacity_reservations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CapacityReservation>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CapacityReservation>>,
         ) -> Self {
-            self.capacity_reservations = inp;
+            self.capacity_reservations = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeCapacityReservationsOutput`](crate::output::DescribeCapacityReservationsOutput)
@@ -17626,26 +17708,26 @@ pub mod describe_byoip_cidrs_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn byoip_cidrs(mut self, inp: impl Into<crate::model::ByoipCidr>) -> Self {
+        pub fn byoip_cidrs(mut self, input: impl Into<crate::model::ByoipCidr>) -> Self {
             let mut v = self.byoip_cidrs.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.byoip_cidrs = Some(v);
             self
         }
         pub fn set_byoip_cidrs(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ByoipCidr>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ByoipCidr>>,
         ) -> Self {
-            self.byoip_cidrs = inp;
+            self.byoip_cidrs = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeByoipCidrsOutput`](crate::output::DescribeByoipCidrsOutput)
@@ -17686,17 +17768,17 @@ pub mod describe_bundle_tasks_output {
         pub(crate) bundle_tasks: std::option::Option<std::vec::Vec<crate::model::BundleTask>>,
     }
     impl Builder {
-        pub fn bundle_tasks(mut self, inp: impl Into<crate::model::BundleTask>) -> Self {
+        pub fn bundle_tasks(mut self, input: impl Into<crate::model::BundleTask>) -> Self {
             let mut v = self.bundle_tasks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.bundle_tasks = Some(v);
             self
         }
         pub fn set_bundle_tasks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::BundleTask>>,
+            input: std::option::Option<std::vec::Vec<crate::model::BundleTask>>,
         ) -> Self {
-            self.bundle_tasks = inp;
+            self.bundle_tasks = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeBundleTasksOutput`](crate::output::DescribeBundleTasksOutput)
@@ -17739,18 +17821,18 @@ pub mod describe_availability_zones_output {
     impl Builder {
         pub fn availability_zones(
             mut self,
-            inp: impl Into<crate::model::AvailabilityZone>,
+            input: impl Into<crate::model::AvailabilityZone>,
         ) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
         pub fn set_availability_zones(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AvailabilityZone>>,
         ) -> Self {
-            self.availability_zones = inp;
+            self.availability_zones = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeAvailabilityZonesOutput`](crate::output::DescribeAvailabilityZonesOutput)
@@ -17799,25 +17881,25 @@ pub mod describe_aggregate_id_format_output {
         /// <p>Indicates whether all resource types in the Region are configured to use longer IDs.
         /// This value is only <code>true</code> if all users are configured to use longer IDs for
         /// all resources types in the Region.</p>
-        pub fn use_long_ids_aggregated(mut self, inp: bool) -> Self {
-            self.use_long_ids_aggregated = Some(inp);
+        pub fn use_long_ids_aggregated(mut self, input: bool) -> Self {
+            self.use_long_ids_aggregated = Some(input);
             self
         }
-        pub fn set_use_long_ids_aggregated(mut self, inp: std::option::Option<bool>) -> Self {
-            self.use_long_ids_aggregated = inp;
+        pub fn set_use_long_ids_aggregated(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_long_ids_aggregated = input;
             self
         }
-        pub fn statuses(mut self, inp: impl Into<crate::model::IdFormat>) -> Self {
+        pub fn statuses(mut self, input: impl Into<crate::model::IdFormat>) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.statuses = Some(v);
             self
         }
         pub fn set_statuses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
+            input: std::option::Option<std::vec::Vec<crate::model::IdFormat>>,
         ) -> Self {
-            self.statuses = inp;
+            self.statuses = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeAggregateIdFormatOutput`](crate::output::DescribeAggregateIdFormatOutput)
@@ -17862,26 +17944,26 @@ pub mod describe_addresses_attribute_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn addresses(mut self, inp: impl Into<crate::model::AddressAttribute>) -> Self {
+        pub fn addresses(mut self, input: impl Into<crate::model::AddressAttribute>) -> Self {
             let mut v = self.addresses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.addresses = Some(v);
             self
         }
         pub fn set_addresses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AddressAttribute>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AddressAttribute>>,
         ) -> Self {
-            self.addresses = inp;
+            self.addresses = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeAddressesAttributeOutput`](crate::output::DescribeAddressesAttributeOutput)
@@ -17922,17 +18004,17 @@ pub mod describe_addresses_output {
         pub(crate) addresses: std::option::Option<std::vec::Vec<crate::model::Address>>,
     }
     impl Builder {
-        pub fn addresses(mut self, inp: impl Into<crate::model::Address>) -> Self {
+        pub fn addresses(mut self, input: impl Into<crate::model::Address>) -> Self {
             let mut v = self.addresses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.addresses = Some(v);
             self
         }
         pub fn set_addresses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Address>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Address>>,
         ) -> Self {
-            self.addresses = inp;
+            self.addresses = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeAddressesOutput`](crate::output::DescribeAddressesOutput)
@@ -17975,18 +18057,18 @@ pub mod describe_account_attributes_output {
     impl Builder {
         pub fn account_attributes(
             mut self,
-            inp: impl Into<crate::model::AccountAttribute>,
+            input: impl Into<crate::model::AccountAttribute>,
         ) -> Self {
             let mut v = self.account_attributes.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.account_attributes = Some(v);
             self
         }
         pub fn set_account_attributes(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
         ) -> Self {
-            self.account_attributes = inp;
+            self.account_attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput)
@@ -18034,16 +18116,18 @@ pub mod deregister_transit_gateway_multicast_group_sources_output {
         /// <p>Information about the deregistered group sources.</p>
         pub fn deregistered_multicast_group_sources(
             mut self,
-            inp: crate::model::TransitGatewayMulticastDeregisteredGroupSources,
+            input: crate::model::TransitGatewayMulticastDeregisteredGroupSources,
         ) -> Self {
-            self.deregistered_multicast_group_sources = Some(inp);
+            self.deregistered_multicast_group_sources = Some(input);
             self
         }
         pub fn set_deregistered_multicast_group_sources(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayMulticastDeregisteredGroupSources>,
+            input: std::option::Option<
+                crate::model::TransitGatewayMulticastDeregisteredGroupSources,
+            >,
         ) -> Self {
-            self.deregistered_multicast_group_sources = inp;
+            self.deregistered_multicast_group_sources = input;
             self
         }
         /// Consumes the builder and constructs a [`DeregisterTransitGatewayMulticastGroupSourcesOutput`](crate::output::DeregisterTransitGatewayMulticastGroupSourcesOutput)
@@ -18092,16 +18176,18 @@ pub mod deregister_transit_gateway_multicast_group_members_output {
         /// <p>Information about the deregistered members.</p>
         pub fn deregistered_multicast_group_members(
             mut self,
-            inp: crate::model::TransitGatewayMulticastDeregisteredGroupMembers,
+            input: crate::model::TransitGatewayMulticastDeregisteredGroupMembers,
         ) -> Self {
-            self.deregistered_multicast_group_members = Some(inp);
+            self.deregistered_multicast_group_members = Some(input);
             self
         }
         pub fn set_deregistered_multicast_group_members(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayMulticastDeregisteredGroupMembers>,
+            input: std::option::Option<
+                crate::model::TransitGatewayMulticastDeregisteredGroupMembers,
+            >,
         ) -> Self {
-            self.deregistered_multicast_group_members = inp;
+            self.deregistered_multicast_group_members = input;
             self
         }
         /// Consumes the builder and constructs a [`DeregisterTransitGatewayMulticastGroupMembersOutput`](crate::output::DeregisterTransitGatewayMulticastGroupMembersOutput)
@@ -18146,16 +18232,16 @@ pub mod deregister_instance_event_notification_attributes_output {
         /// <p>The resulting set of tag keys.</p>
         pub fn instance_tag_attribute(
             mut self,
-            inp: crate::model::InstanceTagNotificationAttribute,
+            input: crate::model::InstanceTagNotificationAttribute,
         ) -> Self {
-            self.instance_tag_attribute = Some(inp);
+            self.instance_tag_attribute = Some(input);
             self
         }
         pub fn set_instance_tag_attribute(
             mut self,
-            inp: std::option::Option<crate::model::InstanceTagNotificationAttribute>,
+            input: std::option::Option<crate::model::InstanceTagNotificationAttribute>,
         ) -> Self {
-            self.instance_tag_attribute = inp;
+            self.instance_tag_attribute = input;
             self
         }
         /// Consumes the builder and constructs a [`DeregisterInstanceEventNotificationAttributesOutput`](crate::output::DeregisterInstanceEventNotificationAttributesOutput)
@@ -18226,12 +18312,15 @@ pub mod deprovision_byoip_cidr_output {
     }
     impl Builder {
         /// <p>Information about the address range.</p>
-        pub fn byoip_cidr(mut self, inp: crate::model::ByoipCidr) -> Self {
-            self.byoip_cidr = Some(inp);
+        pub fn byoip_cidr(mut self, input: crate::model::ByoipCidr) -> Self {
+            self.byoip_cidr = Some(input);
             self
         }
-        pub fn set_byoip_cidr(mut self, inp: std::option::Option<crate::model::ByoipCidr>) -> Self {
-            self.byoip_cidr = inp;
+        pub fn set_byoip_cidr(
+            mut self,
+            input: std::option::Option<crate::model::ByoipCidr>,
+        ) -> Self {
+            self.byoip_cidr = input;
             self
         }
         /// Consumes the builder and constructs a [`DeprovisionByoipCidrOutput`](crate::output::DeprovisionByoipCidrOutput)
@@ -18359,12 +18448,12 @@ pub mod delete_vpc_peering_connection_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteVpcPeeringConnectionOutput`](crate::output::DeleteVpcPeeringConnectionOutput)
@@ -18405,17 +18494,17 @@ pub mod delete_vpc_endpoint_service_configurations_output {
         pub(crate) unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
     }
     impl Builder {
-        pub fn unsuccessful(mut self, inp: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unsuccessful = Some(v);
             self
         }
         pub fn set_unsuccessful(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
         ) -> Self {
-            self.unsuccessful = inp;
+            self.unsuccessful = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteVpcEndpointServiceConfigurationsOutput`](crate::output::DeleteVpcEndpointServiceConfigurationsOutput)
@@ -18456,17 +18545,17 @@ pub mod delete_vpc_endpoints_output {
         pub(crate) unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
     }
     impl Builder {
-        pub fn unsuccessful(mut self, inp: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unsuccessful = Some(v);
             self
         }
         pub fn set_unsuccessful(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
         ) -> Self {
-            self.unsuccessful = inp;
+            self.unsuccessful = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteVpcEndpointsOutput`](crate::output::DeleteVpcEndpointsOutput)
@@ -18507,17 +18596,17 @@ pub mod delete_vpc_endpoint_connection_notifications_output {
         pub(crate) unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
     }
     impl Builder {
-        pub fn unsuccessful(mut self, inp: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unsuccessful = Some(v);
             self
         }
         pub fn set_unsuccessful(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
         ) -> Self {
-            self.unsuccessful = inp;
+            self.unsuccessful = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteVpcEndpointConnectionNotificationsOutput`](crate::output::DeleteVpcEndpointConnectionNotificationsOutput)
@@ -18624,16 +18713,16 @@ pub mod delete_transit_gateway_vpc_attachment_output {
         /// <p>Information about the deleted VPC attachment.</p>
         pub fn transit_gateway_vpc_attachment(
             mut self,
-            inp: crate::model::TransitGatewayVpcAttachment,
+            input: crate::model::TransitGatewayVpcAttachment,
         ) -> Self {
-            self.transit_gateway_vpc_attachment = Some(inp);
+            self.transit_gateway_vpc_attachment = Some(input);
             self
         }
         pub fn set_transit_gateway_vpc_attachment(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayVpcAttachment>,
+            input: std::option::Option<crate::model::TransitGatewayVpcAttachment>,
         ) -> Self {
-            self.transit_gateway_vpc_attachment = inp;
+            self.transit_gateway_vpc_attachment = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTransitGatewayVpcAttachmentOutput`](crate::output::DeleteTransitGatewayVpcAttachmentOutput)
@@ -18680,16 +18769,16 @@ pub mod delete_transit_gateway_route_table_output {
         /// <p>Information about the deleted transit gateway route table.</p>
         pub fn transit_gateway_route_table(
             mut self,
-            inp: crate::model::TransitGatewayRouteTable,
+            input: crate::model::TransitGatewayRouteTable,
         ) -> Self {
-            self.transit_gateway_route_table = Some(inp);
+            self.transit_gateway_route_table = Some(input);
             self
         }
         pub fn set_transit_gateway_route_table(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayRouteTable>,
+            input: std::option::Option<crate::model::TransitGatewayRouteTable>,
         ) -> Self {
-            self.transit_gateway_route_table = inp;
+            self.transit_gateway_route_table = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTransitGatewayRouteTableOutput`](crate::output::DeleteTransitGatewayRouteTableOutput)
@@ -18730,15 +18819,15 @@ pub mod delete_transit_gateway_route_output {
     }
     impl Builder {
         /// <p>Information about the route.</p>
-        pub fn route(mut self, inp: crate::model::TransitGatewayRoute) -> Self {
-            self.route = Some(inp);
+        pub fn route(mut self, input: crate::model::TransitGatewayRoute) -> Self {
+            self.route = Some(input);
             self
         }
         pub fn set_route(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayRoute>,
+            input: std::option::Option<crate::model::TransitGatewayRoute>,
         ) -> Self {
-            self.route = inp;
+            self.route = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTransitGatewayRouteOutput`](crate::output::DeleteTransitGatewayRouteOutput)
@@ -18784,16 +18873,16 @@ pub mod delete_transit_gateway_prefix_list_reference_output {
         /// <p>Information about the deleted prefix list reference.</p>
         pub fn transit_gateway_prefix_list_reference(
             mut self,
-            inp: crate::model::TransitGatewayPrefixListReference,
+            input: crate::model::TransitGatewayPrefixListReference,
         ) -> Self {
-            self.transit_gateway_prefix_list_reference = Some(inp);
+            self.transit_gateway_prefix_list_reference = Some(input);
             self
         }
         pub fn set_transit_gateway_prefix_list_reference(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayPrefixListReference>,
+            input: std::option::Option<crate::model::TransitGatewayPrefixListReference>,
         ) -> Self {
-            self.transit_gateway_prefix_list_reference = inp;
+            self.transit_gateway_prefix_list_reference = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTransitGatewayPrefixListReferenceOutput`](crate::output::DeleteTransitGatewayPrefixListReferenceOutput)
@@ -18842,16 +18931,16 @@ pub mod delete_transit_gateway_peering_attachment_output {
         /// <p>The transit gateway peering attachment.</p>
         pub fn transit_gateway_peering_attachment(
             mut self,
-            inp: crate::model::TransitGatewayPeeringAttachment,
+            input: crate::model::TransitGatewayPeeringAttachment,
         ) -> Self {
-            self.transit_gateway_peering_attachment = Some(inp);
+            self.transit_gateway_peering_attachment = Some(input);
             self
         }
         pub fn set_transit_gateway_peering_attachment(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayPeeringAttachment>,
+            input: std::option::Option<crate::model::TransitGatewayPeeringAttachment>,
         ) -> Self {
-            self.transit_gateway_peering_attachment = inp;
+            self.transit_gateway_peering_attachment = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTransitGatewayPeeringAttachmentOutput`](crate::output::DeleteTransitGatewayPeeringAttachmentOutput)
@@ -18899,16 +18988,16 @@ pub mod delete_transit_gateway_multicast_domain_output {
         /// <p>Information about the deleted transit gateway multicast domain.</p>
         pub fn transit_gateway_multicast_domain(
             mut self,
-            inp: crate::model::TransitGatewayMulticastDomain,
+            input: crate::model::TransitGatewayMulticastDomain,
         ) -> Self {
-            self.transit_gateway_multicast_domain = Some(inp);
+            self.transit_gateway_multicast_domain = Some(input);
             self
         }
         pub fn set_transit_gateway_multicast_domain(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayMulticastDomain>,
+            input: std::option::Option<crate::model::TransitGatewayMulticastDomain>,
         ) -> Self {
-            self.transit_gateway_multicast_domain = inp;
+            self.transit_gateway_multicast_domain = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTransitGatewayMulticastDomainOutput`](crate::output::DeleteTransitGatewayMulticastDomainOutput)
@@ -18955,16 +19044,16 @@ pub mod delete_transit_gateway_connect_peer_output {
         /// <p>Information about the deleted Connect peer.</p>
         pub fn transit_gateway_connect_peer(
             mut self,
-            inp: crate::model::TransitGatewayConnectPeer,
+            input: crate::model::TransitGatewayConnectPeer,
         ) -> Self {
-            self.transit_gateway_connect_peer = Some(inp);
+            self.transit_gateway_connect_peer = Some(input);
             self
         }
         pub fn set_transit_gateway_connect_peer(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayConnectPeer>,
+            input: std::option::Option<crate::model::TransitGatewayConnectPeer>,
         ) -> Self {
-            self.transit_gateway_connect_peer = inp;
+            self.transit_gateway_connect_peer = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTransitGatewayConnectPeerOutput`](crate::output::DeleteTransitGatewayConnectPeerOutput)
@@ -19006,15 +19095,18 @@ pub mod delete_transit_gateway_connect_output {
     }
     impl Builder {
         /// <p>Information about the deleted Connect attachment.</p>
-        pub fn transit_gateway_connect(mut self, inp: crate::model::TransitGatewayConnect) -> Self {
-            self.transit_gateway_connect = Some(inp);
+        pub fn transit_gateway_connect(
+            mut self,
+            input: crate::model::TransitGatewayConnect,
+        ) -> Self {
+            self.transit_gateway_connect = Some(input);
             self
         }
         pub fn set_transit_gateway_connect(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayConnect>,
+            input: std::option::Option<crate::model::TransitGatewayConnect>,
         ) -> Self {
-            self.transit_gateway_connect = inp;
+            self.transit_gateway_connect = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTransitGatewayConnectOutput`](crate::output::DeleteTransitGatewayConnectOutput)
@@ -19055,15 +19147,15 @@ pub mod delete_transit_gateway_output {
     }
     impl Builder {
         /// <p>Information about the deleted transit gateway.</p>
-        pub fn transit_gateway(mut self, inp: crate::model::TransitGateway) -> Self {
-            self.transit_gateway = Some(inp);
+        pub fn transit_gateway(mut self, input: crate::model::TransitGateway) -> Self {
+            self.transit_gateway = Some(input);
             self
         }
         pub fn set_transit_gateway(
             mut self,
-            inp: std::option::Option<crate::model::TransitGateway>,
+            input: std::option::Option<crate::model::TransitGateway>,
         ) -> Self {
-            self.transit_gateway = inp;
+            self.transit_gateway = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTransitGatewayOutput`](crate::output::DeleteTransitGatewayOutput)
@@ -19104,15 +19196,15 @@ pub mod delete_traffic_mirror_target_output {
     }
     impl Builder {
         /// <p>The ID of the deleted Traffic Mirror target.</p>
-        pub fn traffic_mirror_target_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.traffic_mirror_target_id = Some(inp.into());
+        pub fn traffic_mirror_target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.traffic_mirror_target_id = Some(input.into());
             self
         }
         pub fn set_traffic_mirror_target_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_mirror_target_id = inp;
+            self.traffic_mirror_target_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTrafficMirrorTargetOutput`](crate::output::DeleteTrafficMirrorTargetOutput)
@@ -19153,15 +19245,15 @@ pub mod delete_traffic_mirror_session_output {
     }
     impl Builder {
         /// <p>The ID of the deleted Traffic Mirror session.</p>
-        pub fn traffic_mirror_session_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.traffic_mirror_session_id = Some(inp.into());
+        pub fn traffic_mirror_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.traffic_mirror_session_id = Some(input.into());
             self
         }
         pub fn set_traffic_mirror_session_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_mirror_session_id = inp;
+            self.traffic_mirror_session_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTrafficMirrorSessionOutput`](crate::output::DeleteTrafficMirrorSessionOutput)
@@ -19207,16 +19299,16 @@ pub mod delete_traffic_mirror_filter_rule_output {
         /// <p>The ID of the deleted Traffic Mirror rule.</p>
         pub fn traffic_mirror_filter_rule_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.traffic_mirror_filter_rule_id = Some(inp.into());
+            self.traffic_mirror_filter_rule_id = Some(input.into());
             self
         }
         pub fn set_traffic_mirror_filter_rule_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_mirror_filter_rule_id = inp;
+            self.traffic_mirror_filter_rule_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTrafficMirrorFilterRuleOutput`](crate::output::DeleteTrafficMirrorFilterRuleOutput)
@@ -19257,15 +19349,15 @@ pub mod delete_traffic_mirror_filter_output {
     }
     impl Builder {
         /// <p>The ID of the Traffic Mirror filter.</p>
-        pub fn traffic_mirror_filter_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.traffic_mirror_filter_id = Some(inp.into());
+        pub fn traffic_mirror_filter_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.traffic_mirror_filter_id = Some(input.into());
             self
         }
         pub fn set_traffic_mirror_filter_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_mirror_filter_id = inp;
+            self.traffic_mirror_filter_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTrafficMirrorFilterOutput`](crate::output::DeleteTrafficMirrorFilterOutput)
@@ -19524,36 +19616,38 @@ pub mod delete_queued_reserved_instances_output {
     impl Builder {
         pub fn successful_queued_purchase_deletions(
             mut self,
-            inp: impl Into<crate::model::SuccessfulQueuedPurchaseDeletion>,
+            input: impl Into<crate::model::SuccessfulQueuedPurchaseDeletion>,
         ) -> Self {
             let mut v = self
                 .successful_queued_purchase_deletions
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.successful_queued_purchase_deletions = Some(v);
             self
         }
         pub fn set_successful_queued_purchase_deletions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SuccessfulQueuedPurchaseDeletion>>,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::SuccessfulQueuedPurchaseDeletion>,
+            >,
         ) -> Self {
-            self.successful_queued_purchase_deletions = inp;
+            self.successful_queued_purchase_deletions = input;
             self
         }
         pub fn failed_queued_purchase_deletions(
             mut self,
-            inp: impl Into<crate::model::FailedQueuedPurchaseDeletion>,
+            input: impl Into<crate::model::FailedQueuedPurchaseDeletion>,
         ) -> Self {
             let mut v = self.failed_queued_purchase_deletions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.failed_queued_purchase_deletions = Some(v);
             self
         }
         pub fn set_failed_queued_purchase_deletions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FailedQueuedPurchaseDeletion>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FailedQueuedPurchaseDeletion>>,
         ) -> Self {
-            self.failed_queued_purchase_deletions = inp;
+            self.failed_queued_purchase_deletions = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteQueuedReservedInstancesOutput`](crate::output::DeleteQueuedReservedInstancesOutput)
@@ -19625,12 +19719,12 @@ pub mod delete_network_interface_permission_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds, otherwise returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteNetworkInterfacePermissionOutput`](crate::output::DeleteNetworkInterfacePermissionOutput)
@@ -19700,15 +19794,15 @@ pub mod delete_network_insights_path_output {
     }
     impl Builder {
         /// <p>The ID of the path.</p>
-        pub fn network_insights_path_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.network_insights_path_id = Some(inp.into());
+        pub fn network_insights_path_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_insights_path_id = Some(input.into());
             self
         }
         pub fn set_network_insights_path_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.network_insights_path_id = inp;
+            self.network_insights_path_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteNetworkInsightsPathOutput`](crate::output::DeleteNetworkInsightsPathOutput)
@@ -19752,15 +19846,18 @@ pub mod delete_network_insights_analysis_output {
     }
     impl Builder {
         /// <p>The ID of the network insights analysis.</p>
-        pub fn network_insights_analysis_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.network_insights_analysis_id = Some(inp.into());
+        pub fn network_insights_analysis_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.network_insights_analysis_id = Some(input.into());
             self
         }
         pub fn set_network_insights_analysis_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.network_insights_analysis_id = inp;
+            self.network_insights_analysis_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteNetworkInsightsAnalysisOutput`](crate::output::DeleteNetworkInsightsAnalysisOutput)
@@ -19859,12 +19956,15 @@ pub mod delete_nat_gateway_output {
     }
     impl Builder {
         /// <p>The ID of the NAT gateway.</p>
-        pub fn nat_gateway_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.nat_gateway_id = Some(inp.into());
+        pub fn nat_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.nat_gateway_id = Some(input.into());
             self
         }
-        pub fn set_nat_gateway_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.nat_gateway_id = inp;
+        pub fn set_nat_gateway_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.nat_gateway_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteNatGatewayOutput`](crate::output::DeleteNatGatewayOutput)
@@ -19905,15 +20005,15 @@ pub mod delete_managed_prefix_list_output {
     }
     impl Builder {
         /// <p>Information about the prefix list.</p>
-        pub fn prefix_list(mut self, inp: crate::model::ManagedPrefixList) -> Self {
-            self.prefix_list = Some(inp);
+        pub fn prefix_list(mut self, input: crate::model::ManagedPrefixList) -> Self {
+            self.prefix_list = Some(input);
             self
         }
         pub fn set_prefix_list(
             mut self,
-            inp: std::option::Option<crate::model::ManagedPrefixList>,
+            input: std::option::Option<crate::model::ManagedPrefixList>,
         ) -> Self {
-            self.prefix_list = inp;
+            self.prefix_list = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteManagedPrefixListOutput`](crate::output::DeleteManagedPrefixListOutput)
@@ -19961,16 +20061,16 @@ pub mod delete_local_gateway_route_table_vpc_association_output {
         /// <p>Information about the association.</p>
         pub fn local_gateway_route_table_vpc_association(
             mut self,
-            inp: crate::model::LocalGatewayRouteTableVpcAssociation,
+            input: crate::model::LocalGatewayRouteTableVpcAssociation,
         ) -> Self {
-            self.local_gateway_route_table_vpc_association = Some(inp);
+            self.local_gateway_route_table_vpc_association = Some(input);
             self
         }
         pub fn set_local_gateway_route_table_vpc_association(
             mut self,
-            inp: std::option::Option<crate::model::LocalGatewayRouteTableVpcAssociation>,
+            input: std::option::Option<crate::model::LocalGatewayRouteTableVpcAssociation>,
         ) -> Self {
-            self.local_gateway_route_table_vpc_association = inp;
+            self.local_gateway_route_table_vpc_association = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteLocalGatewayRouteTableVpcAssociationOutput`](crate::output::DeleteLocalGatewayRouteTableVpcAssociationOutput)
@@ -20013,15 +20113,15 @@ pub mod delete_local_gateway_route_output {
     }
     impl Builder {
         /// <p>Information about the route.</p>
-        pub fn route(mut self, inp: crate::model::LocalGatewayRoute) -> Self {
-            self.route = Some(inp);
+        pub fn route(mut self, input: crate::model::LocalGatewayRoute) -> Self {
+            self.route = Some(input);
             self
         }
         pub fn set_route(
             mut self,
-            inp: std::option::Option<crate::model::LocalGatewayRoute>,
+            input: std::option::Option<crate::model::LocalGatewayRoute>,
         ) -> Self {
-            self.route = inp;
+            self.route = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteLocalGatewayRouteOutput`](crate::output::DeleteLocalGatewayRouteOutput)
@@ -20080,42 +20180,42 @@ pub mod delete_launch_template_versions_output {
     impl Builder {
         pub fn successfully_deleted_launch_template_versions(
             mut self,
-            inp: impl Into<crate::model::DeleteLaunchTemplateVersionsResponseSuccessItem>,
+            input: impl Into<crate::model::DeleteLaunchTemplateVersionsResponseSuccessItem>,
         ) -> Self {
             let mut v = self
                 .successfully_deleted_launch_template_versions
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.successfully_deleted_launch_template_versions = Some(v);
             self
         }
         pub fn set_successfully_deleted_launch_template_versions(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::DeleteLaunchTemplateVersionsResponseSuccessItem>,
             >,
         ) -> Self {
-            self.successfully_deleted_launch_template_versions = inp;
+            self.successfully_deleted_launch_template_versions = input;
             self
         }
         pub fn unsuccessfully_deleted_launch_template_versions(
             mut self,
-            inp: impl Into<crate::model::DeleteLaunchTemplateVersionsResponseErrorItem>,
+            input: impl Into<crate::model::DeleteLaunchTemplateVersionsResponseErrorItem>,
         ) -> Self {
             let mut v = self
                 .unsuccessfully_deleted_launch_template_versions
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unsuccessfully_deleted_launch_template_versions = Some(v);
             self
         }
         pub fn set_unsuccessfully_deleted_launch_template_versions(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::DeleteLaunchTemplateVersionsResponseErrorItem>,
             >,
         ) -> Self {
-            self.unsuccessfully_deleted_launch_template_versions = inp;
+            self.unsuccessfully_deleted_launch_template_versions = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteLaunchTemplateVersionsOutput`](crate::output::DeleteLaunchTemplateVersionsOutput)
@@ -20159,15 +20259,15 @@ pub mod delete_launch_template_output {
     }
     impl Builder {
         /// <p>Information about the launch template.</p>
-        pub fn launch_template(mut self, inp: crate::model::LaunchTemplate) -> Self {
-            self.launch_template = Some(inp);
+        pub fn launch_template(mut self, input: crate::model::LaunchTemplate) -> Self {
+            self.launch_template = Some(input);
             self
         }
         pub fn set_launch_template(
             mut self,
-            inp: std::option::Option<crate::model::LaunchTemplate>,
+            input: std::option::Option<crate::model::LaunchTemplate>,
         ) -> Self {
-            self.launch_template = inp;
+            self.launch_template = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteLaunchTemplateOutput`](crate::output::DeleteLaunchTemplateOutput)
@@ -20266,12 +20366,12 @@ pub mod delete_fpga_image_output {
     }
     impl Builder {
         /// <p>Is <code>true</code> if the request succeeds, and an error otherwise.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteFpgaImageOutput`](crate::output::DeleteFpgaImageOutput)
@@ -20311,17 +20411,17 @@ pub mod delete_flow_logs_output {
         pub(crate) unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
     }
     impl Builder {
-        pub fn unsuccessful(mut self, inp: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unsuccessful = Some(v);
             self
         }
         pub fn set_unsuccessful(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
         ) -> Self {
-            self.unsuccessful = inp;
+            self.unsuccessful = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteFlowLogsOutput`](crate::output::DeleteFlowLogsOutput)
@@ -20377,34 +20477,34 @@ pub mod delete_fleets_output {
     impl Builder {
         pub fn successful_fleet_deletions(
             mut self,
-            inp: impl Into<crate::model::DeleteFleetSuccessItem>,
+            input: impl Into<crate::model::DeleteFleetSuccessItem>,
         ) -> Self {
             let mut v = self.successful_fleet_deletions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.successful_fleet_deletions = Some(v);
             self
         }
         pub fn set_successful_fleet_deletions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DeleteFleetSuccessItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DeleteFleetSuccessItem>>,
         ) -> Self {
-            self.successful_fleet_deletions = inp;
+            self.successful_fleet_deletions = input;
             self
         }
         pub fn unsuccessful_fleet_deletions(
             mut self,
-            inp: impl Into<crate::model::DeleteFleetErrorItem>,
+            input: impl Into<crate::model::DeleteFleetErrorItem>,
         ) -> Self {
             let mut v = self.unsuccessful_fleet_deletions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unsuccessful_fleet_deletions = Some(v);
             self
         }
         pub fn set_unsuccessful_fleet_deletions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::DeleteFleetErrorItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::DeleteFleetErrorItem>>,
         ) -> Self {
-            self.unsuccessful_fleet_deletions = inp;
+            self.unsuccessful_fleet_deletions = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteFleetsOutput`](crate::output::DeleteFleetsOutput)
@@ -20446,12 +20546,12 @@ pub mod delete_egress_only_internet_gateway_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn return_code(mut self, inp: bool) -> Self {
-            self.return_code = Some(inp);
+        pub fn return_code(mut self, input: bool) -> Self {
+            self.return_code = Some(input);
             self
         }
-        pub fn set_return_code(mut self, inp: std::option::Option<bool>) -> Self {
-            self.return_code = inp;
+        pub fn set_return_code(mut self, input: std::option::Option<bool>) -> Self {
+            self.return_code = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteEgressOnlyInternetGatewayOutput`](crate::output::DeleteEgressOnlyInternetGatewayOutput)
@@ -20550,15 +20650,15 @@ pub mod delete_client_vpn_route_output {
     }
     impl Builder {
         /// <p>The current state of the route.</p>
-        pub fn status(mut self, inp: crate::model::ClientVpnRouteStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ClientVpnRouteStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ClientVpnRouteStatus>,
+            input: std::option::Option<crate::model::ClientVpnRouteStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteClientVpnRouteOutput`](crate::output::DeleteClientVpnRouteOutput)
@@ -20599,15 +20699,15 @@ pub mod delete_client_vpn_endpoint_output {
     }
     impl Builder {
         /// <p>The current state of the Client VPN endpoint.</p>
-        pub fn status(mut self, inp: crate::model::ClientVpnEndpointStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ClientVpnEndpointStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ClientVpnEndpointStatus>,
+            input: std::option::Option<crate::model::ClientVpnEndpointStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteClientVpnEndpointOutput`](crate::output::DeleteClientVpnEndpointOutput)
@@ -20648,15 +20748,15 @@ pub mod delete_carrier_gateway_output {
     }
     impl Builder {
         /// <p>Information about the carrier gateway.</p>
-        pub fn carrier_gateway(mut self, inp: crate::model::CarrierGateway) -> Self {
-            self.carrier_gateway = Some(inp);
+        pub fn carrier_gateway(mut self, input: crate::model::CarrierGateway) -> Self {
+            self.carrier_gateway = Some(input);
             self
         }
         pub fn set_carrier_gateway(
             mut self,
-            inp: std::option::Option<crate::model::CarrierGateway>,
+            input: std::option::Option<crate::model::CarrierGateway>,
         ) -> Self {
-            self.carrier_gateway = inp;
+            self.carrier_gateway = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteCarrierGatewayOutput`](crate::output::DeleteCarrierGatewayOutput)
@@ -20698,15 +20798,15 @@ pub mod create_vpn_gateway_output {
     }
     impl Builder {
         /// <p>Information about the virtual private gateway.</p>
-        pub fn vpn_gateway(mut self, inp: crate::model::VpnGateway) -> Self {
-            self.vpn_gateway = Some(inp);
+        pub fn vpn_gateway(mut self, input: crate::model::VpnGateway) -> Self {
+            self.vpn_gateway = Some(input);
             self
         }
         pub fn set_vpn_gateway(
             mut self,
-            inp: std::option::Option<crate::model::VpnGateway>,
+            input: std::option::Option<crate::model::VpnGateway>,
         ) -> Self {
-            self.vpn_gateway = inp;
+            self.vpn_gateway = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateVpnGatewayOutput`](crate::output::CreateVpnGatewayOutput)
@@ -20777,15 +20877,15 @@ pub mod create_vpn_connection_output {
     }
     impl Builder {
         /// <p>Information about the VPN connection.</p>
-        pub fn vpn_connection(mut self, inp: crate::model::VpnConnection) -> Self {
-            self.vpn_connection = Some(inp);
+        pub fn vpn_connection(mut self, input: crate::model::VpnConnection) -> Self {
+            self.vpn_connection = Some(input);
             self
         }
         pub fn set_vpn_connection(
             mut self,
-            inp: std::option::Option<crate::model::VpnConnection>,
+            input: std::option::Option<crate::model::VpnConnection>,
         ) -> Self {
-            self.vpn_connection = inp;
+            self.vpn_connection = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateVpnConnectionOutput`](crate::output::CreateVpnConnectionOutput)
@@ -20826,15 +20926,15 @@ pub mod create_vpc_peering_connection_output {
     }
     impl Builder {
         /// <p>Information about the VPC peering connection.</p>
-        pub fn vpc_peering_connection(mut self, inp: crate::model::VpcPeeringConnection) -> Self {
-            self.vpc_peering_connection = Some(inp);
+        pub fn vpc_peering_connection(mut self, input: crate::model::VpcPeeringConnection) -> Self {
+            self.vpc_peering_connection = Some(input);
             self
         }
         pub fn set_vpc_peering_connection(
             mut self,
-            inp: std::option::Option<crate::model::VpcPeeringConnection>,
+            input: std::option::Option<crate::model::VpcPeeringConnection>,
         ) -> Self {
-            self.vpc_peering_connection = inp;
+            self.vpc_peering_connection = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateVpcPeeringConnectionOutput`](crate::output::CreateVpcPeeringConnectionOutput)
@@ -20880,25 +20980,25 @@ pub mod create_vpc_endpoint_service_configuration_output {
     }
     impl Builder {
         /// <p>Information about the service configuration.</p>
-        pub fn service_configuration(mut self, inp: crate::model::ServiceConfiguration) -> Self {
-            self.service_configuration = Some(inp);
+        pub fn service_configuration(mut self, input: crate::model::ServiceConfiguration) -> Self {
+            self.service_configuration = Some(input);
             self
         }
         pub fn set_service_configuration(
             mut self,
-            inp: std::option::Option<crate::model::ServiceConfiguration>,
+            input: std::option::Option<crate::model::ServiceConfiguration>,
         ) -> Self {
-            self.service_configuration = inp;
+            self.service_configuration = input;
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_token = Some(inp.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_token = inp;
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateVpcEndpointServiceConfigurationOutput`](crate::output::CreateVpcEndpointServiceConfigurationOutput)
@@ -20948,26 +21048,26 @@ pub mod create_vpc_endpoint_connection_notification_output {
         /// <p>Information about the notification.</p>
         pub fn connection_notification(
             mut self,
-            inp: crate::model::ConnectionNotification,
+            input: crate::model::ConnectionNotification,
         ) -> Self {
-            self.connection_notification = Some(inp);
+            self.connection_notification = Some(input);
             self
         }
         pub fn set_connection_notification(
             mut self,
-            inp: std::option::Option<crate::model::ConnectionNotification>,
+            input: std::option::Option<crate::model::ConnectionNotification>,
         ) -> Self {
-            self.connection_notification = inp;
+            self.connection_notification = input;
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_token = Some(inp.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_token = inp;
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateVpcEndpointConnectionNotificationOutput`](crate::output::CreateVpcEndpointConnectionNotificationOutput)
@@ -21015,25 +21115,25 @@ pub mod create_vpc_endpoint_output {
     }
     impl Builder {
         /// <p>Information about the endpoint.</p>
-        pub fn vpc_endpoint(mut self, inp: crate::model::VpcEndpoint) -> Self {
-            self.vpc_endpoint = Some(inp);
+        pub fn vpc_endpoint(mut self, input: crate::model::VpcEndpoint) -> Self {
+            self.vpc_endpoint = Some(input);
             self
         }
         pub fn set_vpc_endpoint(
             mut self,
-            inp: std::option::Option<crate::model::VpcEndpoint>,
+            input: std::option::Option<crate::model::VpcEndpoint>,
         ) -> Self {
-            self.vpc_endpoint = inp;
+            self.vpc_endpoint = input;
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_token = Some(inp.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_token = inp;
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateVpcEndpointOutput`](crate::output::CreateVpcEndpointOutput)
@@ -21075,12 +21175,12 @@ pub mod create_vpc_output {
     }
     impl Builder {
         /// <p>Information about the VPC.</p>
-        pub fn vpc(mut self, inp: crate::model::Vpc) -> Self {
-            self.vpc = Some(inp);
+        pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
+            self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<crate::model::Vpc>) -> Self {
-            self.vpc = inp;
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
+            self.vpc = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateVpcOutput`](crate::output::CreateVpcOutput)
@@ -21182,165 +21282,168 @@ pub mod create_volume_output {
         pub(crate) throughput: std::option::Option<i32>,
     }
     impl Builder {
-        pub fn attachments(mut self, inp: impl Into<crate::model::VolumeAttachment>) -> Self {
+        pub fn attachments(mut self, input: impl Into<crate::model::VolumeAttachment>) -> Self {
             let mut v = self.attachments.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attachments = Some(v);
             self
         }
         pub fn set_attachments(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::VolumeAttachment>>,
+            input: std::option::Option<std::vec::Vec<crate::model::VolumeAttachment>>,
         ) -> Self {
-            self.attachments = inp;
+            self.attachments = input;
             self
         }
         /// <p>The Availability Zone for the volume.</p>
-        pub fn availability_zone(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.availability_zone = Some(inp.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.availability_zone = Some(input.into());
             self
         }
         pub fn set_availability_zone(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.availability_zone = inp;
+            self.availability_zone = input;
             self
         }
         /// <p>The time stamp when volume creation was initiated.</p>
-        pub fn create_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_time = Some(inp);
+        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+            self.create_time = Some(input);
             self
         }
-        pub fn set_create_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_time = inp;
+        pub fn set_create_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_time = input;
             self
         }
         /// <p>Indicates whether the volume is encrypted.</p>
-        pub fn encrypted(mut self, inp: bool) -> Self {
-            self.encrypted = Some(inp);
+        pub fn encrypted(mut self, input: bool) -> Self {
+            self.encrypted = Some(input);
             self
         }
-        pub fn set_encrypted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.encrypted = inp;
+        pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.encrypted = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
         /// volume encryption key for the volume.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-        pub fn outpost_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.outpost_arn = Some(inp.into());
+        pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.outpost_arn = Some(input.into());
             self
         }
-        pub fn set_outpost_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.outpost_arn = inp;
+        pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.outpost_arn = input;
             self
         }
         /// <p>The size of the volume, in GiBs.</p>
-        pub fn size(mut self, inp: i32) -> Self {
-            self.size = Some(inp);
+        pub fn size(mut self, input: i32) -> Self {
+            self.size = Some(input);
             self
         }
-        pub fn set_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.size = inp;
+        pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.size = input;
             self
         }
         /// <p>The snapshot from which the volume was created, if applicable.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.snapshot_id = Some(inp.into());
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_id = Some(input.into());
             self
         }
-        pub fn set_snapshot_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = inp;
+        pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_id = input;
             self
         }
         /// <p>The volume state.</p>
-        pub fn state(mut self, inp: crate::model::VolumeState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::VolumeState) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::VolumeState>) -> Self {
-            self.state = inp;
+        pub fn set_state(mut self, input: std::option::Option<crate::model::VolumeState>) -> Self {
+            self.state = input;
             self
         }
         /// <p>The ID of the volume.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.volume_id = Some(inp.into());
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_id = Some(input.into());
             self
         }
-        pub fn set_volume_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.volume_id = inp;
+        pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_id = input;
             self
         }
         /// <p>The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>, and <code>io2</code> volumes, this represents
         /// the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
         /// performance of the volume and the rate at which the volume accumulates I/O credits for bursting.</p>
-        pub fn iops(mut self, inp: i32) -> Self {
-            self.iops = Some(inp);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.iops = Some(input);
             self
         }
-        pub fn set_iops(mut self, inp: std::option::Option<i32>) -> Self {
-            self.iops = inp;
+        pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+            self.iops = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>The volume type.</p>
-        pub fn volume_type(mut self, inp: crate::model::VolumeType) -> Self {
-            self.volume_type = Some(inp);
+        pub fn volume_type(mut self, input: crate::model::VolumeType) -> Self {
+            self.volume_type = Some(input);
             self
         }
         pub fn set_volume_type(
             mut self,
-            inp: std::option::Option<crate::model::VolumeType>,
+            input: std::option::Option<crate::model::VolumeType>,
         ) -> Self {
-            self.volume_type = inp;
+            self.volume_type = input;
             self
         }
         /// <p>Indicates whether the volume was created using fast snapshot restore.</p>
-        pub fn fast_restored(mut self, inp: bool) -> Self {
-            self.fast_restored = Some(inp);
+        pub fn fast_restored(mut self, input: bool) -> Self {
+            self.fast_restored = Some(input);
             self
         }
-        pub fn set_fast_restored(mut self, inp: std::option::Option<bool>) -> Self {
-            self.fast_restored = inp;
+        pub fn set_fast_restored(mut self, input: std::option::Option<bool>) -> Self {
+            self.fast_restored = input;
             self
         }
         /// <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
-        pub fn multi_attach_enabled(mut self, inp: bool) -> Self {
-            self.multi_attach_enabled = Some(inp);
+        pub fn multi_attach_enabled(mut self, input: bool) -> Self {
+            self.multi_attach_enabled = Some(input);
             self
         }
-        pub fn set_multi_attach_enabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.multi_attach_enabled = inp;
+        pub fn set_multi_attach_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.multi_attach_enabled = input;
             self
         }
         /// <p>The throughput that the volume supports, in MiB/s.</p>
-        pub fn throughput(mut self, inp: i32) -> Self {
-            self.throughput = Some(inp);
+        pub fn throughput(mut self, input: i32) -> Self {
+            self.throughput = Some(input);
             self
         }
-        pub fn set_throughput(mut self, inp: std::option::Option<i32>) -> Self {
-            self.throughput = inp;
+        pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
+            self.throughput = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateVolumeOutput`](crate::output::CreateVolumeOutput)
@@ -21403,16 +21506,16 @@ pub mod create_transit_gateway_vpc_attachment_output {
         /// <p>Information about the VPC attachment.</p>
         pub fn transit_gateway_vpc_attachment(
             mut self,
-            inp: crate::model::TransitGatewayVpcAttachment,
+            input: crate::model::TransitGatewayVpcAttachment,
         ) -> Self {
-            self.transit_gateway_vpc_attachment = Some(inp);
+            self.transit_gateway_vpc_attachment = Some(input);
             self
         }
         pub fn set_transit_gateway_vpc_attachment(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayVpcAttachment>,
+            input: std::option::Option<crate::model::TransitGatewayVpcAttachment>,
         ) -> Self {
-            self.transit_gateway_vpc_attachment = inp;
+            self.transit_gateway_vpc_attachment = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTransitGatewayVpcAttachmentOutput`](crate::output::CreateTransitGatewayVpcAttachmentOutput)
@@ -21459,16 +21562,16 @@ pub mod create_transit_gateway_route_table_output {
         /// <p>Information about the transit gateway route table.</p>
         pub fn transit_gateway_route_table(
             mut self,
-            inp: crate::model::TransitGatewayRouteTable,
+            input: crate::model::TransitGatewayRouteTable,
         ) -> Self {
-            self.transit_gateway_route_table = Some(inp);
+            self.transit_gateway_route_table = Some(input);
             self
         }
         pub fn set_transit_gateway_route_table(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayRouteTable>,
+            input: std::option::Option<crate::model::TransitGatewayRouteTable>,
         ) -> Self {
-            self.transit_gateway_route_table = inp;
+            self.transit_gateway_route_table = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTransitGatewayRouteTableOutput`](crate::output::CreateTransitGatewayRouteTableOutput)
@@ -21509,15 +21612,15 @@ pub mod create_transit_gateway_route_output {
     }
     impl Builder {
         /// <p>Information about the route.</p>
-        pub fn route(mut self, inp: crate::model::TransitGatewayRoute) -> Self {
-            self.route = Some(inp);
+        pub fn route(mut self, input: crate::model::TransitGatewayRoute) -> Self {
+            self.route = Some(input);
             self
         }
         pub fn set_route(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayRoute>,
+            input: std::option::Option<crate::model::TransitGatewayRoute>,
         ) -> Self {
-            self.route = inp;
+            self.route = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTransitGatewayRouteOutput`](crate::output::CreateTransitGatewayRouteOutput)
@@ -21563,16 +21666,16 @@ pub mod create_transit_gateway_prefix_list_reference_output {
         /// <p>Information about the prefix list reference.</p>
         pub fn transit_gateway_prefix_list_reference(
             mut self,
-            inp: crate::model::TransitGatewayPrefixListReference,
+            input: crate::model::TransitGatewayPrefixListReference,
         ) -> Self {
-            self.transit_gateway_prefix_list_reference = Some(inp);
+            self.transit_gateway_prefix_list_reference = Some(input);
             self
         }
         pub fn set_transit_gateway_prefix_list_reference(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayPrefixListReference>,
+            input: std::option::Option<crate::model::TransitGatewayPrefixListReference>,
         ) -> Self {
-            self.transit_gateway_prefix_list_reference = inp;
+            self.transit_gateway_prefix_list_reference = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTransitGatewayPrefixListReferenceOutput`](crate::output::CreateTransitGatewayPrefixListReferenceOutput)
@@ -21621,16 +21724,16 @@ pub mod create_transit_gateway_peering_attachment_output {
         /// <p>The transit gateway peering attachment.</p>
         pub fn transit_gateway_peering_attachment(
             mut self,
-            inp: crate::model::TransitGatewayPeeringAttachment,
+            input: crate::model::TransitGatewayPeeringAttachment,
         ) -> Self {
-            self.transit_gateway_peering_attachment = Some(inp);
+            self.transit_gateway_peering_attachment = Some(input);
             self
         }
         pub fn set_transit_gateway_peering_attachment(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayPeeringAttachment>,
+            input: std::option::Option<crate::model::TransitGatewayPeeringAttachment>,
         ) -> Self {
-            self.transit_gateway_peering_attachment = inp;
+            self.transit_gateway_peering_attachment = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTransitGatewayPeeringAttachmentOutput`](crate::output::CreateTransitGatewayPeeringAttachmentOutput)
@@ -21678,16 +21781,16 @@ pub mod create_transit_gateway_multicast_domain_output {
         /// <p>Information about the transit gateway multicast domain.</p>
         pub fn transit_gateway_multicast_domain(
             mut self,
-            inp: crate::model::TransitGatewayMulticastDomain,
+            input: crate::model::TransitGatewayMulticastDomain,
         ) -> Self {
-            self.transit_gateway_multicast_domain = Some(inp);
+            self.transit_gateway_multicast_domain = Some(input);
             self
         }
         pub fn set_transit_gateway_multicast_domain(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayMulticastDomain>,
+            input: std::option::Option<crate::model::TransitGatewayMulticastDomain>,
         ) -> Self {
-            self.transit_gateway_multicast_domain = inp;
+            self.transit_gateway_multicast_domain = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTransitGatewayMulticastDomainOutput`](crate::output::CreateTransitGatewayMulticastDomainOutput)
@@ -21734,16 +21837,16 @@ pub mod create_transit_gateway_connect_peer_output {
         /// <p>Information about the Connect peer.</p>
         pub fn transit_gateway_connect_peer(
             mut self,
-            inp: crate::model::TransitGatewayConnectPeer,
+            input: crate::model::TransitGatewayConnectPeer,
         ) -> Self {
-            self.transit_gateway_connect_peer = Some(inp);
+            self.transit_gateway_connect_peer = Some(input);
             self
         }
         pub fn set_transit_gateway_connect_peer(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayConnectPeer>,
+            input: std::option::Option<crate::model::TransitGatewayConnectPeer>,
         ) -> Self {
-            self.transit_gateway_connect_peer = inp;
+            self.transit_gateway_connect_peer = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTransitGatewayConnectPeerOutput`](crate::output::CreateTransitGatewayConnectPeerOutput)
@@ -21785,15 +21888,18 @@ pub mod create_transit_gateway_connect_output {
     }
     impl Builder {
         /// <p>Information about the Connect attachment.</p>
-        pub fn transit_gateway_connect(mut self, inp: crate::model::TransitGatewayConnect) -> Self {
-            self.transit_gateway_connect = Some(inp);
+        pub fn transit_gateway_connect(
+            mut self,
+            input: crate::model::TransitGatewayConnect,
+        ) -> Self {
+            self.transit_gateway_connect = Some(input);
             self
         }
         pub fn set_transit_gateway_connect(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayConnect>,
+            input: std::option::Option<crate::model::TransitGatewayConnect>,
         ) -> Self {
-            self.transit_gateway_connect = inp;
+            self.transit_gateway_connect = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTransitGatewayConnectOutput`](crate::output::CreateTransitGatewayConnectOutput)
@@ -21834,15 +21940,15 @@ pub mod create_transit_gateway_output {
     }
     impl Builder {
         /// <p>Information about the transit gateway.</p>
-        pub fn transit_gateway(mut self, inp: crate::model::TransitGateway) -> Self {
-            self.transit_gateway = Some(inp);
+        pub fn transit_gateway(mut self, input: crate::model::TransitGateway) -> Self {
+            self.transit_gateway = Some(input);
             self
         }
         pub fn set_transit_gateway(
             mut self,
-            inp: std::option::Option<crate::model::TransitGateway>,
+            input: std::option::Option<crate::model::TransitGateway>,
         ) -> Self {
-            self.transit_gateway = inp;
+            self.transit_gateway = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTransitGatewayOutput`](crate::output::CreateTransitGatewayOutput)
@@ -21887,24 +21993,24 @@ pub mod create_traffic_mirror_target_output {
     }
     impl Builder {
         /// <p>Information about the Traffic Mirror target.</p>
-        pub fn traffic_mirror_target(mut self, inp: crate::model::TrafficMirrorTarget) -> Self {
-            self.traffic_mirror_target = Some(inp);
+        pub fn traffic_mirror_target(mut self, input: crate::model::TrafficMirrorTarget) -> Self {
+            self.traffic_mirror_target = Some(input);
             self
         }
         pub fn set_traffic_mirror_target(
             mut self,
-            inp: std::option::Option<crate::model::TrafficMirrorTarget>,
+            input: std::option::Option<crate::model::TrafficMirrorTarget>,
         ) -> Self {
-            self.traffic_mirror_target = inp;
+            self.traffic_mirror_target = input;
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_token = Some(inp.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_token = inp;
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTrafficMirrorTargetOutput`](crate::output::CreateTrafficMirrorTargetOutput)
@@ -21950,24 +22056,24 @@ pub mod create_traffic_mirror_session_output {
     }
     impl Builder {
         /// <p>Information about the Traffic Mirror session.</p>
-        pub fn traffic_mirror_session(mut self, inp: crate::model::TrafficMirrorSession) -> Self {
-            self.traffic_mirror_session = Some(inp);
+        pub fn traffic_mirror_session(mut self, input: crate::model::TrafficMirrorSession) -> Self {
+            self.traffic_mirror_session = Some(input);
             self
         }
         pub fn set_traffic_mirror_session(
             mut self,
-            inp: std::option::Option<crate::model::TrafficMirrorSession>,
+            input: std::option::Option<crate::model::TrafficMirrorSession>,
         ) -> Self {
-            self.traffic_mirror_session = inp;
+            self.traffic_mirror_session = input;
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_token = Some(inp.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_token = inp;
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTrafficMirrorSessionOutput`](crate::output::CreateTrafficMirrorSessionOutput)
@@ -22019,25 +22125,25 @@ pub mod create_traffic_mirror_filter_rule_output {
         /// <p>The Traffic Mirror rule.</p>
         pub fn traffic_mirror_filter_rule(
             mut self,
-            inp: crate::model::TrafficMirrorFilterRule,
+            input: crate::model::TrafficMirrorFilterRule,
         ) -> Self {
-            self.traffic_mirror_filter_rule = Some(inp);
+            self.traffic_mirror_filter_rule = Some(input);
             self
         }
         pub fn set_traffic_mirror_filter_rule(
             mut self,
-            inp: std::option::Option<crate::model::TrafficMirrorFilterRule>,
+            input: std::option::Option<crate::model::TrafficMirrorFilterRule>,
         ) -> Self {
-            self.traffic_mirror_filter_rule = inp;
+            self.traffic_mirror_filter_rule = input;
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_token = Some(inp.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_token = inp;
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTrafficMirrorFilterRuleOutput`](crate::output::CreateTrafficMirrorFilterRuleOutput)
@@ -22083,24 +22189,24 @@ pub mod create_traffic_mirror_filter_output {
     }
     impl Builder {
         /// <p>Information about the Traffic Mirror filter.</p>
-        pub fn traffic_mirror_filter(mut self, inp: crate::model::TrafficMirrorFilter) -> Self {
-            self.traffic_mirror_filter = Some(inp);
+        pub fn traffic_mirror_filter(mut self, input: crate::model::TrafficMirrorFilter) -> Self {
+            self.traffic_mirror_filter = Some(input);
             self
         }
         pub fn set_traffic_mirror_filter(
             mut self,
-            inp: std::option::Option<crate::model::TrafficMirrorFilter>,
+            input: std::option::Option<crate::model::TrafficMirrorFilter>,
         ) -> Self {
-            self.traffic_mirror_filter = inp;
+            self.traffic_mirror_filter = input;
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_token = Some(inp.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_token = inp;
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTrafficMirrorFilterOutput`](crate::output::CreateTrafficMirrorFilterOutput)
@@ -22171,12 +22277,12 @@ pub mod create_subnet_output {
     }
     impl Builder {
         /// <p>Information about the subnet.</p>
-        pub fn subnet(mut self, inp: crate::model::Subnet) -> Self {
-            self.subnet = Some(inp);
+        pub fn subnet(mut self, input: crate::model::Subnet) -> Self {
+            self.subnet = Some(input);
             self
         }
-        pub fn set_subnet(mut self, inp: std::option::Option<crate::model::Subnet>) -> Self {
-            self.subnet = inp;
+        pub fn set_subnet(mut self, input: std::option::Option<crate::model::Subnet>) -> Self {
+            self.subnet = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateSubnetOutput`](crate::output::CreateSubnetOutput)
@@ -22217,12 +22323,12 @@ pub mod create_store_image_task_output {
     }
     impl Builder {
         /// <p>The name of the stored AMI object in the S3 bucket.</p>
-        pub fn object_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.object_key = Some(inp.into());
+        pub fn object_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.object_key = Some(input.into());
             self
         }
-        pub fn set_object_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.object_key = inp;
+        pub fn set_object_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_key = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateStoreImageTaskOutput`](crate::output::CreateStoreImageTaskOutput)
@@ -22270,16 +22376,16 @@ pub mod create_spot_datafeed_subscription_output {
         /// <p>The Spot Instance data feed subscription.</p>
         pub fn spot_datafeed_subscription(
             mut self,
-            inp: crate::model::SpotDatafeedSubscription,
+            input: crate::model::SpotDatafeedSubscription,
         ) -> Self {
-            self.spot_datafeed_subscription = Some(inp);
+            self.spot_datafeed_subscription = Some(input);
             self
         }
         pub fn set_spot_datafeed_subscription(
             mut self,
-            inp: std::option::Option<crate::model::SpotDatafeedSubscription>,
+            input: std::option::Option<crate::model::SpotDatafeedSubscription>,
         ) -> Self {
-            self.spot_datafeed_subscription = inp;
+            self.spot_datafeed_subscription = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateSpotDatafeedSubscriptionOutput`](crate::output::CreateSpotDatafeedSubscriptionOutput)
@@ -22319,17 +22425,17 @@ pub mod create_snapshots_output {
         pub(crate) snapshots: std::option::Option<std::vec::Vec<crate::model::SnapshotInfo>>,
     }
     impl Builder {
-        pub fn snapshots(mut self, inp: impl Into<crate::model::SnapshotInfo>) -> Self {
+        pub fn snapshots(mut self, input: impl Into<crate::model::SnapshotInfo>) -> Self {
             let mut v = self.snapshots.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.snapshots = Some(v);
             self
         }
         pub fn set_snapshots(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SnapshotInfo>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SnapshotInfo>>,
         ) -> Self {
-            self.snapshots = inp;
+            self.snapshots = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateSnapshotsOutput`](crate::output::CreateSnapshotsOutput)
@@ -22443,153 +22549,159 @@ pub mod create_snapshot_output {
         /// snapshot copy. Because data encryption keys are inherited by volumes created from snapshots,
         /// and vice versa, if snapshots share the same data encryption key identifier, then they belong
         /// to the same volume/snapshot lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
-        pub fn data_encryption_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.data_encryption_key_id = Some(inp.into());
+        pub fn data_encryption_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_encryption_key_id = Some(input.into());
             self
         }
         pub fn set_data_encryption_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.data_encryption_key_id = inp;
+            self.data_encryption_key_id = input;
             self
         }
         /// <p>The description for the snapshot.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Indicates whether the snapshot is encrypted.</p>
-        pub fn encrypted(mut self, inp: bool) -> Self {
-            self.encrypted = Some(inp);
+        pub fn encrypted(mut self, input: bool) -> Self {
+            self.encrypted = Some(input);
             self
         }
-        pub fn set_encrypted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.encrypted = inp;
+        pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+            self.encrypted = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
         /// volume encryption key for the parent volume.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>The AWS account ID of the EBS snapshot owner.</p>
-        pub fn owner_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.owner_id = Some(inp.into());
+        pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_id = Some(input.into());
             self
         }
-        pub fn set_owner_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.owner_id = inp;
+        pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_id = input;
             self
         }
         /// <p>The progress of the snapshot, as a percentage.</p>
-        pub fn progress(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.progress = Some(inp.into());
+        pub fn progress(mut self, input: impl Into<std::string::String>) -> Self {
+            self.progress = Some(input.into());
             self
         }
-        pub fn set_progress(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.progress = inp;
+        pub fn set_progress(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.progress = input;
             self
         }
         /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
         /// created.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.snapshot_id = Some(inp.into());
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_id = Some(input.into());
             self
         }
-        pub fn set_snapshot_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = inp;
+        pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_id = input;
             self
         }
         /// <p>The time stamp when the snapshot was initiated.</p>
-        pub fn start_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.start_time = Some(inp);
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.start_time = inp;
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_time = input;
             self
         }
         /// <p>The snapshot state.</p>
-        pub fn state(mut self, inp: crate::model::SnapshotState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::SnapshotState) -> Self {
+            self.state = Some(input);
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<crate::model::SnapshotState>) -> Self {
-            self.state = inp;
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::SnapshotState>,
+        ) -> Self {
+            self.state = input;
             self
         }
         /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails
         /// (for example, if the proper AWS Key Management Service (AWS KMS) permissions are not obtained) this field displays error
         /// state details to help you diagnose why the error occurred. This parameter is only returned by
         /// <a>DescribeSnapshots</a>.</p>
-        pub fn state_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state_message = Some(inp.into());
+        pub fn state_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state_message = Some(input.into());
             self
         }
-        pub fn set_state_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.state_message = inp;
+        pub fn set_state_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.state_message = input;
             self
         }
         /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be used for any
         /// purpose.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.volume_id = Some(inp.into());
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_id = Some(input.into());
             self
         }
-        pub fn set_volume_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.volume_id = inp;
+        pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_id = input;
             self
         }
         /// <p>The size of the volume, in GiB.</p>
-        pub fn volume_size(mut self, inp: i32) -> Self {
-            self.volume_size = Some(inp);
+        pub fn volume_size(mut self, input: i32) -> Self {
+            self.volume_size = Some(input);
             self
         }
-        pub fn set_volume_size(mut self, inp: std::option::Option<i32>) -> Self {
-            self.volume_size = inp;
+        pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.volume_size = input;
             self
         }
         /// <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
         /// the user-configured AWS account alias set using the IAM console.</p>
-        pub fn owner_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.owner_alias = Some(inp.into());
+        pub fn owner_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_alias = Some(input.into());
             self
         }
-        pub fn set_owner_alias(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.owner_alias = inp;
+        pub fn set_owner_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_alias = input;
             self
         }
         /// <p>The ARN of the AWS Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS Local Snapshot on Outposts</a> in the
         /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-        pub fn outpost_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.outpost_arn = Some(inp.into());
+        pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.outpost_arn = Some(input.into());
             self
         }
-        pub fn set_outpost_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.outpost_arn = inp;
+        pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.outpost_arn = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateSnapshotOutput`](crate::output::CreateSnapshotOutput)
@@ -22648,25 +22760,25 @@ pub mod create_security_group_output {
     }
     impl Builder {
         /// <p>The ID of the security group.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_id = Some(inp.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_id = Some(input.into());
             self
         }
-        pub fn set_group_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_id = inp;
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_id = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateSecurityGroupOutput`](crate::output::CreateSecurityGroupOutput)
@@ -22708,15 +22820,15 @@ pub mod create_route_table_output {
     }
     impl Builder {
         /// <p>Information about the route table.</p>
-        pub fn route_table(mut self, inp: crate::model::RouteTable) -> Self {
-            self.route_table = Some(inp);
+        pub fn route_table(mut self, input: crate::model::RouteTable) -> Self {
+            self.route_table = Some(input);
             self
         }
         pub fn set_route_table(
             mut self,
-            inp: std::option::Option<crate::model::RouteTable>,
+            input: std::option::Option<crate::model::RouteTable>,
         ) -> Self {
-            self.route_table = inp;
+            self.route_table = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateRouteTableOutput`](crate::output::CreateRouteTableOutput)
@@ -22757,12 +22869,12 @@ pub mod create_route_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateRouteOutput`](crate::output::CreateRouteOutput)
@@ -22803,12 +22915,12 @@ pub mod create_restore_image_task_output {
     }
     impl Builder {
         /// <p>The AMI ID.</p>
-        pub fn image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.image_id = Some(inp.into());
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_id = Some(input.into());
             self
         }
-        pub fn set_image_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.image_id = inp;
+        pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateRestoreImageTaskOutput`](crate::output::CreateRestoreImageTaskOutput)
@@ -22856,18 +22968,18 @@ pub mod create_reserved_instances_listing_output {
     impl Builder {
         pub fn reserved_instances_listings(
             mut self,
-            inp: impl Into<crate::model::ReservedInstancesListing>,
+            input: impl Into<crate::model::ReservedInstancesListing>,
         ) -> Self {
             let mut v = self.reserved_instances_listings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.reserved_instances_listings = Some(v);
             self
         }
         pub fn set_reserved_instances_listings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReservedInstancesListing>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReservedInstancesListing>>,
         ) -> Self {
-            self.reserved_instances_listings = inp;
+            self.reserved_instances_listings = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateReservedInstancesListingOutput`](crate::output::CreateReservedInstancesListingOutput)
@@ -22911,16 +23023,16 @@ pub mod create_replace_root_volume_task_output {
         /// <p>Information about the root volume replacement task.</p>
         pub fn replace_root_volume_task(
             mut self,
-            inp: crate::model::ReplaceRootVolumeTask,
+            input: crate::model::ReplaceRootVolumeTask,
         ) -> Self {
-            self.replace_root_volume_task = Some(inp);
+            self.replace_root_volume_task = Some(input);
             self
         }
         pub fn set_replace_root_volume_task(
             mut self,
-            inp: std::option::Option<crate::model::ReplaceRootVolumeTask>,
+            input: std::option::Option<crate::model::ReplaceRootVolumeTask>,
         ) -> Self {
-            self.replace_root_volume_task = inp;
+            self.replace_root_volume_task = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateReplaceRootVolumeTaskOutput`](crate::output::CreateReplaceRootVolumeTaskOutput)
@@ -22961,15 +23073,15 @@ pub mod create_placement_group_output {
     }
     impl Builder {
         /// <p>Describes a placement group.</p>
-        pub fn placement_group(mut self, inp: crate::model::PlacementGroup) -> Self {
-            self.placement_group = Some(inp);
+        pub fn placement_group(mut self, input: crate::model::PlacementGroup) -> Self {
+            self.placement_group = Some(input);
             self
         }
         pub fn set_placement_group(
             mut self,
-            inp: std::option::Option<crate::model::PlacementGroup>,
+            input: std::option::Option<crate::model::PlacementGroup>,
         ) -> Self {
-            self.placement_group = inp;
+            self.placement_group = input;
             self
         }
         /// Consumes the builder and constructs a [`CreatePlacementGroupOutput`](crate::output::CreatePlacementGroupOutput)
@@ -23014,16 +23126,16 @@ pub mod create_network_interface_permission_output {
         /// <p>Information about the permission for the network interface.</p>
         pub fn interface_permission(
             mut self,
-            inp: crate::model::NetworkInterfacePermission,
+            input: crate::model::NetworkInterfacePermission,
         ) -> Self {
-            self.interface_permission = Some(inp);
+            self.interface_permission = Some(input);
             self
         }
         pub fn set_interface_permission(
             mut self,
-            inp: std::option::Option<crate::model::NetworkInterfacePermission>,
+            input: std::option::Option<crate::model::NetworkInterfacePermission>,
         ) -> Self {
-            self.interface_permission = inp;
+            self.interface_permission = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateNetworkInterfacePermissionOutput`](crate::output::CreateNetworkInterfacePermissionOutput)
@@ -23069,24 +23181,24 @@ pub mod create_network_interface_output {
     }
     impl Builder {
         /// <p>Information about the network interface.</p>
-        pub fn network_interface(mut self, inp: crate::model::NetworkInterface) -> Self {
-            self.network_interface = Some(inp);
+        pub fn network_interface(mut self, input: crate::model::NetworkInterface) -> Self {
+            self.network_interface = Some(input);
             self
         }
         pub fn set_network_interface(
             mut self,
-            inp: std::option::Option<crate::model::NetworkInterface>,
+            input: std::option::Option<crate::model::NetworkInterface>,
         ) -> Self {
-            self.network_interface = inp;
+            self.network_interface = input;
             self
         }
         /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_token = Some(inp.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_token = inp;
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateNetworkInterfaceOutput`](crate::output::CreateNetworkInterfaceOutput)
@@ -23128,15 +23240,15 @@ pub mod create_network_insights_path_output {
     }
     impl Builder {
         /// <p>Information about the path.</p>
-        pub fn network_insights_path(mut self, inp: crate::model::NetworkInsightsPath) -> Self {
-            self.network_insights_path = Some(inp);
+        pub fn network_insights_path(mut self, input: crate::model::NetworkInsightsPath) -> Self {
+            self.network_insights_path = Some(input);
             self
         }
         pub fn set_network_insights_path(
             mut self,
-            inp: std::option::Option<crate::model::NetworkInsightsPath>,
+            input: std::option::Option<crate::model::NetworkInsightsPath>,
         ) -> Self {
-            self.network_insights_path = inp;
+            self.network_insights_path = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateNetworkInsightsPathOutput`](crate::output::CreateNetworkInsightsPathOutput)
@@ -23206,15 +23318,15 @@ pub mod create_network_acl_output {
     }
     impl Builder {
         /// <p>Information about the network ACL.</p>
-        pub fn network_acl(mut self, inp: crate::model::NetworkAcl) -> Self {
-            self.network_acl = Some(inp);
+        pub fn network_acl(mut self, input: crate::model::NetworkAcl) -> Self {
+            self.network_acl = Some(input);
             self
         }
         pub fn set_network_acl(
             mut self,
-            inp: std::option::Option<crate::model::NetworkAcl>,
+            input: std::option::Option<crate::model::NetworkAcl>,
         ) -> Self {
-            self.network_acl = inp;
+            self.network_acl = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateNetworkAclOutput`](crate::output::CreateNetworkAclOutput)
@@ -23259,24 +23371,24 @@ pub mod create_nat_gateway_output {
     }
     impl Builder {
         /// <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_token = Some(inp.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_token = inp;
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
             self
         }
         /// <p>Information about the NAT gateway.</p>
-        pub fn nat_gateway(mut self, inp: crate::model::NatGateway) -> Self {
-            self.nat_gateway = Some(inp);
+        pub fn nat_gateway(mut self, input: crate::model::NatGateway) -> Self {
+            self.nat_gateway = Some(input);
             self
         }
         pub fn set_nat_gateway(
             mut self,
-            inp: std::option::Option<crate::model::NatGateway>,
+            input: std::option::Option<crate::model::NatGateway>,
         ) -> Self {
-            self.nat_gateway = inp;
+            self.nat_gateway = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateNatGatewayOutput`](crate::output::CreateNatGatewayOutput)
@@ -23318,15 +23430,15 @@ pub mod create_managed_prefix_list_output {
     }
     impl Builder {
         /// <p>Information about the prefix list.</p>
-        pub fn prefix_list(mut self, inp: crate::model::ManagedPrefixList) -> Self {
-            self.prefix_list = Some(inp);
+        pub fn prefix_list(mut self, input: crate::model::ManagedPrefixList) -> Self {
+            self.prefix_list = Some(input);
             self
         }
         pub fn set_prefix_list(
             mut self,
-            inp: std::option::Option<crate::model::ManagedPrefixList>,
+            input: std::option::Option<crate::model::ManagedPrefixList>,
         ) -> Self {
-            self.prefix_list = inp;
+            self.prefix_list = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateManagedPrefixListOutput`](crate::output::CreateManagedPrefixListOutput)
@@ -23374,16 +23486,16 @@ pub mod create_local_gateway_route_table_vpc_association_output {
         /// <p>Information about the association.</p>
         pub fn local_gateway_route_table_vpc_association(
             mut self,
-            inp: crate::model::LocalGatewayRouteTableVpcAssociation,
+            input: crate::model::LocalGatewayRouteTableVpcAssociation,
         ) -> Self {
-            self.local_gateway_route_table_vpc_association = Some(inp);
+            self.local_gateway_route_table_vpc_association = Some(input);
             self
         }
         pub fn set_local_gateway_route_table_vpc_association(
             mut self,
-            inp: std::option::Option<crate::model::LocalGatewayRouteTableVpcAssociation>,
+            input: std::option::Option<crate::model::LocalGatewayRouteTableVpcAssociation>,
         ) -> Self {
-            self.local_gateway_route_table_vpc_association = inp;
+            self.local_gateway_route_table_vpc_association = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateLocalGatewayRouteTableVpcAssociationOutput`](crate::output::CreateLocalGatewayRouteTableVpcAssociationOutput)
@@ -23426,15 +23538,15 @@ pub mod create_local_gateway_route_output {
     }
     impl Builder {
         /// <p>Information about the route.</p>
-        pub fn route(mut self, inp: crate::model::LocalGatewayRoute) -> Self {
-            self.route = Some(inp);
+        pub fn route(mut self, input: crate::model::LocalGatewayRoute) -> Self {
+            self.route = Some(input);
             self
         }
         pub fn set_route(
             mut self,
-            inp: std::option::Option<crate::model::LocalGatewayRoute>,
+            input: std::option::Option<crate::model::LocalGatewayRoute>,
         ) -> Self {
-            self.route = inp;
+            self.route = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateLocalGatewayRouteOutput`](crate::output::CreateLocalGatewayRouteOutput)
@@ -23478,27 +23590,30 @@ pub mod create_launch_template_version_output {
     }
     impl Builder {
         /// <p>Information about the launch template version.</p>
-        pub fn launch_template_version(mut self, inp: crate::model::LaunchTemplateVersion) -> Self {
-            self.launch_template_version = Some(inp);
+        pub fn launch_template_version(
+            mut self,
+            input: crate::model::LaunchTemplateVersion,
+        ) -> Self {
+            self.launch_template_version = Some(input);
             self
         }
         pub fn set_launch_template_version(
             mut self,
-            inp: std::option::Option<crate::model::LaunchTemplateVersion>,
+            input: std::option::Option<crate::model::LaunchTemplateVersion>,
         ) -> Self {
-            self.launch_template_version = inp;
+            self.launch_template_version = input;
             self
         }
         /// <p>If the new version of the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
-        pub fn warning(mut self, inp: crate::model::ValidationWarning) -> Self {
-            self.warning = Some(inp);
+        pub fn warning(mut self, input: crate::model::ValidationWarning) -> Self {
+            self.warning = Some(input);
             self
         }
         pub fn set_warning(
             mut self,
-            inp: std::option::Option<crate::model::ValidationWarning>,
+            input: std::option::Option<crate::model::ValidationWarning>,
         ) -> Self {
-            self.warning = inp;
+            self.warning = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateLaunchTemplateVersionOutput`](crate::output::CreateLaunchTemplateVersionOutput)
@@ -23544,27 +23659,27 @@ pub mod create_launch_template_output {
     }
     impl Builder {
         /// <p>Information about the launch template.</p>
-        pub fn launch_template(mut self, inp: crate::model::LaunchTemplate) -> Self {
-            self.launch_template = Some(inp);
+        pub fn launch_template(mut self, input: crate::model::LaunchTemplate) -> Self {
+            self.launch_template = Some(input);
             self
         }
         pub fn set_launch_template(
             mut self,
-            inp: std::option::Option<crate::model::LaunchTemplate>,
+            input: std::option::Option<crate::model::LaunchTemplate>,
         ) -> Self {
-            self.launch_template = inp;
+            self.launch_template = input;
             self
         }
         /// <p>If the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
-        pub fn warning(mut self, inp: crate::model::ValidationWarning) -> Self {
-            self.warning = Some(inp);
+        pub fn warning(mut self, input: crate::model::ValidationWarning) -> Self {
+            self.warning = Some(input);
             self
         }
         pub fn set_warning(
             mut self,
-            inp: std::option::Option<crate::model::ValidationWarning>,
+            input: std::option::Option<crate::model::ValidationWarning>,
         ) -> Self {
-            self.warning = inp;
+            self.warning = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateLaunchTemplateOutput`](crate::output::CreateLaunchTemplateOutput)
@@ -23623,55 +23738,55 @@ pub mod create_key_pair_output {
     }
     impl Builder {
         /// <p>The SHA-1 digest of the DER encoded private key.</p>
-        pub fn key_fingerprint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_fingerprint = Some(inp.into());
+        pub fn key_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_fingerprint = Some(input.into());
             self
         }
         pub fn set_key_fingerprint(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.key_fingerprint = inp;
+            self.key_fingerprint = input;
             self
         }
         /// <p>An unencrypted PEM encoded RSA private key.</p>
-        pub fn key_material(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_material = Some(inp.into());
+        pub fn key_material(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_material = Some(input.into());
             self
         }
-        pub fn set_key_material(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_material = inp;
+        pub fn set_key_material(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_material = input;
             self
         }
         /// <p>The name of the key pair.</p>
-        pub fn key_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_name = Some(inp.into());
+        pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_name = Some(input.into());
             self
         }
-        pub fn set_key_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_name = inp;
+        pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_name = input;
             self
         }
         /// <p>The ID of the key pair.</p>
-        pub fn key_pair_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_pair_id = Some(inp.into());
+        pub fn key_pair_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_pair_id = Some(input.into());
             self
         }
-        pub fn set_key_pair_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_pair_id = inp;
+        pub fn set_key_pair_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_pair_id = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateKeyPairOutput`](crate::output::CreateKeyPairOutput)
@@ -23716,15 +23831,15 @@ pub mod create_internet_gateway_output {
     }
     impl Builder {
         /// <p>Information about the internet gateway.</p>
-        pub fn internet_gateway(mut self, inp: crate::model::InternetGateway) -> Self {
-            self.internet_gateway = Some(inp);
+        pub fn internet_gateway(mut self, input: crate::model::InternetGateway) -> Self {
+            self.internet_gateway = Some(input);
             self
         }
         pub fn set_internet_gateway(
             mut self,
-            inp: std::option::Option<crate::model::InternetGateway>,
+            input: std::option::Option<crate::model::InternetGateway>,
         ) -> Self {
-            self.internet_gateway = inp;
+            self.internet_gateway = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateInternetGatewayOutput`](crate::output::CreateInternetGatewayOutput)
@@ -23765,15 +23880,15 @@ pub mod create_instance_export_task_output {
     }
     impl Builder {
         /// <p>Information about the export instance task.</p>
-        pub fn export_task(mut self, inp: crate::model::ExportTask) -> Self {
-            self.export_task = Some(inp);
+        pub fn export_task(mut self, input: crate::model::ExportTask) -> Self {
+            self.export_task = Some(input);
             self
         }
         pub fn set_export_task(
             mut self,
-            inp: std::option::Option<crate::model::ExportTask>,
+            input: std::option::Option<crate::model::ExportTask>,
         ) -> Self {
-            self.export_task = inp;
+            self.export_task = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateInstanceExportTaskOutput`](crate::output::CreateInstanceExportTaskOutput)
@@ -23814,12 +23929,12 @@ pub mod create_image_output {
     }
     impl Builder {
         /// <p>The ID of the new AMI.</p>
-        pub fn image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.image_id = Some(inp.into());
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_id = Some(input.into());
             self
         }
-        pub fn set_image_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.image_id = inp;
+        pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateImageOutput`](crate::output::CreateImageOutput)
@@ -23864,24 +23979,27 @@ pub mod create_fpga_image_output {
     }
     impl Builder {
         /// <p>The FPGA image identifier (AFI ID).</p>
-        pub fn fpga_image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.fpga_image_id = Some(inp.into());
+        pub fn fpga_image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fpga_image_id = Some(input.into());
             self
         }
-        pub fn set_fpga_image_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.fpga_image_id = inp;
+        pub fn set_fpga_image_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.fpga_image_id = input;
             self
         }
         /// <p>The global FPGA image identifier (AGFI ID).</p>
-        pub fn fpga_image_global_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.fpga_image_global_id = Some(inp.into());
+        pub fn fpga_image_global_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fpga_image_global_id = Some(input.into());
             self
         }
         pub fn set_fpga_image_global_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.fpga_image_global_id = inp;
+            self.fpga_image_global_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateFpgaImageOutput`](crate::output::CreateFpgaImageOutput)
@@ -23933,38 +24051,38 @@ pub mod create_flow_logs_output {
     impl Builder {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_token = Some(inp.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_token = inp;
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
             self
         }
-        pub fn flow_log_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn flow_log_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.flow_log_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.flow_log_ids = Some(v);
             self
         }
         pub fn set_flow_log_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.flow_log_ids = inp;
+            self.flow_log_ids = input;
             self
         }
-        pub fn unsuccessful(mut self, inp: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unsuccessful = Some(v);
             self
         }
         pub fn set_unsuccessful(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
         ) -> Self {
-            self.unsuccessful = inp;
+            self.unsuccessful = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateFlowLogsOutput`](crate::output::CreateFlowLogsOutput)
@@ -24017,38 +24135,38 @@ pub mod create_fleet_output {
     }
     impl Builder {
         /// <p>The ID of the EC2 Fleet.</p>
-        pub fn fleet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.fleet_id = Some(inp.into());
+        pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fleet_id = Some(input.into());
             self
         }
-        pub fn set_fleet_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = inp;
+        pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fleet_id = input;
             self
         }
-        pub fn errors(mut self, inp: impl Into<crate::model::CreateFleetError>) -> Self {
+        pub fn errors(mut self, input: impl Into<crate::model::CreateFleetError>) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.errors = Some(v);
             self
         }
         pub fn set_errors(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CreateFleetError>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CreateFleetError>>,
         ) -> Self {
-            self.errors = inp;
+            self.errors = input;
             self
         }
-        pub fn instances(mut self, inp: impl Into<crate::model::CreateFleetInstance>) -> Self {
+        pub fn instances(mut self, input: impl Into<crate::model::CreateFleetInstance>) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.instances = Some(v);
             self
         }
         pub fn set_instances(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CreateFleetInstance>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CreateFleetInstance>>,
         ) -> Self {
-            self.instances = inp;
+            self.instances = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateFleetOutput`](crate::output::CreateFleetOutput)
@@ -24101,27 +24219,27 @@ pub mod create_egress_only_internet_gateway_output {
     impl Builder {
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_token = Some(inp.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_token = inp;
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
             self
         }
         /// <p>Information about the egress-only internet gateway.</p>
         pub fn egress_only_internet_gateway(
             mut self,
-            inp: crate::model::EgressOnlyInternetGateway,
+            input: crate::model::EgressOnlyInternetGateway,
         ) -> Self {
-            self.egress_only_internet_gateway = Some(inp);
+            self.egress_only_internet_gateway = Some(input);
             self
         }
         pub fn set_egress_only_internet_gateway(
             mut self,
-            inp: std::option::Option<crate::model::EgressOnlyInternetGateway>,
+            input: std::option::Option<crate::model::EgressOnlyInternetGateway>,
         ) -> Self {
-            self.egress_only_internet_gateway = inp;
+            self.egress_only_internet_gateway = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateEgressOnlyInternetGatewayOutput`](crate::output::CreateEgressOnlyInternetGatewayOutput)
@@ -24163,15 +24281,15 @@ pub mod create_dhcp_options_output {
     }
     impl Builder {
         /// <p>A set of DHCP options.</p>
-        pub fn dhcp_options(mut self, inp: crate::model::DhcpOptions) -> Self {
-            self.dhcp_options = Some(inp);
+        pub fn dhcp_options(mut self, input: crate::model::DhcpOptions) -> Self {
+            self.dhcp_options = Some(input);
             self
         }
         pub fn set_dhcp_options(
             mut self,
-            inp: std::option::Option<crate::model::DhcpOptions>,
+            input: std::option::Option<crate::model::DhcpOptions>,
         ) -> Self {
-            self.dhcp_options = inp;
+            self.dhcp_options = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDhcpOptionsOutput`](crate::output::CreateDhcpOptionsOutput)
@@ -24212,12 +24330,12 @@ pub mod create_default_vpc_output {
     }
     impl Builder {
         /// <p>Information about the VPC.</p>
-        pub fn vpc(mut self, inp: crate::model::Vpc) -> Self {
-            self.vpc = Some(inp);
+        pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
+            self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<crate::model::Vpc>) -> Self {
-            self.vpc = inp;
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
+            self.vpc = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDefaultVpcOutput`](crate::output::CreateDefaultVpcOutput)
@@ -24256,12 +24374,12 @@ pub mod create_default_subnet_output {
     }
     impl Builder {
         /// <p>Information about the subnet.</p>
-        pub fn subnet(mut self, inp: crate::model::Subnet) -> Self {
-            self.subnet = Some(inp);
+        pub fn subnet(mut self, input: crate::model::Subnet) -> Self {
+            self.subnet = Some(input);
             self
         }
-        pub fn set_subnet(mut self, inp: std::option::Option<crate::model::Subnet>) -> Self {
-            self.subnet = inp;
+        pub fn set_subnet(mut self, input: std::option::Option<crate::model::Subnet>) -> Self {
+            self.subnet = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateDefaultSubnetOutput`](crate::output::CreateDefaultSubnetOutput)
@@ -24303,15 +24421,15 @@ pub mod create_customer_gateway_output {
     }
     impl Builder {
         /// <p>Information about the customer gateway.</p>
-        pub fn customer_gateway(mut self, inp: crate::model::CustomerGateway) -> Self {
-            self.customer_gateway = Some(inp);
+        pub fn customer_gateway(mut self, input: crate::model::CustomerGateway) -> Self {
+            self.customer_gateway = Some(input);
             self
         }
         pub fn set_customer_gateway(
             mut self,
-            inp: std::option::Option<crate::model::CustomerGateway>,
+            input: std::option::Option<crate::model::CustomerGateway>,
         ) -> Self {
-            self.customer_gateway = inp;
+            self.customer_gateway = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateCustomerGatewayOutput`](crate::output::CreateCustomerGatewayOutput)
@@ -24352,15 +24470,15 @@ pub mod create_client_vpn_route_output {
     }
     impl Builder {
         /// <p>The current state of the route.</p>
-        pub fn status(mut self, inp: crate::model::ClientVpnRouteStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ClientVpnRouteStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ClientVpnRouteStatus>,
+            input: std::option::Option<crate::model::ClientVpnRouteStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateClientVpnRouteOutput`](crate::output::CreateClientVpnRouteOutput)
@@ -24409,36 +24527,36 @@ pub mod create_client_vpn_endpoint_output {
     }
     impl Builder {
         /// <p>The ID of the Client VPN endpoint.</p>
-        pub fn client_vpn_endpoint_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_vpn_endpoint_id = Some(inp.into());
+        pub fn client_vpn_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_vpn_endpoint_id = Some(input.into());
             self
         }
         pub fn set_client_vpn_endpoint_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.client_vpn_endpoint_id = inp;
+            self.client_vpn_endpoint_id = input;
             self
         }
         /// <p>The current state of the Client VPN endpoint.</p>
-        pub fn status(mut self, inp: crate::model::ClientVpnEndpointStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ClientVpnEndpointStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ClientVpnEndpointStatus>,
+            input: std::option::Option<crate::model::ClientVpnEndpointStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>The DNS name to be used by clients when establishing their VPN session.</p>
-        pub fn dns_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.dns_name = Some(inp.into());
+        pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dns_name = Some(input.into());
             self
         }
-        pub fn set_dns_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.dns_name = inp;
+        pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dns_name = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateClientVpnEndpointOutput`](crate::output::CreateClientVpnEndpointOutput)
@@ -24481,15 +24599,15 @@ pub mod create_carrier_gateway_output {
     }
     impl Builder {
         /// <p>Information about the carrier gateway.</p>
-        pub fn carrier_gateway(mut self, inp: crate::model::CarrierGateway) -> Self {
-            self.carrier_gateway = Some(inp);
+        pub fn carrier_gateway(mut self, input: crate::model::CarrierGateway) -> Self {
+            self.carrier_gateway = Some(input);
             self
         }
         pub fn set_carrier_gateway(
             mut self,
-            inp: std::option::Option<crate::model::CarrierGateway>,
+            input: std::option::Option<crate::model::CarrierGateway>,
         ) -> Self {
-            self.carrier_gateway = inp;
+            self.carrier_gateway = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateCarrierGatewayOutput`](crate::output::CreateCarrierGatewayOutput)
@@ -24530,15 +24648,15 @@ pub mod create_capacity_reservation_output {
     }
     impl Builder {
         /// <p>Information about the Capacity Reservation.</p>
-        pub fn capacity_reservation(mut self, inp: crate::model::CapacityReservation) -> Self {
-            self.capacity_reservation = Some(inp);
+        pub fn capacity_reservation(mut self, input: crate::model::CapacityReservation) -> Self {
+            self.capacity_reservation = Some(input);
             self
         }
         pub fn set_capacity_reservation(
             mut self,
-            inp: std::option::Option<crate::model::CapacityReservation>,
+            input: std::option::Option<crate::model::CapacityReservation>,
         ) -> Self {
-            self.capacity_reservation = inp;
+            self.capacity_reservation = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateCapacityReservationOutput`](crate::output::CreateCapacityReservationOutput)
@@ -24583,25 +24701,25 @@ pub mod copy_snapshot_output {
     }
     impl Builder {
         /// <p>The ID of the new snapshot.</p>
-        pub fn snapshot_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.snapshot_id = Some(inp.into());
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.snapshot_id = Some(input.into());
             self
         }
-        pub fn set_snapshot_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = inp;
+        pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_id = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CopySnapshotOutput`](crate::output::CopySnapshotOutput)
@@ -24644,12 +24762,12 @@ pub mod copy_image_output {
     }
     impl Builder {
         /// <p>The ID of the new AMI.</p>
-        pub fn image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.image_id = Some(inp.into());
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.image_id = Some(input.into());
             self
         }
-        pub fn set_image_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.image_id = inp;
+        pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.image_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CopyImageOutput`](crate::output::CopyImageOutput)
@@ -24690,12 +24808,15 @@ pub mod copy_fpga_image_output {
     }
     impl Builder {
         /// <p>The ID of the new AFI.</p>
-        pub fn fpga_image_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.fpga_image_id = Some(inp.into());
+        pub fn fpga_image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fpga_image_id = Some(input.into());
             self
         }
-        pub fn set_fpga_image_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.fpga_image_id = inp;
+        pub fn set_fpga_image_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.fpga_image_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CopyFpgaImageOutput`](crate::output::CopyFpgaImageOutput)
@@ -24743,22 +24864,22 @@ pub mod confirm_product_instance_output {
     impl Builder {
         /// <p>The AWS account ID of the instance owner. This is only present if the product code is
         /// attached to the instance.</p>
-        pub fn owner_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.owner_id = Some(inp.into());
+        pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_id = Some(input.into());
             self
         }
-        pub fn set_owner_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.owner_id = inp;
+        pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_id = input;
             self
         }
         /// <p>The return value of the request. Returns <code>true</code> if the specified product
         /// code is owned by the requester and associated with the specified instance.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`ConfirmProductInstanceOutput`](crate::output::ConfirmProductInstanceOutput)
@@ -24807,18 +24928,18 @@ pub mod cancel_spot_instance_requests_output {
     impl Builder {
         pub fn cancelled_spot_instance_requests(
             mut self,
-            inp: impl Into<crate::model::CancelledSpotInstanceRequest>,
+            input: impl Into<crate::model::CancelledSpotInstanceRequest>,
         ) -> Self {
             let mut v = self.cancelled_spot_instance_requests.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.cancelled_spot_instance_requests = Some(v);
             self
         }
         pub fn set_cancelled_spot_instance_requests(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CancelledSpotInstanceRequest>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CancelledSpotInstanceRequest>>,
         ) -> Self {
-            self.cancelled_spot_instance_requests = inp;
+            self.cancelled_spot_instance_requests = input;
             self
         }
         /// Consumes the builder and constructs a [`CancelSpotInstanceRequestsOutput`](crate::output::CancelSpotInstanceRequestsOutput)
@@ -24872,36 +24993,38 @@ pub mod cancel_spot_fleet_requests_output {
     impl Builder {
         pub fn successful_fleet_requests(
             mut self,
-            inp: impl Into<crate::model::CancelSpotFleetRequestsSuccessItem>,
+            input: impl Into<crate::model::CancelSpotFleetRequestsSuccessItem>,
         ) -> Self {
             let mut v = self.successful_fleet_requests.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.successful_fleet_requests = Some(v);
             self
         }
         pub fn set_successful_fleet_requests(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::vec::Vec<crate::model::CancelSpotFleetRequestsSuccessItem>,
             >,
         ) -> Self {
-            self.successful_fleet_requests = inp;
+            self.successful_fleet_requests = input;
             self
         }
         pub fn unsuccessful_fleet_requests(
             mut self,
-            inp: impl Into<crate::model::CancelSpotFleetRequestsErrorItem>,
+            input: impl Into<crate::model::CancelSpotFleetRequestsErrorItem>,
         ) -> Self {
             let mut v = self.unsuccessful_fleet_requests.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unsuccessful_fleet_requests = Some(v);
             self
         }
         pub fn set_unsuccessful_fleet_requests(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CancelSpotFleetRequestsErrorItem>>,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::CancelSpotFleetRequestsErrorItem>,
+            >,
         ) -> Self {
-            self.unsuccessful_fleet_requests = inp;
+            self.unsuccessful_fleet_requests = input;
             self
         }
         /// Consumes the builder and constructs a [`CancelSpotFleetRequestsOutput`](crate::output::CancelSpotFleetRequestsOutput)
@@ -24950,18 +25073,18 @@ pub mod cancel_reserved_instances_listing_output {
     impl Builder {
         pub fn reserved_instances_listings(
             mut self,
-            inp: impl Into<crate::model::ReservedInstancesListing>,
+            input: impl Into<crate::model::ReservedInstancesListing>,
         ) -> Self {
             let mut v = self.reserved_instances_listings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.reserved_instances_listings = Some(v);
             self
         }
         pub fn set_reserved_instances_listings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReservedInstancesListing>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReservedInstancesListing>>,
         ) -> Self {
-            self.reserved_instances_listings = inp;
+            self.reserved_instances_listings = input;
             self
         }
         /// Consumes the builder and constructs a [`CancelReservedInstancesListingOutput`](crate::output::CancelReservedInstancesListingOutput)
@@ -25010,30 +25133,36 @@ pub mod cancel_import_task_output {
     }
     impl Builder {
         /// <p>The ID of the task being canceled.</p>
-        pub fn import_task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.import_task_id = Some(inp.into());
+        pub fn import_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.import_task_id = Some(input.into());
             self
         }
-        pub fn set_import_task_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.import_task_id = inp;
-            self
-        }
-        /// <p>The current state of the task being canceled.</p>
-        pub fn previous_state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.previous_state = Some(inp.into());
-            self
-        }
-        pub fn set_previous_state(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.previous_state = inp;
+        pub fn set_import_task_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.import_task_id = input;
             self
         }
         /// <p>The current state of the task being canceled.</p>
-        pub fn state(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.state = Some(inp.into());
+        pub fn previous_state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.previous_state = Some(input.into());
             self
         }
-        pub fn set_state(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.state = inp;
+        pub fn set_previous_state(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.previous_state = input;
+            self
+        }
+        /// <p>The current state of the task being canceled.</p>
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.state = Some(input.into());
+            self
+        }
+        pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state = input;
             self
         }
         /// Consumes the builder and constructs a [`CancelImportTaskOutput`](crate::output::CancelImportTaskOutput)
@@ -25134,12 +25263,12 @@ pub mod cancel_capacity_reservation_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`CancelCapacityReservationOutput`](crate::output::CancelCapacityReservationOutput)
@@ -25181,15 +25310,15 @@ pub mod cancel_bundle_task_output {
     }
     impl Builder {
         /// <p>Information about the bundle task.</p>
-        pub fn bundle_task(mut self, inp: crate::model::BundleTask) -> Self {
-            self.bundle_task = Some(inp);
+        pub fn bundle_task(mut self, input: crate::model::BundleTask) -> Self {
+            self.bundle_task = Some(input);
             self
         }
         pub fn set_bundle_task(
             mut self,
-            inp: std::option::Option<crate::model::BundleTask>,
+            input: std::option::Option<crate::model::BundleTask>,
         ) -> Self {
-            self.bundle_task = inp;
+            self.bundle_task = input;
             self
         }
         /// Consumes the builder and constructs a [`CancelBundleTaskOutput`](crate::output::CancelBundleTaskOutput)
@@ -25231,15 +25360,15 @@ pub mod bundle_instance_output {
     }
     impl Builder {
         /// <p>Information about the bundle task.</p>
-        pub fn bundle_task(mut self, inp: crate::model::BundleTask) -> Self {
-            self.bundle_task = Some(inp);
+        pub fn bundle_task(mut self, input: crate::model::BundleTask) -> Self {
+            self.bundle_task = Some(input);
             self
         }
         pub fn set_bundle_task(
             mut self,
-            inp: std::option::Option<crate::model::BundleTask>,
+            input: std::option::Option<crate::model::BundleTask>,
         ) -> Self {
-            self.bundle_task = inp;
+            self.bundle_task = input;
             self
         }
         /// Consumes the builder and constructs a [`BundleInstanceOutput`](crate::output::BundleInstanceOutput)
@@ -25338,15 +25467,15 @@ pub mod authorize_client_vpn_ingress_output {
     }
     impl Builder {
         /// <p>The current state of the authorization rule.</p>
-        pub fn status(mut self, inp: crate::model::ClientVpnAuthorizationRuleStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ClientVpnAuthorizationRuleStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ClientVpnAuthorizationRuleStatus>,
+            input: std::option::Option<crate::model::ClientVpnAuthorizationRuleStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`AuthorizeClientVpnIngressOutput`](crate::output::AuthorizeClientVpnIngressOutput)
@@ -25388,15 +25517,15 @@ pub mod attach_vpn_gateway_output {
     }
     impl Builder {
         /// <p>Information about the attachment.</p>
-        pub fn vpc_attachment(mut self, inp: crate::model::VpcAttachment) -> Self {
-            self.vpc_attachment = Some(inp);
+        pub fn vpc_attachment(mut self, input: crate::model::VpcAttachment) -> Self {
+            self.vpc_attachment = Some(input);
             self
         }
         pub fn set_vpc_attachment(
             mut self,
-            inp: std::option::Option<crate::model::VpcAttachment>,
+            input: std::option::Option<crate::model::VpcAttachment>,
         ) -> Self {
-            self.vpc_attachment = inp;
+            self.vpc_attachment = input;
             self
         }
         /// Consumes the builder and constructs a [`AttachVpnGatewayOutput`](crate::output::AttachVpnGatewayOutput)
@@ -25458,60 +25587,63 @@ pub mod attach_volume_output {
     }
     impl Builder {
         /// <p>The time stamp when the attachment initiated.</p>
-        pub fn attach_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.attach_time = Some(inp);
+        pub fn attach_time(mut self, input: smithy_types::Instant) -> Self {
+            self.attach_time = Some(input);
             self
         }
-        pub fn set_attach_time(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.attach_time = inp;
+        pub fn set_attach_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.attach_time = input;
             self
         }
         /// <p>The device name.</p>
-        pub fn device(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.device = Some(inp.into());
+        pub fn device(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device = Some(input.into());
             self
         }
-        pub fn set_device(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.device = inp;
+        pub fn set_device(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device = input;
             self
         }
         /// <p>The ID of the instance.</p>
-        pub fn instance_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_id = Some(inp.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_id = Some(input.into());
             self
         }
-        pub fn set_instance_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = inp;
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_id = input;
             self
         }
         /// <p>The attachment state of the volume.</p>
-        pub fn state(mut self, inp: crate::model::VolumeAttachmentState) -> Self {
-            self.state = Some(inp);
+        pub fn state(mut self, input: crate::model::VolumeAttachmentState) -> Self {
+            self.state = Some(input);
             self
         }
         pub fn set_state(
             mut self,
-            inp: std::option::Option<crate::model::VolumeAttachmentState>,
+            input: std::option::Option<crate::model::VolumeAttachmentState>,
         ) -> Self {
-            self.state = inp;
+            self.state = input;
             self
         }
         /// <p>The ID of the volume.</p>
-        pub fn volume_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.volume_id = Some(inp.into());
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.volume_id = Some(input.into());
             self
         }
-        pub fn set_volume_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.volume_id = inp;
+        pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.volume_id = input;
             self
         }
         /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
-        pub fn delete_on_termination(mut self, inp: bool) -> Self {
-            self.delete_on_termination = Some(inp);
+        pub fn delete_on_termination(mut self, input: bool) -> Self {
+            self.delete_on_termination = Some(input);
             self
         }
-        pub fn set_delete_on_termination(mut self, inp: std::option::Option<bool>) -> Self {
-            self.delete_on_termination = inp;
+        pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
+            self.delete_on_termination = input;
             self
         }
         /// Consumes the builder and constructs a [`AttachVolumeOutput`](crate::output::AttachVolumeOutput)
@@ -25562,21 +25694,24 @@ pub mod attach_network_interface_output {
     }
     impl Builder {
         /// <p>The ID of the network interface attachment.</p>
-        pub fn attachment_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.attachment_id = Some(inp.into());
+        pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.attachment_id = Some(input.into());
             self
         }
-        pub fn set_attachment_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.attachment_id = inp;
+        pub fn set_attachment_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.attachment_id = input;
             self
         }
         /// <p>The index of the network card.</p>
-        pub fn network_card_index(mut self, inp: i32) -> Self {
-            self.network_card_index = Some(inp);
+        pub fn network_card_index(mut self, input: i32) -> Self {
+            self.network_card_index = Some(input);
             self
         }
-        pub fn set_network_card_index(mut self, inp: std::option::Option<i32>) -> Self {
-            self.network_card_index = inp;
+        pub fn set_network_card_index(mut self, input: std::option::Option<i32>) -> Self {
+            self.network_card_index = input;
             self
         }
         /// Consumes the builder and constructs a [`AttachNetworkInterfaceOutput`](crate::output::AttachNetworkInterfaceOutput)
@@ -25647,12 +25782,12 @@ pub mod attach_classic_link_vpc_output {
     }
     impl Builder {
         /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
-        pub fn r#return(mut self, inp: bool) -> Self {
-            self.r#return = Some(inp);
+        pub fn r#return(mut self, input: bool) -> Self {
+            self.r#return = Some(input);
             self
         }
-        pub fn set_return(mut self, inp: std::option::Option<bool>) -> Self {
-            self.r#return = inp;
+        pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+            self.r#return = input;
             self
         }
         /// Consumes the builder and constructs a [`AttachClassicLinkVpcOutput`](crate::output::AttachClassicLinkVpcOutput)
@@ -25708,40 +25843,40 @@ pub mod associate_vpc_cidr_block_output {
         /// <p>Information about the IPv6 CIDR block association.</p>
         pub fn ipv6_cidr_block_association(
             mut self,
-            inp: crate::model::VpcIpv6CidrBlockAssociation,
+            input: crate::model::VpcIpv6CidrBlockAssociation,
         ) -> Self {
-            self.ipv6_cidr_block_association = Some(inp);
+            self.ipv6_cidr_block_association = Some(input);
             self
         }
         pub fn set_ipv6_cidr_block_association(
             mut self,
-            inp: std::option::Option<crate::model::VpcIpv6CidrBlockAssociation>,
+            input: std::option::Option<crate::model::VpcIpv6CidrBlockAssociation>,
         ) -> Self {
-            self.ipv6_cidr_block_association = inp;
+            self.ipv6_cidr_block_association = input;
             self
         }
         /// <p>Information about the IPv4 CIDR block association.</p>
         pub fn cidr_block_association(
             mut self,
-            inp: crate::model::VpcCidrBlockAssociation,
+            input: crate::model::VpcCidrBlockAssociation,
         ) -> Self {
-            self.cidr_block_association = Some(inp);
+            self.cidr_block_association = Some(input);
             self
         }
         pub fn set_cidr_block_association(
             mut self,
-            inp: std::option::Option<crate::model::VpcCidrBlockAssociation>,
+            input: std::option::Option<crate::model::VpcCidrBlockAssociation>,
         ) -> Self {
-            self.cidr_block_association = inp;
+            self.cidr_block_association = input;
             self
         }
         /// <p>The ID of the VPC.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_id = Some(inp.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
             self
         }
-        pub fn set_vpc_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = inp;
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociateVpcCidrBlockOutput`](crate::output::AssociateVpcCidrBlockOutput)
@@ -25784,15 +25919,15 @@ pub mod associate_transit_gateway_route_table_output {
     }
     impl Builder {
         /// <p>The ID of the association.</p>
-        pub fn association(mut self, inp: crate::model::TransitGatewayAssociation) -> Self {
-            self.association = Some(inp);
+        pub fn association(mut self, input: crate::model::TransitGatewayAssociation) -> Self {
+            self.association = Some(input);
             self
         }
         pub fn set_association(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayAssociation>,
+            input: std::option::Option<crate::model::TransitGatewayAssociation>,
         ) -> Self {
-            self.association = inp;
+            self.association = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociateTransitGatewayRouteTableOutput`](crate::output::AssociateTransitGatewayRouteTableOutput)
@@ -25836,16 +25971,16 @@ pub mod associate_transit_gateway_multicast_domain_output {
         /// <p>Information about the transit gateway multicast domain associations.</p>
         pub fn associations(
             mut self,
-            inp: crate::model::TransitGatewayMulticastDomainAssociations,
+            input: crate::model::TransitGatewayMulticastDomainAssociations,
         ) -> Self {
-            self.associations = Some(inp);
+            self.associations = Some(input);
             self
         }
         pub fn set_associations(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
+            input: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
         ) -> Self {
-            self.associations = inp;
+            self.associations = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociateTransitGatewayMulticastDomainOutput`](crate::output::AssociateTransitGatewayMulticastDomainOutput)
@@ -25897,25 +26032,25 @@ pub mod associate_subnet_cidr_block_output {
         /// <p>Information about the IPv6 CIDR block association.</p>
         pub fn ipv6_cidr_block_association(
             mut self,
-            inp: crate::model::SubnetIpv6CidrBlockAssociation,
+            input: crate::model::SubnetIpv6CidrBlockAssociation,
         ) -> Self {
-            self.ipv6_cidr_block_association = Some(inp);
+            self.ipv6_cidr_block_association = Some(input);
             self
         }
         pub fn set_ipv6_cidr_block_association(
             mut self,
-            inp: std::option::Option<crate::model::SubnetIpv6CidrBlockAssociation>,
+            input: std::option::Option<crate::model::SubnetIpv6CidrBlockAssociation>,
         ) -> Self {
-            self.ipv6_cidr_block_association = inp;
+            self.ipv6_cidr_block_association = input;
             self
         }
         /// <p>The ID of the subnet.</p>
-        pub fn subnet_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subnet_id = Some(inp.into());
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subnet_id = Some(input.into());
             self
         }
-        pub fn set_subnet_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.subnet_id = inp;
+        pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subnet_id = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociateSubnetCidrBlockOutput`](crate::output::AssociateSubnetCidrBlockOutput)
@@ -25963,24 +26098,30 @@ pub mod associate_route_table_output {
     impl Builder {
         /// <p>The route table association ID. This ID is required for disassociating the route
         /// table.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_id = Some(inp.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_id = Some(input.into());
             self
         }
-        pub fn set_association_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.association_id = inp;
+        pub fn set_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.association_id = input;
             self
         }
         /// <p>The state of the association.</p>
-        pub fn association_state(mut self, inp: crate::model::RouteTableAssociationState) -> Self {
-            self.association_state = Some(inp);
+        pub fn association_state(
+            mut self,
+            input: crate::model::RouteTableAssociationState,
+        ) -> Self {
+            self.association_state = Some(input);
             self
         }
         pub fn set_association_state(
             mut self,
-            inp: std::option::Option<crate::model::RouteTableAssociationState>,
+            input: std::option::Option<crate::model::RouteTableAssociationState>,
         ) -> Self {
-            self.association_state = inp;
+            self.association_state = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociateRouteTableOutput`](crate::output::AssociateRouteTableOutput)
@@ -26029,16 +26170,16 @@ pub mod associate_iam_instance_profile_output {
         /// <p>Information about the IAM instance profile association.</p>
         pub fn iam_instance_profile_association(
             mut self,
-            inp: crate::model::IamInstanceProfileAssociation,
+            input: crate::model::IamInstanceProfileAssociation,
         ) -> Self {
-            self.iam_instance_profile_association = Some(inp);
+            self.iam_instance_profile_association = Some(input);
             self
         }
         pub fn set_iam_instance_profile_association(
             mut self,
-            inp: std::option::Option<crate::model::IamInstanceProfileAssociation>,
+            input: std::option::Option<crate::model::IamInstanceProfileAssociation>,
         ) -> Self {
-            self.iam_instance_profile_association = inp;
+            self.iam_instance_profile_association = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociateIamInstanceProfileOutput`](crate::output::AssociateIamInstanceProfileOutput)
@@ -26091,40 +26232,40 @@ pub mod associate_enclave_certificate_iam_role_output {
     }
     impl Builder {
         /// <p>The name of the Amazon S3 bucket to which the certificate was uploaded.</p>
-        pub fn certificate_s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_s3_bucket_name = Some(inp.into());
+        pub fn certificate_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_s3_bucket_name = Some(input.into());
             self
         }
         pub fn set_certificate_s3_bucket_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_s3_bucket_name = inp;
+            self.certificate_s3_bucket_name = input;
             self
         }
         /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The
         /// object key is formatted as follows:  <code>role_arn</code>/<code>certificate_arn</code>.</p>
-        pub fn certificate_s3_object_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_s3_object_key = Some(inp.into());
+        pub fn certificate_s3_object_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_s3_object_key = Some(input.into());
             self
         }
         pub fn set_certificate_s3_object_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_s3_object_key = inp;
+            self.certificate_s3_object_key = input;
             self
         }
         /// <p>The ID of the AWS KMS CMK used to encrypt the private key of the certificate.</p>
-        pub fn encryption_kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.encryption_kms_key_id = Some(inp.into());
+        pub fn encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.encryption_kms_key_id = Some(input.into());
             self
         }
         pub fn set_encryption_kms_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.encryption_kms_key_id = inp;
+            self.encryption_kms_key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociateEnclaveCertificateIamRoleOutput`](crate::output::AssociateEnclaveCertificateIamRoleOutput)
@@ -26200,24 +26341,27 @@ pub mod associate_client_vpn_target_network_output {
     }
     impl Builder {
         /// <p>The unique ID of the target network association.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_id = Some(inp.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_id = Some(input.into());
             self
         }
-        pub fn set_association_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.association_id = inp;
+        pub fn set_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.association_id = input;
             self
         }
         /// <p>The current state of the target network association.</p>
-        pub fn status(mut self, inp: crate::model::AssociationStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::AssociationStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::AssociationStatus>,
+            input: std::option::Option<crate::model::AssociationStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociateClientVpnTargetNetworkOutput`](crate::output::AssociateClientVpnTargetNetworkOutput)
@@ -26259,12 +26403,15 @@ pub mod associate_address_output {
     }
     impl Builder {
         /// <p>[EC2-VPC] The ID that represents the association of the Elastic IP address with an instance.</p>
-        pub fn association_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.association_id = Some(inp.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.association_id = Some(input.into());
             self
         }
-        pub fn set_association_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.association_id = inp;
+        pub fn set_association_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.association_id = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociateAddressOutput`](crate::output::AssociateAddressOutput)
@@ -26314,31 +26461,31 @@ pub mod assign_private_ip_addresses_output {
     }
     impl Builder {
         /// <p>The ID of the network interface.</p>
-        pub fn network_interface_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.network_interface_id = Some(inp.into());
+        pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_interface_id = Some(input.into());
             self
         }
         pub fn set_network_interface_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.network_interface_id = inp;
+            self.network_interface_id = input;
             self
         }
         pub fn assigned_private_ip_addresses(
             mut self,
-            inp: impl Into<crate::model::AssignedPrivateIpAddress>,
+            input: impl Into<crate::model::AssignedPrivateIpAddress>,
         ) -> Self {
             let mut v = self.assigned_private_ip_addresses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.assigned_private_ip_addresses = Some(v);
             self
         }
         pub fn set_assigned_private_ip_addresses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AssignedPrivateIpAddress>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AssignedPrivateIpAddress>>,
         ) -> Self {
-            self.assigned_private_ip_addresses = inp;
+            self.assigned_private_ip_addresses = input;
             self
         }
         /// Consumes the builder and constructs a [`AssignPrivateIpAddressesOutput`](crate::output::AssignPrivateIpAddressesOutput)
@@ -26384,29 +26531,29 @@ pub mod assign_ipv6_addresses_output {
         pub(crate) network_interface_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn assigned_ipv6_addresses(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn assigned_ipv6_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.assigned_ipv6_addresses.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.assigned_ipv6_addresses = Some(v);
             self
         }
         pub fn set_assigned_ipv6_addresses(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.assigned_ipv6_addresses = inp;
+            self.assigned_ipv6_addresses = input;
             self
         }
         /// <p>The ID of the network interface.</p>
-        pub fn network_interface_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.network_interface_id = Some(inp.into());
+        pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_interface_id = Some(input.into());
             self
         }
         pub fn set_network_interface_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.network_interface_id = inp;
+            self.network_interface_id = input;
             self
         }
         /// Consumes the builder and constructs a [`AssignIpv6AddressesOutput`](crate::output::AssignIpv6AddressesOutput)
@@ -26447,17 +26594,17 @@ pub mod apply_security_groups_to_client_vpn_target_network_output {
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn security_group_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
         pub fn set_security_group_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.security_group_ids = inp;
+            self.security_group_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`ApplySecurityGroupsToClientVpnTargetNetworkOutput`](crate::output::ApplySecurityGroupsToClientVpnTargetNetworkOutput)
@@ -26500,17 +26647,17 @@ pub mod allocate_hosts_output {
         pub(crate) host_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn host_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn host_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.host_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.host_ids = Some(v);
             self
         }
         pub fn set_host_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.host_ids = inp;
+            self.host_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`AllocateHostsOutput`](crate::output::AllocateHostsOutput)
@@ -26582,90 +26729,93 @@ pub mod allocate_address_output {
     }
     impl Builder {
         /// <p>The Elastic IP address.</p>
-        pub fn public_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.public_ip = Some(inp.into());
+        pub fn public_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.public_ip = Some(input.into());
             self
         }
-        pub fn set_public_ip(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.public_ip = inp;
+        pub fn set_public_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_ip = input;
             self
         }
         /// <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in a VPC.</p>
-        pub fn allocation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.allocation_id = Some(inp.into());
+        pub fn allocation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.allocation_id = Some(input.into());
             self
         }
-        pub fn set_allocation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.allocation_id = inp;
+        pub fn set_allocation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.allocation_id = input;
             self
         }
         /// <p>The ID of an address pool.</p>
-        pub fn public_ipv4_pool(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.public_ipv4_pool = Some(inp.into());
+        pub fn public_ipv4_pool(mut self, input: impl Into<std::string::String>) -> Self {
+            self.public_ipv4_pool = Some(input.into());
             self
         }
         pub fn set_public_ipv4_pool(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.public_ipv4_pool = inp;
+            self.public_ipv4_pool = input;
             self
         }
         /// <p>The set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises
         /// IP addresses.</p>
-        pub fn network_border_group(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.network_border_group = Some(inp.into());
+        pub fn network_border_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.network_border_group = Some(input.into());
             self
         }
         pub fn set_network_border_group(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.network_border_group = inp;
+            self.network_border_group = input;
             self
         }
         /// <p>Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>) or
         /// instances in EC2-Classic (<code>standard</code>).</p>
-        pub fn domain(mut self, inp: crate::model::DomainType) -> Self {
-            self.domain = Some(inp);
+        pub fn domain(mut self, input: crate::model::DomainType) -> Self {
+            self.domain = Some(input);
             self
         }
-        pub fn set_domain(mut self, inp: std::option::Option<crate::model::DomainType>) -> Self {
-            self.domain = inp;
+        pub fn set_domain(mut self, input: std::option::Option<crate::model::DomainType>) -> Self {
+            self.domain = input;
             self
         }
         /// <p>The customer-owned IP address.</p>
-        pub fn customer_owned_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.customer_owned_ip = Some(inp.into());
+        pub fn customer_owned_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.customer_owned_ip = Some(input.into());
             self
         }
         pub fn set_customer_owned_ip(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.customer_owned_ip = inp;
+            self.customer_owned_ip = input;
             self
         }
         /// <p>The ID of the customer-owned address pool.</p>
-        pub fn customer_owned_ipv4_pool(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.customer_owned_ipv4_pool = Some(inp.into());
+        pub fn customer_owned_ipv4_pool(mut self, input: impl Into<std::string::String>) -> Self {
+            self.customer_owned_ipv4_pool = Some(input.into());
             self
         }
         pub fn set_customer_owned_ipv4_pool(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.customer_owned_ipv4_pool = inp;
+            self.customer_owned_ipv4_pool = input;
             self
         }
         /// <p>The carrier IP address. This option is only available for network interfaces which  reside
         /// in a subnet in a Wavelength Zone (for example an EC2 instance). </p>
-        pub fn carrier_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.carrier_ip = Some(inp.into());
+        pub fn carrier_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.carrier_ip = Some(input.into());
             self
         }
-        pub fn set_carrier_ip(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.carrier_ip = inp;
+        pub fn set_carrier_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.carrier_ip = input;
             self
         }
         /// Consumes the builder and constructs a [`AllocateAddressOutput`](crate::output::AllocateAddressOutput)
@@ -26713,12 +26863,15 @@ pub mod advertise_byoip_cidr_output {
     }
     impl Builder {
         /// <p>Information about the address range.</p>
-        pub fn byoip_cidr(mut self, inp: crate::model::ByoipCidr) -> Self {
-            self.byoip_cidr = Some(inp);
+        pub fn byoip_cidr(mut self, input: crate::model::ByoipCidr) -> Self {
+            self.byoip_cidr = Some(input);
             self
         }
-        pub fn set_byoip_cidr(mut self, inp: std::option::Option<crate::model::ByoipCidr>) -> Self {
-            self.byoip_cidr = inp;
+        pub fn set_byoip_cidr(
+            mut self,
+            input: std::option::Option<crate::model::ByoipCidr>,
+        ) -> Self {
+            self.byoip_cidr = input;
             self
         }
         /// Consumes the builder and constructs a [`AdvertiseByoipCidrOutput`](crate::output::AdvertiseByoipCidrOutput)
@@ -26759,15 +26912,15 @@ pub mod accept_vpc_peering_connection_output {
     }
     impl Builder {
         /// <p>Information about the VPC peering connection.</p>
-        pub fn vpc_peering_connection(mut self, inp: crate::model::VpcPeeringConnection) -> Self {
-            self.vpc_peering_connection = Some(inp);
+        pub fn vpc_peering_connection(mut self, input: crate::model::VpcPeeringConnection) -> Self {
+            self.vpc_peering_connection = Some(input);
             self
         }
         pub fn set_vpc_peering_connection(
             mut self,
-            inp: std::option::Option<crate::model::VpcPeeringConnection>,
+            input: std::option::Option<crate::model::VpcPeeringConnection>,
         ) -> Self {
-            self.vpc_peering_connection = inp;
+            self.vpc_peering_connection = input;
             self
         }
         /// Consumes the builder and constructs a [`AcceptVpcPeeringConnectionOutput`](crate::output::AcceptVpcPeeringConnectionOutput)
@@ -26808,17 +26961,17 @@ pub mod accept_vpc_endpoint_connections_output {
         pub(crate) unsuccessful: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
     }
     impl Builder {
-        pub fn unsuccessful(mut self, inp: impl Into<crate::model::UnsuccessfulItem>) -> Self {
+        pub fn unsuccessful(mut self, input: impl Into<crate::model::UnsuccessfulItem>) -> Self {
             let mut v = self.unsuccessful.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unsuccessful = Some(v);
             self
         }
         pub fn set_unsuccessful(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
+            input: std::option::Option<std::vec::Vec<crate::model::UnsuccessfulItem>>,
         ) -> Self {
-            self.unsuccessful = inp;
+            self.unsuccessful = input;
             self
         }
         /// Consumes the builder and constructs a [`AcceptVpcEndpointConnectionsOutput`](crate::output::AcceptVpcEndpointConnectionsOutput)
@@ -26866,16 +27019,16 @@ pub mod accept_transit_gateway_vpc_attachment_output {
         /// <p>The VPC attachment.</p>
         pub fn transit_gateway_vpc_attachment(
             mut self,
-            inp: crate::model::TransitGatewayVpcAttachment,
+            input: crate::model::TransitGatewayVpcAttachment,
         ) -> Self {
-            self.transit_gateway_vpc_attachment = Some(inp);
+            self.transit_gateway_vpc_attachment = Some(input);
             self
         }
         pub fn set_transit_gateway_vpc_attachment(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayVpcAttachment>,
+            input: std::option::Option<crate::model::TransitGatewayVpcAttachment>,
         ) -> Self {
-            self.transit_gateway_vpc_attachment = inp;
+            self.transit_gateway_vpc_attachment = input;
             self
         }
         /// Consumes the builder and constructs a [`AcceptTransitGatewayVpcAttachmentOutput`](crate::output::AcceptTransitGatewayVpcAttachmentOutput)
@@ -26923,16 +27076,16 @@ pub mod accept_transit_gateway_peering_attachment_output {
         /// <p>The transit gateway peering attachment.</p>
         pub fn transit_gateway_peering_attachment(
             mut self,
-            inp: crate::model::TransitGatewayPeeringAttachment,
+            input: crate::model::TransitGatewayPeeringAttachment,
         ) -> Self {
-            self.transit_gateway_peering_attachment = Some(inp);
+            self.transit_gateway_peering_attachment = Some(input);
             self
         }
         pub fn set_transit_gateway_peering_attachment(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayPeeringAttachment>,
+            input: std::option::Option<crate::model::TransitGatewayPeeringAttachment>,
         ) -> Self {
-            self.transit_gateway_peering_attachment = inp;
+            self.transit_gateway_peering_attachment = input;
             self
         }
         /// Consumes the builder and constructs a [`AcceptTransitGatewayPeeringAttachmentOutput`](crate::output::AcceptTransitGatewayPeeringAttachmentOutput)
@@ -26976,16 +27129,16 @@ pub mod accept_transit_gateway_multicast_domain_associations_output {
         /// <p>Describes the multicast domain associations.</p>
         pub fn associations(
             mut self,
-            inp: crate::model::TransitGatewayMulticastDomainAssociations,
+            input: crate::model::TransitGatewayMulticastDomainAssociations,
         ) -> Self {
-            self.associations = Some(inp);
+            self.associations = Some(input);
             self
         }
         pub fn set_associations(
             mut self,
-            inp: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
+            input: std::option::Option<crate::model::TransitGatewayMulticastDomainAssociations>,
         ) -> Self {
-            self.associations = inp;
+            self.associations = input;
             self
         }
         /// Consumes the builder and constructs a [`AcceptTransitGatewayMulticastDomainAssociationsOutput`](crate::output::AcceptTransitGatewayMulticastDomainAssociationsOutput)
@@ -27029,12 +27182,12 @@ pub mod accept_reserved_instances_exchange_quote_output {
     }
     impl Builder {
         /// <p>The ID of the successful exchange.</p>
-        pub fn exchange_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.exchange_id = Some(inp.into());
+        pub fn exchange_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.exchange_id = Some(input.into());
             self
         }
-        pub fn set_exchange_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.exchange_id = inp;
+        pub fn set_exchange_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.exchange_id = input;
             self
         }
         /// Consumes the builder and constructs a [`AcceptReservedInstancesExchangeQuoteOutput`](crate::output::AcceptReservedInstancesExchangeQuoteOutput)

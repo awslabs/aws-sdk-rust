@@ -76,6 +76,48 @@ impl AddLayerVersionPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddLayerVersionPermissionErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_policy_length_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddLayerVersionPermissionErrorKind::PolicyLengthExceededError(_)
+        )
+    }
+    pub fn is_precondition_failed_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddLayerVersionPermissionErrorKind::PreconditionFailedError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddLayerVersionPermissionErrorKind::ResourceConflictError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddLayerVersionPermissionErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddLayerVersionPermissionErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddLayerVersionPermissionErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for AddLayerVersionPermissionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -169,6 +211,36 @@ impl AddPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddPermissionErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_policy_length_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddPermissionErrorKind::PolicyLengthExceededError(_)
+        )
+    }
+    pub fn is_precondition_failed_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddPermissionErrorKind::PreconditionFailedError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(&self.kind, AddPermissionErrorKind::ResourceConflictError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, AddPermissionErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, AddPermissionErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, AddPermissionErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for AddPermissionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -258,6 +330,24 @@ impl CreateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAliasErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(&self.kind, CreateAliasErrorKind::ResourceConflictError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, CreateAliasErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, CreateAliasErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, CreateAliasErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for CreateAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -338,6 +428,18 @@ impl CreateCodeSigningConfigError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCodeSigningConfigErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateCodeSigningConfigErrorKind::ServiceError(_)
+        )
     }
 }
 impl std::error::Error for CreateCodeSigningConfigError {
@@ -422,6 +524,36 @@ impl CreateEventSourceMappingError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventSourceMappingErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventSourceMappingErrorKind::ResourceConflictError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventSourceMappingErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventSourceMappingErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateEventSourceMappingErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for CreateEventSourceMappingError {
@@ -518,6 +650,54 @@ impl CreateFunctionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_code_signing_config_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFunctionErrorKind::CodeSigningConfigNotFoundError(_)
+        )
+    }
+    pub fn is_code_storage_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFunctionErrorKind::CodeStorageExceededError(_)
+        )
+    }
+    pub fn is_code_verification_failed_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFunctionErrorKind::CodeVerificationFailedError(_)
+        )
+    }
+    pub fn is_invalid_code_signature_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFunctionErrorKind::InvalidCodeSignatureError(_)
+        )
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFunctionErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFunctionErrorKind::ResourceConflictError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateFunctionErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, CreateFunctionErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, CreateFunctionErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for CreateFunctionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -607,6 +787,21 @@ impl DeleteAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAliasErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(&self.kind, DeleteAliasErrorKind::ResourceConflictError(_))
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, DeleteAliasErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, DeleteAliasErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for DeleteAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -690,6 +885,30 @@ impl DeleteCodeSigningConfigError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCodeSigningConfigErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCodeSigningConfigErrorKind::ResourceConflictError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCodeSigningConfigErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteCodeSigningConfigErrorKind::ServiceError(_)
+        )
     }
 }
 impl std::error::Error for DeleteCodeSigningConfigError {
@@ -777,6 +996,36 @@ impl DeleteEventSourceMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventSourceMappingErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventSourceMappingErrorKind::ResourceInUseError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventSourceMappingErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventSourceMappingErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEventSourceMappingErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteEventSourceMappingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -863,6 +1112,30 @@ impl DeleteFunctionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionErrorKind::ResourceConflictError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, DeleteFunctionErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, DeleteFunctionErrorKind::TooManyRequestsError(_))
     }
 }
 impl std::error::Error for DeleteFunctionError {
@@ -961,6 +1234,42 @@ impl DeleteFunctionCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_code_signing_config_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundError(_)
+        )
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionCodeSigningConfigErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionCodeSigningConfigErrorKind::ResourceConflictError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionCodeSigningConfigErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionCodeSigningConfigErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionCodeSigningConfigErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteFunctionCodeSigningConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1053,6 +1362,36 @@ impl DeleteFunctionConcurrencyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionConcurrencyErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionConcurrencyErrorKind::ResourceConflictError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionConcurrencyErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionConcurrencyErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionConcurrencyErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteFunctionConcurrencyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1142,6 +1481,30 @@ impl DeleteFunctionEventInvokeConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionEventInvokeConfigErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionEventInvokeConfigErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionEventInvokeConfigErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteFunctionEventInvokeConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1223,6 +1586,15 @@ impl DeleteLayerVersionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, DeleteLayerVersionErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteLayerVersionErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for DeleteLayerVersionError {
@@ -1319,6 +1691,36 @@ impl DeleteProvisionedConcurrencyConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteProvisionedConcurrencyConfigErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteProvisionedConcurrencyConfigErrorKind::ResourceConflictError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteProvisionedConcurrencyConfigErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteProvisionedConcurrencyConfigErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteProvisionedConcurrencyConfigErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteProvisionedConcurrencyConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1408,6 +1810,15 @@ impl GetAccountSettingsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, GetAccountSettingsErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetAccountSettingsErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for GetAccountSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1490,6 +1901,18 @@ impl GetAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(&self.kind, GetAliasErrorKind::InvalidParameterValueError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetAliasErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, GetAliasErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetAliasErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for GetAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1571,6 +1994,21 @@ impl GetCodeSigningConfigError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCodeSigningConfigErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetCodeSigningConfigErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, GetCodeSigningConfigErrorKind::ServiceError(_))
     }
 }
 impl std::error::Error for GetCodeSigningConfigError {
@@ -1655,6 +2093,27 @@ impl GetEventSourceMappingError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventSourceMappingErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventSourceMappingErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, GetEventSourceMappingErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEventSourceMappingErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for GetEventSourceMappingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1738,6 +2197,21 @@ impl GetFunctionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetFunctionErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, GetFunctionErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetFunctionErrorKind::TooManyRequestsError(_))
     }
 }
 impl std::error::Error for GetFunctionError {
@@ -1825,6 +2299,30 @@ impl GetFunctionCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionCodeSigningConfigErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionCodeSigningConfigErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionCodeSigningConfigErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionCodeSigningConfigErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for GetFunctionCodeSigningConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1911,6 +2409,27 @@ impl GetFunctionConcurrencyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionConcurrencyErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionConcurrencyErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, GetFunctionConcurrencyErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionConcurrencyErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for GetFunctionConcurrencyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1994,6 +2513,30 @@ impl GetFunctionConfigurationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionConfigurationErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionConfigurationErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionConfigurationErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionConfigurationErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for GetFunctionConfigurationError {
@@ -2081,6 +2624,30 @@ impl GetFunctionEventInvokeConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionEventInvokeConfigErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionEventInvokeConfigErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionEventInvokeConfigErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetFunctionEventInvokeConfigErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for GetFunctionEventInvokeConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2167,6 +2734,27 @@ impl GetLayerVersionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLayerVersionErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLayerVersionErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, GetLayerVersionErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLayerVersionErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for GetLayerVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2250,6 +2838,27 @@ impl GetLayerVersionByArnError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLayerVersionByArnErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLayerVersionByArnErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, GetLayerVersionByArnErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLayerVersionByArnErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for GetLayerVersionByArnError {
@@ -2335,6 +2944,27 @@ impl GetLayerVersionPolicyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLayerVersionPolicyErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLayerVersionPolicyErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, GetLayerVersionPolicyErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetLayerVersionPolicyErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for GetLayerVersionPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2418,6 +3048,21 @@ impl GetPolicyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPolicyErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, GetPolicyErrorKind::TooManyRequestsError(_))
     }
 }
 impl std::error::Error for GetPolicyError {
@@ -2512,6 +3157,36 @@ impl GetProvisionedConcurrencyConfigError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetProvisionedConcurrencyConfigErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_provisioned_concurrency_config_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetProvisionedConcurrencyConfigErrorKind::ProvisionedConcurrencyConfigNotFoundError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetProvisionedConcurrencyConfigErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetProvisionedConcurrencyConfigErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetProvisionedConcurrencyConfigErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for GetProvisionedConcurrencyConfigError {
@@ -2646,6 +3321,87 @@ impl InvokeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_ec2_access_denied_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::EC2AccessDeniedError(_))
+    }
+    pub fn is_ec2_throttled_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::EC2ThrottledError(_))
+    }
+    pub fn is_ec2_unexpected_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::EC2UnexpectedError(_))
+    }
+    pub fn is_efsio_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::EFSIOError(_))
+    }
+    pub fn is_efs_mount_connectivity_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::EFSMountConnectivityError(_))
+    }
+    pub fn is_efs_mount_failure_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::EFSMountFailureError(_))
+    }
+    pub fn is_efs_mount_timeout_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::EFSMountTimeoutError(_))
+    }
+    pub fn is_eni_limit_reached_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::ENILimitReachedError(_))
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::InvalidParameterValueError(_))
+    }
+    pub fn is_invalid_request_content_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::InvalidRequestContentError(_))
+    }
+    pub fn is_invalid_runtime_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::InvalidRuntimeError(_))
+    }
+    pub fn is_invalid_security_group_id_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::InvalidSecurityGroupIDError(_))
+    }
+    pub fn is_invalid_subnet_id_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::InvalidSubnetIDError(_))
+    }
+    pub fn is_invalid_zip_file_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::InvalidZipFileError(_))
+    }
+    pub fn is_kms_access_denied_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::KMSAccessDeniedError(_))
+    }
+    pub fn is_kms_disabled_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::KMSDisabledError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_kms_not_found_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::KMSNotFoundError(_))
+    }
+    pub fn is_request_too_large_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::RequestTooLargeError(_))
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::ResourceConflictError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_resource_not_ready_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::ResourceNotReadyError(_))
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::ServiceError(_))
+    }
+    pub fn is_subnet_ip_address_limit_reached_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            InvokeErrorKind::SubnetIPAddressLimitReachedError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::TooManyRequestsError(_))
+    }
+    pub fn is_unsupported_media_type_error(&self) -> bool {
+        matches!(&self.kind, InvokeErrorKind::UnsupportedMediaTypeError(_))
+    }
 }
 impl std::error::Error for InvokeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2754,6 +3510,24 @@ impl InvokeAsyncError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_request_content_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            InvokeAsyncErrorKind::InvalidRequestContentError(_)
+        )
+    }
+    pub fn is_invalid_runtime_error(&self) -> bool {
+        matches!(&self.kind, InvokeAsyncErrorKind::InvalidRuntimeError(_))
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(&self.kind, InvokeAsyncErrorKind::ResourceConflictError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, InvokeAsyncErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, InvokeAsyncErrorKind::ServiceError(_))
+    }
 }
 impl std::error::Error for InvokeAsyncError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2839,6 +3613,21 @@ impl ListAliasesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAliasesErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListAliasesErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, ListAliasesErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, ListAliasesErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for ListAliasesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2918,6 +3707,15 @@ impl ListCodeSigningConfigsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListCodeSigningConfigsErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, ListCodeSigningConfigsErrorKind::ServiceError(_))
     }
 }
 impl std::error::Error for ListCodeSigningConfigsError {
@@ -3000,6 +3798,30 @@ impl ListEventSourceMappingsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventSourceMappingsErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventSourceMappingsErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventSourceMappingsErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEventSourceMappingsErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for ListEventSourceMappingsError {
@@ -3087,6 +3909,30 @@ impl ListFunctionEventInvokeConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFunctionEventInvokeConfigsErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFunctionEventInvokeConfigsErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFunctionEventInvokeConfigsErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFunctionEventInvokeConfigsErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for ListFunctionEventInvokeConfigsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3170,6 +4016,18 @@ impl ListFunctionsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFunctionsErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, ListFunctionsErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, ListFunctionsErrorKind::TooManyRequestsError(_))
     }
 }
 impl std::error::Error for ListFunctionsError {
@@ -3256,6 +4114,24 @@ impl ListFunctionsByCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFunctionsByCodeSigningConfigErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFunctionsByCodeSigningConfigErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListFunctionsByCodeSigningConfigErrorKind::ServiceError(_)
+        )
+    }
 }
 impl std::error::Error for ListFunctionsByCodeSigningConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3341,6 +4217,18 @@ impl ListLayersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLayersErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, ListLayersErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, ListLayersErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for ListLayersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3423,6 +4311,27 @@ impl ListLayerVersionsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLayerVersionsErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLayerVersionsErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, ListLayerVersionsErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListLayerVersionsErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for ListLayerVersionsError {
@@ -3517,6 +4426,30 @@ impl ListProvisionedConcurrencyConfigsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListProvisionedConcurrencyConfigsErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListProvisionedConcurrencyConfigsErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListProvisionedConcurrencyConfigsErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListProvisionedConcurrencyConfigsErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for ListProvisionedConcurrencyConfigsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3607,6 +4540,18 @@ impl ListTagsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(&self.kind, ListTagsErrorKind::InvalidParameterValueError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, ListTagsErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, ListTagsErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, ListTagsErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for ListTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3690,6 +4635,27 @@ impl ListVersionsByFunctionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVersionsByFunctionErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVersionsByFunctionErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, ListVersionsByFunctionErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListVersionsByFunctionErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for ListVersionsByFunctionError {
@@ -3776,6 +4742,33 @@ impl PublishLayerVersionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_code_storage_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishLayerVersionErrorKind::CodeStorageExceededError(_)
+        )
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishLayerVersionErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishLayerVersionErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, PublishLayerVersionErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishLayerVersionErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for PublishLayerVersionError {
@@ -3867,6 +4860,42 @@ impl PublishVersionError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_code_storage_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishVersionErrorKind::CodeStorageExceededError(_)
+        )
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishVersionErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_precondition_failed_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishVersionErrorKind::PreconditionFailedError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishVersionErrorKind::ResourceConflictError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishVersionErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, PublishVersionErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, PublishVersionErrorKind::TooManyRequestsError(_))
     }
 }
 impl std::error::Error for PublishVersionError {
@@ -3963,6 +4992,42 @@ impl PutFunctionCodeSigningConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_code_signing_config_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundError(_)
+        )
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFunctionCodeSigningConfigErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFunctionCodeSigningConfigErrorKind::ResourceConflictError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFunctionCodeSigningConfigErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFunctionCodeSigningConfigErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFunctionCodeSigningConfigErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for PutFunctionCodeSigningConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4055,6 +5120,33 @@ impl PutFunctionConcurrencyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFunctionConcurrencyErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFunctionConcurrencyErrorKind::ResourceConflictError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFunctionConcurrencyErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, PutFunctionConcurrencyErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFunctionConcurrencyErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for PutFunctionConcurrencyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4141,6 +5233,30 @@ impl PutFunctionEventInvokeConfigError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFunctionEventInvokeConfigErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFunctionEventInvokeConfigErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFunctionEventInvokeConfigErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFunctionEventInvokeConfigErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for PutFunctionEventInvokeConfigError {
@@ -4236,6 +5352,36 @@ impl PutProvisionedConcurrencyConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutProvisionedConcurrencyConfigErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutProvisionedConcurrencyConfigErrorKind::ResourceConflictError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutProvisionedConcurrencyConfigErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutProvisionedConcurrencyConfigErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutProvisionedConcurrencyConfigErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for PutProvisionedConcurrencyConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4327,6 +5473,36 @@ impl RemoveLayerVersionPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveLayerVersionPermissionErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_precondition_failed_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveLayerVersionPermissionErrorKind::PreconditionFailedError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveLayerVersionPermissionErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveLayerVersionPermissionErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemoveLayerVersionPermissionErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for RemoveLayerVersionPermissionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4416,6 +5592,33 @@ impl RemovePermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemovePermissionErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_precondition_failed_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemovePermissionErrorKind::PreconditionFailedError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemovePermissionErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, RemovePermissionErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemovePermissionErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for RemovePermissionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4503,6 +5706,24 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            TagResourceErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ResourceConflictError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4589,6 +5810,24 @@ impl UntagResourceError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ResourceConflictError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::TooManyRequestsError(_))
     }
 }
 impl std::error::Error for UntagResourceError {
@@ -4679,6 +5918,27 @@ impl UpdateAliasError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAliasErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_precondition_failed_error(&self) -> bool {
+        matches!(&self.kind, UpdateAliasErrorKind::PreconditionFailedError(_))
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(&self.kind, UpdateAliasErrorKind::ResourceConflictError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, UpdateAliasErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, UpdateAliasErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(&self.kind, UpdateAliasErrorKind::TooManyRequestsError(_))
+    }
 }
 impl std::error::Error for UpdateAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4762,6 +6022,24 @@ impl UpdateCodeSigningConfigError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCodeSigningConfigErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCodeSigningConfigErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateCodeSigningConfigErrorKind::ServiceError(_)
+        )
     }
 }
 impl std::error::Error for UpdateCodeSigningConfigError {
@@ -4849,6 +6127,42 @@ impl UpdateEventSourceMappingError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventSourceMappingErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventSourceMappingErrorKind::ResourceConflictError(_)
+        )
+    }
+    pub fn is_resource_in_use_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventSourceMappingErrorKind::ResourceInUseError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventSourceMappingErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventSourceMappingErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateEventSourceMappingErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for UpdateEventSourceMappingError {
@@ -4947,6 +6261,63 @@ impl UpdateFunctionCodeError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_code_signing_config_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionCodeErrorKind::CodeSigningConfigNotFoundError(_)
+        )
+    }
+    pub fn is_code_storage_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionCodeErrorKind::CodeStorageExceededError(_)
+        )
+    }
+    pub fn is_code_verification_failed_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionCodeErrorKind::CodeVerificationFailedError(_)
+        )
+    }
+    pub fn is_invalid_code_signature_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionCodeErrorKind::InvalidCodeSignatureError(_)
+        )
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionCodeErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_precondition_failed_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionCodeErrorKind::PreconditionFailedError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionCodeErrorKind::ResourceConflictError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionCodeErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(&self.kind, UpdateFunctionCodeErrorKind::ServiceError(_))
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionCodeErrorKind::TooManyRequestsError(_)
+        )
     }
 }
 impl std::error::Error for UpdateFunctionCodeError {
@@ -5056,6 +6427,60 @@ impl UpdateFunctionConfigurationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_code_signing_config_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionConfigurationErrorKind::CodeSigningConfigNotFoundError(_)
+        )
+    }
+    pub fn is_code_verification_failed_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionConfigurationErrorKind::CodeVerificationFailedError(_)
+        )
+    }
+    pub fn is_invalid_code_signature_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionConfigurationErrorKind::InvalidCodeSignatureError(_)
+        )
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionConfigurationErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_precondition_failed_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionConfigurationErrorKind::PreconditionFailedError(_)
+        )
+    }
+    pub fn is_resource_conflict_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionConfigurationErrorKind::ResourceConflictError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionConfigurationErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionConfigurationErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionConfigurationErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateFunctionConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5155,6 +6580,30 @@ impl UpdateFunctionEventInvokeConfigError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionEventInvokeConfigErrorKind::InvalidParameterValueError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionEventInvokeConfigErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_service_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionEventInvokeConfigErrorKind::ServiceError(_)
+        )
+    }
+    pub fn is_too_many_requests_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionEventInvokeConfigErrorKind::TooManyRequestsError(_)
+        )
+    }
 }
 impl std::error::Error for UpdateFunctionEventInvokeConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5226,42 +6675,42 @@ pub mod too_many_requests_error {
     }
     impl Builder {
         /// <p>The number of seconds the caller should wait before retrying.</p>
-        pub fn retry_after_seconds(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.retry_after_seconds = Some(inp.into());
+        pub fn retry_after_seconds(mut self, input: impl Into<std::string::String>) -> Self {
+            self.retry_after_seconds = Some(input.into());
             self
         }
         pub fn set_retry_after_seconds(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.retry_after_seconds = inp;
+            self.retry_after_seconds = input;
             self
         }
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
-        pub fn reason(mut self, inp: crate::model::ThrottleReason) -> Self {
-            self.reason = Some(inp);
+        pub fn reason(mut self, input: crate::model::ThrottleReason) -> Self {
+            self.reason = Some(input);
             self
         }
         pub fn set_reason(
             mut self,
-            inp: std::option::Option<crate::model::ThrottleReason>,
+            input: std::option::Option<crate::model::ThrottleReason>,
         ) -> Self {
-            self.reason = inp;
+            self.reason = input;
             self
         }
         /// Consumes the builder and constructs a [`TooManyRequestsError`](crate::error::TooManyRequestsError)
@@ -5326,20 +6775,20 @@ pub mod service_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceError`](crate::error::ServiceError)
@@ -5402,20 +6851,20 @@ pub mod resource_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
@@ -5484,21 +6933,21 @@ pub mod invalid_parameter_value_error {
     }
     impl Builder {
         /// <p>The exception type.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The exception message.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidParameterValueError`](crate::error::InvalidParameterValueError)
@@ -5564,21 +7013,21 @@ pub mod resource_conflict_error {
     }
     impl Builder {
         /// <p>The exception type.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The exception message.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceConflictError`](crate::error::ResourceConflictError)
@@ -5646,21 +7095,21 @@ pub mod precondition_failed_error {
     }
     impl Builder {
         /// <p>The exception type.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The exception message.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`PreconditionFailedError`](crate::error::PreconditionFailedError)
@@ -5727,20 +7176,20 @@ pub mod invalid_code_signature_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidCodeSignatureError`](crate::error::InvalidCodeSignatureError)
@@ -5807,20 +7256,20 @@ pub mod code_verification_failed_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CodeVerificationFailedError`](crate::error::CodeVerificationFailedError)
@@ -5886,20 +7335,20 @@ pub mod code_signing_config_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CodeSigningConfigNotFoundError`](crate::error::CodeSigningConfigNotFoundError)
@@ -5965,20 +7414,20 @@ pub mod code_storage_exceeded_error {
     }
     impl Builder {
         /// <p>The exception type.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`CodeStorageExceededError`](crate::error::CodeStorageExceededError)
@@ -6042,20 +7491,20 @@ pub mod resource_in_use_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceInUseError`](crate::error::ResourceInUseError)
@@ -6118,20 +7567,20 @@ pub mod invalid_runtime_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidRuntimeError`](crate::error::InvalidRuntimeError)
@@ -6200,21 +7649,21 @@ pub mod invalid_request_content_error {
     }
     impl Builder {
         /// <p>The exception type.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The exception message.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidRequestContentError`](crate::error::InvalidRequestContentError)
@@ -6280,20 +7729,20 @@ pub mod unsupported_media_type_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UnsupportedMediaTypeError`](crate::error::UnsupportedMediaTypeError)
@@ -6360,20 +7809,20 @@ pub mod subnet_ip_address_limit_reached_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`SubnetIPAddressLimitReachedError`](crate::error::SubnetIPAddressLimitReachedError)
@@ -6440,21 +7889,21 @@ pub mod resource_not_ready_error {
     }
     impl Builder {
         /// <p>The exception type.</p>
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The exception message.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceNotReadyError`](crate::error::ResourceNotReadyError)
@@ -6518,20 +7967,20 @@ pub mod request_too_large_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`RequestTooLargeError`](crate::error::RequestTooLargeError)
@@ -6595,20 +8044,20 @@ pub mod kms_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSNotFoundError`](crate::error::KMSNotFoundError)
@@ -6672,20 +8121,20 @@ pub mod kms_invalid_state_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
@@ -6749,20 +8198,20 @@ pub mod kms_disabled_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSDisabledError`](crate::error::KMSDisabledError)
@@ -6826,20 +8275,20 @@ pub mod kms_access_denied_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
@@ -6902,20 +8351,20 @@ pub mod invalid_zip_file_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidZipFileError`](crate::error::InvalidZipFileError)
@@ -6978,20 +8427,20 @@ pub mod invalid_subnet_id_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidSubnetIDError`](crate::error::InvalidSubnetIDError)
@@ -7057,20 +8506,20 @@ pub mod invalid_security_group_id_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidSecurityGroupIDError`](crate::error::InvalidSecurityGroupIDError)
@@ -7134,20 +8583,20 @@ pub mod eni_limit_reached_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ENILimitReachedError`](crate::error::ENILimitReachedError)
@@ -7211,20 +8660,20 @@ pub mod efs_mount_timeout_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`EFSMountTimeoutError`](crate::error::EFSMountTimeoutError)
@@ -7287,20 +8736,20 @@ pub mod efs_mount_failure_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`EFSMountFailureError`](crate::error::EFSMountFailureError)
@@ -7366,20 +8815,20 @@ pub mod efs_mount_connectivity_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`EFSMountConnectivityError`](crate::error::EFSMountConnectivityError)
@@ -7442,20 +8891,20 @@ pub mod efsio_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`EFSIOError`](crate::error::EFSIOError)
@@ -7523,28 +8972,31 @@ pub mod ec2_unexpected_error {
         pub(crate) ec2_error_code: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
-        pub fn ec2_error_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ec2_error_code = Some(inp.into());
+        pub fn ec2_error_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ec2_error_code = Some(input.into());
             self
         }
-        pub fn set_ec2_error_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ec2_error_code = inp;
+        pub fn set_ec2_error_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ec2_error_code = input;
             self
         }
         /// Consumes the builder and constructs a [`EC2UnexpectedError`](crate::error::EC2UnexpectedError)
@@ -7609,20 +9061,20 @@ pub mod ec2_throttled_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`EC2ThrottledError`](crate::error::EC2ThrottledError)
@@ -7685,20 +9137,20 @@ pub mod ec2_access_denied_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`EC2AccessDeniedError`](crate::error::EC2AccessDeniedError)
@@ -7761,20 +9213,20 @@ pub mod provisioned_concurrency_config_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ProvisionedConcurrencyConfigNotFoundError`](crate::error::ProvisionedConcurrencyConfigNotFoundError)
@@ -7841,20 +9293,20 @@ pub mod policy_length_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn r#type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(inp.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
             self
         }
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`PolicyLengthExceededError`](crate::error::PolicyLengthExceededError)

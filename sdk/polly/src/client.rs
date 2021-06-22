@@ -83,7 +83,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteLexiconOutput,
             smithy_http::result::SdkError<crate::error::DeleteLexiconError>,
         >
@@ -100,12 +100,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -124,7 +124,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeVoicesOutput,
             smithy_http::result::SdkError<crate::error::DescribeVoicesError>,
         >
@@ -142,26 +142,26 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly
         /// when processing input text for speech synthesis. </p>
-        pub fn engine(mut self, inp: crate::model::Engine) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, input: crate::model::Engine) -> Self {
+            self.inner = self.inner.engine(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<crate::model::Engine>) -> Self {
-            self.inner = self.inner.set_engine(inp);
+        pub fn set_engine(mut self, input: std::option::Option<crate::model::Engine>) -> Self {
+            self.inner = self.inner.set_engine(input);
             self
         }
         /// <p> The language identification tag (ISO 639 code for the language name-ISO 3166 country
         /// code) for filtering the list of voices returned. If you don't specify this optional parameter,
         /// all available voices are returned. </p>
-        pub fn language_code(mut self, inp: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(inp);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
         pub fn set_language_code(
             mut self,
-            inp: std::option::Option<crate::model::LanguageCode>,
+            input: std::option::Option<crate::model::LanguageCode>,
         ) -> Self {
-            self.inner = self.inner.set_language_code(inp);
+            self.inner = self.inner.set_language_code(input);
             self
         }
         /// <p>Boolean value indicating whether to return any bilingual voices that use the specified
@@ -169,22 +169,25 @@ pub mod fluent_builders {
         /// English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US
         /// English, that voice will be included if you specify <code>yes</code> but not if you specify
         /// <code>no</code>.</p>
-        pub fn include_additional_language_codes(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_additional_language_codes(inp);
+        pub fn include_additional_language_codes(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_additional_language_codes(input);
             self
         }
-        pub fn set_include_additional_language_codes(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_include_additional_language_codes(inp);
+        pub fn set_include_additional_language_codes(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_include_additional_language_codes(input);
             self
         }
         /// <p>An opaque pagination token returned from the previous <code>DescribeVoices</code>
         /// operation. If present, this indicates where to continue the listing.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -203,7 +206,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetLexiconOutput,
             smithy_http::result::SdkError<crate::error::GetLexiconError>,
         >
@@ -220,12 +223,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the lexicon.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
     }
@@ -244,7 +247,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetSpeechSynthesisTaskOutput,
             smithy_http::result::SdkError<crate::error::GetSpeechSynthesisTaskError>,
         >
@@ -261,12 +264,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(inp);
+        pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(input);
             self
         }
-        pub fn set_task_id(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_task_id(inp);
+        pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_task_id(input);
             self
         }
     }
@@ -285,7 +288,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListLexiconsOutput,
             smithy_http::result::SdkError<crate::error::ListLexiconsError>,
         >
@@ -303,12 +306,12 @@ pub mod fluent_builders {
         }
         /// <p>An opaque pagination token returned from previous <code>ListLexicons</code> operation.
         /// If present, indicates where to continue the list of lexicons.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -327,7 +330,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListSpeechSynthesisTasksOutput,
             smithy_http::result::SdkError<crate::error::ListSpeechSynthesisTasksError>,
         >
@@ -344,31 +347,31 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The pagination token to use in the next request to continue the listing of speech
         /// synthesis tasks. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Status of the speech synthesis tasks returned in a List operation</p>
-        pub fn status(mut self, inp: crate::model::TaskStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::TaskStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::TaskStatus>) -> Self {
-            self.inner = self.inner.set_status(inp);
+        pub fn set_status(mut self, input: std::option::Option<crate::model::TaskStatus>) -> Self {
+            self.inner = self.inner.set_status(input);
             self
         }
     }
@@ -387,7 +390,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::PutLexiconOutput,
             smithy_http::result::SdkError<crate::error::PutLexiconError>,
         >
@@ -405,21 +408,21 @@ pub mod fluent_builders {
         }
         /// <p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}.
         /// That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(inp);
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_name(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
             self
         }
         /// <p>Content of the PLS lexicon as string data.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(inp);
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input);
             self
         }
-        pub fn set_content(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_content(inp);
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_content(input);
             self
         }
     }
@@ -438,7 +441,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StartSpeechSynthesisTaskOutput,
             smithy_http::result::SdkError<crate::error::StartSpeechSynthesisTaskError>,
         >
@@ -457,12 +460,12 @@ pub mod fluent_builders {
         /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to
         /// use when processing input text for speech synthesis. Using a voice that is not supported for
         /// the engine selected will result in an error.</p>
-        pub fn engine(mut self, inp: crate::model::Engine) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, input: crate::model::Engine) -> Self {
+            self.inner = self.inner.engine(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<crate::model::Engine>) -> Self {
-            self.inner = self.inner.set_engine(inp);
+        pub fn set_engine(mut self, input: std::option::Option<crate::model::Engine>) -> Self {
+            self.inner = self.inner.set_engine(input);
             self
         }
         /// <p>Optional language code for the Speech Synthesis request. This is only necessary if using a
@@ -472,15 +475,15 @@ pub mod fluent_builders {
         /// default language of the bilingual voice. The default language for any voice is the one
         /// returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example,
         /// if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
-        pub fn language_code(mut self, inp: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(inp);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
         pub fn set_language_code(
             mut self,
-            inp: std::option::Option<crate::model::LanguageCode>,
+            input: std::option::Option<crate::model::LanguageCode>,
         ) -> Self {
-            self.inner = self.inner.set_language_code(inp);
+            self.inner = self.inner.set_language_code(input);
             self
         }
         /// <p>List of one or more pronunciation lexicon names you want the service to apply during
@@ -492,46 +495,46 @@ pub mod fluent_builders {
         }
         pub fn set_lexicon_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_lexicon_names(inp);
+            self.inner = self.inner.set_lexicon_names(input);
             self
         }
         /// <p>The format in which the returned output will be encoded. For audio stream, this will be
         /// mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
-        pub fn output_format(mut self, inp: crate::model::OutputFormat) -> Self {
-            self.inner = self.inner.output_format(inp);
+        pub fn output_format(mut self, input: crate::model::OutputFormat) -> Self {
+            self.inner = self.inner.output_format(input);
             self
         }
         pub fn set_output_format(
             mut self,
-            inp: std::option::Option<crate::model::OutputFormat>,
+            input: std::option::Option<crate::model::OutputFormat>,
         ) -> Self {
-            self.inner = self.inner.set_output_format(inp);
+            self.inner = self.inner.set_output_format(input);
             self
         }
         /// <p>Amazon S3 bucket name to which the output file will be saved.</p>
-        pub fn output_s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_s3_bucket_name(inp);
+        pub fn output_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_s3_bucket_name(input);
             self
         }
         pub fn set_output_s3_bucket_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_output_s3_bucket_name(inp);
+            self.inner = self.inner.set_output_s3_bucket_name(input);
             self
         }
         /// <p>The Amazon S3 key prefix for the output speech file.</p>
-        pub fn output_s3_key_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_s3_key_prefix(inp);
+        pub fn output_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_s3_key_prefix(input);
             self
         }
         pub fn set_output_s3_key_prefix(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_output_s3_key_prefix(inp);
+            self.inner = self.inner.set_output_s3_key_prefix(input);
             self
         }
         /// <p>The audio frequency specified in Hz.</p>
@@ -539,22 +542,25 @@ pub mod fluent_builders {
         /// default value for standard voices is "22050". The default value for neural voices is
         /// "24000".</p>
         /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
-        pub fn sample_rate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sample_rate(inp);
+        pub fn sample_rate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sample_rate(input);
             self
         }
-        pub fn set_sample_rate(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_sample_rate(inp);
+        pub fn set_sample_rate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_sample_rate(input);
             self
         }
         /// <p>ARN for the SNS topic optionally used for providing status notification for a speech
         /// synthesis task.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(inp);
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input);
             self
         }
-        pub fn set_sns_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_sns_topic_arn(inp);
+        pub fn set_sns_topic_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_sns_topic_arn(input);
             self
         }
         /// <p>The type of speech marks returned for the input text.</p>
@@ -564,38 +570,38 @@ pub mod fluent_builders {
         }
         pub fn set_speech_mark_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
         ) -> Self {
-            self.inner = self.inner.set_speech_mark_types(inp);
+            self.inner = self.inner.set_speech_mark_types(input);
             self
         }
         /// <p>The input text to synthesize. If you specify ssml as the TextType, follow the SSML format
         /// for the input text. </p>
-        pub fn text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(inp);
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.text(input);
             self
         }
-        pub fn set_text(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_text(inp);
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_text(input);
             self
         }
         /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text.
         /// </p>
-        pub fn text_type(mut self, inp: crate::model::TextType) -> Self {
-            self.inner = self.inner.text_type(inp);
+        pub fn text_type(mut self, input: crate::model::TextType) -> Self {
+            self.inner = self.inner.text_type(input);
             self
         }
-        pub fn set_text_type(mut self, inp: std::option::Option<crate::model::TextType>) -> Self {
-            self.inner = self.inner.set_text_type(inp);
+        pub fn set_text_type(mut self, input: std::option::Option<crate::model::TextType>) -> Self {
+            self.inner = self.inner.set_text_type(input);
             self
         }
         /// <p>Voice ID to use for the synthesis. </p>
-        pub fn voice_id(mut self, inp: crate::model::VoiceId) -> Self {
-            self.inner = self.inner.voice_id(inp);
+        pub fn voice_id(mut self, input: crate::model::VoiceId) -> Self {
+            self.inner = self.inner.voice_id(input);
             self
         }
-        pub fn set_voice_id(mut self, inp: std::option::Option<crate::model::VoiceId>) -> Self {
-            self.inner = self.inner.set_voice_id(inp);
+        pub fn set_voice_id(mut self, input: std::option::Option<crate::model::VoiceId>) -> Self {
+            self.inner = self.inner.set_voice_id(input);
             self
         }
     }
@@ -614,7 +620,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SynthesizeSpeechOutput,
             smithy_http::result::SdkError<crate::error::SynthesizeSpeechError>,
         >
@@ -649,12 +655,12 @@ pub mod fluent_builders {
         /// <p>For standard voices, this is not required; the engine parameter defaults to
         /// <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and
         /// an NTTS-only voice is selected, this will result in an error. </p>
-        pub fn engine(mut self, inp: crate::model::Engine) -> Self {
-            self.inner = self.inner.engine(inp);
+        pub fn engine(mut self, input: crate::model::Engine) -> Self {
+            self.inner = self.inner.engine(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<crate::model::Engine>) -> Self {
-            self.inner = self.inner.set_engine(inp);
+        pub fn set_engine(mut self, input: std::option::Option<crate::model::Engine>) -> Self {
+            self.inner = self.inner.set_engine(input);
             self
         }
         /// <p>Optional language code for the Synthesize Speech request. This is only necessary if using
@@ -664,15 +670,15 @@ pub mod fluent_builders {
         /// default language of the bilingual voice. The default language for any voice is the one
         /// returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example,
         /// if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
-        pub fn language_code(mut self, inp: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(inp);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
         pub fn set_language_code(
             mut self,
-            inp: std::option::Option<crate::model::LanguageCode>,
+            input: std::option::Option<crate::model::LanguageCode>,
         ) -> Self {
-            self.inner = self.inner.set_language_code(inp);
+            self.inner = self.inner.set_language_code(input);
             self
         }
         /// <p>List of one or more pronunciation lexicon names you want the service to apply during
@@ -684,24 +690,24 @@ pub mod fluent_builders {
         }
         pub fn set_lexicon_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_lexicon_names(inp);
+            self.inner = self.inner.set_lexicon_names(input);
             self
         }
         /// <p> The format in which the returned output will be encoded. For audio stream, this will
         /// be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
         /// <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel
         /// (mono), little-endian format. </p>
-        pub fn output_format(mut self, inp: crate::model::OutputFormat) -> Self {
-            self.inner = self.inner.output_format(inp);
+        pub fn output_format(mut self, input: crate::model::OutputFormat) -> Self {
+            self.inner = self.inner.output_format(input);
             self
         }
         pub fn set_output_format(
             mut self,
-            inp: std::option::Option<crate::model::OutputFormat>,
+            input: std::option::Option<crate::model::OutputFormat>,
         ) -> Self {
-            self.inner = self.inner.set_output_format(inp);
+            self.inner = self.inner.set_output_format(input);
             self
         }
         /// <p>The audio frequency specified in Hz.</p>
@@ -709,12 +715,12 @@ pub mod fluent_builders {
         /// default value for standard voices is "22050". The default value for neural voices is
         /// "24000".</p>
         /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
-        pub fn sample_rate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sample_rate(inp);
+        pub fn sample_rate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sample_rate(input);
             self
         }
-        pub fn set_sample_rate(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_sample_rate(inp);
+        pub fn set_sample_rate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_sample_rate(input);
             self
         }
         /// <p>The type of speech marks returned for the input text.</p>
@@ -724,39 +730,39 @@ pub mod fluent_builders {
         }
         pub fn set_speech_mark_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
         ) -> Self {
-            self.inner = self.inner.set_speech_mark_types(inp);
+            self.inner = self.inner.set_speech_mark_types(input);
             self
         }
         /// <p> Input text to synthesize. If you specify <code>ssml</code> as the
         /// <code>TextType</code>, follow the SSML format for the input text. </p>
-        pub fn text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(inp);
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.text(input);
             self
         }
-        pub fn set_text(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_text(inp);
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_text(input);
             self
         }
         /// <p> Specifies whether the input text is plain text or SSML. The default value is plain
         /// text. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using SSML</a>.</p>
-        pub fn text_type(mut self, inp: crate::model::TextType) -> Self {
-            self.inner = self.inner.text_type(inp);
+        pub fn text_type(mut self, input: crate::model::TextType) -> Self {
+            self.inner = self.inner.text_type(input);
             self
         }
-        pub fn set_text_type(mut self, inp: std::option::Option<crate::model::TextType>) -> Self {
-            self.inner = self.inner.set_text_type(inp);
+        pub fn set_text_type(mut self, input: std::option::Option<crate::model::TextType>) -> Self {
+            self.inner = self.inner.set_text_type(input);
             self
         }
         /// <p> Voice ID to use for the synthesis. You can get a list of available voice IDs by
         /// calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. </p>
-        pub fn voice_id(mut self, inp: crate::model::VoiceId) -> Self {
-            self.inner = self.inner.voice_id(inp);
+        pub fn voice_id(mut self, input: crate::model::VoiceId) -> Self {
+            self.inner = self.inner.voice_id(input);
             self
         }
-        pub fn set_voice_id(mut self, inp: std::option::Option<crate::model::VoiceId>) -> Self {
-            self.inner = self.inner.set_voice_id(inp);
+        pub fn set_voice_id(mut self, input: std::option::Option<crate::model::VoiceId>) -> Self {
+            self.inner = self.inner.set_voice_id(input);
             self
         }
     }

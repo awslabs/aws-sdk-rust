@@ -18,7 +18,8 @@ impl DeleteLexicon {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteLexicon {
-    type Output = Result<crate::output::DeleteLexiconOutput, crate::error::DeleteLexiconError>;
+    type Output =
+        std::result::Result<crate::output::DeleteLexiconOutput, crate::error::DeleteLexiconError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_lexicon_error(response)
@@ -56,7 +57,8 @@ impl DescribeVoices {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeVoices {
-    type Output = Result<crate::output::DescribeVoicesOutput, crate::error::DescribeVoicesError>;
+    type Output =
+        std::result::Result<crate::output::DescribeVoicesOutput, crate::error::DescribeVoicesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_voices_error(response)
@@ -83,7 +85,8 @@ impl GetLexicon {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetLexicon {
-    type Output = Result<crate::output::GetLexiconOutput, crate::error::GetLexiconError>;
+    type Output =
+        std::result::Result<crate::output::GetLexiconOutput, crate::error::GetLexiconError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_lexicon_error(response)
@@ -110,7 +113,7 @@ impl GetSpeechSynthesisTask {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetSpeechSynthesisTask {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetSpeechSynthesisTaskOutput,
         crate::error::GetSpeechSynthesisTaskError,
     >;
@@ -140,7 +143,8 @@ impl ListLexicons {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListLexicons {
-    type Output = Result<crate::output::ListLexiconsOutput, crate::error::ListLexiconsError>;
+    type Output =
+        std::result::Result<crate::output::ListLexiconsOutput, crate::error::ListLexiconsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_lexicons_error(response)
@@ -167,7 +171,7 @@ impl ListSpeechSynthesisTasks {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListSpeechSynthesisTasks {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListSpeechSynthesisTasksOutput,
         crate::error::ListSpeechSynthesisTasksError,
     >;
@@ -200,7 +204,8 @@ impl PutLexicon {
     }
 }
 impl smithy_http::response::ParseStrictResponse for PutLexicon {
-    type Output = Result<crate::output::PutLexiconOutput, crate::error::PutLexiconError>;
+    type Output =
+        std::result::Result<crate::output::PutLexiconOutput, crate::error::PutLexiconError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_lexicon_error(response)
@@ -230,7 +235,7 @@ impl StartSpeechSynthesisTask {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StartSpeechSynthesisTask {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::StartSpeechSynthesisTaskOutput,
         crate::error::StartSpeechSynthesisTaskError,
     >;
@@ -262,8 +267,10 @@ impl SynthesizeSpeech {
     }
 }
 impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for SynthesizeSpeech {
-    type Output =
-        Result<crate::output::SynthesizeSpeechOutput, crate::error::SynthesizeSpeechError>;
+    type Output = std::result::Result<
+        crate::output::SynthesizeSpeechOutput,
+        crate::error::SynthesizeSpeechError,
+    >;
     fn parse_unloaded(
         &self,
         response: &mut http::Response<smithy_http::body::SdkBody>,

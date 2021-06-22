@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_job_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CancelJobOutput, crate::error::CancelJobError> {
+) -> std::result::Result<crate::output::CancelJobOutput, crate::error::CancelJobError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CancelJobError::unhandled)?;
     let error_code = match generic.code() {
@@ -39,7 +39,7 @@ pub fn parse_cancel_job_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_cancel_job_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CancelJobOutput, crate::error::CancelJobError> {
+) -> std::result::Result<crate::output::CancelJobOutput, crate::error::CancelJobError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_job_output::Builder::default();
@@ -51,7 +51,7 @@ pub fn parse_cancel_job_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_compute_environment_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateComputeEnvironmentOutput,
     crate::error::CreateComputeEnvironmentError,
 > {
@@ -95,7 +95,7 @@ pub fn parse_create_compute_environment_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_compute_environment_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::CreateComputeEnvironmentOutput,
     crate::error::CreateComputeEnvironmentError,
 > {
@@ -115,7 +115,7 @@ pub fn parse_create_compute_environment_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_job_queue_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateJobQueueOutput, crate::error::CreateJobQueueError> {
+) -> std::result::Result<crate::output::CreateJobQueueOutput, crate::error::CreateJobQueueError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateJobQueueError::unhandled)?;
     let error_code = match generic.code() {
@@ -152,7 +152,7 @@ pub fn parse_create_job_queue_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_job_queue_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateJobQueueOutput, crate::error::CreateJobQueueError> {
+) -> std::result::Result<crate::output::CreateJobQueueOutput, crate::error::CreateJobQueueError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_job_queue_output::Builder::default();
@@ -167,7 +167,7 @@ pub fn parse_create_job_queue_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_compute_environment_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteComputeEnvironmentOutput,
     crate::error::DeleteComputeEnvironmentError,
 > {
@@ -211,7 +211,7 @@ pub fn parse_delete_compute_environment_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_compute_environment_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DeleteComputeEnvironmentOutput,
     crate::error::DeleteComputeEnvironmentError,
 > {
@@ -226,7 +226,7 @@ pub fn parse_delete_compute_environment_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_job_queue_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteJobQueueOutput, crate::error::DeleteJobQueueError> {
+) -> std::result::Result<crate::output::DeleteJobQueueOutput, crate::error::DeleteJobQueueError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteJobQueueError::unhandled)?;
     let error_code = match generic.code() {
@@ -263,7 +263,7 @@ pub fn parse_delete_job_queue_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_job_queue_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteJobQueueOutput, crate::error::DeleteJobQueueError> {
+) -> std::result::Result<crate::output::DeleteJobQueueOutput, crate::error::DeleteJobQueueError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_job_queue_output::Builder::default();
@@ -275,8 +275,10 @@ pub fn parse_delete_job_queue_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deregister_job_definition_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeregisterJobDefinitionOutput, crate::error::DeregisterJobDefinitionError>
-{
+) -> std::result::Result<
+    crate::output::DeregisterJobDefinitionOutput,
+    crate::error::DeregisterJobDefinitionError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DeregisterJobDefinitionError::unhandled)?;
     let error_code = match generic.code() {
@@ -317,8 +319,10 @@ pub fn parse_deregister_job_definition_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_deregister_job_definition_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeregisterJobDefinitionOutput, crate::error::DeregisterJobDefinitionError>
-{
+) -> std::result::Result<
+    crate::output::DeregisterJobDefinitionOutput,
+    crate::error::DeregisterJobDefinitionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::deregister_job_definition_output::Builder::default();
@@ -330,7 +334,7 @@ pub fn parse_deregister_job_definition_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_compute_environments_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeComputeEnvironmentsOutput,
     crate::error::DescribeComputeEnvironmentsError,
 > {
@@ -374,7 +378,7 @@ pub fn parse_describe_compute_environments_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_compute_environments_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::DescribeComputeEnvironmentsOutput,
     crate::error::DescribeComputeEnvironmentsError,
 > {
@@ -394,8 +398,10 @@ pub fn parse_describe_compute_environments_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_job_definitions_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeJobDefinitionsOutput, crate::error::DescribeJobDefinitionsError>
-{
+) -> std::result::Result<
+    crate::output::DescribeJobDefinitionsOutput,
+    crate::error::DescribeJobDefinitionsError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeJobDefinitionsError::unhandled)?;
     let error_code = match generic.code() {
@@ -436,8 +442,10 @@ pub fn parse_describe_job_definitions_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_job_definitions_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeJobDefinitionsOutput, crate::error::DescribeJobDefinitionsError>
-{
+) -> std::result::Result<
+    crate::output::DescribeJobDefinitionsOutput,
+    crate::error::DescribeJobDefinitionsError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_job_definitions_output::Builder::default();
@@ -454,7 +462,8 @@ pub fn parse_describe_job_definitions_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_job_queues_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeJobQueuesOutput, crate::error::DescribeJobQueuesError> {
+) -> std::result::Result<crate::output::DescribeJobQueuesOutput, crate::error::DescribeJobQueuesError>
+{
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeJobQueuesError::unhandled)?;
     let error_code = match generic.code() {
@@ -491,7 +500,8 @@ pub fn parse_describe_job_queues_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_job_queues_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeJobQueuesOutput, crate::error::DescribeJobQueuesError> {
+) -> std::result::Result<crate::output::DescribeJobQueuesOutput, crate::error::DescribeJobQueuesError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_job_queues_output::Builder::default();
@@ -508,7 +518,7 @@ pub fn parse_describe_job_queues_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_jobs_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeJobsOutput, crate::error::DescribeJobsError> {
+) -> std::result::Result<crate::output::DescribeJobsOutput, crate::error::DescribeJobsError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::DescribeJobsError::unhandled)?;
     let error_code = match generic.code() {
@@ -545,7 +555,7 @@ pub fn parse_describe_jobs_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_jobs_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DescribeJobsOutput, crate::error::DescribeJobsError> {
+) -> std::result::Result<crate::output::DescribeJobsOutput, crate::error::DescribeJobsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::describe_jobs_output::Builder::default();
@@ -559,7 +569,7 @@ pub fn parse_describe_jobs_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_jobs_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListJobsOutput, crate::error::ListJobsError> {
+) -> std::result::Result<crate::output::ListJobsOutput, crate::error::ListJobsError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListJobsError::unhandled)?;
     let error_code = match generic.code() {
@@ -596,7 +606,7 @@ pub fn parse_list_jobs_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_jobs_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListJobsOutput, crate::error::ListJobsError> {
+) -> std::result::Result<crate::output::ListJobsOutput, crate::error::ListJobsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_jobs_output::Builder::default();
@@ -610,7 +620,10 @@ pub fn parse_list_jobs_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_for_resource_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError> {
+) -> std::result::Result<
+    crate::output::ListTagsForResourceOutput,
+    crate::error::ListTagsForResourceError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
@@ -647,7 +660,10 @@ pub fn parse_list_tags_for_resource_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_tags_for_resource_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError> {
+) -> std::result::Result<
+    crate::output::ListTagsForResourceOutput,
+    crate::error::ListTagsForResourceError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_tags_for_resource_output::Builder::default();
@@ -664,7 +680,10 @@ pub fn parse_list_tags_for_resource_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_register_job_definition_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RegisterJobDefinitionOutput, crate::error::RegisterJobDefinitionError> {
+) -> std::result::Result<
+    crate::output::RegisterJobDefinitionOutput,
+    crate::error::RegisterJobDefinitionError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::RegisterJobDefinitionError::unhandled)?;
     let error_code = match generic.code() {
@@ -701,7 +720,10 @@ pub fn parse_register_job_definition_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_register_job_definition_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RegisterJobDefinitionOutput, crate::error::RegisterJobDefinitionError> {
+) -> std::result::Result<
+    crate::output::RegisterJobDefinitionOutput,
+    crate::error::RegisterJobDefinitionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::register_job_definition_output::Builder::default();
@@ -718,7 +740,7 @@ pub fn parse_register_job_definition_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_submit_job_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SubmitJobOutput, crate::error::SubmitJobError> {
+) -> std::result::Result<crate::output::SubmitJobOutput, crate::error::SubmitJobError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::SubmitJobError::unhandled)?;
     let error_code = match generic.code() {
@@ -755,7 +777,7 @@ pub fn parse_submit_job_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_submit_job_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SubmitJobOutput, crate::error::SubmitJobError> {
+) -> std::result::Result<crate::output::SubmitJobOutput, crate::error::SubmitJobError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::submit_job_output::Builder::default();
@@ -769,7 +791,7 @@ pub fn parse_submit_job_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
+) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
@@ -806,7 +828,7 @@ pub fn parse_tag_resource_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_resource_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
+) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::tag_resource_output::Builder::default();
@@ -818,7 +840,7 @@ pub fn parse_tag_resource_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_terminate_job_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TerminateJobOutput, crate::error::TerminateJobError> {
+) -> std::result::Result<crate::output::TerminateJobOutput, crate::error::TerminateJobError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::TerminateJobError::unhandled)?;
     let error_code = match generic.code() {
@@ -855,7 +877,7 @@ pub fn parse_terminate_job_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_terminate_job_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TerminateJobOutput, crate::error::TerminateJobError> {
+) -> std::result::Result<crate::output::TerminateJobOutput, crate::error::TerminateJobError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::terminate_job_output::Builder::default();
@@ -867,7 +889,7 @@ pub fn parse_terminate_job_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
+) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
@@ -904,7 +926,7 @@ pub fn parse_untag_resource_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_resource_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
+) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
@@ -916,7 +938,7 @@ pub fn parse_untag_resource_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_compute_environment_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateComputeEnvironmentOutput,
     crate::error::UpdateComputeEnvironmentError,
 > {
@@ -960,7 +982,7 @@ pub fn parse_update_compute_environment_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_compute_environment_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::UpdateComputeEnvironmentOutput,
     crate::error::UpdateComputeEnvironmentError,
 > {
@@ -980,7 +1002,7 @@ pub fn parse_update_compute_environment_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_job_queue_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateJobQueueOutput, crate::error::UpdateJobQueueError> {
+) -> std::result::Result<crate::output::UpdateJobQueueOutput, crate::error::UpdateJobQueueError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::UpdateJobQueueError::unhandled)?;
     let error_code = match generic.code() {
@@ -1017,7 +1039,7 @@ pub fn parse_update_job_queue_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_job_queue_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UpdateJobQueueOutput, crate::error::UpdateJobQueueError> {
+) -> std::result::Result<crate::output::UpdateJobQueueOutput, crate::error::UpdateJobQueueError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::update_job_queue_output::Builder::default();

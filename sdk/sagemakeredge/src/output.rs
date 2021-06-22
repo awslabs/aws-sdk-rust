@@ -55,24 +55,24 @@ pub mod get_device_registration_output {
     }
     impl Builder {
         /// <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
-        pub fn device_registration(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.device_registration = Some(inp.into());
+        pub fn device_registration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.device_registration = Some(input.into());
             self
         }
         pub fn set_device_registration(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.device_registration = inp;
+            self.device_registration = input;
             self
         }
         /// <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
-        pub fn cache_ttl(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.cache_ttl = Some(inp.into());
+        pub fn cache_ttl(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cache_ttl = Some(input.into());
             self
         }
-        pub fn set_cache_ttl(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.cache_ttl = inp;
+        pub fn set_cache_ttl(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cache_ttl = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput)

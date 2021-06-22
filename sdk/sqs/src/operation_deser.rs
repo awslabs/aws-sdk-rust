@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_permission_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError> {
+) -> std::result::Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::AddPermissionError::unhandled)?;
     let error_code = match generic.code() {
@@ -31,7 +31,7 @@ pub fn parse_add_permission_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_add_permission_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError> {
+) -> std::result::Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::add_permission_output::Builder::default();
@@ -43,8 +43,10 @@ pub fn parse_add_permission_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_change_message_visibility_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ChangeMessageVisibilityOutput, crate::error::ChangeMessageVisibilityError>
-{
+) -> std::result::Result<
+    crate::output::ChangeMessageVisibilityOutput,
+    crate::error::ChangeMessageVisibilityError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ChangeMessageVisibilityError::unhandled)?;
     let error_code = match generic.code() {
@@ -91,8 +93,10 @@ pub fn parse_change_message_visibility_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_change_message_visibility_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ChangeMessageVisibilityOutput, crate::error::ChangeMessageVisibilityError>
-{
+) -> std::result::Result<
+    crate::output::ChangeMessageVisibilityOutput,
+    crate::error::ChangeMessageVisibilityError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::change_message_visibility_output::Builder::default();
@@ -104,7 +108,7 @@ pub fn parse_change_message_visibility_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_change_message_visibility_batch_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ChangeMessageVisibilityBatchOutput,
     crate::error::ChangeMessageVisibilityBatchError,
 > {
@@ -181,7 +185,7 @@ pub fn parse_change_message_visibility_batch_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_change_message_visibility_batch_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ChangeMessageVisibilityBatchOutput,
     crate::error::ChangeMessageVisibilityBatchError,
 > {
@@ -201,7 +205,7 @@ pub fn parse_change_message_visibility_batch_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_queue_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateQueueOutput, crate::error::CreateQueueError> {
+) -> std::result::Result<crate::output::CreateQueueOutput, crate::error::CreateQueueError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::CreateQueueError::unhandled)?;
     let error_code = match generic.code() {
@@ -244,7 +248,7 @@ pub fn parse_create_queue_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_queue_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CreateQueueOutput, crate::error::CreateQueueError> {
+) -> std::result::Result<crate::output::CreateQueueOutput, crate::error::CreateQueueError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::create_queue_output::Builder::default();
@@ -258,7 +262,7 @@ pub fn parse_create_queue_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_message_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteMessageOutput, crate::error::DeleteMessageError> {
+) -> std::result::Result<crate::output::DeleteMessageOutput, crate::error::DeleteMessageError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteMessageError::unhandled)?;
     let error_code = match generic.code() {
@@ -301,7 +305,7 @@ pub fn parse_delete_message_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_message_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteMessageOutput, crate::error::DeleteMessageError> {
+) -> std::result::Result<crate::output::DeleteMessageOutput, crate::error::DeleteMessageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_message_output::Builder::default();
@@ -313,7 +317,10 @@ pub fn parse_delete_message_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_message_batch_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteMessageBatchOutput, crate::error::DeleteMessageBatchError> {
+) -> std::result::Result<
+    crate::output::DeleteMessageBatchOutput,
+    crate::error::DeleteMessageBatchError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteMessageBatchError::unhandled)?;
     let error_code = match generic.code() {
@@ -383,7 +390,10 @@ pub fn parse_delete_message_batch_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_message_batch_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteMessageBatchOutput, crate::error::DeleteMessageBatchError> {
+) -> std::result::Result<
+    crate::output::DeleteMessageBatchOutput,
+    crate::error::DeleteMessageBatchError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_message_batch_output::Builder::default();
@@ -400,7 +410,7 @@ pub fn parse_delete_message_batch_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_queue_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteQueueOutput, crate::error::DeleteQueueError> {
+) -> std::result::Result<crate::output::DeleteQueueOutput, crate::error::DeleteQueueError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::DeleteQueueError::unhandled)?;
     Err(crate::error::DeleteQueueError::generic(generic))
@@ -409,7 +419,7 @@ pub fn parse_delete_queue_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_queue_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::DeleteQueueOutput, crate::error::DeleteQueueError> {
+) -> std::result::Result<crate::output::DeleteQueueOutput, crate::error::DeleteQueueError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_queue_output::Builder::default();
@@ -421,7 +431,10 @@ pub fn parse_delete_queue_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_queue_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetQueueAttributesOutput, crate::error::GetQueueAttributesError> {
+) -> std::result::Result<
+    crate::output::GetQueueAttributesOutput,
+    crate::error::GetQueueAttributesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetQueueAttributesError::unhandled)?;
     let error_code = match generic.code() {
@@ -450,7 +463,10 @@ pub fn parse_get_queue_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_queue_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetQueueAttributesOutput, crate::error::GetQueueAttributesError> {
+) -> std::result::Result<
+    crate::output::GetQueueAttributesOutput,
+    crate::error::GetQueueAttributesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_queue_attributes_output::Builder::default();
@@ -467,7 +483,7 @@ pub fn parse_get_queue_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_queue_url_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetQueueUrlOutput, crate::error::GetQueueUrlError> {
+) -> std::result::Result<crate::output::GetQueueUrlOutput, crate::error::GetQueueUrlError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::GetQueueUrlError::unhandled)?;
     let error_code = match generic.code() {
@@ -496,7 +512,7 @@ pub fn parse_get_queue_url_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_queue_url_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::GetQueueUrlOutput, crate::error::GetQueueUrlError> {
+) -> std::result::Result<crate::output::GetQueueUrlOutput, crate::error::GetQueueUrlError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_queue_url_output::Builder::default();
@@ -510,7 +526,7 @@ pub fn parse_get_queue_url_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_dead_letter_source_queues_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListDeadLetterSourceQueuesOutput,
     crate::error::ListDeadLetterSourceQueuesError,
 > {
@@ -546,7 +562,7 @@ pub fn parse_list_dead_letter_source_queues_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_dead_letter_source_queues_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<
+) -> std::result::Result<
     crate::output::ListDeadLetterSourceQueuesOutput,
     crate::error::ListDeadLetterSourceQueuesError,
 > {
@@ -566,7 +582,7 @@ pub fn parse_list_dead_letter_source_queues_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_queues_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListQueuesOutput, crate::error::ListQueuesError> {
+) -> std::result::Result<crate::output::ListQueuesOutput, crate::error::ListQueuesError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListQueuesError::unhandled)?;
     Err(crate::error::ListQueuesError::generic(generic))
@@ -575,7 +591,7 @@ pub fn parse_list_queues_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_queues_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListQueuesOutput, crate::error::ListQueuesError> {
+) -> std::result::Result<crate::output::ListQueuesOutput, crate::error::ListQueuesError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_queues_output::Builder::default();
@@ -589,7 +605,7 @@ pub fn parse_list_queues_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_queue_tags_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListQueueTagsOutput, crate::error::ListQueueTagsError> {
+) -> std::result::Result<crate::output::ListQueueTagsOutput, crate::error::ListQueueTagsError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ListQueueTagsError::unhandled)?;
     Err(crate::error::ListQueueTagsError::generic(generic))
@@ -598,7 +614,7 @@ pub fn parse_list_queue_tags_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_queue_tags_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ListQueueTagsOutput, crate::error::ListQueueTagsError> {
+) -> std::result::Result<crate::output::ListQueueTagsOutput, crate::error::ListQueueTagsError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::list_queue_tags_output::Builder::default();
@@ -613,7 +629,7 @@ pub fn parse_list_queue_tags_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_purge_queue_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PurgeQueueOutput, crate::error::PurgeQueueError> {
+) -> std::result::Result<crate::output::PurgeQueueOutput, crate::error::PurgeQueueError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::PurgeQueueError::unhandled)?;
     let error_code = match generic.code() {
@@ -656,7 +672,7 @@ pub fn parse_purge_queue_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_purge_queue_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::PurgeQueueOutput, crate::error::PurgeQueueError> {
+) -> std::result::Result<crate::output::PurgeQueueOutput, crate::error::PurgeQueueError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::purge_queue_output::Builder::default();
@@ -668,7 +684,7 @@ pub fn parse_purge_queue_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_receive_message_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ReceiveMessageOutput, crate::error::ReceiveMessageError> {
+) -> std::result::Result<crate::output::ReceiveMessageOutput, crate::error::ReceiveMessageError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::ReceiveMessageError::unhandled)?;
     let error_code = match generic.code() {
@@ -697,7 +713,7 @@ pub fn parse_receive_message_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_receive_message_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ReceiveMessageOutput, crate::error::ReceiveMessageError> {
+) -> std::result::Result<crate::output::ReceiveMessageOutput, crate::error::ReceiveMessageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::receive_message_output::Builder::default();
@@ -712,7 +728,8 @@ pub fn parse_receive_message_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_permission_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError> {
+) -> std::result::Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::RemovePermissionError::unhandled)?;
     Err(crate::error::RemovePermissionError::generic(generic))
@@ -721,7 +738,8 @@ pub fn parse_remove_permission_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_remove_permission_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError> {
+) -> std::result::Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::remove_permission_output::Builder::default();
@@ -733,7 +751,7 @@ pub fn parse_remove_permission_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_send_message_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SendMessageOutput, crate::error::SendMessageError> {
+) -> std::result::Result<crate::output::SendMessageOutput, crate::error::SendMessageError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::SendMessageError::unhandled)?;
     let error_code = match generic.code() {
@@ -776,7 +794,7 @@ pub fn parse_send_message_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_send_message_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SendMessageOutput, crate::error::SendMessageError> {
+) -> std::result::Result<crate::output::SendMessageOutput, crate::error::SendMessageError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::send_message_output::Builder::default();
@@ -790,7 +808,8 @@ pub fn parse_send_message_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_send_message_batch_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SendMessageBatchOutput, crate::error::SendMessageBatchError> {
+) -> std::result::Result<crate::output::SendMessageBatchOutput, crate::error::SendMessageBatchError>
+{
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::SendMessageBatchError::unhandled)?;
     let error_code = match generic.code() {
@@ -888,7 +907,8 @@ pub fn parse_send_message_batch_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_send_message_batch_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SendMessageBatchOutput, crate::error::SendMessageBatchError> {
+) -> std::result::Result<crate::output::SendMessageBatchOutput, crate::error::SendMessageBatchError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::send_message_batch_output::Builder::default();
@@ -903,7 +923,10 @@ pub fn parse_send_message_batch_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_set_queue_attributes_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SetQueueAttributesOutput, crate::error::SetQueueAttributesError> {
+) -> std::result::Result<
+    crate::output::SetQueueAttributesOutput,
+    crate::error::SetQueueAttributesError,
+> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::SetQueueAttributesError::unhandled)?;
     let error_code = match generic.code() {
@@ -932,7 +955,10 @@ pub fn parse_set_queue_attributes_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_set_queue_attributes_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::SetQueueAttributesOutput, crate::error::SetQueueAttributesError> {
+) -> std::result::Result<
+    crate::output::SetQueueAttributesOutput,
+    crate::error::SetQueueAttributesError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::set_queue_attributes_output::Builder::default();
@@ -944,7 +970,7 @@ pub fn parse_set_queue_attributes_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_queue_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagQueueOutput, crate::error::TagQueueError> {
+) -> std::result::Result<crate::output::TagQueueOutput, crate::error::TagQueueError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::TagQueueError::unhandled)?;
     Err(crate::error::TagQueueError::generic(generic))
@@ -953,7 +979,7 @@ pub fn parse_tag_queue_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_tag_queue_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::TagQueueOutput, crate::error::TagQueueError> {
+) -> std::result::Result<crate::output::TagQueueOutput, crate::error::TagQueueError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::tag_queue_output::Builder::default();
@@ -965,7 +991,7 @@ pub fn parse_tag_queue_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_queue_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagQueueOutput, crate::error::UntagQueueError> {
+) -> std::result::Result<crate::output::UntagQueueOutput, crate::error::UntagQueueError> {
     let generic = crate::xml_deser::parse_generic_error(&response)
         .map_err(crate::error::UntagQueueError::unhandled)?;
     Err(crate::error::UntagQueueError::generic(generic))
@@ -974,7 +1000,7 @@ pub fn parse_untag_queue_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_untag_queue_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::UntagQueueOutput, crate::error::UntagQueueError> {
+) -> std::result::Result<crate::output::UntagQueueOutput, crate::error::UntagQueueError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::untag_queue_output::Builder::default();

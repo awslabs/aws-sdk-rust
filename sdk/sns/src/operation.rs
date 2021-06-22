@@ -15,7 +15,8 @@ impl AddPermission {
     }
 }
 impl smithy_http::response::ParseStrictResponse for AddPermission {
-    type Output = Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError>;
+    type Output =
+        std::result::Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_add_permission_error(response)
@@ -44,7 +45,7 @@ impl CheckIfPhoneNumberIsOptedOut {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CheckIfPhoneNumberIsOptedOut {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CheckIfPhoneNumberIsOptedOutOutput,
         crate::error::CheckIfPhoneNumberIsOptedOutError,
     >;
@@ -76,8 +77,10 @@ impl ConfirmSubscription {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ConfirmSubscription {
-    type Output =
-        Result<crate::output::ConfirmSubscriptionOutput, crate::error::ConfirmSubscriptionError>;
+    type Output = std::result::Result<
+        crate::output::ConfirmSubscriptionOutput,
+        crate::error::ConfirmSubscriptionError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_confirm_subscription_error(response)
@@ -141,7 +144,7 @@ impl CreatePlatformApplication {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreatePlatformApplication {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreatePlatformApplicationOutput,
         crate::error::CreatePlatformApplicationError,
     >;
@@ -182,7 +185,7 @@ impl CreatePlatformEndpoint {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreatePlatformEndpoint {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreatePlatformEndpointOutput,
         crate::error::CreatePlatformEndpointError,
     >;
@@ -219,7 +222,7 @@ impl CreateSMSSandboxPhoneNumber {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateSMSSandboxPhoneNumber {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CreateSMSSandboxPhoneNumberOutput,
         crate::error::CreateSMSSandboxPhoneNumberError,
     >;
@@ -250,7 +253,8 @@ impl CreateTopic {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateTopic {
-    type Output = Result<crate::output::CreateTopicOutput, crate::error::CreateTopicError>;
+    type Output =
+        std::result::Result<crate::output::CreateTopicOutput, crate::error::CreateTopicError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_topic_error(response)
@@ -279,7 +283,8 @@ impl DeleteEndpoint {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteEndpoint {
-    type Output = Result<crate::output::DeleteEndpointOutput, crate::error::DeleteEndpointError>;
+    type Output =
+        std::result::Result<crate::output::DeleteEndpointOutput, crate::error::DeleteEndpointError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_endpoint_error(response)
@@ -307,7 +312,7 @@ impl DeletePlatformApplication {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeletePlatformApplication {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeletePlatformApplicationOutput,
         crate::error::DeletePlatformApplicationError,
     >;
@@ -343,7 +348,7 @@ impl DeleteSMSSandboxPhoneNumber {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteSMSSandboxPhoneNumber {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DeleteSMSSandboxPhoneNumberOutput,
         crate::error::DeleteSMSSandboxPhoneNumberError,
     >;
@@ -374,7 +379,8 @@ impl DeleteTopic {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteTopic {
-    type Output = Result<crate::output::DeleteTopicOutput, crate::error::DeleteTopicError>;
+    type Output =
+        std::result::Result<crate::output::DeleteTopicOutput, crate::error::DeleteTopicError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_topic_error(response)
@@ -401,7 +407,7 @@ impl GetEndpointAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetEndpointAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetEndpointAttributesOutput,
         crate::error::GetEndpointAttributesError,
     >;
@@ -431,7 +437,7 @@ impl GetPlatformApplicationAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetPlatformApplicationAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetPlatformApplicationAttributesOutput,
         crate::error::GetPlatformApplicationAttributesError,
     >;
@@ -460,8 +466,10 @@ impl GetSMSAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetSMSAttributes {
-    type Output =
-        Result<crate::output::GetSMSAttributesOutput, crate::error::GetSMSAttributesError>;
+    type Output = std::result::Result<
+        crate::output::GetSMSAttributesOutput,
+        crate::error::GetSMSAttributesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_sms_attributes_error(response)
@@ -495,7 +503,7 @@ impl GetSMSSandboxAccountStatus {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetSMSSandboxAccountStatus {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetSMSSandboxAccountStatusOutput,
         crate::error::GetSMSSandboxAccountStatusError,
     >;
@@ -523,7 +531,7 @@ impl GetSubscriptionAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetSubscriptionAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::GetSubscriptionAttributesOutput,
         crate::error::GetSubscriptionAttributesError,
     >;
@@ -552,8 +560,10 @@ impl GetTopicAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetTopicAttributes {
-    type Output =
-        Result<crate::output::GetTopicAttributesOutput, crate::error::GetTopicAttributesError>;
+    type Output = std::result::Result<
+        crate::output::GetTopicAttributesOutput,
+        crate::error::GetTopicAttributesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_topic_attributes_error(response)
@@ -587,7 +597,7 @@ impl ListEndpointsByPlatformApplication {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListEndpointsByPlatformApplication {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListEndpointsByPlatformApplicationOutput,
         crate::error::ListEndpointsByPlatformApplicationError,
     >;
@@ -617,7 +627,7 @@ impl ListOriginationNumbers {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListOriginationNumbers {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListOriginationNumbersOutput,
         crate::error::ListOriginationNumbersError,
     >;
@@ -652,7 +662,7 @@ impl ListPhoneNumbersOptedOut {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListPhoneNumbersOptedOut {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListPhoneNumbersOptedOutOutput,
         crate::error::ListPhoneNumbersOptedOutError,
     >;
@@ -689,7 +699,7 @@ impl ListPlatformApplications {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListPlatformApplications {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListPlatformApplicationsOutput,
         crate::error::ListPlatformApplicationsError,
     >;
@@ -726,7 +736,7 @@ impl ListSMSSandboxPhoneNumbers {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListSMSSandboxPhoneNumbers {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListSMSSandboxPhoneNumbersOutput,
         crate::error::ListSMSSandboxPhoneNumbersError,
     >;
@@ -758,8 +768,10 @@ impl ListSubscriptions {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListSubscriptions {
-    type Output =
-        Result<crate::output::ListSubscriptionsOutput, crate::error::ListSubscriptionsError>;
+    type Output = std::result::Result<
+        crate::output::ListSubscriptionsOutput,
+        crate::error::ListSubscriptionsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_subscriptions_error(response)
@@ -788,7 +800,7 @@ impl ListSubscriptionsByTopic {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListSubscriptionsByTopic {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListSubscriptionsByTopicOutput,
         crate::error::ListSubscriptionsByTopicError,
     >;
@@ -817,8 +829,10 @@ impl ListTagsForResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
-    type Output =
-        Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
+    type Output = std::result::Result<
+        crate::output::ListTagsForResourceOutput,
+        crate::error::ListTagsForResourceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
@@ -847,7 +861,8 @@ impl ListTopics {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTopics {
-    type Output = Result<crate::output::ListTopicsOutput, crate::error::ListTopicsError>;
+    type Output =
+        std::result::Result<crate::output::ListTopicsOutput, crate::error::ListTopicsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_topics_error(response)
@@ -874,8 +889,10 @@ impl OptInPhoneNumber {
     }
 }
 impl smithy_http::response::ParseStrictResponse for OptInPhoneNumber {
-    type Output =
-        Result<crate::output::OptInPhoneNumberOutput, crate::error::OptInPhoneNumberError>;
+    type Output = std::result::Result<
+        crate::output::OptInPhoneNumberOutput,
+        crate::error::OptInPhoneNumberError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_opt_in_phone_number_error(response)
@@ -918,7 +935,7 @@ impl Publish {
     }
 }
 impl smithy_http::response::ParseStrictResponse for Publish {
-    type Output = Result<crate::output::PublishOutput, crate::error::PublishError>;
+    type Output = std::result::Result<crate::output::PublishOutput, crate::error::PublishError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_publish_error(response)
@@ -943,8 +960,10 @@ impl RemovePermission {
     }
 }
 impl smithy_http::response::ParseStrictResponse for RemovePermission {
-    type Output =
-        Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError>;
+    type Output = std::result::Result<
+        crate::output::RemovePermissionOutput,
+        crate::error::RemovePermissionError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_remove_permission_error(response)
@@ -971,7 +990,7 @@ impl SetEndpointAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SetEndpointAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::SetEndpointAttributesOutput,
         crate::error::SetEndpointAttributesError,
     >;
@@ -1003,7 +1022,7 @@ impl SetPlatformApplicationAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SetPlatformApplicationAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::SetPlatformApplicationAttributesOutput,
         crate::error::SetPlatformApplicationAttributesError,
     >;
@@ -1041,8 +1060,10 @@ impl SetSMSAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SetSMSAttributes {
-    type Output =
-        Result<crate::output::SetSMSAttributesOutput, crate::error::SetSMSAttributesError>;
+    type Output = std::result::Result<
+        crate::output::SetSMSAttributesOutput,
+        crate::error::SetSMSAttributesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_set_sms_attributes_error(response)
@@ -1068,7 +1089,7 @@ impl SetSubscriptionAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SetSubscriptionAttributes {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::SetSubscriptionAttributesOutput,
         crate::error::SetSubscriptionAttributesError,
     >;
@@ -1096,8 +1117,10 @@ impl SetTopicAttributes {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SetTopicAttributes {
-    type Output =
-        Result<crate::output::SetTopicAttributesOutput, crate::error::SetTopicAttributesError>;
+    type Output = std::result::Result<
+        crate::output::SetTopicAttributesOutput,
+        crate::error::SetTopicAttributesError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_set_topic_attributes_error(response)
@@ -1127,7 +1150,7 @@ impl Subscribe {
     }
 }
 impl smithy_http::response::ParseStrictResponse for Subscribe {
-    type Output = Result<crate::output::SubscribeOutput, crate::error::SubscribeError>;
+    type Output = std::result::Result<crate::output::SubscribeOutput, crate::error::SubscribeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_subscribe_error(response)
@@ -1174,7 +1197,8 @@ impl TagResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TagResource {
-    type Output = Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
+    type Output =
+        std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_resource_error(response)
@@ -1205,7 +1229,8 @@ impl Unsubscribe {
     }
 }
 impl smithy_http::response::ParseStrictResponse for Unsubscribe {
-    type Output = Result<crate::output::UnsubscribeOutput, crate::error::UnsubscribeError>;
+    type Output =
+        std::result::Result<crate::output::UnsubscribeOutput, crate::error::UnsubscribeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_unsubscribe_error(response)
@@ -1231,7 +1256,8 @@ impl UntagResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UntagResource {
-    type Output = Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
+    type Output =
+        std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_resource_error(response)
@@ -1265,7 +1291,7 @@ impl VerifySMSSandboxPhoneNumber {
     }
 }
 impl smithy_http::response::ParseStrictResponse for VerifySMSSandboxPhoneNumber {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::VerifySMSSandboxPhoneNumberOutput,
         crate::error::VerifySMSSandboxPhoneNumberError,
     >;

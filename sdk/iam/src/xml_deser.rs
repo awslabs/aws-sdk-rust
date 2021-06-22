@@ -1509,14 +1509,16 @@ pub fn deser_operation_get_account_authorization_details(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#GetAccountAuthorizationDetailsOutput$IsTruncated */ =>  {
                 let var_43 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_43);
             }
@@ -1964,14 +1966,16 @@ pub fn deser_operation_get_group(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#GetGroupOutput$IsTruncated */ =>  {
                 let var_57 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_57);
             }
@@ -2385,14 +2389,16 @@ pub fn deser_operation_get_organizations_access_report(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#GetOrganizationsAccessReportOutput$IsTruncated */ =>  {
                 let var_75 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_75);
             }
@@ -2887,14 +2893,16 @@ pub fn deser_operation_get_service_last_accessed_details(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#GetServiceLastAccessedDetailsOutput$IsTruncated */ =>  {
                 let var_94 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_94);
             }
@@ -3017,14 +3025,16 @@ pub fn deser_operation_get_service_last_accessed_details_with_entities(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#GetServiceLastAccessedDetailsWithEntitiesOutput$IsTruncated */ =>  {
                 let var_101 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_101);
             }
@@ -3373,14 +3383,16 @@ pub fn deser_operation_list_access_keys(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListAccessKeysOutput$IsTruncated */ =>  {
                 let var_113 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_113);
             }
@@ -3448,14 +3460,16 @@ pub fn deser_operation_list_account_aliases(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListAccountAliasesOutput$IsTruncated */ =>  {
                 let var_116 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_116);
             }
@@ -3524,14 +3538,16 @@ pub fn deser_operation_list_attached_group_policies(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListAttachedGroupPoliciesOutput$IsTruncated */ =>  {
                 let var_119 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_119);
             }
@@ -3600,14 +3616,16 @@ pub fn deser_operation_list_attached_role_policies(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListAttachedRolePoliciesOutput$IsTruncated */ =>  {
                 let var_122 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_122);
             }
@@ -3676,14 +3694,16 @@ pub fn deser_operation_list_attached_user_policies(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListAttachedUserPoliciesOutput$IsTruncated */ =>  {
                 let var_125 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_125);
             }
@@ -3771,14 +3791,16 @@ pub fn deser_operation_list_entities_for_policy(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListEntitiesForPolicyOutput$IsTruncated */ =>  {
                 let var_130 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_130);
             }
@@ -3846,14 +3868,16 @@ pub fn deser_operation_list_group_policies(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListGroupPoliciesOutput$IsTruncated */ =>  {
                 let var_133 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_133);
             }
@@ -3921,14 +3945,16 @@ pub fn deser_operation_list_groups(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListGroupsOutput$IsTruncated */ =>  {
                 let var_136 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_136);
             }
@@ -3996,14 +4022,16 @@ pub fn deser_operation_list_groups_for_user(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListGroupsForUserOutput$IsTruncated */ =>  {
                 let var_139 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_139);
             }
@@ -4071,14 +4099,16 @@ pub fn deser_operation_list_instance_profiles(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListInstanceProfilesOutput$IsTruncated */ =>  {
                 let var_142 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_142);
             }
@@ -4149,14 +4179,16 @@ pub fn deser_operation_list_instance_profiles_for_role(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListInstanceProfilesForRoleOutput$IsTruncated */ =>  {
                 let var_145 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_145);
             }
@@ -4225,14 +4257,16 @@ pub fn deser_operation_list_instance_profile_tags(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListInstanceProfileTagsOutput$IsTruncated */ =>  {
                 let var_148 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_148);
             }
@@ -4300,14 +4334,16 @@ pub fn deser_operation_list_mfa_devices(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListMFADevicesOutput$IsTruncated */ =>  {
                 let var_151 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_151);
             }
@@ -4375,14 +4411,16 @@ pub fn deser_operation_list_mfa_device_tags(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListMFADeviceTagsOutput$IsTruncated */ =>  {
                 let var_154 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_154);
             }
@@ -4504,14 +4542,16 @@ pub fn deser_operation_list_open_id_connect_provider_tags(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListOpenIDConnectProviderTagsOutput$IsTruncated */ =>  {
                 let var_158 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_158);
             }
@@ -4579,14 +4619,16 @@ pub fn deser_operation_list_policies(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListPoliciesOutput$IsTruncated */ =>  {
                 let var_161 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_161);
             }
@@ -4657,14 +4699,16 @@ pub fn deser_operation_list_policies_granting_service_access(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListPoliciesGrantingServiceAccessOutput$IsTruncated */ =>  {
                 let var_164 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_164);
             }
@@ -4732,14 +4776,16 @@ pub fn deser_operation_list_policy_tags(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListPolicyTagsOutput$IsTruncated */ =>  {
                 let var_167 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_167);
             }
@@ -4807,14 +4853,16 @@ pub fn deser_operation_list_policy_versions(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListPolicyVersionsOutput$IsTruncated */ =>  {
                 let var_170 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_170);
             }
@@ -4882,14 +4930,16 @@ pub fn deser_operation_list_role_policies(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListRolePoliciesOutput$IsTruncated */ =>  {
                 let var_173 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_173);
             }
@@ -4957,14 +5007,16 @@ pub fn deser_operation_list_roles(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListRolesOutput$IsTruncated */ =>  {
                 let var_176 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_176);
             }
@@ -5032,14 +5084,16 @@ pub fn deser_operation_list_role_tags(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListRoleTagsOutput$IsTruncated */ =>  {
                 let var_179 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_179);
             }
@@ -5155,14 +5209,16 @@ pub fn deser_operation_list_saml_provider_tags(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListSAMLProviderTagsOutput$IsTruncated */ =>  {
                 let var_183 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_183);
             }
@@ -5230,14 +5286,16 @@ pub fn deser_operation_list_server_certificates(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListServerCertificatesOutput$IsTruncated */ =>  {
                 let var_186 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_186);
             }
@@ -5306,14 +5364,16 @@ pub fn deser_operation_list_server_certificate_tags(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListServerCertificateTagsOutput$IsTruncated */ =>  {
                 let var_189 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_189);
             }
@@ -5433,14 +5493,16 @@ pub fn deser_operation_list_signing_certificates(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListSigningCertificatesOutput$IsTruncated */ =>  {
                 let var_193 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_193);
             }
@@ -5508,14 +5570,16 @@ pub fn deser_operation_list_ssh_public_keys(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListSSHPublicKeysOutput$IsTruncated */ =>  {
                 let var_196 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_196);
             }
@@ -5583,14 +5647,16 @@ pub fn deser_operation_list_user_policies(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListUserPoliciesOutput$IsTruncated */ =>  {
                 let var_199 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_199);
             }
@@ -5658,14 +5724,16 @@ pub fn deser_operation_list_users(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListUsersOutput$IsTruncated */ =>  {
                 let var_202 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_202);
             }
@@ -5733,14 +5801,16 @@ pub fn deser_operation_list_user_tags(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListUserTagsOutput$IsTruncated */ =>  {
                 let var_205 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_205);
             }
@@ -5808,14 +5878,16 @@ pub fn deser_operation_list_virtual_mfa_devices(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#ListVirtualMFADevicesOutput$IsTruncated */ =>  {
                 let var_208 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_208);
             }
@@ -5964,14 +6036,16 @@ pub fn deser_operation_simulate_custom_policy(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#SimulateCustomPolicyOutput$IsTruncated */ =>  {
                 let var_213 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_213);
             }
@@ -6040,14 +6114,16 @@ pub fn deser_operation_simulate_principal_policy(
             ,
             s if s.matches("IsTruncated") /* IsTruncated com.amazonaws.iam#SimulatePrincipalPolicyOutput$IsTruncated */ =>  {
                 let var_216 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_truncated(var_216);
             }
@@ -6805,14 +6881,16 @@ pub fn deser_structure_login_profile(
             ,
             s if s.matches("PasswordResetRequired") /* PasswordResetRequired com.amazonaws.iam#LoginProfile$PasswordResetRequired */ =>  {
                 let var_249 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_password_reset_required(var_249);
             }
@@ -6948,14 +7026,16 @@ pub fn deser_structure_policy(
             ,
             s if s.matches("IsAttachable") /* IsAttachable com.amazonaws.iam#Policy$IsAttachable */ =>  {
                 let var_257 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_attachable(var_257);
             }
@@ -7052,14 +7132,16 @@ pub fn deser_structure_policy_version(
             ,
             s if s.matches("IsDefaultVersion") /* IsDefaultVersion com.amazonaws.iam#PolicyVersion$IsDefaultVersion */ =>  {
                 let var_264 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_default_version(var_264);
             }
@@ -7694,84 +7776,96 @@ pub fn deser_structure_password_policy(
             ,
             s if s.matches("RequireSymbols") /* RequireSymbols com.amazonaws.iam#PasswordPolicy$RequireSymbols */ =>  {
                 let var_302 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_require_symbols(var_302);
             }
             ,
             s if s.matches("RequireNumbers") /* RequireNumbers com.amazonaws.iam#PasswordPolicy$RequireNumbers */ =>  {
                 let var_303 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_require_numbers(var_303);
             }
             ,
             s if s.matches("RequireUppercaseCharacters") /* RequireUppercaseCharacters com.amazonaws.iam#PasswordPolicy$RequireUppercaseCharacters */ =>  {
                 let var_304 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_require_uppercase_characters(var_304);
             }
             ,
             s if s.matches("RequireLowercaseCharacters") /* RequireLowercaseCharacters com.amazonaws.iam#PasswordPolicy$RequireLowercaseCharacters */ =>  {
                 let var_305 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_require_lowercase_characters(var_305);
             }
             ,
             s if s.matches("AllowUsersToChangePassword") /* AllowUsersToChangePassword com.amazonaws.iam#PasswordPolicy$AllowUsersToChangePassword */ =>  {
                 let var_306 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_allow_users_to_change_password(var_306);
             }
             ,
             s if s.matches("ExpirePasswords") /* ExpirePasswords com.amazonaws.iam#PasswordPolicy$ExpirePasswords */ =>  {
                 let var_307 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_expire_passwords(var_307);
             }
@@ -9426,14 +9520,16 @@ pub fn deser_structure_managed_policy_detail(
             ,
             s if s.matches("IsAttachable") /* IsAttachable com.amazonaws.iam#ManagedPolicyDetail$IsAttachable */ =>  {
                 let var_378 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_attachable(var_378);
             }
@@ -10680,14 +10776,16 @@ pub fn deser_structure_organizations_decision_detail(
         match tag.start_el() {
             s if s.matches("AllowedByOrganizations") /* AllowedByOrganizations com.amazonaws.iam#OrganizationsDecisionDetail$AllowedByOrganizations */ =>  {
                 let var_445 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_allowed_by_organizations(var_445);
             }
@@ -10707,14 +10805,16 @@ pub fn deser_structure_permissions_boundary_decision_detail(
         match tag.start_el() {
             s if s.matches("AllowedByPermissionsBoundary") /* AllowedByPermissionsBoundary com.amazonaws.iam#PermissionsBoundaryDecisionDetail$AllowedByPermissionsBoundary */ =>  {
                 let var_446 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_allowed_by_permissions_boundary(var_446);
             }
@@ -11159,28 +11259,32 @@ pub fn deser_structure_position(
         match tag.start_el() {
             s if s.matches("Line") /* Line com.amazonaws.iam#Position$Line */ =>  {
                 let var_468 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#LineNumber`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#LineNumber`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_line(var_468);
             }
             ,
             s if s.matches("Column") /* Column com.amazonaws.iam#Position$Column */ =>  {
                 let var_469 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#ColumnNumber`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.iam#ColumnNumber`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_column(var_469);
             }

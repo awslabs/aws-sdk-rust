@@ -161,7 +161,7 @@ pub fn serialize_operation_generate_client_certificate(
 
 pub fn ser_payload_import_api_keys_input(
     payload: std::option::Option<smithy_types::Blob>,
-) -> Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
+) -> std::result::Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
     let payload = match payload {
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
@@ -172,7 +172,7 @@ pub fn ser_payload_import_api_keys_input(
 
 pub fn ser_payload_import_documentation_parts_input(
     payload: std::option::Option<smithy_types::Blob>,
-) -> Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
+) -> std::result::Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
     let payload = match payload {
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
@@ -183,7 +183,7 @@ pub fn ser_payload_import_documentation_parts_input(
 
 pub fn ser_payload_import_rest_api_input(
     payload: std::option::Option<smithy_types::Blob>,
-) -> Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
+) -> std::result::Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
     let payload = match payload {
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),
@@ -244,7 +244,7 @@ pub fn serialize_operation_put_method_response(
 
 pub fn ser_payload_put_rest_api_input(
     payload: std::option::Option<smithy_types::Blob>,
-) -> Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
+) -> std::result::Result<smithy_http::body::SdkBody, smithy_http::operation::BuildError> {
     let payload = match payload {
         Some(t) => t,
         None => return Ok(smithy_http::body::SdkBody::from("")),

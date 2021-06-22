@@ -386,24 +386,24 @@ pub mod copy_part_result {
     }
     impl Builder {
         /// <p>Entity tag of the object.</p>
-        pub fn e_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.e_tag = Some(inp.into());
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
             self
         }
-        pub fn set_e_tag(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = inp;
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
             self
         }
         /// <p>Date and time at which the object was uploaded.</p>
-        pub fn last_modified(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified = Some(inp);
+        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified = Some(input);
             self
         }
         pub fn set_last_modified(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified = inp;
+            self.last_modified = input;
             self
         }
         /// Consumes the builder and constructs a [`CopyPartResult`](crate::model::CopyPartResult)
@@ -534,79 +534,79 @@ pub mod restore_request {
         /// <code>OutputLocation</code>.</p>
         /// <p>The Days element is required for regular restores, and must not be provided for select
         /// requests.</p>
-        pub fn days(mut self, inp: i32) -> Self {
-            self.days = Some(inp);
+        pub fn days(mut self, input: i32) -> Self {
+            self.days = Some(input);
             self
         }
-        pub fn set_days(mut self, inp: i32) -> Self {
-            self.days = Some(inp);
+        pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.days = input;
             self
         }
         /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that
         /// specify <code>OutputLocation</code>.</p>
-        pub fn glacier_job_parameters(mut self, inp: crate::model::GlacierJobParameters) -> Self {
-            self.glacier_job_parameters = Some(inp);
+        pub fn glacier_job_parameters(mut self, input: crate::model::GlacierJobParameters) -> Self {
+            self.glacier_job_parameters = Some(input);
             self
         }
         pub fn set_glacier_job_parameters(
             mut self,
-            inp: std::option::Option<crate::model::GlacierJobParameters>,
+            input: std::option::Option<crate::model::GlacierJobParameters>,
         ) -> Self {
-            self.glacier_job_parameters = inp;
+            self.glacier_job_parameters = input;
             self
         }
         /// <p>Type of restore request.</p>
-        pub fn r#type(mut self, inp: crate::model::RestoreRequestType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::RestoreRequestType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::RestoreRequestType>,
+            input: std::option::Option<crate::model::RestoreRequestType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// <p>Retrieval tier at which the restore will be processed.</p>
-        pub fn tier(mut self, inp: crate::model::Tier) -> Self {
-            self.tier = Some(inp);
+        pub fn tier(mut self, input: crate::model::Tier) -> Self {
+            self.tier = Some(input);
             self
         }
-        pub fn set_tier(mut self, inp: std::option::Option<crate::model::Tier>) -> Self {
-            self.tier = inp;
+        pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
+            self.tier = input;
             self
         }
         /// <p>The optional description for the job.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>Describes the parameters for Select job types.</p>
-        pub fn select_parameters(mut self, inp: crate::model::SelectParameters) -> Self {
-            self.select_parameters = Some(inp);
+        pub fn select_parameters(mut self, input: crate::model::SelectParameters) -> Self {
+            self.select_parameters = Some(input);
             self
         }
         pub fn set_select_parameters(
             mut self,
-            inp: std::option::Option<crate::model::SelectParameters>,
+            input: std::option::Option<crate::model::SelectParameters>,
         ) -> Self {
-            self.select_parameters = inp;
+            self.select_parameters = input;
             self
         }
         /// <p>Describes the location where the restore job's output is stored.</p>
-        pub fn output_location(mut self, inp: crate::model::OutputLocation) -> Self {
-            self.output_location = Some(inp);
+        pub fn output_location(mut self, input: crate::model::OutputLocation) -> Self {
+            self.output_location = Some(input);
             self
         }
         pub fn set_output_location(
             mut self,
-            inp: std::option::Option<crate::model::OutputLocation>,
+            input: std::option::Option<crate::model::OutputLocation>,
         ) -> Self {
-            self.output_location = inp;
+            self.output_location = input;
             self
         }
         /// Consumes the builder and constructs a [`RestoreRequest`](crate::model::RestoreRequest)
@@ -654,12 +654,12 @@ pub mod output_location {
     }
     impl Builder {
         /// <p>Describes an S3 location that will receive the results of the restore request.</p>
-        pub fn s3(mut self, inp: crate::model::S3Location) -> Self {
-            self.s3 = Some(inp);
+        pub fn s3(mut self, input: crate::model::S3Location) -> Self {
+            self.s3 = Some(input);
             self
         }
-        pub fn set_s3(mut self, inp: std::option::Option<crate::model::S3Location>) -> Self {
-            self.s3 = inp;
+        pub fn set_s3(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.s3 = input;
             self
         }
         /// Consumes the builder and constructs a [`OutputLocation`](crate::model::OutputLocation)
@@ -727,92 +727,92 @@ pub mod s3_location {
     }
     impl Builder {
         /// <p>The name of the bucket where the restore results will be placed.</p>
-        pub fn bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket_name = Some(inp.into());
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_name = Some(input.into());
             self
         }
-        pub fn set_bucket_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = inp;
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket_name = input;
             self
         }
         /// <p>The prefix that is prepended to the restore results for this request.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// <p>Contains the type of server-side encryption used.</p>
-        pub fn encryption(mut self, inp: crate::model::Encryption) -> Self {
-            self.encryption = Some(inp);
+        pub fn encryption(mut self, input: crate::model::Encryption) -> Self {
+            self.encryption = Some(input);
             self
         }
         pub fn set_encryption(
             mut self,
-            inp: std::option::Option<crate::model::Encryption>,
+            input: std::option::Option<crate::model::Encryption>,
         ) -> Self {
-            self.encryption = inp;
+            self.encryption = input;
             self
         }
         /// <p>The canned ACL to apply to the restore results.</p>
-        pub fn canned_acl(mut self, inp: crate::model::ObjectCannedAcl) -> Self {
-            self.canned_acl = Some(inp);
+        pub fn canned_acl(mut self, input: crate::model::ObjectCannedAcl) -> Self {
+            self.canned_acl = Some(input);
             self
         }
         pub fn set_canned_acl(
             mut self,
-            inp: std::option::Option<crate::model::ObjectCannedAcl>,
+            input: std::option::Option<crate::model::ObjectCannedAcl>,
         ) -> Self {
-            self.canned_acl = inp;
+            self.canned_acl = input;
             self
         }
-        pub fn access_control_list(mut self, inp: impl Into<crate::model::Grant>) -> Self {
+        pub fn access_control_list(mut self, input: impl Into<crate::model::Grant>) -> Self {
             let mut v = self.access_control_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.access_control_list = Some(v);
             self
         }
         pub fn set_access_control_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Grant>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Grant>>,
         ) -> Self {
-            self.access_control_list = inp;
+            self.access_control_list = input;
             self
         }
         /// <p>The tag-set that is applied to the restore results.</p>
-        pub fn tagging(mut self, inp: crate::model::Tagging) -> Self {
-            self.tagging = Some(inp);
+        pub fn tagging(mut self, input: crate::model::Tagging) -> Self {
+            self.tagging = Some(input);
             self
         }
-        pub fn set_tagging(mut self, inp: std::option::Option<crate::model::Tagging>) -> Self {
-            self.tagging = inp;
+        pub fn set_tagging(mut self, input: std::option::Option<crate::model::Tagging>) -> Self {
+            self.tagging = input;
             self
         }
-        pub fn user_metadata(mut self, inp: impl Into<crate::model::MetadataEntry>) -> Self {
+        pub fn user_metadata(mut self, input: impl Into<crate::model::MetadataEntry>) -> Self {
             let mut v = self.user_metadata.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.user_metadata = Some(v);
             self
         }
         pub fn set_user_metadata(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::MetadataEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::MetadataEntry>>,
         ) -> Self {
-            self.user_metadata = inp;
+            self.user_metadata = input;
             self
         }
         /// <p>The class of storage used to store the restore results.</p>
-        pub fn storage_class(mut self, inp: crate::model::StorageClass) -> Self {
-            self.storage_class = Some(inp);
+        pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
+            self.storage_class = Some(input);
             self
         }
         pub fn set_storage_class(
             mut self,
-            inp: std::option::Option<crate::model::StorageClass>,
+            input: std::option::Option<crate::model::StorageClass>,
         ) -> Self {
-            self.storage_class = inp;
+            self.storage_class = input;
             self
         }
         /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location)
@@ -865,21 +865,21 @@ pub mod metadata_entry {
     }
     impl Builder {
         /// <p>Name of the Object.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>Value of the Object.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`MetadataEntry`](crate::model::MetadataEntry)
@@ -921,17 +921,17 @@ pub mod tagging {
         pub(crate) tag_set: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        pub fn tag_set(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tag_set(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_set.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_set = Some(v);
             self
         }
         pub fn set_tag_set(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tag_set = inp;
+            self.tag_set = input;
             self
         }
         /// Consumes the builder and constructs a [`Tagging`](crate::model::Tagging)
@@ -977,21 +977,21 @@ pub mod tag {
     }
     impl Builder {
         /// <p>Name of the object key.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>Value of the tag.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
@@ -1038,24 +1038,24 @@ pub mod grant {
     }
     impl Builder {
         /// <p>The person being granted permissions.</p>
-        pub fn grantee(mut self, inp: crate::model::Grantee) -> Self {
-            self.grantee = Some(inp);
+        pub fn grantee(mut self, input: crate::model::Grantee) -> Self {
+            self.grantee = Some(input);
             self
         }
-        pub fn set_grantee(mut self, inp: std::option::Option<crate::model::Grantee>) -> Self {
-            self.grantee = inp;
+        pub fn set_grantee(mut self, input: std::option::Option<crate::model::Grantee>) -> Self {
+            self.grantee = input;
             self
         }
         /// <p>Specifies the permission given to the grantee.</p>
-        pub fn permission(mut self, inp: crate::model::Permission) -> Self {
-            self.permission = Some(inp);
+        pub fn permission(mut self, input: crate::model::Permission) -> Self {
+            self.permission = Some(input);
             self
         }
         pub fn set_permission(
             mut self,
-            inp: std::option::Option<crate::model::Permission>,
+            input: std::option::Option<crate::model::Permission>,
         ) -> Self {
-            self.permission = inp;
+            self.permission = input;
             self
         }
         /// Consumes the builder and constructs a [`Grant`](crate::model::Grant)
@@ -1209,12 +1209,12 @@ pub mod grantee {
     }
     impl Builder {
         /// <p>Screen name of the grantee.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.display_name = Some(inp.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_name = Some(input.into());
             self
         }
-        pub fn set_display_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.display_name = inp;
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_name = input;
             self
         }
         /// <p>Email address of the grantee.</p>
@@ -1248,39 +1248,42 @@ pub mod grantee {
         /// </ul>
         /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the AWS General Reference.</p>
         /// </note>
-        pub fn email_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.email_address = Some(inp.into());
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.email_address = Some(input.into());
             self
         }
-        pub fn set_email_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.email_address = inp;
+        pub fn set_email_address(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.email_address = input;
             self
         }
         /// <p>The canonical user ID of the grantee.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>URI of the grantee group.</p>
-        pub fn uri(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.uri = Some(inp.into());
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.uri = Some(input.into());
             self
         }
-        pub fn set_uri(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.uri = inp;
+        pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.uri = input;
             self
         }
         /// <p>Type of grantee</p>
-        pub fn r#type(mut self, inp: crate::model::Type) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::Type) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::Type>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
+            self.r#type = input;
             self
         }
         /// Consumes the builder and constructs a [`Grantee`](crate::model::Grantee)
@@ -1470,37 +1473,37 @@ pub mod encryption {
     impl Builder {
         /// <p>The server-side encryption algorithm used when storing job results in Amazon S3 (for example,
         /// AES256, aws:kms).</p>
-        pub fn encryption_type(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.encryption_type = Some(inp);
+        pub fn encryption_type(mut self, input: crate::model::ServerSideEncryption) -> Self {
+            self.encryption_type = Some(input);
             self
         }
         pub fn set_encryption_type(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryption>,
+            input: std::option::Option<crate::model::ServerSideEncryption>,
         ) -> Self {
-            self.encryption_type = inp;
+            self.encryption_type = input;
             self
         }
         /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of
         /// the symmetric customer managed AWS KMS CMK to use for encryption of job results. Amazon S3 only
         /// supports symmetric CMKs. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
         /// asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-        pub fn kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_key_id = Some(inp.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
             self
         }
-        pub fn set_kms_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = inp;
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
             self
         }
         /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to
         /// specify the encryption context for the restore results.</p>
-        pub fn kms_context(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_context = Some(inp.into());
+        pub fn kms_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_context = Some(input.into());
             self
         }
-        pub fn set_kms_context(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.kms_context = inp;
+        pub fn set_kms_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_context = input;
             self
         }
         /// Consumes the builder and constructs a [`Encryption`](crate::model::Encryption)
@@ -1556,48 +1559,48 @@ pub mod select_parameters {
     }
     impl Builder {
         /// <p>Describes the serialization format of the object.</p>
-        pub fn input_serialization(mut self, inp: crate::model::InputSerialization) -> Self {
-            self.input_serialization = Some(inp);
+        pub fn input_serialization(mut self, input: crate::model::InputSerialization) -> Self {
+            self.input_serialization = Some(input);
             self
         }
         pub fn set_input_serialization(
             mut self,
-            inp: std::option::Option<crate::model::InputSerialization>,
+            input: std::option::Option<crate::model::InputSerialization>,
         ) -> Self {
-            self.input_serialization = inp;
+            self.input_serialization = input;
             self
         }
         /// <p>The type of the provided expression (for example, SQL).</p>
-        pub fn expression_type(mut self, inp: crate::model::ExpressionType) -> Self {
-            self.expression_type = Some(inp);
+        pub fn expression_type(mut self, input: crate::model::ExpressionType) -> Self {
+            self.expression_type = Some(input);
             self
         }
         pub fn set_expression_type(
             mut self,
-            inp: std::option::Option<crate::model::ExpressionType>,
+            input: std::option::Option<crate::model::ExpressionType>,
         ) -> Self {
-            self.expression_type = inp;
+            self.expression_type = input;
             self
         }
         /// <p>The expression that is used to query the object.</p>
-        pub fn expression(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.expression = Some(inp.into());
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expression = Some(input.into());
             self
         }
-        pub fn set_expression(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.expression = inp;
+        pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expression = input;
             self
         }
         /// <p>Describes how the results of the Select job are serialized.</p>
-        pub fn output_serialization(mut self, inp: crate::model::OutputSerialization) -> Self {
-            self.output_serialization = Some(inp);
+        pub fn output_serialization(mut self, input: crate::model::OutputSerialization) -> Self {
+            self.output_serialization = Some(input);
             self
         }
         pub fn set_output_serialization(
             mut self,
-            inp: std::option::Option<crate::model::OutputSerialization>,
+            input: std::option::Option<crate::model::OutputSerialization>,
         ) -> Self {
-            self.output_serialization = inp;
+            self.output_serialization = input;
             self
         }
         /// Consumes the builder and constructs a [`SelectParameters`](crate::model::SelectParameters)
@@ -1646,21 +1649,21 @@ pub mod output_serialization {
     }
     impl Builder {
         /// <p>Describes the serialization of CSV-encoded Select results.</p>
-        pub fn csv(mut self, inp: crate::model::CSVOutput) -> Self {
-            self.csv = Some(inp);
+        pub fn csv(mut self, input: crate::model::CSVOutput) -> Self {
+            self.csv = Some(input);
             self
         }
-        pub fn set_csv(mut self, inp: std::option::Option<crate::model::CSVOutput>) -> Self {
-            self.csv = inp;
+        pub fn set_csv(mut self, input: std::option::Option<crate::model::CSVOutput>) -> Self {
+            self.csv = input;
             self
         }
         /// <p>Specifies JSON as request's output serialization format.</p>
-        pub fn json(mut self, inp: crate::model::JSONOutput) -> Self {
-            self.json = Some(inp);
+        pub fn json(mut self, input: crate::model::JSONOutput) -> Self {
+            self.json = Some(input);
             self
         }
-        pub fn set_json(mut self, inp: std::option::Option<crate::model::JSONOutput>) -> Self {
-            self.json = inp;
+        pub fn set_json(mut self, input: std::option::Option<crate::model::JSONOutput>) -> Self {
+            self.json = input;
             self
         }
         /// Consumes the builder and constructs a [`OutputSerialization`](crate::model::OutputSerialization)
@@ -1705,15 +1708,15 @@ pub mod json_output {
     impl Builder {
         /// <p>The value used to separate individual records in the output. If no value is specified,
         /// Amazon S3 uses a newline character ('\n').</p>
-        pub fn record_delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.record_delimiter = Some(inp.into());
+        pub fn record_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.record_delimiter = Some(input.into());
             self
         }
         pub fn set_record_delimiter(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.record_delimiter = inp;
+            self.record_delimiter = input;
             self
         }
         /// Consumes the builder and constructs a [`JSONOutput`](crate::model::JSONOutput)
@@ -1797,68 +1800,68 @@ pub mod csv_output {
         /// <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p>
         /// </li>
         /// </ul>
-        pub fn quote_fields(mut self, inp: crate::model::QuoteFields) -> Self {
-            self.quote_fields = Some(inp);
+        pub fn quote_fields(mut self, input: crate::model::QuoteFields) -> Self {
+            self.quote_fields = Some(input);
             self
         }
         pub fn set_quote_fields(
             mut self,
-            inp: std::option::Option<crate::model::QuoteFields>,
+            input: std::option::Option<crate::model::QuoteFields>,
         ) -> Self {
-            self.quote_fields = inp;
+            self.quote_fields = input;
             self
         }
         /// <p>The single character used for escaping the quote character inside an already escaped
         /// value.</p>
-        pub fn quote_escape_character(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.quote_escape_character = Some(inp.into());
+        pub fn quote_escape_character(mut self, input: impl Into<std::string::String>) -> Self {
+            self.quote_escape_character = Some(input.into());
             self
         }
         pub fn set_quote_escape_character(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.quote_escape_character = inp;
+            self.quote_escape_character = input;
             self
         }
         /// <p>A single character used to separate individual records in the output. Instead of the
         /// default value, you can specify an arbitrary delimiter.</p>
-        pub fn record_delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.record_delimiter = Some(inp.into());
+        pub fn record_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.record_delimiter = Some(input.into());
             self
         }
         pub fn set_record_delimiter(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.record_delimiter = inp;
+            self.record_delimiter = input;
             self
         }
         /// <p>The value used to separate individual fields in a record. You can specify an arbitrary
         /// delimiter.</p>
-        pub fn field_delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.field_delimiter = Some(inp.into());
+        pub fn field_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.field_delimiter = Some(input.into());
             self
         }
         pub fn set_field_delimiter(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.field_delimiter = inp;
+            self.field_delimiter = input;
             self
         }
         /// <p>A single character used for escaping when the field delimiter is part of the value. For
         /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
         /// as follows: <code>" a , b "</code>.</p>
-        pub fn quote_character(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.quote_character = Some(inp.into());
+        pub fn quote_character(mut self, input: impl Into<std::string::String>) -> Self {
+            self.quote_character = Some(input.into());
             self
         }
         pub fn set_quote_character(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.quote_character = inp;
+            self.quote_character = input;
             self
         }
         /// Consumes the builder and constructs a [`CSVOutput`](crate::model::CSVOutput)
@@ -2026,43 +2029,46 @@ pub mod input_serialization {
     }
     impl Builder {
         /// <p>Describes the serialization of a CSV-encoded object.</p>
-        pub fn csv(mut self, inp: crate::model::CSVInput) -> Self {
-            self.csv = Some(inp);
+        pub fn csv(mut self, input: crate::model::CSVInput) -> Self {
+            self.csv = Some(input);
             self
         }
-        pub fn set_csv(mut self, inp: std::option::Option<crate::model::CSVInput>) -> Self {
-            self.csv = inp;
+        pub fn set_csv(mut self, input: std::option::Option<crate::model::CSVInput>) -> Self {
+            self.csv = input;
             self
         }
         /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value:
         /// NONE.</p>
-        pub fn compression_type(mut self, inp: crate::model::CompressionType) -> Self {
-            self.compression_type = Some(inp);
+        pub fn compression_type(mut self, input: crate::model::CompressionType) -> Self {
+            self.compression_type = Some(input);
             self
         }
         pub fn set_compression_type(
             mut self,
-            inp: std::option::Option<crate::model::CompressionType>,
+            input: std::option::Option<crate::model::CompressionType>,
         ) -> Self {
-            self.compression_type = inp;
+            self.compression_type = input;
             self
         }
         /// <p>Specifies JSON as object's input serialization format.</p>
-        pub fn json(mut self, inp: crate::model::JSONInput) -> Self {
-            self.json = Some(inp);
+        pub fn json(mut self, input: crate::model::JSONInput) -> Self {
+            self.json = Some(input);
             self
         }
-        pub fn set_json(mut self, inp: std::option::Option<crate::model::JSONInput>) -> Self {
-            self.json = inp;
+        pub fn set_json(mut self, input: std::option::Option<crate::model::JSONInput>) -> Self {
+            self.json = input;
             self
         }
         /// <p>Specifies Parquet as object's input serialization format.</p>
-        pub fn parquet(mut self, inp: crate::model::ParquetInput) -> Self {
-            self.parquet = Some(inp);
+        pub fn parquet(mut self, input: crate::model::ParquetInput) -> Self {
+            self.parquet = Some(input);
             self
         }
-        pub fn set_parquet(mut self, inp: std::option::Option<crate::model::ParquetInput>) -> Self {
-            self.parquet = inp;
+        pub fn set_parquet(
+            mut self,
+            input: std::option::Option<crate::model::ParquetInput>,
+        ) -> Self {
+            self.parquet = input;
             self
         }
         /// Consumes the builder and constructs a [`InputSerialization`](crate::model::InputSerialization)
@@ -2137,12 +2143,12 @@ pub mod json_input {
     }
     impl Builder {
         /// <p>The type of JSON. Valid values: Document, Lines.</p>
-        pub fn r#type(mut self, inp: crate::model::JsonType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::JsonType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::JsonType>) -> Self {
-            self.r#type = inp;
+        pub fn set_type(mut self, input: std::option::Option<crate::model::JsonType>) -> Self {
+            self.r#type = input;
             self
         }
         /// Consumes the builder and constructs a [`JSONInput`](crate::model::JSONInput)
@@ -2375,65 +2381,65 @@ pub mod csv_input {
         /// identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p>
         /// </li>
         /// </ul>
-        pub fn file_header_info(mut self, inp: crate::model::FileHeaderInfo) -> Self {
-            self.file_header_info = Some(inp);
+        pub fn file_header_info(mut self, input: crate::model::FileHeaderInfo) -> Self {
+            self.file_header_info = Some(input);
             self
         }
         pub fn set_file_header_info(
             mut self,
-            inp: std::option::Option<crate::model::FileHeaderInfo>,
+            input: std::option::Option<crate::model::FileHeaderInfo>,
         ) -> Self {
-            self.file_header_info = inp;
+            self.file_header_info = input;
             self
         }
         /// <p>A single character used to indicate that a row should be ignored when the character is
         /// present at the start of that row. You can specify any character to indicate a comment
         /// line.</p>
-        pub fn comments(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.comments = Some(inp.into());
+        pub fn comments(mut self, input: impl Into<std::string::String>) -> Self {
+            self.comments = Some(input.into());
             self
         }
-        pub fn set_comments(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.comments = inp;
+        pub fn set_comments(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comments = input;
             self
         }
         /// <p>A single character used for escaping the quotation mark character inside an already
         /// escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
-        pub fn quote_escape_character(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.quote_escape_character = Some(inp.into());
+        pub fn quote_escape_character(mut self, input: impl Into<std::string::String>) -> Self {
+            self.quote_escape_character = Some(input.into());
             self
         }
         pub fn set_quote_escape_character(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.quote_escape_character = inp;
+            self.quote_escape_character = input;
             self
         }
         /// <p>A single character used to separate individual records in the input. Instead of the
         /// default value, you can specify an arbitrary delimiter.</p>
-        pub fn record_delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.record_delimiter = Some(inp.into());
+        pub fn record_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.record_delimiter = Some(input.into());
             self
         }
         pub fn set_record_delimiter(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.record_delimiter = inp;
+            self.record_delimiter = input;
             self
         }
         /// <p>A single character used to separate individual fields in a record. You can specify an
         /// arbitrary delimiter.</p>
-        pub fn field_delimiter(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.field_delimiter = Some(inp.into());
+        pub fn field_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.field_delimiter = Some(input.into());
             self
         }
         pub fn set_field_delimiter(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.field_delimiter = inp;
+            self.field_delimiter = input;
             self
         }
         /// <p>A single character used for escaping when the field delimiter is part of the value. For
@@ -2444,26 +2450,29 @@ pub mod csv_input {
         /// </p>
         /// <p>Ancestors: <code>CSV</code>
         /// </p>
-        pub fn quote_character(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.quote_character = Some(inp.into());
+        pub fn quote_character(mut self, input: impl Into<std::string::String>) -> Self {
+            self.quote_character = Some(input.into());
             self
         }
         pub fn set_quote_character(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.quote_character = inp;
+            self.quote_character = input;
             self
         }
         /// <p>Specifies that CSV field values may contain quoted record delimiters and such records
         /// should be allowed. Default value is FALSE. Setting this value to TRUE may lower
         /// performance.</p>
-        pub fn allow_quoted_record_delimiter(mut self, inp: bool) -> Self {
-            self.allow_quoted_record_delimiter = Some(inp);
+        pub fn allow_quoted_record_delimiter(mut self, input: bool) -> Self {
+            self.allow_quoted_record_delimiter = Some(input);
             self
         }
-        pub fn set_allow_quoted_record_delimiter(mut self, inp: bool) -> Self {
-            self.allow_quoted_record_delimiter = Some(inp);
+        pub fn set_allow_quoted_record_delimiter(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.allow_quoted_record_delimiter = input;
             self
         }
         /// Consumes the builder and constructs a [`CSVInput`](crate::model::CSVInput)
@@ -2684,12 +2693,12 @@ pub mod glacier_job_parameters {
     }
     impl Builder {
         /// <p>Retrieval tier at which the restore will be processed.</p>
-        pub fn tier(mut self, inp: crate::model::Tier) -> Self {
-            self.tier = Some(inp);
+        pub fn tier(mut self, input: crate::model::Tier) -> Self {
+            self.tier = Some(input);
             self
         }
-        pub fn set_tier(mut self, inp: std::option::Option<crate::model::Tier>) -> Self {
-            self.tier = inp;
+        pub fn set_tier(mut self, input: std::option::Option<crate::model::Tier>) -> Self {
+            self.tier = input;
             self
         }
         /// Consumes the builder and constructs a [`GlacierJobParameters`](crate::model::GlacierJobParameters)
@@ -2786,12 +2795,12 @@ pub mod public_access_block_configuration {
         /// </li>
         /// </ul>
         /// <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
-        pub fn block_public_acls(mut self, inp: bool) -> Self {
-            self.block_public_acls = Some(inp);
+        pub fn block_public_acls(mut self, input: bool) -> Self {
+            self.block_public_acls = Some(input);
             self
         }
-        pub fn set_block_public_acls(mut self, inp: bool) -> Self {
-            self.block_public_acls = Some(inp);
+        pub fn set_block_public_acls(mut self, input: std::option::Option<bool>) -> Self {
+            self.block_public_acls = input;
             self
         }
         /// <p>Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this
@@ -2799,24 +2808,24 @@ pub mod public_access_block_configuration {
         /// this bucket and objects in this bucket.</p>
         /// <p>Enabling this setting doesn't affect the persistence of any existing ACLs and doesn't
         /// prevent new public ACLs from being set.</p>
-        pub fn ignore_public_acls(mut self, inp: bool) -> Self {
-            self.ignore_public_acls = Some(inp);
+        pub fn ignore_public_acls(mut self, input: bool) -> Self {
+            self.ignore_public_acls = Some(input);
             self
         }
-        pub fn set_ignore_public_acls(mut self, inp: bool) -> Self {
-            self.ignore_public_acls = Some(inp);
+        pub fn set_ignore_public_acls(mut self, input: std::option::Option<bool>) -> Self {
+            self.ignore_public_acls = input;
             self
         }
         /// <p>Specifies whether Amazon S3 should block public bucket policies for this bucket. Setting this
         /// element to <code>TRUE</code> causes Amazon S3 to reject calls to PUT Bucket policy if the
         /// specified bucket policy allows public access. </p>
         /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
-        pub fn block_public_policy(mut self, inp: bool) -> Self {
-            self.block_public_policy = Some(inp);
+        pub fn block_public_policy(mut self, input: bool) -> Self {
+            self.block_public_policy = Some(input);
             self
         }
-        pub fn set_block_public_policy(mut self, inp: bool) -> Self {
-            self.block_public_policy = Some(inp);
+        pub fn set_block_public_policy(mut self, input: std::option::Option<bool>) -> Self {
+            self.block_public_policy = input;
             self
         }
         /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting
@@ -2826,12 +2835,12 @@ pub mod public_access_block_configuration {
         /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that
         /// public and cross-account access within any public bucket policy, including non-public
         /// delegation to specific accounts, is blocked.</p>
-        pub fn restrict_public_buckets(mut self, inp: bool) -> Self {
-            self.restrict_public_buckets = Some(inp);
+        pub fn restrict_public_buckets(mut self, input: bool) -> Self {
+            self.restrict_public_buckets = Some(input);
             self
         }
-        pub fn set_restrict_public_buckets(mut self, inp: bool) -> Self {
-            self.restrict_public_buckets = Some(inp);
+        pub fn set_restrict_public_buckets(mut self, input: std::option::Option<bool>) -> Self {
+            self.restrict_public_buckets = input;
             self
         }
         /// Consumes the builder and constructs a [`PublicAccessBlockConfiguration`](crate::model::PublicAccessBlockConfiguration)
@@ -2880,27 +2889,27 @@ pub mod object_lock_retention {
     }
     impl Builder {
         /// <p>Indicates the Retention mode for the specified object.</p>
-        pub fn mode(mut self, inp: crate::model::ObjectLockRetentionMode) -> Self {
-            self.mode = Some(inp);
+        pub fn mode(mut self, input: crate::model::ObjectLockRetentionMode) -> Self {
+            self.mode = Some(input);
             self
         }
         pub fn set_mode(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockRetentionMode>,
+            input: std::option::Option<crate::model::ObjectLockRetentionMode>,
         ) -> Self {
-            self.mode = inp;
+            self.mode = input;
             self
         }
         /// <p>The date on which this Object Lock Retention will expire.</p>
-        pub fn retain_until_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.retain_until_date = Some(inp);
+        pub fn retain_until_date(mut self, input: smithy_types::Instant) -> Self {
+            self.retain_until_date = Some(input);
             self
         }
         pub fn set_retain_until_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.retain_until_date = inp;
+            self.retain_until_date = input;
             self
         }
         /// Consumes the builder and constructs a [`ObjectLockRetention`](crate::model::ObjectLockRetention)
@@ -3010,27 +3019,30 @@ pub mod object_lock_configuration {
         /// <p>Indicates whether this bucket has an Object Lock configuration enabled.
         /// Enable <code>ObjectLockEnabled</code> when you apply <code>ObjectLockConfiguration</code>
         /// to a bucket. </p>
-        pub fn object_lock_enabled(mut self, inp: crate::model::ObjectLockEnabled) -> Self {
-            self.object_lock_enabled = Some(inp);
+        pub fn object_lock_enabled(mut self, input: crate::model::ObjectLockEnabled) -> Self {
+            self.object_lock_enabled = Some(input);
             self
         }
         pub fn set_object_lock_enabled(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockEnabled>,
+            input: std::option::Option<crate::model::ObjectLockEnabled>,
         ) -> Self {
-            self.object_lock_enabled = inp;
+            self.object_lock_enabled = input;
             self
         }
         /// <p>Specifies the Object Lock rule for the specified object. Enable the this rule when you apply
         /// <code>ObjectLockConfiguration</code> to a bucket. Bucket settings require both a mode and a period.
         /// The period can be either <code>Days</code> or <code>Years</code> but you must select one.
         /// You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
-        pub fn rule(mut self, inp: crate::model::ObjectLockRule) -> Self {
-            self.rule = Some(inp);
+        pub fn rule(mut self, input: crate::model::ObjectLockRule) -> Self {
+            self.rule = Some(input);
             self
         }
-        pub fn set_rule(mut self, inp: std::option::Option<crate::model::ObjectLockRule>) -> Self {
-            self.rule = inp;
+        pub fn set_rule(
+            mut self,
+            input: std::option::Option<crate::model::ObjectLockRule>,
+        ) -> Self {
+            self.rule = input;
             self
         }
         /// Consumes the builder and constructs a [`ObjectLockConfiguration`](crate::model::ObjectLockConfiguration)
@@ -3079,15 +3091,15 @@ pub mod object_lock_rule {
         /// placed in the specified bucket. Bucket settings require both a mode and a period.
         /// The period can be either <code>Days</code> or <code>Years</code> but you must select one.
         /// You cannot specify <code>Days</code> and <code>Years</code> at the same time.</p>
-        pub fn default_retention(mut self, inp: crate::model::DefaultRetention) -> Self {
-            self.default_retention = Some(inp);
+        pub fn default_retention(mut self, input: crate::model::DefaultRetention) -> Self {
+            self.default_retention = Some(input);
             self
         }
         pub fn set_default_retention(
             mut self,
-            inp: std::option::Option<crate::model::DefaultRetention>,
+            input: std::option::Option<crate::model::DefaultRetention>,
         ) -> Self {
-            self.default_retention = inp;
+            self.default_retention = input;
             self
         }
         /// Consumes the builder and constructs a [`ObjectLockRule`](crate::model::ObjectLockRule)
@@ -3155,35 +3167,35 @@ pub mod default_retention {
     impl Builder {
         /// <p>The default Object Lock retention mode you want to apply to new objects placed in the
         /// specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
-        pub fn mode(mut self, inp: crate::model::ObjectLockRetentionMode) -> Self {
-            self.mode = Some(inp);
+        pub fn mode(mut self, input: crate::model::ObjectLockRetentionMode) -> Self {
+            self.mode = Some(input);
             self
         }
         pub fn set_mode(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockRetentionMode>,
+            input: std::option::Option<crate::model::ObjectLockRetentionMode>,
         ) -> Self {
-            self.mode = inp;
+            self.mode = input;
             self
         }
         /// <p>The number of days that you want to specify for the default retention period. Must be
         /// used with <code>Mode</code>.</p>
-        pub fn days(mut self, inp: i32) -> Self {
-            self.days = Some(inp);
+        pub fn days(mut self, input: i32) -> Self {
+            self.days = Some(input);
             self
         }
-        pub fn set_days(mut self, inp: i32) -> Self {
-            self.days = Some(inp);
+        pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.days = input;
             self
         }
         /// <p>The number of years that you want to specify for the default retention period. Must be
         /// used with <code>Mode</code>.</p>
-        pub fn years(mut self, inp: i32) -> Self {
-            self.years = Some(inp);
+        pub fn years(mut self, input: i32) -> Self {
+            self.years = Some(input);
             self
         }
-        pub fn set_years(mut self, inp: i32) -> Self {
-            self.years = Some(inp);
+        pub fn set_years(mut self, input: std::option::Option<i32>) -> Self {
+            self.years = input;
             self
         }
         /// Consumes the builder and constructs a [`DefaultRetention`](crate::model::DefaultRetention)
@@ -3280,15 +3292,15 @@ pub mod object_lock_legal_hold {
     }
     impl Builder {
         /// <p>Indicates whether the specified object has a Legal Hold in place.</p>
-        pub fn status(mut self, inp: crate::model::ObjectLockLegalHoldStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ObjectLockLegalHoldStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
+            input: std::option::Option<crate::model::ObjectLockLegalHoldStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`ObjectLockLegalHold`](crate::model::ObjectLockLegalHold)
@@ -3333,26 +3345,26 @@ pub mod access_control_policy {
         pub(crate) owner: std::option::Option<crate::model::Owner>,
     }
     impl Builder {
-        pub fn grants(mut self, inp: impl Into<crate::model::Grant>) -> Self {
+        pub fn grants(mut self, input: impl Into<crate::model::Grant>) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.grants = Some(v);
             self
         }
         pub fn set_grants(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Grant>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Grant>>,
         ) -> Self {
-            self.grants = inp;
+            self.grants = input;
             self
         }
         /// <p>Container for the bucket owner's display name and ID.</p>
-        pub fn owner(mut self, inp: crate::model::Owner) -> Self {
-            self.owner = Some(inp);
+        pub fn owner(mut self, input: crate::model::Owner) -> Self {
+            self.owner = Some(input);
             self
         }
-        pub fn set_owner(mut self, inp: std::option::Option<crate::model::Owner>) -> Self {
-            self.owner = inp;
+        pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
+            self.owner = input;
             self
         }
         /// Consumes the builder and constructs a [`AccessControlPolicy`](crate::model::AccessControlPolicy)
@@ -3399,21 +3411,21 @@ pub mod owner {
     }
     impl Builder {
         /// <p>Container for the display name of the owner.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.display_name = Some(inp.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_name = Some(input.into());
             self
         }
-        pub fn set_display_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.display_name = inp;
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_name = input;
             self
         }
         /// <p>Container for the ID of the owner.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`Owner`](crate::model::Owner)
@@ -3472,27 +3484,27 @@ pub mod website_configuration {
     }
     impl Builder {
         /// <p>The name of the error document for the website.</p>
-        pub fn error_document(mut self, inp: crate::model::ErrorDocument) -> Self {
-            self.error_document = Some(inp);
+        pub fn error_document(mut self, input: crate::model::ErrorDocument) -> Self {
+            self.error_document = Some(input);
             self
         }
         pub fn set_error_document(
             mut self,
-            inp: std::option::Option<crate::model::ErrorDocument>,
+            input: std::option::Option<crate::model::ErrorDocument>,
         ) -> Self {
-            self.error_document = inp;
+            self.error_document = input;
             self
         }
         /// <p>The name of the index document for the website.</p>
-        pub fn index_document(mut self, inp: crate::model::IndexDocument) -> Self {
-            self.index_document = Some(inp);
+        pub fn index_document(mut self, input: crate::model::IndexDocument) -> Self {
+            self.index_document = Some(input);
             self
         }
         pub fn set_index_document(
             mut self,
-            inp: std::option::Option<crate::model::IndexDocument>,
+            input: std::option::Option<crate::model::IndexDocument>,
         ) -> Self {
-            self.index_document = inp;
+            self.index_document = input;
             self
         }
         /// <p>The redirect behavior for every request to this bucket's website endpoint.</p>
@@ -3501,29 +3513,29 @@ pub mod website_configuration {
         /// </important>
         pub fn redirect_all_requests_to(
             mut self,
-            inp: crate::model::RedirectAllRequestsTo,
+            input: crate::model::RedirectAllRequestsTo,
         ) -> Self {
-            self.redirect_all_requests_to = Some(inp);
+            self.redirect_all_requests_to = Some(input);
             self
         }
         pub fn set_redirect_all_requests_to(
             mut self,
-            inp: std::option::Option<crate::model::RedirectAllRequestsTo>,
+            input: std::option::Option<crate::model::RedirectAllRequestsTo>,
         ) -> Self {
-            self.redirect_all_requests_to = inp;
+            self.redirect_all_requests_to = input;
             self
         }
-        pub fn routing_rules(mut self, inp: impl Into<crate::model::RoutingRule>) -> Self {
+        pub fn routing_rules(mut self, input: impl Into<crate::model::RoutingRule>) -> Self {
             let mut v = self.routing_rules.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.routing_rules = Some(v);
             self
         }
         pub fn set_routing_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::RoutingRule>>,
+            input: std::option::Option<std::vec::Vec<crate::model::RoutingRule>>,
         ) -> Self {
-            self.routing_rules = inp;
+            self.routing_rules = input;
             self
         }
         /// Consumes the builder and constructs a [`WebsiteConfiguration`](crate::model::WebsiteConfiguration)
@@ -3582,23 +3594,26 @@ pub mod routing_rule {
         /// apply. For example, 1. If request is for pages in the <code>/docs</code> folder, redirect
         /// to the <code>/documents</code> folder. 2. If request results in HTTP error 4xx, redirect
         /// request to another host where you might process the error.</p>
-        pub fn condition(mut self, inp: crate::model::Condition) -> Self {
-            self.condition = Some(inp);
+        pub fn condition(mut self, input: crate::model::Condition) -> Self {
+            self.condition = Some(input);
             self
         }
-        pub fn set_condition(mut self, inp: std::option::Option<crate::model::Condition>) -> Self {
-            self.condition = inp;
+        pub fn set_condition(
+            mut self,
+            input: std::option::Option<crate::model::Condition>,
+        ) -> Self {
+            self.condition = input;
             self
         }
         /// <p>Container for redirect information. You can redirect requests to another host, to
         /// another page, or with another protocol. In the event of an error, you can specify a
         /// different error code to return.</p>
-        pub fn redirect(mut self, inp: crate::model::Redirect) -> Self {
-            self.redirect = Some(inp);
+        pub fn redirect(mut self, input: crate::model::Redirect) -> Self {
+            self.redirect = Some(input);
             self
         }
-        pub fn set_redirect(mut self, inp: std::option::Option<crate::model::Redirect>) -> Self {
-            self.redirect = inp;
+        pub fn set_redirect(mut self, input: std::option::Option<crate::model::Redirect>) -> Self {
+            self.redirect = input;
             self
         }
         /// Consumes the builder and constructs a [`RoutingRule`](crate::model::RoutingRule)
@@ -3677,35 +3692,35 @@ pub mod redirect {
     }
     impl Builder {
         /// <p>The host name to use in the redirect request.</p>
-        pub fn host_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.host_name = Some(inp.into());
+        pub fn host_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host_name = Some(input.into());
             self
         }
-        pub fn set_host_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.host_name = inp;
+        pub fn set_host_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host_name = input;
             self
         }
         /// <p>The HTTP redirect code to use on the response. Not required if one of the siblings is
         /// present.</p>
-        pub fn http_redirect_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.http_redirect_code = Some(inp.into());
+        pub fn http_redirect_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.http_redirect_code = Some(input.into());
             self
         }
         pub fn set_http_redirect_code(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.http_redirect_code = inp;
+            self.http_redirect_code = input;
             self
         }
         /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in
         /// the original request.</p>
-        pub fn protocol(mut self, inp: crate::model::Protocol) -> Self {
-            self.protocol = Some(inp);
+        pub fn protocol(mut self, input: crate::model::Protocol) -> Self {
+            self.protocol = Some(input);
             self
         }
-        pub fn set_protocol(mut self, inp: std::option::Option<crate::model::Protocol>) -> Self {
-            self.protocol = inp;
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
+            self.protocol = input;
             self
         }
         /// <p>The object key prefix to use in the redirect request. For example, to redirect requests
@@ -3719,15 +3734,15 @@ pub mod redirect {
         /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
         /// XML related object key constraints</a>.</p>
         /// </important>
-        pub fn replace_key_prefix_with(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.replace_key_prefix_with = Some(inp.into());
+        pub fn replace_key_prefix_with(mut self, input: impl Into<std::string::String>) -> Self {
+            self.replace_key_prefix_with = Some(input.into());
             self
         }
         pub fn set_replace_key_prefix_with(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.replace_key_prefix_with = inp;
+            self.replace_key_prefix_with = input;
             self
         }
         /// <p>The specific object key to use in the redirect request. For example, redirect request to
@@ -3738,15 +3753,15 @@ pub mod redirect {
         /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
         /// XML related object key constraints</a>.</p>
         /// </important>
-        pub fn replace_key_with(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.replace_key_with = Some(inp.into());
+        pub fn replace_key_with(mut self, input: impl Into<std::string::String>) -> Self {
+            self.replace_key_with = Some(input.into());
             self
         }
         pub fn set_replace_key_with(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.replace_key_with = inp;
+            self.replace_key_with = input;
             self
         }
         /// Consumes the builder and constructs a [`Redirect`](crate::model::Redirect)
@@ -3880,16 +3895,16 @@ pub mod condition {
         /// applied.</p>
         pub fn http_error_code_returned_equals(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.http_error_code_returned_equals = Some(inp.into());
+            self.http_error_code_returned_equals = Some(input.into());
             self
         }
         pub fn set_http_error_code_returned_equals(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.http_error_code_returned_equals = inp;
+            self.http_error_code_returned_equals = input;
             self
         }
         /// <p>The object key name prefix when the redirect is applied. For example, to redirect
@@ -3905,15 +3920,15 @@ pub mod condition {
         /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
         /// XML related object key constraints</a>.</p>
         /// </important>
-        pub fn key_prefix_equals(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_prefix_equals = Some(inp.into());
+        pub fn key_prefix_equals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_prefix_equals = Some(input.into());
             self
         }
         pub fn set_key_prefix_equals(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.key_prefix_equals = inp;
+            self.key_prefix_equals = input;
             self
         }
         /// Consumes the builder and constructs a [`Condition`](crate::model::Condition)
@@ -3962,22 +3977,22 @@ pub mod redirect_all_requests_to {
     }
     impl Builder {
         /// <p>Name of the host where requests are redirected.</p>
-        pub fn host_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.host_name = Some(inp.into());
+        pub fn host_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.host_name = Some(input.into());
             self
         }
-        pub fn set_host_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.host_name = inp;
+        pub fn set_host_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.host_name = input;
             self
         }
         /// <p>Protocol to use when redirecting requests. The default is the protocol that is used in
         /// the original request.</p>
-        pub fn protocol(mut self, inp: crate::model::Protocol) -> Self {
-            self.protocol = Some(inp);
+        pub fn protocol(mut self, input: crate::model::Protocol) -> Self {
+            self.protocol = Some(input);
             self
         }
-        pub fn set_protocol(mut self, inp: std::option::Option<crate::model::Protocol>) -> Self {
-            self.protocol = inp;
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
+            self.protocol = input;
             self
         }
         /// Consumes the builder and constructs a [`RedirectAllRequestsTo`](crate::model::RedirectAllRequestsTo)
@@ -4036,12 +4051,12 @@ pub mod index_document {
         /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
         /// XML related object key constraints</a>.</p>
         /// </important>
-        pub fn suffix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.suffix = Some(inp.into());
+        pub fn suffix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.suffix = Some(input.into());
             self
         }
-        pub fn set_suffix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.suffix = inp;
+        pub fn set_suffix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.suffix = input;
             self
         }
         /// Consumes the builder and constructs a [`IndexDocument`](crate::model::IndexDocument)
@@ -4093,12 +4108,12 @@ pub mod error_document {
         /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
         /// XML related object key constraints</a>.</p>
         /// </important>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// Consumes the builder and constructs a [`ErrorDocument`](crate::model::ErrorDocument)
@@ -4147,24 +4162,27 @@ pub mod versioning_configuration {
         /// <p>Specifies whether MFA delete is enabled in the bucket versioning configuration. This
         /// element is only returned if the bucket has been configured with MFA delete. If the bucket
         /// has never been so configured, this element is not returned.</p>
-        pub fn mfa_delete(mut self, inp: crate::model::MfaDelete) -> Self {
-            self.mfa_delete = Some(inp);
+        pub fn mfa_delete(mut self, input: crate::model::MfaDelete) -> Self {
+            self.mfa_delete = Some(input);
             self
         }
-        pub fn set_mfa_delete(mut self, inp: std::option::Option<crate::model::MfaDelete>) -> Self {
-            self.mfa_delete = inp;
+        pub fn set_mfa_delete(
+            mut self,
+            input: std::option::Option<crate::model::MfaDelete>,
+        ) -> Self {
+            self.mfa_delete = input;
             self
         }
         /// <p>The versioning state of the bucket.</p>
-        pub fn status(mut self, inp: crate::model::BucketVersioningStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::BucketVersioningStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::BucketVersioningStatus>,
+            input: std::option::Option<crate::model::BucketVersioningStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`VersioningConfiguration`](crate::model::VersioningConfiguration)
@@ -4319,12 +4337,12 @@ pub mod request_payment_configuration {
     }
     impl Builder {
         /// <p>Specifies who pays for the download and request fees.</p>
-        pub fn payer(mut self, inp: crate::model::Payer) -> Self {
-            self.payer = Some(inp);
+        pub fn payer(mut self, input: crate::model::Payer) -> Self {
+            self.payer = Some(input);
             self
         }
-        pub fn set_payer(mut self, inp: std::option::Option<crate::model::Payer>) -> Self {
-            self.payer = inp;
+        pub fn set_payer(mut self, input: std::option::Option<crate::model::Payer>) -> Self {
+            self.payer = input;
             self
         }
         /// Consumes the builder and constructs a [`RequestPaymentConfiguration`](crate::model::RequestPaymentConfiguration)
@@ -4430,25 +4448,25 @@ pub mod replication_configuration {
         /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
         /// Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up
         /// Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn role(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role = Some(inp.into());
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role = Some(input.into());
             self
         }
-        pub fn set_role(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role = inp;
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role = input;
             self
         }
-        pub fn rules(mut self, inp: impl Into<crate::model::ReplicationRule>) -> Self {
+        pub fn rules(mut self, input: impl Into<crate::model::ReplicationRule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.rules = Some(v);
             self
         }
         pub fn set_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ReplicationRule>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ReplicationRule>>,
         ) -> Self {
-            self.rules = inp;
+            self.rules = input;
             self
         }
         /// Consumes the builder and constructs a [`ReplicationConfiguration`](crate::model::ReplicationConfiguration)
@@ -4560,12 +4578,12 @@ pub mod replication_rule {
     }
     impl Builder {
         /// <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The priority indicates which rule has precedence whenever two or more replication rules
@@ -4575,12 +4593,12 @@ pub mod replication_rule {
         /// higher the priority. </p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a> in the
         /// <i>Amazon S3 User Guide</i>.</p>
-        pub fn priority(mut self, inp: i32) -> Self {
-            self.priority = Some(inp);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.priority = Some(input);
             self
         }
-        pub fn set_priority(mut self, inp: i32) -> Self {
-            self.priority = Some(inp);
+        pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+            self.priority = input;
             self
         }
         /// <p>An object key name prefix that identifies the object or objects to which the rule
@@ -4591,38 +4609,38 @@ pub mod replication_rule {
         /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
         /// XML related object key constraints</a>.</p>
         /// </important>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// <p>A filter that identifies the subset of objects to which the replication rule applies. A
         /// <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or
         /// an <code>And</code> child element.</p>
-        pub fn filter(mut self, inp: crate::model::ReplicationRuleFilter) -> Self {
-            self.filter = Some(inp);
+        pub fn filter(mut self, input: crate::model::ReplicationRuleFilter) -> Self {
+            self.filter = Some(input);
             self
         }
         pub fn set_filter(
             mut self,
-            inp: std::option::Option<crate::model::ReplicationRuleFilter>,
+            input: std::option::Option<crate::model::ReplicationRuleFilter>,
         ) -> Self {
-            self.filter = inp;
+            self.filter = input;
             self
         }
         /// <p>Specifies whether the rule is enabled.</p>
-        pub fn status(mut self, inp: crate::model::ReplicationRuleStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ReplicationRuleStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ReplicationRuleStatus>,
+            input: std::option::Option<crate::model::ReplicationRuleStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p>A container that describes additional filters for identifying the source objects that
@@ -4632,44 +4650,44 @@ pub mod replication_rule {
         /// Service (SSE-KMS).</p>
         pub fn source_selection_criteria(
             mut self,
-            inp: crate::model::SourceSelectionCriteria,
+            input: crate::model::SourceSelectionCriteria,
         ) -> Self {
-            self.source_selection_criteria = Some(inp);
+            self.source_selection_criteria = Some(input);
             self
         }
         pub fn set_source_selection_criteria(
             mut self,
-            inp: std::option::Option<crate::model::SourceSelectionCriteria>,
+            input: std::option::Option<crate::model::SourceSelectionCriteria>,
         ) -> Self {
-            self.source_selection_criteria = inp;
+            self.source_selection_criteria = input;
             self
         }
         /// <p></p>
         pub fn existing_object_replication(
             mut self,
-            inp: crate::model::ExistingObjectReplication,
+            input: crate::model::ExistingObjectReplication,
         ) -> Self {
-            self.existing_object_replication = Some(inp);
+            self.existing_object_replication = Some(input);
             self
         }
         pub fn set_existing_object_replication(
             mut self,
-            inp: std::option::Option<crate::model::ExistingObjectReplication>,
+            input: std::option::Option<crate::model::ExistingObjectReplication>,
         ) -> Self {
-            self.existing_object_replication = inp;
+            self.existing_object_replication = input;
             self
         }
         /// <p>A container for information about the replication destination and its configurations
         /// including enabling the S3 Replication Time Control (S3 RTC).</p>
-        pub fn destination(mut self, inp: crate::model::Destination) -> Self {
-            self.destination = Some(inp);
+        pub fn destination(mut self, input: crate::model::Destination) -> Self {
+            self.destination = Some(input);
             self
         }
         pub fn set_destination(
             mut self,
-            inp: std::option::Option<crate::model::Destination>,
+            input: std::option::Option<crate::model::Destination>,
         ) -> Self {
-            self.destination = inp;
+            self.destination = input;
             self
         }
         /// <p>Specifies whether Amazon S3 replicates delete markers. If you specify a <code>Filter</code>
@@ -4686,16 +4704,16 @@ pub mod replication_rule {
         /// </note>
         pub fn delete_marker_replication(
             mut self,
-            inp: crate::model::DeleteMarkerReplication,
+            input: crate::model::DeleteMarkerReplication,
         ) -> Self {
-            self.delete_marker_replication = Some(inp);
+            self.delete_marker_replication = Some(input);
             self
         }
         pub fn set_delete_marker_replication(
             mut self,
-            inp: std::option::Option<crate::model::DeleteMarkerReplication>,
+            input: std::option::Option<crate::model::DeleteMarkerReplication>,
         ) -> Self {
-            self.delete_marker_replication = inp;
+            self.delete_marker_replication = input;
             self
         }
         /// Consumes the builder and constructs a [`ReplicationRule`](crate::model::ReplicationRule)
@@ -4762,15 +4780,15 @@ pub mod delete_marker_replication {
         /// <note>
         /// <p>Indicates whether to replicate delete markers.</p>
         /// </note>
-        pub fn status(mut self, inp: crate::model::DeleteMarkerReplicationStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::DeleteMarkerReplicationStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::DeleteMarkerReplicationStatus>,
+            input: std::option::Option<crate::model::DeleteMarkerReplicationStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteMarkerReplication`](crate::model::DeleteMarkerReplication)
@@ -4913,12 +4931,12 @@ pub mod destination {
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to store the results.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.bucket = inp;
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to
@@ -4926,12 +4944,12 @@ pub mod destination {
         /// the <code>AccessControlTranslation</code> property, this is the account ID of the
         /// destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional
         /// Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.account = Some(inp.into());
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account = Some(input.into());
             self
         }
-        pub fn set_account(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.account = inp;
+        pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account = input;
             self
         }
         /// <p> The storage class to use when replicating objects, such as S3 Standard or reduced
@@ -4939,15 +4957,15 @@ pub mod destination {
         /// object replica. </p>
         /// <p>For valid values, see the <code>StorageClass</code> element of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT Bucket
         /// replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
-        pub fn storage_class(mut self, inp: crate::model::StorageClass) -> Self {
-            self.storage_class = Some(inp);
+        pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
+            self.storage_class = Some(input);
             self
         }
         pub fn set_storage_class(
             mut self,
-            inp: std::option::Option<crate::model::StorageClass>,
+            input: std::option::Option<crate::model::StorageClass>,
         ) -> Self {
-            self.storage_class = inp;
+            self.storage_class = input;
             self
         }
         /// <p>Specify this only in a cross-account scenario (where source and destination bucket
@@ -4956,56 +4974,56 @@ pub mod destination {
         /// replicas are owned by same AWS account that owns the source object.</p>
         pub fn access_control_translation(
             mut self,
-            inp: crate::model::AccessControlTranslation,
+            input: crate::model::AccessControlTranslation,
         ) -> Self {
-            self.access_control_translation = Some(inp);
+            self.access_control_translation = Some(input);
             self
         }
         pub fn set_access_control_translation(
             mut self,
-            inp: std::option::Option<crate::model::AccessControlTranslation>,
+            input: std::option::Option<crate::model::AccessControlTranslation>,
         ) -> Self {
-            self.access_control_translation = inp;
+            self.access_control_translation = input;
             self
         }
         /// <p>A container that provides information about encryption. If
         /// <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
         pub fn encryption_configuration(
             mut self,
-            inp: crate::model::EncryptionConfiguration,
+            input: crate::model::EncryptionConfiguration,
         ) -> Self {
-            self.encryption_configuration = Some(inp);
+            self.encryption_configuration = Some(input);
             self
         }
         pub fn set_encryption_configuration(
             mut self,
-            inp: std::option::Option<crate::model::EncryptionConfiguration>,
+            input: std::option::Option<crate::model::EncryptionConfiguration>,
         ) -> Self {
-            self.encryption_configuration = inp;
+            self.encryption_configuration = input;
             self
         }
         /// <p> A container specifying S3 Replication Time Control (S3 RTC), including whether S3 RTC is enabled and the time
         /// when all objects and operations on objects must be replicated. Must be specified together
         /// with a <code>Metrics</code> block. </p>
-        pub fn replication_time(mut self, inp: crate::model::ReplicationTime) -> Self {
-            self.replication_time = Some(inp);
+        pub fn replication_time(mut self, input: crate::model::ReplicationTime) -> Self {
+            self.replication_time = Some(input);
             self
         }
         pub fn set_replication_time(
             mut self,
-            inp: std::option::Option<crate::model::ReplicationTime>,
+            input: std::option::Option<crate::model::ReplicationTime>,
         ) -> Self {
-            self.replication_time = inp;
+            self.replication_time = input;
             self
         }
         /// <p> A container specifying replication metrics-related settings enabling replication
         /// metrics and events. </p>
-        pub fn metrics(mut self, inp: crate::model::Metrics) -> Self {
-            self.metrics = Some(inp);
+        pub fn metrics(mut self, input: crate::model::Metrics) -> Self {
+            self.metrics = Some(input);
             self
         }
-        pub fn set_metrics(mut self, inp: std::option::Option<crate::model::Metrics>) -> Self {
-            self.metrics = inp;
+        pub fn set_metrics(mut self, input: std::option::Option<crate::model::Metrics>) -> Self {
+            self.metrics = input;
             self
         }
         /// Consumes the builder and constructs a [`Destination`](crate::model::Destination)
@@ -5059,25 +5077,28 @@ pub mod metrics {
     }
     impl Builder {
         /// <p> Specifies whether the replication metrics are enabled. </p>
-        pub fn status(mut self, inp: crate::model::MetricsStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::MetricsStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::MetricsStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::MetricsStatus>,
+        ) -> Self {
+            self.status = input;
             self
         }
         /// <p> A container specifying the time threshold for emitting the
         /// <code>s3:Replication:OperationMissedThreshold</code> event. </p>
-        pub fn event_threshold(mut self, inp: crate::model::ReplicationTimeValue) -> Self {
-            self.event_threshold = Some(inp);
+        pub fn event_threshold(mut self, input: crate::model::ReplicationTimeValue) -> Self {
+            self.event_threshold = Some(input);
             self
         }
         pub fn set_event_threshold(
             mut self,
-            inp: std::option::Option<crate::model::ReplicationTimeValue>,
+            input: std::option::Option<crate::model::ReplicationTimeValue>,
         ) -> Self {
-            self.event_threshold = inp;
+            self.event_threshold = input;
             self
         }
         /// Consumes the builder and constructs a [`Metrics`](crate::model::Metrics)
@@ -5123,12 +5144,12 @@ pub mod replication_time_value {
     impl Builder {
         /// <p> Contains an integer specifying time in minutes. </p>
         /// <p> Valid values: 15 minutes. </p>
-        pub fn minutes(mut self, inp: i32) -> Self {
-            self.minutes = Some(inp);
+        pub fn minutes(mut self, input: i32) -> Self {
+            self.minutes = Some(input);
             self
         }
-        pub fn set_minutes(mut self, inp: i32) -> Self {
-            self.minutes = Some(inp);
+        pub fn set_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.minutes = input;
             self
         }
         /// Consumes the builder and constructs a [`ReplicationTimeValue`](crate::model::ReplicationTimeValue)
@@ -5233,28 +5254,28 @@ pub mod replication_time {
     }
     impl Builder {
         /// <p> Specifies whether the replication time is enabled. </p>
-        pub fn status(mut self, inp: crate::model::ReplicationTimeStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ReplicationTimeStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ReplicationTimeStatus>,
+            input: std::option::Option<crate::model::ReplicationTimeStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// <p> A container specifying the time by which replication should be complete for all objects
         /// and operations on objects. </p>
-        pub fn time(mut self, inp: crate::model::ReplicationTimeValue) -> Self {
-            self.time = Some(inp);
+        pub fn time(mut self, input: crate::model::ReplicationTimeValue) -> Self {
+            self.time = Some(input);
             self
         }
         pub fn set_time(
             mut self,
-            inp: std::option::Option<crate::model::ReplicationTimeValue>,
+            input: std::option::Option<crate::model::ReplicationTimeValue>,
         ) -> Self {
-            self.time = inp;
+            self.time = input;
             self
         }
         /// Consumes the builder and constructs a [`ReplicationTime`](crate::model::ReplicationTime)
@@ -5362,15 +5383,15 @@ pub mod encryption_configuration {
         /// this key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys.
         /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
         /// asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-        pub fn replica_kms_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.replica_kms_key_id = Some(inp.into());
+        pub fn replica_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.replica_kms_key_id = Some(input.into());
             self
         }
         pub fn set_replica_kms_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.replica_kms_key_id = inp;
+            self.replica_kms_key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::model::EncryptionConfiguration)
@@ -5414,12 +5435,15 @@ pub mod access_control_translation {
     impl Builder {
         /// <p>Specifies the replica ownership. For default and valid values, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html">PUT bucket
         /// replication</a> in the <i>Amazon S3 API Reference</i>.</p>
-        pub fn owner(mut self, inp: crate::model::OwnerOverride) -> Self {
-            self.owner = Some(inp);
+        pub fn owner(mut self, input: crate::model::OwnerOverride) -> Self {
+            self.owner = Some(input);
             self
         }
-        pub fn set_owner(mut self, inp: std::option::Option<crate::model::OwnerOverride>) -> Self {
-            self.owner = inp;
+        pub fn set_owner(
+            mut self,
+            input: std::option::Option<crate::model::OwnerOverride>,
+        ) -> Self {
+            self.owner = input;
             self
         }
         /// Consumes the builder and constructs a [`AccessControlTranslation`](crate::model::AccessControlTranslation)
@@ -5514,15 +5538,15 @@ pub mod existing_object_replication {
     }
     impl Builder {
         /// <p></p>
-        pub fn status(mut self, inp: crate::model::ExistingObjectReplicationStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ExistingObjectReplicationStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ExistingObjectReplicationStatus>,
+            input: std::option::Option<crate::model::ExistingObjectReplicationStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`ExistingObjectReplication`](crate::model::ExistingObjectReplication)
@@ -5643,16 +5667,16 @@ pub mod source_selection_criteria {
         /// this element is required. </p>
         pub fn sse_kms_encrypted_objects(
             mut self,
-            inp: crate::model::SseKmsEncryptedObjects,
+            input: crate::model::SseKmsEncryptedObjects,
         ) -> Self {
-            self.sse_kms_encrypted_objects = Some(inp);
+            self.sse_kms_encrypted_objects = Some(input);
             self
         }
         pub fn set_sse_kms_encrypted_objects(
             mut self,
-            inp: std::option::Option<crate::model::SseKmsEncryptedObjects>,
+            input: std::option::Option<crate::model::SseKmsEncryptedObjects>,
         ) -> Self {
-            self.sse_kms_encrypted_objects = inp;
+            self.sse_kms_encrypted_objects = input;
             self
         }
         /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't
@@ -5664,15 +5688,15 @@ pub mod source_selection_criteria {
         /// replication configuration is the earlier version, V1. In the earlier version, this
         /// element is not allowed</p>
         /// </note>
-        pub fn replica_modifications(mut self, inp: crate::model::ReplicaModifications) -> Self {
-            self.replica_modifications = Some(inp);
+        pub fn replica_modifications(mut self, input: crate::model::ReplicaModifications) -> Self {
+            self.replica_modifications = Some(input);
             self
         }
         pub fn set_replica_modifications(
             mut self,
-            inp: std::option::Option<crate::model::ReplicaModifications>,
+            input: std::option::Option<crate::model::ReplicaModifications>,
         ) -> Self {
-            self.replica_modifications = inp;
+            self.replica_modifications = input;
             self
         }
         /// Consumes the builder and constructs a [`SourceSelectionCriteria`](crate::model::SourceSelectionCriteria)
@@ -5723,15 +5747,15 @@ pub mod replica_modifications {
     }
     impl Builder {
         /// <p>Specifies whether Amazon S3 replicates modifications on replicas.</p>
-        pub fn status(mut self, inp: crate::model::ReplicaModificationsStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ReplicaModificationsStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ReplicaModificationsStatus>,
+            input: std::option::Option<crate::model::ReplicaModificationsStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`ReplicaModifications`](crate::model::ReplicaModifications)
@@ -5832,15 +5856,15 @@ pub mod sse_kms_encrypted_objects {
     impl Builder {
         /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an
         /// AWS KMS key stored in AWS Key Management Service.</p>
-        pub fn status(mut self, inp: crate::model::SseKmsEncryptedObjectsStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::SseKmsEncryptedObjectsStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::SseKmsEncryptedObjectsStatus>,
+            input: std::option::Option<crate::model::SseKmsEncryptedObjectsStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`SseKmsEncryptedObjects`](crate::model::SseKmsEncryptedObjects)
@@ -6000,35 +6024,35 @@ pub enum ReplicationRuleFilter {
     Tag(crate::model::Tag),
 }
 impl ReplicationRuleFilter {
-    pub fn as_and(&self) -> Option<&crate::model::ReplicationRuleAndOperator> {
+    pub fn as_and(&self) -> Result<&crate::model::ReplicationRuleAndOperator, &Self> {
         if let ReplicationRuleFilter::And(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_and(&self) -> bool {
-        self.as_and().is_some()
+        self.as_and().is_ok()
     }
-    pub fn as_prefix(&self) -> Option<&std::string::String> {
+    pub fn as_prefix(&self) -> Result<&std::string::String, &Self> {
         if let ReplicationRuleFilter::Prefix(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_prefix(&self) -> bool {
-        self.as_prefix().is_some()
+        self.as_prefix().is_ok()
     }
-    pub fn as_tag(&self) -> Option<&crate::model::Tag> {
+    pub fn as_tag(&self) -> Result<&crate::model::Tag, &Self> {
         if let ReplicationRuleFilter::Tag(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_tag(&self) -> bool {
-        self.as_tag().is_some()
+        self.as_tag().is_ok()
     }
 }
 
@@ -6074,25 +6098,25 @@ pub mod replication_rule_and_operator {
     impl Builder {
         /// <p>An object key name prefix that identifies the subset of objects to which the rule
         /// applies.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`ReplicationRuleAndOperator`](crate::model::ReplicationRuleAndOperator)
@@ -6134,17 +6158,17 @@ pub mod ownership_controls {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::OwnershipControlsRule>>,
     }
     impl Builder {
-        pub fn rules(mut self, inp: impl Into<crate::model::OwnershipControlsRule>) -> Self {
+        pub fn rules(mut self, input: impl Into<crate::model::OwnershipControlsRule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.rules = Some(v);
             self
         }
         pub fn set_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::OwnershipControlsRule>>,
+            input: std::option::Option<std::vec::Vec<crate::model::OwnershipControlsRule>>,
         ) -> Self {
-            self.rules = inp;
+            self.rules = input;
             self
         }
         /// Consumes the builder and constructs a [`OwnershipControls`](crate::model::OwnershipControls)
@@ -6194,15 +6218,15 @@ pub mod ownership_controls_rule {
         /// ACL.</p>
         /// <p>ObjectWriter - The uploading account will own the object if the object is uploaded with
         /// the <code>bucket-owner-full-control</code> canned ACL.</p>
-        pub fn object_ownership(mut self, inp: crate::model::ObjectOwnership) -> Self {
-            self.object_ownership = Some(inp);
+        pub fn object_ownership(mut self, input: crate::model::ObjectOwnership) -> Self {
+            self.object_ownership = Some(input);
             self
         }
         pub fn set_object_ownership(
             mut self,
-            inp: std::option::Option<crate::model::ObjectOwnership>,
+            input: std::option::Option<crate::model::ObjectOwnership>,
         ) -> Self {
-            self.object_ownership = inp;
+            self.object_ownership = input;
             self
         }
         /// Consumes the builder and constructs a [`OwnershipControlsRule`](crate::model::OwnershipControlsRule)
@@ -6326,50 +6350,50 @@ pub mod notification_configuration {
     impl Builder {
         pub fn topic_configurations(
             mut self,
-            inp: impl Into<crate::model::TopicConfiguration>,
+            input: impl Into<crate::model::TopicConfiguration>,
         ) -> Self {
             let mut v = self.topic_configurations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.topic_configurations = Some(v);
             self
         }
         pub fn set_topic_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TopicConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TopicConfiguration>>,
         ) -> Self {
-            self.topic_configurations = inp;
+            self.topic_configurations = input;
             self
         }
         pub fn queue_configurations(
             mut self,
-            inp: impl Into<crate::model::QueueConfiguration>,
+            input: impl Into<crate::model::QueueConfiguration>,
         ) -> Self {
             let mut v = self.queue_configurations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.queue_configurations = Some(v);
             self
         }
         pub fn set_queue_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::QueueConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::QueueConfiguration>>,
         ) -> Self {
-            self.queue_configurations = inp;
+            self.queue_configurations = input;
             self
         }
         pub fn lambda_function_configurations(
             mut self,
-            inp: impl Into<crate::model::LambdaFunctionConfiguration>,
+            input: impl Into<crate::model::LambdaFunctionConfiguration>,
         ) -> Self {
             let mut v = self.lambda_function_configurations.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.lambda_function_configurations = Some(v);
             self
         }
         pub fn set_lambda_function_configurations(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
         ) -> Self {
-            self.lambda_function_configurations = inp;
+            self.lambda_function_configurations = input;
             self
         }
         /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::model::NotificationConfiguration)
@@ -6432,52 +6456,52 @@ pub mod lambda_function_configuration {
     impl Builder {
         /// <p>An optional unique identifier for configurations in a notification configuration. If you
         /// don't provide one, Amazon S3 will assign an ID.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon S3 invokes when the
         /// specified event type occurs.</p>
-        pub fn lambda_function_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.lambda_function_arn = Some(inp.into());
+        pub fn lambda_function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lambda_function_arn = Some(input.into());
             self
         }
         pub fn set_lambda_function_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.lambda_function_arn = inp;
+            self.lambda_function_arn = input;
             self
         }
-        pub fn events(mut self, inp: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.events = Some(v);
             self
         }
         pub fn set_events(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Event>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Event>>,
         ) -> Self {
-            self.events = inp;
+            self.events = input;
             self
         }
         /// <p>Specifies object key name filtering rules. For information about key name filtering, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
         /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn filter(mut self, inp: crate::model::NotificationConfigurationFilter) -> Self {
-            self.filter = Some(inp);
+        pub fn filter(mut self, input: crate::model::NotificationConfigurationFilter) -> Self {
+            self.filter = Some(input);
             self
         }
         pub fn set_filter(
             mut self,
-            inp: std::option::Option<crate::model::NotificationConfigurationFilter>,
+            input: std::option::Option<crate::model::NotificationConfigurationFilter>,
         ) -> Self {
-            self.filter = inp;
+            self.filter = input;
             self
         }
         /// Consumes the builder and constructs a [`LambdaFunctionConfiguration`](crate::model::LambdaFunctionConfiguration)
@@ -6524,12 +6548,12 @@ pub mod notification_configuration_filter {
     }
     impl Builder {
         /// <p>A container for object key name prefix and suffix filtering rules.</p>
-        pub fn key(mut self, inp: crate::model::S3KeyFilter) -> Self {
-            self.key = Some(inp);
+        pub fn key(mut self, input: crate::model::S3KeyFilter) -> Self {
+            self.key = Some(input);
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<crate::model::S3KeyFilter>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<crate::model::S3KeyFilter>) -> Self {
+            self.key = input;
             self
         }
         /// Consumes the builder and constructs a [`NotificationConfigurationFilter`](crate::model::NotificationConfigurationFilter)
@@ -6569,17 +6593,17 @@ pub mod s3_key_filter {
         pub(crate) filter_rules: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     }
     impl Builder {
-        pub fn filter_rules(mut self, inp: impl Into<crate::model::FilterRule>) -> Self {
+        pub fn filter_rules(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
             let mut v = self.filter_rules.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filter_rules = Some(v);
             self
         }
         pub fn set_filter_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
         ) -> Self {
-            self.filter_rules = inp;
+            self.filter_rules = input;
             self
         }
         /// Consumes the builder and constructs a [`S3KeyFilter`](crate::model::S3KeyFilter)
@@ -6632,21 +6656,24 @@ pub mod filter_rule {
         /// filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and
         /// suffixes are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a>
         /// in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn name(mut self, inp: crate::model::FilterRuleName) -> Self {
-            self.name = Some(inp);
+        pub fn name(mut self, input: crate::model::FilterRuleName) -> Self {
+            self.name = Some(input);
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<crate::model::FilterRuleName>) -> Self {
-            self.name = inp;
+        pub fn set_name(
+            mut self,
+            input: std::option::Option<crate::model::FilterRuleName>,
+        ) -> Self {
+            self.name = input;
             self
         }
         /// <p>The value that the filter searches for in object key names.</p>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`FilterRule`](crate::model::FilterRule)
@@ -6819,49 +6846,49 @@ pub mod queue_configuration {
     impl Builder {
         /// <p>An optional unique identifier for configurations in a notification configuration. If you
         /// don't provide one, Amazon S3 will assign an ID.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SQS queue to which Amazon S3 publishes a message
         /// when it detects events of the specified type.</p>
-        pub fn queue_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.queue_arn = Some(inp.into());
+        pub fn queue_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.queue_arn = Some(input.into());
             self
         }
-        pub fn set_queue_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.queue_arn = inp;
+        pub fn set_queue_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.queue_arn = input;
             self
         }
-        pub fn events(mut self, inp: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.events = Some(v);
             self
         }
         pub fn set_events(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Event>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Event>>,
         ) -> Self {
-            self.events = inp;
+            self.events = input;
             self
         }
         /// <p>Specifies object key name filtering rules. For information about key name filtering, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
         /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn filter(mut self, inp: crate::model::NotificationConfigurationFilter) -> Self {
-            self.filter = Some(inp);
+        pub fn filter(mut self, input: crate::model::NotificationConfigurationFilter) -> Self {
+            self.filter = Some(input);
             self
         }
         pub fn set_filter(
             mut self,
-            inp: std::option::Option<crate::model::NotificationConfigurationFilter>,
+            input: std::option::Option<crate::model::NotificationConfigurationFilter>,
         ) -> Self {
-            self.filter = inp;
+            self.filter = input;
             self
         }
         /// Consumes the builder and constructs a [`QueueConfiguration`](crate::model::QueueConfiguration)
@@ -6926,49 +6953,49 @@ pub mod topic_configuration {
     impl Builder {
         /// <p>An optional unique identifier for configurations in a notification configuration. If you
         /// don't provide one, Amazon S3 will assign an ID.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3 publishes a message
         /// when it detects events of the specified type.</p>
-        pub fn topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.topic_arn = Some(inp.into());
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.topic_arn = Some(input.into());
             self
         }
-        pub fn set_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = inp;
+        pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.topic_arn = input;
             self
         }
-        pub fn events(mut self, inp: impl Into<crate::model::Event>) -> Self {
+        pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.events = Some(v);
             self
         }
         pub fn set_events(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Event>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Event>>,
         ) -> Self {
-            self.events = inp;
+            self.events = input;
             self
         }
         /// <p>Specifies object key name filtering rules. For information about key name filtering, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
         /// Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn filter(mut self, inp: crate::model::NotificationConfigurationFilter) -> Self {
-            self.filter = Some(inp);
+        pub fn filter(mut self, input: crate::model::NotificationConfigurationFilter) -> Self {
+            self.filter = Some(input);
             self
         }
         pub fn set_filter(
             mut self,
-            inp: std::option::Option<crate::model::NotificationConfigurationFilter>,
+            input: std::option::Option<crate::model::NotificationConfigurationFilter>,
         ) -> Self {
-            self.filter = inp;
+            self.filter = input;
             self
         }
         /// Consumes the builder and constructs a [`TopicConfiguration`](crate::model::TopicConfiguration)
@@ -7024,23 +7051,26 @@ pub mod metrics_configuration {
     }
     impl Builder {
         /// <p>The ID used to identify the metrics configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>Specifies a metrics configuration filter. The metrics configuration will only include
         /// objects that meet the filter's criteria. A filter must be a prefix, a tag, or a conjunction
         /// (MetricsAndOperator).</p>
-        pub fn filter(mut self, inp: crate::model::MetricsFilter) -> Self {
-            self.filter = Some(inp);
+        pub fn filter(mut self, input: crate::model::MetricsFilter) -> Self {
+            self.filter = Some(input);
             self
         }
-        pub fn set_filter(mut self, inp: std::option::Option<crate::model::MetricsFilter>) -> Self {
-            self.filter = inp;
+        pub fn set_filter(
+            mut self,
+            input: std::option::Option<crate::model::MetricsFilter>,
+        ) -> Self {
+            self.filter = input;
             self
         }
         /// Consumes the builder and constructs a [`MetricsConfiguration`](crate::model::MetricsConfiguration)
@@ -7072,35 +7102,35 @@ pub enum MetricsFilter {
     Tag(crate::model::Tag),
 }
 impl MetricsFilter {
-    pub fn as_and(&self) -> Option<&crate::model::MetricsAndOperator> {
+    pub fn as_and(&self) -> Result<&crate::model::MetricsAndOperator, &Self> {
         if let MetricsFilter::And(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_and(&self) -> bool {
-        self.as_and().is_some()
+        self.as_and().is_ok()
     }
-    pub fn as_prefix(&self) -> Option<&std::string::String> {
+    pub fn as_prefix(&self) -> Result<&std::string::String, &Self> {
         if let MetricsFilter::Prefix(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_prefix(&self) -> bool {
-        self.as_prefix().is_some()
+        self.as_prefix().is_ok()
     }
-    pub fn as_tag(&self) -> Option<&crate::model::Tag> {
+    pub fn as_tag(&self) -> Result<&crate::model::Tag, &Self> {
         if let MetricsFilter::Tag(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_tag(&self) -> bool {
-        self.as_tag().is_some()
+        self.as_tag().is_ok()
     }
 }
 
@@ -7134,25 +7164,25 @@ pub mod metrics_and_operator {
     }
     impl Builder {
         /// <p>The prefix used when evaluating an AND predicate.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`MetricsAndOperator`](crate::model::MetricsAndOperator)
@@ -7199,15 +7229,15 @@ pub mod bucket_logging_status {
         /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys
         /// for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the
         /// <i>Amazon S3 API Reference</i>.</p>
-        pub fn logging_enabled(mut self, inp: crate::model::LoggingEnabled) -> Self {
-            self.logging_enabled = Some(inp);
+        pub fn logging_enabled(mut self, input: crate::model::LoggingEnabled) -> Self {
+            self.logging_enabled = Some(input);
             self
         }
         pub fn set_logging_enabled(
             mut self,
-            inp: std::option::Option<crate::model::LoggingEnabled>,
+            input: std::option::Option<crate::model::LoggingEnabled>,
         ) -> Self {
-            self.logging_enabled = inp;
+            self.logging_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`BucketLoggingStatus`](crate::model::BucketLoggingStatus)
@@ -7269,36 +7299,42 @@ pub mod logging_enabled {
         /// You can also configure multiple buckets to deliver their logs to the same target bucket. In
         /// this case, you should choose a different <code>TargetPrefix</code> for each source bucket
         /// so that the delivered log files can be distinguished by key.</p>
-        pub fn target_bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_bucket = Some(inp.into());
+        pub fn target_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_bucket = Some(input.into());
             self
         }
-        pub fn set_target_bucket(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.target_bucket = inp;
+        pub fn set_target_bucket(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_bucket = input;
             self
         }
-        pub fn target_grants(mut self, inp: impl Into<crate::model::TargetGrant>) -> Self {
+        pub fn target_grants(mut self, input: impl Into<crate::model::TargetGrant>) -> Self {
             let mut v = self.target_grants.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.target_grants = Some(v);
             self
         }
         pub fn set_target_grants(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TargetGrant>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TargetGrant>>,
         ) -> Self {
-            self.target_grants = inp;
+            self.target_grants = input;
             self
         }
         /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a
         /// single bucket, you can use a prefix to distinguish which log files came from which
         /// bucket.</p>
-        pub fn target_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.target_prefix = Some(inp.into());
+        pub fn target_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_prefix = Some(input.into());
             self
         }
-        pub fn set_target_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.target_prefix = inp;
+        pub fn set_target_prefix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_prefix = input;
             self
         }
         /// Consumes the builder and constructs a [`LoggingEnabled`](crate::model::LoggingEnabled)
@@ -7346,24 +7382,24 @@ pub mod target_grant {
     }
     impl Builder {
         /// <p>Container for the person being granted permissions.</p>
-        pub fn grantee(mut self, inp: crate::model::Grantee) -> Self {
-            self.grantee = Some(inp);
+        pub fn grantee(mut self, input: crate::model::Grantee) -> Self {
+            self.grantee = Some(input);
             self
         }
-        pub fn set_grantee(mut self, inp: std::option::Option<crate::model::Grantee>) -> Self {
-            self.grantee = inp;
+        pub fn set_grantee(mut self, input: std::option::Option<crate::model::Grantee>) -> Self {
+            self.grantee = input;
             self
         }
         /// <p>Logging permissions assigned to the grantee for the bucket.</p>
-        pub fn permission(mut self, inp: crate::model::BucketLogsPermission) -> Self {
-            self.permission = Some(inp);
+        pub fn permission(mut self, input: crate::model::BucketLogsPermission) -> Self {
+            self.permission = Some(input);
             self
         }
         pub fn set_permission(
             mut self,
-            inp: std::option::Option<crate::model::BucketLogsPermission>,
+            input: std::option::Option<crate::model::BucketLogsPermission>,
         ) -> Self {
-            self.permission = inp;
+            self.permission = input;
             self
         }
         /// Consumes the builder and constructs a [`TargetGrant`](crate::model::TargetGrant)
@@ -7466,17 +7502,17 @@ pub mod bucket_lifecycle_configuration {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
     }
     impl Builder {
-        pub fn rules(mut self, inp: impl Into<crate::model::LifecycleRule>) -> Self {
+        pub fn rules(mut self, input: impl Into<crate::model::LifecycleRule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.rules = Some(v);
             self
         }
         pub fn set_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
+            input: std::option::Option<std::vec::Vec<crate::model::LifecycleRule>>,
         ) -> Self {
-            self.rules = inp;
+            self.rules = input;
             self
         }
         /// Consumes the builder and constructs a [`BucketLifecycleConfiguration`](crate::model::BucketLifecycleConfiguration)
@@ -7585,24 +7621,24 @@ pub mod lifecycle_rule {
     impl Builder {
         /// <p>Specifies the expiration for the lifecycle of the object in the form of date, days and,
         /// whether the object has a delete marker.</p>
-        pub fn expiration(mut self, inp: crate::model::LifecycleExpiration) -> Self {
-            self.expiration = Some(inp);
+        pub fn expiration(mut self, input: crate::model::LifecycleExpiration) -> Self {
+            self.expiration = Some(input);
             self
         }
         pub fn set_expiration(
             mut self,
-            inp: std::option::Option<crate::model::LifecycleExpiration>,
+            input: std::option::Option<crate::model::LifecycleExpiration>,
         ) -> Self {
-            self.expiration = inp;
+            self.expiration = input;
             self
         }
         /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>Prefix identifying one or more objects to which the rule applies. This is
@@ -7612,69 +7648,69 @@ pub mod lifecycle_rule {
         /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
         /// XML related object key constraints</a>.</p>
         /// </important>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule applies to. A
         /// <code>Filter</code> must have exactly one of <code>Prefix</code>, <code>Tag</code>, or
         /// <code>And</code> specified. <code>Filter</code> is required if the <code>LifecycleRule</code>
         /// does not containt a <code>Prefix</code> element.</p>
-        pub fn filter(mut self, inp: crate::model::LifecycleRuleFilter) -> Self {
-            self.filter = Some(inp);
+        pub fn filter(mut self, input: crate::model::LifecycleRuleFilter) -> Self {
+            self.filter = Some(input);
             self
         }
         pub fn set_filter(
             mut self,
-            inp: std::option::Option<crate::model::LifecycleRuleFilter>,
+            input: std::option::Option<crate::model::LifecycleRuleFilter>,
         ) -> Self {
-            self.filter = inp;
+            self.filter = input;
             self
         }
         /// <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not
         /// currently being applied.</p>
-        pub fn status(mut self, inp: crate::model::ExpirationStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::ExpirationStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ExpirationStatus>,
+            input: std::option::Option<crate::model::ExpirationStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
-        pub fn transitions(mut self, inp: impl Into<crate::model::Transition>) -> Self {
+        pub fn transitions(mut self, input: impl Into<crate::model::Transition>) -> Self {
             let mut v = self.transitions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.transitions = Some(v);
             self
         }
         pub fn set_transitions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Transition>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Transition>>,
         ) -> Self {
-            self.transitions = inp;
+            self.transitions = input;
             self
         }
         pub fn noncurrent_version_transitions(
             mut self,
-            inp: impl Into<crate::model::NoncurrentVersionTransition>,
+            input: impl Into<crate::model::NoncurrentVersionTransition>,
         ) -> Self {
             let mut v = self.noncurrent_version_transitions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.noncurrent_version_transitions = Some(v);
             self
         }
         pub fn set_noncurrent_version_transitions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::NoncurrentVersionTransition>>,
+            input: std::option::Option<std::vec::Vec<crate::model::NoncurrentVersionTransition>>,
         ) -> Self {
-            self.noncurrent_version_transitions = inp;
+            self.noncurrent_version_transitions = input;
             self
         }
         /// <p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently
@@ -7683,16 +7719,16 @@ pub mod lifecycle_rule {
         /// object versions at a specific period in the object's lifetime.</p>
         pub fn noncurrent_version_expiration(
             mut self,
-            inp: crate::model::NoncurrentVersionExpiration,
+            input: crate::model::NoncurrentVersionExpiration,
         ) -> Self {
-            self.noncurrent_version_expiration = Some(inp);
+            self.noncurrent_version_expiration = Some(input);
             self
         }
         pub fn set_noncurrent_version_expiration(
             mut self,
-            inp: std::option::Option<crate::model::NoncurrentVersionExpiration>,
+            input: std::option::Option<crate::model::NoncurrentVersionExpiration>,
         ) -> Self {
-            self.noncurrent_version_expiration = inp;
+            self.noncurrent_version_expiration = input;
             self
         }
         /// <p>Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will
@@ -7701,16 +7737,16 @@ pub mod lifecycle_rule {
         /// <i>Amazon S3 User Guide</i>.</p>
         pub fn abort_incomplete_multipart_upload(
             mut self,
-            inp: crate::model::AbortIncompleteMultipartUpload,
+            input: crate::model::AbortIncompleteMultipartUpload,
         ) -> Self {
-            self.abort_incomplete_multipart_upload = Some(inp);
+            self.abort_incomplete_multipart_upload = Some(input);
             self
         }
         pub fn set_abort_incomplete_multipart_upload(
             mut self,
-            inp: std::option::Option<crate::model::AbortIncompleteMultipartUpload>,
+            input: std::option::Option<crate::model::AbortIncompleteMultipartUpload>,
         ) -> Self {
-            self.abort_incomplete_multipart_upload = inp;
+            self.abort_incomplete_multipart_upload = input;
             self
         }
         /// Consumes the builder and constructs a [`LifecycleRule`](crate::model::LifecycleRule)
@@ -7765,12 +7801,12 @@ pub mod abort_incomplete_multipart_upload {
     impl Builder {
         /// <p>Specifies the number of days after which Amazon S3 aborts an incomplete multipart
         /// upload.</p>
-        pub fn days_after_initiation(mut self, inp: i32) -> Self {
-            self.days_after_initiation = Some(inp);
+        pub fn days_after_initiation(mut self, input: i32) -> Self {
+            self.days_after_initiation = Some(input);
             self
         }
-        pub fn set_days_after_initiation(mut self, inp: i32) -> Self {
-            self.days_after_initiation = Some(inp);
+        pub fn set_days_after_initiation(mut self, input: std::option::Option<i32>) -> Self {
+            self.days_after_initiation = input;
             self
         }
         /// Consumes the builder and constructs a [`AbortIncompleteMultipartUpload`](crate::model::AbortIncompleteMultipartUpload)
@@ -7819,12 +7855,12 @@ pub mod noncurrent_version_expiration {
         /// <p>Specifies the number of days an object is noncurrent before Amazon S3 can perform the
         /// associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
         /// Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn noncurrent_days(mut self, inp: i32) -> Self {
-            self.noncurrent_days = Some(inp);
+        pub fn noncurrent_days(mut self, input: i32) -> Self {
+            self.noncurrent_days = Some(input);
             self
         }
-        pub fn set_noncurrent_days(mut self, inp: i32) -> Self {
-            self.noncurrent_days = Some(inp);
+        pub fn set_noncurrent_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.noncurrent_days = input;
             self
         }
         /// Consumes the builder and constructs a [`NoncurrentVersionExpiration`](crate::model::NoncurrentVersionExpiration)
@@ -7883,24 +7919,24 @@ pub mod noncurrent_version_transition {
         /// associated action. For information about the noncurrent days calculations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
         /// Amazon S3 Calculates How Long an Object Has Been Noncurrent</a> in the
         /// <i>Amazon S3 User Guide</i>.</p>
-        pub fn noncurrent_days(mut self, inp: i32) -> Self {
-            self.noncurrent_days = Some(inp);
+        pub fn noncurrent_days(mut self, input: i32) -> Self {
+            self.noncurrent_days = Some(input);
             self
         }
-        pub fn set_noncurrent_days(mut self, inp: i32) -> Self {
-            self.noncurrent_days = Some(inp);
+        pub fn set_noncurrent_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.noncurrent_days = input;
             self
         }
         /// <p>The class of storage used to store the object.</p>
-        pub fn storage_class(mut self, inp: crate::model::TransitionStorageClass) -> Self {
-            self.storage_class = Some(inp);
+        pub fn storage_class(mut self, input: crate::model::TransitionStorageClass) -> Self {
+            self.storage_class = Some(input);
             self
         }
         pub fn set_storage_class(
             mut self,
-            inp: std::option::Option<crate::model::TransitionStorageClass>,
+            input: std::option::Option<crate::model::TransitionStorageClass>,
         ) -> Self {
-            self.storage_class = inp;
+            self.storage_class = input;
             self
         }
         /// Consumes the builder and constructs a [`NoncurrentVersionTransition`](crate::model::NoncurrentVersionTransition)
@@ -8021,34 +8057,34 @@ pub mod transition {
     impl Builder {
         /// <p>Indicates when objects are transitioned to the specified storage class. The date value
         /// must be in ISO 8601 format. The time is always midnight UTC.</p>
-        pub fn date(mut self, inp: smithy_types::Instant) -> Self {
-            self.date = Some(inp);
+        pub fn date(mut self, input: smithy_types::Instant) -> Self {
+            self.date = Some(input);
             self
         }
-        pub fn set_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.date = inp;
+        pub fn set_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.date = input;
             self
         }
         /// <p>Indicates the number of days after creation when objects are transitioned to the
         /// specified storage class. The value must be a positive integer.</p>
-        pub fn days(mut self, inp: i32) -> Self {
-            self.days = Some(inp);
+        pub fn days(mut self, input: i32) -> Self {
+            self.days = Some(input);
             self
         }
-        pub fn set_days(mut self, inp: i32) -> Self {
-            self.days = Some(inp);
+        pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.days = input;
             self
         }
         /// <p>The storage class to which you want the object to transition.</p>
-        pub fn storage_class(mut self, inp: crate::model::TransitionStorageClass) -> Self {
-            self.storage_class = Some(inp);
+        pub fn storage_class(mut self, input: crate::model::TransitionStorageClass) -> Self {
+            self.storage_class = Some(input);
             self
         }
         pub fn set_storage_class(
             mut self,
-            inp: std::option::Option<crate::model::TransitionStorageClass>,
+            input: std::option::Option<crate::model::TransitionStorageClass>,
         ) -> Self {
-            self.storage_class = inp;
+            self.storage_class = input;
             self
         }
         /// Consumes the builder and constructs a [`Transition`](crate::model::Transition)
@@ -8142,35 +8178,35 @@ pub enum LifecycleRuleFilter {
     Tag(crate::model::Tag),
 }
 impl LifecycleRuleFilter {
-    pub fn as_and(&self) -> Option<&crate::model::LifecycleRuleAndOperator> {
+    pub fn as_and(&self) -> Result<&crate::model::LifecycleRuleAndOperator, &Self> {
         if let LifecycleRuleFilter::And(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_and(&self) -> bool {
-        self.as_and().is_some()
+        self.as_and().is_ok()
     }
-    pub fn as_prefix(&self) -> Option<&std::string::String> {
+    pub fn as_prefix(&self) -> Result<&std::string::String, &Self> {
         if let LifecycleRuleFilter::Prefix(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_prefix(&self) -> bool {
-        self.as_prefix().is_some()
+        self.as_prefix().is_ok()
     }
-    pub fn as_tag(&self) -> Option<&crate::model::Tag> {
+    pub fn as_tag(&self) -> Result<&crate::model::Tag, &Self> {
         if let LifecycleRuleFilter::Tag(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_tag(&self) -> bool {
-        self.as_tag().is_some()
+        self.as_tag().is_ok()
     }
 }
 
@@ -8205,25 +8241,25 @@ pub mod lifecycle_rule_and_operator {
     }
     impl Builder {
         /// <p>Prefix identifying one or more objects to which the rule applies.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`LifecycleRuleAndOperator`](crate::model::LifecycleRuleAndOperator)
@@ -8282,33 +8318,36 @@ pub mod lifecycle_expiration {
     impl Builder {
         /// <p>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601
         /// Format.</p>
-        pub fn date(mut self, inp: smithy_types::Instant) -> Self {
-            self.date = Some(inp);
+        pub fn date(mut self, input: smithy_types::Instant) -> Self {
+            self.date = Some(input);
             self
         }
-        pub fn set_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.date = inp;
+        pub fn set_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.date = input;
             self
         }
         /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value
         /// must be a non-zero positive integer.</p>
-        pub fn days(mut self, inp: i32) -> Self {
-            self.days = Some(inp);
+        pub fn days(mut self, input: i32) -> Self {
+            self.days = Some(input);
             self
         }
-        pub fn set_days(mut self, inp: i32) -> Self {
-            self.days = Some(inp);
+        pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.days = input;
             self
         }
         /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set
         /// to true, the delete marker will be expired; if set to false the policy takes no action.
         /// This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
-        pub fn expired_object_delete_marker(mut self, inp: bool) -> Self {
-            self.expired_object_delete_marker = Some(inp);
+        pub fn expired_object_delete_marker(mut self, input: bool) -> Self {
+            self.expired_object_delete_marker = Some(input);
             self
         }
-        pub fn set_expired_object_delete_marker(mut self, inp: bool) -> Self {
-            self.expired_object_delete_marker = Some(inp);
+        pub fn set_expired_object_delete_marker(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.expired_object_delete_marker = input;
             self
         }
         /// Consumes the builder and constructs a [`LifecycleExpiration`](crate::model::LifecycleExpiration)
@@ -8388,48 +8427,48 @@ pub mod inventory_configuration {
     }
     impl Builder {
         /// <p>Contains information about where to publish the inventory results.</p>
-        pub fn destination(mut self, inp: crate::model::InventoryDestination) -> Self {
-            self.destination = Some(inp);
+        pub fn destination(mut self, input: crate::model::InventoryDestination) -> Self {
+            self.destination = Some(input);
             self
         }
         pub fn set_destination(
             mut self,
-            inp: std::option::Option<crate::model::InventoryDestination>,
+            input: std::option::Option<crate::model::InventoryDestination>,
         ) -> Self {
-            self.destination = inp;
+            self.destination = input;
             self
         }
         /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an
         /// inventory list is generated. If set to <code>False</code>, no inventory list is
         /// generated.</p>
-        pub fn is_enabled(mut self, inp: bool) -> Self {
-            self.is_enabled = Some(inp);
+        pub fn is_enabled(mut self, input: bool) -> Self {
+            self.is_enabled = Some(input);
             self
         }
-        pub fn set_is_enabled(mut self, inp: bool) -> Self {
-            self.is_enabled = Some(inp);
+        pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_enabled = input;
             self
         }
         /// <p>Specifies an inventory filter. The inventory only includes objects that meet the
         /// filter's criteria.</p>
-        pub fn filter(mut self, inp: crate::model::InventoryFilter) -> Self {
-            self.filter = Some(inp);
+        pub fn filter(mut self, input: crate::model::InventoryFilter) -> Self {
+            self.filter = Some(input);
             self
         }
         pub fn set_filter(
             mut self,
-            inp: std::option::Option<crate::model::InventoryFilter>,
+            input: std::option::Option<crate::model::InventoryFilter>,
         ) -> Self {
-            self.filter = inp;
+            self.filter = input;
             self
         }
         /// <p>The ID used to identify the inventory configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list
@@ -8439,44 +8478,44 @@ pub mod inventory_configuration {
         /// fields.</p>
         pub fn included_object_versions(
             mut self,
-            inp: crate::model::InventoryIncludedObjectVersions,
+            input: crate::model::InventoryIncludedObjectVersions,
         ) -> Self {
-            self.included_object_versions = Some(inp);
+            self.included_object_versions = Some(input);
             self
         }
         pub fn set_included_object_versions(
             mut self,
-            inp: std::option::Option<crate::model::InventoryIncludedObjectVersions>,
+            input: std::option::Option<crate::model::InventoryIncludedObjectVersions>,
         ) -> Self {
-            self.included_object_versions = inp;
+            self.included_object_versions = input;
             self
         }
         pub fn optional_fields(
             mut self,
-            inp: impl Into<crate::model::InventoryOptionalField>,
+            input: impl Into<crate::model::InventoryOptionalField>,
         ) -> Self {
             let mut v = self.optional_fields.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.optional_fields = Some(v);
             self
         }
         pub fn set_optional_fields(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InventoryOptionalField>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InventoryOptionalField>>,
         ) -> Self {
-            self.optional_fields = inp;
+            self.optional_fields = input;
             self
         }
         /// <p>Specifies the schedule for generating inventory results.</p>
-        pub fn schedule(mut self, inp: crate::model::InventorySchedule) -> Self {
-            self.schedule = Some(inp);
+        pub fn schedule(mut self, input: crate::model::InventorySchedule) -> Self {
+            self.schedule = Some(input);
             self
         }
         pub fn set_schedule(
             mut self,
-            inp: std::option::Option<crate::model::InventorySchedule>,
+            input: std::option::Option<crate::model::InventorySchedule>,
         ) -> Self {
-            self.schedule = inp;
+            self.schedule = input;
             self
         }
         /// Consumes the builder and constructs a [`InventoryConfiguration`](crate::model::InventoryConfiguration)
@@ -8524,15 +8563,15 @@ pub mod inventory_schedule {
     }
     impl Builder {
         /// <p>Specifies how frequently inventory results are produced.</p>
-        pub fn frequency(mut self, inp: crate::model::InventoryFrequency) -> Self {
-            self.frequency = Some(inp);
+        pub fn frequency(mut self, input: crate::model::InventoryFrequency) -> Self {
+            self.frequency = Some(input);
             self
         }
         pub fn set_frequency(
             mut self,
-            inp: std::option::Option<crate::model::InventoryFrequency>,
+            input: std::option::Option<crate::model::InventoryFrequency>,
         ) -> Self {
-            self.frequency = inp;
+            self.frequency = input;
             self
         }
         /// Consumes the builder and constructs a [`InventorySchedule`](crate::model::InventorySchedule)
@@ -8773,12 +8812,12 @@ pub mod inventory_filter {
     }
     impl Builder {
         /// <p>The prefix that an object must have to be included in the inventory results.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// Consumes the builder and constructs a [`InventoryFilter`](crate::model::InventoryFilter)
@@ -8825,16 +8864,16 @@ pub mod inventory_destination {
         /// where inventory results are published.</p>
         pub fn s3_bucket_destination(
             mut self,
-            inp: crate::model::InventoryS3BucketDestination,
+            input: crate::model::InventoryS3BucketDestination,
         ) -> Self {
-            self.s3_bucket_destination = Some(inp);
+            self.s3_bucket_destination = Some(input);
             self
         }
         pub fn set_s3_bucket_destination(
             mut self,
-            inp: std::option::Option<crate::model::InventoryS3BucketDestination>,
+            input: std::option::Option<crate::model::InventoryS3BucketDestination>,
         ) -> Self {
-            self.s3_bucket_destination = inp;
+            self.s3_bucket_destination = input;
             self
         }
         /// Consumes the builder and constructs a [`InventoryDestination`](crate::model::InventoryDestination)
@@ -8905,56 +8944,56 @@ pub mod inventory_s3_bucket_destination {
         /// <p> Although this value is optional, we strongly recommend that you set it to help
         /// prevent problems if the destination bucket ownership changes. </p>
         /// </note>
-        pub fn account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.account_id = Some(inp.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
             self
         }
-        pub fn set_account_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.account_id = inp;
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the bucket where inventory results will be
         /// published.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.bucket = inp;
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>Specifies the output format of the inventory results.</p>
-        pub fn format(mut self, inp: crate::model::InventoryFormat) -> Self {
-            self.format = Some(inp);
+        pub fn format(mut self, input: crate::model::InventoryFormat) -> Self {
+            self.format = Some(input);
             self
         }
         pub fn set_format(
             mut self,
-            inp: std::option::Option<crate::model::InventoryFormat>,
+            input: std::option::Option<crate::model::InventoryFormat>,
         ) -> Self {
-            self.format = inp;
+            self.format = input;
             self
         }
         /// <p>The prefix that is prepended to all inventory results.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// <p>Contains the type of server-side encryption used to encrypt the inventory
         /// results.</p>
-        pub fn encryption(mut self, inp: crate::model::InventoryEncryption) -> Self {
-            self.encryption = Some(inp);
+        pub fn encryption(mut self, input: crate::model::InventoryEncryption) -> Self {
+            self.encryption = Some(input);
             self
         }
         pub fn set_encryption(
             mut self,
-            inp: std::option::Option<crate::model::InventoryEncryption>,
+            input: std::option::Option<crate::model::InventoryEncryption>,
         ) -> Self {
-            self.encryption = inp;
+            self.encryption = input;
             self
         }
         /// Consumes the builder and constructs a [`InventoryS3BucketDestination`](crate::model::InventoryS3BucketDestination)
@@ -9005,21 +9044,21 @@ pub mod inventory_encryption {
     }
     impl Builder {
         /// <p>Specifies the use of SSE-S3 to encrypt delivered inventory reports.</p>
-        pub fn sses3(mut self, inp: crate::model::SSES3) -> Self {
-            self.sses3 = Some(inp);
+        pub fn sses3(mut self, input: crate::model::SSES3) -> Self {
+            self.sses3 = Some(input);
             self
         }
-        pub fn set_sses3(mut self, inp: std::option::Option<crate::model::SSES3>) -> Self {
-            self.sses3 = inp;
+        pub fn set_sses3(mut self, input: std::option::Option<crate::model::SSES3>) -> Self {
+            self.sses3 = input;
             self
         }
         /// <p>Specifies the use of SSE-KMS to encrypt delivered inventory reports.</p>
-        pub fn ssekms(mut self, inp: crate::model::SSEKMS) -> Self {
-            self.ssekms = Some(inp);
+        pub fn ssekms(mut self, input: crate::model::SSEKMS) -> Self {
+            self.ssekms = Some(input);
             self
         }
-        pub fn set_ssekms(mut self, inp: std::option::Option<crate::model::SSEKMS>) -> Self {
-            self.ssekms = inp;
+        pub fn set_ssekms(mut self, input: std::option::Option<crate::model::SSEKMS>) -> Self {
+            self.ssekms = input;
             self
         }
         /// Consumes the builder and constructs a [`InventoryEncryption`](crate::model::InventoryEncryption)
@@ -9064,12 +9103,12 @@ pub mod ssekms {
     impl Builder {
         /// <p>Specifies the ID of the AWS Key Management Service (AWS KMS) symmetric customer managed
         /// customer master key (CMK) to use for encrypting inventory reports.</p>
-        pub fn key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_id = Some(inp.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
             self
         }
-        pub fn set_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key_id = inp;
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`SSEKMS`](crate::model::SSEKMS)
@@ -9215,50 +9254,50 @@ pub mod intelligent_tiering_configuration {
     }
     impl Builder {
         /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>Specifies a bucket filter. The configuration only includes objects that meet the
         /// filter's criteria.</p>
-        pub fn filter(mut self, inp: crate::model::IntelligentTieringFilter) -> Self {
-            self.filter = Some(inp);
+        pub fn filter(mut self, input: crate::model::IntelligentTieringFilter) -> Self {
+            self.filter = Some(input);
             self
         }
         pub fn set_filter(
             mut self,
-            inp: std::option::Option<crate::model::IntelligentTieringFilter>,
+            input: std::option::Option<crate::model::IntelligentTieringFilter>,
         ) -> Self {
-            self.filter = inp;
+            self.filter = input;
             self
         }
         /// <p>Specifies the status of the configuration.</p>
-        pub fn status(mut self, inp: crate::model::IntelligentTieringStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::IntelligentTieringStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::IntelligentTieringStatus>,
+            input: std::option::Option<crate::model::IntelligentTieringStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
-        pub fn tierings(mut self, inp: impl Into<crate::model::Tiering>) -> Self {
+        pub fn tierings(mut self, input: impl Into<crate::model::Tiering>) -> Self {
             let mut v = self.tierings.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tierings = Some(v);
             self
         }
         pub fn set_tierings(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tiering>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tiering>>,
         ) -> Self {
-            self.tierings = inp;
+            self.tierings = input;
             self
         }
         /// Consumes the builder and constructs a [`IntelligentTieringConfiguration`](crate::model::IntelligentTieringConfiguration)
@@ -9317,26 +9356,26 @@ pub mod tiering {
         /// transitioned to the corresponding tier. The minimum number of days specified for
         /// Archive Access tier must be at least 90 days and Deep Archive Access tier must be at least
         /// 180 days. The maximum can be up to 2 years (730 days).</p>
-        pub fn days(mut self, inp: i32) -> Self {
-            self.days = Some(inp);
+        pub fn days(mut self, input: i32) -> Self {
+            self.days = Some(input);
             self
         }
-        pub fn set_days(mut self, inp: i32) -> Self {
-            self.days = Some(inp);
+        pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
+            self.days = input;
             self
         }
         /// <p>S3 Intelligent-Tiering access tier. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for
         /// automatically optimizing frequently and infrequently accessed objects</a> for a list
         /// of access tiers in the S3 Intelligent-Tiering storage class.</p>
-        pub fn access_tier(mut self, inp: crate::model::IntelligentTieringAccessTier) -> Self {
-            self.access_tier = Some(inp);
+        pub fn access_tier(mut self, input: crate::model::IntelligentTieringAccessTier) -> Self {
+            self.access_tier = Some(input);
             self
         }
         pub fn set_access_tier(
             mut self,
-            inp: std::option::Option<crate::model::IntelligentTieringAccessTier>,
+            input: std::option::Option<crate::model::IntelligentTieringAccessTier>,
         ) -> Self {
-            self.access_tier = inp;
+            self.access_tier = input;
             self
         }
         /// Consumes the builder and constructs a [`Tiering`](crate::model::Tiering)
@@ -9514,35 +9553,35 @@ pub mod intelligent_tiering_filter {
         /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
         /// XML related object key constraints</a>.</p>
         /// </important>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// <p>A container of a key value name pair.</p>
-        pub fn tag(mut self, inp: crate::model::Tag) -> Self {
-            self.tag = Some(inp);
+        pub fn tag(mut self, input: crate::model::Tag) -> Self {
+            self.tag = Some(input);
             self
         }
-        pub fn set_tag(mut self, inp: std::option::Option<crate::model::Tag>) -> Self {
-            self.tag = inp;
+        pub fn set_tag(mut self, input: std::option::Option<crate::model::Tag>) -> Self {
+            self.tag = input;
             self
         }
         /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter.
         /// The operator must have at least two predicates, and an object must match all of the
         /// predicates in order for the filter to apply.</p>
-        pub fn and(mut self, inp: crate::model::IntelligentTieringAndOperator) -> Self {
-            self.and = Some(inp);
+        pub fn and(mut self, input: crate::model::IntelligentTieringAndOperator) -> Self {
+            self.and = Some(input);
             self
         }
         pub fn set_and(
             mut self,
-            inp: std::option::Option<crate::model::IntelligentTieringAndOperator>,
+            input: std::option::Option<crate::model::IntelligentTieringAndOperator>,
         ) -> Self {
-            self.and = inp;
+            self.and = input;
             self
         }
         /// Consumes the builder and constructs a [`IntelligentTieringFilter`](crate::model::IntelligentTieringFilter)
@@ -9594,25 +9633,25 @@ pub mod intelligent_tiering_and_operator {
     impl Builder {
         /// <p>An object key name prefix that identifies the subset of objects to which the
         /// configuration applies.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`IntelligentTieringAndOperator`](crate::model::IntelligentTieringAndOperator)
@@ -9656,17 +9695,17 @@ pub mod server_side_encryption_configuration {
             std::option::Option<std::vec::Vec<crate::model::ServerSideEncryptionRule>>,
     }
     impl Builder {
-        pub fn rules(mut self, inp: impl Into<crate::model::ServerSideEncryptionRule>) -> Self {
+        pub fn rules(mut self, input: impl Into<crate::model::ServerSideEncryptionRule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.rules = Some(v);
             self
         }
         pub fn set_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ServerSideEncryptionRule>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ServerSideEncryptionRule>>,
         ) -> Self {
-            self.rules = inp;
+            self.rules = input;
             self
         }
         /// Consumes the builder and constructs a [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration)
@@ -9722,26 +9761,26 @@ pub mod server_side_encryption_rule {
         /// be applied.</p>
         pub fn apply_server_side_encryption_by_default(
             mut self,
-            inp: crate::model::ServerSideEncryptionByDefault,
+            input: crate::model::ServerSideEncryptionByDefault,
         ) -> Self {
-            self.apply_server_side_encryption_by_default = Some(inp);
+            self.apply_server_side_encryption_by_default = Some(input);
             self
         }
         pub fn set_apply_server_side_encryption_by_default(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryptionByDefault>,
+            input: std::option::Option<crate::model::ServerSideEncryptionByDefault>,
         ) -> Self {
-            self.apply_server_side_encryption_by_default = inp;
+            self.apply_server_side_encryption_by_default = input;
             self
         }
         /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. Existing objects are not affected. Setting the <code>BucketKeyEnabled</code> element to <code>true</code> causes Amazon S3 to use an S3 Bucket Key. By default, S3 Bucket Key is not enabled.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn bucket_key_enabled(mut self, input: bool) -> Self {
+            self.bucket_key_enabled = Some(input);
             self
         }
-        pub fn set_bucket_key_enabled(mut self, inp: bool) -> Self {
-            self.bucket_key_enabled = Some(inp);
+        pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.bucket_key_enabled = input;
             self
         }
         /// Consumes the builder and constructs a [`ServerSideEncryptionRule`](crate::model::ServerSideEncryptionRule)
@@ -9816,15 +9855,15 @@ pub mod server_side_encryption_by_default {
     }
     impl Builder {
         /// <p>Server-side encryption algorithm to use for the default encryption.</p>
-        pub fn sse_algorithm(mut self, inp: crate::model::ServerSideEncryption) -> Self {
-            self.sse_algorithm = Some(inp);
+        pub fn sse_algorithm(mut self, input: crate::model::ServerSideEncryption) -> Self {
+            self.sse_algorithm = Some(input);
             self
         }
         pub fn set_sse_algorithm(
             mut self,
-            inp: std::option::Option<crate::model::ServerSideEncryption>,
+            input: std::option::Option<crate::model::ServerSideEncryption>,
         ) -> Self {
-            self.sse_algorithm = inp;
+            self.sse_algorithm = input;
             self
         }
         /// <p>AWS Key Management Service (KMS) customer AWS KMS key ID to use for the default
@@ -9852,15 +9891,15 @@ pub mod server_side_encryption_by_default {
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
         /// asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
         /// </important>
-        pub fn kms_master_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.kms_master_key_id = Some(inp.into());
+        pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_master_key_id = Some(input.into());
             self
         }
         pub fn set_kms_master_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.kms_master_key_id = inp;
+            self.kms_master_key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ServerSideEncryptionByDefault`](crate::model::ServerSideEncryptionByDefault)
@@ -9905,17 +9944,17 @@ pub mod cors_configuration {
         pub(crate) cors_rules: std::option::Option<std::vec::Vec<crate::model::CORSRule>>,
     }
     impl Builder {
-        pub fn cors_rules(mut self, inp: impl Into<crate::model::CORSRule>) -> Self {
+        pub fn cors_rules(mut self, input: impl Into<crate::model::CORSRule>) -> Self {
             let mut v = self.cors_rules.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.cors_rules = Some(v);
             self
         }
         pub fn set_cors_rules(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CORSRule>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CORSRule>>,
         ) -> Self {
-            self.cors_rules = inp;
+            self.cors_rules = input;
             self
         }
         /// Consumes the builder and constructs a [`CORSConfiguration`](crate::model::CORSConfiguration)
@@ -9983,74 +10022,74 @@ pub mod cors_rule {
     }
     impl Builder {
         /// <p>Unique identifier for the rule. The value cannot be longer than 255 characters.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
-        pub fn allowed_headers(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn allowed_headers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_headers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.allowed_headers = Some(v);
             self
         }
         pub fn set_allowed_headers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.allowed_headers = inp;
+            self.allowed_headers = input;
             self
         }
-        pub fn allowed_methods(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn allowed_methods(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_methods.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.allowed_methods = Some(v);
             self
         }
         pub fn set_allowed_methods(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.allowed_methods = inp;
+            self.allowed_methods = input;
             self
         }
-        pub fn allowed_origins(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn allowed_origins(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_origins.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.allowed_origins = Some(v);
             self
         }
         pub fn set_allowed_origins(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.allowed_origins = inp;
+            self.allowed_origins = input;
             self
         }
-        pub fn expose_headers(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn expose_headers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.expose_headers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.expose_headers = Some(v);
             self
         }
         pub fn set_expose_headers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.expose_headers = inp;
+            self.expose_headers = input;
             self
         }
         /// <p>The time in seconds that your browser is to cache the preflight response for the
         /// specified resource.</p>
-        pub fn max_age_seconds(mut self, inp: i32) -> Self {
-            self.max_age_seconds = Some(inp);
+        pub fn max_age_seconds(mut self, input: i32) -> Self {
+            self.max_age_seconds = Some(input);
             self
         }
-        pub fn set_max_age_seconds(mut self, inp: i32) -> Self {
-            self.max_age_seconds = Some(inp);
+        pub fn set_max_age_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_age_seconds = input;
             self
         }
         /// Consumes the builder and constructs a [`CORSRule`](crate::model::CORSRule)
@@ -10108,39 +10147,39 @@ pub mod analytics_configuration {
     }
     impl Builder {
         /// <p>The ID that identifies the analytics configuration.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly
         /// one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided,
         /// all objects will be considered in any analysis.</p>
-        pub fn filter(mut self, inp: crate::model::AnalyticsFilter) -> Self {
-            self.filter = Some(inp);
+        pub fn filter(mut self, input: crate::model::AnalyticsFilter) -> Self {
+            self.filter = Some(input);
             self
         }
         pub fn set_filter(
             mut self,
-            inp: std::option::Option<crate::model::AnalyticsFilter>,
+            input: std::option::Option<crate::model::AnalyticsFilter>,
         ) -> Self {
-            self.filter = inp;
+            self.filter = input;
             self
         }
         /// <p> Contains data related to access patterns to be collected and made available to analyze
         /// the tradeoffs between different storage classes. </p>
-        pub fn storage_class_analysis(mut self, inp: crate::model::StorageClassAnalysis) -> Self {
-            self.storage_class_analysis = Some(inp);
+        pub fn storage_class_analysis(mut self, input: crate::model::StorageClassAnalysis) -> Self {
+            self.storage_class_analysis = Some(input);
             self
         }
         pub fn set_storage_class_analysis(
             mut self,
-            inp: std::option::Option<crate::model::StorageClassAnalysis>,
+            input: std::option::Option<crate::model::StorageClassAnalysis>,
         ) -> Self {
-            self.storage_class_analysis = inp;
+            self.storage_class_analysis = input;
             self
         }
         /// Consumes the builder and constructs a [`AnalyticsConfiguration`](crate::model::AnalyticsConfiguration)
@@ -10187,15 +10226,15 @@ pub mod storage_class_analysis {
     impl Builder {
         /// <p>Specifies how data related to the storage class analysis for an Amazon S3 bucket should be
         /// exported.</p>
-        pub fn data_export(mut self, inp: crate::model::StorageClassAnalysisDataExport) -> Self {
-            self.data_export = Some(inp);
+        pub fn data_export(mut self, input: crate::model::StorageClassAnalysisDataExport) -> Self {
+            self.data_export = Some(input);
             self
         }
         pub fn set_data_export(
             mut self,
-            inp: std::option::Option<crate::model::StorageClassAnalysisDataExport>,
+            input: std::option::Option<crate::model::StorageClassAnalysisDataExport>,
         ) -> Self {
-            self.data_export = inp;
+            self.data_export = input;
             self
         }
         /// Consumes the builder and constructs a [`StorageClassAnalysis`](crate::model::StorageClassAnalysis)
@@ -10247,28 +10286,28 @@ pub mod storage_class_analysis_data_export {
         /// <code>V_1</code>.</p>
         pub fn output_schema_version(
             mut self,
-            inp: crate::model::StorageClassAnalysisSchemaVersion,
+            input: crate::model::StorageClassAnalysisSchemaVersion,
         ) -> Self {
-            self.output_schema_version = Some(inp);
+            self.output_schema_version = Some(input);
             self
         }
         pub fn set_output_schema_version(
             mut self,
-            inp: std::option::Option<crate::model::StorageClassAnalysisSchemaVersion>,
+            input: std::option::Option<crate::model::StorageClassAnalysisSchemaVersion>,
         ) -> Self {
-            self.output_schema_version = inp;
+            self.output_schema_version = input;
             self
         }
         /// <p>The place to store the data for an analysis.</p>
-        pub fn destination(mut self, inp: crate::model::AnalyticsExportDestination) -> Self {
-            self.destination = Some(inp);
+        pub fn destination(mut self, input: crate::model::AnalyticsExportDestination) -> Self {
+            self.destination = Some(input);
             self
         }
         pub fn set_destination(
             mut self,
-            inp: std::option::Option<crate::model::AnalyticsExportDestination>,
+            input: std::option::Option<crate::model::AnalyticsExportDestination>,
         ) -> Self {
-            self.destination = inp;
+            self.destination = input;
             self
         }
         /// Consumes the builder and constructs a [`StorageClassAnalysisDataExport`](crate::model::StorageClassAnalysisDataExport)
@@ -10314,16 +10353,16 @@ pub mod analytics_export_destination {
         /// <p>A destination signifying output to an S3 bucket.</p>
         pub fn s3_bucket_destination(
             mut self,
-            inp: crate::model::AnalyticsS3BucketDestination,
+            input: crate::model::AnalyticsS3BucketDestination,
         ) -> Self {
-            self.s3_bucket_destination = Some(inp);
+            self.s3_bucket_destination = Some(input);
             self
         }
         pub fn set_s3_bucket_destination(
             mut self,
-            inp: std::option::Option<crate::model::AnalyticsS3BucketDestination>,
+            input: std::option::Option<crate::model::AnalyticsS3BucketDestination>,
         ) -> Self {
-            self.s3_bucket_destination = inp;
+            self.s3_bucket_destination = input;
             self
         }
         /// Consumes the builder and constructs a [`AnalyticsExportDestination`](crate::model::AnalyticsExportDestination)
@@ -10382,15 +10421,15 @@ pub mod analytics_s3_bucket_destination {
     }
     impl Builder {
         /// <p>Specifies the file format used when exporting data to Amazon S3.</p>
-        pub fn format(mut self, inp: crate::model::AnalyticsS3ExportFileFormat) -> Self {
-            self.format = Some(inp);
+        pub fn format(mut self, input: crate::model::AnalyticsS3ExportFileFormat) -> Self {
+            self.format = Some(input);
             self
         }
         pub fn set_format(
             mut self,
-            inp: std::option::Option<crate::model::AnalyticsS3ExportFileFormat>,
+            input: std::option::Option<crate::model::AnalyticsS3ExportFileFormat>,
         ) -> Self {
-            self.format = inp;
+            self.format = input;
             self
         }
         /// <p>The account ID that owns the destination S3 bucket. If no account ID is provided, the
@@ -10399,33 +10438,33 @@ pub mod analytics_s3_bucket_destination {
         /// <p> Although this value is optional, we strongly recommend that you set it to help
         /// prevent problems if the destination bucket ownership changes. </p>
         /// </note>
-        pub fn bucket_account_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket_account_id = Some(inp.into());
+        pub fn bucket_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_account_id = Some(input.into());
             self
         }
         pub fn set_bucket_account_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.bucket_account_id = inp;
+            self.bucket_account_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
-        pub fn bucket(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.bucket = Some(inp.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
             self
         }
-        pub fn set_bucket(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.bucket = inp;
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
             self
         }
         /// <p>The prefix to use when exporting data. The prefix is prepended to all results.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// Consumes the builder and constructs a [`AnalyticsS3BucketDestination`](crate::model::AnalyticsS3BucketDestination)
@@ -10564,35 +10603,35 @@ pub enum AnalyticsFilter {
     Tag(crate::model::Tag),
 }
 impl AnalyticsFilter {
-    pub fn as_and(&self) -> Option<&crate::model::AnalyticsAndOperator> {
+    pub fn as_and(&self) -> Result<&crate::model::AnalyticsAndOperator, &Self> {
         if let AnalyticsFilter::And(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_and(&self) -> bool {
-        self.as_and().is_some()
+        self.as_and().is_ok()
     }
-    pub fn as_prefix(&self) -> Option<&std::string::String> {
+    pub fn as_prefix(&self) -> Result<&std::string::String, &Self> {
         if let AnalyticsFilter::Prefix(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_prefix(&self) -> bool {
-        self.as_prefix().is_some()
+        self.as_prefix().is_ok()
     }
-    pub fn as_tag(&self) -> Option<&crate::model::Tag> {
+    pub fn as_tag(&self) -> Result<&crate::model::Tag, &Self> {
         if let AnalyticsFilter::Tag(val) = &self {
-            Some(&val)
+            Ok(&val)
         } else {
-            None
+            Err(&self)
         }
     }
     pub fn is_tag(&self) -> bool {
-        self.as_tag().is_some()
+        self.as_tag().is_ok()
     }
 }
 
@@ -10628,25 +10667,25 @@ pub mod analytics_and_operator {
     impl Builder {
         /// <p>The prefix to use when evaluating an AND predicate: The prefix that an object must have
         /// to be included in the metrics results.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`AnalyticsAndOperator`](crate::model::AnalyticsAndOperator)
@@ -10753,15 +10792,15 @@ pub mod accelerate_configuration {
     }
     impl Builder {
         /// <p>Specifies the transfer acceleration status of the bucket.</p>
-        pub fn status(mut self, inp: crate::model::BucketAccelerateStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::BucketAccelerateStatus) -> Self {
+            self.status = Some(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::BucketAccelerateStatus>,
+            input: std::option::Option<crate::model::BucketAccelerateStatus>,
         ) -> Self {
-            self.status = inp;
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`AccelerateConfiguration`](crate::model::AccelerateConfiguration)
@@ -10865,21 +10904,21 @@ pub mod initiator {
     impl Builder {
         /// <p>If the principal is an AWS account, it provides the Canonical User ID. If the principal
         /// is an IAM User, it provides a user ARN value.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>Name of the Principal.</p>
-        pub fn display_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.display_name = Some(inp.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.display_name = Some(input.into());
             self
         }
-        pub fn set_display_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.display_name = inp;
+        pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.display_name = input;
             self
         }
         /// Consumes the builder and constructs a [`Initiator`](crate::model::Initiator)
@@ -10936,42 +10975,42 @@ pub mod part {
     impl Builder {
         /// <p>Part number identifying the part. This is a positive integer between 1 and
         /// 10,000.</p>
-        pub fn part_number(mut self, inp: i32) -> Self {
-            self.part_number = Some(inp);
+        pub fn part_number(mut self, input: i32) -> Self {
+            self.part_number = Some(input);
             self
         }
-        pub fn set_part_number(mut self, inp: i32) -> Self {
-            self.part_number = Some(inp);
+        pub fn set_part_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.part_number = input;
             self
         }
         /// <p>Date and time at which the part was uploaded.</p>
-        pub fn last_modified(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified = Some(inp);
+        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified = Some(input);
             self
         }
         pub fn set_last_modified(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified = inp;
+            self.last_modified = input;
             self
         }
         /// <p>Entity tag returned when the part was uploaded.</p>
-        pub fn e_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.e_tag = Some(inp.into());
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
             self
         }
-        pub fn set_e_tag(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = inp;
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
             self
         }
         /// <p>Size in bytes of the uploaded part data.</p>
-        pub fn size(mut self, inp: i32) -> Self {
-            self.size = Some(inp);
+        pub fn size(mut self, input: i32) -> Self {
+            self.size = Some(input);
             self
         }
-        pub fn set_size(mut self, inp: i32) -> Self {
-            self.size = Some(inp);
+        pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.size = input;
             self
         }
         /// Consumes the builder and constructs a [`Part`](crate::model::Part)
@@ -11077,12 +11116,12 @@ pub mod common_prefix {
     }
     impl Builder {
         /// <p>Container for the specified common prefix.</p>
-        pub fn prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.prefix = Some(inp.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix = Some(input.into());
             self
         }
-        pub fn set_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.prefix = inp;
+        pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prefix = input;
             self
         }
         /// Consumes the builder and constructs a [`CommonPrefix`](crate::model::CommonPrefix)
@@ -11141,52 +11180,52 @@ pub mod delete_marker_entry {
     }
     impl Builder {
         /// <p>The account that created the delete marker.></p>
-        pub fn owner(mut self, inp: crate::model::Owner) -> Self {
-            self.owner = Some(inp);
+        pub fn owner(mut self, input: crate::model::Owner) -> Self {
+            self.owner = Some(input);
             self
         }
-        pub fn set_owner(mut self, inp: std::option::Option<crate::model::Owner>) -> Self {
-            self.owner = inp;
+        pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
+            self.owner = input;
             self
         }
         /// <p>The object key.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>Version ID of an object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>Specifies whether the object is (true) or is not (false) the latest version of an
         /// object.</p>
-        pub fn is_latest(mut self, inp: bool) -> Self {
-            self.is_latest = Some(inp);
+        pub fn is_latest(mut self, input: bool) -> Self {
+            self.is_latest = Some(input);
             self
         }
-        pub fn set_is_latest(mut self, inp: bool) -> Self {
-            self.is_latest = Some(inp);
+        pub fn set_is_latest(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_latest = input;
             self
         }
         /// <p>Date and time the object was last modified.</p>
-        pub fn last_modified(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified = Some(inp);
+        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified = Some(input);
             self
         }
         pub fn set_last_modified(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified = inp;
+            self.last_modified = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteMarkerEntry`](crate::model::DeleteMarkerEntry)
@@ -11261,82 +11300,82 @@ pub mod object_version {
     }
     impl Builder {
         /// <p>The entity tag is an MD5 hash of that version of the object.</p>
-        pub fn e_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.e_tag = Some(inp.into());
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
             self
         }
-        pub fn set_e_tag(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = inp;
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
             self
         }
         /// <p>Size in bytes of the object.</p>
-        pub fn size(mut self, inp: i32) -> Self {
-            self.size = Some(inp);
+        pub fn size(mut self, input: i32) -> Self {
+            self.size = Some(input);
             self
         }
-        pub fn set_size(mut self, inp: i32) -> Self {
-            self.size = Some(inp);
+        pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.size = input;
             self
         }
         /// <p>The class of storage used to store the object.</p>
-        pub fn storage_class(mut self, inp: crate::model::ObjectVersionStorageClass) -> Self {
-            self.storage_class = Some(inp);
+        pub fn storage_class(mut self, input: crate::model::ObjectVersionStorageClass) -> Self {
+            self.storage_class = Some(input);
             self
         }
         pub fn set_storage_class(
             mut self,
-            inp: std::option::Option<crate::model::ObjectVersionStorageClass>,
+            input: std::option::Option<crate::model::ObjectVersionStorageClass>,
         ) -> Self {
-            self.storage_class = inp;
+            self.storage_class = input;
             self
         }
         /// <p>The object key.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>Version ID of an object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>Specifies whether the object is (true) or is not (false) the latest version of an
         /// object.</p>
-        pub fn is_latest(mut self, inp: bool) -> Self {
-            self.is_latest = Some(inp);
+        pub fn is_latest(mut self, input: bool) -> Self {
+            self.is_latest = Some(input);
             self
         }
-        pub fn set_is_latest(mut self, inp: bool) -> Self {
-            self.is_latest = Some(inp);
+        pub fn set_is_latest(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_latest = input;
             self
         }
         /// <p>Date and time the object was last modified.</p>
-        pub fn last_modified(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified = Some(inp);
+        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified = Some(input);
             self
         }
         pub fn set_last_modified(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified = inp;
+            self.last_modified = input;
             self
         }
         /// <p>Specifies the owner of the object.</p>
-        pub fn owner(mut self, inp: crate::model::Owner) -> Self {
-            self.owner = Some(inp);
+        pub fn owner(mut self, input: crate::model::Owner) -> Self {
+            self.owner = Some(input);
             self
         }
-        pub fn set_owner(mut self, inp: std::option::Option<crate::model::Owner>) -> Self {
-            self.owner = inp;
+        pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
+            self.owner = input;
             self
         }
         /// Consumes the builder and constructs a [`ObjectVersion`](crate::model::ObjectVersion)
@@ -11479,24 +11518,24 @@ pub mod object {
     impl Builder {
         /// <p>The name that you assign to an object. You use the object key to retrieve the
         /// object.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>Creation date of the object.</p>
-        pub fn last_modified(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified = Some(inp);
+        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified = Some(input);
             self
         }
         pub fn set_last_modified(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified = inp;
+            self.last_modified = input;
             self
         }
         /// <p>The entity tag is a hash of the object. The ETag reflects changes only to the contents
@@ -11519,42 +11558,42 @@ pub mod object {
         /// ETag is not an MD5 digest, regardless of the method of encryption.</p>
         /// </li>
         /// </ul>
-        pub fn e_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.e_tag = Some(inp.into());
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
             self
         }
-        pub fn set_e_tag(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = inp;
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
             self
         }
         /// <p>Size in bytes of the object</p>
-        pub fn size(mut self, inp: i32) -> Self {
-            self.size = Some(inp);
+        pub fn size(mut self, input: i32) -> Self {
+            self.size = Some(input);
             self
         }
-        pub fn set_size(mut self, inp: i32) -> Self {
-            self.size = Some(inp);
+        pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.size = input;
             self
         }
         /// <p>The class of storage used to store the object.</p>
-        pub fn storage_class(mut self, inp: crate::model::ObjectStorageClass) -> Self {
-            self.storage_class = Some(inp);
+        pub fn storage_class(mut self, input: crate::model::ObjectStorageClass) -> Self {
+            self.storage_class = Some(input);
             self
         }
         pub fn set_storage_class(
             mut self,
-            inp: std::option::Option<crate::model::ObjectStorageClass>,
+            input: std::option::Option<crate::model::ObjectStorageClass>,
         ) -> Self {
-            self.storage_class = inp;
+            self.storage_class = input;
             self
         }
         /// <p>The owner of the object</p>
-        pub fn owner(mut self, inp: crate::model::Owner) -> Self {
-            self.owner = Some(inp);
+        pub fn owner(mut self, input: crate::model::Owner) -> Self {
+            self.owner = Some(input);
             self
         }
-        pub fn set_owner(mut self, inp: std::option::Option<crate::model::Owner>) -> Self {
-            self.owner = inp;
+        pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
+            self.owner = input;
             self
         }
         /// Consumes the builder and constructs a [`Object`](crate::model::Object)
@@ -11695,60 +11734,63 @@ pub mod multipart_upload {
     }
     impl Builder {
         /// <p>Upload ID that identifies the multipart upload.</p>
-        pub fn upload_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.upload_id = Some(inp.into());
+        pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.upload_id = Some(input.into());
             self
         }
-        pub fn set_upload_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.upload_id = inp;
+        pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.upload_id = input;
             self
         }
         /// <p>Key of the object for which the multipart upload was initiated.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>Date and time at which the multipart upload was initiated.</p>
-        pub fn initiated(mut self, inp: smithy_types::Instant) -> Self {
-            self.initiated = Some(inp);
+        pub fn initiated(mut self, input: smithy_types::Instant) -> Self {
+            self.initiated = Some(input);
             self
         }
-        pub fn set_initiated(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.initiated = inp;
+        pub fn set_initiated(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.initiated = input;
             self
         }
         /// <p>The class of storage used to store the object.</p>
-        pub fn storage_class(mut self, inp: crate::model::StorageClass) -> Self {
-            self.storage_class = Some(inp);
+        pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
+            self.storage_class = Some(input);
             self
         }
         pub fn set_storage_class(
             mut self,
-            inp: std::option::Option<crate::model::StorageClass>,
+            input: std::option::Option<crate::model::StorageClass>,
         ) -> Self {
-            self.storage_class = inp;
+            self.storage_class = input;
             self
         }
         /// <p>Specifies the owner of the object that is part of the multipart upload. </p>
-        pub fn owner(mut self, inp: crate::model::Owner) -> Self {
-            self.owner = Some(inp);
+        pub fn owner(mut self, input: crate::model::Owner) -> Self {
+            self.owner = Some(input);
             self
         }
-        pub fn set_owner(mut self, inp: std::option::Option<crate::model::Owner>) -> Self {
-            self.owner = inp;
+        pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
+            self.owner = input;
             self
         }
         /// <p>Identifies who initiated the multipart upload.</p>
-        pub fn initiator(mut self, inp: crate::model::Initiator) -> Self {
-            self.initiator = Some(inp);
+        pub fn initiator(mut self, input: crate::model::Initiator) -> Self {
+            self.initiator = Some(input);
             self
         }
-        pub fn set_initiator(mut self, inp: std::option::Option<crate::model::Initiator>) -> Self {
-            self.initiator = inp;
+        pub fn set_initiator(
+            mut self,
+            input: std::option::Option<crate::model::Initiator>,
+        ) -> Self {
+            self.initiator = input;
             self
         }
         /// Consumes the builder and constructs a [`MultipartUpload`](crate::model::MultipartUpload)
@@ -11800,24 +11842,24 @@ pub mod bucket {
     }
     impl Builder {
         /// <p>The name of the bucket.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>Date the bucket was created. This date can change when making changes to your bucket, such as editing its bucket policy.</p>
-        pub fn creation_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_date = Some(inp);
+        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_date = Some(input);
             self
         }
         pub fn set_creation_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_date = inp;
+            self.creation_date = input;
             self
         }
         /// Consumes the builder and constructs a [`Bucket`](crate::model::Bucket)
@@ -11974,12 +12016,12 @@ pub mod policy_status {
     impl Builder {
         /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is
         /// public. <code>FALSE</code> indicates that the bucket is not public.</p>
-        pub fn is_public(mut self, inp: bool) -> Self {
-            self.is_public = Some(inp);
+        pub fn is_public(mut self, input: bool) -> Self {
+            self.is_public = Some(input);
             self
         }
-        pub fn set_is_public(mut self, inp: bool) -> Self {
-            self.is_public = Some(inp);
+        pub fn set_is_public(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_public = input;
             self
         }
         /// Consumes the builder and constructs a [`PolicyStatus`](crate::model::PolicyStatus)
@@ -14024,21 +14066,21 @@ pub mod error {
     }
     impl Builder {
         /// <p>The error key.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>The version ID of the error.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>The error code is a string that uniquely identifies an error condition. It is meant to
@@ -15904,12 +15946,12 @@ pub mod error {
         /// </li>
         /// </ul>
         /// <p></p>
-        pub fn code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.code = Some(inp.into());
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
             self
         }
-        pub fn set_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.code = inp;
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
             self
         }
         /// <p>The error message contains a generic description of the error condition in English. It
@@ -15917,12 +15959,12 @@ pub mod error {
         /// user if they encounter an error condition they don't know how or don't care to handle.
         /// Sophisticated programs with more exhaustive error handling and proper internationalization
         /// are more likely to ignore the error message.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`Error`](crate::model::Error)
@@ -15983,46 +16025,46 @@ pub mod deleted_object {
     }
     impl Builder {
         /// <p>The name of the deleted object.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>The version ID of the deleted object.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was
         /// not (false) a delete marker. In a simple DELETE, this header indicates whether (true) or
         /// not (false) a delete marker was created.</p>
-        pub fn delete_marker(mut self, inp: bool) -> Self {
-            self.delete_marker = Some(inp);
+        pub fn delete_marker(mut self, input: bool) -> Self {
+            self.delete_marker = Some(input);
             self
         }
-        pub fn set_delete_marker(mut self, inp: bool) -> Self {
-            self.delete_marker = Some(inp);
+        pub fn set_delete_marker(mut self, input: std::option::Option<bool>) -> Self {
+            self.delete_marker = input;
             self
         }
         /// <p>The version ID of the delete marker created as a result of the DELETE operation. If you
         /// delete a specific object version, the value returned by this header is the version ID of
         /// the object version deleted.</p>
-        pub fn delete_marker_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.delete_marker_version_id = Some(inp.into());
+        pub fn delete_marker_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delete_marker_version_id = Some(input.into());
             self
         }
         pub fn set_delete_marker_version_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.delete_marker_version_id = inp;
+            self.delete_marker_version_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeletedObject`](crate::model::DeletedObject)
@@ -16071,27 +16113,27 @@ pub mod delete {
         pub(crate) quiet: std::option::Option<bool>,
     }
     impl Builder {
-        pub fn objects(mut self, inp: impl Into<crate::model::ObjectIdentifier>) -> Self {
+        pub fn objects(mut self, input: impl Into<crate::model::ObjectIdentifier>) -> Self {
             let mut v = self.objects.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.objects = Some(v);
             self
         }
         pub fn set_objects(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ObjectIdentifier>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ObjectIdentifier>>,
         ) -> Self {
-            self.objects = inp;
+            self.objects = input;
             self
         }
         /// <p>Element to enable quiet mode for the request. When you add this element, you must set
         /// its value to true.</p>
-        pub fn quiet(mut self, inp: bool) -> Self {
-            self.quiet = Some(inp);
+        pub fn quiet(mut self, input: bool) -> Self {
+            self.quiet = Some(input);
             self
         }
-        pub fn set_quiet(mut self, inp: bool) -> Self {
-            self.quiet = Some(inp);
+        pub fn set_quiet(mut self, input: std::option::Option<bool>) -> Self {
+            self.quiet = input;
             self
         }
         /// Consumes the builder and constructs a [`Delete`](crate::model::Delete)
@@ -16148,21 +16190,21 @@ pub mod object_identifier {
         /// XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
         /// XML related object key constraints</a>.</p>
         /// </important>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>VersionId for the specific version of the object to delete.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ObjectIdentifier`](crate::model::ObjectIdentifier)
@@ -16207,15 +16249,18 @@ pub mod create_bucket_configuration {
     impl Builder {
         /// <p>Specifies the Region where the bucket will be created. If you don't specify a Region,
         /// the bucket is created in the US East (N. Virginia) Region (us-east-1).</p>
-        pub fn location_constraint(mut self, inp: crate::model::BucketLocationConstraint) -> Self {
-            self.location_constraint = Some(inp);
+        pub fn location_constraint(
+            mut self,
+            input: crate::model::BucketLocationConstraint,
+        ) -> Self {
+            self.location_constraint = Some(input);
             self
         }
         pub fn set_location_constraint(
             mut self,
-            inp: std::option::Option<crate::model::BucketLocationConstraint>,
+            input: std::option::Option<crate::model::BucketLocationConstraint>,
         ) -> Self {
-            self.location_constraint = inp;
+            self.location_constraint = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateBucketConfiguration`](crate::model::CreateBucketConfiguration)
@@ -16265,24 +16310,24 @@ pub mod copy_object_result {
         /// <p>Returns the ETag of the new object. The ETag reflects only changes to the contents of an
         /// object, not its metadata. The source and destination ETag is identical for a successfully
         /// copied non-multipart object.</p>
-        pub fn e_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.e_tag = Some(inp.into());
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
             self
         }
-        pub fn set_e_tag(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = inp;
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
             self
         }
         /// <p>Creation date of the object.</p>
-        pub fn last_modified(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_modified = Some(inp);
+        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+            self.last_modified = Some(input);
             self
         }
         pub fn set_last_modified(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_modified = inp;
+            self.last_modified = input;
             self
         }
         /// Consumes the builder and constructs a [`CopyObjectResult`](crate::model::CopyObjectResult)
@@ -16436,17 +16481,17 @@ pub mod completed_multipart_upload {
         pub(crate) parts: std::option::Option<std::vec::Vec<crate::model::CompletedPart>>,
     }
     impl Builder {
-        pub fn parts(mut self, inp: impl Into<crate::model::CompletedPart>) -> Self {
+        pub fn parts(mut self, input: impl Into<crate::model::CompletedPart>) -> Self {
             let mut v = self.parts.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parts = Some(v);
             self
         }
         pub fn set_parts(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::CompletedPart>>,
+            input: std::option::Option<std::vec::Vec<crate::model::CompletedPart>>,
         ) -> Self {
-            self.parts = inp;
+            self.parts = input;
             self
         }
         /// Consumes the builder and constructs a [`CompletedMultipartUpload`](crate::model::CompletedMultipartUpload)
@@ -16491,22 +16536,22 @@ pub mod completed_part {
     }
     impl Builder {
         /// <p>Entity tag returned when the part was uploaded.</p>
-        pub fn e_tag(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.e_tag = Some(inp.into());
+        pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.e_tag = Some(input.into());
             self
         }
-        pub fn set_e_tag(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = inp;
+        pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e_tag = input;
             self
         }
         /// <p>Part number that identifies the part. This is a positive integer between 1 and
         /// 10,000.</p>
-        pub fn part_number(mut self, inp: i32) -> Self {
-            self.part_number = Some(inp);
+        pub fn part_number(mut self, input: i32) -> Self {
+            self.part_number = Some(input);
             self
         }
-        pub fn set_part_number(mut self, inp: i32) -> Self {
-            self.part_number = Some(inp);
+        pub fn set_part_number(mut self, input: std::option::Option<i32>) -> Self {
+            self.part_number = input;
             self
         }
         /// Consumes the builder and constructs a [`CompletedPart`](crate::model::CompletedPart)

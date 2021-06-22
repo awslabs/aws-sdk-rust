@@ -34,7 +34,12 @@ impl ValidateRequest {
                     .headers()
                     .get(name)
                     .unwrap_or_else(|| panic!("Header {:?} missing", name));
-                assert_eq!(actual_header, value, "Header mismatch for {:?}", name);
+                assert_eq!(
+                    actual_header.to_str().unwrap(),
+                    value.to_str().unwrap(),
+                    "Header mismatch for {:?}",
+                    name
+                );
             }
         }
         let actual_str = std::str::from_utf8(actual.body().bytes().unwrap_or(&[]));

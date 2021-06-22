@@ -17,64 +17,64 @@ pub mod batch_execute_statement_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = inp;
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_arn = Some(inp.into());
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_arn = Some(input.into());
             self
         }
-        pub fn set_secret_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = inp;
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_arn = input;
             self
         }
         /// <p>The SQL statement to run.</p>
-        pub fn sql(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sql = Some(inp.into());
+        pub fn sql(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sql = Some(input.into());
             self
         }
-        pub fn set_sql(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.sql = inp;
+        pub fn set_sql(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sql = input;
             self
         }
         /// <p>The name of the database.</p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.database = Some(inp.into());
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
             self
         }
-        pub fn set_database(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.database = inp;
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
             self
         }
         /// <p>The name of the database schema.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schema = Some(inp.into());
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema = Some(input.into());
             self
         }
-        pub fn set_schema(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.schema = inp;
+        pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema = input;
             self
         }
         pub fn parameter_sets(
             mut self,
-            inp: impl Into<std::vec::Vec<crate::model::SqlParameter>>,
+            input: impl Into<std::vec::Vec<crate::model::SqlParameter>>,
         ) -> Self {
             let mut v = self.parameter_sets.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameter_sets = Some(v);
             self
         }
         pub fn set_parameter_sets(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::SqlParameter>>>,
+            input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::SqlParameter>>>,
         ) -> Self {
-            self.parameter_sets = inp;
+            self.parameter_sets = input;
             self
         }
         /// <p>The identifier of a transaction that was started by using the
@@ -82,19 +82,24 @@ pub mod batch_execute_statement_input {
         /// transaction that you want to include the SQL statement in.</p>
         /// <p>If the SQL statement is not part of a transaction, don't set this
         /// parameter.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.transaction_id = Some(inp.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
             self
         }
-        pub fn set_transaction_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.transaction_id = inp;
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::input::BatchExecuteStatementInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchExecuteStatementInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::BatchExecuteStatementInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::BatchExecuteStatementInput {
                 resource_arn: self.resource_arn,
                 secret_arn: self.secret_arn,
@@ -117,7 +122,7 @@ impl BatchExecuteStatementInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::BatchExecuteStatement,
             aws_http::AwsErrorRetryPolicy,
@@ -177,7 +182,7 @@ impl BatchExecuteStatementInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -185,7 +190,7 @@ impl BatchExecuteStatementInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -218,46 +223,48 @@ pub mod begin_transaction_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = inp;
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_arn = Some(inp.into());
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_arn = Some(input.into());
             self
         }
-        pub fn set_secret_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = inp;
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_arn = input;
             self
         }
         /// <p>The name of the database.</p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.database = Some(inp.into());
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
             self
         }
-        pub fn set_database(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.database = inp;
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
             self
         }
         /// <p>The name of the database schema.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schema = Some(inp.into());
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema = Some(input.into());
             self
         }
-        pub fn set_schema(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.schema = inp;
+        pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema = input;
             self
         }
         /// Consumes the builder and constructs a [`BeginTransactionInput`](crate::input::BeginTransactionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::BeginTransactionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::BeginTransactionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::BeginTransactionInput {
                 resource_arn: self.resource_arn,
                 secret_arn: self.secret_arn,
@@ -277,7 +284,7 @@ impl BeginTransactionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::BeginTransaction,
             aws_http::AwsErrorRetryPolicy,
@@ -336,7 +343,7 @@ impl BeginTransactionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -344,7 +351,7 @@ impl BeginTransactionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -376,37 +383,42 @@ pub mod commit_transaction_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = inp;
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_arn = Some(inp.into());
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_arn = Some(input.into());
             self
         }
-        pub fn set_secret_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = inp;
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_arn = input;
             self
         }
         /// <p>The identifier of the transaction to end and commit.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.transaction_id = Some(inp.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
             self
         }
-        pub fn set_transaction_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.transaction_id = inp;
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CommitTransactionInput`](crate::input::CommitTransactionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CommitTransactionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CommitTransactionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CommitTransactionInput {
                 resource_arn: self.resource_arn,
                 secret_arn: self.secret_arn,
@@ -425,7 +437,7 @@ impl CommitTransactionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CommitTransaction,
             aws_http::AwsErrorRetryPolicy,
@@ -485,7 +497,7 @@ impl CommitTransactionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -493,7 +505,7 @@ impl CommitTransactionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -527,63 +539,67 @@ pub mod execute_sql_input {
     }
     impl Builder {
         /// <p>The ARN of the Aurora Serverless DB cluster.</p>
-        pub fn db_cluster_or_instance_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.db_cluster_or_instance_arn = Some(inp.into());
+        pub fn db_cluster_or_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.db_cluster_or_instance_arn = Some(input.into());
             self
         }
         pub fn set_db_cluster_or_instance_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.db_cluster_or_instance_arn = inp;
+            self.db_cluster_or_instance_arn = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.</p>
-        pub fn aws_secret_store_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.aws_secret_store_arn = Some(inp.into());
+        pub fn aws_secret_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_secret_store_arn = Some(input.into());
             self
         }
         pub fn set_aws_secret_store_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.aws_secret_store_arn = inp;
+            self.aws_secret_store_arn = input;
             self
         }
         /// <p>One or more SQL statements to run on the DB cluster.</p>
         /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL
         /// statement is permitted, including data definition, data manipulation, and commit
         /// statements. </p>
-        pub fn sql_statements(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sql_statements = Some(inp.into());
+        pub fn sql_statements(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sql_statements = Some(input.into());
             self
         }
-        pub fn set_sql_statements(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.sql_statements = inp;
+        pub fn set_sql_statements(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sql_statements = input;
             self
         }
         /// <p>The name of the database.</p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.database = Some(inp.into());
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
             self
         }
-        pub fn set_database(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.database = inp;
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
             self
         }
         /// <p>The name of the database schema.</p>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schema = Some(inp.into());
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema = Some(input.into());
             self
         }
-        pub fn set_schema(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.schema = inp;
+        pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema = input;
             self
         }
         /// Consumes the builder and constructs a [`ExecuteSqlInput`](crate::input::ExecuteSqlInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ExecuteSqlInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ExecuteSqlInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ExecuteSqlInput {
                 db_cluster_or_instance_arn: self.db_cluster_or_instance_arn,
                 aws_secret_store_arn: self.aws_secret_store_arn,
@@ -604,7 +620,7 @@ impl ExecuteSqlInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ExecuteSql,
             aws_http::AwsErrorRetryPolicy,
@@ -664,7 +680,7 @@ impl ExecuteSqlInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -672,7 +688,7 @@ impl ExecuteSqlInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -711,85 +727,88 @@ pub mod execute_statement_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = inp;
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_arn = Some(inp.into());
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_arn = Some(input.into());
             self
         }
-        pub fn set_secret_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = inp;
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_arn = input;
             self
         }
         /// <p>The SQL statement to run.</p>
-        pub fn sql(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sql = Some(inp.into());
+        pub fn sql(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sql = Some(input.into());
             self
         }
-        pub fn set_sql(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.sql = inp;
+        pub fn set_sql(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sql = input;
             self
         }
         /// <p>The name of the database.</p>
-        pub fn database(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.database = Some(inp.into());
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.database = Some(input.into());
             self
         }
-        pub fn set_database(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.database = inp;
+        pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database = input;
             self
         }
         /// <p>The name of the database schema.</p>
         /// <note>
         /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
         /// </note>
-        pub fn schema(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.schema = Some(inp.into());
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schema = Some(input.into());
             self
         }
-        pub fn set_schema(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.schema = inp;
+        pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema = input;
             self
         }
-        pub fn parameters(mut self, inp: impl Into<crate::model::SqlParameter>) -> Self {
+        pub fn parameters(mut self, input: impl Into<crate::model::SqlParameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.parameters = Some(v);
             self
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
         ) -> Self {
-            self.parameters = inp;
+            self.parameters = input;
             self
         }
         /// <p>The identifier of a transaction that was started by using the
         /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
         /// transaction that you want to include the SQL statement in.</p>
         /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.transaction_id = Some(inp.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
             self
         }
-        pub fn set_transaction_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.transaction_id = inp;
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
             self
         }
         /// <p>A value that indicates whether to include metadata in the results.</p>
-        pub fn include_result_metadata(mut self, inp: bool) -> Self {
-            self.include_result_metadata = Some(inp);
+        pub fn include_result_metadata(mut self, input: bool) -> Self {
+            self.include_result_metadata = Some(input);
             self
         }
-        pub fn set_include_result_metadata(mut self, inp: bool) -> Self {
-            self.include_result_metadata = Some(inp);
+        pub fn set_include_result_metadata(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_result_metadata = input;
             self
         }
         /// <p>A value that indicates whether to continue running the statement after
@@ -800,31 +819,33 @@ pub mod execute_statement_input {
         /// the call times out. When a DDL statement terminates before it is finished
         /// running, it can result in errors and possibly corrupted data structures.</p>
         /// </important>
-        pub fn continue_after_timeout(mut self, inp: bool) -> Self {
-            self.continue_after_timeout = Some(inp);
+        pub fn continue_after_timeout(mut self, input: bool) -> Self {
+            self.continue_after_timeout = Some(input);
             self
         }
-        pub fn set_continue_after_timeout(mut self, inp: bool) -> Self {
-            self.continue_after_timeout = Some(inp);
+        pub fn set_continue_after_timeout(mut self, input: std::option::Option<bool>) -> Self {
+            self.continue_after_timeout = input;
             self
         }
         /// <p>Options that control how the result set is returned.</p>
-        pub fn result_set_options(mut self, inp: crate::model::ResultSetOptions) -> Self {
-            self.result_set_options = Some(inp);
+        pub fn result_set_options(mut self, input: crate::model::ResultSetOptions) -> Self {
+            self.result_set_options = Some(input);
             self
         }
         pub fn set_result_set_options(
             mut self,
-            inp: std::option::Option<crate::model::ResultSetOptions>,
+            input: std::option::Option<crate::model::ResultSetOptions>,
         ) -> Self {
-            self.result_set_options = inp;
+            self.result_set_options = input;
             self
         }
         /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::input::ExecuteStatementInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ExecuteStatementInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ExecuteStatementInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ExecuteStatementInput {
                 resource_arn: self.resource_arn,
                 secret_arn: self.secret_arn,
@@ -850,7 +871,7 @@ impl ExecuteStatementInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ExecuteStatement,
             aws_http::AwsErrorRetryPolicy,
@@ -909,7 +930,7 @@ impl ExecuteStatementInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -917,7 +938,7 @@ impl ExecuteStatementInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -949,37 +970,42 @@ pub mod rollback_transaction_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_arn = Some(inp.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
             self
         }
-        pub fn set_resource_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = inp;
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_arn = Some(inp.into());
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_arn = Some(input.into());
             self
         }
-        pub fn set_secret_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.secret_arn = inp;
+        pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_arn = input;
             self
         }
         /// <p>The identifier of the transaction to roll back.</p>
-        pub fn transaction_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.transaction_id = Some(inp.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.transaction_id = Some(input.into());
             self
         }
-        pub fn set_transaction_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.transaction_id = inp;
+        pub fn set_transaction_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.transaction_id = input;
             self
         }
         /// Consumes the builder and constructs a [`RollbackTransactionInput`](crate::input::RollbackTransactionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RollbackTransactionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RollbackTransactionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RollbackTransactionInput {
                 resource_arn: self.resource_arn,
                 secret_arn: self.secret_arn,
@@ -998,7 +1024,7 @@ impl RollbackTransactionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RollbackTransaction,
             aws_http::AwsErrorRetryPolicy,
@@ -1058,7 +1084,7 @@ impl RollbackTransactionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1066,7 +1092,7 @@ impl RollbackTransactionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)

@@ -185,6 +185,10 @@ impl Request {
         &mut self.inner
     }
 
+    pub fn request(&self) -> &http::Request<SdkBody> {
+        &self.inner
+    }
+
     pub fn try_clone(&self) -> Option<Request> {
         let cloned_body = self.inner.body().try_clone()?;
         let mut cloned_request = http::Request::builder()

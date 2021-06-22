@@ -70,6 +70,21 @@ impl AddPermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            AddPermissionErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(&self.kind, AddPermissionErrorKind::InternalErrorError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, AddPermissionErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, AddPermissionErrorKind::NotFoundError(_))
+    }
 }
 impl std::error::Error for AddPermissionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -153,6 +168,30 @@ impl CheckIfPhoneNumberIsOptedOutError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CheckIfPhoneNumberIsOptedOutErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CheckIfPhoneNumberIsOptedOutErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CheckIfPhoneNumberIsOptedOutErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_throttled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CheckIfPhoneNumberIsOptedOutErrorKind::ThrottledError(_)
+        )
     }
 }
 impl std::error::Error for CheckIfPhoneNumberIsOptedOutError {
@@ -242,6 +281,39 @@ impl ConfirmSubscriptionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConfirmSubscriptionErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_filter_policy_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConfirmSubscriptionErrorKind::FilterPolicyLimitExceededError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConfirmSubscriptionErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConfirmSubscriptionErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, ConfirmSubscriptionErrorKind::NotFoundError(_))
+    }
+    pub fn is_subscription_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ConfirmSubscriptionErrorKind::SubscriptionLimitExceededError(_)
+        )
+    }
 }
 impl std::error::Error for ConfirmSubscriptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -326,6 +398,24 @@ impl CreatePlatformApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePlatformApplicationErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePlatformApplicationErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePlatformApplicationErrorKind::InvalidParameterError(_)
+        )
+    }
 }
 impl std::error::Error for CreatePlatformApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -408,6 +498,30 @@ impl CreatePlatformEndpointError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePlatformEndpointErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePlatformEndpointErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePlatformEndpointErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreatePlatformEndpointErrorKind::NotFoundError(_)
+        )
     }
 }
 impl std::error::Error for CreatePlatformEndpointError {
@@ -496,6 +610,42 @@ impl CreateSMSSandboxPhoneNumberError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSMSSandboxPhoneNumberErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSMSSandboxPhoneNumberErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_opted_out_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSMSSandboxPhoneNumberErrorKind::OptedOutError(_)
+        )
+    }
+    pub fn is_throttled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSMSSandboxPhoneNumberErrorKind::ThrottledError(_)
+        )
+    }
+    pub fn is_user_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateSMSSandboxPhoneNumberErrorKind::UserErrorError(_)
+        )
     }
 }
 impl std::error::Error for CreateSMSSandboxPhoneNumberError {
@@ -593,6 +743,33 @@ impl CreateTopicError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(&self.kind, CreateTopicErrorKind::AuthorizationErrorError(_))
+    }
+    pub fn is_concurrent_access_error(&self) -> bool {
+        matches!(&self.kind, CreateTopicErrorKind::ConcurrentAccessError(_))
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(&self.kind, CreateTopicErrorKind::InternalErrorError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, CreateTopicErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_invalid_security_error(&self) -> bool {
+        matches!(&self.kind, CreateTopicErrorKind::InvalidSecurityError(_))
+    }
+    pub fn is_stale_tag_error(&self) -> bool {
+        matches!(&self.kind, CreateTopicErrorKind::StaleTagError(_))
+    }
+    pub fn is_tag_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateTopicErrorKind::TagLimitExceededError(_))
+    }
+    pub fn is_tag_policy_error(&self) -> bool {
+        matches!(&self.kind, CreateTopicErrorKind::TagPolicyError(_))
+    }
+    pub fn is_topic_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, CreateTopicErrorKind::TopicLimitExceededError(_))
+    }
 }
 impl std::error::Error for CreateTopicError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -680,6 +857,21 @@ impl DeleteEndpointError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEndpointErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(&self.kind, DeleteEndpointErrorKind::InternalErrorError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteEndpointErrorKind::InvalidParameterError(_)
+        )
+    }
 }
 impl std::error::Error for DeleteEndpointError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -760,6 +952,24 @@ impl DeletePlatformApplicationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePlatformApplicationErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePlatformApplicationErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePlatformApplicationErrorKind::InvalidParameterError(_)
+        )
     }
 }
 impl std::error::Error for DeletePlatformApplicationError {
@@ -847,6 +1057,42 @@ impl DeleteSMSSandboxPhoneNumberError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSMSSandboxPhoneNumberErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSMSSandboxPhoneNumberErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSMSSandboxPhoneNumberErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_throttled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSMSSandboxPhoneNumberErrorKind::ThrottledError(_)
+        )
+    }
+    pub fn is_user_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteSMSSandboxPhoneNumberErrorKind::UserErrorError(_)
+        )
     }
 }
 impl std::error::Error for DeleteSMSSandboxPhoneNumberError {
@@ -940,6 +1186,27 @@ impl DeleteTopicError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(&self.kind, DeleteTopicErrorKind::AuthorizationErrorError(_))
+    }
+    pub fn is_concurrent_access_error(&self) -> bool {
+        matches!(&self.kind, DeleteTopicErrorKind::ConcurrentAccessError(_))
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(&self.kind, DeleteTopicErrorKind::InternalErrorError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, DeleteTopicErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, DeleteTopicErrorKind::NotFoundError(_))
+    }
+    pub fn is_stale_tag_error(&self) -> bool {
+        matches!(&self.kind, DeleteTopicErrorKind::StaleTagError(_))
+    }
+    pub fn is_tag_policy_error(&self) -> bool {
+        matches!(&self.kind, DeleteTopicErrorKind::TagPolicyError(_))
+    }
 }
 impl std::error::Error for DeleteTopicError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1026,6 +1293,27 @@ impl GetEndpointAttributesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEndpointAttributesErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEndpointAttributesErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetEndpointAttributesErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetEndpointAttributesErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for GetEndpointAttributesError {
@@ -1115,6 +1403,30 @@ impl GetPlatformApplicationAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPlatformApplicationAttributesErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPlatformApplicationAttributesErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPlatformApplicationAttributesErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetPlatformApplicationAttributesErrorKind::NotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for GetPlatformApplicationAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1203,6 +1515,24 @@ impl GetSMSAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSMSAttributesErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(&self.kind, GetSMSAttributesErrorKind::InternalErrorError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSMSAttributesErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_throttled_error(&self) -> bool {
+        matches!(&self.kind, GetSMSAttributesErrorKind::ThrottledError(_))
+    }
 }
 impl std::error::Error for GetSMSAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1284,6 +1614,24 @@ impl GetSMSSandboxAccountStatusError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSMSSandboxAccountStatusErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSMSSandboxAccountStatusErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_throttled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSMSSandboxAccountStatusErrorKind::ThrottledError(_)
+        )
     }
 }
 impl std::error::Error for GetSMSSandboxAccountStatusError {
@@ -1367,6 +1715,30 @@ impl GetSubscriptionAttributesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSubscriptionAttributesErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSubscriptionAttributesErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSubscriptionAttributesErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetSubscriptionAttributesErrorKind::NotFoundError(_)
+        )
     }
 }
 impl std::error::Error for GetSubscriptionAttributesError {
@@ -1453,6 +1825,33 @@ impl GetTopicAttributesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTopicAttributesErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTopicAttributesErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTopicAttributesErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_invalid_security_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetTopicAttributesErrorKind::InvalidSecurityError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, GetTopicAttributesErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for GetTopicAttributesError {
@@ -1548,6 +1947,30 @@ impl ListEndpointsByPlatformApplicationError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEndpointsByPlatformApplicationErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEndpointsByPlatformApplicationErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEndpointsByPlatformApplicationErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListEndpointsByPlatformApplicationErrorKind::NotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for ListEndpointsByPlatformApplicationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1638,6 +2061,36 @@ impl ListOriginationNumbersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOriginationNumbersErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOriginationNumbersErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOriginationNumbersErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_throttled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOriginationNumbersErrorKind::ThrottledError(_)
+        )
+    }
+    pub fn is_validation_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListOriginationNumbersErrorKind::ValidationError(_)
+        )
+    }
 }
 impl std::error::Error for ListOriginationNumbersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1723,6 +2176,30 @@ impl ListPhoneNumbersOptedOutError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPhoneNumbersOptedOutErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPhoneNumbersOptedOutErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPhoneNumbersOptedOutErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_throttled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPhoneNumbersOptedOutErrorKind::ThrottledError(_)
+        )
+    }
 }
 impl std::error::Error for ListPhoneNumbersOptedOutError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1804,6 +2281,24 @@ impl ListPlatformApplicationsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPlatformApplicationsErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPlatformApplicationsErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListPlatformApplicationsErrorKind::InvalidParameterError(_)
+        )
     }
 }
 impl std::error::Error for ListPlatformApplicationsError {
@@ -1890,6 +2385,36 @@ impl ListSMSSandboxPhoneNumbersError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSMSSandboxPhoneNumbersErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSMSSandboxPhoneNumbersErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSMSSandboxPhoneNumbersErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSMSSandboxPhoneNumbersErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_throttled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSMSSandboxPhoneNumbersErrorKind::ThrottledError(_)
+        )
+    }
 }
 impl std::error::Error for ListSMSSandboxPhoneNumbersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -1973,6 +2498,24 @@ impl ListSubscriptionsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSubscriptionsErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSubscriptionsErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSubscriptionsErrorKind::InvalidParameterError(_)
+        )
+    }
 }
 impl std::error::Error for ListSubscriptionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2055,6 +2598,30 @@ impl ListSubscriptionsByTopicError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSubscriptionsByTopicErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSubscriptionsByTopicErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSubscriptionsByTopicErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListSubscriptionsByTopicErrorKind::NotFoundError(_)
+        )
     }
 }
 impl std::error::Error for ListSubscriptionsByTopicError {
@@ -2142,6 +2709,33 @@ impl ListTagsForResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_concurrent_access_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ConcurrentAccessError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListTagsForResourceErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_tag_policy_error(&self) -> bool {
+        matches!(&self.kind, ListTagsForResourceErrorKind::TagPolicyError(_))
+    }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2225,6 +2819,15 @@ impl ListTopicsError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(&self.kind, ListTopicsErrorKind::AuthorizationErrorError(_))
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(&self.kind, ListTopicsErrorKind::InternalErrorError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, ListTopicsErrorKind::InvalidParameterError(_))
+    }
 }
 impl std::error::Error for ListTopicsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2307,6 +2910,24 @@ impl OptInPhoneNumberError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            OptInPhoneNumberErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(&self.kind, OptInPhoneNumberErrorKind::InternalErrorError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            OptInPhoneNumberErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_throttled_error(&self) -> bool {
+        matches!(&self.kind, OptInPhoneNumberErrorKind::ThrottledError(_))
     }
 }
 impl std::error::Error for OptInPhoneNumberError {
@@ -2412,6 +3033,51 @@ impl PublishError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::AuthorizationErrorError(_))
+    }
+    pub fn is_endpoint_disabled_error(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::EndpointDisabledError(_))
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::InternalErrorError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_invalid_parameter_value_error(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::InvalidParameterValueError(_))
+    }
+    pub fn is_invalid_security_error(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::InvalidSecurityError(_))
+    }
+    pub fn is_kms_access_denied_error(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::KMSAccessDeniedError(_))
+    }
+    pub fn is_kms_disabled_error(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::KMSDisabledError(_))
+    }
+    pub fn is_kms_invalid_state_error(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::KMSInvalidStateError(_))
+    }
+    pub fn is_kms_not_found_error(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::KMSNotFoundError(_))
+    }
+    pub fn is_kms_opt_in_required(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::KMSOptInRequired(_))
+    }
+    pub fn is_kms_throttling_error(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::KMSThrottlingError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, PublishErrorKind::NotFoundError(_))
+    }
+    pub fn is_platform_application_disabled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            PublishErrorKind::PlatformApplicationDisabledError(_)
+        )
+    }
 }
 impl std::error::Error for PublishError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2506,6 +3172,24 @@ impl RemovePermissionError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemovePermissionErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(&self.kind, RemovePermissionErrorKind::InternalErrorError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            RemovePermissionErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, RemovePermissionErrorKind::NotFoundError(_))
+    }
 }
 impl std::error::Error for RemovePermissionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2589,6 +3273,27 @@ impl SetEndpointAttributesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetEndpointAttributesErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetEndpointAttributesErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetEndpointAttributesErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, SetEndpointAttributesErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for SetEndpointAttributesError {
@@ -2678,6 +3383,30 @@ impl SetPlatformApplicationAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetPlatformApplicationAttributesErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetPlatformApplicationAttributesErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetPlatformApplicationAttributesErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetPlatformApplicationAttributesErrorKind::NotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for SetPlatformApplicationAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2765,6 +3494,24 @@ impl SetSMSAttributesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetSMSAttributesErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(&self.kind, SetSMSAttributesErrorKind::InternalErrorError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetSMSAttributesErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_throttled_error(&self) -> bool {
+        matches!(&self.kind, SetSMSAttributesErrorKind::ThrottledError(_))
     }
 }
 impl std::error::Error for SetSMSAttributesError {
@@ -2854,6 +3601,36 @@ impl SetSubscriptionAttributesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetSubscriptionAttributesErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_filter_policy_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetSubscriptionAttributesErrorKind::FilterPolicyLimitExceededError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetSubscriptionAttributesErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetSubscriptionAttributesErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetSubscriptionAttributesErrorKind::NotFoundError(_)
+        )
+    }
 }
 impl std::error::Error for SetSubscriptionAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -2942,6 +3719,33 @@ impl SetTopicAttributesError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetTopicAttributesErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetTopicAttributesErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetTopicAttributesErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_invalid_security_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SetTopicAttributesErrorKind::InvalidSecurityError(_)
+        )
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, SetTopicAttributesErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for SetTopicAttributesError {
@@ -3033,6 +3837,33 @@ impl SubscribeError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(&self.kind, SubscribeErrorKind::AuthorizationErrorError(_))
+    }
+    pub fn is_filter_policy_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SubscribeErrorKind::FilterPolicyLimitExceededError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(&self.kind, SubscribeErrorKind::InternalErrorError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, SubscribeErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_invalid_security_error(&self) -> bool {
+        matches!(&self.kind, SubscribeErrorKind::InvalidSecurityError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, SubscribeErrorKind::NotFoundError(_))
+    }
+    pub fn is_subscription_limit_exceeded_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            SubscribeErrorKind::SubscriptionLimitExceededError(_)
+        )
     }
 }
 impl std::error::Error for SubscribeError {
@@ -3127,6 +3958,27 @@ impl TagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::AuthorizationErrorError(_))
+    }
+    pub fn is_concurrent_access_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ConcurrentAccessError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_stale_tag_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::StaleTagError(_))
+    }
+    pub fn is_tag_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::TagLimitExceededError(_))
+    }
+    pub fn is_tag_policy_error(&self) -> bool {
+        matches!(&self.kind, TagResourceErrorKind::TagPolicyError(_))
+    }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3215,6 +4067,21 @@ impl UnsubscribeError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(&self.kind, UnsubscribeErrorKind::AuthorizationErrorError(_))
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(&self.kind, UnsubscribeErrorKind::InternalErrorError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, UnsubscribeErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_invalid_security_error(&self) -> bool {
+        matches!(&self.kind, UnsubscribeErrorKind::InvalidSecurityError(_))
+    }
+    pub fn is_not_found_error(&self) -> bool {
+        matches!(&self.kind, UnsubscribeErrorKind::NotFoundError(_))
     }
 }
 impl std::error::Error for UnsubscribeError {
@@ -3307,6 +4174,30 @@ impl UntagResourceError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_concurrent_access_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ConcurrentAccessError(_))
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::InvalidParameterError(_))
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::ResourceNotFoundError(_))
+    }
+    pub fn is_stale_tag_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::StaleTagError(_))
+    }
+    pub fn is_tag_limit_exceeded_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::TagLimitExceededError(_))
+    }
+    pub fn is_tag_policy_error(&self) -> bool {
+        matches!(&self.kind, UntagResourceErrorKind::TagPolicyError(_))
+    }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3398,6 +4289,42 @@ impl VerifySMSSandboxPhoneNumberError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_authorization_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            VerifySMSSandboxPhoneNumberErrorKind::AuthorizationErrorError(_)
+        )
+    }
+    pub fn is_internal_error_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            VerifySMSSandboxPhoneNumberErrorKind::InternalErrorError(_)
+        )
+    }
+    pub fn is_invalid_parameter_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            VerifySMSSandboxPhoneNumberErrorKind::InvalidParameterError(_)
+        )
+    }
+    pub fn is_resource_not_found_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            VerifySMSSandboxPhoneNumberErrorKind::ResourceNotFoundError(_)
+        )
+    }
+    pub fn is_throttled_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            VerifySMSSandboxPhoneNumberErrorKind::ThrottledError(_)
+        )
+    }
+    pub fn is_verification_error(&self) -> bool {
+        matches!(
+            &self.kind,
+            VerifySMSSandboxPhoneNumberErrorKind::VerificationError(_)
+        )
+    }
 }
 impl std::error::Error for VerifySMSSandboxPhoneNumberError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -3454,21 +4381,21 @@ pub mod verification_error {
         pub(crate) status: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// <p>The status of the verification error.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`VerificationError`](crate::error::VerificationError)
@@ -3527,12 +4454,12 @@ pub mod throttled_error {
     }
     impl Builder {
         /// <p>Throttled request.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ThrottledError`](crate::error::ThrottledError)
@@ -3588,12 +4515,12 @@ pub mod resource_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundError`](crate::error::ResourceNotFoundError)
@@ -3649,12 +4576,12 @@ pub mod invalid_parameter_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidParameterError`](crate::error::InvalidParameterError)
@@ -3709,12 +4636,12 @@ pub mod internal_error_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InternalErrorError`](crate::error::InternalErrorError)
@@ -3769,12 +4696,12 @@ pub mod authorization_error_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`AuthorizationErrorError`](crate::error::AuthorizationErrorError)
@@ -3830,12 +4757,12 @@ pub mod tag_policy_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TagPolicyError`](crate::error::TagPolicyError)
@@ -3890,12 +4817,12 @@ pub mod tag_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TagLimitExceededError`](crate::error::TagLimitExceededError)
@@ -3951,12 +4878,12 @@ pub mod stale_tag_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`StaleTagError`](crate::error::StaleTagError)
@@ -4012,12 +4939,12 @@ pub mod concurrent_access_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ConcurrentAccessError`](crate::error::ConcurrentAccessError)
@@ -4072,12 +4999,12 @@ pub mod not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`NotFoundError`](crate::error::NotFoundError)
@@ -4133,12 +5060,12 @@ pub mod invalid_security_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidSecurityError`](crate::error::InvalidSecurityError)
@@ -4197,12 +5124,12 @@ pub mod subscription_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`SubscriptionLimitExceededError`](crate::error::SubscriptionLimitExceededError)
@@ -4262,12 +5189,12 @@ pub mod filter_policy_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`FilterPolicyLimitExceededError`](crate::error::FilterPolicyLimitExceededError)
@@ -4327,12 +5254,12 @@ pub mod platform_application_disabled_error {
     }
     impl Builder {
         /// <p>Message for platform application disabled.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`PlatformApplicationDisabledError`](crate::error::PlatformApplicationDisabledError)
@@ -4390,12 +5317,12 @@ pub mod kms_throttling_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSThrottlingError`](crate::error::KMSThrottlingError)
@@ -4450,12 +5377,12 @@ pub mod kms_opt_in_required {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSOptInRequired`](crate::error::KMSOptInRequired)
@@ -4511,12 +5438,12 @@ pub mod kms_not_found_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSNotFoundError`](crate::error::KMSNotFoundError)
@@ -4574,12 +5501,12 @@ pub mod kms_invalid_state_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSInvalidStateError`](crate::error::KMSInvalidStateError)
@@ -4635,12 +5562,12 @@ pub mod kms_disabled_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSDisabledError`](crate::error::KMSDisabledError)
@@ -4696,12 +5623,12 @@ pub mod kms_access_denied_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`KMSAccessDeniedError`](crate::error::KMSAccessDeniedError)
@@ -4762,12 +5689,12 @@ pub mod invalid_parameter_value_error {
     }
     impl Builder {
         /// <p>The parameter value is invalid.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`InvalidParameterValueError`](crate::error::InvalidParameterValueError)
@@ -4824,12 +5751,12 @@ pub mod endpoint_disabled_error {
     }
     impl Builder {
         /// <p>Message for endpoint disabled.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`EndpointDisabledError`](crate::error::EndpointDisabledError)
@@ -4884,12 +5811,12 @@ pub mod validation_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`ValidationError`](crate::error::ValidationError)
@@ -4945,12 +5872,12 @@ pub mod user_error_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`UserErrorError`](crate::error::UserErrorError)
@@ -5005,12 +5932,12 @@ pub mod topic_limit_exceeded_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`TopicLimitExceededError`](crate::error::TopicLimitExceededError)
@@ -5066,12 +5993,12 @@ pub mod opted_out_error {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// Consumes the builder and constructs a [`OptedOutError`](crate::error::OptedOutError)

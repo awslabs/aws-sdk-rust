@@ -227,7 +227,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CancelUpdateStackOutput,
             smithy_http::result::SdkError<crate::error::CancelUpdateStackError>,
         >
@@ -244,12 +244,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or the unique stack ID that is associated with the stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this
@@ -257,15 +257,15 @@ pub mod fluent_builders {
         /// attempting to cancel an update on a stack with the same name. You might retry
         /// <code>CancelUpdateStack</code> requests to ensure that AWS CloudFormation successfully
         /// received them.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }
@@ -284,7 +284,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ContinueUpdateRollbackOutput,
             smithy_http::result::SdkError<crate::error::ContinueUpdateRollbackError>,
         >
@@ -308,12 +308,12 @@ pub mod fluent_builders {
         /// parent stack (the stack that contains the <code>AWS::CloudFormation::Stack</code>
         /// resource).</p>
         /// </note>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
@@ -325,12 +325,12 @@ pub mod fluent_builders {
         /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>A list of the logical IDs of the resources that AWS CloudFormation skips during the
@@ -368,9 +368,9 @@ pub mod fluent_builders {
         }
         pub fn set_resources_to_skip(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_resources_to_skip(inp);
+            self.inner = self.inner.set_resources_to_skip(input);
             self
         }
         /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify
@@ -378,15 +378,15 @@ pub mod fluent_builders {
         /// attempting to continue the rollback to a stack with the same name. You might retry
         /// <code>ContinueUpdateRollback</code> requests to ensure that AWS CloudFormation
         /// successfully received them.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }
@@ -405,7 +405,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateChangeSetOutput,
             smithy_http::result::SdkError<crate::error::CreateChangeSetError>,
         >
@@ -425,12 +425,12 @@ pub mod fluent_builders {
         /// CloudFormation generates the change set by comparing this stack's information with the
         /// information that you submit, such as a modified template or different parameter input
         /// values.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>A structure that contains the body of the revised template, with a minimum length of
@@ -438,12 +438,15 @@ pub mod fluent_builders {
         /// comparing this template with the template of the stack that you specified.</p>
         /// <p>Conditional: You must specify only <code>TemplateBody</code> or
         /// <code>TemplateURL</code>.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(inp);
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input);
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_body(inp);
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_body(input);
             self
         }
         /// <p>The location of the file that contains the revised template. The URL must point to a
@@ -452,22 +455,22 @@ pub mod fluent_builders {
         /// stack that you specified.</p>
         /// <p>Conditional: You must specify only <code>TemplateBody</code> or
         /// <code>TemplateURL</code>.</p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_url(inp);
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_url(input);
             self
         }
-        pub fn set_template_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_url(inp);
+        pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_template_url(input);
             self
         }
         /// <p>Whether to reuse the template that is associated with the stack to create the change
         /// set.</p>
-        pub fn use_previous_template(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_previous_template(inp);
+        pub fn use_previous_template(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_previous_template(input);
             self
         }
-        pub fn set_use_previous_template(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_use_previous_template(inp);
+        pub fn set_use_previous_template(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_use_previous_template(input);
             self
         }
         /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
@@ -478,9 +481,9 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
         /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
@@ -589,9 +592,9 @@ pub mod fluent_builders {
         }
         pub fn set_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Capability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         ) -> Self {
-            self.inner = self.inner.set_capabilities(inp);
+            self.inner = self.inner.set_capabilities(input);
             self
         }
         /// <p>The template resource types that you have permissions to work with if you execute
@@ -609,9 +612,9 @@ pub mod fluent_builders {
         }
         pub fn set_resource_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_resource_types(inp);
+            self.inner = self.inner.set_resource_types(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
@@ -623,25 +626,28 @@ pub mod fluent_builders {
         /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>The rollback triggers for AWS CloudFormation to monitor during stack creation and
         /// updating operations, and for the specified monitoring period afterwards.</p>
-        pub fn rollback_configuration(mut self, inp: crate::model::RollbackConfiguration) -> Self {
-            self.inner = self.inner.rollback_configuration(inp);
+        pub fn rollback_configuration(
+            mut self,
+            input: crate::model::RollbackConfiguration,
+        ) -> Self {
+            self.inner = self.inner.rollback_configuration(input);
             self
         }
         pub fn set_rollback_configuration(
             mut self,
-            inp: std::option::Option<crate::model::RollbackConfiguration>,
+            input: std::option::Option<crate::model::RollbackConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_rollback_configuration(inp);
+            self.inner = self.inner.set_rollback_configuration(input);
             self
         }
         /// <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS)
@@ -653,9 +659,9 @@ pub mod fluent_builders {
         }
         pub fn set_notification_ar_ns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_notification_ar_ns(inp);
+            self.inner = self.inner.set_notification_ar_ns(input);
             self
         }
         /// <p>Key-value pairs to associate with this stack. AWS CloudFormation also propagates
@@ -666,9 +672,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>The name of the change set. The name must be unique among all change sets that are
@@ -676,15 +682,15 @@ pub mod fluent_builders {
         /// <p>A change set name can contain only alphanumeric, case sensitive characters and
         /// hyphens. It must start with an alphabetic character and cannot exceed 128
         /// characters.</p>
-        pub fn change_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_set_name(inp);
+        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_set_name(input);
             self
         }
         pub fn set_change_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_change_set_name(inp);
+            self.inner = self.inner.set_change_set_name(input);
             self
         }
         /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token
@@ -692,21 +698,21 @@ pub mod fluent_builders {
         /// to create another change set with the same name. You might retry
         /// <code>CreateChangeSet</code> requests to ensure that AWS CloudFormation successfully
         /// received them.</p>
-        pub fn client_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(inp);
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input);
             self
         }
-        pub fn set_client_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_client_token(inp);
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
             self
         }
         /// <p>A description to help you identify this change set.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The type of change set operation. To create a change set for a new stack, specify
@@ -721,15 +727,15 @@ pub mod fluent_builders {
         /// <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the
         /// <code>UPDATE</code> type to create a change set for a new stack or the
         /// <code>CREATE</code> type to create a change set for an existing stack.</p>
-        pub fn change_set_type(mut self, inp: crate::model::ChangeSetType) -> Self {
-            self.inner = self.inner.change_set_type(inp);
+        pub fn change_set_type(mut self, input: crate::model::ChangeSetType) -> Self {
+            self.inner = self.inner.change_set_type(input);
             self
         }
         pub fn set_change_set_type(
             mut self,
-            inp: std::option::Option<crate::model::ChangeSetType>,
+            input: std::option::Option<crate::model::ChangeSetType>,
         ) -> Self {
-            self.inner = self.inner.set_change_set_type(inp);
+            self.inner = self.inner.set_change_set_type(input);
             self
         }
         /// <p>The resources to import into your stack.</p>
@@ -742,20 +748,20 @@ pub mod fluent_builders {
         }
         pub fn set_resources_to_import(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ResourceToImport>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceToImport>>,
         ) -> Self {
-            self.inner = self.inner.set_resources_to_import(inp);
+            self.inner = self.inner.set_resources_to_import(input);
             self
         }
         /// <p>Creates a change set for the all nested stacks specified in the template. The default
         /// behavior of this action is set to <code>False</code>. To include nested sets in a change
         /// set, specify <code>True</code>.</p>
-        pub fn include_nested_stacks(mut self, inp: bool) -> Self {
-            self.inner = self.inner.include_nested_stacks(inp);
+        pub fn include_nested_stacks(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_nested_stacks(input);
             self
         }
-        pub fn set_include_nested_stacks(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_include_nested_stacks(inp);
+        pub fn set_include_nested_stacks(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_nested_stacks(input);
             self
         }
     }
@@ -774,7 +780,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateStackOutput,
             smithy_http::result::SdkError<crate::error::CreateStackError>,
         >
@@ -797,12 +803,12 @@ pub mod fluent_builders {
         /// hyphens. It must start with an alphabetic character and cannot be longer than 128
         /// characters.</p>
         /// </note>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
@@ -810,12 +816,15 @@ pub mod fluent_builders {
         /// in the AWS CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the
         /// <code>TemplateURL</code> parameter, but not both.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(inp);
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input);
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_body(inp);
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_body(input);
             self
         }
         /// <p>Location of file containing the template body. The URL must point to a template (max
@@ -824,12 +833,12 @@ pub mod fluent_builders {
         /// in the AWS CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the
         /// <code>TemplateURL</code> parameter, but not both.</p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_url(inp);
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_url(input);
             self
         }
-        pub fn set_template_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_url(inp);
+        pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_template_url(input);
             self
         }
         /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
@@ -841,9 +850,9 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
         /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed.
@@ -851,36 +860,39 @@ pub mod fluent_builders {
         /// both.</p>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn disable_rollback(mut self, inp: bool) -> Self {
-            self.inner = self.inner.disable_rollback(inp);
+        pub fn disable_rollback(mut self, input: bool) -> Self {
+            self.inner = self.inner.disable_rollback(input);
             self
         }
-        pub fn set_disable_rollback(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_disable_rollback(inp);
+        pub fn set_disable_rollback(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_disable_rollback(input);
             self
         }
         /// <p>The rollback triggers for AWS CloudFormation to monitor during stack creation and
         /// updating operations, and for the specified monitoring period afterwards.</p>
-        pub fn rollback_configuration(mut self, inp: crate::model::RollbackConfiguration) -> Self {
-            self.inner = self.inner.rollback_configuration(inp);
+        pub fn rollback_configuration(
+            mut self,
+            input: crate::model::RollbackConfiguration,
+        ) -> Self {
+            self.inner = self.inner.rollback_configuration(input);
             self
         }
         pub fn set_rollback_configuration(
             mut self,
-            inp: std::option::Option<crate::model::RollbackConfiguration>,
+            input: std::option::Option<crate::model::RollbackConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_rollback_configuration(inp);
+            self.inner = self.inner.set_rollback_configuration(input);
             self
         }
         /// <p>The amount of time that can pass before the stack status becomes CREATE_FAILED; if
         /// <code>DisableRollback</code> is not set or is set to <code>false</code>, the stack will
         /// be rolled back.</p>
-        pub fn timeout_in_minutes(mut self, inp: i32) -> Self {
-            self.inner = self.inner.timeout_in_minutes(inp);
+        pub fn timeout_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout_in_minutes(input);
             self
         }
-        pub fn set_timeout_in_minutes(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_timeout_in_minutes(inp);
+        pub fn set_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_timeout_in_minutes(input);
             self
         }
         /// <p>The Simple Notification Service (SNS) topic ARNs to publish stack related events. You
@@ -892,9 +904,9 @@ pub mod fluent_builders {
         }
         pub fn set_notification_ar_ns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_notification_ar_ns(inp);
+            self.inner = self.inner.set_notification_ar_ns(input);
             self
         }
         /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
@@ -1005,9 +1017,9 @@ pub mod fluent_builders {
         }
         pub fn set_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Capability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         ) -> Self {
-            self.inner = self.inner.set_capabilities(inp);
+            self.inner = self.inner.set_capabilities(input);
             self
         }
         /// <p>The template resource types that you have permissions to work with for this create
@@ -1030,9 +1042,9 @@ pub mod fluent_builders {
         }
         pub fn set_resource_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_resource_types(inp);
+            self.inner = self.inner.set_resource_types(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
@@ -1044,12 +1056,12 @@ pub mod fluent_builders {
         /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>Determines what action will be taken if stack creation fails. This must be one of:
@@ -1057,42 +1069,45 @@ pub mod fluent_builders {
         /// <code>DisableRollback</code>, but not both.</p>
         /// <p>Default: <code>ROLLBACK</code>
         /// </p>
-        pub fn on_failure(mut self, inp: crate::model::OnFailure) -> Self {
-            self.inner = self.inner.on_failure(inp);
+        pub fn on_failure(mut self, input: crate::model::OnFailure) -> Self {
+            self.inner = self.inner.on_failure(input);
             self
         }
-        pub fn set_on_failure(mut self, inp: std::option::Option<crate::model::OnFailure>) -> Self {
-            self.inner = self.inner.set_on_failure(inp);
+        pub fn set_on_failure(
+            mut self,
+            input: std::option::Option<crate::model::OnFailure>,
+        ) -> Self {
+            self.inner = self.inner.set_on_failure(input);
             self
         }
         /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
         /// to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>.
         /// You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
         /// parameter, but not both.</p>
-        pub fn stack_policy_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_policy_body(inp);
+        pub fn stack_policy_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_policy_body(input);
             self
         }
         pub fn set_stack_policy_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_stack_policy_body(inp);
+            self.inner = self.inner.set_stack_policy_body(input);
             self
         }
         /// <p>Location of a file containing the stack policy. The URL must point to a policy
         /// (maximum size: 16 KB) located in an S3 bucket in the same
         /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
         /// <code>StackPolicyURL</code> parameter, but not both.</p>
-        pub fn stack_policy_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_policy_url(inp);
+        pub fn stack_policy_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_policy_url(input);
             self
         }
         pub fn set_stack_policy_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_stack_policy_url(inp);
+            self.inner = self.inner.set_stack_policy_url(input);
             self
         }
         /// <p>Key-value pairs to associate with this stack. AWS CloudFormation also propagates
@@ -1104,9 +1119,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if
@@ -1124,15 +1139,15 @@ pub mod fluent_builders {
         /// stack operation . For example, if you create a stack using the console, each stack event
         /// would be assigned the same token in the following format:
         /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
         /// <p>Whether to enable termination protection on the specified stack. If a user attempts
@@ -1143,12 +1158,15 @@ pub mod fluent_builders {
         /// <p> For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>,
         /// termination protection is set on the root stack and cannot be changed directly on the
         /// nested stack.</p>
-        pub fn enable_termination_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_termination_protection(inp);
+        pub fn enable_termination_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_termination_protection(input);
             self
         }
-        pub fn set_enable_termination_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enable_termination_protection(inp);
+        pub fn set_enable_termination_protection(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_enable_termination_protection(input);
             self
         }
     }
@@ -1167,7 +1185,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateStackInstancesOutput,
             smithy_http::result::SdkError<crate::error::CreateStackInstancesError>,
         >
@@ -1185,12 +1203,15 @@ pub mod fluent_builders {
         }
         /// <p>The name or unique ID of the stack set that you want to create stack instances
         /// from.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(inp);
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input);
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(inp);
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_stack_set_name(input);
             self
         }
         /// <p>[Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances in the
@@ -1202,22 +1223,22 @@ pub mod fluent_builders {
         }
         pub fn set_accounts(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_accounts(inp);
+            self.inner = self.inner.set_accounts(input);
             self
         }
         /// <p>[Service-managed permissions] The AWS Organizations accounts for which to create stack instances in the specified Regions.</p>
         /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-        pub fn deployment_targets(mut self, inp: crate::model::DeploymentTargets) -> Self {
-            self.inner = self.inner.deployment_targets(inp);
+        pub fn deployment_targets(mut self, input: crate::model::DeploymentTargets) -> Self {
+            self.inner = self.inner.deployment_targets(input);
             self
         }
         pub fn set_deployment_targets(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentTargets>,
+            input: std::option::Option<crate::model::DeploymentTargets>,
         ) -> Self {
-            self.inner = self.inner.set_deployment_targets(inp);
+            self.inner = self.inner.set_deployment_targets(input);
             self
         }
         /// <p>The names of one or more Regions where you want to create stack instances using the
@@ -1228,9 +1249,9 @@ pub mod fluent_builders {
         }
         pub fn set_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_regions(inp);
+            self.inner = self.inner.set_regions(input);
             self
         }
         /// <p>A list of stack set parameters whose values you want to override in the selected
@@ -1276,24 +1297,24 @@ pub mod fluent_builders {
         }
         pub fn set_parameter_overrides(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.inner = self.inner.set_parameter_overrides(inp);
+            self.inner = self.inner.set_parameter_overrides(input);
             self
         }
         /// <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
         pub fn operation_preferences(
             mut self,
-            inp: crate::model::StackSetOperationPreferences,
+            input: crate::model::StackSetOperationPreferences,
         ) -> Self {
-            self.inner = self.inner.operation_preferences(inp);
+            self.inner = self.inner.operation_preferences(input);
             self
         }
         pub fn set_operation_preferences(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperationPreferences>,
+            input: std::option::Option<crate::model::StackSetOperationPreferences>,
         ) -> Self {
-            self.inner = self.inner.set_operation_preferences(inp);
+            self.inner = self.inner.set_operation_preferences(input);
             self
         }
         /// <p>The unique identifier for this stack set operation. </p>
@@ -1304,12 +1325,12 @@ pub mod fluent_builders {
         /// <p>If you don't specify an operation ID, the SDK generates one automatically. </p>
         /// <p>Repeating this stack set operation with a new operation ID retries all stack
         /// instances whose status is <code>OUTDATED</code>. </p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation_id(inp);
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_id(input);
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_operation_id(inp);
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_operation_id(input);
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -1323,12 +1344,12 @@ pub mod fluent_builders {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.inner = self.inner.call_as(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.inner = self.inner.call_as(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.inner = self.inner.set_call_as(inp);
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.inner = self.inner.set_call_as(input);
             self
         }
     }
@@ -1347,7 +1368,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::CreateStackSetOutput,
             smithy_http::result::SdkError<crate::error::CreateStackSetError>,
         >
@@ -1370,22 +1391,25 @@ pub mod fluent_builders {
         /// hyphens. It must start with an alphabetic character and can't be longer than 128
         /// characters.</p>
         /// </note>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(inp);
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input);
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(inp);
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_stack_set_name(input);
             self
         }
         /// <p>A description of the stack set. You can use the description to identify the stack
         /// set's purpose or other important information.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The structure that contains the template body, with a minimum length of 1 byte and a
@@ -1393,12 +1417,15 @@ pub mod fluent_builders {
         /// in the AWS CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
         /// but not both.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(inp);
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input);
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_body(inp);
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_body(input);
             self
         }
         /// <p>The location of the file that contains the template body. The URL must point to a
@@ -1407,12 +1434,12 @@ pub mod fluent_builders {
         /// in the AWS CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
         /// but not both.</p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_url(inp);
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_url(input);
             self
         }
-        pub fn set_template_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_url(inp);
+        pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_template_url(input);
             self
         }
         /// <p>The input parameters for the stack set template. </p>
@@ -1422,9 +1449,9 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
         /// <p>In some cases, you must explicitly acknowledge that your stack set template contains
@@ -1528,9 +1555,9 @@ pub mod fluent_builders {
         }
         pub fn set_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Capability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         ) -> Self {
-            self.inner = self.inner.set_capabilities(inp);
+            self.inner = self.inner.set_capabilities(input);
             self
         }
         /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
@@ -1546,9 +1573,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the IAM role to use to create this stack set. </p>
@@ -1557,15 +1584,15 @@ pub mod fluent_builders {
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
         /// Granting Permissions for Stack Set Operations</a> in the
         /// <i>AWS CloudFormation User Guide</i>.</p>
-        pub fn administration_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.administration_role_arn(inp);
+        pub fn administration_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.administration_role_arn(input);
             self
         }
         pub fn set_administration_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_administration_role_arn(inp);
+            self.inner = self.inner.set_administration_role_arn(input);
             self
         }
         /// <p>The name of the IAM execution role to use to create the stack set. If you do not specify
@@ -1574,15 +1601,15 @@ pub mod fluent_builders {
         /// <p>Specify an IAM role only if you are using customized execution roles to control which
         /// stack resources users and groups can include in their stack sets.
         /// </p>
-        pub fn execution_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_name(inp);
+        pub fn execution_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_name(input);
             self
         }
         pub fn set_execution_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_execution_role_name(inp);
+            self.inner = self.inner.set_execution_role_name(input);
             self
         }
         /// <p>Describes how the IAM roles required for stack set operations are created. By default, <code>SELF-MANAGED</code> is specified.</p>
@@ -1594,27 +1621,27 @@ pub mod fluent_builders {
         /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
         /// </li>
         /// </ul>
-        pub fn permission_model(mut self, inp: crate::model::PermissionModels) -> Self {
-            self.inner = self.inner.permission_model(inp);
+        pub fn permission_model(mut self, input: crate::model::PermissionModels) -> Self {
+            self.inner = self.inner.permission_model(input);
             self
         }
         pub fn set_permission_model(
             mut self,
-            inp: std::option::Option<crate::model::PermissionModels>,
+            input: std::option::Option<crate::model::PermissionModels>,
         ) -> Self {
-            self.inner = self.inner.set_permission_model(inp);
+            self.inner = self.inner.set_permission_model(input);
             self
         }
         /// <p>Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to the target organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
-        pub fn auto_deployment(mut self, inp: crate::model::AutoDeployment) -> Self {
-            self.inner = self.inner.auto_deployment(inp);
+        pub fn auto_deployment(mut self, input: crate::model::AutoDeployment) -> Self {
+            self.inner = self.inner.auto_deployment(input);
             self
         }
         pub fn set_auto_deployment(
             mut self,
-            inp: std::option::Option<crate::model::AutoDeployment>,
+            input: std::option::Option<crate::model::AutoDeployment>,
         ) -> Self {
-            self.inner = self.inner.set_auto_deployment(inp);
+            self.inner = self.inner.set_auto_deployment(input);
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -1629,12 +1656,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Stack sets with service-managed permissions are created in the management account, including stack sets that are created by delegated administrators.</p>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.inner = self.inner.call_as(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.inner = self.inner.call_as(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.inner = self.inner.set_call_as(inp);
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.inner = self.inner.set_call_as(input);
             self
         }
         /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token
@@ -1643,15 +1670,15 @@ pub mod fluent_builders {
         /// requests to ensure that AWS CloudFormation successfully received them.</p>
         /// <p>If you don't specify an operation ID, the SDK generates one automatically.
         /// </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }
@@ -1670,7 +1697,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteChangeSetOutput,
             smithy_http::result::SdkError<crate::error::DeleteChangeSetError>,
         >
@@ -1688,25 +1715,25 @@ pub mod fluent_builders {
         }
         /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to
         /// delete.</p>
-        pub fn change_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_set_name(inp);
+        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_set_name(input);
             self
         }
         pub fn set_change_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_change_set_name(inp);
+            self.inner = self.inner.set_change_set_name(input);
             self
         }
         /// <p>If you specified the name of a change set to delete, specify the stack name or ID
         /// (ARN) that is associated with it.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
     }
@@ -1725,7 +1752,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteStackOutput,
             smithy_http::result::SdkError<crate::error::DeleteStackError>,
         >
@@ -1742,12 +1769,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or the unique stack ID that is associated with the stack.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs
@@ -1761,9 +1788,9 @@ pub mod fluent_builders {
         }
         pub fn set_retain_resources(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_retain_resources(inp);
+            self.inner = self.inner.set_retain_resources(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
@@ -1772,12 +1799,12 @@ pub mod fluent_builders {
         /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>A unique identifier for this <code>DeleteStack</code> request. Specify this token if
@@ -1795,15 +1822,15 @@ pub mod fluent_builders {
         /// stack operation . For example, if you create a stack using the console, each stack event
         /// would be assigned the same token in the following format:
         /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }
@@ -1822,7 +1849,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteStackInstancesOutput,
             smithy_http::result::SdkError<crate::error::DeleteStackInstancesError>,
         >
@@ -1840,12 +1867,15 @@ pub mod fluent_builders {
         }
         /// <p>The name or unique ID of the stack set that you want to delete stack instances
         /// for.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(inp);
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input);
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(inp);
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_stack_set_name(input);
             self
         }
         /// <p>[Self-managed permissions] The names of the AWS accounts that you want to delete stack instances for.</p>
@@ -1856,22 +1886,22 @@ pub mod fluent_builders {
         }
         pub fn set_accounts(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_accounts(inp);
+            self.inner = self.inner.set_accounts(input);
             self
         }
         /// <p>[Service-managed permissions] The AWS Organizations accounts from which to delete stack instances.</p>
         /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-        pub fn deployment_targets(mut self, inp: crate::model::DeploymentTargets) -> Self {
-            self.inner = self.inner.deployment_targets(inp);
+        pub fn deployment_targets(mut self, input: crate::model::DeploymentTargets) -> Self {
+            self.inner = self.inner.deployment_targets(input);
             self
         }
         pub fn set_deployment_targets(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentTargets>,
+            input: std::option::Option<crate::model::DeploymentTargets>,
         ) -> Self {
-            self.inner = self.inner.set_deployment_targets(inp);
+            self.inner = self.inner.set_deployment_targets(input);
             self
         }
         /// <p>The Regions where you want to delete stack set instances. </p>
@@ -1881,36 +1911,36 @@ pub mod fluent_builders {
         }
         pub fn set_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_regions(inp);
+            self.inner = self.inner.set_regions(input);
             self
         }
         /// <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
         pub fn operation_preferences(
             mut self,
-            inp: crate::model::StackSetOperationPreferences,
+            input: crate::model::StackSetOperationPreferences,
         ) -> Self {
-            self.inner = self.inner.operation_preferences(inp);
+            self.inner = self.inner.operation_preferences(input);
             self
         }
         pub fn set_operation_preferences(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperationPreferences>,
+            input: std::option::Option<crate::model::StackSetOperationPreferences>,
         ) -> Self {
-            self.inner = self.inner.set_operation_preferences(inp);
+            self.inner = self.inner.set_operation_preferences(input);
             self
         }
         /// <p>Removes the stack instances from the specified stack set, but doesn't delete the
         /// stacks. You can't reassociate a retained stack or add an existing, saved stack to a new
         /// stack set.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-        pub fn retain_stacks(mut self, inp: bool) -> Self {
-            self.inner = self.inner.retain_stacks(inp);
+        pub fn retain_stacks(mut self, input: bool) -> Self {
+            self.inner = self.inner.retain_stacks(input);
             self
         }
-        pub fn set_retain_stacks(mut self, inp: bool) -> Self {
-            self.inner = self.inner.set_retain_stacks(inp);
+        pub fn set_retain_stacks(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_retain_stacks(input);
             self
         }
         /// <p>The unique identifier for this stack set operation. </p>
@@ -1921,12 +1951,12 @@ pub mod fluent_builders {
         /// CloudFormation successfully received them.</p>
         /// <p>Repeating this stack set operation with a new operation ID retries all stack
         /// instances whose status is <code>OUTDATED</code>. </p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation_id(inp);
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_id(input);
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_operation_id(inp);
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_operation_id(input);
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -1940,12 +1970,12 @@ pub mod fluent_builders {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.inner = self.inner.call_as(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.inner = self.inner.call_as(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.inner = self.inner.set_call_as(inp);
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.inner = self.inner.set_call_as(input);
             self
         }
     }
@@ -1964,7 +1994,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeleteStackSetOutput,
             smithy_http::result::SdkError<crate::error::DeleteStackSetError>,
         >
@@ -1982,12 +2012,15 @@ pub mod fluent_builders {
         }
         /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this
         /// value by running <a>ListStackSets</a>.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(inp);
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input);
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(inp);
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_stack_set_name(input);
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -2001,12 +2034,12 @@ pub mod fluent_builders {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.inner = self.inner.call_as(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.inner = self.inner.call_as(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.inner = self.inner.set_call_as(inp);
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.inner = self.inner.set_call_as(input);
             self
         }
     }
@@ -2025,7 +2058,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DeregisterTypeOutput,
             smithy_http::result::SdkError<crate::error::DeregisterTypeError>,
         >
@@ -2043,41 +2076,41 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input);
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_arn(inp);
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_arn(input);
             self
         }
         /// <p>The kind of extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.inner = self.inner.set_type(inp);
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.inner = self.inner.set_type(input);
             self
         }
         /// <p>The name of the extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(inp);
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input);
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_type_name(inp);
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_type_name(input);
             self
         }
         /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input);
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_version_id(inp);
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version_id(input);
             self
         }
     }
@@ -2096,7 +2129,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeAccountLimitsOutput,
             smithy_http::result::SdkError<crate::error::DescribeAccountLimitsError>,
         >
@@ -2113,12 +2146,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that identifies the next page of limits that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2137,7 +2170,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeChangeSetOutput,
             smithy_http::result::SdkError<crate::error::DescribeChangeSetError>,
         >
@@ -2155,35 +2188,35 @@ pub mod fluent_builders {
         }
         /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to
         /// describe.</p>
-        pub fn change_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_set_name(inp);
+        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_set_name(input);
             self
         }
         pub fn set_change_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_change_set_name(inp);
+            self.inner = self.inner.set_change_set_name(input);
             self
         }
         /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) of the
         /// change set you want to describe.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>A string (provided by the <a>DescribeChangeSet</a> response output) that
         /// identifies the next page of information that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2202,7 +2235,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeStackDriftDetectionStatusOutput,
             smithy_http::result::SdkError<crate::error::DescribeStackDriftDetectionStatusError>,
         >
@@ -2222,15 +2255,15 @@ pub mod fluent_builders {
         /// <p>AWS CloudFormation generates new results, with a new drift detection ID, each time this operation
         /// is run. However, the number of drift results AWS CloudFormation retains for any given stack, and for how
         /// long, may vary. </p>
-        pub fn stack_drift_detection_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_drift_detection_id(inp);
+        pub fn stack_drift_detection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_drift_detection_id(input);
             self
         }
         pub fn set_stack_drift_detection_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_stack_drift_detection_id(inp);
+            self.inner = self.inner.set_stack_drift_detection_id(input);
             self
         }
     }
@@ -2249,7 +2282,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeStackEventsOutput,
             smithy_http::result::SdkError<crate::error::DescribeStackEventsError>,
         >
@@ -2277,21 +2310,21 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Default: There is no default value.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>A string that identifies the next page of events that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2310,7 +2343,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeStackInstanceOutput,
             smithy_http::result::SdkError<crate::error::DescribeStackInstanceError>,
         >
@@ -2328,36 +2361,39 @@ pub mod fluent_builders {
         }
         /// <p>The name or the unique stack ID of the stack set that you want to get stack instance
         /// information for.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(inp);
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input);
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(inp);
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_stack_set_name(input);
             self
         }
         /// <p>The ID of an AWS account that's associated with this stack instance.</p>
-        pub fn stack_instance_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_instance_account(inp);
+        pub fn stack_instance_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_instance_account(input);
             self
         }
         pub fn set_stack_instance_account(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_stack_instance_account(inp);
+            self.inner = self.inner.set_stack_instance_account(input);
             self
         }
         /// <p>The name of a Region that's associated with this stack instance.</p>
-        pub fn stack_instance_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_instance_region(inp);
+        pub fn stack_instance_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_instance_region(input);
             self
         }
         pub fn set_stack_instance_region(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_stack_instance_region(inp);
+            self.inner = self.inner.set_stack_instance_region(input);
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -2371,12 +2407,12 @@ pub mod fluent_builders {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.inner = self.inner.call_as(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.inner = self.inner.call_as(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.inner = self.inner.set_call_as(inp);
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.inner = self.inner.set_call_as(input);
             self
         }
     }
@@ -2395,7 +2431,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeStackResourceOutput,
             smithy_http::result::SdkError<crate::error::DescribeStackResourceError>,
         >
@@ -2423,25 +2459,25 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Default: There is no default value.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>The logical name of the resource as specified in the template.</p>
         /// <p>Default: There is no default value.</p>
-        pub fn logical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logical_resource_id(inp);
+        pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logical_resource_id(input);
             self
         }
         pub fn set_logical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_logical_resource_id(inp);
+            self.inner = self.inner.set_logical_resource_id(input);
             self
         }
     }
@@ -2460,7 +2496,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeStackResourceDriftsOutput,
             smithy_http::result::SdkError<crate::error::DescribeStackResourceDriftsError>,
         >
@@ -2477,12 +2513,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stack for which you want drift information.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>The resource drift status values to use as filters for the resource drift results
@@ -2517,30 +2553,30 @@ pub mod fluent_builders {
         }
         pub fn set_stack_resource_drift_status_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StackResourceDriftStatus>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StackResourceDriftStatus>>,
         ) -> Self {
-            self.inner = self.inner.set_stack_resource_drift_status_filters(inp);
+            self.inner = self.inner.set_stack_resource_drift_status_filters(input);
             self
         }
         /// <p>A string that identifies the next page of stack resource drift results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of
         /// available results exceeds this maximum, the response includes a <code>NextToken</code>
         /// value that you can assign to the <code>NextToken</code> request parameter to get the next
         /// set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -2559,7 +2595,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeStackResourcesOutput,
             smithy_http::result::SdkError<crate::error::DescribeStackResourcesError>,
         >
@@ -2589,25 +2625,25 @@ pub mod fluent_builders {
         /// <p>Default: There is no default value.</p>
         /// <p>Required: Conditional. If you do not specify <code>StackName</code>, you must specify
         /// <code>PhysicalResourceId</code>.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>The logical name of the resource as specified in the template.</p>
         /// <p>Default: There is no default value.</p>
-        pub fn logical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logical_resource_id(inp);
+        pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logical_resource_id(input);
             self
         }
         pub fn set_logical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_logical_resource_id(inp);
+            self.inner = self.inner.set_logical_resource_id(input);
             self
         }
         /// <p>The name or unique identifier that corresponds to a physical instance ID of a
@@ -2619,15 +2655,15 @@ pub mod fluent_builders {
         /// <p>Required: Conditional. If you do not specify <code>PhysicalResourceId</code>, you
         /// must specify <code>StackName</code>.</p>
         /// <p>Default: There is no default value.</p>
-        pub fn physical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.physical_resource_id(inp);
+        pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.physical_resource_id(input);
             self
         }
         pub fn set_physical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_physical_resource_id(inp);
+            self.inner = self.inner.set_physical_resource_id(input);
             self
         }
     }
@@ -2646,7 +2682,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeStacksOutput,
             smithy_http::result::SdkError<crate::error::DescribeStacksError>,
         >
@@ -2674,21 +2710,21 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Default: There is no default value.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -2707,7 +2743,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeStackSetOutput,
             smithy_http::result::SdkError<crate::error::DescribeStackSetError>,
         >
@@ -2724,12 +2760,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or unique ID of the stack set whose description you want.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(inp);
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input);
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(inp);
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_stack_set_name(input);
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -2743,12 +2782,12 @@ pub mod fluent_builders {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.inner = self.inner.call_as(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.inner = self.inner.call_as(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.inner = self.inner.set_call_as(inp);
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.inner = self.inner.set_call_as(input);
             self
         }
     }
@@ -2767,7 +2806,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeStackSetOperationOutput,
             smithy_http::result::SdkError<crate::error::DescribeStackSetOperationError>,
         >
@@ -2784,21 +2823,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or the unique stack ID of the stack set for the stack operation.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(inp);
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input);
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(inp);
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_stack_set_name(input);
             self
         }
         /// <p>The unique ID of the stack set operation. </p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation_id(inp);
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_id(input);
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_operation_id(inp);
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_operation_id(input);
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -2812,12 +2854,12 @@ pub mod fluent_builders {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.inner = self.inner.call_as(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.inner = self.inner.call_as(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.inner = self.inner.set_call_as(inp);
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.inner = self.inner.set_call_as(input);
             self
         }
     }
@@ -2836,7 +2878,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeTypeOutput,
             smithy_http::result::SdkError<crate::error::DescribeTypeError>,
         >
@@ -2854,42 +2896,42 @@ pub mod fluent_builders {
         }
         /// <p>The kind of extension. </p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.inner = self.inner.set_type(inp);
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.inner = self.inner.set_type(input);
             self
         }
         /// <p>The name of the extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(inp);
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input);
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_type_name(inp);
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_type_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input);
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_arn(inp);
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_arn(input);
             self
         }
         /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
         /// <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific extension version. Otherwise, it returns information about the default extension version.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input);
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_version_id(inp);
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version_id(input);
             self
         }
     }
@@ -2908,7 +2950,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DescribeTypeRegistrationOutput,
             smithy_http::result::SdkError<crate::error::DescribeTypeRegistrationError>,
         >
@@ -2928,15 +2970,15 @@ pub mod fluent_builders {
         /// <p>This registration token is generated by CloudFormation when you initiate a registration request using <code>
         /// <a>RegisterType</a>
         /// </code>.</p>
-        pub fn registration_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registration_token(inp);
+        pub fn registration_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registration_token(input);
             self
         }
         pub fn set_registration_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_registration_token(inp);
+            self.inner = self.inner.set_registration_token(input);
             self
         }
     }
@@ -2955,7 +2997,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DetectStackDriftOutput,
             smithy_http::result::SdkError<crate::error::DetectStackDriftError>,
         >
@@ -2972,12 +3014,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stack for which you want to detect drift. </p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>The logical names of any resources you want to use as filters.</p>
@@ -2987,9 +3029,9 @@ pub mod fluent_builders {
         }
         pub fn set_logical_resource_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_logical_resource_ids(inp);
+            self.inner = self.inner.set_logical_resource_ids(input);
             self
         }
     }
@@ -3008,7 +3050,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DetectStackResourceDriftOutput,
             smithy_http::result::SdkError<crate::error::DetectStackResourceDriftError>,
         >
@@ -3025,24 +3067,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stack to which the resource belongs.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>The logical name of the resource for which to return drift information.</p>
-        pub fn logical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logical_resource_id(inp);
+        pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logical_resource_id(input);
             self
         }
         pub fn set_logical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_logical_resource_id(inp);
+            self.inner = self.inner.set_logical_resource_id(input);
             self
         }
     }
@@ -3061,7 +3103,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::DetectStackSetDriftOutput,
             smithy_http::result::SdkError<crate::error::DetectStackSetDriftError>,
         >
@@ -3078,12 +3120,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stack set on which to perform the drift detection operation.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(inp);
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input);
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(inp);
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_stack_set_name(input);
             self
         }
         /// <p>The user-specified preferences for how AWS CloudFormation performs a stack set
@@ -3091,27 +3136,27 @@ pub mod fluent_builders {
         /// <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
         pub fn operation_preferences(
             mut self,
-            inp: crate::model::StackSetOperationPreferences,
+            input: crate::model::StackSetOperationPreferences,
         ) -> Self {
-            self.inner = self.inner.operation_preferences(inp);
+            self.inner = self.inner.operation_preferences(input);
             self
         }
         pub fn set_operation_preferences(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperationPreferences>,
+            input: std::option::Option<crate::model::StackSetOperationPreferences>,
         ) -> Self {
-            self.inner = self.inner.set_operation_preferences(inp);
+            self.inner = self.inner.set_operation_preferences(input);
             self
         }
         /// <p>
         /// <i>The ID of the stack set operation.</i>
         /// </p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation_id(inp);
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_id(input);
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_operation_id(inp);
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_operation_id(input);
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -3125,12 +3170,12 @@ pub mod fluent_builders {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.inner = self.inner.call_as(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.inner = self.inner.call_as(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.inner = self.inner.set_call_as(inp);
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.inner = self.inner.set_call_as(input);
             self
         }
     }
@@ -3149,7 +3194,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::EstimateTemplateCostOutput,
             smithy_http::result::SdkError<crate::error::EstimateTemplateCostError>,
         >
@@ -3170,12 +3215,15 @@ pub mod fluent_builders {
         /// in the AWS CloudFormation User Guide.)</p>
         /// <p>Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
         /// both are passed, only <code>TemplateBody</code> is used.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(inp);
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input);
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_body(inp);
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_body(input);
             self
         }
         /// <p>Location of file containing the template body. The URL must point to a template that
@@ -3184,12 +3232,12 @@ pub mod fluent_builders {
         /// in the AWS CloudFormation User Guide.</p>
         /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
         /// both are passed, only <code>TemplateBody</code> is used.</p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_url(inp);
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_url(input);
             self
         }
-        pub fn set_template_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_url(inp);
+        pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_template_url(input);
             self
         }
         /// <p>A list of <code>Parameter</code> structures that specify input parameters.</p>
@@ -3199,9 +3247,9 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
     }
@@ -3220,7 +3268,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ExecuteChangeSetOutput,
             smithy_http::result::SdkError<crate::error::ExecuteChangeSetError>,
         >
@@ -3238,25 +3286,25 @@ pub mod fluent_builders {
         }
         /// <p>The name or ARN of the change set that you want use to update the specified
         /// stack.</p>
-        pub fn change_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_set_name(inp);
+        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_set_name(input);
             self
         }
         pub fn set_change_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_change_set_name(inp);
+            self.inner = self.inner.set_change_set_name(input);
             self
         }
         /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) that is
         /// associated with the change set you want to execute.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this
@@ -3264,15 +3312,15 @@ pub mod fluent_builders {
         /// attempting to execute a change set to update a stack with the same name. You might retry
         /// <code>ExecuteChangeSet</code> requests to ensure that AWS CloudFormation successfully
         /// received them.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }
@@ -3291,7 +3339,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetStackPolicyOutput,
             smithy_http::result::SdkError<crate::error::GetStackPolicyError>,
         >
@@ -3309,12 +3357,12 @@ pub mod fluent_builders {
         }
         /// <p>The name or unique stack ID that is associated with the stack whose policy you want
         /// to get.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
     }
@@ -3333,7 +3381,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetTemplateOutput,
             smithy_http::result::SdkError<crate::error::GetTemplateError>,
         >
@@ -3361,26 +3409,26 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Default: There is no default value.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation
         /// returns the associated template. If you specify a name, you must also specify the
         /// <code>StackName</code>.</p>
-        pub fn change_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_set_name(inp);
+        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_set_name(input);
             self
         }
         pub fn set_change_set_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_change_set_name(inp);
+            self.inner = self.inner.set_change_set_name(input);
             self
         }
         /// <p>For templates that include transforms, the stage of the template that AWS
@@ -3390,15 +3438,15 @@ pub mod fluent_builders {
         /// <p>If the template doesn't include transforms, <code>Original</code> and
         /// <code>Processed</code> return the same template. By default, AWS CloudFormation
         /// specifies <code>Original</code>. </p>
-        pub fn template_stage(mut self, inp: crate::model::TemplateStage) -> Self {
-            self.inner = self.inner.template_stage(inp);
+        pub fn template_stage(mut self, input: crate::model::TemplateStage) -> Self {
+            self.inner = self.inner.template_stage(input);
             self
         }
         pub fn set_template_stage(
             mut self,
-            inp: std::option::Option<crate::model::TemplateStage>,
+            input: std::option::Option<crate::model::TemplateStage>,
         ) -> Self {
-            self.inner = self.inner.set_template_stage(inp);
+            self.inner = self.inner.set_template_stage(input);
             self
         }
     }
@@ -3417,7 +3465,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::GetTemplateSummaryOutput,
             smithy_http::result::SdkError<crate::error::GetTemplateSummaryError>,
         >
@@ -3438,12 +3486,15 @@ pub mod fluent_builders {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
         /// <code>TemplateURL</code>.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(inp);
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input);
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_body(inp);
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_body(input);
             self
         }
         /// <p>Location of file containing the template body. The URL must point to a template (max
@@ -3453,12 +3504,12 @@ pub mod fluent_builders {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
         /// <code>TemplateURL</code>.</p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_url(inp);
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_url(input);
             self
         }
-        pub fn set_template_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_url(inp);
+        pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_template_url(input);
             self
         }
         /// <p>The name or the stack ID that is associated with the stack, which are not always
@@ -3467,24 +3518,27 @@ pub mod fluent_builders {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
         /// <code>TemplateURL</code>.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>The name or unique ID of the stack set from which the stack was created.</p>
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
         /// <code>TemplateURL</code>.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(inp);
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input);
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(inp);
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_stack_set_name(input);
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -3498,12 +3552,12 @@ pub mod fluent_builders {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.inner = self.inner.call_as(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.inner = self.inner.call_as(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.inner = self.inner.set_call_as(inp);
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.inner = self.inner.set_call_as(input);
             self
         }
     }
@@ -3522,7 +3576,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListChangeSetsOutput,
             smithy_http::result::SdkError<crate::error::ListChangeSetsError>,
         >
@@ -3540,22 +3594,22 @@ pub mod fluent_builders {
         }
         /// <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to list
         /// change sets.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>A string (provided by the <a>ListChangeSets</a> response output) that
         /// identifies the next page of change sets that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -3574,7 +3628,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListExportsOutput,
             smithy_http::result::SdkError<crate::error::ListExportsError>,
         >
@@ -3592,12 +3646,12 @@ pub mod fluent_builders {
         }
         /// <p>A string (provided by the <a>ListExports</a> response output) that
         /// identifies the next page of exported output values that you asked to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -3616,7 +3670,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListImportsOutput,
             smithy_http::result::SdkError<crate::error::ListImportsError>,
         >
@@ -3634,23 +3688,23 @@ pub mod fluent_builders {
         }
         /// <p>The name of the exported output value. AWS CloudFormation returns the stack names
         /// that are importing this value. </p>
-        pub fn export_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_name(inp);
+        pub fn export_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_name(input);
             self
         }
-        pub fn set_export_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_export_name(inp);
+        pub fn set_export_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_export_name(input);
             self
         }
         /// <p>A string (provided by the <a>ListImports</a> response output) that
         /// identifies the next page of stacks that are importing the specified exported output value.
         /// </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -3669,7 +3723,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListStackInstancesOutput,
             smithy_http::result::SdkError<crate::error::ListStackInstancesError>,
         >
@@ -3687,12 +3741,15 @@ pub mod fluent_builders {
         }
         /// <p>The name or unique ID of the stack set that you want to list stack instances
         /// for.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(inp);
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input);
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(inp);
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_stack_set_name(input);
             self
         }
         /// <p>If the previous request didn't return all of the remaining results, the response's
@@ -3700,24 +3757,24 @@ pub mod fluent_builders {
         /// results, call <code>ListStackInstances</code> again and assign that token to the request
         /// object's <code>NextToken</code> parameter. If there are no remaining results, the previous
         /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of
         /// available results exceeds this maximum, the response includes a <code>NextToken</code>
         /// value that you can assign to the <code>NextToken</code> request parameter to get the next
         /// set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The status that stack instances are filtered by.</p>
@@ -3727,33 +3784,33 @@ pub mod fluent_builders {
         }
         pub fn set_filters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StackInstanceFilter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StackInstanceFilter>>,
         ) -> Self {
-            self.inner = self.inner.set_filters(inp);
+            self.inner = self.inner.set_filters(input);
             self
         }
         /// <p>The name of the AWS account that you want to list stack instances for.</p>
-        pub fn stack_instance_account(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_instance_account(inp);
+        pub fn stack_instance_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_instance_account(input);
             self
         }
         pub fn set_stack_instance_account(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_stack_instance_account(inp);
+            self.inner = self.inner.set_stack_instance_account(input);
             self
         }
         /// <p>The name of the Region where you want to list stack instances. </p>
-        pub fn stack_instance_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_instance_region(inp);
+        pub fn stack_instance_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_instance_region(input);
             self
         }
         pub fn set_stack_instance_region(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_stack_instance_region(inp);
+            self.inner = self.inner.set_stack_instance_region(input);
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -3767,12 +3824,12 @@ pub mod fluent_builders {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.inner = self.inner.call_as(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.inner = self.inner.call_as(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.inner = self.inner.set_call_as(inp);
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.inner = self.inner.set_call_as(input);
             self
         }
     }
@@ -3791,7 +3848,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListStackResourcesOutput,
             smithy_http::result::SdkError<crate::error::ListStackResourcesError>,
         >
@@ -3819,22 +3876,22 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Default: There is no default value.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>A string that identifies the next page of stack resources that you want to
         /// retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -3853,7 +3910,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListStacksOutput,
             smithy_http::result::SdkError<crate::error::ListStacksError>,
         >
@@ -3870,12 +3927,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>Stack status to use as a filter. Specify one or more stack status codes to list only
@@ -3887,9 +3944,9 @@ pub mod fluent_builders {
         }
         pub fn set_stack_status_filter(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::StackStatus>>,
+            input: std::option::Option<std::vec::Vec<crate::model::StackStatus>>,
         ) -> Self {
-            self.inner = self.inner.set_stack_status_filter(inp);
+            self.inner = self.inner.set_stack_status_filter(input);
             self
         }
     }
@@ -3908,7 +3965,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListStackSetOperationResultsOutput,
             smithy_http::result::SdkError<crate::error::ListStackSetOperationResultsError>,
         >
@@ -3926,21 +3983,24 @@ pub mod fluent_builders {
         }
         /// <p>The name or unique ID of the stack set that you want to get operation results
         /// for.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(inp);
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input);
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(inp);
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_stack_set_name(input);
             self
         }
         /// <p>The ID of the stack set operation.</p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation_id(inp);
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_id(input);
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_operation_id(inp);
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_operation_id(input);
             self
         }
         /// <p>If the previous request didn't return all of the remaining results, the response
@@ -3949,24 +4009,24 @@ pub mod fluent_builders {
         /// the request object's <code>NextToken</code> parameter. If there are no remaining results,
         /// the previous response object's <code>NextToken</code> parameter is set to
         /// <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of
         /// available results exceeds this maximum, the response includes a <code>NextToken</code>
         /// value that you can assign to the <code>NextToken</code> request parameter to get the next
         /// set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -3980,12 +4040,12 @@ pub mod fluent_builders {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.inner = self.inner.call_as(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.inner = self.inner.call_as(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.inner = self.inner.set_call_as(inp);
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.inner = self.inner.set_call_as(input);
             self
         }
     }
@@ -4004,7 +4064,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListStackSetOperationsOutput,
             smithy_http::result::SdkError<crate::error::ListStackSetOperationsError>,
         >
@@ -4022,12 +4082,15 @@ pub mod fluent_builders {
         }
         /// <p>The name or unique ID of the stack set that you want to get operation summaries
         /// for.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(inp);
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input);
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(inp);
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_stack_set_name(input);
             self
         }
         /// <p>If the previous paginated request didn't return all of the remaining results, the
@@ -4036,24 +4099,24 @@ pub mod fluent_builders {
         /// to the request object's <code>NextToken</code> parameter. If there are no remaining
         /// results, the previous response object's <code>NextToken</code> parameter is set to
         /// <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of
         /// available results exceeds this maximum, the response includes a <code>NextToken</code>
         /// value that you can assign to the <code>NextToken</code> request parameter to get the next
         /// set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -4067,12 +4130,12 @@ pub mod fluent_builders {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.inner = self.inner.call_as(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.inner = self.inner.call_as(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.inner = self.inner.set_call_as(inp);
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.inner = self.inner.set_call_as(input);
             self
         }
     }
@@ -4091,7 +4154,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListStackSetsOutput,
             smithy_http::result::SdkError<crate::error::ListStackSetsError>,
         >
@@ -4113,37 +4176,37 @@ pub mod fluent_builders {
         /// request object's <code>NextToken</code> parameter. If there are no remaining results, the
         /// previous response object's <code>NextToken</code> parameter is set to
         /// <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of
         /// available results exceeds this maximum, the response includes a <code>NextToken</code>
         /// value that you can assign to the <code>NextToken</code> request parameter to get the next
         /// set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>The status of the stack sets that you want to get summary information
         /// about.</p>
-        pub fn status(mut self, inp: crate::model::StackSetStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::StackSetStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::StackSetStatus>,
+            input: std::option::Option<crate::model::StackSetStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status(inp);
+            self.inner = self.inner.set_status(input);
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
@@ -4157,12 +4220,12 @@ pub mod fluent_builders {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.inner = self.inner.call_as(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.inner = self.inner.call_as(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.inner = self.inner.set_call_as(inp);
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.inner = self.inner.set_call_as(input);
             self
         }
     }
@@ -4181,7 +4244,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTypeRegistrationsOutput,
             smithy_http::result::SdkError<crate::error::ListTypeRegistrationsError>,
         >
@@ -4199,63 +4262,66 @@ pub mod fluent_builders {
         }
         /// <p>The kind of extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.inner = self.inner.set_type(inp);
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.inner = self.inner.set_type(input);
             self
         }
         /// <p>The name of the extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(inp);
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input);
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_type_name(inp);
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_type_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn type_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_arn(inp);
+        pub fn type_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_arn(input);
             self
         }
-        pub fn set_type_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_type_arn(inp);
+        pub fn set_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_type_arn(input);
             self
         }
         /// <p>The current status of the extension registration request.</p>
         /// <p>The default is <code>IN_PROGRESS</code>.</p>
-        pub fn registration_status_filter(mut self, inp: crate::model::RegistrationStatus) -> Self {
-            self.inner = self.inner.registration_status_filter(inp);
+        pub fn registration_status_filter(
+            mut self,
+            input: crate::model::RegistrationStatus,
+        ) -> Self {
+            self.inner = self.inner.registration_status_filter(input);
             self
         }
         pub fn set_registration_status_filter(
             mut self,
-            inp: std::option::Option<crate::model::RegistrationStatus>,
+            input: std::option::Option<crate::model::RegistrationStatus>,
         ) -> Self {
-            self.inner = self.inner.set_registration_status_filter(inp);
+            self.inner = self.inner.set_registration_status_filter(input);
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -4274,7 +4340,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTypesOutput,
             smithy_http::result::SdkError<crate::error::ListTypesError>,
         >
@@ -4303,15 +4369,15 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>The default is <code>PRIVATE</code>.</p>
-        pub fn visibility(mut self, inp: crate::model::Visibility) -> Self {
-            self.inner = self.inner.visibility(inp);
+        pub fn visibility(mut self, input: crate::model::Visibility) -> Self {
+            self.inner = self.inner.visibility(input);
             self
         }
         pub fn set_visibility(
             mut self,
-            inp: std::option::Option<crate::model::Visibility>,
+            input: std::option::Option<crate::model::Visibility>,
         ) -> Self {
-            self.inner = self.inner.set_visibility(inp);
+            self.inner = self.inner.set_visibility(input);
             self
         }
         /// <p>The provisioning behavior of the type. AWS CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
@@ -4330,15 +4396,15 @@ pub mod fluent_builders {
         /// <code>NON_PROVISIONABLE</code>: The extension does not include create, read, and delete handlers, and therefore cannot actually be provisioned.</p>
         /// </li>
         /// </ul>
-        pub fn provisioning_type(mut self, inp: crate::model::ProvisioningType) -> Self {
-            self.inner = self.inner.provisioning_type(inp);
+        pub fn provisioning_type(mut self, input: crate::model::ProvisioningType) -> Self {
+            self.inner = self.inner.provisioning_type(input);
             self
         }
         pub fn set_provisioning_type(
             mut self,
-            inp: std::option::Option<crate::model::ProvisioningType>,
+            input: std::option::Option<crate::model::ProvisioningType>,
         ) -> Self {
-            self.inner = self.inner.set_provisioning_type(inp);
+            self.inner = self.inner.set_provisioning_type(input);
             self
         }
         /// <p>The deprecation status of the extension that you want to get summary information about.</p>
@@ -4353,42 +4419,42 @@ pub mod fluent_builders {
         /// <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations. </p>
         /// </li>
         /// </ul>
-        pub fn deprecated_status(mut self, inp: crate::model::DeprecatedStatus) -> Self {
-            self.inner = self.inner.deprecated_status(inp);
+        pub fn deprecated_status(mut self, input: crate::model::DeprecatedStatus) -> Self {
+            self.inner = self.inner.deprecated_status(input);
             self
         }
         pub fn set_deprecated_status(
             mut self,
-            inp: std::option::Option<crate::model::DeprecatedStatus>,
+            input: std::option::Option<crate::model::DeprecatedStatus>,
         ) -> Self {
-            self.inner = self.inner.set_deprecated_status(inp);
+            self.inner = self.inner.set_deprecated_status(input);
             self
         }
         /// <p>The type of extension.</p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.inner = self.inner.set_type(inp);
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.inner = self.inner.set_type(input);
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
     }
@@ -4407,7 +4473,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ListTypeVersionsOutput,
             smithy_http::result::SdkError<crate::error::ListTypeVersionsError>,
         >
@@ -4425,50 +4491,50 @@ pub mod fluent_builders {
         }
         /// <p>The kind of the extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.inner = self.inner.set_type(inp);
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.inner = self.inner.set_type(input);
             self
         }
         /// <p>The name of the extension for which you want version summary information.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(inp);
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input);
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_type_name(inp);
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_type_name(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input);
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_arn(inp);
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_arn(input);
             self
         }
         /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.inner = self.inner.max_results(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.inner = self.inner.set_max_results(inp);
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
         /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(inp);
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_next_token(inp);
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
             self
         }
         /// <p>The deprecation status of the extension versions that you want to get summary information about.</p>
@@ -4484,15 +4550,15 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>The default is <code>LIVE</code>.</p>
-        pub fn deprecated_status(mut self, inp: crate::model::DeprecatedStatus) -> Self {
-            self.inner = self.inner.deprecated_status(inp);
+        pub fn deprecated_status(mut self, input: crate::model::DeprecatedStatus) -> Self {
+            self.inner = self.inner.deprecated_status(input);
             self
         }
         pub fn set_deprecated_status(
             mut self,
-            inp: std::option::Option<crate::model::DeprecatedStatus>,
+            input: std::option::Option<crate::model::DeprecatedStatus>,
         ) -> Self {
-            self.inner = self.inner.set_deprecated_status(inp);
+            self.inner = self.inner.set_deprecated_status(input);
             self
         }
     }
@@ -4511,7 +4577,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RecordHandlerProgressOutput,
             smithy_http::result::SdkError<crate::error::RecordHandlerProgressError>,
         >
@@ -4528,78 +4594,84 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-        pub fn bearer_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bearer_token(inp);
+        pub fn bearer_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bearer_token(input);
             self
         }
-        pub fn set_bearer_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_bearer_token(inp);
+        pub fn set_bearer_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bearer_token(input);
             self
         }
         /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-        pub fn operation_status(mut self, inp: crate::model::OperationStatus) -> Self {
-            self.inner = self.inner.operation_status(inp);
+        pub fn operation_status(mut self, input: crate::model::OperationStatus) -> Self {
+            self.inner = self.inner.operation_status(input);
             self
         }
         pub fn set_operation_status(
             mut self,
-            inp: std::option::Option<crate::model::OperationStatus>,
+            input: std::option::Option<crate::model::OperationStatus>,
         ) -> Self {
-            self.inner = self.inner.set_operation_status(inp);
+            self.inner = self.inner.set_operation_status(input);
             self
         }
         /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-        pub fn current_operation_status(mut self, inp: crate::model::OperationStatus) -> Self {
-            self.inner = self.inner.current_operation_status(inp);
+        pub fn current_operation_status(mut self, input: crate::model::OperationStatus) -> Self {
+            self.inner = self.inner.current_operation_status(input);
             self
         }
         pub fn set_current_operation_status(
             mut self,
-            inp: std::option::Option<crate::model::OperationStatus>,
+            input: std::option::Option<crate::model::OperationStatus>,
         ) -> Self {
-            self.inner = self.inner.set_current_operation_status(inp);
+            self.inner = self.inner.set_current_operation_status(input);
             self
         }
         /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-        pub fn status_message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_message(inp);
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_message(input);
             self
         }
-        pub fn set_status_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_status_message(inp);
+        pub fn set_status_message(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_status_message(input);
             self
         }
         /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-        pub fn error_code(mut self, inp: crate::model::HandlerErrorCode) -> Self {
-            self.inner = self.inner.error_code(inp);
+        pub fn error_code(mut self, input: crate::model::HandlerErrorCode) -> Self {
+            self.inner = self.inner.error_code(input);
             self
         }
         pub fn set_error_code(
             mut self,
-            inp: std::option::Option<crate::model::HandlerErrorCode>,
+            input: std::option::Option<crate::model::HandlerErrorCode>,
         ) -> Self {
-            self.inner = self.inner.set_error_code(inp);
+            self.inner = self.inner.set_error_code(input);
             self
         }
         /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-        pub fn resource_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_model(inp);
+        pub fn resource_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_model(input);
             self
         }
-        pub fn set_resource_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_resource_model(inp);
+        pub fn set_resource_model(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_model(input);
             self
         }
         /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }
@@ -4618,7 +4690,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::RegisterTypeOutput,
             smithy_http::result::SdkError<crate::error::RegisterTypeError>,
         >
@@ -4635,12 +4707,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The kind of extension.</p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.inner = self.inner.set_type(inp);
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.inner = self.inner.set_type(input);
             self
         }
         /// <p>The name of the extension being registered.</p>
@@ -4680,12 +4752,12 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// </note>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(inp);
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input);
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_type_name(inp);
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_type_name(input);
             self
         }
         /// <p>A url to the S3 bucket containing the extension project package that contains the neccessary files for the extension you want to register.</p>
@@ -4697,27 +4769,27 @@ pub mod fluent_builders {
         /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the
         /// <i>AWS Identity and Access Management User Guide</i>.</p>
         /// </note>
-        pub fn schema_handler_package(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_handler_package(inp);
+        pub fn schema_handler_package(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_handler_package(input);
             self
         }
         pub fn set_schema_handler_package(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_schema_handler_package(inp);
+            self.inner = self.inner.set_schema_handler_package(input);
             self
         }
         /// <p>Specifies logging configuration information for an extension.</p>
-        pub fn logging_config(mut self, inp: crate::model::LoggingConfig) -> Self {
-            self.inner = self.inner.logging_config(inp);
+        pub fn logging_config(mut self, input: crate::model::LoggingConfig) -> Self {
+            self.inner = self.inner.logging_config(input);
             self
         }
         pub fn set_logging_config(
             mut self,
-            inp: std::option::Option<crate::model::LoggingConfig>,
+            input: std::option::Option<crate::model::LoggingConfig>,
         ) -> Self {
-            self.inner = self.inner.set_logging_config(inp);
+            self.inner = self.inner.set_logging_config(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the extension. If your extension calls AWS APIs in any of its handlers, you must create an
@@ -4726,27 +4798,27 @@ pub mod fluent_builders {
         /// role</a>
         /// </i> that includes the necessary permissions to call those
         /// AWS APIs, and provision that execution role in your account. When CloudFormation needs to invoke the extension handler, CloudFormation assumes this execution role to create a temporary session token, which it then passes to the extension handler, thereby supplying your extension with the appropriate credentials.</p>
-        pub fn execution_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(inp);
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input);
             self
         }
         pub fn set_execution_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_execution_role_arn(inp);
+            self.inner = self.inner.set_execution_role_arn(input);
             self
         }
         /// <p>A unique identifier that acts as an idempotency key for this registration request. Specifying a client request token prevents CloudFormation from generating more than one version of an extension from the same registeration request, even if the request is submitted multiple times. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }
@@ -4765,7 +4837,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SetStackPolicyOutput,
             smithy_http::result::SdkError<crate::error::SetStackPolicyError>,
         >
@@ -4782,42 +4854,42 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or unique stack ID that you want to associate a policy with.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
         /// to Stack Resources</a> in the AWS CloudFormation User Guide. You can specify either
         /// the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not
         /// both.</p>
-        pub fn stack_policy_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_policy_body(inp);
+        pub fn stack_policy_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_policy_body(input);
             self
         }
         pub fn set_stack_policy_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_stack_policy_body(inp);
+            self.inner = self.inner.set_stack_policy_body(input);
             self
         }
         /// <p>Location of a file containing the stack policy. The URL must point to a policy
         /// (maximum size: 16 KB) located in an S3 bucket in the same
         /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
         /// <code>StackPolicyURL</code> parameter, but not both.</p>
-        pub fn stack_policy_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_policy_url(inp);
+        pub fn stack_policy_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_policy_url(input);
             self
         }
         pub fn set_stack_policy_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_stack_policy_url(inp);
+            self.inner = self.inner.set_stack_policy_url(input);
             self
         }
     }
@@ -4836,7 +4908,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SetTypeDefaultVersionOutput,
             smithy_http::result::SdkError<crate::error::SetTypeDefaultVersionError>,
         >
@@ -4854,41 +4926,41 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(inp);
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input);
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_arn(inp);
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_arn(input);
             self
         }
         /// <p>The kind of extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn r#type(mut self, inp: crate::model::RegistryType) -> Self {
-            self.inner = self.inner.r#type(inp);
+        pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
-        pub fn set_type(mut self, inp: std::option::Option<crate::model::RegistryType>) -> Self {
-            self.inner = self.inner.set_type(inp);
+        pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
+            self.inner = self.inner.set_type(input);
             self
         }
         /// <p>The name of the extension.</p>
         /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
-        pub fn type_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(inp);
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input);
             self
         }
-        pub fn set_type_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_type_name(inp);
+        pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_type_name(input);
             self
         }
         /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(inp);
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input);
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_version_id(inp);
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version_id(input);
             self
         }
     }
@@ -4907,7 +4979,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::SignalResourceOutput,
             smithy_http::result::SdkError<crate::error::SignalResourceError>,
         >
@@ -4925,50 +4997,50 @@ pub mod fluent_builders {
         }
         /// <p>The stack name or unique stack ID that includes the resource that you want to
         /// signal.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>The logical ID of the resource that you want to signal. The logical ID is the name of
         /// the resource that given in the template.</p>
-        pub fn logical_resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logical_resource_id(inp);
+        pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logical_resource_id(input);
             self
         }
         pub fn set_logical_resource_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_logical_resource_id(inp);
+            self.inner = self.inner.set_logical_resource_id(input);
             self
         }
         /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling
         /// groups, specify the instance ID that you are signaling as the unique ID. If you send
         /// multiple signals to a single resource (such as signaling a wait condition), each signal
         /// requires a different unique ID.</p>
-        pub fn unique_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.unique_id(inp);
+        pub fn unique_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.unique_id(input);
             self
         }
-        pub fn set_unique_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_unique_id(inp);
+        pub fn set_unique_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_unique_id(input);
             self
         }
         /// <p>The status of the signal, which is either success or failure. A failure signal causes
         /// AWS CloudFormation to immediately fail the stack creation or update.</p>
-        pub fn status(mut self, inp: crate::model::ResourceSignalStatus) -> Self {
-            self.inner = self.inner.status(inp);
+        pub fn status(mut self, input: crate::model::ResourceSignalStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         pub fn set_status(
             mut self,
-            inp: std::option::Option<crate::model::ResourceSignalStatus>,
+            input: std::option::Option<crate::model::ResourceSignalStatus>,
         ) -> Self {
-            self.inner = self.inner.set_status(inp);
+            self.inner = self.inner.set_status(input);
             self
         }
     }
@@ -4987,7 +5059,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::StopStackSetOperationOutput,
             smithy_http::result::SdkError<crate::error::StopStackSetOperationError>,
         >
@@ -5005,21 +5077,24 @@ pub mod fluent_builders {
         }
         /// <p>The name or unique ID of the stack set that you want to stop the operation
         /// for.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(inp);
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input);
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(inp);
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_stack_set_name(input);
             self
         }
         /// <p>The ID of the stack operation. </p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation_id(inp);
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_id(input);
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_operation_id(inp);
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_operation_id(input);
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -5033,12 +5108,12 @@ pub mod fluent_builders {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.inner = self.inner.call_as(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.inner = self.inner.call_as(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.inner = self.inner.set_call_as(inp);
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.inner = self.inner.set_call_as(input);
             self
         }
     }
@@ -5057,7 +5132,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateStackOutput,
             smithy_http::result::SdkError<crate::error::UpdateStackError>,
         >
@@ -5074,12 +5149,12 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or unique stack ID of the stack to update.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
         /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
@@ -5088,12 +5163,15 @@ pub mod fluent_builders {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
         /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(inp);
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input);
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_body(inp);
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_body(input);
             self
         }
         /// <p>Location of file containing the template body. The URL must point to a template that
@@ -5103,12 +5181,12 @@ pub mod fluent_builders {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
         /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_url(inp);
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_url(input);
             self
         }
-        pub fn set_template_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_url(inp);
+        pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_template_url(input);
             self
         }
         /// <p>Reuse the existing template that is associated with the stack that you are
@@ -5116,12 +5194,12 @@ pub mod fluent_builders {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
         /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
-        pub fn use_previous_template(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_previous_template(inp);
+        pub fn use_previous_template(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_previous_template(input);
             self
         }
-        pub fn set_use_previous_template(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_use_previous_template(inp);
+        pub fn set_use_previous_template(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_use_previous_template(input);
             self
         }
         /// <p>Structure containing the temporary overriding stack policy body. You can specify
@@ -5132,16 +5210,16 @@ pub mod fluent_builders {
         /// associated with the stack will be used.</p>
         pub fn stack_policy_during_update_body(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.stack_policy_during_update_body(inp);
+            self.inner = self.inner.stack_policy_during_update_body(input);
             self
         }
         pub fn set_stack_policy_during_update_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_stack_policy_during_update_body(inp);
+            self.inner = self.inner.set_stack_policy_during_update_body(input);
             self
         }
         /// <p>Location of a file containing the temporary overriding stack policy. The URL must
@@ -5154,16 +5232,16 @@ pub mod fluent_builders {
         /// associated with the stack will be used.</p>
         pub fn stack_policy_during_update_url(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.stack_policy_during_update_url(inp);
+            self.inner = self.inner.stack_policy_during_update_url(input);
             self
         }
         pub fn set_stack_policy_during_update_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_stack_policy_during_update_url(inp);
+            self.inner = self.inner.set_stack_policy_during_update_url(input);
             self
         }
         /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
@@ -5175,9 +5253,9 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
         /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
@@ -5288,9 +5366,9 @@ pub mod fluent_builders {
         }
         pub fn set_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Capability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         ) -> Self {
-            self.inner = self.inner.set_capabilities(inp);
+            self.inner = self.inner.set_capabilities(input);
             self
         }
         /// <p>The template resource types that you have permissions to work with for this update
@@ -5306,9 +5384,9 @@ pub mod fluent_builders {
         }
         pub fn set_resource_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_resource_types(inp);
+            self.inner = self.inner.set_resource_types(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
@@ -5320,25 +5398,28 @@ pub mod fluent_builders {
         /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
         /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
         /// session that is generated from your user credentials.</p>
-        pub fn role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(inp);
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
             self
         }
-        pub fn set_role_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_role_arn(inp);
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
         /// <p>The rollback triggers for AWS CloudFormation to monitor during stack creation and
         /// updating operations, and for the specified monitoring period afterwards.</p>
-        pub fn rollback_configuration(mut self, inp: crate::model::RollbackConfiguration) -> Self {
-            self.inner = self.inner.rollback_configuration(inp);
+        pub fn rollback_configuration(
+            mut self,
+            input: crate::model::RollbackConfiguration,
+        ) -> Self {
+            self.inner = self.inner.rollback_configuration(input);
             self
         }
         pub fn set_rollback_configuration(
             mut self,
-            inp: std::option::Option<crate::model::RollbackConfiguration>,
+            input: std::option::Option<crate::model::RollbackConfiguration>,
         ) -> Self {
-            self.inner = self.inner.set_rollback_configuration(inp);
+            self.inner = self.inner.set_rollback_configuration(input);
             self
         }
         /// <p>Structure containing a new stack policy body. You can specify either the
@@ -5347,15 +5428,15 @@ pub mod fluent_builders {
         /// <p>You might update the stack policy, for example, in order to protect a new resource
         /// that you created during a stack update. If you do not specify a stack policy, the current
         /// policy that is associated with the stack is unchanged.</p>
-        pub fn stack_policy_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_policy_body(inp);
+        pub fn stack_policy_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_policy_body(input);
             self
         }
         pub fn set_stack_policy_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_stack_policy_body(inp);
+            self.inner = self.inner.set_stack_policy_body(input);
             self
         }
         /// <p>Location of a file containing the updated stack policy. The URL must point to a
@@ -5365,15 +5446,15 @@ pub mod fluent_builders {
         /// <p>You might update the stack policy, for example, in order to protect a new resource
         /// that you created during a stack update. If you do not specify a stack policy, the current
         /// policy that is associated with the stack is unchanged.</p>
-        pub fn stack_policy_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_policy_url(inp);
+        pub fn stack_policy_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_policy_url(input);
             self
         }
         pub fn set_stack_policy_url(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_stack_policy_url(inp);
+            self.inner = self.inner.set_stack_policy_url(input);
             self
         }
         /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that AWS
@@ -5385,9 +5466,9 @@ pub mod fluent_builders {
         }
         pub fn set_notification_ar_ns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_notification_ar_ns(inp);
+            self.inner = self.inner.set_notification_ar_ns(input);
             self
         }
         /// <p>Key-value pairs to associate with this stack. AWS CloudFormation also propagates
@@ -5402,9 +5483,9 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>A unique identifier for this <code>UpdateStack</code> request. Specify this token if
@@ -5422,15 +5503,15 @@ pub mod fluent_builders {
         /// stack operation . For example, if you create a stack using the console, each stack event
         /// would be assigned the same token in the following format:
         /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
-        pub fn client_request_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(inp);
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
             self
         }
         pub fn set_client_request_token(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_client_request_token(inp);
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }
@@ -5449,7 +5530,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateStackInstancesOutput,
             smithy_http::result::SdkError<crate::error::UpdateStackInstancesError>,
         >
@@ -5466,12 +5547,15 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or unique ID of the stack set associated with the stack instances.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(inp);
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input);
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(inp);
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_stack_set_name(input);
             self
         }
         /// <p>[Self-managed permissions] The names of one or more AWS accounts for which you want to update parameter values
@@ -5484,22 +5568,22 @@ pub mod fluent_builders {
         }
         pub fn set_accounts(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_accounts(inp);
+            self.inner = self.inner.set_accounts(input);
             self
         }
         /// <p>[Service-managed permissions] The AWS Organizations accounts for which you want to update parameter values for stack instances. If your update targets OUs, the overridden parameter values only apply to the accounts that are currently in the target OUs and their child OUs. Accounts added to the target OUs and their child OUs in the future won't use the overridden values.</p>
         /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
-        pub fn deployment_targets(mut self, inp: crate::model::DeploymentTargets) -> Self {
-            self.inner = self.inner.deployment_targets(inp);
+        pub fn deployment_targets(mut self, input: crate::model::DeploymentTargets) -> Self {
+            self.inner = self.inner.deployment_targets(input);
             self
         }
         pub fn set_deployment_targets(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentTargets>,
+            input: std::option::Option<crate::model::DeploymentTargets>,
         ) -> Self {
-            self.inner = self.inner.set_deployment_targets(inp);
+            self.inner = self.inner.set_deployment_targets(input);
             self
         }
         /// <p>The names of one or more Regions in which you want to update parameter values for
@@ -5511,9 +5595,9 @@ pub mod fluent_builders {
         }
         pub fn set_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_regions(inp);
+            self.inner = self.inner.set_regions(input);
             self
         }
         /// <p> A list of input parameters whose values you want to update for the specified stack
@@ -5565,24 +5649,24 @@ pub mod fluent_builders {
         }
         pub fn set_parameter_overrides(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.inner = self.inner.set_parameter_overrides(inp);
+            self.inner = self.inner.set_parameter_overrides(input);
             self
         }
         /// <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
         pub fn operation_preferences(
             mut self,
-            inp: crate::model::StackSetOperationPreferences,
+            input: crate::model::StackSetOperationPreferences,
         ) -> Self {
-            self.inner = self.inner.operation_preferences(inp);
+            self.inner = self.inner.operation_preferences(input);
             self
         }
         pub fn set_operation_preferences(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperationPreferences>,
+            input: std::option::Option<crate::model::StackSetOperationPreferences>,
         ) -> Self {
-            self.inner = self.inner.set_operation_preferences(inp);
+            self.inner = self.inner.set_operation_preferences(input);
             self
         }
         /// <p>The unique identifier for this stack set operation. </p>
@@ -5592,12 +5676,12 @@ pub mod fluent_builders {
         /// CloudFormation successfully received them.</p>
         /// <p>If you don't specify an operation ID, the SDK generates one automatically.
         /// </p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation_id(inp);
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_id(input);
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_operation_id(inp);
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_operation_id(input);
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -5611,12 +5695,12 @@ pub mod fluent_builders {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.inner = self.inner.call_as(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.inner = self.inner.call_as(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.inner = self.inner.set_call_as(inp);
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.inner = self.inner.set_call_as(input);
             self
         }
     }
@@ -5635,7 +5719,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateStackSetOutput,
             smithy_http::result::SdkError<crate::error::UpdateStackSetError>,
         >
@@ -5652,21 +5736,24 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or unique ID of the stack set that you want to update.</p>
-        pub fn stack_set_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(inp);
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input);
             self
         }
-        pub fn set_stack_set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_set_name(inp);
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_stack_set_name(input);
             self
         }
         /// <p>A brief description of updates that you are making.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(inp);
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_description(inp);
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
             self
         }
         /// <p>The structure that contains the template body, with a minimum length of 1 byte and a
@@ -5675,12 +5762,15 @@ pub mod fluent_builders {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>TemplateBody</code> or <code>TemplateURL</code>—or set
         /// <code>UsePreviousTemplate</code> to true.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(inp);
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input);
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_body(inp);
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_body(input);
             self
         }
         /// <p>The location of the file that contains the template body. The URL must point to a
@@ -5690,12 +5780,12 @@ pub mod fluent_builders {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>TemplateBody</code> or <code>TemplateURL</code>—or set
         /// <code>UsePreviousTemplate</code> to true. </p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_url(inp);
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_url(input);
             self
         }
-        pub fn set_template_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_url(inp);
+        pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_template_url(input);
             self
         }
         /// <p>Use the existing template that's associated with the stack set that you're
@@ -5703,12 +5793,12 @@ pub mod fluent_builders {
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>TemplateBody</code> or <code>TemplateURL</code>—or set
         /// <code>UsePreviousTemplate</code> to true. </p>
-        pub fn use_previous_template(mut self, inp: bool) -> Self {
-            self.inner = self.inner.use_previous_template(inp);
+        pub fn use_previous_template(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_previous_template(input);
             self
         }
-        pub fn set_use_previous_template(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_use_previous_template(inp);
+        pub fn set_use_previous_template(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_use_previous_template(input);
             self
         }
         /// <p>A list of input parameters for the stack set template. </p>
@@ -5718,9 +5808,9 @@ pub mod fluent_builders {
         }
         pub fn set_parameters(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         ) -> Self {
-            self.inner = self.inner.set_parameters(inp);
+            self.inner = self.inner.set_parameters(input);
             self
         }
         /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
@@ -5824,9 +5914,9 @@ pub mod fluent_builders {
         }
         pub fn set_capabilities(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Capability>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         ) -> Self {
-            self.inner = self.inner.set_capabilities(inp);
+            self.inner = self.inner.set_capabilities(input);
             self
         }
         /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
@@ -5865,24 +5955,24 @@ pub mod fluent_builders {
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.inner = self.inner.set_tags(inp);
+            self.inner = self.inner.set_tags(input);
             self
         }
         /// <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
         pub fn operation_preferences(
             mut self,
-            inp: crate::model::StackSetOperationPreferences,
+            input: crate::model::StackSetOperationPreferences,
         ) -> Self {
-            self.inner = self.inner.operation_preferences(inp);
+            self.inner = self.inner.operation_preferences(input);
             self
         }
         pub fn set_operation_preferences(
             mut self,
-            inp: std::option::Option<crate::model::StackSetOperationPreferences>,
+            input: std::option::Option<crate::model::StackSetOperationPreferences>,
         ) -> Self {
-            self.inner = self.inner.set_operation_preferences(inp);
+            self.inner = self.inner.set_operation_preferences(input);
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.</p>
@@ -5894,15 +5984,15 @@ pub mod fluent_builders {
         /// <p>If you specified a customized administrator role when you created the stack set, you
         /// must specify a customized administrator role, even if it is the same customized
         /// administrator role used with this stack set previously.</p>
-        pub fn administration_role_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.administration_role_arn(inp);
+        pub fn administration_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.administration_role_arn(input);
             self
         }
         pub fn set_administration_role_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_administration_role_arn(inp);
+            self.inner = self.inner.set_administration_role_arn(input);
             self
         }
         /// <p>The name of the IAM execution role to use to update the stack set. If you do not specify
@@ -5915,29 +6005,29 @@ pub mod fluent_builders {
         /// If you do not specify a customized execution role, AWS CloudFormation performs the update using the role
         /// previously associated with the stack set, so long as you have permissions to perform
         /// operations on the stack set.</p>
-        pub fn execution_role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_name(inp);
+        pub fn execution_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_name(input);
             self
         }
         pub fn set_execution_role_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_execution_role_name(inp);
+            self.inner = self.inner.set_execution_role_name(input);
             self
         }
         /// <p>[Service-managed permissions] The AWS Organizations accounts in which to update associated stack instances.</p>
         /// <p>To update all the stack instances associated with this stack set, do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
         /// <p>If the stack set update includes changes to the template (that is, if <code>TemplateBody</code> or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Regions. If the stack set update does not include changes to the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
-        pub fn deployment_targets(mut self, inp: crate::model::DeploymentTargets) -> Self {
-            self.inner = self.inner.deployment_targets(inp);
+        pub fn deployment_targets(mut self, input: crate::model::DeploymentTargets) -> Self {
+            self.inner = self.inner.deployment_targets(input);
             self
         }
         pub fn set_deployment_targets(
             mut self,
-            inp: std::option::Option<crate::model::DeploymentTargets>,
+            input: std::option::Option<crate::model::DeploymentTargets>,
         ) -> Self {
-            self.inner = self.inner.set_deployment_targets(inp);
+            self.inner = self.inner.set_deployment_targets(input);
             self
         }
         /// <p>Describes how the IAM roles required for stack set operations are created. You cannot modify <code>PermissionModel</code> if there are stack instances associated with your stack set.</p>
@@ -5949,28 +6039,28 @@ pub mod fluent_builders {
         /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
         /// </li>
         /// </ul>
-        pub fn permission_model(mut self, inp: crate::model::PermissionModels) -> Self {
-            self.inner = self.inner.permission_model(inp);
+        pub fn permission_model(mut self, input: crate::model::PermissionModels) -> Self {
+            self.inner = self.inner.permission_model(input);
             self
         }
         pub fn set_permission_model(
             mut self,
-            inp: std::option::Option<crate::model::PermissionModels>,
+            input: std::option::Option<crate::model::PermissionModels>,
         ) -> Self {
-            self.inner = self.inner.set_permission_model(inp);
+            self.inner = self.inner.set_permission_model(input);
             self
         }
         /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU).</p>
         /// <p>If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
-        pub fn auto_deployment(mut self, inp: crate::model::AutoDeployment) -> Self {
-            self.inner = self.inner.auto_deployment(inp);
+        pub fn auto_deployment(mut self, input: crate::model::AutoDeployment) -> Self {
+            self.inner = self.inner.auto_deployment(input);
             self
         }
         pub fn set_auto_deployment(
             mut self,
-            inp: std::option::Option<crate::model::AutoDeployment>,
+            input: std::option::Option<crate::model::AutoDeployment>,
         ) -> Self {
-            self.inner = self.inner.set_auto_deployment(inp);
+            self.inner = self.inner.set_auto_deployment(input);
             self
         }
         /// <p>The unique ID for this stack set operation. </p>
@@ -5982,12 +6072,12 @@ pub mod fluent_builders {
         /// automatically.</p>
         /// <p>Repeating this stack set operation with a new operation ID retries all stack
         /// instances whose status is <code>OUTDATED</code>. </p>
-        pub fn operation_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation_id(inp);
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_id(input);
             self
         }
-        pub fn set_operation_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_operation_id(inp);
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_operation_id(input);
             self
         }
         /// <p>[Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts, you
@@ -6007,9 +6097,9 @@ pub mod fluent_builders {
         }
         pub fn set_accounts(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_accounts(inp);
+            self.inner = self.inner.set_accounts(input);
             self
         }
         /// <p>The Regions in which to update associated stack instances. If you specify Regions, you
@@ -6029,9 +6119,9 @@ pub mod fluent_builders {
         }
         pub fn set_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.inner = self.inner.set_regions(inp);
+            self.inner = self.inner.set_regions(input);
             self
         }
         /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
@@ -6045,12 +6135,12 @@ pub mod fluent_builders {
         /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        pub fn call_as(mut self, inp: crate::model::CallAs) -> Self {
-            self.inner = self.inner.call_as(inp);
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.inner = self.inner.call_as(input);
             self
         }
-        pub fn set_call_as(mut self, inp: std::option::Option<crate::model::CallAs>) -> Self {
-            self.inner = self.inner.set_call_as(inp);
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.inner = self.inner.set_call_as(input);
             self
         }
     }
@@ -6069,7 +6159,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::UpdateTerminationProtectionOutput,
             smithy_http::result::SdkError<crate::error::UpdateTerminationProtectionError>,
         >
@@ -6086,22 +6176,25 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Whether to enable termination protection on the specified stack.</p>
-        pub fn enable_termination_protection(mut self, inp: bool) -> Self {
-            self.inner = self.inner.enable_termination_protection(inp);
+        pub fn enable_termination_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_termination_protection(input);
             self
         }
-        pub fn set_enable_termination_protection(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inner = self.inner.set_enable_termination_protection(inp);
+        pub fn set_enable_termination_protection(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.inner = self.inner.set_enable_termination_protection(input);
             self
         }
         /// <p>The name or unique ID of the stack for which you want to set termination
         /// protection.</p>
-        pub fn stack_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(inp);
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input);
             self
         }
-        pub fn set_stack_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_stack_name(inp);
+        pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_stack_name(input);
             self
         }
     }
@@ -6120,7 +6213,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::ValidateTemplateOutput,
             smithy_http::result::SdkError<crate::error::ValidateTemplateError>,
         >
@@ -6141,12 +6234,15 @@ pub mod fluent_builders {
         /// in the AWS CloudFormation User Guide.</p>
         /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
         /// both are passed, only <code>TemplateBody</code> is used.</p>
-        pub fn template_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(inp);
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input);
             self
         }
-        pub fn set_template_body(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_body(inp);
+        pub fn set_template_body(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_template_body(input);
             self
         }
         /// <p>Location of file containing the template body. The URL must point to a template (max
@@ -6155,12 +6251,12 @@ pub mod fluent_builders {
         /// in the AWS CloudFormation User Guide.</p>
         /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
         /// both are passed, only <code>TemplateBody</code> is used.</p>
-        pub fn template_url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_url(inp);
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_url(input);
             self
         }
-        pub fn set_template_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_template_url(inp);
+        pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_template_url(input);
             self
         }
     }

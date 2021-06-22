@@ -10,19 +10,24 @@ pub mod delete_human_loop_input {
     }
     impl Builder {
         /// <p>The name of the human loop that you want to delete.</p>
-        pub fn human_loop_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.human_loop_name = Some(inp.into());
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.human_loop_name = Some(input.into());
             self
         }
-        pub fn set_human_loop_name(mut self, inp: std::string::String) -> Self {
-            self.human_loop_name = Some(inp);
+        pub fn set_human_loop_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.human_loop_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteHumanLoopInput`](crate::input::DeleteHumanLoopInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteHumanLoopInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteHumanLoopInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteHumanLoopInput {
                 human_loop_name: self.human_loop_name.unwrap_or_default(),
             })
@@ -39,7 +44,7 @@ impl DeleteHumanLoopInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteHumanLoop,
             aws_http::AwsErrorRetryPolicy,
@@ -101,7 +106,7 @@ impl DeleteHumanLoopInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -109,7 +114,7 @@ impl DeleteHumanLoopInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -139,19 +144,24 @@ pub mod describe_human_loop_input {
     }
     impl Builder {
         /// <p>The name of the human loop that you want information about.</p>
-        pub fn human_loop_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.human_loop_name = Some(inp.into());
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.human_loop_name = Some(input.into());
             self
         }
-        pub fn set_human_loop_name(mut self, inp: std::string::String) -> Self {
-            self.human_loop_name = Some(inp);
+        pub fn set_human_loop_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.human_loop_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeHumanLoopInput`](crate::input::DescribeHumanLoopInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeHumanLoopInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeHumanLoopInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeHumanLoopInput {
                 human_loop_name: self.human_loop_name.unwrap_or_default(),
             })
@@ -168,7 +178,7 @@ impl DescribeHumanLoopInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeHumanLoop,
             aws_http::AwsErrorRetryPolicy,
@@ -230,7 +240,7 @@ impl DescribeHumanLoopInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -238,7 +248,7 @@ impl DescribeHumanLoopInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -273,75 +283,81 @@ pub mod list_human_loops_input {
     }
     impl Builder {
         /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-        pub fn creation_time_after(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_time_after = Some(inp);
+        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time_after = Some(input);
             self
         }
         pub fn set_creation_time_after(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_time_after = inp;
+            self.creation_time_after = input;
             self
         }
         /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-        pub fn creation_time_before(mut self, inp: smithy_types::Instant) -> Self {
-            self.creation_time_before = Some(inp);
+        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time_before = Some(input);
             self
         }
         pub fn set_creation_time_before(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.creation_time_before = inp;
+            self.creation_time_before = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
-        pub fn flow_definition_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.flow_definition_arn = Some(inp.into());
+        pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.flow_definition_arn = Some(input.into());
             self
         }
         pub fn set_flow_definition_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.flow_definition_arn = inp;
+            self.flow_definition_arn = input;
             self
         }
         /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
         /// <code>Descending</code>.</p>
-        pub fn sort_order(mut self, inp: crate::model::SortOrder) -> Self {
-            self.sort_order = Some(inp);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.sort_order = Some(input);
             self
         }
-        pub fn set_sort_order(mut self, inp: std::option::Option<crate::model::SortOrder>) -> Self {
-            self.sort_order = inp;
+        pub fn set_sort_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.sort_order = input;
             self
         }
         /// <p>A token to display the next page of results.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>The total number of items to return. If the total number of available items is more than
         /// the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in
         /// the output. You can use this token to display the next page of results. </p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Consumes the builder and constructs a [`ListHumanLoopsInput`](crate::input::ListHumanLoopsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListHumanLoopsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::ListHumanLoopsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListHumanLoopsInput {
                 creation_time_after: self.creation_time_after,
                 creation_time_before: self.creation_time_before,
@@ -363,7 +379,7 @@ impl ListHumanLoopsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListHumanLoops,
             aws_http::AwsErrorRetryPolicy,
@@ -456,7 +472,7 @@ impl ListHumanLoopsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -465,7 +481,7 @@ impl ListHumanLoopsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -498,59 +514,62 @@ pub mod start_human_loop_input {
     }
     impl Builder {
         /// <p>The name of the human loop.</p>
-        pub fn human_loop_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.human_loop_name = Some(inp.into());
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.human_loop_name = Some(input.into());
             self
         }
         pub fn set_human_loop_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.human_loop_name = inp;
+            self.human_loop_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human
         /// loop.</p>
-        pub fn flow_definition_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.flow_definition_arn = Some(inp.into());
+        pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.flow_definition_arn = Some(input.into());
             self
         }
         pub fn set_flow_definition_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.flow_definition_arn = inp;
+            self.flow_definition_arn = input;
             self
         }
         /// <p>An object that contains information about the human loop.</p>
-        pub fn human_loop_input(mut self, inp: crate::model::HumanLoopInput) -> Self {
-            self.human_loop_input = Some(inp);
+        pub fn human_loop_input(mut self, input: crate::model::HumanLoopInput) -> Self {
+            self.human_loop_input = Some(input);
             self
         }
         pub fn set_human_loop_input(
             mut self,
-            inp: std::option::Option<crate::model::HumanLoopInput>,
+            input: std::option::Option<crate::model::HumanLoopInput>,
         ) -> Self {
-            self.human_loop_input = inp;
+            self.human_loop_input = input;
             self
         }
         /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data
         /// is free of personally identifiable information and/or free of adult content.</p>
-        pub fn data_attributes(mut self, inp: crate::model::HumanLoopDataAttributes) -> Self {
-            self.data_attributes = Some(inp);
+        pub fn data_attributes(mut self, input: crate::model::HumanLoopDataAttributes) -> Self {
+            self.data_attributes = Some(input);
             self
         }
         pub fn set_data_attributes(
             mut self,
-            inp: std::option::Option<crate::model::HumanLoopDataAttributes>,
+            input: std::option::Option<crate::model::HumanLoopDataAttributes>,
         ) -> Self {
-            self.data_attributes = inp;
+            self.data_attributes = input;
             self
         }
         /// Consumes the builder and constructs a [`StartHumanLoopInput`](crate::input::StartHumanLoopInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StartHumanLoopInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::StartHumanLoopInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StartHumanLoopInput {
                 human_loop_name: self.human_loop_name,
                 flow_definition_arn: self.flow_definition_arn,
@@ -570,7 +589,7 @@ impl StartHumanLoopInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StartHumanLoop,
             aws_http::AwsErrorRetryPolicy,
@@ -629,7 +648,7 @@ impl StartHumanLoopInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -637,7 +656,7 @@ impl StartHumanLoopInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -667,21 +686,22 @@ pub mod stop_human_loop_input {
     }
     impl Builder {
         /// <p>The name of the human loop that you want to stop.</p>
-        pub fn human_loop_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.human_loop_name = Some(inp.into());
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.human_loop_name = Some(input.into());
             self
         }
         pub fn set_human_loop_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.human_loop_name = inp;
+            self.human_loop_name = input;
             self
         }
         /// Consumes the builder and constructs a [`StopHumanLoopInput`](crate::input::StopHumanLoopInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StopHumanLoopInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::StopHumanLoopInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::StopHumanLoopInput {
                 human_loop_name: self.human_loop_name,
             })
@@ -698,7 +718,7 @@ impl StopHumanLoopInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StopHumanLoop,
             aws_http::AwsErrorRetryPolicy,
@@ -757,7 +777,7 @@ impl StopHumanLoopInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -765,7 +785,7 @@ impl StopHumanLoopInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)

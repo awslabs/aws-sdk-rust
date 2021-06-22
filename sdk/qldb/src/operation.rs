@@ -18,7 +18,7 @@ impl CancelJournalKinesisStream {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CancelJournalKinesisStream {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::CancelJournalKinesisStreamOutput,
         crate::error::CancelJournalKinesisStreamError,
     >;
@@ -46,7 +46,8 @@ impl CreateLedger {
     }
 }
 impl smithy_http::response::ParseStrictResponse for CreateLedger {
-    type Output = Result<crate::output::CreateLedgerOutput, crate::error::CreateLedgerError>;
+    type Output =
+        std::result::Result<crate::output::CreateLedgerOutput, crate::error::CreateLedgerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_ledger_error(response)
@@ -73,7 +74,8 @@ impl DeleteLedger {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DeleteLedger {
-    type Output = Result<crate::output::DeleteLedgerOutput, crate::error::DeleteLedgerError>;
+    type Output =
+        std::result::Result<crate::output::DeleteLedgerOutput, crate::error::DeleteLedgerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_ledger_error(response)
@@ -103,7 +105,7 @@ impl DescribeJournalKinesisStream {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeJournalKinesisStream {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeJournalKinesisStreamOutput,
         crate::error::DescribeJournalKinesisStreamError,
     >;
@@ -139,7 +141,7 @@ impl DescribeJournalS3Export {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeJournalS3Export {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::DescribeJournalS3ExportOutput,
         crate::error::DescribeJournalS3ExportError,
     >;
@@ -167,7 +169,8 @@ impl DescribeLedger {
     }
 }
 impl smithy_http::response::ParseStrictResponse for DescribeLedger {
-    type Output = Result<crate::output::DescribeLedgerOutput, crate::error::DescribeLedgerError>;
+    type Output =
+        std::result::Result<crate::output::DescribeLedgerOutput, crate::error::DescribeLedgerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_ledger_error(response)
@@ -199,8 +202,10 @@ impl ExportJournalToS3 {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ExportJournalToS3 {
-    type Output =
-        Result<crate::output::ExportJournalToS3Output, crate::error::ExportJournalToS3Error>;
+    type Output = std::result::Result<
+        crate::output::ExportJournalToS3Output,
+        crate::error::ExportJournalToS3Error,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_export_journal_to_s3_error(response)
@@ -234,7 +239,7 @@ impl GetBlock {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetBlock {
-    type Output = Result<crate::output::GetBlockOutput, crate::error::GetBlockError>;
+    type Output = std::result::Result<crate::output::GetBlockOutput, crate::error::GetBlockError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_block_error(response)
@@ -260,7 +265,7 @@ impl GetDigest {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetDigest {
-    type Output = Result<crate::output::GetDigestOutput, crate::error::GetDigestError>;
+    type Output = std::result::Result<crate::output::GetDigestOutput, crate::error::GetDigestError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_digest_error(response)
@@ -287,7 +292,8 @@ impl GetRevision {
     }
 }
 impl smithy_http::response::ParseStrictResponse for GetRevision {
-    type Output = Result<crate::output::GetRevisionOutput, crate::error::GetRevisionError>;
+    type Output =
+        std::result::Result<crate::output::GetRevisionOutput, crate::error::GetRevisionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_revision_error(response)
@@ -320,7 +326,7 @@ impl ListJournalKinesisStreamsForLedger {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListJournalKinesisStreamsForLedger {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListJournalKinesisStreamsForLedgerOutput,
         crate::error::ListJournalKinesisStreamsForLedgerError,
     >;
@@ -354,8 +360,10 @@ impl ListJournalS3Exports {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListJournalS3Exports {
-    type Output =
-        Result<crate::output::ListJournalS3ExportsOutput, crate::error::ListJournalS3ExportsError>;
+    type Output = std::result::Result<
+        crate::output::ListJournalS3ExportsOutput,
+        crate::error::ListJournalS3ExportsError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_journal_s3_exports_error(response)
@@ -385,7 +393,7 @@ impl ListJournalS3ExportsForLedger {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListJournalS3ExportsForLedger {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::ListJournalS3ExportsForLedgerOutput,
         crate::error::ListJournalS3ExportsForLedgerError,
     >;
@@ -416,7 +424,8 @@ impl ListLedgers {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListLedgers {
-    type Output = Result<crate::output::ListLedgersOutput, crate::error::ListLedgersError>;
+    type Output =
+        std::result::Result<crate::output::ListLedgersOutput, crate::error::ListLedgersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_ledgers_error(response)
@@ -441,8 +450,10 @@ impl ListTagsForResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
-    type Output =
-        Result<crate::output::ListTagsForResourceOutput, crate::error::ListTagsForResourceError>;
+    type Output = std::result::Result<
+        crate::output::ListTagsForResourceOutput,
+        crate::error::ListTagsForResourceError,
+    >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
@@ -469,7 +480,7 @@ impl StreamJournalToKinesis {
     }
 }
 impl smithy_http::response::ParseStrictResponse for StreamJournalToKinesis {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::StreamJournalToKinesisOutput,
         crate::error::StreamJournalToKinesisError,
     >;
@@ -499,7 +510,8 @@ impl TagResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for TagResource {
-    type Output = Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
+    type Output =
+        std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_resource_error(response)
@@ -525,7 +537,8 @@ impl UntagResource {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UntagResource {
-    type Output = Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
+    type Output =
+        std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_resource_error(response)
@@ -550,7 +563,8 @@ impl UpdateLedger {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateLedger {
-    type Output = Result<crate::output::UpdateLedgerOutput, crate::error::UpdateLedgerError>;
+    type Output =
+        std::result::Result<crate::output::UpdateLedgerOutput, crate::error::UpdateLedgerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_ledger_error(response)
@@ -581,7 +595,7 @@ impl UpdateLedgerPermissionsMode {
     }
 }
 impl smithy_http::response::ParseStrictResponse for UpdateLedgerPermissionsMode {
-    type Output = Result<
+    type Output = std::result::Result<
         crate::output::UpdateLedgerPermissionsModeOutput,
         crate::error::UpdateLedgerPermissionsModeError,
     >;

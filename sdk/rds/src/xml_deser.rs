@@ -1066,28 +1066,32 @@ pub fn deser_operation_cancel_export_task(
             ,
             s if s.matches("PercentProgress") /* PercentProgress com.amazonaws.rds#CancelExportTaskOutput$PercentProgress */ =>  {
                 let var_41 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_percent_progress(var_41);
             }
             ,
             s if s.matches("TotalExtractedDataInGB") /* TotalExtractedDataInGB com.amazonaws.rds#CancelExportTaskOutput$TotalExtractedDataInGB */ =>  {
                 let var_42 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_total_extracted_data_in_gb(var_42);
             }
@@ -7940,14 +7944,16 @@ pub fn deser_operation_download_db_log_file_portion(
             ,
             s if s.matches("AdditionalDataPending") /* AdditionalDataPending com.amazonaws.rds#DownloadDBLogFilePortionOutput$AdditionalDataPending */ =>  {
                 let var_255 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_additional_data_pending(var_255);
             }
@@ -10623,14 +10629,16 @@ pub fn deser_operation_start_activity_stream(
             ,
             s if s.matches("ApplyImmediately") /* ApplyImmediately com.amazonaws.rds#StartActivityStreamOutput$ApplyImmediately */ =>  {
                 let var_332 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_apply_immediately(var_332);
             }
@@ -11114,28 +11122,32 @@ pub fn deser_operation_start_export_task(
             ,
             s if s.matches("PercentProgress") /* PercentProgress com.amazonaws.rds#StartExportTaskOutput$PercentProgress */ =>  {
                 let var_352 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_percent_progress(var_352);
             }
             ,
             s if s.matches("TotalExtractedDataInGB") /* TotalExtractedDataInGB com.amazonaws.rds#StartExportTaskOutput$TotalExtractedDataInGB */ =>  {
                 let var_353 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_total_extracted_data_in_gb(var_353);
             }
@@ -11509,14 +11521,16 @@ pub fn deser_structure_event_subscription(
             ,
             s if s.matches("Enabled") /* Enabled com.amazonaws.rds#EventSubscription$Enabled */ =>  {
                 let var_370 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_enabled(var_370);
             }
@@ -11846,14 +11860,16 @@ pub fn deser_structure_db_cluster_snapshot(
             ,
             s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#DBClusterSnapshot$AllocatedStorage */ =>  {
                 let var_391 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_allocated_storage(var_391);
             }
@@ -11873,14 +11889,16 @@ pub fn deser_structure_db_cluster_snapshot(
             ,
             s if s.matches("Port") /* Port com.amazonaws.rds#DBClusterSnapshot$Port */ =>  {
                 let var_393 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_port(var_393);
             }
@@ -11966,28 +11984,32 @@ pub fn deser_structure_db_cluster_snapshot(
             ,
             s if s.matches("PercentProgress") /* PercentProgress com.amazonaws.rds#DBClusterSnapshot$PercentProgress */ =>  {
                 let var_400 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_percent_progress(var_400);
             }
             ,
             s if s.matches("StorageEncrypted") /* StorageEncrypted com.amazonaws.rds#DBClusterSnapshot$StorageEncrypted */ =>  {
                 let var_401 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_storage_encrypted(var_401);
             }
@@ -12033,14 +12055,16 @@ pub fn deser_structure_db_cluster_snapshot(
             ,
             s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#DBClusterSnapshot$IAMDatabaseAuthenticationEnabled */ =>  {
                 let var_405 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_iam_database_authentication_enabled(var_405);
             }
@@ -12188,14 +12212,16 @@ pub fn deser_structure_db_snapshot(
             ,
             s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#DBSnapshot$AllocatedStorage */ =>  {
                 let var_415 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_allocated_storage(var_415);
             }
@@ -12215,14 +12241,16 @@ pub fn deser_structure_db_snapshot(
             ,
             s if s.matches("Port") /* Port com.amazonaws.rds#DBSnapshot$Port */ =>  {
                 let var_417 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_port(var_417);
             }
@@ -12350,14 +12378,16 @@ pub fn deser_structure_db_snapshot(
             ,
             s if s.matches("PercentProgress") /* PercentProgress com.amazonaws.rds#DBSnapshot$PercentProgress */ =>  {
                 let var_427 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_percent_progress(var_427);
             }
@@ -12416,14 +12446,16 @@ pub fn deser_structure_db_snapshot(
             ,
             s if s.matches("Encrypted") /* Encrypted com.amazonaws.rds#DBSnapshot$Encrypted */ =>  {
                 let var_432 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_encrypted(var_432);
             }
@@ -12469,14 +12501,16 @@ pub fn deser_structure_db_snapshot(
             ,
             s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#DBSnapshot$IAMDatabaseAuthenticationEnabled */ =>  {
                 let var_436 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_iam_database_authentication_enabled(var_436);
             }
@@ -12591,14 +12625,16 @@ pub fn deser_structure_option_group(
             ,
             s if s.matches("AllowsVpcAndNonVpcInstanceMemberships") /* AllowsVpcAndNonVpcInstanceMemberships com.amazonaws.rds#OptionGroup$AllowsVpcAndNonVpcInstanceMemberships */ =>  {
                 let var_445 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_allows_vpc_and_non_vpc_instance_memberships(var_445);
             }
@@ -13066,14 +13102,16 @@ pub fn deser_structure_db_cluster(
             ,
             s if s.matches("StorageEncrypted") /* StorageEncrypted com.amazonaws.rds#DBCluster$StorageEncrypted */ =>  {
                 let var_480 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_storage_encrypted(var_480);
             }
@@ -13546,14 +13584,16 @@ pub fn deser_structure_db_instance(
             ,
             s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#DBInstance$AllocatedStorage */ =>  {
                 let var_515 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_allocated_storage(var_515);
             }
@@ -13587,14 +13627,16 @@ pub fn deser_structure_db_instance(
             ,
             s if s.matches("BackupRetentionPeriod") /* BackupRetentionPeriod com.amazonaws.rds#DBInstance$BackupRetentionPeriod */ =>  {
                 let var_518 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_backup_retention_period(var_518);
             }
@@ -13691,14 +13733,16 @@ pub fn deser_structure_db_instance(
             ,
             s if s.matches("MultiAZ") /* MultiAZ com.amazonaws.rds#DBInstance$MultiAZ */ =>  {
                 let var_527 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_multi_az(var_527);
             }
@@ -13718,14 +13762,16 @@ pub fn deser_structure_db_instance(
             ,
             s if s.matches("AutoMinorVersionUpgrade") /* AutoMinorVersionUpgrade com.amazonaws.rds#DBInstance$AutoMinorVersionUpgrade */ =>  {
                 let var_529 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_auto_minor_version_upgrade(var_529);
             }
@@ -13857,14 +13903,16 @@ pub fn deser_structure_db_instance(
             ,
             s if s.matches("PubliclyAccessible") /* PubliclyAccessible com.amazonaws.rds#DBInstance$PubliclyAccessible */ =>  {
                 let var_540 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_publicly_accessible(var_540);
             }
@@ -13907,14 +13955,16 @@ pub fn deser_structure_db_instance(
             ,
             s if s.matches("DbInstancePort") /* DbInstancePort com.amazonaws.rds#DBInstance$DbInstancePort */ =>  {
                 let var_544 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_db_instance_port(var_544);
             }
@@ -13934,14 +13984,16 @@ pub fn deser_structure_db_instance(
             ,
             s if s.matches("StorageEncrypted") /* StorageEncrypted com.amazonaws.rds#DBInstance$StorageEncrypted */ =>  {
                 let var_546 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_storage_encrypted(var_546);
             }
@@ -13997,14 +14049,16 @@ pub fn deser_structure_db_instance(
             ,
             s if s.matches("CopyTagsToSnapshot") /* CopyTagsToSnapshot com.amazonaws.rds#DBInstance$CopyTagsToSnapshot */ =>  {
                 let var_551 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_copy_tags_to_snapshot(var_551);
             }
@@ -14095,14 +14149,16 @@ pub fn deser_structure_db_instance(
             ,
             s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#DBInstance$IAMDatabaseAuthenticationEnabled */ =>  {
                 let var_558 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_iam_database_authentication_enabled(var_558);
             }
@@ -14174,14 +14230,16 @@ pub fn deser_structure_db_instance(
             ,
             s if s.matches("DeletionProtection") /* DeletionProtection com.amazonaws.rds#DBInstance$DeletionProtection */ =>  {
                 let var_564 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_deletion_protection(var_564);
             }
@@ -14408,42 +14466,48 @@ pub fn deser_structure_db_proxy(
             ,
             s if s.matches("RequireTLS") /* RequireTLS com.amazonaws.rds#DBProxy$RequireTLS */ =>  {
                 let var_582 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_require_tls(var_582);
             }
             ,
             s if s.matches("IdleClientTimeout") /* IdleClientTimeout com.amazonaws.rds#DBProxy$IdleClientTimeout */ =>  {
                 let var_583 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_idle_client_timeout(var_583);
             }
             ,
             s if s.matches("DebugLogging") /* DebugLogging com.amazonaws.rds#DBProxy$DebugLogging */ =>  {
                 let var_584 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_debug_logging(var_584);
             }
@@ -14618,14 +14682,16 @@ pub fn deser_structure_db_proxy_endpoint(
             ,
             s if s.matches("IsDefault") /* IsDefault com.amazonaws.rds#DBProxyEndpoint$IsDefault */ =>  {
                 let var_597 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_default(var_597);
             }
@@ -14951,14 +15017,16 @@ pub fn deser_structure_db_instance_automated_backup(
             ,
             s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#DBInstanceAutomatedBackup$AllocatedStorage */ =>  {
                 let var_620 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_allocated_storage(var_620);
             }
@@ -14978,14 +15046,16 @@ pub fn deser_structure_db_instance_automated_backup(
             ,
             s if s.matches("Port") /* Port com.amazonaws.rds#DBInstanceAutomatedBackup$Port */ =>  {
                 let var_622 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_port(var_622);
             }
@@ -15126,14 +15196,16 @@ pub fn deser_structure_db_instance_automated_backup(
             ,
             s if s.matches("Encrypted") /* Encrypted com.amazonaws.rds#DBInstanceAutomatedBackup$Encrypted */ =>  {
                 let var_633 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_encrypted(var_633);
             }
@@ -15179,14 +15251,16 @@ pub fn deser_structure_db_instance_automated_backup(
             ,
             s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#DBInstanceAutomatedBackup$IAMDatabaseAuthenticationEnabled */ =>  {
                 let var_637 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_iam_database_authentication_enabled(var_637);
             }
@@ -16256,14 +16330,16 @@ pub fn deser_structure_db_proxy_target_group(
             ,
             s if s.matches("IsDefault") /* IsDefault com.amazonaws.rds#DBProxyTargetGroup$IsDefault */ =>  {
                 let var_662 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_default(var_662);
             }
@@ -16387,42 +16463,48 @@ pub fn deser_structure_reserved_db_instance(
             ,
             s if s.matches("Duration") /* Duration com.amazonaws.rds#ReservedDBInstance$Duration */ =>  {
                 let var_671 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_duration(var_671);
             }
             ,
             s if s.matches("FixedPrice") /* FixedPrice com.amazonaws.rds#ReservedDBInstance$FixedPrice */ =>  {
                 let var_672 =
-                     {
-                        use std::str::FromStr;
-                        f64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.rds#Double`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            f64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.rds#Double`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_fixed_price(var_672);
             }
             ,
             s if s.matches("UsagePrice") /* UsagePrice com.amazonaws.rds#ReservedDBInstance$UsagePrice */ =>  {
                 let var_673 =
-                     {
-                        use std::str::FromStr;
-                        f64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.rds#Double`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            f64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.rds#Double`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_usage_price(var_673);
             }
@@ -16442,14 +16524,16 @@ pub fn deser_structure_reserved_db_instance(
             ,
             s if s.matches("DBInstanceCount") /* DBInstanceCount com.amazonaws.rds#ReservedDBInstance$DBInstanceCount */ =>  {
                 let var_675 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_db_instance_count(var_675);
             }
@@ -16482,14 +16566,16 @@ pub fn deser_structure_reserved_db_instance(
             ,
             s if s.matches("MultiAZ") /* MultiAZ com.amazonaws.rds#ReservedDBInstance$MultiAZ */ =>  {
                 let var_678 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_multi_az(var_678);
             }
@@ -17130,14 +17216,16 @@ pub fn deser_structure_endpoint(
             ,
             s if s.matches("Port") /* Port com.amazonaws.rds#Endpoint$Port */ =>  {
                 let var_700 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_port(var_700);
             }
@@ -17728,28 +17816,32 @@ pub fn deser_structure_account_quota(
             ,
             s if s.matches("Used") /* Used com.amazonaws.rds#AccountQuota$Used */ =>  {
                 let var_724 =
-                     {
-                        use std::str::FromStr;
-                        i64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.rds#Long`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.rds#Long`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_used(var_724);
             }
             ,
             s if s.matches("Max") /* Max com.amazonaws.rds#AccountQuota$Max */ =>  {
                 let var_725 =
-                     {
-                        use std::str::FromStr;
-                        i64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.rds#Long`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.rds#Long`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_max(var_725);
             }
@@ -18091,14 +18183,16 @@ pub fn deser_structure_parameter(
             ,
             s if s.matches("IsModifiable") /* IsModifiable com.amazonaws.rds#Parameter$IsModifiable */ =>  {
                 let var_749 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_modifiable(var_749);
             }
@@ -18299,28 +18393,32 @@ pub fn deser_structure_db_engine_version(
             ,
             s if s.matches("SupportsLogExportsToCloudwatchLogs") /* SupportsLogExportsToCloudwatchLogs com.amazonaws.rds#DBEngineVersion$SupportsLogExportsToCloudwatchLogs */ =>  {
                 let var_764 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_supports_log_exports_to_cloudwatch_logs(var_764);
             }
             ,
             s if s.matches("SupportsReadReplica") /* SupportsReadReplica com.amazonaws.rds#DBEngineVersion$SupportsReadReplica */ =>  {
                 let var_765 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_supports_read_replica(var_765);
             }
@@ -18360,28 +18458,32 @@ pub fn deser_structure_db_engine_version(
             ,
             s if s.matches("SupportsParallelQuery") /* SupportsParallelQuery com.amazonaws.rds#DBEngineVersion$SupportsParallelQuery */ =>  {
                 let var_769 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_supports_parallel_query(var_769);
             }
             ,
             s if s.matches("SupportsGlobalDatabases") /* SupportsGlobalDatabases com.amazonaws.rds#DBEngineVersion$SupportsGlobalDatabases */ =>  {
                 let var_770 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_supports_global_databases(var_770);
             }
@@ -18414,28 +18516,32 @@ pub fn deser_structure_describe_db_log_files_details(
             ,
             s if s.matches("LastWritten") /* LastWritten com.amazonaws.rds#DescribeDBLogFilesDetails$LastWritten */ =>  {
                 let var_772 =
-                     {
-                        use std::str::FromStr;
-                        i64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.rds#Long`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.rds#Long`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_last_written(var_772);
             }
             ,
             s if s.matches("Size") /* Size com.amazonaws.rds#DescribeDBLogFilesDetails$Size */ =>  {
                 let var_773 =
-                     {
-                        use std::str::FromStr;
-                        i64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.rds#Long`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (long: `com.amazonaws.rds#Long`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_size(var_773);
             }
@@ -18507,14 +18613,16 @@ pub fn deser_structure_db_proxy_target(
             ,
             s if s.matches("Port") /* Port com.amazonaws.rds#DBProxyTarget$Port */ =>  {
                 let var_778 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_port(var_778);
             }
@@ -18860,28 +18968,32 @@ pub fn deser_structure_export_task(
             ,
             s if s.matches("PercentProgress") /* PercentProgress com.amazonaws.rds#ExportTask$PercentProgress */ =>  {
                 let var_801 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_percent_progress(var_801);
             }
             ,
             s if s.matches("TotalExtractedDataInGB") /* TotalExtractedDataInGB com.amazonaws.rds#ExportTask$TotalExtractedDataInGB */ =>  {
                 let var_802 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_total_extracted_data_in_gb(var_802);
             }
@@ -19106,14 +19218,16 @@ pub fn deser_structure_option_group_option(
             ,
             s if s.matches("PortRequired") /* PortRequired com.amazonaws.rds#OptionGroupOption$PortRequired */ =>  {
                 let var_818 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_port_required(var_818);
             }
@@ -19156,56 +19270,64 @@ pub fn deser_structure_option_group_option(
             ,
             s if s.matches("Persistent") /* Persistent com.amazonaws.rds#OptionGroupOption$Persistent */ =>  {
                 let var_822 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_persistent(var_822);
             }
             ,
             s if s.matches("Permanent") /* Permanent com.amazonaws.rds#OptionGroupOption$Permanent */ =>  {
                 let var_823 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_permanent(var_823);
             }
             ,
             s if s.matches("RequiresAutoMinorEngineVersionUpgrade") /* RequiresAutoMinorEngineVersionUpgrade com.amazonaws.rds#OptionGroupOption$RequiresAutoMinorEngineVersionUpgrade */ =>  {
                 let var_824 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_requires_auto_minor_engine_version_upgrade(var_824);
             }
             ,
             s if s.matches("VpcOnly") /* VpcOnly com.amazonaws.rds#OptionGroupOption$VpcOnly */ =>  {
                 let var_825 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_vpc_only(var_825);
             }
@@ -19336,56 +19458,64 @@ pub fn deser_structure_orderable_db_instance_option(
             ,
             s if s.matches("MultiAZCapable") /* MultiAZCapable com.amazonaws.rds#OrderableDBInstanceOption$MultiAZCapable */ =>  {
                 let var_835 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_multi_az_capable(var_835);
             }
             ,
             s if s.matches("ReadReplicaCapable") /* ReadReplicaCapable com.amazonaws.rds#OrderableDBInstanceOption$ReadReplicaCapable */ =>  {
                 let var_836 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_read_replica_capable(var_836);
             }
             ,
             s if s.matches("Vpc") /* Vpc com.amazonaws.rds#OrderableDBInstanceOption$Vpc */ =>  {
                 let var_837 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_vpc(var_837);
             }
             ,
             s if s.matches("SupportsStorageEncryption") /* SupportsStorageEncryption com.amazonaws.rds#OrderableDBInstanceOption$SupportsStorageEncryption */ =>  {
                 let var_838 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_supports_storage_encryption(var_838);
             }
@@ -19405,56 +19535,64 @@ pub fn deser_structure_orderable_db_instance_option(
             ,
             s if s.matches("SupportsIops") /* SupportsIops com.amazonaws.rds#OrderableDBInstanceOption$SupportsIops */ =>  {
                 let var_840 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_supports_iops(var_840);
             }
             ,
             s if s.matches("SupportsEnhancedMonitoring") /* SupportsEnhancedMonitoring com.amazonaws.rds#OrderableDBInstanceOption$SupportsEnhancedMonitoring */ =>  {
                 let var_841 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_supports_enhanced_monitoring(var_841);
             }
             ,
             s if s.matches("SupportsIAMDatabaseAuthentication") /* SupportsIAMDatabaseAuthentication com.amazonaws.rds#OrderableDBInstanceOption$SupportsIAMDatabaseAuthentication */ =>  {
                 let var_842 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_supports_iam_database_authentication(var_842);
             }
             ,
             s if s.matches("SupportsPerformanceInsights") /* SupportsPerformanceInsights com.amazonaws.rds#OrderableDBInstanceOption$SupportsPerformanceInsights */ =>  {
                 let var_843 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_supports_performance_insights(var_843);
             }
@@ -19609,28 +19747,32 @@ pub fn deser_structure_orderable_db_instance_option(
             ,
             s if s.matches("OutpostCapable") /* OutpostCapable com.amazonaws.rds#OrderableDBInstanceOption$OutpostCapable */ =>  {
                 let var_854 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_outpost_capable(var_854);
             }
             ,
             s if s.matches("SupportsGlobalDatabases") /* SupportsGlobalDatabases com.amazonaws.rds#OrderableDBInstanceOption$SupportsGlobalDatabases */ =>  {
                 let var_855 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_supports_global_databases(var_855);
             }
@@ -19676,42 +19818,48 @@ pub fn deser_structure_reserved_db_instances_offering(
             ,
             s if s.matches("Duration") /* Duration com.amazonaws.rds#ReservedDBInstancesOffering$Duration */ =>  {
                 let var_858 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_duration(var_858);
             }
             ,
             s if s.matches("FixedPrice") /* FixedPrice com.amazonaws.rds#ReservedDBInstancesOffering$FixedPrice */ =>  {
                 let var_859 =
-                     {
-                        use std::str::FromStr;
-                        f64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.rds#Double`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            f64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.rds#Double`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_fixed_price(var_859);
             }
             ,
             s if s.matches("UsagePrice") /* UsagePrice com.amazonaws.rds#ReservedDBInstancesOffering$UsagePrice */ =>  {
                 let var_860 =
-                     {
-                        use std::str::FromStr;
-                        f64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.rds#Double`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            f64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.rds#Double`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_usage_price(var_860);
             }
@@ -19757,14 +19905,16 @@ pub fn deser_structure_reserved_db_instances_offering(
             ,
             s if s.matches("MultiAZ") /* MultiAZ com.amazonaws.rds#ReservedDBInstancesOffering$MultiAZ */ =>  {
                 let var_864 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_multi_az(var_864);
             }
@@ -19833,14 +19983,16 @@ pub fn deser_structure_source_region(
             ,
             s if s.matches("SupportsDBInstanceAutomatedBackupsReplication") /* SupportsDBInstanceAutomatedBackupsReplication com.amazonaws.rds#SourceRegion$SupportsDBInstanceAutomatedBackupsReplication */ =>  {
                 let var_869 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_supports_db_instance_automated_backups_replication(var_869);
             }
@@ -19937,42 +20089,48 @@ pub fn deser_structure_connection_pool_configuration_info(
         match tag.start_el() {
             s if s.matches("MaxConnectionsPercent") /* MaxConnectionsPercent com.amazonaws.rds#ConnectionPoolConfigurationInfo$MaxConnectionsPercent */ =>  {
                 let var_872 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_max_connections_percent(var_872);
             }
             ,
             s if s.matches("MaxIdleConnectionsPercent") /* MaxIdleConnectionsPercent com.amazonaws.rds#ConnectionPoolConfigurationInfo$MaxIdleConnectionsPercent */ =>  {
                 let var_873 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_max_idle_connections_percent(var_873);
             }
             ,
             s if s.matches("ConnectionBorrowTimeout") /* ConnectionBorrowTimeout com.amazonaws.rds#ConnectionPoolConfigurationInfo$ConnectionBorrowTimeout */ =>  {
                 let var_874 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_connection_borrow_timeout(var_874);
             }
@@ -20297,28 +20455,32 @@ pub fn deser_structure_option(
             ,
             s if s.matches("Persistent") /* Persistent com.amazonaws.rds#Option$Persistent */ =>  {
                 let var_893 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_persistent(var_893);
             }
             ,
             s if s.matches("Permanent") /* Permanent com.amazonaws.rds#Option$Permanent */ =>  {
                 let var_894 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_permanent(var_894);
             }
@@ -20449,14 +20611,16 @@ pub fn deser_structure_db_cluster_member(
             ,
             s if s.matches("IsClusterWriter") /* IsClusterWriter com.amazonaws.rds#DBClusterMember$IsClusterWriter */ =>  {
                 let var_903 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_cluster_writer(var_903);
             }
@@ -20824,14 +20988,16 @@ pub fn deser_structure_db_instance_status_info(
             ,
             s if s.matches("Normal") /* Normal com.amazonaws.rds#DBInstanceStatusInfo$Normal */ =>  {
                 let var_924 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_normal(var_924);
             }
@@ -21117,14 +21283,16 @@ pub fn deser_structure_global_cluster_member(
             ,
             s if s.matches("IsWriter") /* IsWriter com.amazonaws.rds#GlobalClusterMember$IsWriter */ =>  {
                 let var_942 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_writer(var_942);
             }
@@ -21568,14 +21736,16 @@ pub fn deser_structure_valid_storage_options(
             ,
             s if s.matches("SupportsStorageAutoscaling") /* SupportsStorageAutoscaling com.amazonaws.rds#ValidStorageOptions$SupportsStorageAutoscaling */ =>  {
                 let var_957 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_supports_storage_autoscaling(var_957);
             }
@@ -21647,14 +21817,16 @@ pub fn deser_structure_recurring_charge(
         match tag.start_el() {
             s if s.matches("RecurringChargeAmount") /* RecurringChargeAmount com.amazonaws.rds#RecurringCharge$RecurringChargeAmount */ =>  {
                 let var_961 =
-                     {
-                        use std::str::FromStr;
-                        f64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.rds#Double`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            f64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.rds#Double`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_recurring_charge_amount(var_961);
             }
@@ -21841,28 +22013,32 @@ pub fn deser_structure_upgrade_target(
             ,
             s if s.matches("AutoUpgrade") /* AutoUpgrade com.amazonaws.rds#UpgradeTarget$AutoUpgrade */ =>  {
                 let var_968 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_auto_upgrade(var_968);
             }
             ,
             s if s.matches("IsMajorVersionUpgrade") /* IsMajorVersionUpgrade com.amazonaws.rds#UpgradeTarget$IsMajorVersionUpgrade */ =>  {
                 let var_969 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_major_version_upgrade(var_969);
             }
@@ -22015,28 +22191,32 @@ pub fn deser_structure_option_group_option_setting(
             ,
             s if s.matches("IsModifiable") /* IsModifiable com.amazonaws.rds#OptionGroupOptionSetting$IsModifiable */ =>  {
                 let var_979 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_modifiable(var_979);
             }
             ,
             s if s.matches("IsRequired") /* IsRequired com.amazonaws.rds#OptionGroupOptionSetting$IsRequired */ =>  {
                 let var_980 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_required(var_980);
             }
@@ -22079,14 +22259,16 @@ pub fn deser_structure_option_version(
             ,
             s if s.matches("IsDefault") /* IsDefault com.amazonaws.rds#OptionVersion$IsDefault */ =>  {
                 let var_983 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_default(var_983);
             }
@@ -22235,28 +22417,32 @@ pub fn deser_structure_option_setting(
             ,
             s if s.matches("IsModifiable") /* IsModifiable com.amazonaws.rds#OptionSetting$IsModifiable */ =>  {
                 let var_991 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_modifiable(var_991);
             }
             ,
             s if s.matches("IsCollection") /* IsCollection com.amazonaws.rds#OptionSetting$IsCollection */ =>  {
                 let var_992 =
-                     {
-                        use std::str::FromStr;
-                        bool::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            bool::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (boolean: `com.amazonaws.rds#Boolean`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_is_collection(var_992);
             }
@@ -22298,28 +22484,32 @@ pub fn deser_structure_range(
         match tag.start_el() {
             s if s.matches("From") /* From com.amazonaws.rds#Range$From */ =>  {
                 let var_993 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_from(var_993);
             }
             ,
             s if s.matches("To") /* To com.amazonaws.rds#Range$To */ =>  {
                 let var_994 =
-                     {
-                        use std::str::FromStr;
-                        i32::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            i32::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_to(var_994);
             }
@@ -22355,28 +22545,32 @@ pub fn deser_structure_double_range(
         match tag.start_el() {
             s if s.matches("From") /* From com.amazonaws.rds#DoubleRange$From */ =>  {
                 let var_996 =
-                     {
-                        use std::str::FromStr;
-                        f64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.rds#Double`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            f64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.rds#Double`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_from(var_996);
             }
             ,
             s if s.matches("To") /* To com.amazonaws.rds#DoubleRange$To */ =>  {
                 let var_997 =
-                     {
-                        use std::str::FromStr;
-                        f64::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.rds#Double`)"))
-                    }
-                    ?
+                    Some(
+                         {
+                            use std::str::FromStr;
+                            f64::from_str(
+                                smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|smithy_xml::decode::XmlError::custom("expected (double: `com.amazonaws.rds#Double`)"))
+                        }
+                        ?
+                    )
                 ;
                 builder = builder.set_to(var_997);
             }

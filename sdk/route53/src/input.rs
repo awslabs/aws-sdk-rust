@@ -11,29 +11,34 @@ pub mod activate_key_signing_key_input {
     }
     impl Builder {
         /// <p>A unique string used to identify a hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.hosted_zone_id = Some(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters,  and underscores (_). <code>Name</code> must be unique for each key-signing key in the same
         /// hosted zone.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.name = Some(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`ActivateKeySigningKeyInput`](crate::input::ActivateKeySigningKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ActivateKeySigningKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ActivateKeySigningKeyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ActivateKeySigningKeyInput {
                 hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
                 name: self.name.unwrap_or_default(),
@@ -51,7 +56,7 @@ impl ActivateKeySigningKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ActivateKeySigningKey,
             aws_http::AwsErrorRetryPolicy,
@@ -114,7 +119,7 @@ impl ActivateKeySigningKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -122,7 +127,7 @@ impl ActivateKeySigningKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -155,38 +160,43 @@ pub mod associate_vpc_with_hosted_zone_input {
     impl Builder {
         /// <p>The ID of the private hosted zone that you want to associate an Amazon VPC with.</p>
         /// <p>Note that you can't associate a VPC with a hosted zone that doesn't have an existing VPC association.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.hosted_zone_id = Some(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>A complex type that contains information about the VPC that you want to associate with a private hosted zone.</p>
-        pub fn vpc(mut self, inp: crate::model::VPC) -> Self {
-            self.vpc = Some(inp);
+        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+            self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<crate::model::VPC>) -> Self {
-            self.vpc = inp;
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+            self.vpc = input;
             self
         }
         /// <p>
         /// <i>Optional:</i> A comment about the association request.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.comment = Some(inp.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.comment = Some(input.into());
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.comment = inp;
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comment = input;
             self
         }
         /// Consumes the builder and constructs a [`AssociateVPCWithHostedZoneInput`](crate::input::AssociateVPCWithHostedZoneInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AssociateVPCWithHostedZoneInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AssociateVPCWithHostedZoneInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AssociateVPCWithHostedZoneInput {
                 hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
                 vpc: self.vpc,
@@ -206,7 +216,7 @@ impl AssociateVPCWithHostedZoneInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AssociateVPCWithHostedZone,
             aws_http::AwsErrorRetryPolicy,
@@ -272,7 +282,7 @@ impl AssociateVPCWithHostedZoneInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -280,7 +290,7 @@ impl AssociateVPCWithHostedZoneInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -311,31 +321,36 @@ pub mod change_resource_record_sets_input {
     }
     impl Builder {
         /// <p>The ID of the hosted zone that contains the resource record sets that you want to change.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.hosted_zone_id = Some(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>A complex type that contains an optional comment and the <code>Changes</code> element.</p>
-        pub fn change_batch(mut self, inp: crate::model::ChangeBatch) -> Self {
-            self.change_batch = Some(inp);
+        pub fn change_batch(mut self, input: crate::model::ChangeBatch) -> Self {
+            self.change_batch = Some(input);
             self
         }
         pub fn set_change_batch(
             mut self,
-            inp: std::option::Option<crate::model::ChangeBatch>,
+            input: std::option::Option<crate::model::ChangeBatch>,
         ) -> Self {
-            self.change_batch = inp;
+            self.change_batch = input;
             self
         }
         /// Consumes the builder and constructs a [`ChangeResourceRecordSetsInput`](crate::input::ChangeResourceRecordSetsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ChangeResourceRecordSetsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ChangeResourceRecordSetsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ChangeResourceRecordSetsInput {
                 hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
                 change_batch: self.change_batch,
@@ -354,7 +369,7 @@ impl ChangeResourceRecordSetsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ChangeResourceRecordSets,
             aws_http::AwsErrorRetryPolicy,
@@ -419,7 +434,7 @@ impl ChangeResourceRecordSetsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -427,7 +442,7 @@ impl ChangeResourceRecordSetsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -468,54 +483,59 @@ pub mod change_tags_for_resource_input {
         /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_type(mut self, inp: crate::model::TagResourceType) -> Self {
-            self.resource_type = Some(inp);
+        pub fn resource_type(mut self, input: crate::model::TagResourceType) -> Self {
+            self.resource_type = Some(input);
             self
         }
-        pub fn set_resource_type(mut self, inp: crate::model::TagResourceType) -> Self {
-            self.resource_type = Some(inp);
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::TagResourceType>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>The ID of the resource for which you want to add, change, or delete tags.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
-        pub fn add_tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn add_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.add_tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.add_tags = Some(v);
             self
         }
         pub fn set_add_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.add_tags = inp;
+            self.add_tags = input;
             self
         }
-        pub fn remove_tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn remove_tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.remove_tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.remove_tag_keys = Some(v);
             self
         }
         pub fn set_remove_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.remove_tag_keys = inp;
+            self.remove_tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`ChangeTagsForResourceInput`](crate::input::ChangeTagsForResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ChangeTagsForResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ChangeTagsForResourceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(
                 crate::input::ChangeTagsForResourceInput {
                     resource_type: self.resource_type
@@ -545,7 +565,7 @@ impl ChangeTagsForResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ChangeTagsForResource,
             aws_http::AwsErrorRetryPolicy,
@@ -611,7 +631,7 @@ impl ChangeTagsForResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -619,7 +639,7 @@ impl ChangeTagsForResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -670,34 +690,36 @@ pub mod create_health_check_input {
         /// an existing health check, Route 53 creates the health check.</p>
         /// </li>
         /// </ul>
-        pub fn caller_reference(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.caller_reference = Some(inp.into());
+        pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
+            self.caller_reference = Some(input.into());
             self
         }
         pub fn set_caller_reference(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.caller_reference = inp;
+            self.caller_reference = input;
             self
         }
         /// <p>A complex type that contains settings for a new health check.</p>
-        pub fn health_check_config(mut self, inp: crate::model::HealthCheckConfig) -> Self {
-            self.health_check_config = Some(inp);
+        pub fn health_check_config(mut self, input: crate::model::HealthCheckConfig) -> Self {
+            self.health_check_config = Some(input);
             self
         }
         pub fn set_health_check_config(
             mut self,
-            inp: std::option::Option<crate::model::HealthCheckConfig>,
+            input: std::option::Option<crate::model::HealthCheckConfig>,
         ) -> Self {
-            self.health_check_config = inp;
+            self.health_check_config = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateHealthCheckInput`](crate::input::CreateHealthCheckInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateHealthCheckInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateHealthCheckInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateHealthCheckInput {
                 caller_reference: self.caller_reference,
                 health_check_config: self.health_check_config,
@@ -715,7 +737,7 @@ impl CreateHealthCheckInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateHealthCheck,
             aws_http::AwsErrorRetryPolicy,
@@ -775,7 +797,7 @@ impl CreateHealthCheckInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -783,7 +805,7 @@ impl CreateHealthCheckInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -822,38 +844,38 @@ pub mod create_hosted_zone_input {
         /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name
         /// is registered with a registrar other than Route 53, change the name servers for your domain to the set of <code>NameServers</code> that
         /// <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>(Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating with this hosted zone.</p>
         /// <p>You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon VPCs with the hosted zone,
         /// use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a>
         /// after you create a hosted zone.</p>
-        pub fn vpc(mut self, inp: crate::model::VPC) -> Self {
-            self.vpc = Some(inp);
+        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+            self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<crate::model::VPC>) -> Self {
-            self.vpc = inp;
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+            self.vpc = input;
             self
         }
         /// <p>A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be retried without
         /// the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a
         /// <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.</p>
-        pub fn caller_reference(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.caller_reference = Some(inp.into());
+        pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
+            self.caller_reference = Some(input.into());
             self
         }
         pub fn set_caller_reference(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.caller_reference = inp;
+            self.caller_reference = input;
             self
         }
         /// <p>(Optional) A complex type that contains the following optional values:</p>
@@ -867,36 +889,38 @@ pub mod create_hosted_zone_input {
         /// </ul>
         /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and
         /// the other elements.</p>
-        pub fn hosted_zone_config(mut self, inp: crate::model::HostedZoneConfig) -> Self {
-            self.hosted_zone_config = Some(inp);
+        pub fn hosted_zone_config(mut self, input: crate::model::HostedZoneConfig) -> Self {
+            self.hosted_zone_config = Some(input);
             self
         }
         pub fn set_hosted_zone_config(
             mut self,
-            inp: std::option::Option<crate::model::HostedZoneConfig>,
+            input: std::option::Option<crate::model::HostedZoneConfig>,
         ) -> Self {
-            self.hosted_zone_config = inp;
+            self.hosted_zone_config = input;
             self
         }
         /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53 assigned to the reusable delegation set
         /// when you created it. For more information about reusable delegation sets, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
-        pub fn delegation_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.delegation_set_id = Some(inp.into());
+        pub fn delegation_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delegation_set_id = Some(input.into());
             self
         }
         pub fn set_delegation_set_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.delegation_set_id = inp;
+            self.delegation_set_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateHostedZoneInput`](crate::input::CreateHostedZoneInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateHostedZoneInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateHostedZoneInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateHostedZoneInput {
                 name: self.name,
                 vpc: self.vpc,
@@ -917,7 +941,7 @@ impl CreateHostedZoneInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateHostedZone,
             aws_http::AwsErrorRetryPolicy,
@@ -977,7 +1001,7 @@ impl CreateHostedZoneInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -985,7 +1009,7 @@ impl CreateHostedZoneInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -1019,24 +1043,27 @@ pub mod create_key_signing_key_input {
     }
     impl Builder {
         /// <p>A unique string that identifies the request.</p>
-        pub fn caller_reference(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.caller_reference = Some(inp.into());
+        pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
+            self.caller_reference = Some(input.into());
             self
         }
         pub fn set_caller_reference(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.caller_reference = inp;
+            self.caller_reference = input;
             self
         }
         /// <p>The unique string (ID) used to identify a hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>The Amazon resource name (ARN) for a customer managed customer master key (CMK) in AWS Key Management Service (AWS KMS).
@@ -1084,41 +1111,43 @@ pub mod create_key_signing_key_input {
         /// </dl>
         /// <p>For more information about working with a customer managed CMK in AWS KMS, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service concepts</a>.</p>
-        pub fn key_management_service_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key_management_service_arn = Some(inp.into());
+        pub fn key_management_service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_management_service_arn = Some(input.into());
             self
         }
         pub fn set_key_management_service_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.key_management_service_arn = inp;
+            self.key_management_service_arn = input;
             self
         }
         /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters,  and underscores (_). <code>Name</code> must be unique for each key-signing key in the same
         /// hosted zone.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>A string specifying the initial status of the key-signing key (KSK). You can set the value to <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-        pub fn status(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.status = Some(inp.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateKeySigningKeyInput`](crate::input::CreateKeySigningKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateKeySigningKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateKeySigningKeyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateKeySigningKeyInput {
                 caller_reference: self.caller_reference,
                 hosted_zone_id: self.hosted_zone_id,
@@ -1139,7 +1168,7 @@ impl CreateKeySigningKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateKeySigningKey,
             aws_http::AwsErrorRetryPolicy,
@@ -1199,7 +1228,7 @@ impl CreateKeySigningKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1207,7 +1236,7 @@ impl CreateKeySigningKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -1238,12 +1267,15 @@ pub mod create_query_logging_config_input {
     }
     impl Builder {
         /// <p>The ID of the hosted zone that you want to log queries for. You can log queries only for public hosted zones.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the log group that you want to Amazon Route 53 to send query logs to. This is the format
@@ -1256,23 +1288,25 @@ pub mod create_query_logging_config_input {
         /// or the applicable command in one of the AWS SDKs.</p>
         pub fn cloud_watch_logs_log_group_arn(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.cloud_watch_logs_log_group_arn = Some(inp.into());
+            self.cloud_watch_logs_log_group_arn = Some(input.into());
             self
         }
         pub fn set_cloud_watch_logs_log_group_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.cloud_watch_logs_log_group_arn = inp;
+            self.cloud_watch_logs_log_group_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateQueryLoggingConfigInput`](crate::input::CreateQueryLoggingConfigInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateQueryLoggingConfigInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateQueryLoggingConfigInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateQueryLoggingConfigInput {
                 hosted_zone_id: self.hosted_zone_id,
                 cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn,
@@ -1291,7 +1325,7 @@ impl CreateQueryLoggingConfigInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateQueryLoggingConfig,
             aws_http::AwsErrorRetryPolicy,
@@ -1351,7 +1385,7 @@ impl CreateQueryLoggingConfigInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1359,7 +1393,7 @@ impl CreateQueryLoggingConfigInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -1394,31 +1428,34 @@ pub mod create_reusable_delegation_set_input {
         /// operation twice. You must use a unique <code>CallerReference</code> string every time you
         /// submit a <code>CreateReusableDelegationSet</code> request. <code>CallerReference</code> can be
         /// any unique string, for example a date/time stamp.</p>
-        pub fn caller_reference(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.caller_reference = Some(inp.into());
+        pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
+            self.caller_reference = Some(input.into());
             self
         }
         pub fn set_caller_reference(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.caller_reference = inp;
+            self.caller_reference = input;
             self
         }
         /// <p>If you want to mark the delegation set for an existing hosted zone as reusable, the ID
         /// for that hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateReusableDelegationSetInput`](crate::input::CreateReusableDelegationSetInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::CreateReusableDelegationSetInput,
             smithy_http::operation::BuildError,
         > {
@@ -1440,7 +1477,7 @@ impl CreateReusableDelegationSetInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateReusableDelegationSet,
             aws_http::AwsErrorRetryPolicy,
@@ -1501,7 +1538,7 @@ impl CreateReusableDelegationSetInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1509,7 +1546,7 @@ impl CreateReusableDelegationSetInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -1541,38 +1578,40 @@ pub mod create_traffic_policy_input {
     }
     impl Builder {
         /// <p>The name of the traffic policy.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The definition of this traffic policy in JSON format. For more information, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
-        pub fn document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document = Some(inp.into());
+        pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document = Some(input.into());
             self
         }
-        pub fn set_document(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.document = inp;
+        pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document = input;
             self
         }
         /// <p>(Optional) Any comments that you want to include about the traffic policy.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.comment = Some(inp.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.comment = Some(input.into());
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.comment = inp;
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comment = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTrafficPolicyInput`](crate::input::CreateTrafficPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTrafficPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateTrafficPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateTrafficPolicyInput {
                 name: self.name,
                 document: self.document,
@@ -1591,7 +1630,7 @@ impl CreateTrafficPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateTrafficPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -1651,7 +1690,7 @@ impl CreateTrafficPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1659,7 +1698,7 @@ impl CreateTrafficPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -1693,58 +1732,61 @@ pub mod create_traffic_policy_instance_input {
     }
     impl Builder {
         /// <p>The ID of the hosted zone that you want Amazon Route 53 to create resource record sets in by using the configuration in a traffic policy.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>The domain name (such as example.com) or subdomain name (such as www.example.com) for which Amazon Route 53 responds to DNS queries by using
         /// the resource record sets that Route 53 creates for this traffic policy instance.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>(Optional) The TTL that you want Amazon Route 53 to assign to all of the resource record sets that it creates in the specified hosted zone.</p>
-        pub fn ttl(mut self, inp: i64) -> Self {
-            self.ttl = Some(inp);
+        pub fn ttl(mut self, input: i64) -> Self {
+            self.ttl = Some(input);
             self
         }
-        pub fn set_ttl(mut self, inp: std::option::Option<i64>) -> Self {
-            self.ttl = inp;
+        pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
+            self.ttl = input;
             self
         }
         /// <p>The ID of the traffic policy that you want to use to create resource record sets in the specified hosted zone.</p>
-        pub fn traffic_policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.traffic_policy_id = Some(inp.into());
+        pub fn traffic_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.traffic_policy_id = Some(input.into());
             self
         }
         pub fn set_traffic_policy_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_policy_id = inp;
+            self.traffic_policy_id = input;
             self
         }
         /// <p>The version of the traffic policy that you want to use to create resource record sets in the specified hosted zone.</p>
-        pub fn traffic_policy_version(mut self, inp: i32) -> Self {
-            self.traffic_policy_version = Some(inp);
+        pub fn traffic_policy_version(mut self, input: i32) -> Self {
+            self.traffic_policy_version = Some(input);
             self
         }
-        pub fn set_traffic_policy_version(mut self, inp: std::option::Option<i32>) -> Self {
-            self.traffic_policy_version = inp;
+        pub fn set_traffic_policy_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.traffic_policy_version = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTrafficPolicyInstanceInput`](crate::input::CreateTrafficPolicyInstanceInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::CreateTrafficPolicyInstanceInput,
             smithy_http::operation::BuildError,
         > {
@@ -1769,7 +1811,7 @@ impl CreateTrafficPolicyInstanceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateTrafficPolicyInstance,
             aws_http::AwsErrorRetryPolicy,
@@ -1830,7 +1872,7 @@ impl CreateTrafficPolicyInstanceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1838,7 +1880,7 @@ impl CreateTrafficPolicyInstanceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -1870,39 +1912,41 @@ pub mod create_traffic_policy_version_input {
     }
     impl Builder {
         /// <p>The ID of the traffic policy for which you want to create a new version.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The definition of this version of the traffic policy, in JSON format. You specified the JSON in the <code>CreateTrafficPolicyVersion</code>
         /// request. For more information about the JSON format, see
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a>.</p>
-        pub fn document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document = Some(inp.into());
+        pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document = Some(input.into());
             self
         }
-        pub fn set_document(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.document = inp;
+        pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document = input;
             self
         }
         /// <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code> request, if any.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.comment = Some(inp.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.comment = Some(input.into());
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.comment = inp;
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comment = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateTrafficPolicyVersionInput`](crate::input::CreateTrafficPolicyVersionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateTrafficPolicyVersionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateTrafficPolicyVersionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateTrafficPolicyVersionInput {
                 id: self.id.unwrap_or_default(),
                 document: self.document,
@@ -1922,7 +1966,7 @@ impl CreateTrafficPolicyVersionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateTrafficPolicyVersion,
             aws_http::AwsErrorRetryPolicy,
@@ -1988,7 +2032,7 @@ impl CreateTrafficPolicyVersionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1996,7 +2040,7 @@ impl CreateTrafficPolicyVersionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -2027,28 +2071,31 @@ pub mod create_vpc_association_authorization_input {
     }
     impl Builder {
         /// <p>The ID of the private hosted zone that you want to authorize associating a VPC with.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.hosted_zone_id = Some(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>A complex type that contains the VPC ID and region for the VPC that you want to authorize associating
         /// with your hosted zone.</p>
-        pub fn vpc(mut self, inp: crate::model::VPC) -> Self {
-            self.vpc = Some(inp);
+        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+            self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<crate::model::VPC>) -> Self {
-            self.vpc = inp;
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+            self.vpc = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateVPCAssociationAuthorizationInput`](crate::input::CreateVPCAssociationAuthorizationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::CreateVPCAssociationAuthorizationInput,
             smithy_http::operation::BuildError,
         > {
@@ -2070,7 +2117,7 @@ impl CreateVPCAssociationAuthorizationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateVPCAssociationAuthorization,
             aws_http::AwsErrorRetryPolicy,
@@ -2138,7 +2185,7 @@ impl CreateVPCAssociationAuthorizationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2146,7 +2193,7 @@ impl CreateVPCAssociationAuthorizationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -2177,28 +2224,33 @@ pub mod deactivate_key_signing_key_input {
     }
     impl Builder {
         /// <p>A unique string used to identify a hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.hosted_zone_id = Some(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>A string used to identify a key-signing key (KSK).</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.name = Some(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeactivateKeySigningKeyInput`](crate::input::DeactivateKeySigningKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeactivateKeySigningKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeactivateKeySigningKeyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeactivateKeySigningKeyInput {
                 hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
                 name: self.name.unwrap_or_default(),
@@ -2217,7 +2269,7 @@ impl DeactivateKeySigningKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeactivateKeySigningKey,
             aws_http::AwsErrorRetryPolicy,
@@ -2280,7 +2332,7 @@ impl DeactivateKeySigningKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2288,7 +2340,7 @@ impl DeactivateKeySigningKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -2318,19 +2370,24 @@ pub mod delete_health_check_input {
     }
     impl Builder {
         /// <p>The ID of the health check that you want to delete.</p>
-        pub fn health_check_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.health_check_id = Some(inp.into());
+        pub fn health_check_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.health_check_id = Some(input.into());
             self
         }
-        pub fn set_health_check_id(mut self, inp: std::string::String) -> Self {
-            self.health_check_id = Some(inp);
+        pub fn set_health_check_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.health_check_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteHealthCheckInput`](crate::input::DeleteHealthCheckInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteHealthCheckInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteHealthCheckInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteHealthCheckInput {
                 health_check_id: self.health_check_id.unwrap_or_default(),
             })
@@ -2347,7 +2404,7 @@ impl DeleteHealthCheckInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteHealthCheck,
             aws_http::AwsErrorRetryPolicy,
@@ -2409,7 +2466,7 @@ impl DeleteHealthCheckInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2417,7 +2474,7 @@ impl DeleteHealthCheckInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -2447,19 +2504,21 @@ pub mod delete_hosted_zone_input {
     }
     impl Builder {
         /// <p>The ID of the hosted zone you want to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteHostedZoneInput`](crate::input::DeleteHostedZoneInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteHostedZoneInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteHostedZoneInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteHostedZoneInput {
                 id: self.id.unwrap_or_default(),
             })
@@ -2476,7 +2535,7 @@ impl DeleteHostedZoneInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteHostedZone,
             aws_http::AwsErrorRetryPolicy,
@@ -2538,7 +2597,7 @@ impl DeleteHostedZoneInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2546,7 +2605,7 @@ impl DeleteHostedZoneInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -2577,28 +2636,33 @@ pub mod delete_key_signing_key_input {
     }
     impl Builder {
         /// <p>A unique string used to identify a hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.hosted_zone_id = Some(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>A string used to identify a key-signing key (KSK).</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.name = Some(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteKeySigningKeyInput`](crate::input::DeleteKeySigningKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteKeySigningKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteKeySigningKeyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteKeySigningKeyInput {
                 hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
                 name: self.name.unwrap_or_default(),
@@ -2616,7 +2680,7 @@ impl DeleteKeySigningKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteKeySigningKey,
             aws_http::AwsErrorRetryPolicy,
@@ -2679,7 +2743,7 @@ impl DeleteKeySigningKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2687,7 +2751,7 @@ impl DeleteKeySigningKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -2717,19 +2781,21 @@ pub mod delete_query_logging_config_input {
     }
     impl Builder {
         /// <p>The ID of the configuration that you want to delete. </p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteQueryLoggingConfigInput`](crate::input::DeleteQueryLoggingConfigInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteQueryLoggingConfigInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteQueryLoggingConfigInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteQueryLoggingConfigInput {
                 id: self.id.unwrap_or_default(),
             })
@@ -2747,7 +2813,7 @@ impl DeleteQueryLoggingConfigInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteQueryLoggingConfig,
             aws_http::AwsErrorRetryPolicy,
@@ -2809,7 +2875,7 @@ impl DeleteQueryLoggingConfigInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2817,7 +2883,7 @@ impl DeleteQueryLoggingConfigInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -2847,18 +2913,18 @@ pub mod delete_reusable_delegation_set_input {
     }
     impl Builder {
         /// <p>The ID of the reusable delegation set that you want to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteReusableDelegationSetInput`](crate::input::DeleteReusableDelegationSetInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteReusableDelegationSetInput,
             smithy_http::operation::BuildError,
         > {
@@ -2879,7 +2945,7 @@ impl DeleteReusableDelegationSetInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteReusableDelegationSet,
             aws_http::AwsErrorRetryPolicy,
@@ -2941,7 +3007,7 @@ impl DeleteReusableDelegationSetInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -2949,7 +3015,7 @@ impl DeleteReusableDelegationSetInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -2980,28 +3046,30 @@ pub mod delete_traffic_policy_input {
     }
     impl Builder {
         /// <p>The ID of the traffic policy that you want to delete.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The version number of the traffic policy that you want to delete.</p>
-        pub fn version(mut self, inp: i32) -> Self {
-            self.version = Some(inp);
+        pub fn version(mut self, input: i32) -> Self {
+            self.version = Some(input);
             self
         }
-        pub fn set_version(mut self, inp: i32) -> Self {
-            self.version = Some(inp);
+        pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.version = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTrafficPolicyInput`](crate::input::DeleteTrafficPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteTrafficPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteTrafficPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteTrafficPolicyInput {
                 id: self.id.unwrap_or_default(),
                 version: self.version.unwrap_or_default(),
@@ -3019,7 +3087,7 @@ impl DeleteTrafficPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteTrafficPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -3082,7 +3150,7 @@ impl DeleteTrafficPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -3090,7 +3158,7 @@ impl DeleteTrafficPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -3124,18 +3192,18 @@ pub mod delete_traffic_policy_instance_input {
         /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created
         /// the traffic policy instance.</p>
         /// </important>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteTrafficPolicyInstanceInput`](crate::input::DeleteTrafficPolicyInstanceInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteTrafficPolicyInstanceInput,
             smithy_http::operation::BuildError,
         > {
@@ -3156,7 +3224,7 @@ impl DeleteTrafficPolicyInstanceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteTrafficPolicyInstance,
             aws_http::AwsErrorRetryPolicy,
@@ -3218,7 +3286,7 @@ impl DeleteTrafficPolicyInstanceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -3226,7 +3294,7 @@ impl DeleteTrafficPolicyInstanceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -3258,28 +3326,31 @@ pub mod delete_vpc_association_authorization_input {
     impl Builder {
         /// <p>When removing authorization to associate a VPC that was created by one AWS account with a hosted zone
         /// that was created with a different AWS account, the ID of the hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.hosted_zone_id = Some(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>When removing authorization to associate a VPC that was created by one AWS account with a hosted zone
         /// that was created with a different AWS account, a complex type that includes the ID and region of the VPC.</p>
-        pub fn vpc(mut self, inp: crate::model::VPC) -> Self {
-            self.vpc = Some(inp);
+        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+            self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<crate::model::VPC>) -> Self {
-            self.vpc = inp;
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+            self.vpc = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteVPCAssociationAuthorizationInput`](crate::input::DeleteVPCAssociationAuthorizationInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteVPCAssociationAuthorizationInput,
             smithy_http::operation::BuildError,
         > {
@@ -3301,7 +3372,7 @@ impl DeleteVPCAssociationAuthorizationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteVPCAssociationAuthorization,
             aws_http::AwsErrorRetryPolicy,
@@ -3369,7 +3440,7 @@ impl DeleteVPCAssociationAuthorizationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3377,7 +3448,7 @@ impl DeleteVPCAssociationAuthorizationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -3407,19 +3478,24 @@ pub mod disable_hosted_zone_dnssec_input {
     }
     impl Builder {
         /// <p>A unique string used to identify a hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.hosted_zone_id = Some(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DisableHostedZoneDNSSECInput`](crate::input::DisableHostedZoneDNSSECInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DisableHostedZoneDNSSECInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DisableHostedZoneDNSSECInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DisableHostedZoneDNSSECInput {
                 hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
             })
@@ -3437,7 +3513,7 @@ impl DisableHostedZoneDNSSECInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DisableHostedZoneDNSSEC,
             aws_http::AwsErrorRetryPolicy,
@@ -3499,7 +3575,7 @@ impl DisableHostedZoneDNSSECInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3507,7 +3583,7 @@ impl DisableHostedZoneDNSSECInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -3539,38 +3615,41 @@ pub mod disassociate_vpc_from_hosted_zone_input {
     }
     impl Builder {
         /// <p>The ID of the private hosted zone that you want to disassociate a VPC from.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.hosted_zone_id = Some(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>A complex type that contains information about the VPC that you're disassociating
         /// from the specified hosted zone.</p>
-        pub fn vpc(mut self, inp: crate::model::VPC) -> Self {
-            self.vpc = Some(inp);
+        pub fn vpc(mut self, input: crate::model::VPC) -> Self {
+            self.vpc = Some(input);
             self
         }
-        pub fn set_vpc(mut self, inp: std::option::Option<crate::model::VPC>) -> Self {
-            self.vpc = inp;
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::VPC>) -> Self {
+            self.vpc = input;
             self
         }
         /// <p>
         /// <i>Optional:</i> A comment about the disassociation request.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.comment = Some(inp.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.comment = Some(input.into());
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.comment = inp;
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comment = input;
             self
         }
         /// Consumes the builder and constructs a [`DisassociateVPCFromHostedZoneInput`](crate::input::DisassociateVPCFromHostedZoneInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DisassociateVPCFromHostedZoneInput,
             smithy_http::operation::BuildError,
         > {
@@ -3593,7 +3672,7 @@ impl DisassociateVPCFromHostedZoneInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DisassociateVPCFromHostedZone,
             aws_http::AwsErrorRetryPolicy,
@@ -3659,7 +3738,7 @@ impl DisassociateVPCFromHostedZoneInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3667,7 +3746,7 @@ impl DisassociateVPCFromHostedZoneInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -3697,19 +3776,24 @@ pub mod enable_hosted_zone_dnssec_input {
     }
     impl Builder {
         /// <p>A unique string used to identify a hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.hosted_zone_id = Some(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// Consumes the builder and constructs a [`EnableHostedZoneDNSSECInput`](crate::input::EnableHostedZoneDNSSECInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::EnableHostedZoneDNSSECInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::EnableHostedZoneDNSSECInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::EnableHostedZoneDNSSECInput {
                 hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
             })
@@ -3726,7 +3810,7 @@ impl EnableHostedZoneDNSSECInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::EnableHostedZoneDNSSEC,
             aws_http::AwsErrorRetryPolicy,
@@ -3788,7 +3872,7 @@ impl EnableHostedZoneDNSSECInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3796,7 +3880,7 @@ impl EnableHostedZoneDNSSECInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -3854,19 +3938,24 @@ pub mod get_account_limit_input {
         /// Amazon Route 53 console.)</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, inp: crate::model::AccountLimitType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::AccountLimitType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: crate::model::AccountLimitType) -> Self {
-            self.r#type = Some(inp);
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::AccountLimitType>,
+        ) -> Self {
+            self.r#type = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAccountLimitInput`](crate::input::GetAccountLimitInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAccountLimitInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetAccountLimitInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(
                 crate::input::GetAccountLimitInput {
                     r#type: self.r#type
@@ -3889,7 +3978,7 @@ impl GetAccountLimitInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetAccountLimit,
             aws_http::AwsErrorRetryPolicy,
@@ -3951,7 +4040,7 @@ impl GetAccountLimitInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -3959,7 +4048,7 @@ impl GetAccountLimitInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -3990,18 +4079,19 @@ pub mod get_change_input {
     impl Builder {
         /// <p>The ID of the change batch request. The value that you specify here is the value that <code>ChangeResourceRecordSets</code>
         /// returned in the <code>Id</code> element when you submitted the request.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetChangeInput`](crate::input::GetChangeInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetChangeInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetChangeInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetChangeInput {
                 id: self.id.unwrap_or_default(),
             })
@@ -4018,7 +4108,7 @@ impl GetChangeInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetChange,
             aws_http::AwsErrorRetryPolicy,
@@ -4078,7 +4168,7 @@ impl GetChangeInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -4086,7 +4176,7 @@ impl GetChangeInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -4116,8 +4206,10 @@ pub mod get_checker_ip_ranges_input {
         /// Consumes the builder and constructs a [`GetCheckerIpRangesInput`](crate::input::GetCheckerIpRangesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetCheckerIpRangesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetCheckerIpRangesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetCheckerIpRangesInput {})
         }
     }
@@ -4132,7 +4224,7 @@ impl GetCheckerIpRangesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetCheckerIpRanges,
             aws_http::AwsErrorRetryPolicy,
@@ -4189,7 +4281,7 @@ impl GetCheckerIpRangesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -4197,7 +4289,7 @@ impl GetCheckerIpRangesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -4227,18 +4319,22 @@ pub mod get_dnssec_input {
     }
     impl Builder {
         /// <p>A unique string used to identify a hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.hosted_zone_id = Some(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetDNSSECInput`](crate::input::GetDNSSECInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetDNSSECInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetDNSSECInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetDNSSECInput {
                 hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
             })
@@ -4255,7 +4351,7 @@ impl GetDNSSECInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetDNSSEC,
             aws_http::AwsErrorRetryPolicy,
@@ -4315,7 +4411,7 @@ impl GetDNSSECInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -4323,7 +4419,7 @@ impl GetDNSSECInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -4385,40 +4481,46 @@ pub mod get_geo_location_input {
         /// <b>SA</b>: South America</p>
         /// </li>
         /// </ul>
-        pub fn continent_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.continent_code = Some(inp.into());
+        pub fn continent_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.continent_code = Some(input.into());
             self
         }
-        pub fn set_continent_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.continent_code = inp;
+        pub fn set_continent_code(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.continent_code = input;
             self
         }
         /// <p>Amazon Route 53 uses the two-letter country codes that are specified in
         /// <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
-        pub fn country_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.country_code = Some(inp.into());
+        pub fn country_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.country_code = Some(input.into());
             self
         }
-        pub fn set_country_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.country_code = inp;
+        pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.country_code = input;
             self
         }
         /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a>  on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-        pub fn subdivision_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.subdivision_code = Some(inp.into());
+        pub fn subdivision_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subdivision_code = Some(input.into());
             self
         }
         pub fn set_subdivision_code(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.subdivision_code = inp;
+            self.subdivision_code = input;
             self
         }
         /// Consumes the builder and constructs a [`GetGeoLocationInput`](crate::input::GetGeoLocationInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetGeoLocationInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::GetGeoLocationInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetGeoLocationInput {
                 continent_code: self.continent_code,
                 country_code: self.country_code,
@@ -4437,7 +4539,7 @@ impl GetGeoLocationInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetGeoLocation,
             aws_http::AwsErrorRetryPolicy,
@@ -4506,7 +4608,7 @@ impl GetGeoLocationInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -4515,7 +4617,7 @@ impl GetGeoLocationInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -4546,18 +4648,24 @@ pub mod get_health_check_input {
     impl Builder {
         /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set,
         /// you use this value to specify which health check to use. The value can be up to 64 characters long.</p>
-        pub fn health_check_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.health_check_id = Some(inp.into());
+        pub fn health_check_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.health_check_id = Some(input.into());
             self
         }
-        pub fn set_health_check_id(mut self, inp: std::string::String) -> Self {
-            self.health_check_id = Some(inp);
+        pub fn set_health_check_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.health_check_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetHealthCheckInput`](crate::input::GetHealthCheckInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetHealthCheckInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::GetHealthCheckInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetHealthCheckInput {
                 health_check_id: self.health_check_id.unwrap_or_default(),
             })
@@ -4574,7 +4682,7 @@ impl GetHealthCheckInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetHealthCheck,
             aws_http::AwsErrorRetryPolicy,
@@ -4636,7 +4744,7 @@ impl GetHealthCheckInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -4644,7 +4752,7 @@ impl GetHealthCheckInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -4674,8 +4782,10 @@ pub mod get_health_check_count_input {
         /// Consumes the builder and constructs a [`GetHealthCheckCountInput`](crate::input::GetHealthCheckCountInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetHealthCheckCountInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetHealthCheckCountInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetHealthCheckCountInput {})
         }
     }
@@ -4690,7 +4800,7 @@ impl GetHealthCheckCountInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetHealthCheckCount,
             aws_http::AwsErrorRetryPolicy,
@@ -4747,7 +4857,7 @@ impl GetHealthCheckCountInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -4755,7 +4865,7 @@ impl GetHealthCheckCountInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -4790,18 +4900,21 @@ pub mod get_health_check_last_failure_reason_input {
         /// <p>If you want to get the last failure reason for a calculated health check, you must use the Amazon Route 53 console or the
         /// CloudWatch console. You can't use <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>
         /// </note>
-        pub fn health_check_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.health_check_id = Some(inp.into());
+        pub fn health_check_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.health_check_id = Some(input.into());
             self
         }
-        pub fn set_health_check_id(mut self, inp: std::string::String) -> Self {
-            self.health_check_id = Some(inp);
+        pub fn set_health_check_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.health_check_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetHealthCheckLastFailureReasonInput`](crate::input::GetHealthCheckLastFailureReasonInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetHealthCheckLastFailureReasonInput,
             smithy_http::operation::BuildError,
         > {
@@ -4822,7 +4935,7 @@ impl GetHealthCheckLastFailureReasonInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetHealthCheckLastFailureReason,
             aws_http::AwsErrorRetryPolicy,
@@ -4884,7 +4997,7 @@ impl GetHealthCheckLastFailureReasonInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -4892,7 +5005,7 @@ impl GetHealthCheckLastFailureReasonInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -4927,19 +5040,24 @@ pub mod get_health_check_status_input {
         /// <p>If you want to check the status of a calculated health check, you must use the Amazon Route 53 console or the CloudWatch console.
         /// You can't use <code>GetHealthCheckStatus</code> to get the status of a calculated health check.</p>
         /// </note>
-        pub fn health_check_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.health_check_id = Some(inp.into());
+        pub fn health_check_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.health_check_id = Some(input.into());
             self
         }
-        pub fn set_health_check_id(mut self, inp: std::string::String) -> Self {
-            self.health_check_id = Some(inp);
+        pub fn set_health_check_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.health_check_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetHealthCheckStatusInput`](crate::input::GetHealthCheckStatusInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetHealthCheckStatusInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetHealthCheckStatusInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetHealthCheckStatusInput {
                 health_check_id: self.health_check_id.unwrap_or_default(),
             })
@@ -4956,7 +5074,7 @@ impl GetHealthCheckStatusInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetHealthCheckStatus,
             aws_http::AwsErrorRetryPolicy,
@@ -5018,7 +5136,7 @@ impl GetHealthCheckStatusInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -5026,7 +5144,7 @@ impl GetHealthCheckStatusInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -5056,18 +5174,19 @@ pub mod get_hosted_zone_input {
     }
     impl Builder {
         /// <p>The ID of the hosted zone that you want to get information about.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetHostedZoneInput`](crate::input::GetHostedZoneInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetHostedZoneInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetHostedZoneInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetHostedZoneInput {
                 id: self.id.unwrap_or_default(),
             })
@@ -5084,7 +5203,7 @@ impl GetHostedZoneInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetHostedZone,
             aws_http::AwsErrorRetryPolicy,
@@ -5146,7 +5265,7 @@ impl GetHostedZoneInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -5154,7 +5273,7 @@ impl GetHostedZoneInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -5184,8 +5303,10 @@ pub mod get_hosted_zone_count_input {
         /// Consumes the builder and constructs a [`GetHostedZoneCountInput`](crate::input::GetHostedZoneCountInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetHostedZoneCountInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetHostedZoneCountInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetHostedZoneCountInput {})
         }
     }
@@ -5200,7 +5321,7 @@ impl GetHostedZoneCountInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetHostedZoneCount,
             aws_http::AwsErrorRetryPolicy,
@@ -5257,7 +5378,7 @@ impl GetHostedZoneCountInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -5265,7 +5386,7 @@ impl GetHostedZoneCountInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -5308,28 +5429,36 @@ pub mod get_hosted_zone_limit_input {
         /// associate with the specified private hosted zone.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, inp: crate::model::HostedZoneLimitType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::HostedZoneLimitType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: crate::model::HostedZoneLimitType) -> Self {
-            self.r#type = Some(inp);
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::HostedZoneLimitType>,
+        ) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The ID of the hosted zone that you want to get a limit for.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.hosted_zone_id = Some(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetHostedZoneLimitInput`](crate::input::GetHostedZoneLimitInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetHostedZoneLimitInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetHostedZoneLimitInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(
                 crate::input::GetHostedZoneLimitInput {
                     r#type: self.r#type
@@ -5355,7 +5484,7 @@ impl GetHostedZoneLimitInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetHostedZoneLimit,
             aws_http::AwsErrorRetryPolicy,
@@ -5418,7 +5547,7 @@ impl GetHostedZoneLimitInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -5426,7 +5555,7 @@ impl GetHostedZoneLimitInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -5456,19 +5585,21 @@ pub mod get_query_logging_config_input {
     }
     impl Builder {
         /// <p>The ID of the configuration for DNS query logging that you want to get information about.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetQueryLoggingConfigInput`](crate::input::GetQueryLoggingConfigInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetQueryLoggingConfigInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetQueryLoggingConfigInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetQueryLoggingConfigInput {
                 id: self.id.unwrap_or_default(),
             })
@@ -5485,7 +5616,7 @@ impl GetQueryLoggingConfigInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetQueryLoggingConfig,
             aws_http::AwsErrorRetryPolicy,
@@ -5547,7 +5678,7 @@ impl GetQueryLoggingConfigInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -5555,7 +5686,7 @@ impl GetQueryLoggingConfigInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -5585,19 +5716,21 @@ pub mod get_reusable_delegation_set_input {
     }
     impl Builder {
         /// <p>The ID of the reusable delegation set that you want to get a list of name servers for.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetReusableDelegationSetInput`](crate::input::GetReusableDelegationSetInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetReusableDelegationSetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetReusableDelegationSetInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetReusableDelegationSetInput {
                 id: self.id.unwrap_or_default(),
             })
@@ -5615,7 +5748,7 @@ impl GetReusableDelegationSetInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetReusableDelegationSet,
             aws_http::AwsErrorRetryPolicy,
@@ -5677,7 +5810,7 @@ impl GetReusableDelegationSetInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -5685,7 +5818,7 @@ impl GetReusableDelegationSetInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -5717,27 +5850,33 @@ pub mod get_reusable_delegation_set_limit_input {
     impl Builder {
         /// <p>Specify <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> to get the maximum number of hosted zones that you can associate
         /// with the specified reusable delegation set.</p>
-        pub fn r#type(mut self, inp: crate::model::ReusableDelegationSetLimitType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::ReusableDelegationSetLimitType) -> Self {
+            self.r#type = Some(input);
             self
         }
-        pub fn set_type(mut self, inp: crate::model::ReusableDelegationSetLimitType) -> Self {
-            self.r#type = Some(inp);
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ReusableDelegationSetLimitType>,
+        ) -> Self {
+            self.r#type = input;
             self
         }
         /// <p>The ID of the delegation set that you want to get the limit for.</p>
-        pub fn delegation_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.delegation_set_id = Some(inp.into());
+        pub fn delegation_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delegation_set_id = Some(input.into());
             self
         }
-        pub fn set_delegation_set_id(mut self, inp: std::string::String) -> Self {
-            self.delegation_set_id = Some(inp);
+        pub fn set_delegation_set_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.delegation_set_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetReusableDelegationSetLimitInput`](crate::input::GetReusableDelegationSetLimitInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetReusableDelegationSetLimitInput,
             smithy_http::operation::BuildError,
         > {
@@ -5767,7 +5906,7 @@ impl GetReusableDelegationSetLimitInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetReusableDelegationSetLimit,
             aws_http::AwsErrorRetryPolicy,
@@ -5830,7 +5969,7 @@ impl GetReusableDelegationSetLimitInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -5838,7 +5977,7 @@ impl GetReusableDelegationSetLimitInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -5869,28 +6008,30 @@ pub mod get_traffic_policy_input {
     }
     impl Builder {
         /// <p>The ID of the traffic policy that you want to get information about.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The version number of the traffic policy that you want to get information about.</p>
-        pub fn version(mut self, inp: i32) -> Self {
-            self.version = Some(inp);
+        pub fn version(mut self, input: i32) -> Self {
+            self.version = Some(input);
             self
         }
-        pub fn set_version(mut self, inp: i32) -> Self {
-            self.version = Some(inp);
+        pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.version = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTrafficPolicyInput`](crate::input::GetTrafficPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetTrafficPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetTrafficPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetTrafficPolicyInput {
                 id: self.id.unwrap_or_default(),
                 version: self.version.unwrap_or_default(),
@@ -5908,7 +6049,7 @@ impl GetTrafficPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetTrafficPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -5971,7 +6112,7 @@ impl GetTrafficPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -5979,7 +6120,7 @@ impl GetTrafficPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -6009,19 +6150,21 @@ pub mod get_traffic_policy_instance_input {
     }
     impl Builder {
         /// <p>The ID of the traffic policy instance that you want to get information about.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetTrafficPolicyInstanceInput`](crate::input::GetTrafficPolicyInstanceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetTrafficPolicyInstanceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetTrafficPolicyInstanceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetTrafficPolicyInstanceInput {
                 id: self.id.unwrap_or_default(),
             })
@@ -6039,7 +6182,7 @@ impl GetTrafficPolicyInstanceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetTrafficPolicyInstance,
             aws_http::AwsErrorRetryPolicy,
@@ -6101,7 +6244,7 @@ impl GetTrafficPolicyInstanceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -6109,7 +6252,7 @@ impl GetTrafficPolicyInstanceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -6139,7 +6282,7 @@ pub mod get_traffic_policy_instance_count_input {
         /// Consumes the builder and constructs a [`GetTrafficPolicyInstanceCountInput`](crate::input::GetTrafficPolicyInstanceCountInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetTrafficPolicyInstanceCountInput,
             smithy_http::operation::BuildError,
         > {
@@ -6158,7 +6301,7 @@ impl GetTrafficPolicyInstanceCountInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetTrafficPolicyInstanceCount,
             aws_http::AwsErrorRetryPolicy,
@@ -6215,7 +6358,7 @@ impl GetTrafficPolicyInstanceCountInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -6223,7 +6366,7 @@ impl GetTrafficPolicyInstanceCountInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -6260,29 +6403,29 @@ pub mod list_geo_locations_input {
         /// response has a value, enter that value in <code>startcontinentcode</code> to return the next page of results.</p>
         /// <p>Include <code>startcontinentcode</code> only if you want to list continents. Don't include <code>startcontinentcode</code>
         /// when you're listing countries or countries with their subdivisions.</p>
-        pub fn start_continent_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.start_continent_code = Some(inp.into());
+        pub fn start_continent_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_continent_code = Some(input.into());
             self
         }
         pub fn set_start_continent_code(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.start_continent_code = inp;
+            self.start_continent_code = input;
             self
         }
         /// <p>The code for the country with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already
         /// returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextCountryCode</code> from the
         /// previous response has a value, enter that value in <code>startcountrycode</code> to return the next page of results.</p>
-        pub fn start_country_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.start_country_code = Some(inp.into());
+        pub fn start_country_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_country_code = Some(input.into());
             self
         }
         pub fn set_start_country_code(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.start_country_code = inp;
+            self.start_country_code = input;
             self
         }
         /// <p>The code for the state of the United States with which you want to start listing locations that Amazon Route 53 supports
@@ -6290,32 +6433,34 @@ pub mod list_geo_locations_input {
         /// <code>NextSubdivisionCode</code> from the previous response has a value, enter that value in <code>startsubdivisioncode</code>
         /// to return the next page of results.</p>
         /// <p>To list subdivisions (U.S. states), you must include both <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
-        pub fn start_subdivision_code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.start_subdivision_code = Some(inp.into());
+        pub fn start_subdivision_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_subdivision_code = Some(input.into());
             self
         }
         pub fn set_start_subdivision_code(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.start_subdivision_code = inp;
+            self.start_subdivision_code = input;
             self
         }
         /// <p>(Optional) The maximum number of geolocations to be included in the response body for this request. If more than <code>maxitems</code>
         /// geolocations remain to be listed, then the value of the <code>IsTruncated</code> element in the response is <code>true</code>.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListGeoLocationsInput`](crate::input::ListGeoLocationsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListGeoLocationsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListGeoLocationsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListGeoLocationsInput {
                 start_continent_code: self.start_continent_code,
                 start_country_code: self.start_country_code,
@@ -6335,7 +6480,7 @@ impl ListGeoLocationsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListGeoLocations,
             aws_http::AwsErrorRetryPolicy,
@@ -6416,7 +6561,7 @@ impl ListGeoLocationsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6425,7 +6570,7 @@ impl ListGeoLocationsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -6460,29 +6605,31 @@ pub mod list_health_checks_input {
         /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
         /// which is the ID of the first health check that Amazon Route 53 will return if you submit another request.</p>
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more health checks to get.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>The maximum number of health checks that you want <code>ListHealthChecks</code> to return in response to the current request.
         /// Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value greater than 100, Route 53 returns only the first 100 health checks. </p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListHealthChecksInput`](crate::input::ListHealthChecksInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListHealthChecksInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListHealthChecksInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListHealthChecksInput {
                 marker: self.marker,
                 max_items: self.max_items,
@@ -6500,7 +6647,7 @@ impl ListHealthChecksInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListHealthChecks,
             aws_http::AwsErrorRetryPolicy,
@@ -6566,7 +6713,7 @@ impl ListHealthChecksInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6575,7 +6722,7 @@ impl ListHealthChecksInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -6611,43 +6758,45 @@ pub mod list_hosted_zones_input {
         /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
         /// which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p>
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more hosted zones to get.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than <code>maxitems</code>
         /// hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of <code>NextMarker</code>
         /// is the hosted zone ID of the first hosted zone that Route 53 will return if you submit another request.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated
         /// with a reusable delegation set, specify the ID of that reusable delegation set. </p>
-        pub fn delegation_set_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.delegation_set_id = Some(inp.into());
+        pub fn delegation_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.delegation_set_id = Some(input.into());
             self
         }
         pub fn set_delegation_set_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.delegation_set_id = inp;
+            self.delegation_set_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ListHostedZonesInput`](crate::input::ListHostedZonesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListHostedZonesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListHostedZonesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListHostedZonesInput {
                 marker: self.marker,
                 max_items: self.max_items,
@@ -6666,7 +6815,7 @@ impl ListHostedZonesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListHostedZones,
             aws_http::AwsErrorRetryPolicy,
@@ -6738,7 +6887,7 @@ impl ListHostedZonesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6747,7 +6896,7 @@ impl ListHostedZonesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -6782,12 +6931,12 @@ pub mod list_hosted_zones_by_name_input {
         /// specify the name of the first hosted zone in the response. If you don't include the <code>dnsname</code> parameter, Amazon Route 53 returns all of
         /// the hosted zones that were created by the current AWS account, in ASCII order. For subsequent requests, include both <code>dnsname</code> and
         /// <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value of <code>NextDNSName</code> from the previous response.</p>
-        pub fn dns_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.dns_name = Some(inp.into());
+        pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dns_name = Some(input.into());
             self
         }
-        pub fn set_dns_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.dns_name = inp;
+        pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dns_name = input;
             self
         }
         /// <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the <code>hostedzoneid</code> parameter.</p>
@@ -6795,30 +6944,35 @@ pub mod list_hosted_zones_by_name_input {
         /// <code>maxitems</code> hosted zones. To get the next group of <code>maxitems</code> hosted zones, submit another request to
         /// <code>ListHostedZonesByName</code> and include both <code>dnsname</code> and <code>hostedzoneid</code> parameters. For the value of
         /// <code>hostedzoneid</code>, specify the value of the <code>NextHostedZoneId</code> element from the previous response.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>The maximum number of hosted zones to be included in the response body for this request. If you have more than <code>maxitems</code>
         /// hosted zones, then the value of the <code>IsTruncated</code> element in the response is true, and the values of <code>NextDNSName</code> and
         /// <code>NextHostedZoneId</code> specify the first hosted zone in the next group of <code>maxitems</code> hosted zones. </p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListHostedZonesByNameInput`](crate::input::ListHostedZonesByNameInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListHostedZonesByNameInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListHostedZonesByNameInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListHostedZonesByNameInput {
                 dns_name: self.dns_name,
                 hosted_zone_id: self.hosted_zone_id,
@@ -6837,7 +6991,7 @@ impl ListHostedZonesByNameInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListHostedZonesByName,
             aws_http::AwsErrorRetryPolicy,
@@ -6906,7 +7060,7 @@ impl ListHostedZonesByNameInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -6915,7 +7069,7 @@ impl ListHostedZonesByNameInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -6948,51 +7102,56 @@ pub mod list_hosted_zones_by_vpc_input {
     }
     impl Builder {
         /// <p>The ID of the Amazon VPC that you want to list hosted zones for.</p>
-        pub fn vpc_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.vpc_id = Some(inp.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
             self
         }
-        pub fn set_vpc_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = inp;
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
             self
         }
         /// <p>For the Amazon VPC that you specified for <code>VPCId</code>, the AWS Region that you created the VPC in. </p>
-        pub fn vpc_region(mut self, inp: crate::model::VpcRegion) -> Self {
-            self.vpc_region = Some(inp);
+        pub fn vpc_region(mut self, input: crate::model::VpcRegion) -> Self {
+            self.vpc_region = Some(input);
             self
         }
-        pub fn set_vpc_region(mut self, inp: std::option::Option<crate::model::VpcRegion>) -> Self {
-            self.vpc_region = inp;
+        pub fn set_vpc_region(
+            mut self,
+            input: std::option::Option<crate::model::VpcRegion>,
+        ) -> Self {
+            self.vpc_region = input;
             self
         }
         /// <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified VPC is associated with
         /// more than <code>MaxItems</code> hosted zones, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains
         /// an encrypted token that identifies the first hosted zone that Route 53 will return if you submit another request.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// <p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones.
         /// To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request. </p>
         /// <p>For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response.</p>
         /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more hosted zones to get.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListHostedZonesByVPCInput`](crate::input::ListHostedZonesByVPCInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListHostedZonesByVPCInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListHostedZonesByVPCInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListHostedZonesByVPCInput {
                 vpc_id: self.vpc_id,
                 vpc_region: self.vpc_region,
@@ -7012,7 +7171,7 @@ impl ListHostedZonesByVPCInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListHostedZonesByVPC,
             aws_http::AwsErrorRetryPolicy,
@@ -7084,7 +7243,7 @@ impl ListHostedZonesByVPCInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7093,7 +7252,7 @@ impl ListHostedZonesByVPCInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -7128,12 +7287,15 @@ pub mod list_query_logging_configs_input {
         /// <code>HostedZoneId</code>. </p>
         /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations
         /// that are associated with the current AWS account.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>(Optional) If the current AWS account has more than <code>MaxResults</code> query logging configurations, use <code>NextToken</code>
@@ -7141,12 +7303,12 @@ pub mod list_query_logging_configs_input {
         /// <p>For the first <code>ListQueryLoggingConfigs</code> request, omit this value.</p>
         /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value
         /// for <code>NextToken</code> in the request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>(Optional) The maximum number of query logging configurations that you want Amazon Route 53 to return in response to the current request.
@@ -7154,19 +7316,21 @@ pub mod list_query_logging_configs_input {
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
         /// in the response to get the next page of results.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Consumes the builder and constructs a [`ListQueryLoggingConfigsInput`](crate::input::ListQueryLoggingConfigsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListQueryLoggingConfigsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListQueryLoggingConfigsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListQueryLoggingConfigsInput {
                 hosted_zone_id: self.hosted_zone_id,
                 next_token: self.next_token,
@@ -7186,7 +7350,7 @@ impl ListQueryLoggingConfigsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListQueryLoggingConfigs,
             aws_http::AwsErrorRetryPolicy,
@@ -7255,7 +7419,7 @@ impl ListQueryLoggingConfigsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7264,7 +7428,7 @@ impl ListQueryLoggingConfigsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -7298,26 +7462,29 @@ pub mod list_resource_record_sets_input {
     }
     impl Builder {
         /// <p>The ID of the hosted zone that contains the resource record sets that you want to list.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.hosted_zone_id = Some(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>The first name in the lexicographic ordering of resource record sets that you want to list.
         /// If the specified record name doesn't exist, the results begin with the first resource record set that has a name
         /// greater than the value of <code>name</code>.</p>
-        pub fn start_record_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.start_record_name = Some(inp.into());
+        pub fn start_record_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_record_name = Some(input.into());
             self
         }
         pub fn set_start_record_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.start_record_name = inp;
+            self.start_record_name = input;
             self
         }
         /// <p>The type of resource record set to begin the record listing from.</p>
@@ -7360,49 +7527,51 @@ pub mod list_resource_record_sets_input {
         /// </li>
         /// </ul>
         /// <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
-        pub fn start_record_type(mut self, inp: crate::model::RrType) -> Self {
-            self.start_record_type = Some(inp);
+        pub fn start_record_type(mut self, input: crate::model::RrType) -> Self {
+            self.start_record_type = Some(input);
             self
         }
         pub fn set_start_record_type(
             mut self,
-            inp: std::option::Option<crate::model::RrType>,
+            input: std::option::Option<crate::model::RrType>,
         ) -> Self {
-            self.start_record_type = inp;
+            self.start_record_type = input;
             self
         }
         /// <p>
         /// <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type,
         /// specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current
         /// DNS name and type.</p>
-        pub fn start_record_identifier(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.start_record_identifier = Some(inp.into());
+        pub fn start_record_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.start_record_identifier = Some(input.into());
             self
         }
         pub fn set_start_record_identifier(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.start_record_identifier = inp;
+            self.start_record_identifier = input;
             self
         }
         /// <p>(Optional) The maximum number of resource records sets to include in the response body for this request. If the response includes
         /// more than <code>maxitems</code> resource record sets, the value of the <code>IsTruncated</code> element in the response is <code>true</code>,
         /// and the values of the <code>NextRecordName</code> and <code>NextRecordType</code> elements in the response identify the first
         /// resource record set in the next group of <code>maxitems</code> resource record sets.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListResourceRecordSetsInput`](crate::input::ListResourceRecordSetsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListResourceRecordSetsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListResourceRecordSetsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListResourceRecordSetsInput {
                 hosted_zone_id: self.hosted_zone_id.unwrap_or_default(),
                 start_record_name: self.start_record_name,
@@ -7423,7 +7592,7 @@ impl ListResourceRecordSetsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListResourceRecordSets,
             aws_http::AwsErrorRetryPolicy,
@@ -7500,7 +7669,7 @@ impl ListResourceRecordSetsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7509,7 +7678,7 @@ impl ListResourceRecordSetsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -7544,29 +7713,31 @@ pub mod list_reusable_delegation_sets_input {
         /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response,
         /// which is the ID of the first reusable delegation set that Amazon Route 53 will return if you submit another request.</p>
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more reusable delegation sets to get.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>The number of reusable delegation sets that you want Amazon Route 53 to return in the response to this request. If you specify a value
         /// greater than 100, Route 53 returns only the first 100 reusable delegation sets.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListReusableDelegationSetsInput`](crate::input::ListReusableDelegationSetsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListReusableDelegationSetsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListReusableDelegationSetsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListReusableDelegationSetsInput {
                 marker: self.marker,
                 max_items: self.max_items,
@@ -7585,7 +7756,7 @@ impl ListReusableDelegationSetsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListReusableDelegationSets,
             aws_http::AwsErrorRetryPolicy,
@@ -7651,7 +7822,7 @@ impl ListReusableDelegationSetsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -7660,7 +7831,7 @@ impl ListReusableDelegationSetsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -7699,28 +7870,33 @@ pub mod list_tags_for_resource_input {
         /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_type(mut self, inp: crate::model::TagResourceType) -> Self {
-            self.resource_type = Some(inp);
+        pub fn resource_type(mut self, input: crate::model::TagResourceType) -> Self {
+            self.resource_type = Some(input);
             self
         }
-        pub fn set_resource_type(mut self, inp: crate::model::TagResourceType) -> Self {
-            self.resource_type = Some(inp);
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::TagResourceType>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
         /// <p>The ID of the resource for which you want to retrieve tags.</p>
-        pub fn resource_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_id = Some(inp.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_id = Some(input.into());
             self
         }
-        pub fn set_resource_id(mut self, inp: std::string::String) -> Self {
-            self.resource_id = Some(inp);
+        pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTagsForResourceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(
                 crate::input::ListTagsForResourceInput {
                     resource_type: self.resource_type
@@ -7746,7 +7922,7 @@ impl ListTagsForResourceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
@@ -7809,7 +7985,7 @@ impl ListTagsForResourceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -7817,7 +7993,7 @@ impl ListTagsForResourceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -7856,32 +8032,37 @@ pub mod list_tags_for_resources_input {
         /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_type(mut self, inp: crate::model::TagResourceType) -> Self {
-            self.resource_type = Some(inp);
+        pub fn resource_type(mut self, input: crate::model::TagResourceType) -> Self {
+            self.resource_type = Some(input);
             self
         }
-        pub fn set_resource_type(mut self, inp: crate::model::TagResourceType) -> Self {
-            self.resource_type = Some(inp);
+        pub fn set_resource_type(
+            mut self,
+            input: std::option::Option<crate::model::TagResourceType>,
+        ) -> Self {
+            self.resource_type = input;
             self
         }
-        pub fn resource_ids(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_ids.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resource_ids = Some(v);
             self
         }
         pub fn set_resource_ids(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.resource_ids = inp;
+            self.resource_ids = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourcesInput`](crate::input::ListTagsForResourcesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTagsForResourcesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTagsForResourcesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(
                 crate::input::ListTagsForResourcesInput {
                     resource_type: self.resource_type
@@ -7906,7 +8087,7 @@ impl ListTagsForResourcesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTagsForResources,
             aws_http::AwsErrorRetryPolicy,
@@ -7971,7 +8152,7 @@ impl ListTagsForResourcesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7979,7 +8160,7 @@ impl ListTagsForResourcesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -8014,34 +8195,36 @@ pub mod list_traffic_policies_input {
         /// <code>MaxItems</code> traffic policies. To get the next group of policies, submit another request to <code>ListTrafficPolicies</code>.
         /// For the value of <code>TrafficPolicyIdMarker</code>, specify the value of <code>TrafficPolicyIdMarker</code> that was returned in the
         /// previous response.</p>
-        pub fn traffic_policy_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.traffic_policy_id_marker = Some(inp.into());
+        pub fn traffic_policy_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.traffic_policy_id_marker = Some(input.into());
             self
         }
         pub fn set_traffic_policy_id_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_policy_id_marker = inp;
+            self.traffic_policy_id_marker = input;
             self
         }
         /// <p>(Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to this request. If you have more than
         /// <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the
         /// value of <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Route 53 will return if you submit
         /// another request.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTrafficPoliciesInput`](crate::input::ListTrafficPoliciesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTrafficPoliciesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTrafficPoliciesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTrafficPoliciesInput {
                 traffic_policy_id_marker: self.traffic_policy_id_marker,
                 max_items: self.max_items,
@@ -8059,7 +8242,7 @@ impl ListTrafficPoliciesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTrafficPolicies,
             aws_http::AwsErrorRetryPolicy,
@@ -8128,7 +8311,7 @@ impl ListTrafficPoliciesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -8137,7 +8320,7 @@ impl ListTrafficPoliciesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -8174,15 +8357,15 @@ pub mod list_traffic_policy_instances_input {
         /// specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance
         /// in the next group of traffic policy instances.</p>
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-        pub fn hosted_zone_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id_marker = Some(inp.into());
+        pub fn hosted_zone_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id_marker = Some(input.into());
             self
         }
         pub fn set_hosted_zone_id_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.hosted_zone_id_marker = inp;
+            self.hosted_zone_id_marker = input;
             self
         }
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances.
@@ -8192,16 +8375,16 @@ pub mod list_traffic_policy_instances_input {
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
         pub fn traffic_policy_instance_name_marker(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.traffic_policy_instance_name_marker = Some(inp.into());
+            self.traffic_policy_instance_name_marker = Some(input.into());
             self
         }
         pub fn set_traffic_policy_instance_name_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_policy_instance_name_marker = inp;
+            self.traffic_policy_instance_name_marker = input;
             self
         }
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances.
@@ -8209,15 +8392,15 @@ pub mod list_traffic_policy_instances_input {
         /// specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the type of the first traffic policy instance
         /// in the next group of traffic policy instances.</p>
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-        pub fn traffic_policy_instance_type_marker(mut self, inp: crate::model::RrType) -> Self {
-            self.traffic_policy_instance_type_marker = Some(inp);
+        pub fn traffic_policy_instance_type_marker(mut self, input: crate::model::RrType) -> Self {
+            self.traffic_policy_instance_type_marker = Some(input);
             self
         }
         pub fn set_traffic_policy_instance_type_marker(
             mut self,
-            inp: std::option::Option<crate::model::RrType>,
+            input: std::option::Option<crate::model::RrType>,
         ) -> Self {
-            self.traffic_policy_instance_type_marker = inp;
+            self.traffic_policy_instance_type_marker = input;
             self
         }
         /// <p>The maximum number of traffic policy instances that you want Amazon Route 53 to return in response to a <code>ListTrafficPolicyInstances</code> request.
@@ -8225,19 +8408,21 @@ pub mod list_traffic_policy_instances_input {
         /// <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and
         /// <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance in the next group of <code>MaxItems</code>
         /// traffic policy instances.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTrafficPolicyInstancesInput`](crate::input::ListTrafficPolicyInstancesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTrafficPolicyInstancesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTrafficPolicyInstancesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTrafficPolicyInstancesInput {
                 hosted_zone_id_marker: self.hosted_zone_id_marker,
                 traffic_policy_instance_name_marker: self.traffic_policy_instance_name_marker,
@@ -8258,7 +8443,7 @@ impl ListTrafficPolicyInstancesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTrafficPolicyInstances,
             aws_http::AwsErrorRetryPolicy,
@@ -8336,7 +8521,7 @@ impl ListTrafficPolicyInstancesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -8345,7 +8530,7 @@ impl ListTrafficPolicyInstancesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -8378,12 +8563,15 @@ pub mod list_traffic_policy_instances_by_hosted_zone_input {
     }
     impl Builder {
         /// <p>The ID of the hosted zone that you want to list traffic policy instances for.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances.
@@ -8393,16 +8581,16 @@ pub mod list_traffic_policy_instances_by_hosted_zone_input {
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
         pub fn traffic_policy_instance_name_marker(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.traffic_policy_instance_name_marker = Some(inp.into());
+            self.traffic_policy_instance_name_marker = Some(input.into());
             self
         }
         pub fn set_traffic_policy_instance_name_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_policy_instance_name_marker = inp;
+            self.traffic_policy_instance_name_marker = input;
             self
         }
         /// <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances.
@@ -8410,33 +8598,33 @@ pub mod list_traffic_policy_instances_by_hosted_zone_input {
         /// specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the type of the first traffic policy instance
         /// in the next group of traffic policy instances.</p>
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-        pub fn traffic_policy_instance_type_marker(mut self, inp: crate::model::RrType) -> Self {
-            self.traffic_policy_instance_type_marker = Some(inp);
+        pub fn traffic_policy_instance_type_marker(mut self, input: crate::model::RrType) -> Self {
+            self.traffic_policy_instance_type_marker = Some(input);
             self
         }
         pub fn set_traffic_policy_instance_type_marker(
             mut self,
-            inp: std::option::Option<crate::model::RrType>,
+            input: std::option::Option<crate::model::RrType>,
         ) -> Self {
-            self.traffic_policy_instance_type_marker = inp;
+            self.traffic_policy_instance_type_marker = input;
             self
         }
         /// <p>The maximum number of traffic policy instances to be included in the response body for this request. If you have more than
         /// <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>,
         /// and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code>
         /// represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTrafficPolicyInstancesByHostedZoneInput`](crate::input::ListTrafficPolicyInstancesByHostedZoneInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListTrafficPolicyInstancesByHostedZoneInput,
             smithy_http::operation::BuildError,
         > {
@@ -8461,7 +8649,7 @@ impl ListTrafficPolicyInstancesByHostedZoneInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTrafficPolicyInstancesByHostedZone,
             aws_http::AwsErrorRetryPolicy,
@@ -8540,7 +8728,7 @@ impl ListTrafficPolicyInstancesByHostedZoneInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -8549,7 +8737,7 @@ impl ListTrafficPolicyInstancesByHostedZoneInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -8584,25 +8772,25 @@ pub mod list_traffic_policy_instances_by_policy_input {
     }
     impl Builder {
         /// <p>The ID of the traffic policy for which you want to list traffic policy instances.</p>
-        pub fn traffic_policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.traffic_policy_id = Some(inp.into());
+        pub fn traffic_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.traffic_policy_id = Some(input.into());
             self
         }
         pub fn set_traffic_policy_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_policy_id = inp;
+            self.traffic_policy_id = input;
             self
         }
         /// <p>The version of the traffic policy for which you want to list traffic policy instances. The version must be associated with the
         /// traffic policy that is specified by <code>TrafficPolicyId</code>.</p>
-        pub fn traffic_policy_version(mut self, inp: i32) -> Self {
-            self.traffic_policy_version = Some(inp);
+        pub fn traffic_policy_version(mut self, input: i32) -> Self {
+            self.traffic_policy_version = Some(input);
             self
         }
-        pub fn set_traffic_policy_version(mut self, inp: std::option::Option<i32>) -> Self {
-            self.traffic_policy_version = inp;
+        pub fn set_traffic_policy_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.traffic_policy_version = input;
             self
         }
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances.
@@ -8610,15 +8798,15 @@ pub mod list_traffic_policy_instances_by_policy_input {
         /// <p>For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response,
         /// which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-        pub fn hosted_zone_id_marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id_marker = Some(inp.into());
+        pub fn hosted_zone_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id_marker = Some(input.into());
             self
         }
         pub fn set_hosted_zone_id_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.hosted_zone_id_marker = inp;
+            self.hosted_zone_id_marker = input;
             self
         }
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances.
@@ -8628,16 +8816,16 @@ pub mod list_traffic_policy_instances_by_policy_input {
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
         pub fn traffic_policy_instance_name_marker(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.traffic_policy_instance_name_marker = Some(inp.into());
+            self.traffic_policy_instance_name_marker = Some(input.into());
             self
         }
         pub fn set_traffic_policy_instance_name_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_policy_instance_name_marker = inp;
+            self.traffic_policy_instance_name_marker = input;
             self
         }
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances.
@@ -8645,33 +8833,33 @@ pub mod list_traffic_policy_instances_by_policy_input {
         /// <p>For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code>
         /// from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
         /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-        pub fn traffic_policy_instance_type_marker(mut self, inp: crate::model::RrType) -> Self {
-            self.traffic_policy_instance_type_marker = Some(inp);
+        pub fn traffic_policy_instance_type_marker(mut self, input: crate::model::RrType) -> Self {
+            self.traffic_policy_instance_type_marker = Some(input);
             self
         }
         pub fn set_traffic_policy_instance_type_marker(
             mut self,
-            inp: std::option::Option<crate::model::RrType>,
+            input: std::option::Option<crate::model::RrType>,
         ) -> Self {
-            self.traffic_policy_instance_type_marker = inp;
+            self.traffic_policy_instance_type_marker = input;
             self
         }
         /// <p>The maximum number of traffic policy instances to be included in the response body for this request. If you have more than
         /// <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>,
         /// and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code>
         /// represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTrafficPolicyInstancesByPolicyInput`](crate::input::ListTrafficPolicyInstancesByPolicyInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListTrafficPolicyInstancesByPolicyInput,
             smithy_http::operation::BuildError,
         > {
@@ -8697,7 +8885,7 @@ impl ListTrafficPolicyInstancesByPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTrafficPolicyInstancesByPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -8782,7 +8970,7 @@ impl ListTrafficPolicyInstancesByPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -8791,7 +8979,7 @@ impl ListTrafficPolicyInstancesByPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -8823,12 +9011,12 @@ pub mod list_traffic_policy_versions_input {
     }
     impl Builder {
         /// <p>Specify the value of <code>Id</code> of the traffic policy for which you want to list all versions.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>For your first request to <code>ListTrafficPolicyVersions</code>, don't include the <code>TrafficPolicyVersionMarker</code> parameter.</p>
@@ -8838,35 +9026,37 @@ pub mod list_traffic_policy_versions_input {
         /// response.</p>
         pub fn traffic_policy_version_marker(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.traffic_policy_version_marker = Some(inp.into());
+            self.traffic_policy_version_marker = Some(input.into());
             self
         }
         pub fn set_traffic_policy_version_marker(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_policy_version_marker = inp;
+            self.traffic_policy_version_marker = input;
             self
         }
         /// <p>The maximum number of traffic policy versions that you want Amazon Route 53 to include in the response body for this request. If the specified
         /// traffic policy has more than <code>MaxItems</code> versions, the value of <code>IsTruncated</code> in the response is <code>true</code>,
         /// and the value of the <code>TrafficPolicyVersionMarker</code> element is the ID of the first version that Route 53 will return if you submit
         /// another request.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListTrafficPolicyVersionsInput`](crate::input::ListTrafficPolicyVersionsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListTrafficPolicyVersionsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTrafficPolicyVersionsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTrafficPolicyVersionsInput {
                 id: self.id.unwrap_or_default(),
                 traffic_policy_version_marker: self.traffic_policy_version_marker,
@@ -8886,7 +9076,7 @@ impl ListTrafficPolicyVersionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListTrafficPolicyVersions,
             aws_http::AwsErrorRetryPolicy,
@@ -8960,7 +9150,7 @@ impl ListTrafficPolicyVersionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -8969,7 +9159,7 @@ impl ListTrafficPolicyVersionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -9001,12 +9191,15 @@ pub mod list_vpc_association_authorizations_input {
     }
     impl Builder {
         /// <p>The ID of the hosted zone for which you want a list of VPCs that can be associated with the hosted zone.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::string::String) -> Self {
-            self.hosted_zone_id = Some(inp);
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>
@@ -9014,29 +9207,29 @@ pub mod list_vpc_association_authorizations_input {
         /// that can be associated with the specified hosted zone. To get the next page of results, submit another request,
         /// and include the value of <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
         /// in another <code>ListVPCAssociationAuthorizations</code> request.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>
         /// <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return.
         /// If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// Consumes the builder and constructs a [`ListVPCAssociationAuthorizationsInput`](crate::input::ListVPCAssociationAuthorizationsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListVPCAssociationAuthorizationsInput,
             smithy_http::operation::BuildError,
         > {
@@ -9059,7 +9252,7 @@ impl ListVPCAssociationAuthorizationsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListVPCAssociationAuthorizations,
             aws_http::AwsErrorRetryPolicy,
@@ -9130,7 +9323,7 @@ impl ListVPCAssociationAuthorizationsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -9139,7 +9332,7 @@ impl ListVPCAssociationAuthorizationsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -9174,54 +9367,57 @@ pub mod test_dns_answer_input {
     }
     impl Builder {
         /// <p>The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.</p>
-        pub fn hosted_zone_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.hosted_zone_id = Some(inp.into());
+        pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hosted_zone_id = Some(input.into());
             self
         }
-        pub fn set_hosted_zone_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.hosted_zone_id = inp;
+        pub fn set_hosted_zone_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hosted_zone_id = input;
             self
         }
         /// <p>The name of the resource record set that you want Amazon Route 53 to simulate a query for.</p>
-        pub fn record_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.record_name = Some(inp.into());
+        pub fn record_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.record_name = Some(input.into());
             self
         }
-        pub fn set_record_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.record_name = inp;
+        pub fn set_record_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.record_name = input;
             self
         }
         /// <p>The type of the resource record set.</p>
-        pub fn record_type(mut self, inp: crate::model::RrType) -> Self {
-            self.record_type = Some(inp);
+        pub fn record_type(mut self, input: crate::model::RrType) -> Self {
+            self.record_type = Some(input);
             self
         }
-        pub fn set_record_type(mut self, inp: std::option::Option<crate::model::RrType>) -> Self {
-            self.record_type = inp;
+        pub fn set_record_type(mut self, input: std::option::Option<crate::model::RrType>) -> Self {
+            self.record_type = input;
             self
         }
         /// <p>If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver.
         /// If you omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US East (N. Virginia) Region
         /// (<code>us-east-1</code>).</p>
-        pub fn resolver_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resolver_ip = Some(inp.into());
+        pub fn resolver_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resolver_ip = Some(input.into());
             self
         }
-        pub fn set_resolver_ip(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resolver_ip = inp;
+        pub fn set_resolver_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resolver_ip = input;
             self
         }
         /// <p>If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a client
         /// in the applicable location, for example, <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.</p>
-        pub fn edns0_client_subnet_ip(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.edns0_client_subnet_ip = Some(inp.into());
+        pub fn edns0_client_subnet_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edns0_client_subnet_ip = Some(input.into());
             self
         }
         pub fn set_edns0_client_subnet_ip(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.edns0_client_subnet_ip = inp;
+            self.edns0_client_subnet_ip = input;
             self
         }
         /// <p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits of the IP address
@@ -9239,21 +9435,22 @@ pub mod test_dns_answer_input {
         /// <b>IPv6</b>: Specify a value between 0 and 128</p>
         /// </li>
         /// </ul>
-        pub fn edns0_client_subnet_mask(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.edns0_client_subnet_mask = Some(inp.into());
+        pub fn edns0_client_subnet_mask(mut self, input: impl Into<std::string::String>) -> Self {
+            self.edns0_client_subnet_mask = Some(input.into());
             self
         }
         pub fn set_edns0_client_subnet_mask(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.edns0_client_subnet_mask = inp;
+            self.edns0_client_subnet_mask = input;
             self
         }
         /// Consumes the builder and constructs a [`TestDNSAnswerInput`](crate::input::TestDNSAnswerInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TestDNSAnswerInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::TestDNSAnswerInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::TestDNSAnswerInput {
                 hosted_zone_id: self.hosted_zone_id,
                 record_name: self.record_name,
@@ -9275,7 +9472,7 @@ impl TestDNSAnswerInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TestDNSAnswer,
             aws_http::AwsErrorRetryPolicy,
@@ -9359,7 +9556,7 @@ impl TestDNSAnswerInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -9368,7 +9565,7 @@ impl TestDNSAnswerInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -9417,12 +9614,15 @@ pub mod update_health_check_input {
     impl Builder {
         /// <p>The ID for the health check for which you want detailed information. When you created the health check,
         /// <code>CreateHealthCheck</code> returned the ID in the response, in the <code>HealthCheckId</code> element.</p>
-        pub fn health_check_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.health_check_id = Some(inp.into());
+        pub fn health_check_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.health_check_id = Some(input.into());
             self
         }
-        pub fn set_health_check_id(mut self, inp: std::string::String) -> Self {
-            self.health_check_id = Some(inp);
+        pub fn set_health_check_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.health_check_id = input;
             self
         }
         /// <p>A sequential counter that Amazon Route 53 sets to <code>1</code> when you create a health check and increments by 1 each time you
@@ -9440,12 +9640,12 @@ pub mod update_health_check_input {
         /// got the version number. Route 53 does not update the health check, and it returns a <code>HealthCheckVersionMismatch</code> error.</p>
         /// </li>
         /// </ul>
-        pub fn health_check_version(mut self, inp: i64) -> Self {
-            self.health_check_version = Some(inp);
+        pub fn health_check_version(mut self, input: i64) -> Self {
+            self.health_check_version = Some(input);
             self
         }
-        pub fn set_health_check_version(mut self, inp: std::option::Option<i64>) -> Self {
-            self.health_check_version = inp;
+        pub fn set_health_check_version(mut self, input: std::option::Option<i64>) -> Self {
+            self.health_check_version = input;
             self
         }
         /// <p>The IPv4 or IPv6 IP address for the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for
@@ -9508,12 +9708,12 @@ pub mod update_health_check_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn ip_address(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ip_address = Some(inp.into());
+        pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_address = Some(input.into());
             self
         }
-        pub fn set_ip_address(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = inp;
+        pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_address = input;
             self
         }
         /// <p>The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p>
@@ -9521,24 +9721,27 @@ pub mod update_health_check_input {
         /// <p>Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or
         /// <code>CALCULATED</code>.</p>
         /// </note>
-        pub fn port(mut self, inp: i32) -> Self {
-            self.port = Some(inp);
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
             self
         }
-        pub fn set_port(mut self, inp: std::option::Option<i32>) -> Self {
-            self.port = inp;
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
             self
         }
         /// <p>The path that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint
         /// will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example the file /docs/route53-health-check.html.
         /// You can also include query string parameters, for example, <code>/welcome.html?language=jp&login=y</code>. </p>
         /// <p>Specify this value only if you want to change it.</p>
-        pub fn resource_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_path = Some(inp.into());
+        pub fn resource_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_path = Some(input.into());
             self
         }
-        pub fn set_resource_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_path = inp;
+        pub fn set_resource_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_path = input;
             self
         }
         /// <p>Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p>
@@ -9594,26 +9797,32 @@ pub mod update_health_check_input {
         /// <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it does
         /// when you specify a value for <code>IPAddress</code>. If the value of <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a
         /// <code>Host</code> header.</p>
-        pub fn fully_qualified_domain_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.fully_qualified_domain_name = Some(inp.into());
+        pub fn fully_qualified_domain_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.fully_qualified_domain_name = Some(input.into());
             self
         }
         pub fn set_fully_qualified_domain_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.fully_qualified_domain_name = inp;
+            self.fully_qualified_domain_name = input;
             self
         }
         /// <p>If the value of <code>Type</code> is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want
         /// Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers
         /// the resource healthy. (You can't change the value of <code>Type</code> when you update a health check.)</p>
-        pub fn search_string(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.search_string = Some(inp.into());
+        pub fn search_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.search_string = Some(input.into());
             self
         }
-        pub fn set_search_string(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.search_string = inp;
+        pub fn set_search_string(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.search_string = input;
             self
         }
         /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint
@@ -9621,22 +9830,22 @@ pub mod update_health_check_input {
         /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a>
         /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
         /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
-        pub fn failure_threshold(mut self, inp: i32) -> Self {
-            self.failure_threshold = Some(inp);
+        pub fn failure_threshold(mut self, input: i32) -> Self {
+            self.failure_threshold = Some(input);
             self
         }
-        pub fn set_failure_threshold(mut self, inp: std::option::Option<i32>) -> Self {
-            self.failure_threshold = inp;
+        pub fn set_failure_threshold(mut self, input: std::option::Option<i32>) -> Self {
+            self.failure_threshold = input;
             self
         }
         /// <p>Specify whether you want Amazon Route 53 to invert the status of a health check, for example, to consider a health check unhealthy when it
         /// otherwise would be considered healthy.</p>
-        pub fn inverted(mut self, inp: bool) -> Self {
-            self.inverted = Some(inp);
+        pub fn inverted(mut self, input: bool) -> Self {
+            self.inverted = Some(input);
             self
         }
-        pub fn set_inverted(mut self, inp: std::option::Option<bool>) -> Self {
-            self.inverted = inp;
+        pub fn set_inverted(mut self, input: std::option::Option<bool>) -> Self {
+            self.inverted = input;
             self
         }
         /// <p>Stops Route 53 from performing health checks. When you disable a health check, here's what happens:</p>
@@ -9663,12 +9872,12 @@ pub mod update_health_check_input {
         /// </p>
         /// <p>Charges for a health check still apply when the health check is disabled. For more information, see
         /// <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
-        pub fn disabled(mut self, inp: bool) -> Self {
-            self.disabled = Some(inp);
+        pub fn disabled(mut self, input: bool) -> Self {
+            self.disabled = Some(input);
             self
         }
-        pub fn set_disabled(mut self, inp: std::option::Option<bool>) -> Self {
-            self.disabled = inp;
+        pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.disabled = input;
             self
         }
         /// <p>The number of child health checks that are associated with a <code>CALCULATED</code> health that Amazon Route 53 must consider healthy for the
@@ -9683,25 +9892,25 @@ pub mod update_health_check_input {
         /// <p>If you specify <code>0</code>, Route 53 always considers this health check to be healthy.</p>
         /// </li>
         /// </ul>
-        pub fn health_threshold(mut self, inp: i32) -> Self {
-            self.health_threshold = Some(inp);
+        pub fn health_threshold(mut self, input: i32) -> Self {
+            self.health_threshold = Some(input);
             self
         }
-        pub fn set_health_threshold(mut self, inp: std::option::Option<i32>) -> Self {
-            self.health_threshold = inp;
+        pub fn set_health_threshold(mut self, input: std::option::Option<i32>) -> Self {
+            self.health_threshold = input;
             self
         }
-        pub fn child_health_checks(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn child_health_checks(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.child_health_checks.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.child_health_checks = Some(v);
             self
         }
         pub fn set_child_health_checks(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.child_health_checks = inp;
+            self.child_health_checks = input;
             self
         }
         /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code>
@@ -9715,38 +9924,38 @@ pub mod update_health_check_input {
         /// <code>FullyQualifiedDomainName</code>. If the endpoint responds to the <code>client_hello</code> message with a certificate that does not
         /// include the domain name that you specified in <code>FullyQualifiedDomainName</code>, a health checker will retry the handshake. In the
         /// second attempt, the health checker will omit <code>FullyQualifiedDomainName</code> from the <code>client_hello</code> message.</p>
-        pub fn enable_sni(mut self, inp: bool) -> Self {
-            self.enable_sni = Some(inp);
+        pub fn enable_sni(mut self, input: bool) -> Self {
+            self.enable_sni = Some(input);
             self
         }
-        pub fn set_enable_sni(mut self, inp: std::option::Option<bool>) -> Self {
-            self.enable_sni = inp;
+        pub fn set_enable_sni(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_sni = input;
             self
         }
-        pub fn regions(mut self, inp: impl Into<crate::model::HealthCheckRegion>) -> Self {
+        pub fn regions(mut self, input: impl Into<crate::model::HealthCheckRegion>) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.regions = Some(v);
             self
         }
         pub fn set_regions(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::HealthCheckRegion>>,
+            input: std::option::Option<std::vec::Vec<crate::model::HealthCheckRegion>>,
         ) -> Self {
-            self.regions = inp;
+            self.regions = input;
             self
         }
         /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether
         /// the specified health check is healthy.</p>
-        pub fn alarm_identifier(mut self, inp: crate::model::AlarmIdentifier) -> Self {
-            self.alarm_identifier = Some(inp);
+        pub fn alarm_identifier(mut self, input: crate::model::AlarmIdentifier) -> Self {
+            self.alarm_identifier = Some(input);
             self
         }
         pub fn set_alarm_identifier(
             mut self,
-            inp: std::option::Option<crate::model::AlarmIdentifier>,
+            input: std::option::Option<crate::model::AlarmIdentifier>,
         ) -> Self {
-            self.alarm_identifier = inp;
+            self.alarm_identifier = input;
             self
         }
         /// <p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign
@@ -9768,39 +9977,41 @@ pub mod update_health_check_input {
         /// </ul>
         pub fn insufficient_data_health_status(
             mut self,
-            inp: crate::model::InsufficientDataHealthStatus,
+            input: crate::model::InsufficientDataHealthStatus,
         ) -> Self {
-            self.insufficient_data_health_status = Some(inp);
+            self.insufficient_data_health_status = Some(input);
             self
         }
         pub fn set_insufficient_data_health_status(
             mut self,
-            inp: std::option::Option<crate::model::InsufficientDataHealthStatus>,
+            input: std::option::Option<crate::model::InsufficientDataHealthStatus>,
         ) -> Self {
-            self.insufficient_data_health_status = inp;
+            self.insufficient_data_health_status = input;
             self
         }
         pub fn reset_elements(
             mut self,
-            inp: impl Into<crate::model::ResettableElementName>,
+            input: impl Into<crate::model::ResettableElementName>,
         ) -> Self {
             let mut v = self.reset_elements.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.reset_elements = Some(v);
             self
         }
         pub fn set_reset_elements(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ResettableElementName>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ResettableElementName>>,
         ) -> Self {
-            self.reset_elements = inp;
+            self.reset_elements = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateHealthCheckInput`](crate::input::UpdateHealthCheckInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateHealthCheckInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateHealthCheckInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateHealthCheckInput {
                 health_check_id: self.health_check_id.unwrap_or_default(),
                 health_check_version: self.health_check_version,
@@ -9833,7 +10044,7 @@ impl UpdateHealthCheckInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateHealthCheck,
             aws_http::AwsErrorRetryPolicy,
@@ -9898,7 +10109,7 @@ impl UpdateHealthCheckInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9906,7 +10117,7 @@ impl UpdateHealthCheckInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -9937,29 +10148,31 @@ pub mod update_hosted_zone_comment_input {
     }
     impl Builder {
         /// <p>The ID for the hosted zone that you want to update the comment for.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>, Amazon Route 53 deletes the existing value of the
         /// <code>Comment</code> element, if any.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.comment = Some(inp.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.comment = Some(input.into());
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.comment = inp;
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comment = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateHostedZoneCommentInput`](crate::input::UpdateHostedZoneCommentInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateHostedZoneCommentInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateHostedZoneCommentInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateHostedZoneCommentInput {
                 id: self.id.unwrap_or_default(),
                 comment: self.comment,
@@ -9978,7 +10191,7 @@ impl UpdateHostedZoneCommentInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateHostedZoneComment,
             aws_http::AwsErrorRetryPolicy,
@@ -10043,7 +10256,7 @@ impl UpdateHostedZoneCommentInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10051,7 +10264,7 @@ impl UpdateHostedZoneCommentInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -10083,37 +10296,39 @@ pub mod update_traffic_policy_comment_input {
     }
     impl Builder {
         /// <p>The value of <code>Id</code> for the traffic policy that you want to update the comment for.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The value of <code>Version</code> for the traffic policy that you want to update the comment for.</p>
-        pub fn version(mut self, inp: i32) -> Self {
-            self.version = Some(inp);
+        pub fn version(mut self, input: i32) -> Self {
+            self.version = Some(input);
             self
         }
-        pub fn set_version(mut self, inp: i32) -> Self {
-            self.version = Some(inp);
+        pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.version = input;
             self
         }
         /// <p>The new comment for the specified traffic policy and version.</p>
-        pub fn comment(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.comment = Some(inp.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.comment = Some(input.into());
             self
         }
-        pub fn set_comment(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.comment = inp;
+        pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comment = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateTrafficPolicyCommentInput`](crate::input::UpdateTrafficPolicyCommentInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateTrafficPolicyCommentInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateTrafficPolicyCommentInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateTrafficPolicyCommentInput {
                 id: self.id.unwrap_or_default(),
                 version: self.version.unwrap_or_default(),
@@ -10133,7 +10348,7 @@ impl UpdateTrafficPolicyCommentInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateTrafficPolicyComment,
             aws_http::AwsErrorRetryPolicy,
@@ -10200,7 +10415,7 @@ impl UpdateTrafficPolicyCommentInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10208,7 +10423,7 @@ impl UpdateTrafficPolicyCommentInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)
@@ -10241,48 +10456,48 @@ pub mod update_traffic_policy_instance_input {
     }
     impl Builder {
         /// <p>The ID of the traffic policy instance that you want to update.</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::string::String) -> Self {
-            self.id = Some(inp);
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The TTL that you want Amazon Route 53 to assign to all of the updated resource record sets.</p>
-        pub fn ttl(mut self, inp: i64) -> Self {
-            self.ttl = Some(inp);
+        pub fn ttl(mut self, input: i64) -> Self {
+            self.ttl = Some(input);
             self
         }
-        pub fn set_ttl(mut self, inp: std::option::Option<i64>) -> Self {
-            self.ttl = inp;
+        pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
+            self.ttl = input;
             self
         }
         /// <p>The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
-        pub fn traffic_policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.traffic_policy_id = Some(inp.into());
+        pub fn traffic_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.traffic_policy_id = Some(input.into());
             self
         }
         pub fn set_traffic_policy_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.traffic_policy_id = inp;
+            self.traffic_policy_id = input;
             self
         }
         /// <p>The version of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
-        pub fn traffic_policy_version(mut self, inp: i32) -> Self {
-            self.traffic_policy_version = Some(inp);
+        pub fn traffic_policy_version(mut self, input: i32) -> Self {
+            self.traffic_policy_version = Some(input);
             self
         }
-        pub fn set_traffic_policy_version(mut self, inp: std::option::Option<i32>) -> Self {
-            self.traffic_policy_version = inp;
+        pub fn set_traffic_policy_version(mut self, input: std::option::Option<i32>) -> Self {
+            self.traffic_policy_version = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateTrafficPolicyInstanceInput`](crate::input::UpdateTrafficPolicyInstanceInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::UpdateTrafficPolicyInstanceInput,
             smithy_http::operation::BuildError,
         > {
@@ -10306,7 +10521,7 @@ impl UpdateTrafficPolicyInstanceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateTrafficPolicyInstance,
             aws_http::AwsErrorRetryPolicy,
@@ -10372,7 +10587,7 @@ impl UpdateTrafficPolicyInstanceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10380,7 +10595,7 @@ impl UpdateTrafficPolicyInstanceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/xml");
         self.update_http_builder(builder)

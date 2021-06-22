@@ -48,66 +48,69 @@ pub mod ssh_public_key {
     }
     impl Builder {
         /// <p>The name of the IAM user associated with the SSH public key.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The unique identifier for the SSH public key.</p>
-        pub fn ssh_public_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssh_public_key_id = Some(inp.into());
+        pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssh_public_key_id = Some(input.into());
             self
         }
         pub fn set_ssh_public_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ssh_public_key_id = inp;
+            self.ssh_public_key_id = input;
             self
         }
         /// <p>The MD5 message digest of the SSH public key.</p>
-        pub fn fingerprint(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.fingerprint = Some(inp.into());
+        pub fn fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.fingerprint = Some(input.into());
             self
         }
-        pub fn set_fingerprint(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.fingerprint = inp;
+        pub fn set_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fingerprint = input;
             self
         }
         /// <p>The SSH public key.</p>
-        pub fn ssh_public_key_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssh_public_key_body = Some(inp.into());
+        pub fn ssh_public_key_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssh_public_key_body = Some(input.into());
             self
         }
         pub fn set_ssh_public_key_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ssh_public_key_body = inp;
+            self.ssh_public_key_body = input;
             self
         }
         /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for
         /// authentication with an AWS CodeCommit repository. <code>Inactive</code> means that the key
         /// cannot be used.</p>
-        pub fn status(mut self, inp: crate::model::StatusType) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::StatusType>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the SSH public key was uploaded.</p>
-        pub fn upload_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.upload_date = Some(inp);
+        pub fn upload_date(mut self, input: smithy_types::Instant) -> Self {
+            self.upload_date = Some(input);
             self
         }
-        pub fn set_upload_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.upload_date = inp;
+        pub fn set_upload_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.upload_date = input;
             self
         }
         /// Consumes the builder and constructs a [`SSHPublicKey`](crate::model::SSHPublicKey)
@@ -229,52 +232,58 @@ pub mod signing_certificate {
     }
     impl Builder {
         /// <p>The name of the user the signing certificate is associated with.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The ID for the signing certificate.</p>
-        pub fn certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_id = Some(inp.into());
+        pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_id = Some(input.into());
             self
         }
-        pub fn set_certificate_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.certificate_id = inp;
+        pub fn set_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.certificate_id = input;
             self
         }
         /// <p>The contents of the signing certificate.</p>
-        pub fn certificate_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_body = Some(inp.into());
+        pub fn certificate_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_body = Some(input.into());
             self
         }
         pub fn set_certificate_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_body = inp;
+            self.certificate_body = input;
             self
         }
         /// <p>The status of the signing certificate. <code>Active</code> means that the key is valid
         /// for API calls, while <code>Inactive</code> means it is not.</p>
-        pub fn status(mut self, inp: crate::model::StatusType) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::StatusType>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The date when the signing certificate was uploaded.</p>
-        pub fn upload_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.upload_date = Some(inp);
+        pub fn upload_date(mut self, input: smithy_types::Instant) -> Self {
+            self.upload_date = Some(input);
             self
         }
-        pub fn set_upload_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.upload_date = inp;
+        pub fn set_upload_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.upload_date = input;
             self
         }
         /// Consumes the builder and constructs a [`SigningCertificate`](crate::model::SigningCertificate)
@@ -338,12 +347,12 @@ pub mod tag {
     impl Builder {
         /// <p>The key name that can be used to look up or retrieve the associated value. For example,
         /// <code>Department</code> or <code>Cost Center</code> are common choices.</p>
-        pub fn key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.key = Some(inp.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key = Some(input.into());
             self
         }
-        pub fn set_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.key = inp;
+        pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key = input;
             self
         }
         /// <p>The value associated with this tag. For example, tags with a key name of
@@ -357,12 +366,12 @@ pub mod tag {
         /// store an array, you can store comma-separated values in the string. However, you must
         /// interpret the value in your code.</p>
         /// </note>
-        pub fn value(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.value = Some(inp.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.value = Some(input.into());
             self
         }
-        pub fn set_value(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.value = inp;
+        pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.value = input;
             self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
@@ -433,66 +442,69 @@ pub mod server_certificate_metadata {
     impl Builder {
         /// <p> The path to the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
         /// identifiers</a> in the <i>IAM User Guide</i>. </p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The name that identifies the server certificate.</p>
-        pub fn server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.server_certificate_name = Some(inp.into());
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_certificate_name = Some(input.into());
             self
         }
         pub fn set_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.server_certificate_name = inp;
+            self.server_certificate_name = input;
             self
         }
         /// <p> The stable and unique string identifying the server certificate. For more information
         /// about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-        pub fn server_certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.server_certificate_id = Some(inp.into());
+        pub fn server_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_certificate_id = Some(input.into());
             self
         }
         pub fn set_server_certificate_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.server_certificate_id = inp;
+            self.server_certificate_id = input;
             self
         }
         /// <p> The Amazon Resource Name (ARN) specifying the server certificate. For more information
         /// about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
         /// <i>IAM User Guide</i>. </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The date when the server certificate was uploaded.</p>
-        pub fn upload_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.upload_date = Some(inp);
+        pub fn upload_date(mut self, input: smithy_types::Instant) -> Self {
+            self.upload_date = Some(input);
             self
         }
-        pub fn set_upload_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.upload_date = inp;
+        pub fn set_upload_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.upload_date = input;
             self
         }
         /// <p>The date on which the certificate is set to expire.</p>
-        pub fn expiration(mut self, inp: smithy_types::Instant) -> Self {
-            self.expiration = Some(inp);
+        pub fn expiration(mut self, input: smithy_types::Instant) -> Self {
+            self.expiration = Some(input);
             self
         }
-        pub fn set_expiration(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.expiration = inp;
+        pub fn set_expiration(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.expiration = input;
             self
         }
         /// Consumes the builder and constructs a [`ServerCertificateMetadata`](crate::model::ServerCertificateMetadata)
@@ -602,86 +614,92 @@ pub mod role {
     impl Builder {
         /// <p> The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
         /// <i>IAM User Guide</i>. </p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The friendly name that identifies the role.</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p> The stable and unique string identifying the role. For more information about IDs, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
         /// identifiers</a> in the <i>IAM User Guide</i>. </p>
-        pub fn role_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_id = Some(inp.into());
+        pub fn role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_id = Some(input.into());
             self
         }
-        pub fn set_role_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_id = inp;
+        pub fn set_role_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_id = input;
             self
         }
         /// <p> The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and
         /// how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
         /// <i>IAM User Guide</i> guide. </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the role was created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
         /// <p>The policy that grants an entity permission to assume the role.</p>
-        pub fn assume_role_policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.assume_role_policy_document = Some(inp.into());
+        pub fn assume_role_policy_document(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.assume_role_policy_document = Some(input.into());
             self
         }
         pub fn set_assume_role_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.assume_role_policy_document = inp;
+            self.assume_role_policy_document = input;
             self
         }
         /// <p>A description of the role that you provide.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The maximum session duration (in seconds) for the specified role. Anyone who uses the
         /// AWS CLI, or API to assume the role can specify the duration using the optional
         /// <code>DurationSeconds</code> API parameter or <code>duration-seconds</code> CLI
         /// parameter.</p>
-        pub fn max_session_duration(mut self, inp: i32) -> Self {
-            self.max_session_duration = Some(inp);
+        pub fn max_session_duration(mut self, input: i32) -> Self {
+            self.max_session_duration = Some(input);
             self
         }
-        pub fn set_max_session_duration(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_session_duration = inp;
+        pub fn set_max_session_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_session_duration = input;
             self
         }
         /// <p>The ARN of the policy used to set the permissions boundary for the role.</p>
@@ -689,29 +707,29 @@ pub mod role {
         /// identities </a> in the <i>IAM User Guide</i>.</p>
         pub fn permissions_boundary(
             mut self,
-            inp: crate::model::AttachedPermissionsBoundary,
+            input: crate::model::AttachedPermissionsBoundary,
         ) -> Self {
-            self.permissions_boundary = Some(inp);
+            self.permissions_boundary = Some(input);
             self
         }
         pub fn set_permissions_boundary(
             mut self,
-            inp: std::option::Option<crate::model::AttachedPermissionsBoundary>,
+            input: std::option::Option<crate::model::AttachedPermissionsBoundary>,
         ) -> Self {
-            self.permissions_boundary = inp;
+            self.permissions_boundary = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>Contains information about the last time that an IAM role was used. This includes the
@@ -720,15 +738,15 @@ pub mod role {
         /// features within the last year. The role might have been used more than 400 days ago. For
         /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User
         /// Guide</i>.</p>
-        pub fn role_last_used(mut self, inp: crate::model::RoleLastUsed) -> Self {
-            self.role_last_used = Some(inp);
+        pub fn role_last_used(mut self, input: crate::model::RoleLastUsed) -> Self {
+            self.role_last_used = Some(input);
             self
         }
         pub fn set_role_last_used(
             mut self,
-            inp: std::option::Option<crate::model::RoleLastUsed>,
+            input: std::option::Option<crate::model::RoleLastUsed>,
         ) -> Self {
-            self.role_last_used = inp;
+            self.role_last_used = input;
             self
         }
         /// Consumes the builder and constructs a [`Role`](crate::model::Role)
@@ -797,24 +815,24 @@ pub mod role_last_used {
         /// format</a> that the role was last used.</p>
         /// <p>This field is null if the role has not been used within the IAM tracking period. For
         /// more information about the tracking period, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User Guide</i>. </p>
-        pub fn last_used_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_used_date = Some(inp);
+        pub fn last_used_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_used_date = Some(input);
             self
         }
         pub fn set_last_used_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_used_date = inp;
+            self.last_used_date = input;
             self
         }
         /// <p>The name of the AWS Region in which the role was last used.</p>
-        pub fn region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.region = Some(inp.into());
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
             self
         }
-        pub fn set_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.region = inp;
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
             self
         }
         /// Consumes the builder and constructs a [`RoleLastUsed`](crate::model::RoleLastUsed)
@@ -873,28 +891,28 @@ pub mod attached_permissions_boundary {
         /// <code>Policy</code>.</p>
         pub fn permissions_boundary_type(
             mut self,
-            inp: crate::model::PermissionsBoundaryAttachmentType,
+            input: crate::model::PermissionsBoundaryAttachmentType,
         ) -> Self {
-            self.permissions_boundary_type = Some(inp);
+            self.permissions_boundary_type = Some(input);
             self
         }
         pub fn set_permissions_boundary_type(
             mut self,
-            inp: std::option::Option<crate::model::PermissionsBoundaryAttachmentType>,
+            input: std::option::Option<crate::model::PermissionsBoundaryAttachmentType>,
         ) -> Self {
-            self.permissions_boundary_type = inp;
+            self.permissions_boundary_type = input;
             self
         }
         /// <p> The ARN of the policy used to set the permissions boundary for the user or role.</p>
-        pub fn permissions_boundary_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.permissions_boundary_arn = Some(inp.into());
+        pub fn permissions_boundary_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.permissions_boundary_arn = Some(input.into());
             self
         }
         pub fn set_permissions_boundary_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.permissions_boundary_arn = inp;
+            self.permissions_boundary_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`AttachedPermissionsBoundary`](crate::model::AttachedPermissionsBoundary)
@@ -1070,65 +1088,65 @@ pub mod evaluation_result {
     }
     impl Builder {
         /// <p>The name of the API operation tested on the indicated resource.</p>
-        pub fn eval_action_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.eval_action_name = Some(inp.into());
+        pub fn eval_action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.eval_action_name = Some(input.into());
             self
         }
         pub fn set_eval_action_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.eval_action_name = inp;
+            self.eval_action_name = input;
             self
         }
         /// <p>The ARN of the resource that the indicated API operation was tested on.</p>
-        pub fn eval_resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.eval_resource_name = Some(inp.into());
+        pub fn eval_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.eval_resource_name = Some(input.into());
             self
         }
         pub fn set_eval_resource_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.eval_resource_name = inp;
+            self.eval_resource_name = input;
             self
         }
         /// <p>The result of the simulation.</p>
-        pub fn eval_decision(mut self, inp: crate::model::PolicyEvaluationDecisionType) -> Self {
-            self.eval_decision = Some(inp);
+        pub fn eval_decision(mut self, input: crate::model::PolicyEvaluationDecisionType) -> Self {
+            self.eval_decision = Some(input);
             self
         }
         pub fn set_eval_decision(
             mut self,
-            inp: std::option::Option<crate::model::PolicyEvaluationDecisionType>,
+            input: std::option::Option<crate::model::PolicyEvaluationDecisionType>,
         ) -> Self {
-            self.eval_decision = inp;
+            self.eval_decision = input;
             self
         }
-        pub fn matched_statements(mut self, inp: impl Into<crate::model::Statement>) -> Self {
+        pub fn matched_statements(mut self, input: impl Into<crate::model::Statement>) -> Self {
             let mut v = self.matched_statements.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.matched_statements = Some(v);
             self
         }
         pub fn set_matched_statements(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Statement>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Statement>>,
         ) -> Self {
-            self.matched_statements = inp;
+            self.matched_statements = input;
             self
         }
-        pub fn missing_context_values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn missing_context_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.missing_context_values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.missing_context_values = Some(v);
             self
         }
         pub fn set_missing_context_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.missing_context_values = inp;
+            self.missing_context_values = input;
             self
         }
         /// <p>A structure that details how Organizations and its service control policies affect the results of
@@ -1136,32 +1154,32 @@ pub mod evaluation_result {
         /// organization.</p>
         pub fn organizations_decision_detail(
             mut self,
-            inp: crate::model::OrganizationsDecisionDetail,
+            input: crate::model::OrganizationsDecisionDetail,
         ) -> Self {
-            self.organizations_decision_detail = Some(inp);
+            self.organizations_decision_detail = Some(input);
             self
         }
         pub fn set_organizations_decision_detail(
             mut self,
-            inp: std::option::Option<crate::model::OrganizationsDecisionDetail>,
+            input: std::option::Option<crate::model::OrganizationsDecisionDetail>,
         ) -> Self {
-            self.organizations_decision_detail = inp;
+            self.organizations_decision_detail = input;
             self
         }
         /// <p>Contains information about the effect that a permissions boundary has on a policy
         /// simulation when the boundary is applied to an IAM entity.</p>
         pub fn permissions_boundary_decision_detail(
             mut self,
-            inp: crate::model::PermissionsBoundaryDecisionDetail,
+            input: crate::model::PermissionsBoundaryDecisionDetail,
         ) -> Self {
-            self.permissions_boundary_decision_detail = Some(inp);
+            self.permissions_boundary_decision_detail = Some(input);
             self
         }
         pub fn set_permissions_boundary_decision_detail(
             mut self,
-            inp: std::option::Option<crate::model::PermissionsBoundaryDecisionDetail>,
+            input: std::option::Option<crate::model::PermissionsBoundaryDecisionDetail>,
         ) -> Self {
-            self.permissions_boundary_decision_detail = inp;
+            self.permissions_boundary_decision_detail = input;
             self
         }
         pub fn eval_decision_details(
@@ -1176,30 +1194,30 @@ pub mod evaluation_result {
         }
         pub fn set_eval_decision_details(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     crate::model::PolicyEvaluationDecisionType,
                 >,
             >,
         ) -> Self {
-            self.eval_decision_details = inp;
+            self.eval_decision_details = input;
             self
         }
         pub fn resource_specific_results(
             mut self,
-            inp: impl Into<crate::model::ResourceSpecificResult>,
+            input: impl Into<crate::model::ResourceSpecificResult>,
         ) -> Self {
             let mut v = self.resource_specific_results.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resource_specific_results = Some(v);
             self
         }
         pub fn set_resource_specific_results(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ResourceSpecificResult>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ResourceSpecificResult>>,
         ) -> Self {
-            self.resource_specific_results = inp;
+            self.resource_specific_results = input;
             self
         }
         /// Consumes the builder and constructs a [`EvaluationResult`](crate::model::EvaluationResult)
@@ -1300,57 +1318,57 @@ pub mod resource_specific_result {
     }
     impl Builder {
         /// <p>The name of the simulated resource, in Amazon Resource Name (ARN) format.</p>
-        pub fn eval_resource_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.eval_resource_name = Some(inp.into());
+        pub fn eval_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.eval_resource_name = Some(input.into());
             self
         }
         pub fn set_eval_resource_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.eval_resource_name = inp;
+            self.eval_resource_name = input;
             self
         }
         /// <p>The result of the simulation of the simulated API operation on the resource specified in
         /// <code>EvalResourceName</code>.</p>
         pub fn eval_resource_decision(
             mut self,
-            inp: crate::model::PolicyEvaluationDecisionType,
+            input: crate::model::PolicyEvaluationDecisionType,
         ) -> Self {
-            self.eval_resource_decision = Some(inp);
+            self.eval_resource_decision = Some(input);
             self
         }
         pub fn set_eval_resource_decision(
             mut self,
-            inp: std::option::Option<crate::model::PolicyEvaluationDecisionType>,
+            input: std::option::Option<crate::model::PolicyEvaluationDecisionType>,
         ) -> Self {
-            self.eval_resource_decision = inp;
+            self.eval_resource_decision = input;
             self
         }
-        pub fn matched_statements(mut self, inp: impl Into<crate::model::Statement>) -> Self {
+        pub fn matched_statements(mut self, input: impl Into<crate::model::Statement>) -> Self {
             let mut v = self.matched_statements.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.matched_statements = Some(v);
             self
         }
         pub fn set_matched_statements(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Statement>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Statement>>,
         ) -> Self {
-            self.matched_statements = inp;
+            self.matched_statements = input;
             self
         }
-        pub fn missing_context_values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn missing_context_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.missing_context_values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.missing_context_values = Some(v);
             self
         }
         pub fn set_missing_context_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.missing_context_values = inp;
+            self.missing_context_values = input;
             self
         }
         pub fn eval_decision_details(
@@ -1365,30 +1383,30 @@ pub mod resource_specific_result {
         }
         pub fn set_eval_decision_details(
             mut self,
-            inp: std::option::Option<
+            input: std::option::Option<
                 std::collections::HashMap<
                     std::string::String,
                     crate::model::PolicyEvaluationDecisionType,
                 >,
             >,
         ) -> Self {
-            self.eval_decision_details = inp;
+            self.eval_decision_details = input;
             self
         }
         /// <p>Contains information about the effect that a permissions boundary has on a policy
         /// simulation when that boundary is applied to an IAM entity.</p>
         pub fn permissions_boundary_decision_detail(
             mut self,
-            inp: crate::model::PermissionsBoundaryDecisionDetail,
+            input: crate::model::PermissionsBoundaryDecisionDetail,
         ) -> Self {
-            self.permissions_boundary_decision_detail = Some(inp);
+            self.permissions_boundary_decision_detail = Some(input);
             self
         }
         pub fn set_permissions_boundary_decision_detail(
             mut self,
-            inp: std::option::Option<crate::model::PermissionsBoundaryDecisionDetail>,
+            input: std::option::Option<crate::model::PermissionsBoundaryDecisionDetail>,
         ) -> Self {
-            self.permissions_boundary_decision_detail = inp;
+            self.permissions_boundary_decision_detail = input;
             self
         }
         /// Consumes the builder and constructs a [`ResourceSpecificResult`](crate::model::ResourceSpecificResult)
@@ -1453,12 +1471,15 @@ pub mod permissions_boundary_decision_detail {
         /// <code>false</code> means that either the requested action is not allowed (implicitly
         /// denied) or that the action is explicitly denied by the permissions boundary. In both of
         /// these cases, the action is not allowed, regardless of the identity-based policy.</p>
-        pub fn allowed_by_permissions_boundary(mut self, inp: bool) -> Self {
-            self.allowed_by_permissions_boundary = Some(inp);
+        pub fn allowed_by_permissions_boundary(mut self, input: bool) -> Self {
+            self.allowed_by_permissions_boundary = Some(input);
             self
         }
-        pub fn set_allowed_by_permissions_boundary(mut self, inp: bool) -> Self {
-            self.allowed_by_permissions_boundary = Some(inp);
+        pub fn set_allowed_by_permissions_boundary(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.allowed_by_permissions_boundary = input;
             self
         }
         /// Consumes the builder and constructs a [`PermissionsBoundaryDecisionDetail`](crate::model::PermissionsBoundaryDecisionDetail)
@@ -1578,52 +1599,52 @@ pub mod statement {
     }
     impl Builder {
         /// <p>The identifier of the policy that was provided as an input.</p>
-        pub fn source_policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.source_policy_id = Some(inp.into());
+        pub fn source_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_policy_id = Some(input.into());
             self
         }
         pub fn set_source_policy_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.source_policy_id = inp;
+            self.source_policy_id = input;
             self
         }
         /// <p>The type of the policy.</p>
-        pub fn source_policy_type(mut self, inp: crate::model::PolicySourceType) -> Self {
-            self.source_policy_type = Some(inp);
+        pub fn source_policy_type(mut self, input: crate::model::PolicySourceType) -> Self {
+            self.source_policy_type = Some(input);
             self
         }
         pub fn set_source_policy_type(
             mut self,
-            inp: std::option::Option<crate::model::PolicySourceType>,
+            input: std::option::Option<crate::model::PolicySourceType>,
         ) -> Self {
-            self.source_policy_type = inp;
+            self.source_policy_type = input;
             self
         }
         /// <p>The row and column of the beginning of the <code>Statement</code> in an IAM
         /// policy.</p>
-        pub fn start_position(mut self, inp: crate::model::Position) -> Self {
-            self.start_position = Some(inp);
+        pub fn start_position(mut self, input: crate::model::Position) -> Self {
+            self.start_position = Some(input);
             self
         }
         pub fn set_start_position(
             mut self,
-            inp: std::option::Option<crate::model::Position>,
+            input: std::option::Option<crate::model::Position>,
         ) -> Self {
-            self.start_position = inp;
+            self.start_position = input;
             self
         }
         /// <p>The row and column of the end of a <code>Statement</code> in an IAM policy.</p>
-        pub fn end_position(mut self, inp: crate::model::Position) -> Self {
-            self.end_position = Some(inp);
+        pub fn end_position(mut self, input: crate::model::Position) -> Self {
+            self.end_position = Some(input);
             self
         }
         pub fn set_end_position(
             mut self,
-            inp: std::option::Option<crate::model::Position>,
+            input: std::option::Option<crate::model::Position>,
         ) -> Self {
-            self.end_position = inp;
+            self.end_position = input;
             self
         }
         /// Consumes the builder and constructs a [`Statement`](crate::model::Statement)
@@ -1676,21 +1697,21 @@ pub mod position {
     }
     impl Builder {
         /// <p>The line containing the specified position in the document.</p>
-        pub fn line(mut self, inp: i32) -> Self {
-            self.line = Some(inp);
+        pub fn line(mut self, input: i32) -> Self {
+            self.line = Some(input);
             self
         }
-        pub fn set_line(mut self, inp: i32) -> Self {
-            self.line = Some(inp);
+        pub fn set_line(mut self, input: std::option::Option<i32>) -> Self {
+            self.line = input;
             self
         }
         /// <p>The column in the line containing the specified position in the document.</p>
-        pub fn column(mut self, inp: i32) -> Self {
-            self.column = Some(inp);
+        pub fn column(mut self, input: i32) -> Self {
+            self.column = Some(input);
             self
         }
-        pub fn set_column(mut self, inp: i32) -> Self {
-            self.column = Some(inp);
+        pub fn set_column(mut self, input: std::option::Option<i32>) -> Self {
+            self.column = input;
             self
         }
         /// Consumes the builder and constructs a [`Position`](crate::model::Position)
@@ -1806,12 +1827,12 @@ pub mod organizations_decision_detail {
     impl Builder {
         /// <p>Specifies whether the simulated operation is allowed by the Organizations service control
         /// policies that impact the simulated user's account.</p>
-        pub fn allowed_by_organizations(mut self, inp: bool) -> Self {
-            self.allowed_by_organizations = Some(inp);
+        pub fn allowed_by_organizations(mut self, input: bool) -> Self {
+            self.allowed_by_organizations = Some(input);
             self
         }
-        pub fn set_allowed_by_organizations(mut self, inp: bool) -> Self {
-            self.allowed_by_organizations = Some(inp);
+        pub fn set_allowed_by_organizations(mut self, input: std::option::Option<bool>) -> Self {
+            self.allowed_by_organizations = input;
             self
         }
         /// Consumes the builder and constructs a [`OrganizationsDecisionDetail`](crate::model::OrganizationsDecisionDetail)
@@ -1870,41 +1891,41 @@ pub mod context_entry {
     impl Builder {
         /// <p>The full name of a condition context key, including the service prefix. For example,
         /// <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>
-        pub fn context_key_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.context_key_name = Some(inp.into());
+        pub fn context_key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.context_key_name = Some(input.into());
             self
         }
         pub fn set_context_key_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.context_key_name = inp;
+            self.context_key_name = input;
             self
         }
-        pub fn context_key_values(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn context_key_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.context_key_values.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.context_key_values = Some(v);
             self
         }
         pub fn set_context_key_values(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.context_key_values = inp;
+            self.context_key_values = input;
             self
         }
         /// <p>The data type of the value (or values) specified in the <code>ContextKeyValues</code>
         /// parameter.</p>
-        pub fn context_key_type(mut self, inp: crate::model::ContextKeyTypeEnum) -> Self {
-            self.context_key_type = Some(inp);
+        pub fn context_key_type(mut self, input: crate::model::ContextKeyTypeEnum) -> Self {
+            self.context_key_type = Some(input);
             self
         }
         pub fn set_context_key_type(
             mut self,
-            inp: std::option::Option<crate::model::ContextKeyTypeEnum>,
+            input: std::option::Option<crate::model::ContextKeyTypeEnum>,
         ) -> Self {
-            self.context_key_type = inp;
+            self.context_key_type = input;
             self
         }
         /// Consumes the builder and constructs a [`ContextEntry`](crate::model::ContextEntry)
@@ -2123,82 +2144,85 @@ pub mod service_specific_credential {
     impl Builder {
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the service-specific credential were created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
         /// <p>The name of the service associated with the service-specific credential.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_name = Some(inp.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
             self
         }
-        pub fn set_service_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.service_name = inp;
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
             self
         }
         /// <p>The generated user name for the service-specific credential. This value is generated by
         /// combining the IAM user's name combined with the ID number of the AWS account, as in
         /// <code>jane-at-123456789012</code>, for example. This value cannot be configured by the
         /// user.</p>
-        pub fn service_user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_user_name = Some(inp.into());
+        pub fn service_user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_user_name = Some(input.into());
             self
         }
         pub fn set_service_user_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.service_user_name = inp;
+            self.service_user_name = input;
             self
         }
         /// <p>The generated password for the service-specific credential.</p>
-        pub fn service_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_password = Some(inp.into());
+        pub fn service_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_password = Some(input.into());
             self
         }
         pub fn set_service_password(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.service_password = inp;
+            self.service_password = input;
             self
         }
         /// <p>The unique identifier for the service-specific credential.</p>
         pub fn service_specific_credential_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.service_specific_credential_id = Some(inp.into());
+            self.service_specific_credential_id = Some(input.into());
             self
         }
         pub fn set_service_specific_credential_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.service_specific_credential_id = inp;
+            self.service_specific_credential_id = input;
             self
         }
         /// <p>The name of the IAM user associated with the service-specific credential.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The status of the service-specific credential. <code>Active</code> means that the key is
         /// valid for API calls, while <code>Inactive</code> means it is not.</p>
-        pub fn status(mut self, inp: crate::model::StatusType) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::StatusType>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceSpecificCredential`](crate::model::ServiceSpecificCredential)
@@ -2272,24 +2296,27 @@ pub mod virtual_mfa_device {
     }
     impl Builder {
         /// <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.serial_number = Some(inp.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.serial_number = Some(input.into());
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.serial_number = inp;
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.serial_number = input;
             self
         }
         /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base64-encoded. </p>
-        pub fn base32_string_seed(mut self, inp: smithy_types::Blob) -> Self {
-            self.base32_string_seed = Some(inp);
+        pub fn base32_string_seed(mut self, input: smithy_types::Blob) -> Self {
+            self.base32_string_seed = Some(input);
             self
         }
         pub fn set_base32_string_seed(
             mut self,
-            inp: std::option::Option<smithy_types::Blob>,
+            input: std::option::Option<smithy_types::Blob>,
         ) -> Self {
-            self.base32_string_seed = inp;
+            self.base32_string_seed = input;
             self
         }
         /// <p> A QR code PNG image that encodes
@@ -2298,43 +2325,46 @@ pub mod virtual_mfa_device {
         /// <code>AccountName</code> is the user name if set (otherwise, the account ID otherwise),
         /// and <code>Base32String</code> is the seed in base32 format. The <code>Base32String</code>
         /// value is base64-encoded. </p>
-        pub fn qr_code_png(mut self, inp: smithy_types::Blob) -> Self {
-            self.qr_code_png = Some(inp);
+        pub fn qr_code_png(mut self, input: smithy_types::Blob) -> Self {
+            self.qr_code_png = Some(input);
             self
         }
-        pub fn set_qr_code_png(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.qr_code_png = inp;
+        pub fn set_qr_code_png(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.qr_code_png = input;
             self
         }
         /// <p>The IAM user associated with this virtual MFA device.</p>
-        pub fn user(mut self, inp: crate::model::User) -> Self {
-            self.user = Some(inp);
+        pub fn user(mut self, input: crate::model::User) -> Self {
+            self.user = Some(input);
             self
         }
-        pub fn set_user(mut self, inp: std::option::Option<crate::model::User>) -> Self {
-            self.user = inp;
+        pub fn set_user(mut self, input: std::option::Option<crate::model::User>) -> Self {
+            self.user = input;
             self
         }
         /// <p>The date and time on which the virtual MFA device was enabled.</p>
-        pub fn enable_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.enable_date = Some(inp);
+        pub fn enable_date(mut self, input: smithy_types::Instant) -> Self {
+            self.enable_date = Some(input);
             self
         }
-        pub fn set_enable_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.enable_date = inp;
+        pub fn set_enable_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.enable_date = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`VirtualMFADevice`](crate::model::VirtualMFADevice)
@@ -2458,53 +2488,56 @@ pub mod user {
         /// <p>The path to the user. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// <p>The ARN of the policy used to set the permissions boundary for the user.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The friendly name identifying the user.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The stable and unique string identifying the user. For more information about IDs, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
         /// identifiers</a> in the <i>IAM User Guide</i>.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_id = Some(inp.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
             self
         }
-        pub fn set_user_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_id = inp;
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs
         /// and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
         /// <i>IAM User Guide</i>. </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the user was created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
@@ -2527,44 +2560,44 @@ pub mod user {
         /// Also, if the user does not currently have a password but had one in the past, then this
         /// field contains the date and time the most recent password was used.</p>
         /// <p>This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
-        pub fn password_last_used(mut self, inp: smithy_types::Instant) -> Self {
-            self.password_last_used = Some(inp);
+        pub fn password_last_used(mut self, input: smithy_types::Instant) -> Self {
+            self.password_last_used = Some(input);
             self
         }
         pub fn set_password_last_used(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.password_last_used = inp;
+            self.password_last_used = input;
             self
         }
         /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
         /// identities </a> in the <i>IAM User Guide</i>.</p>
         pub fn permissions_boundary(
             mut self,
-            inp: crate::model::AttachedPermissionsBoundary,
+            input: crate::model::AttachedPermissionsBoundary,
         ) -> Self {
-            self.permissions_boundary = Some(inp);
+            self.permissions_boundary = Some(input);
             self
         }
         pub fn set_permissions_boundary(
             mut self,
-            inp: std::option::Option<crate::model::AttachedPermissionsBoundary>,
+            input: std::option::Option<crate::model::AttachedPermissionsBoundary>,
         ) -> Self {
-            self.permissions_boundary = inp;
+            self.permissions_boundary = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`User`](crate::model::User)
@@ -2690,45 +2723,48 @@ pub mod ssh_public_key_metadata {
     }
     impl Builder {
         /// <p>The name of the IAM user associated with the SSH public key.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The unique identifier for the SSH public key.</p>
-        pub fn ssh_public_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssh_public_key_id = Some(inp.into());
+        pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssh_public_key_id = Some(input.into());
             self
         }
         pub fn set_ssh_public_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ssh_public_key_id = inp;
+            self.ssh_public_key_id = input;
             self
         }
         /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for
         /// authentication with an AWS CodeCommit repository. <code>Inactive</code> means that the key
         /// cannot be used.</p>
-        pub fn status(mut self, inp: crate::model::StatusType) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::StatusType>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the SSH public key was uploaded.</p>
-        pub fn upload_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.upload_date = Some(inp);
+        pub fn upload_date(mut self, input: smithy_types::Instant) -> Self {
+            self.upload_date = Some(input);
             self
         }
-        pub fn set_upload_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.upload_date = inp;
+        pub fn set_upload_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.upload_date = input;
             self
         }
         /// Consumes the builder and constructs a [`SSHPublicKeyMetadata`](crate::model::SSHPublicKeyMetadata)
@@ -2798,68 +2834,71 @@ pub mod service_specific_credential_metadata {
     }
     impl Builder {
         /// <p>The name of the IAM user associated with the service-specific credential.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The status of the service-specific credential. <code>Active</code> means that the key is
         /// valid for API calls, while <code>Inactive</code> means it is not.</p>
-        pub fn status(mut self, inp: crate::model::StatusType) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::StatusType>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The generated user name for the service-specific credential.</p>
-        pub fn service_user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_user_name = Some(inp.into());
+        pub fn service_user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_user_name = Some(input.into());
             self
         }
         pub fn set_service_user_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.service_user_name = inp;
+            self.service_user_name = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the service-specific credential were created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
         /// <p>The unique identifier for the service-specific credential.</p>
         pub fn service_specific_credential_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.service_specific_credential_id = Some(inp.into());
+            self.service_specific_credential_id = Some(input.into());
             self
         }
         pub fn set_service_specific_credential_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.service_specific_credential_id = inp;
+            self.service_specific_credential_id = input;
             self
         }
         /// <p>The name of the service associated with the service-specific credential.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_name = Some(inp.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
             self
         }
-        pub fn set_service_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.service_name = inp;
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceSpecificCredentialMetadata`](crate::model::ServiceSpecificCredentialMetadata)
@@ -2914,30 +2953,36 @@ pub mod saml_provider_list_entry {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The expiration date and time for the SAML provider.</p>
-        pub fn valid_until(mut self, inp: smithy_types::Instant) -> Self {
-            self.valid_until = Some(inp);
+        pub fn valid_until(mut self, input: smithy_types::Instant) -> Self {
+            self.valid_until = Some(input);
             self
         }
-        pub fn set_valid_until(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.valid_until = inp;
+        pub fn set_valid_until(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.valid_until = input;
             self
         }
         /// <p>The date and time when the SAML provider was created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
         /// Consumes the builder and constructs a [`SAMLProviderListEntry`](crate::model::SAMLProviderListEntry)
@@ -3011,42 +3056,45 @@ pub mod policy_version {
         /// method to convert the policy back to plain JSON text. For example, if you use Java, you can
         /// use the <code>decode</code> method of the <code>java.net.URLDecoder</code> utility class in
         /// the Java SDK. Other languages and SDKs provide similar functionality.</p>
-        pub fn document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.document = Some(inp.into());
+        pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.document = Some(input.into());
             self
         }
-        pub fn set_document(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.document = inp;
+        pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document = input;
             self
         }
         /// <p>The identifier for the policy version.</p>
         /// <p>Policy version identifiers always begin with <code>v</code> (always lowercase). When a
         /// policy is created, the first policy version is <code>v1</code>. </p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// <p>Specifies whether the policy version is set as the policy's default version.</p>
-        pub fn is_default_version(mut self, inp: bool) -> Self {
-            self.is_default_version = Some(inp);
+        pub fn is_default_version(mut self, input: bool) -> Self {
+            self.is_default_version = Some(input);
             self
         }
-        pub fn set_is_default_version(mut self, inp: bool) -> Self {
-            self.is_default_version = Some(inp);
+        pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_default_version = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the policy version was created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
         /// Consumes the builder and constructs a [`PolicyVersion`](crate::model::PolicyVersion)
@@ -3111,31 +3159,31 @@ pub mod list_policies_granting_service_access_entry {
         /// example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
         /// service namespaces</a> in the <i>AWS General Reference</i>.</p>
-        pub fn service_namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_namespace = Some(inp.into());
+        pub fn service_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_namespace = Some(input.into());
             self
         }
         pub fn set_service_namespace(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.service_namespace = inp;
+            self.service_namespace = input;
             self
         }
         pub fn policies(
             mut self,
-            inp: impl Into<crate::model::PolicyGrantingServiceAccess>,
+            input: impl Into<crate::model::PolicyGrantingServiceAccess>,
         ) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policies = Some(v);
             self
         }
         pub fn set_policies(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PolicyGrantingServiceAccess>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PolicyGrantingServiceAccess>>,
         ) -> Self {
-            self.policies = inp;
+            self.policies = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPoliciesGrantingServiceAccessEntry`](crate::model::ListPoliciesGrantingServiceAccessEntry)
@@ -3207,37 +3255,37 @@ pub mod policy_granting_service_access {
     }
     impl Builder {
         /// <p>The policy name.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// <p>The policy type. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn policy_type(mut self, inp: crate::model::PolicyType) -> Self {
-            self.policy_type = Some(inp);
+        pub fn policy_type(mut self, input: crate::model::PolicyType) -> Self {
+            self.policy_type = Some(input);
             self
         }
         pub fn set_policy_type(
             mut self,
-            inp: std::option::Option<crate::model::PolicyType>,
+            input: std::option::Option<crate::model::PolicyType>,
         ) -> Self {
-            self.policy_type = inp;
+            self.policy_type = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
         /// the <i>AWS General Reference</i>. </p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// <p>The type of entity (user or role) that used the policy to access the service to which
@@ -3245,27 +3293,27 @@ pub mod policy_granting_service_access {
         /// <p>This field is null for managed policies. For more information about these policy types,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn entity_type(mut self, inp: crate::model::PolicyOwnerEntityType) -> Self {
-            self.entity_type = Some(inp);
+        pub fn entity_type(mut self, input: crate::model::PolicyOwnerEntityType) -> Self {
+            self.entity_type = Some(input);
             self
         }
         pub fn set_entity_type(
             mut self,
-            inp: std::option::Option<crate::model::PolicyOwnerEntityType>,
+            input: std::option::Option<crate::model::PolicyOwnerEntityType>,
         ) -> Self {
-            self.entity_type = inp;
+            self.entity_type = input;
             self
         }
         /// <p>The name of the entity (user or role) to which the inline policy is attached.</p>
         /// <p>This field is null for managed policies. For more information about these policy types,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn entity_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.entity_name = Some(inp.into());
+        pub fn entity_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entity_name = Some(input.into());
             self
         }
-        pub fn set_entity_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.entity_name = inp;
+        pub fn set_entity_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entity_name = input;
             self
         }
         /// Consumes the builder and constructs a [`PolicyGrantingServiceAccess`](crate::model::PolicyGrantingServiceAccess)
@@ -3494,111 +3542,114 @@ pub mod policy {
     }
     impl Builder {
         /// <p>The friendly name (not ARN) identifying the policy.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// <p>The stable and unique string identifying the policy.</p>
         /// <p>For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_id = Some(inp.into());
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_id = Some(input.into());
             self
         }
-        pub fn set_policy_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_id = inp;
+        pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
         /// the <i>AWS General Reference</i>. </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The path to the policy.</p>
         /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The identifier for the version of the policy that is set as the default version.</p>
-        pub fn default_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.default_version_id = Some(inp.into());
+        pub fn default_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_version_id = Some(input.into());
             self
         }
         pub fn set_default_version_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.default_version_id = inp;
+            self.default_version_id = input;
             self
         }
         /// <p>The number of entities (users, groups, and roles) that the policy is attached to.</p>
-        pub fn attachment_count(mut self, inp: i32) -> Self {
-            self.attachment_count = Some(inp);
+        pub fn attachment_count(mut self, input: i32) -> Self {
+            self.attachment_count = Some(input);
             self
         }
-        pub fn set_attachment_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.attachment_count = inp;
+        pub fn set_attachment_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.attachment_count = input;
             self
         }
         /// <p>The number of entities (users and roles) for which the policy is used to set the
         /// permissions boundary. </p>
         /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
         /// identities </a> in the <i>IAM User Guide</i>.</p>
-        pub fn permissions_boundary_usage_count(mut self, inp: i32) -> Self {
-            self.permissions_boundary_usage_count = Some(inp);
+        pub fn permissions_boundary_usage_count(mut self, input: i32) -> Self {
+            self.permissions_boundary_usage_count = Some(input);
             self
         }
         pub fn set_permissions_boundary_usage_count(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.permissions_boundary_usage_count = inp;
+            self.permissions_boundary_usage_count = input;
             self
         }
         /// <p>Specifies whether the policy can be attached to an IAM user, group, or role.</p>
-        pub fn is_attachable(mut self, inp: bool) -> Self {
-            self.is_attachable = Some(inp);
+        pub fn is_attachable(mut self, input: bool) -> Self {
+            self.is_attachable = Some(input);
             self
         }
-        pub fn set_is_attachable(mut self, inp: bool) -> Self {
-            self.is_attachable = Some(inp);
+        pub fn set_is_attachable(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_attachable = input;
             self
         }
         /// <p>A friendly description of the policy.</p>
         /// <p>This element is included in the response to the <a>GetPolicy</a> operation.
         /// It is not included in the response to the <a>ListPolicies</a> operation. </p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the policy was created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
@@ -3606,25 +3657,28 @@ pub mod policy {
         /// <p>When a policy has only one version, this field contains the date and time when the
         /// policy was created. When a policy has more than one version, this field contains the date
         /// and time when the most recent policy version was created.</p>
-        pub fn update_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.update_date = Some(inp);
+        pub fn update_date(mut self, input: smithy_types::Instant) -> Self {
+            self.update_date = Some(input);
             self
         }
-        pub fn set_update_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.update_date = inp;
+        pub fn set_update_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.update_date = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`Policy`](crate::model::Policy)
@@ -3800,12 +3854,12 @@ pub mod open_id_connect_provider_list_entry {
         /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
         /// the <i>AWS General Reference</i>. </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// Consumes the builder and constructs a [`OpenIDConnectProviderListEntry`](crate::model::OpenIDConnectProviderListEntry)
@@ -3856,31 +3910,37 @@ pub mod mfa_device {
     }
     impl Builder {
         /// <p>The user with whom the MFA device is associated.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the
         /// serial number is the device ARN.</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.serial_number = Some(inp.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.serial_number = Some(input.into());
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.serial_number = inp;
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.serial_number = input;
             self
         }
         /// <p>The date when the MFA device was enabled for the user.</p>
-        pub fn enable_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.enable_date = Some(inp);
+        pub fn enable_date(mut self, input: smithy_types::Instant) -> Self {
+            self.enable_date = Some(input);
             self
         }
-        pub fn set_enable_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.enable_date = inp;
+        pub fn set_enable_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.enable_date = input;
             self
         }
         /// Consumes the builder and constructs a [`MFADevice`](crate::model::MFADevice)
@@ -3977,83 +4037,86 @@ pub mod instance_profile {
     impl Builder {
         /// <p> The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
         /// identifiers</a> in the <i>IAM User Guide</i>. </p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The name identifying the instance profile.</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_profile_name = Some(inp.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_profile_name = Some(input.into());
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.instance_profile_name = inp;
+            self.instance_profile_name = input;
             self
         }
         /// <p> The stable and unique string identifying the instance profile. For more information
         /// about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
-        pub fn instance_profile_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_profile_id = Some(inp.into());
+        pub fn instance_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_profile_id = Some(input.into());
             self
         }
         pub fn set_instance_profile_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.instance_profile_id = inp;
+            self.instance_profile_id = input;
             self
         }
         /// <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information
         /// about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
         /// <i>IAM User Guide</i>. </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The date when the instance profile was created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
-        pub fn roles(mut self, inp: impl Into<crate::model::Role>) -> Self {
+        pub fn roles(mut self, input: impl Into<crate::model::Role>) -> Self {
             let mut v = self.roles.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.roles = Some(v);
             self
         }
         pub fn set_roles(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Role>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Role>>,
         ) -> Self {
-            self.roles = inp;
+            self.roles = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`InstanceProfile`](crate::model::InstanceProfile)
@@ -4142,53 +4205,56 @@ pub mod group {
     impl Builder {
         /// <p>The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
         /// <i>IAM User Guide</i>. </p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The friendly name that identifies the group.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// <p> The stable and unique string identifying the group. For more information about IDs, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
         /// identifiers</a> in the <i>IAM User Guide</i>. </p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_id = Some(inp.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_id = Some(input.into());
             self
         }
-        pub fn set_group_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_id = inp;
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_id = input;
             self
         }
         /// <p> The Amazon Resource Name (ARN) specifying the group. For more information about ARNs
         /// and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
         /// <i>IAM User Guide</i>. </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the group was created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
         /// Consumes the builder and constructs a [`Group`](crate::model::Group)
@@ -4243,23 +4309,23 @@ pub mod policy_role {
     }
     impl Builder {
         /// <p>The name (friendly name, not ARN) identifying the role.</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>The stable and unique string identifying the role. For more information about IDs, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
         /// identifiers</a> in the <i>IAM User Guide</i>.</p>
-        pub fn role_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_id = Some(inp.into());
+        pub fn role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_id = Some(input.into());
             self
         }
-        pub fn set_role_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_id = inp;
+        pub fn set_role_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_id = input;
             self
         }
         /// Consumes the builder and constructs a [`PolicyRole`](crate::model::PolicyRole)
@@ -4311,23 +4377,23 @@ pub mod policy_user {
     }
     impl Builder {
         /// <p>The name (friendly name, not ARN) identifying the user.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The stable and unique string identifying the user. For more information about IDs, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
         /// identifiers</a> in the <i>IAM User Guide</i>.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_id = Some(inp.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
             self
         }
-        pub fn set_user_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_id = inp;
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
             self
         }
         /// Consumes the builder and constructs a [`PolicyUser`](crate::model::PolicyUser)
@@ -4379,23 +4445,23 @@ pub mod policy_group {
     }
     impl Builder {
         /// <p>The name (friendly name, not ARN) identifying the group.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// <p>The stable and unique string identifying the group. For more information about IDs, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
         /// identifiers</a> in the <i>IAM User Guide</i>.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_id = Some(inp.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_id = Some(input.into());
             self
         }
-        pub fn set_group_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_id = inp;
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_id = input;
             self
         }
         /// Consumes the builder and constructs a [`PolicyGroup`](crate::model::PolicyGroup)
@@ -4513,23 +4579,23 @@ pub mod attached_policy {
     }
     impl Builder {
         /// <p>The friendly name of the attached policy.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
         /// the <i>AWS General Reference</i>. </p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`AttachedPolicy`](crate::model::AttachedPolicy)
@@ -4587,40 +4653,46 @@ pub mod access_key_metadata {
     }
     impl Builder {
         /// <p>The name of the IAM user that the key is associated with.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The ID for this access key.</p>
-        pub fn access_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.access_key_id = Some(inp.into());
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_key_id = Some(input.into());
             self
         }
-        pub fn set_access_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.access_key_id = inp;
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_key_id = input;
             self
         }
         /// <p>The status of the access key. <code>Active</code> means that the key is valid for API
         /// calls; <code>Inactive</code> means it is not.</p>
-        pub fn status(mut self, inp: crate::model::StatusType) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::StatusType>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The date when the access key was created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
         /// Consumes the builder and constructs a [`AccessKeyMetadata`](crate::model::AccessKeyMetadata)
@@ -4731,25 +4803,25 @@ pub mod deletion_task_failure_reason_type {
     }
     impl Builder {
         /// <p>A short description of the reason that the service-linked role deletion failed.</p>
-        pub fn reason(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.reason = Some(inp.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.reason = Some(input.into());
             self
         }
-        pub fn set_reason(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.reason = inp;
+        pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.reason = input;
             self
         }
-        pub fn role_usage_list(mut self, inp: impl Into<crate::model::RoleUsageType>) -> Self {
+        pub fn role_usage_list(mut self, input: impl Into<crate::model::RoleUsageType>) -> Self {
             let mut v = self.role_usage_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.role_usage_list = Some(v);
             self
         }
         pub fn set_role_usage_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::RoleUsageType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::RoleUsageType>>,
         ) -> Self {
-            self.role_usage_list = inp;
+            self.role_usage_list = input;
             self
         }
         /// Consumes the builder and constructs a [`DeletionTaskFailureReasonType`](crate::model::DeletionTaskFailureReasonType)
@@ -4798,25 +4870,25 @@ pub mod role_usage_type {
     }
     impl Builder {
         /// <p>The name of the Region where the service-linked role is being used.</p>
-        pub fn region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.region = Some(inp.into());
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
             self
         }
-        pub fn set_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.region = inp;
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
             self
         }
-        pub fn resources(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resources = Some(v);
             self
         }
         pub fn set_resources(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.resources = inp;
+            self.resources = input;
             self
         }
         /// Consumes the builder and constructs a [`RoleUsageType`](crate::model::RoleUsageType)
@@ -4926,21 +4998,21 @@ pub mod error_details {
     }
     impl Builder {
         /// <p>Detailed information about the reason that the operation failed.</p>
-        pub fn message(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.message = Some(inp.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
             self
         }
-        pub fn set_message(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.message = inp;
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
             self
         }
         /// <p>The error code associated with the operation failure.</p>
-        pub fn code(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.code = Some(inp.into());
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.code = Some(input.into());
             self
         }
-        pub fn set_code(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.code = inp;
+        pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.code = input;
             self
         }
         /// Consumes the builder and constructs a [`ErrorDetails`](crate::model::ErrorDetails)
@@ -4995,15 +5067,15 @@ pub mod entity_details {
     impl Builder {
         /// <p>The <code>EntityInfo</code> object that contains details about the entity (user or
         /// role).</p>
-        pub fn entity_info(mut self, inp: crate::model::EntityInfo) -> Self {
-            self.entity_info = Some(inp);
+        pub fn entity_info(mut self, input: crate::model::EntityInfo) -> Self {
+            self.entity_info = Some(input);
             self
         }
         pub fn set_entity_info(
             mut self,
-            inp: std::option::Option<crate::model::EntityInfo>,
+            input: std::option::Option<crate::model::EntityInfo>,
         ) -> Self {
-            self.entity_info = inp;
+            self.entity_info = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
@@ -5011,15 +5083,15 @@ pub mod entity_details {
         /// not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn last_authenticated(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_authenticated = Some(inp);
+        pub fn last_authenticated(mut self, input: smithy_types::Instant) -> Self {
+            self.last_authenticated = Some(input);
             self
         }
         pub fn set_last_authenticated(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_authenticated = inp;
+            self.last_authenticated = input;
             self
         }
         /// Consumes the builder and constructs a [`EntityDetails`](crate::model::EntityDetails)
@@ -5084,52 +5156,52 @@ pub mod entity_info {
         /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
         /// the <i>AWS General Reference</i>. </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The name of the entity (user or role).</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>The type of entity (user or role).</p>
-        pub fn r#type(mut self, inp: crate::model::PolicyOwnerEntityType) -> Self {
-            self.r#type = Some(inp);
+        pub fn r#type(mut self, input: crate::model::PolicyOwnerEntityType) -> Self {
+            self.r#type = Some(input);
             self
         }
         pub fn set_type(
             mut self,
-            inp: std::option::Option<crate::model::PolicyOwnerEntityType>,
+            input: std::option::Option<crate::model::PolicyOwnerEntityType>,
         ) -> Self {
-            self.r#type = inp;
+            self.r#type = input;
             self
         }
         /// <p>The identifier of the entity (user or role).</p>
-        pub fn id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.id = Some(inp.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
             self
         }
-        pub fn set_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.id = inp;
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
             self
         }
         /// <p>The path to the entity (user or role). For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
         /// identifiers</a> in the <i>IAM User Guide</i>. </p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// Consumes the builder and constructs a [`EntityInfo`](crate::model::EntityInfo)
@@ -5290,12 +5362,12 @@ pub mod service_last_accessed {
     }
     impl Builder {
         /// <p>The name of the service in which access was attempted.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_name = Some(inp.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
             self
         }
-        pub fn set_service_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.service_name = inp;
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
@@ -5303,15 +5375,15 @@ pub mod service_last_accessed {
         /// service. AWS does not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn last_authenticated(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_authenticated = Some(inp);
+        pub fn last_authenticated(mut self, input: smithy_types::Instant) -> Self {
+            self.last_authenticated = Some(input);
             self
         }
         pub fn set_last_authenticated(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_authenticated = inp;
+            self.last_authenticated = input;
             self
         }
         /// <p>The namespace of the service in which access was attempted.</p>
@@ -5321,72 +5393,72 @@ pub mod service_last_accessed {
         /// example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
         /// Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-        pub fn service_namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_namespace = Some(inp.into());
+        pub fn service_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_namespace = Some(input.into());
             self
         }
         pub fn set_service_namespace(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.service_namespace = inp;
+            self.service_namespace = input;
             self
         }
         /// <p>The ARN of the authenticated entity (user or role) that last attempted to access the
         /// service. AWS does not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn last_authenticated_entity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_authenticated_entity = Some(inp.into());
+        pub fn last_authenticated_entity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_authenticated_entity = Some(input.into());
             self
         }
         pub fn set_last_authenticated_entity(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_authenticated_entity = inp;
+            self.last_authenticated_entity = input;
             self
         }
         /// <p>The Region from which the authenticated entity (user or role) last attempted to access
         /// the service. AWS does not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn last_authenticated_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_authenticated_region = Some(inp.into());
+        pub fn last_authenticated_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_authenticated_region = Some(input.into());
             self
         }
         pub fn set_last_authenticated_region(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_authenticated_region = inp;
+            self.last_authenticated_region = input;
             self
         }
         /// <p>The total number of authenticated principals (root user, IAM users, or IAM roles)
         /// that have attempted to access the service.</p>
         /// <p>This field is null if no principals attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn total_authenticated_entities(mut self, inp: i32) -> Self {
-            self.total_authenticated_entities = Some(inp);
+        pub fn total_authenticated_entities(mut self, input: i32) -> Self {
+            self.total_authenticated_entities = Some(input);
             self
         }
-        pub fn set_total_authenticated_entities(mut self, inp: std::option::Option<i32>) -> Self {
-            self.total_authenticated_entities = inp;
+        pub fn set_total_authenticated_entities(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_authenticated_entities = input;
             self
         }
         pub fn tracked_actions_last_accessed(
             mut self,
-            inp: impl Into<crate::model::TrackedActionLastAccessed>,
+            input: impl Into<crate::model::TrackedActionLastAccessed>,
         ) -> Self {
             let mut v = self.tracked_actions_last_accessed.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tracked_actions_last_accessed = Some(v);
             self
         }
         pub fn set_tracked_actions_last_accessed(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::TrackedActionLastAccessed>>,
+            input: std::option::Option<std::vec::Vec<crate::model::TrackedActionLastAccessed>>,
         ) -> Self {
-            self.tracked_actions_last_accessed = inp;
+            self.tracked_actions_last_accessed = input;
             self
         }
         /// Consumes the builder and constructs a [`ServiceLastAccessed`](crate::model::ServiceLastAccessed)
@@ -5458,26 +5530,26 @@ pub mod tracked_action_last_accessed {
     impl Builder {
         /// <p>The name of the tracked action to which access was attempted. Tracked actions are
         /// actions that report activity to IAM.</p>
-        pub fn action_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.action_name = Some(inp.into());
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.action_name = Some(input.into());
             self
         }
-        pub fn set_action_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.action_name = inp;
+        pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.action_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
         /// the <i>AWS General Reference</i>. </p>
-        pub fn last_accessed_entity(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_accessed_entity = Some(inp.into());
+        pub fn last_accessed_entity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_accessed_entity = Some(input.into());
             self
         }
         pub fn set_last_accessed_entity(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_accessed_entity = inp;
+            self.last_accessed_entity = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
@@ -5485,30 +5557,30 @@ pub mod tracked_action_last_accessed {
         /// tracked service. AWS does not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn last_accessed_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_accessed_time = Some(inp);
+        pub fn last_accessed_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_accessed_time = Some(input);
             self
         }
         pub fn set_last_accessed_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_accessed_time = inp;
+            self.last_accessed_time = input;
             self
         }
         /// <p>The Region from which the authenticated entity (user or role) last attempted to access
         /// the tracked action. AWS does not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn last_accessed_region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.last_accessed_region = Some(inp.into());
+        pub fn last_accessed_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.last_accessed_region = Some(input.into());
             self
         }
         pub fn set_last_accessed_region(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.last_accessed_region = inp;
+            self.last_accessed_region = input;
             self
         }
         /// Consumes the builder and constructs a [`TrackedActionLastAccessed`](crate::model::TrackedActionLastAccessed)
@@ -5631,53 +5703,53 @@ pub mod server_certificate {
         /// ARN.</p>
         pub fn server_certificate_metadata(
             mut self,
-            inp: crate::model::ServerCertificateMetadata,
+            input: crate::model::ServerCertificateMetadata,
         ) -> Self {
-            self.server_certificate_metadata = Some(inp);
+            self.server_certificate_metadata = Some(input);
             self
         }
         pub fn set_server_certificate_metadata(
             mut self,
-            inp: std::option::Option<crate::model::ServerCertificateMetadata>,
+            input: std::option::Option<crate::model::ServerCertificateMetadata>,
         ) -> Self {
-            self.server_certificate_metadata = inp;
+            self.server_certificate_metadata = input;
             self
         }
         /// <p>The contents of the public key certificate.</p>
-        pub fn certificate_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_body = Some(inp.into());
+        pub fn certificate_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_body = Some(input.into());
             self
         }
         pub fn set_certificate_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_body = inp;
+            self.certificate_body = input;
             self
         }
         /// <p>The contents of the public key certificate chain.</p>
-        pub fn certificate_chain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_chain = Some(inp.into());
+        pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_chain = Some(input.into());
             self
         }
         pub fn set_certificate_chain(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_chain = inp;
+            self.certificate_chain = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`ServerCertificate`](crate::model::ServerCertificate)
@@ -5765,12 +5837,12 @@ pub mod access_detail {
     }
     impl Builder {
         /// <p>The name of the service in which access was attempted.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_name = Some(inp.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
             self
         }
-        pub fn set_service_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.service_name = inp;
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
             self
         }
         /// <p>The namespace of the service in which access was attempted.</p>
@@ -5780,26 +5852,26 @@ pub mod access_detail {
         /// example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
         /// service namespaces</a> in the <i>AWS General Reference</i>.</p>
-        pub fn service_namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_namespace = Some(inp.into());
+        pub fn service_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_namespace = Some(input.into());
             self
         }
         pub fn set_service_namespace(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.service_namespace = inp;
+            self.service_namespace = input;
             self
         }
         /// <p>The Region where the last service access attempt occurred.</p>
         /// <p>This field is null if no principals in the reported Organizations entity attempted to access the
         /// service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.region = Some(inp.into());
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
             self
         }
-        pub fn set_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.region = inp;
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
             self
         }
         /// <p>The path of the Organizations entity (root, organizational unit, or account) from which an
@@ -5807,12 +5879,12 @@ pub mod access_detail {
         /// unauthenticated requests.</p>
         /// <p>This field is null if no principals (IAM users, IAM roles, or root users) in the
         /// reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn entity_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.entity_path = Some(inp.into());
+        pub fn entity_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entity_path = Some(input.into());
             self
         }
-        pub fn set_entity_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.entity_path = inp;
+        pub fn set_entity_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entity_path = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
@@ -5820,25 +5892,25 @@ pub mod access_detail {
         /// service. AWS does not report unauthenticated requests.</p>
         /// <p>This field is null if no principals in the reported Organizations entity attempted to access the
         /// service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn last_authenticated_time(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_authenticated_time = Some(inp);
+        pub fn last_authenticated_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_authenticated_time = Some(input);
             self
         }
         pub fn set_last_authenticated_time(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_authenticated_time = inp;
+            self.last_authenticated_time = input;
             self
         }
         /// <p>The number of accounts with authenticated principals (root users, IAM users, and IAM
         /// roles) that attempted to access the service in the reporting period.</p>
-        pub fn total_authenticated_entities(mut self, inp: i32) -> Self {
-            self.total_authenticated_entities = Some(inp);
+        pub fn total_authenticated_entities(mut self, input: i32) -> Self {
+            self.total_authenticated_entities = Some(input);
             self
         }
-        pub fn set_total_authenticated_entities(mut self, inp: std::option::Option<i32>) -> Self {
-            self.total_authenticated_entities = inp;
+        pub fn set_total_authenticated_entities(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_authenticated_entities = input;
             self
         }
         /// Consumes the builder and constructs a [`AccessDetail`](crate::model::AccessDetail)
@@ -5958,30 +6030,33 @@ pub mod login_profile {
     impl Builder {
         /// <p>The name of the user, which can be used for signing in to the AWS Management
         /// Console.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The date when the password for the user was created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
         /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
-        pub fn password_reset_required(mut self, inp: bool) -> Self {
-            self.password_reset_required = Some(inp);
+        pub fn password_reset_required(mut self, input: bool) -> Self {
+            self.password_reset_required = Some(input);
             self
         }
-        pub fn set_password_reset_required(mut self, inp: bool) -> Self {
-            self.password_reset_required = Some(inp);
+        pub fn set_password_reset_required(mut self, input: std::option::Option<bool>) -> Self {
+            self.password_reset_required = input;
             self
         }
         /// Consumes the builder and constructs a [`LoginProfile`](crate::model::LoginProfile)
@@ -6261,98 +6336,107 @@ pub mod password_policy {
     }
     impl Builder {
         /// <p>Minimum length to require for IAM user passwords.</p>
-        pub fn minimum_password_length(mut self, inp: i32) -> Self {
-            self.minimum_password_length = Some(inp);
+        pub fn minimum_password_length(mut self, input: i32) -> Self {
+            self.minimum_password_length = Some(input);
             self
         }
-        pub fn set_minimum_password_length(mut self, inp: std::option::Option<i32>) -> Self {
-            self.minimum_password_length = inp;
+        pub fn set_minimum_password_length(mut self, input: std::option::Option<i32>) -> Self {
+            self.minimum_password_length = input;
             self
         }
         /// <p>Specifies whether IAM user passwords must contain at least one of the following symbols:</p>
         /// <p>! @ # $ % ^ & * ( ) _ + - = [ ] { } | '</p>
-        pub fn require_symbols(mut self, inp: bool) -> Self {
-            self.require_symbols = Some(inp);
+        pub fn require_symbols(mut self, input: bool) -> Self {
+            self.require_symbols = Some(input);
             self
         }
-        pub fn set_require_symbols(mut self, inp: bool) -> Self {
-            self.require_symbols = Some(inp);
+        pub fn set_require_symbols(mut self, input: std::option::Option<bool>) -> Self {
+            self.require_symbols = input;
             self
         }
         /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p>
-        pub fn require_numbers(mut self, inp: bool) -> Self {
-            self.require_numbers = Some(inp);
+        pub fn require_numbers(mut self, input: bool) -> Self {
+            self.require_numbers = Some(input);
             self
         }
-        pub fn set_require_numbers(mut self, inp: bool) -> Self {
-            self.require_numbers = Some(inp);
+        pub fn set_require_numbers(mut self, input: std::option::Option<bool>) -> Self {
+            self.require_numbers = input;
             self
         }
         /// <p>Specifies whether IAM user passwords must contain at least one uppercase character (A to Z).</p>
-        pub fn require_uppercase_characters(mut self, inp: bool) -> Self {
-            self.require_uppercase_characters = Some(inp);
+        pub fn require_uppercase_characters(mut self, input: bool) -> Self {
+            self.require_uppercase_characters = Some(input);
             self
         }
-        pub fn set_require_uppercase_characters(mut self, inp: bool) -> Self {
-            self.require_uppercase_characters = Some(inp);
+        pub fn set_require_uppercase_characters(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.require_uppercase_characters = input;
             self
         }
         /// <p>Specifies whether IAM user passwords must contain at least one lowercase character (a to z).</p>
-        pub fn require_lowercase_characters(mut self, inp: bool) -> Self {
-            self.require_lowercase_characters = Some(inp);
+        pub fn require_lowercase_characters(mut self, input: bool) -> Self {
+            self.require_lowercase_characters = Some(input);
             self
         }
-        pub fn set_require_lowercase_characters(mut self, inp: bool) -> Self {
-            self.require_lowercase_characters = Some(inp);
+        pub fn set_require_lowercase_characters(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.require_lowercase_characters = input;
             self
         }
         /// <p>Specifies whether IAM users are allowed to change their own password.</p>
-        pub fn allow_users_to_change_password(mut self, inp: bool) -> Self {
-            self.allow_users_to_change_password = Some(inp);
+        pub fn allow_users_to_change_password(mut self, input: bool) -> Self {
+            self.allow_users_to_change_password = Some(input);
             self
         }
-        pub fn set_allow_users_to_change_password(mut self, inp: bool) -> Self {
-            self.allow_users_to_change_password = Some(inp);
+        pub fn set_allow_users_to_change_password(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.allow_users_to_change_password = input;
             self
         }
         /// <p>Indicates whether passwords in the account expire. Returns true if
         /// <code>MaxPasswordAge</code> contains a value greater than 0. Returns false if
         /// MaxPasswordAge is 0 or not present.</p>
-        pub fn expire_passwords(mut self, inp: bool) -> Self {
-            self.expire_passwords = Some(inp);
+        pub fn expire_passwords(mut self, input: bool) -> Self {
+            self.expire_passwords = Some(input);
             self
         }
-        pub fn set_expire_passwords(mut self, inp: bool) -> Self {
-            self.expire_passwords = Some(inp);
+        pub fn set_expire_passwords(mut self, input: std::option::Option<bool>) -> Self {
+            self.expire_passwords = input;
             self
         }
         /// <p>The number of days that an IAM user password is valid.</p>
-        pub fn max_password_age(mut self, inp: i32) -> Self {
-            self.max_password_age = Some(inp);
+        pub fn max_password_age(mut self, input: i32) -> Self {
+            self.max_password_age = Some(input);
             self
         }
-        pub fn set_max_password_age(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_password_age = inp;
+        pub fn set_max_password_age(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_password_age = input;
             self
         }
         /// <p>Specifies the number of previous passwords that IAM users are prevented from
         /// reusing.</p>
-        pub fn password_reuse_prevention(mut self, inp: i32) -> Self {
-            self.password_reuse_prevention = Some(inp);
+        pub fn password_reuse_prevention(mut self, input: i32) -> Self {
+            self.password_reuse_prevention = Some(input);
             self
         }
-        pub fn set_password_reuse_prevention(mut self, inp: std::option::Option<i32>) -> Self {
-            self.password_reuse_prevention = inp;
+        pub fn set_password_reuse_prevention(mut self, input: std::option::Option<i32>) -> Self {
+            self.password_reuse_prevention = input;
             self
         }
         /// <p>Specifies whether IAM users are prevented from setting a new password after their
         /// password has expired.</p>
-        pub fn hard_expiry(mut self, inp: bool) -> Self {
-            self.hard_expiry = Some(inp);
+        pub fn hard_expiry(mut self, input: bool) -> Self {
+            self.hard_expiry = Some(input);
             self
         }
-        pub fn set_hard_expiry(mut self, inp: std::option::Option<bool>) -> Self {
-            self.hard_expiry = inp;
+        pub fn set_hard_expiry(mut self, input: std::option::Option<bool>) -> Self {
+            self.hard_expiry = input;
             self
         }
         /// Consumes the builder and constructs a [`PasswordPolicy`](crate::model::PasswordPolicy)
@@ -6476,113 +6560,116 @@ pub mod managed_policy_detail {
     }
     impl Builder {
         /// <p>The friendly name (not ARN) identifying the policy.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// <p>The stable and unique string identifying the policy.</p>
         /// <p>For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_id = Some(inp.into());
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_id = Some(input.into());
             self
         }
-        pub fn set_policy_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_id = inp;
+        pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
         /// the <i>AWS General Reference</i>. </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The path to the policy.</p>
         /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The identifier for the version of the policy that is set as the default (operative)
         /// version.</p>
         /// <p>For more information about policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
         /// policies</a> in the <i>IAM User Guide</i>. </p>
-        pub fn default_version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.default_version_id = Some(inp.into());
+        pub fn default_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.default_version_id = Some(input.into());
             self
         }
         pub fn set_default_version_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.default_version_id = inp;
+            self.default_version_id = input;
             self
         }
         /// <p>The number of principal entities (users, groups, and roles) that the policy is attached
         /// to.</p>
-        pub fn attachment_count(mut self, inp: i32) -> Self {
-            self.attachment_count = Some(inp);
+        pub fn attachment_count(mut self, input: i32) -> Self {
+            self.attachment_count = Some(input);
             self
         }
-        pub fn set_attachment_count(mut self, inp: std::option::Option<i32>) -> Self {
-            self.attachment_count = inp;
+        pub fn set_attachment_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.attachment_count = input;
             self
         }
         /// <p>The number of entities (users and roles) for which the policy is used as the permissions
         /// boundary. </p>
         /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
         /// identities </a> in the <i>IAM User Guide</i>.</p>
-        pub fn permissions_boundary_usage_count(mut self, inp: i32) -> Self {
-            self.permissions_boundary_usage_count = Some(inp);
+        pub fn permissions_boundary_usage_count(mut self, input: i32) -> Self {
+            self.permissions_boundary_usage_count = Some(input);
             self
         }
         pub fn set_permissions_boundary_usage_count(
             mut self,
-            inp: std::option::Option<i32>,
+            input: std::option::Option<i32>,
         ) -> Self {
-            self.permissions_boundary_usage_count = inp;
+            self.permissions_boundary_usage_count = input;
             self
         }
         /// <p>Specifies whether the policy can be attached to an IAM user, group, or role.</p>
-        pub fn is_attachable(mut self, inp: bool) -> Self {
-            self.is_attachable = Some(inp);
+        pub fn is_attachable(mut self, input: bool) -> Self {
+            self.is_attachable = Some(input);
             self
         }
-        pub fn set_is_attachable(mut self, inp: bool) -> Self {
-            self.is_attachable = Some(inp);
+        pub fn set_is_attachable(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_attachable = input;
             self
         }
         /// <p>A friendly description of the policy.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the policy was created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
@@ -6590,25 +6677,31 @@ pub mod managed_policy_detail {
         /// <p>When a policy has only one version, this field contains the date and time when the
         /// policy was created. When a policy has more than one version, this field contains the date
         /// and time when the most recent policy version was created.</p>
-        pub fn update_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.update_date = Some(inp);
+        pub fn update_date(mut self, input: smithy_types::Instant) -> Self {
+            self.update_date = Some(input);
             self
         }
-        pub fn set_update_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.update_date = inp;
+        pub fn set_update_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.update_date = input;
             self
         }
-        pub fn policy_version_list(mut self, inp: impl Into<crate::model::PolicyVersion>) -> Self {
+        pub fn policy_version_list(
+            mut self,
+            input: impl Into<crate::model::PolicyVersion>,
+        ) -> Self {
             let mut v = self.policy_version_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policy_version_list = Some(v);
             self
         }
         pub fn set_policy_version_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
         ) -> Self {
-            self.policy_version_list = inp;
+            self.policy_version_list = input;
             self
         }
         /// Consumes the builder and constructs a [`ManagedPolicyDetail`](crate::model::ManagedPolicyDetail)
@@ -6729,110 +6822,116 @@ pub mod role_detail {
     impl Builder {
         /// <p>The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The friendly name that identifies the role.</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>The stable and unique string identifying the role. For more information about IDs, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
         /// identifiers</a> in the <i>IAM User Guide</i>.</p>
-        pub fn role_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_id = Some(inp.into());
+        pub fn role_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_id = Some(input.into());
             self
         }
-        pub fn set_role_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_id = inp;
+        pub fn set_role_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
         /// the <i>AWS General Reference</i>. </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the role was created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
         /// <p>The trust policy that grants permission to assume the role.</p>
-        pub fn assume_role_policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.assume_role_policy_document = Some(inp.into());
+        pub fn assume_role_policy_document(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.assume_role_policy_document = Some(input.into());
             self
         }
         pub fn set_assume_role_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.assume_role_policy_document = inp;
+            self.assume_role_policy_document = input;
             self
         }
         pub fn instance_profile_list(
             mut self,
-            inp: impl Into<crate::model::InstanceProfile>,
+            input: impl Into<crate::model::InstanceProfile>,
         ) -> Self {
             let mut v = self.instance_profile_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.instance_profile_list = Some(v);
             self
         }
         pub fn set_instance_profile_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
         ) -> Self {
-            self.instance_profile_list = inp;
+            self.instance_profile_list = input;
             self
         }
-        pub fn role_policy_list(mut self, inp: impl Into<crate::model::PolicyDetail>) -> Self {
+        pub fn role_policy_list(mut self, input: impl Into<crate::model::PolicyDetail>) -> Self {
             let mut v = self.role_policy_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.role_policy_list = Some(v);
             self
         }
         pub fn set_role_policy_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
         ) -> Self {
-            self.role_policy_list = inp;
+            self.role_policy_list = input;
             self
         }
         pub fn attached_managed_policies(
             mut self,
-            inp: impl Into<crate::model::AttachedPolicy>,
+            input: impl Into<crate::model::AttachedPolicy>,
         ) -> Self {
             let mut v = self.attached_managed_policies.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attached_managed_policies = Some(v);
             self
         }
         pub fn set_attached_managed_policies(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
         ) -> Self {
-            self.attached_managed_policies = inp;
+            self.attached_managed_policies = input;
             self
         }
         /// <p>The ARN of the policy used to set the permissions boundary for the role.</p>
@@ -6840,29 +6939,29 @@ pub mod role_detail {
         /// identities </a> in the <i>IAM User Guide</i>.</p>
         pub fn permissions_boundary(
             mut self,
-            inp: crate::model::AttachedPermissionsBoundary,
+            input: crate::model::AttachedPermissionsBoundary,
         ) -> Self {
-            self.permissions_boundary = Some(inp);
+            self.permissions_boundary = Some(input);
             self
         }
         pub fn set_permissions_boundary(
             mut self,
-            inp: std::option::Option<crate::model::AttachedPermissionsBoundary>,
+            input: std::option::Option<crate::model::AttachedPermissionsBoundary>,
         ) -> Self {
-            self.permissions_boundary = inp;
+            self.permissions_boundary = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// <p>Contains information about the last time that an IAM role was used. This includes the
@@ -6871,15 +6970,15 @@ pub mod role_detail {
         /// features within the last year. The role might have been used more than 400 days ago. For
         /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User
         /// Guide</i>.</p>
-        pub fn role_last_used(mut self, inp: crate::model::RoleLastUsed) -> Self {
-            self.role_last_used = Some(inp);
+        pub fn role_last_used(mut self, input: crate::model::RoleLastUsed) -> Self {
+            self.role_last_used = Some(input);
             self
         }
         pub fn set_role_last_used(
             mut self,
-            inp: std::option::Option<crate::model::RoleLastUsed>,
+            input: std::option::Option<crate::model::RoleLastUsed>,
         ) -> Self {
-            self.role_last_used = inp;
+            self.role_last_used = input;
             self
         }
         /// Consumes the builder and constructs a [`RoleDetail`](crate::model::RoleDetail)
@@ -6937,24 +7036,24 @@ pub mod policy_detail {
     }
     impl Builder {
         /// <p>The name of the policy.</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// <p>The policy document.</p>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_document = Some(inp.into());
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
             self
         }
         pub fn set_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.policy_document = inp;
+            self.policy_document = input;
             self
         }
         /// Consumes the builder and constructs a [`PolicyDetail`](crate::model::PolicyDetail)
@@ -7031,82 +7130,85 @@ pub mod group_detail {
     impl Builder {
         /// <p>The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The friendly name that identifies the group.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// <p>The stable and unique string identifying the group. For more information about IDs, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
         /// identifiers</a> in the <i>IAM User Guide</i>.</p>
-        pub fn group_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_id = Some(inp.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_id = Some(input.into());
             self
         }
-        pub fn set_group_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_id = inp;
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
         /// the <i>AWS General Reference</i>. </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the group was created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
-        pub fn group_policy_list(mut self, inp: impl Into<crate::model::PolicyDetail>) -> Self {
+        pub fn group_policy_list(mut self, input: impl Into<crate::model::PolicyDetail>) -> Self {
             let mut v = self.group_policy_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.group_policy_list = Some(v);
             self
         }
         pub fn set_group_policy_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
         ) -> Self {
-            self.group_policy_list = inp;
+            self.group_policy_list = input;
             self
         }
         pub fn attached_managed_policies(
             mut self,
-            inp: impl Into<crate::model::AttachedPolicy>,
+            input: impl Into<crate::model::AttachedPolicy>,
         ) -> Self {
             let mut v = self.attached_managed_policies.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attached_managed_policies = Some(v);
             self
         }
         pub fn set_attached_managed_policies(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
         ) -> Self {
-            self.attached_managed_policies = inp;
+            self.attached_managed_policies = input;
             self
         }
         /// Consumes the builder and constructs a [`GroupDetail`](crate::model::GroupDetail)
@@ -7204,95 +7306,98 @@ pub mod user_detail {
     impl Builder {
         /// <p>The path to the user. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
         /// <i>IAM User Guide</i>.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The friendly name identifying the user.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The stable and unique string identifying the user. For more information about IDs, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
         /// identifiers</a> in the <i>IAM User Guide</i>.</p>
-        pub fn user_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_id = Some(inp.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
             self
         }
-        pub fn set_user_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_id = inp;
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
         /// the <i>AWS General Reference</i>. </p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the user was created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
-        pub fn user_policy_list(mut self, inp: impl Into<crate::model::PolicyDetail>) -> Self {
+        pub fn user_policy_list(mut self, input: impl Into<crate::model::PolicyDetail>) -> Self {
             let mut v = self.user_policy_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.user_policy_list = Some(v);
             self
         }
         pub fn set_user_policy_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
         ) -> Self {
-            self.user_policy_list = inp;
+            self.user_policy_list = input;
             self
         }
-        pub fn group_list(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn group_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.group_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.group_list = Some(v);
             self
         }
         pub fn set_group_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.group_list = inp;
+            self.group_list = input;
             self
         }
         pub fn attached_managed_policies(
             mut self,
-            inp: impl Into<crate::model::AttachedPolicy>,
+            input: impl Into<crate::model::AttachedPolicy>,
         ) -> Self {
             let mut v = self.attached_managed_policies.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.attached_managed_policies = Some(v);
             self
         }
         pub fn set_attached_managed_policies(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
+            input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
         ) -> Self {
-            self.attached_managed_policies = inp;
+            self.attached_managed_policies = input;
             self
         }
         /// <p>The ARN of the policy used to set the permissions boundary for the user.</p>
@@ -7300,29 +7405,29 @@ pub mod user_detail {
         /// identities </a> in the <i>IAM User Guide</i>.</p>
         pub fn permissions_boundary(
             mut self,
-            inp: crate::model::AttachedPermissionsBoundary,
+            input: crate::model::AttachedPermissionsBoundary,
         ) -> Self {
-            self.permissions_boundary = Some(inp);
+            self.permissions_boundary = Some(input);
             self
         }
         pub fn set_permissions_boundary(
             mut self,
-            inp: std::option::Option<crate::model::AttachedPermissionsBoundary>,
+            input: std::option::Option<crate::model::AttachedPermissionsBoundary>,
         ) -> Self {
-            self.permissions_boundary = inp;
+            self.permissions_boundary = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`UserDetail`](crate::model::UserDetail)
@@ -7439,15 +7544,15 @@ pub mod access_key_last_used {
         /// <p>There is no sign-in data associated with the user.</p>
         /// </li>
         /// </ul>
-        pub fn last_used_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.last_used_date = Some(inp);
+        pub fn last_used_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_used_date = Some(input);
             self
         }
         pub fn set_last_used_date(
             mut self,
-            inp: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<smithy_types::Instant>,
         ) -> Self {
-            self.last_used_date = inp;
+            self.last_used_date = input;
             self
         }
         /// <p>The name of the AWS service with which this access key was most recently used. The value
@@ -7464,12 +7569,12 @@ pub mod access_key_last_used {
         /// <p>There is no sign-in data associated with the user.</p>
         /// </li>
         /// </ul>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_name = Some(inp.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
             self
         }
-        pub fn set_service_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.service_name = inp;
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
             self
         }
         /// <p>The AWS Region where this access key was most recently used. The value for this field is
@@ -7488,12 +7593,12 @@ pub mod access_key_last_used {
         /// </ul>
         /// <p>For more information about AWS Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services
         /// General Reference.</p>
-        pub fn region(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.region = Some(inp.into());
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
             self
         }
-        pub fn set_region(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.region = inp;
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
             self
         }
         /// Consumes the builder and constructs a [`AccessKeyLastUsed`](crate::model::AccessKeyLastUsed)
@@ -7620,52 +7725,58 @@ pub mod access_key {
     }
     impl Builder {
         /// <p>The name of the IAM user that the access key is associated with.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The ID for this access key.</p>
-        pub fn access_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.access_key_id = Some(inp.into());
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_key_id = Some(input.into());
             self
         }
-        pub fn set_access_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.access_key_id = inp;
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_key_id = input;
             self
         }
         /// <p>The status of the access key. <code>Active</code> means that the key is valid for API
         /// calls, while <code>Inactive</code> means it is not. </p>
-        pub fn status(mut self, inp: crate::model::StatusType) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::StatusType>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
+            self.status = input;
             self
         }
         /// <p>The secret key used to sign requests.</p>
-        pub fn secret_access_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.secret_access_key = Some(inp.into());
+        pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.secret_access_key = Some(input.into());
             self
         }
         pub fn set_secret_access_key(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.secret_access_key = inp;
+            self.secret_access_key = input;
             self
         }
         /// <p>The date when the access key was created.</p>
-        pub fn create_date(mut self, inp: smithy_types::Instant) -> Self {
-            self.create_date = Some(inp);
+        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+            self.create_date = Some(input);
             self
         }
-        pub fn set_create_date(mut self, inp: std::option::Option<smithy_types::Instant>) -> Self {
-            self.create_date = inp;
+        pub fn set_create_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_date = input;
             self
         }
         /// Consumes the builder and constructs a [`AccessKey`](crate::model::AccessKey)

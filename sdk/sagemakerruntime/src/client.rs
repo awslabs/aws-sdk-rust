@@ -59,7 +59,7 @@ pub mod fluent_builders {
 
         pub async fn send(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::output::InvokeEndpointOutput,
             smithy_http::result::SdkError<crate::error::InvokeEndpointError>,
         >
@@ -77,42 +77,45 @@ pub mod fluent_builders {
         }
         /// <p>The name of the endpoint that you specified when you created the endpoint using the
         /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API. </p>
-        pub fn endpoint_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(inp);
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input);
             self
         }
-        pub fn set_endpoint_name(mut self, inp: std::string::String) -> Self {
-            self.inner = self.inner.set_endpoint_name(inp);
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_endpoint_name(input);
             self
         }
         /// <p>Provides input data, in the format specified in the <code>ContentType</code>
         /// request header. Amazon SageMaker passes all of the data in the body to the model. </p>
         /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
         /// Formats-Inference</a>.</p>
-        pub fn body(mut self, inp: smithy_types::Blob) -> Self {
-            self.inner = self.inner.body(inp);
+        pub fn body(mut self, input: smithy_types::Blob) -> Self {
+            self.inner = self.inner.body(input);
             self
         }
-        pub fn set_body(mut self, inp: std::option::Option<smithy_types::Blob>) -> Self {
-            self.inner = self.inner.set_body(inp);
+        pub fn set_body(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.inner = self.inner.set_body(input);
             self
         }
         /// <p>The MIME type of the input data in the request body.</p>
-        pub fn content_type(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(inp);
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input);
             self
         }
-        pub fn set_content_type(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_content_type(inp);
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_content_type(input);
             self
         }
         /// <p>The desired MIME type of the inference in the response.</p>
-        pub fn accept(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept(inp);
+        pub fn accept(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept(input);
             self
         }
-        pub fn set_accept(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_accept(inp);
+        pub fn set_accept(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_accept(input);
             self
         }
         /// <p>Provides additional information about a request for an inference submitted to a model
@@ -129,24 +132,24 @@ pub mod fluent_builders {
         /// function.</p>
         /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
         /// SDK.</p>
-        pub fn custom_attributes(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_attributes(inp);
+        pub fn custom_attributes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_attributes(input);
             self
         }
         pub fn set_custom_attributes(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_custom_attributes(inp);
+            self.inner = self.inner.set_custom_attributes(input);
             self
         }
         /// <p>The model to request for inference when invoking a multi-model endpoint.</p>
-        pub fn target_model(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_model(inp);
+        pub fn target_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_model(input);
             self
         }
-        pub fn set_target_model(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_target_model(inp);
+        pub fn set_target_model(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_target_model(input);
             self
         }
         /// <p>Specify the production variant to send the inference request to when invoking an
@@ -156,36 +159,39 @@ pub mod fluent_builders {
         /// <p>For information about how to use variant targeting to perform a/b testing, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test models in
         /// production</a>
         /// </p>
-        pub fn target_variant(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_variant(inp);
+        pub fn target_variant(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_variant(input);
             self
         }
-        pub fn set_target_variant(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_target_variant(inp);
+        pub fn set_target_variant(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_target_variant(input);
             self
         }
         /// <p>If the endpoint hosts multiple containers and is configured to use direct invocation,
         /// this parameter specifies the host name of the container to invoke.</p>
-        pub fn target_container_hostname(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_container_hostname(inp);
+        pub fn target_container_hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_container_hostname(input);
             self
         }
         pub fn set_target_container_hostname(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.set_target_container_hostname(inp);
+            self.inner = self.inner.set_target_container_hostname(input);
             self
         }
         /// <p>If you provide a value, it is added to the captured data when you enable data capture
         /// on the endpoint. For information about data capture, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
         /// Data</a>.</p>
-        pub fn inference_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.inference_id(inp);
+        pub fn inference_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.inference_id(input);
             self
         }
-        pub fn set_inference_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.inner = self.inner.set_inference_id(inp);
+        pub fn set_inference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_inference_id(input);
             self
         }
     }

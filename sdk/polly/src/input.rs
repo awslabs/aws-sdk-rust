@@ -10,18 +10,19 @@ pub mod delete_lexicon_input {
     }
     impl Builder {
         /// <p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.name = Some(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteLexiconInput`](crate::input::DeleteLexiconInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteLexiconInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteLexiconInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteLexiconInput {
                 name: self.name.unwrap_or_default(),
             })
@@ -38,7 +39,7 @@ impl DeleteLexiconInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteLexicon,
             aws_http::AwsErrorRetryPolicy,
@@ -100,7 +101,7 @@ impl DeleteLexiconInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("DELETE").uri(uri))
@@ -108,7 +109,7 @@ impl DeleteLexiconInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -142,26 +143,26 @@ pub mod describe_voices_input {
     impl Builder {
         /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly
         /// when processing input text for speech synthesis. </p>
-        pub fn engine(mut self, inp: crate::model::Engine) -> Self {
-            self.engine = Some(inp);
+        pub fn engine(mut self, input: crate::model::Engine) -> Self {
+            self.engine = Some(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<crate::model::Engine>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<crate::model::Engine>) -> Self {
+            self.engine = input;
             self
         }
         /// <p> The language identification tag (ISO 639 code for the language name-ISO 3166 country
         /// code) for filtering the list of voices returned. If you don't specify this optional parameter,
         /// all available voices are returned. </p>
-        pub fn language_code(mut self, inp: crate::model::LanguageCode) -> Self {
-            self.language_code = Some(inp);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.language_code = Some(input);
             self
         }
         pub fn set_language_code(
             mut self,
-            inp: std::option::Option<crate::model::LanguageCode>,
+            input: std::option::Option<crate::model::LanguageCode>,
         ) -> Self {
-            self.language_code = inp;
+            self.language_code = input;
             self
         }
         /// <p>Boolean value indicating whether to return any bilingual voices that use the specified
@@ -169,28 +170,34 @@ pub mod describe_voices_input {
         /// English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US
         /// English, that voice will be included if you specify <code>yes</code> but not if you specify
         /// <code>no</code>.</p>
-        pub fn include_additional_language_codes(mut self, inp: bool) -> Self {
-            self.include_additional_language_codes = Some(inp);
+        pub fn include_additional_language_codes(mut self, input: bool) -> Self {
+            self.include_additional_language_codes = Some(input);
             self
         }
-        pub fn set_include_additional_language_codes(mut self, inp: bool) -> Self {
-            self.include_additional_language_codes = Some(inp);
+        pub fn set_include_additional_language_codes(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.include_additional_language_codes = input;
             self
         }
         /// <p>An opaque pagination token returned from the previous <code>DescribeVoices</code>
         /// operation. If present, this indicates where to continue the listing.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`DescribeVoicesInput`](crate::input::DescribeVoicesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DescribeVoicesInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::DescribeVoicesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeVoicesInput {
                 engine: self.engine,
                 language_code: self.language_code,
@@ -212,7 +219,7 @@ impl DescribeVoicesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DescribeVoices,
             aws_http::AwsErrorRetryPolicy,
@@ -287,7 +294,7 @@ impl DescribeVoicesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -296,7 +303,7 @@ impl DescribeVoicesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -326,18 +333,19 @@ pub mod get_lexicon_input {
     }
     impl Builder {
         /// <p>Name of the lexicon.</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.name = Some(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetLexiconInput`](crate::input::GetLexiconInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetLexiconInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetLexiconInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetLexiconInput {
                 name: self.name.unwrap_or_default(),
             })
@@ -354,7 +362,7 @@ impl GetLexiconInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetLexicon,
             aws_http::AwsErrorRetryPolicy,
@@ -413,7 +421,7 @@ impl GetLexiconInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -421,7 +429,7 @@ impl GetLexiconInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -451,19 +459,21 @@ pub mod get_speech_synthesis_task_input {
     }
     impl Builder {
         /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
-        pub fn task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.task_id = Some(inp.into());
+        pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_id = Some(input.into());
             self
         }
-        pub fn set_task_id(mut self, inp: std::string::String) -> Self {
-            self.task_id = Some(inp);
+        pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSpeechSynthesisTaskInput`](crate::input::GetSpeechSynthesisTaskInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSpeechSynthesisTaskInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetSpeechSynthesisTaskInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetSpeechSynthesisTaskInput {
                 task_id: self.task_id.unwrap_or_default(),
             })
@@ -480,7 +490,7 @@ impl GetSpeechSynthesisTaskInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetSpeechSynthesisTask,
             aws_http::AwsErrorRetryPolicy,
@@ -542,7 +552,7 @@ impl GetSpeechSynthesisTaskInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("GET").uri(uri))
@@ -550,7 +560,7 @@ impl GetSpeechSynthesisTaskInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -581,18 +591,19 @@ pub mod list_lexicons_input {
     impl Builder {
         /// <p>An opaque pagination token returned from previous <code>ListLexicons</code> operation.
         /// If present, indicates where to continue the list of lexicons.</p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// Consumes the builder and constructs a [`ListLexiconsInput`](crate::input::ListLexiconsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListLexiconsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListLexiconsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListLexiconsInput {
                 next_token: self.next_token,
             })
@@ -609,7 +620,7 @@ impl ListLexiconsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListLexicons,
             aws_http::AwsErrorRetryPolicy,
@@ -672,7 +683,7 @@ impl ListLexiconsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -681,7 +692,7 @@ impl ListLexiconsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -713,38 +724,40 @@ pub mod list_speech_synthesis_tasks_input {
     }
     impl Builder {
         /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
-        pub fn max_results(mut self, inp: i32) -> Self {
-            self.max_results = Some(inp);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.max_results = Some(input);
             self
         }
-        pub fn set_max_results(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_results = inp;
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_results = input;
             self
         }
         /// <p>The pagination token to use in the next request to continue the listing of speech
         /// synthesis tasks. </p>
-        pub fn next_token(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.next_token = Some(inp.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
             self
         }
-        pub fn set_next_token(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.next_token = inp;
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
             self
         }
         /// <p>Status of the speech synthesis tasks returned in a List operation</p>
-        pub fn status(mut self, inp: crate::model::TaskStatus) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::TaskStatus) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::TaskStatus>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<crate::model::TaskStatus>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSpeechSynthesisTasksInput`](crate::input::ListSpeechSynthesisTasksInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSpeechSynthesisTasksInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListSpeechSynthesisTasksInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListSpeechSynthesisTasksInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -764,7 +777,7 @@ impl ListSpeechSynthesisTasksInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListSpeechSynthesisTasks,
             aws_http::AwsErrorRetryPolicy,
@@ -833,7 +846,7 @@ impl ListSpeechSynthesisTasksInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -842,7 +855,7 @@ impl ListSpeechSynthesisTasksInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -874,27 +887,28 @@ pub mod put_lexicon_input {
     impl Builder {
         /// <p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}.
         /// That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::string::String) -> Self {
-            self.name = Some(inp);
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
         /// <p>Content of the PLS lexicon as string data.</p>
-        pub fn content(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.content = Some(inp.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content = Some(input.into());
             self
         }
-        pub fn set_content(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.content = inp;
+        pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content = input;
             self
         }
         /// Consumes the builder and constructs a [`PutLexiconInput`](crate::input::PutLexiconInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutLexiconInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::PutLexiconInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::PutLexiconInput {
                 name: self.name.unwrap_or_default(),
                 content: self.content,
@@ -912,7 +926,7 @@ impl PutLexiconInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutLexicon,
             aws_http::AwsErrorRetryPolicy,
@@ -974,7 +988,7 @@ impl PutLexiconInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -982,7 +996,7 @@ impl PutLexiconInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1026,12 +1040,12 @@ pub mod start_speech_synthesis_task_input {
         /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to
         /// use when processing input text for speech synthesis. Using a voice that is not supported for
         /// the engine selected will result in an error.</p>
-        pub fn engine(mut self, inp: crate::model::Engine) -> Self {
-            self.engine = Some(inp);
+        pub fn engine(mut self, input: crate::model::Engine) -> Self {
+            self.engine = Some(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<crate::model::Engine>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<crate::model::Engine>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>Optional language code for the Speech Synthesis request. This is only necessary if using a
@@ -1041,65 +1055,65 @@ pub mod start_speech_synthesis_task_input {
         /// default language of the bilingual voice. The default language for any voice is the one
         /// returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example,
         /// if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
-        pub fn language_code(mut self, inp: crate::model::LanguageCode) -> Self {
-            self.language_code = Some(inp);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.language_code = Some(input);
             self
         }
         pub fn set_language_code(
             mut self,
-            inp: std::option::Option<crate::model::LanguageCode>,
+            input: std::option::Option<crate::model::LanguageCode>,
         ) -> Self {
-            self.language_code = inp;
+            self.language_code = input;
             self
         }
-        pub fn lexicon_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn lexicon_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lexicon_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.lexicon_names = Some(v);
             self
         }
         pub fn set_lexicon_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.lexicon_names = inp;
+            self.lexicon_names = input;
             self
         }
         /// <p>The format in which the returned output will be encoded. For audio stream, this will be
         /// mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
-        pub fn output_format(mut self, inp: crate::model::OutputFormat) -> Self {
-            self.output_format = Some(inp);
+        pub fn output_format(mut self, input: crate::model::OutputFormat) -> Self {
+            self.output_format = Some(input);
             self
         }
         pub fn set_output_format(
             mut self,
-            inp: std::option::Option<crate::model::OutputFormat>,
+            input: std::option::Option<crate::model::OutputFormat>,
         ) -> Self {
-            self.output_format = inp;
+            self.output_format = input;
             self
         }
         /// <p>Amazon S3 bucket name to which the output file will be saved.</p>
-        pub fn output_s3_bucket_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_s3_bucket_name = Some(inp.into());
+        pub fn output_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_s3_bucket_name = Some(input.into());
             self
         }
         pub fn set_output_s3_bucket_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.output_s3_bucket_name = inp;
+            self.output_s3_bucket_name = input;
             self
         }
         /// <p>The Amazon S3 key prefix for the output speech file.</p>
-        pub fn output_s3_key_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.output_s3_key_prefix = Some(inp.into());
+        pub fn output_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.output_s3_key_prefix = Some(input.into());
             self
         }
         pub fn set_output_s3_key_prefix(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.output_s3_key_prefix = inp;
+            self.output_s3_key_prefix = input;
             self
         }
         /// <p>The audio frequency specified in Hz.</p>
@@ -1107,71 +1121,76 @@ pub mod start_speech_synthesis_task_input {
         /// default value for standard voices is "22050". The default value for neural voices is
         /// "24000".</p>
         /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
-        pub fn sample_rate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sample_rate = Some(inp.into());
+        pub fn sample_rate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sample_rate = Some(input.into());
             self
         }
-        pub fn set_sample_rate(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.sample_rate = inp;
+        pub fn set_sample_rate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sample_rate = input;
             self
         }
         /// <p>ARN for the SNS topic optionally used for providing status notification for a speech
         /// synthesis task.</p>
-        pub fn sns_topic_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sns_topic_arn = Some(inp.into());
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sns_topic_arn = Some(input.into());
             self
         }
-        pub fn set_sns_topic_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.sns_topic_arn = inp;
+        pub fn set_sns_topic_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sns_topic_arn = input;
             self
         }
-        pub fn speech_mark_types(mut self, inp: impl Into<crate::model::SpeechMarkType>) -> Self {
+        pub fn speech_mark_types(mut self, input: impl Into<crate::model::SpeechMarkType>) -> Self {
             let mut v = self.speech_mark_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.speech_mark_types = Some(v);
             self
         }
         pub fn set_speech_mark_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
         ) -> Self {
-            self.speech_mark_types = inp;
+            self.speech_mark_types = input;
             self
         }
         /// <p>The input text to synthesize. If you specify ssml as the TextType, follow the SSML format
         /// for the input text. </p>
-        pub fn text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.text = Some(inp.into());
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text = Some(input.into());
             self
         }
-        pub fn set_text(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.text = inp;
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text = input;
             self
         }
         /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text.
         /// </p>
-        pub fn text_type(mut self, inp: crate::model::TextType) -> Self {
-            self.text_type = Some(inp);
+        pub fn text_type(mut self, input: crate::model::TextType) -> Self {
+            self.text_type = Some(input);
             self
         }
-        pub fn set_text_type(mut self, inp: std::option::Option<crate::model::TextType>) -> Self {
-            self.text_type = inp;
+        pub fn set_text_type(mut self, input: std::option::Option<crate::model::TextType>) -> Self {
+            self.text_type = input;
             self
         }
         /// <p>Voice ID to use for the synthesis. </p>
-        pub fn voice_id(mut self, inp: crate::model::VoiceId) -> Self {
-            self.voice_id = Some(inp);
+        pub fn voice_id(mut self, input: crate::model::VoiceId) -> Self {
+            self.voice_id = Some(input);
             self
         }
-        pub fn set_voice_id(mut self, inp: std::option::Option<crate::model::VoiceId>) -> Self {
-            self.voice_id = inp;
+        pub fn set_voice_id(mut self, input: std::option::Option<crate::model::VoiceId>) -> Self {
+            self.voice_id = input;
             self
         }
         /// Consumes the builder and constructs a [`StartSpeechSynthesisTaskInput`](crate::input::StartSpeechSynthesisTaskInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::StartSpeechSynthesisTaskInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StartSpeechSynthesisTaskInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StartSpeechSynthesisTaskInput {
                 engine: self.engine,
                 language_code: self.language_code,
@@ -1200,7 +1219,7 @@ impl StartSpeechSynthesisTaskInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::StartSpeechSynthesisTask,
             aws_http::AwsErrorRetryPolicy,
@@ -1260,7 +1279,7 @@ impl StartSpeechSynthesisTaskInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1268,7 +1287,7 @@ impl StartSpeechSynthesisTaskInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -1325,12 +1344,12 @@ pub mod synthesize_speech_input {
         /// <p>For standard voices, this is not required; the engine parameter defaults to
         /// <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and
         /// an NTTS-only voice is selected, this will result in an error. </p>
-        pub fn engine(mut self, inp: crate::model::Engine) -> Self {
-            self.engine = Some(inp);
+        pub fn engine(mut self, input: crate::model::Engine) -> Self {
+            self.engine = Some(input);
             self
         }
-        pub fn set_engine(mut self, inp: std::option::Option<crate::model::Engine>) -> Self {
-            self.engine = inp;
+        pub fn set_engine(mut self, input: std::option::Option<crate::model::Engine>) -> Self {
+            self.engine = input;
             self
         }
         /// <p>Optional language code for the Synthesize Speech request. This is only necessary if using
@@ -1340,43 +1359,43 @@ pub mod synthesize_speech_input {
         /// default language of the bilingual voice. The default language for any voice is the one
         /// returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example,
         /// if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
-        pub fn language_code(mut self, inp: crate::model::LanguageCode) -> Self {
-            self.language_code = Some(inp);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.language_code = Some(input);
             self
         }
         pub fn set_language_code(
             mut self,
-            inp: std::option::Option<crate::model::LanguageCode>,
+            input: std::option::Option<crate::model::LanguageCode>,
         ) -> Self {
-            self.language_code = inp;
+            self.language_code = input;
             self
         }
-        pub fn lexicon_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn lexicon_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lexicon_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.lexicon_names = Some(v);
             self
         }
         pub fn set_lexicon_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.lexicon_names = inp;
+            self.lexicon_names = input;
             self
         }
         /// <p> The format in which the returned output will be encoded. For audio stream, this will
         /// be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
         /// <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel
         /// (mono), little-endian format. </p>
-        pub fn output_format(mut self, inp: crate::model::OutputFormat) -> Self {
-            self.output_format = Some(inp);
+        pub fn output_format(mut self, input: crate::model::OutputFormat) -> Self {
+            self.output_format = Some(input);
             self
         }
         pub fn set_output_format(
             mut self,
-            inp: std::option::Option<crate::model::OutputFormat>,
+            input: std::option::Option<crate::model::OutputFormat>,
         ) -> Self {
-            self.output_format = inp;
+            self.output_format = input;
             self
         }
         /// <p>The audio frequency specified in Hz.</p>
@@ -1384,62 +1403,64 @@ pub mod synthesize_speech_input {
         /// default value for standard voices is "22050". The default value for neural voices is
         /// "24000".</p>
         /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
-        pub fn sample_rate(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.sample_rate = Some(inp.into());
+        pub fn sample_rate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sample_rate = Some(input.into());
             self
         }
-        pub fn set_sample_rate(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.sample_rate = inp;
+        pub fn set_sample_rate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sample_rate = input;
             self
         }
-        pub fn speech_mark_types(mut self, inp: impl Into<crate::model::SpeechMarkType>) -> Self {
+        pub fn speech_mark_types(mut self, input: impl Into<crate::model::SpeechMarkType>) -> Self {
             let mut v = self.speech_mark_types.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.speech_mark_types = Some(v);
             self
         }
         pub fn set_speech_mark_types(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
         ) -> Self {
-            self.speech_mark_types = inp;
+            self.speech_mark_types = input;
             self
         }
         /// <p> Input text to synthesize. If you specify <code>ssml</code> as the
         /// <code>TextType</code>, follow the SSML format for the input text. </p>
-        pub fn text(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.text = Some(inp.into());
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.text = Some(input.into());
             self
         }
-        pub fn set_text(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.text = inp;
+        pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.text = input;
             self
         }
         /// <p> Specifies whether the input text is plain text or SSML. The default value is plain
         /// text. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using SSML</a>.</p>
-        pub fn text_type(mut self, inp: crate::model::TextType) -> Self {
-            self.text_type = Some(inp);
+        pub fn text_type(mut self, input: crate::model::TextType) -> Self {
+            self.text_type = Some(input);
             self
         }
-        pub fn set_text_type(mut self, inp: std::option::Option<crate::model::TextType>) -> Self {
-            self.text_type = inp;
+        pub fn set_text_type(mut self, input: std::option::Option<crate::model::TextType>) -> Self {
+            self.text_type = input;
             self
         }
         /// <p> Voice ID to use for the synthesis. You can get a list of available voice IDs by
         /// calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. </p>
-        pub fn voice_id(mut self, inp: crate::model::VoiceId) -> Self {
-            self.voice_id = Some(inp);
+        pub fn voice_id(mut self, input: crate::model::VoiceId) -> Self {
+            self.voice_id = Some(input);
             self
         }
-        pub fn set_voice_id(mut self, inp: std::option::Option<crate::model::VoiceId>) -> Self {
-            self.voice_id = inp;
+        pub fn set_voice_id(mut self, input: std::option::Option<crate::model::VoiceId>) -> Self {
+            self.voice_id = input;
             self
         }
         /// Consumes the builder and constructs a [`SynthesizeSpeechInput`](crate::input::SynthesizeSpeechInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SynthesizeSpeechInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SynthesizeSpeechInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SynthesizeSpeechInput {
                 engine: self.engine,
                 language_code: self.language_code,
@@ -1464,7 +1485,7 @@ impl SynthesizeSpeechInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SynthesizeSpeech,
             aws_http::AwsErrorRetryPolicy,
@@ -1523,7 +1544,7 @@ impl SynthesizeSpeechInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1531,7 +1552,7 @@ impl SynthesizeSpeechInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)

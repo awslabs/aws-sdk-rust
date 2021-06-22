@@ -12,31 +12,34 @@ pub mod add_client_id_to_open_id_connect_provider_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to
         /// add the client ID to. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.open_id_connect_provider_arn = Some(inp.into());
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.open_id_connect_provider_arn = Some(input.into());
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.open_id_connect_provider_arn = inp;
+            self.open_id_connect_provider_arn = input;
             self
         }
         /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider
         /// resource.</p>
-        pub fn client_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_id = Some(inp.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_id = Some(input.into());
             self
         }
-        pub fn set_client_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_id = inp;
+        pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_id = input;
             self
         }
         /// Consumes the builder and constructs a [`AddClientIDToOpenIDConnectProviderInput`](crate::input::AddClientIDToOpenIDConnectProviderInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::AddClientIDToOpenIDConnectProviderInput,
             smithy_http::operation::BuildError,
         > {
@@ -58,7 +61,7 @@ impl AddClientIDToOpenIDConnectProviderInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AddClientIDToOpenIDConnectProvider,
             aws_http::AwsErrorRetryPolicy,
@@ -117,7 +120,7 @@ impl AddClientIDToOpenIDConnectProviderInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -125,7 +128,7 @@ impl AddClientIDToOpenIDConnectProviderInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -158,33 +161,35 @@ pub mod add_role_to_instance_profile_input {
         /// <p>The name of the instance profile to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_profile_name = Some(inp.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_profile_name = Some(input.into());
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.instance_profile_name = inp;
+            self.instance_profile_name = input;
             self
         }
         /// <p>The name of the role to add.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// Consumes the builder and constructs a [`AddRoleToInstanceProfileInput`](crate::input::AddRoleToInstanceProfileInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AddRoleToInstanceProfileInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AddRoleToInstanceProfileInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AddRoleToInstanceProfileInput {
                 instance_profile_name: self.instance_profile_name,
                 role_name: self.role_name,
@@ -203,7 +208,7 @@ impl AddRoleToInstanceProfileInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AddRoleToInstanceProfile,
             aws_http::AwsErrorRetryPolicy,
@@ -264,7 +269,7 @@ impl AddRoleToInstanceProfileInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -272,7 +277,7 @@ impl AddRoleToInstanceProfileInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -305,29 +310,32 @@ pub mod add_user_to_group_input {
         /// <p>The name of the group to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// <p>The name of the user to add.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// Consumes the builder and constructs a [`AddUserToGroupInput`](crate::input::AddUserToGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AddUserToGroupInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::AddUserToGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AddUserToGroupInput {
                 group_name: self.group_name,
                 user_name: self.user_name,
@@ -345,7 +353,7 @@ impl AddUserToGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AddUserToGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -404,7 +412,7 @@ impl AddUserToGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -412,7 +420,7 @@ impl AddUserToGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -445,29 +453,31 @@ pub mod attach_group_policy_input {
         /// <p>The name (friendly name, not ARN) of the group to attach the policy to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`AttachGroupPolicyInput`](crate::input::AttachGroupPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AttachGroupPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AttachGroupPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AttachGroupPolicyInput {
                 group_name: self.group_name,
                 policy_arn: self.policy_arn,
@@ -485,7 +495,7 @@ impl AttachGroupPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AttachGroupPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -545,7 +555,7 @@ impl AttachGroupPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -553,7 +563,7 @@ impl AttachGroupPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -586,29 +596,31 @@ pub mod attach_role_policy_input {
         /// <p>The name (friendly name, not ARN) of the role to attach the policy to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`AttachRolePolicyInput`](crate::input::AttachRolePolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AttachRolePolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AttachRolePolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AttachRolePolicyInput {
                 role_name: self.role_name,
                 policy_arn: self.policy_arn,
@@ -626,7 +638,7 @@ impl AttachRolePolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AttachRolePolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -686,7 +698,7 @@ impl AttachRolePolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -694,7 +706,7 @@ impl AttachRolePolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -727,29 +739,31 @@ pub mod attach_user_policy_input {
         /// <p>The name (friendly name, not ARN) of the IAM user to attach the policy to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`AttachUserPolicyInput`](crate::input::AttachUserPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::AttachUserPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AttachUserPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AttachUserPolicyInput {
                 user_name: self.user_name,
                 policy_arn: self.policy_arn,
@@ -767,7 +781,7 @@ impl AttachUserPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::AttachUserPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -827,7 +841,7 @@ impl AttachUserPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -835,7 +849,7 @@ impl AttachUserPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -866,12 +880,12 @@ pub mod change_password_input {
     }
     impl Builder {
         /// <p>The IAM user's current password.</p>
-        pub fn old_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.old_password = Some(inp.into());
+        pub fn old_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.old_password = Some(input.into());
             self
         }
-        pub fn set_old_password(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.old_password = inp;
+        pub fn set_old_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.old_password = input;
             self
         }
         /// <p>The new password. The new password must conform to the AWS account's password
@@ -883,18 +897,21 @@ pub mod change_password_input {
         /// characters. Any of these characters are valid in a password. However, many tools, such
         /// as the AWS Management Console, might restrict the ability to type certain characters because they have
         /// special meaning within that tool.</p>
-        pub fn new_password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_password = Some(inp.into());
+        pub fn new_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_password = Some(input.into());
             self
         }
-        pub fn set_new_password(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.new_password = inp;
+        pub fn set_new_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.new_password = input;
             self
         }
         /// Consumes the builder and constructs a [`ChangePasswordInput`](crate::input::ChangePasswordInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ChangePasswordInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::ChangePasswordInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ChangePasswordInput {
                 old_password: self.old_password,
                 new_password: self.new_password,
@@ -912,7 +929,7 @@ impl ChangePasswordInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ChangePassword,
             aws_http::AwsErrorRetryPolicy,
@@ -971,7 +988,7 @@ impl ChangePasswordInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -979,7 +996,7 @@ impl ChangePasswordInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1011,19 +1028,21 @@ pub mod create_access_key_input {
         /// <p>The name of the IAM user that the new key will belong to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateAccessKeyInput`](crate::input::CreateAccessKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAccessKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateAccessKeyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateAccessKeyInput {
                 user_name: self.user_name,
             })
@@ -1040,7 +1059,7 @@ impl CreateAccessKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateAccessKey,
             aws_http::AwsErrorRetryPolicy,
@@ -1099,7 +1118,7 @@ impl CreateAccessKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1107,7 +1126,7 @@ impl CreateAccessKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1140,19 +1159,24 @@ pub mod create_account_alias_input {
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
         /// lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have
         /// two dashes in a row.</p>
-        pub fn account_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.account_alias = Some(inp.into());
+        pub fn account_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_alias = Some(input.into());
             self
         }
-        pub fn set_account_alias(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.account_alias = inp;
+        pub fn set_account_alias(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.account_alias = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateAccountAliasInput`](crate::input::CreateAccountAliasInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateAccountAliasInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateAccountAliasInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateAccountAliasInput {
                 account_alias: self.account_alias,
             })
@@ -1169,7 +1193,7 @@ impl CreateAccountAliasInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateAccountAlias,
             aws_http::AwsErrorRetryPolicy,
@@ -1229,7 +1253,7 @@ impl CreateAccountAliasInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1237,7 +1261,7 @@ impl CreateAccountAliasInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1274,30 +1298,31 @@ pub mod create_group_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The name of the group to create. Do not include the path in this value.</p>
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateGroupInput`](crate::input::CreateGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateGroupInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateGroupInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateGroupInput {
                 path: self.path,
                 group_name: self.group_name,
@@ -1315,7 +1340,7 @@ impl CreateGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -1372,7 +1397,7 @@ impl CreateGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1380,7 +1405,7 @@ impl CreateGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1414,15 +1439,15 @@ pub mod create_instance_profile_input {
         /// <p>The name of the instance profile to create.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_profile_name = Some(inp.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_profile_name = Some(input.into());
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.instance_profile_name = inp;
+            self.instance_profile_name = input;
             self
         }
         /// <p> The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -1432,32 +1457,34 @@ pub mod create_instance_profile_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateInstanceProfileInput`](crate::input::CreateInstanceProfileInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateInstanceProfileInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateInstanceProfileInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateInstanceProfileInput {
                 instance_profile_name: self.instance_profile_name,
                 path: self.path,
@@ -1476,7 +1503,7 @@ impl CreateInstanceProfileInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateInstanceProfile,
             aws_http::AwsErrorRetryPolicy,
@@ -1536,7 +1563,7 @@ impl CreateInstanceProfileInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1544,7 +1571,7 @@ impl CreateInstanceProfileInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1579,12 +1606,12 @@ pub mod create_login_profile_input {
         /// exist.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The new password for the user.</p>
@@ -1595,28 +1622,30 @@ pub mod create_login_profile_input {
         /// characters. Any of these characters are valid in a password. However, many tools, such
         /// as the AWS Management Console, might restrict the ability to type certain characters because they have
         /// special meaning within that tool.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.password = Some(inp.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.password = Some(input.into());
             self
         }
-        pub fn set_password(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.password = inp;
+        pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.password = input;
             self
         }
         /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
-        pub fn password_reset_required(mut self, inp: bool) -> Self {
-            self.password_reset_required = Some(inp);
+        pub fn password_reset_required(mut self, input: bool) -> Self {
+            self.password_reset_required = Some(input);
             self
         }
-        pub fn set_password_reset_required(mut self, inp: bool) -> Self {
-            self.password_reset_required = Some(inp);
+        pub fn set_password_reset_required(mut self, input: std::option::Option<bool>) -> Self {
+            self.password_reset_required = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateLoginProfileInput`](crate::input::CreateLoginProfileInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateLoginProfileInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateLoginProfileInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateLoginProfileInput {
                 user_name: self.user_name,
                 password: self.password,
@@ -1635,7 +1664,7 @@ impl CreateLoginProfileInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateLoginProfile,
             aws_http::AwsErrorRetryPolicy,
@@ -1695,7 +1724,7 @@ impl CreateLoginProfileInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1703,7 +1732,7 @@ impl CreateLoginProfileInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1743,57 +1772,57 @@ pub mod create_open_id_connect_provider_input {
         /// <p>You cannot register the same provider multiple times in a single AWS account. If you
         /// try to submit a URL that has already been used for an OpenID Connect provider in the
         /// AWS account, you will get an error.</p>
-        pub fn url(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.url = Some(inp.into());
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.url = Some(input.into());
             self
         }
-        pub fn set_url(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.url = inp;
+        pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.url = input;
             self
         }
-        pub fn client_id_list(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn client_id_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.client_id_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.client_id_list = Some(v);
             self
         }
         pub fn set_client_id_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.client_id_list = inp;
+            self.client_id_list = input;
             self
         }
-        pub fn thumbprint_list(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn thumbprint_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.thumbprint_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.thumbprint_list = Some(v);
             self
         }
         pub fn set_thumbprint_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.thumbprint_list = inp;
+            self.thumbprint_list = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateOpenIDConnectProviderInput`](crate::input::CreateOpenIDConnectProviderInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::CreateOpenIDConnectProviderInput,
             smithy_http::operation::BuildError,
         > {
@@ -1817,7 +1846,7 @@ impl CreateOpenIDConnectProviderInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateOpenIDConnectProvider,
             aws_http::AwsErrorRetryPolicy,
@@ -1878,7 +1907,7 @@ impl CreateOpenIDConnectProviderInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -1886,7 +1915,7 @@ impl CreateOpenIDConnectProviderInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -1923,12 +1952,12 @@ pub mod create_policy_input {
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// <p>The path for the policy.</p>
@@ -1939,12 +1968,12 @@ pub mod create_policy_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The JSON policy document that you want to use as the content for the new
@@ -1971,15 +2000,15 @@ pub mod create_policy_input {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_document = Some(inp.into());
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
             self
         }
         pub fn set_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.policy_document = inp;
+            self.policy_document = input;
             self
         }
         /// <p>A friendly description of the policy.</p>
@@ -1987,31 +2016,32 @@ pub mod create_policy_input {
         /// example, "Grants access to production DynamoDB tables."</p>
         /// <p>The policy description is immutable. After a value is assigned, it cannot be
         /// changed.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreatePolicyInput`](crate::input::CreatePolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreatePolicyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreatePolicyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreatePolicyInput {
                 policy_name: self.policy_name,
                 path: self.path,
@@ -2032,7 +2062,7 @@ impl CreatePolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreatePolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -2089,7 +2119,7 @@ impl CreatePolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2097,7 +2127,7 @@ impl CreatePolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2131,12 +2161,12 @@ pub mod create_policy_version_input {
         /// <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new
         /// version.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// <p>The JSON policy document that you want to use as the content for this new version of
@@ -2161,15 +2191,15 @@ pub mod create_policy_version_input {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_document = Some(inp.into());
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
             self
         }
         pub fn set_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.policy_document = inp;
+            self.policy_document = input;
             self
         }
         /// <p>Specifies whether to set this version as the policy's default version.</p>
@@ -2178,19 +2208,21 @@ pub mod create_policy_version_input {
         /// and roles that the policy is attached to.</p>
         /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
         /// policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn set_as_default(mut self, inp: bool) -> Self {
-            self.set_as_default = Some(inp);
+        pub fn set_as_default(mut self, input: bool) -> Self {
+            self.set_as_default = Some(input);
             self
         }
-        pub fn set_set_as_default(mut self, inp: bool) -> Self {
-            self.set_as_default = Some(inp);
+        pub fn set_set_as_default(mut self, input: std::option::Option<bool>) -> Self {
+            self.set_as_default = input;
             self
         }
         /// Consumes the builder and constructs a [`CreatePolicyVersionInput`](crate::input::CreatePolicyVersionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreatePolicyVersionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreatePolicyVersionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreatePolicyVersionInput {
                 policy_arn: self.policy_arn,
                 policy_document: self.policy_document,
@@ -2209,7 +2241,7 @@ impl CreatePolicyVersionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreatePolicyVersion,
             aws_http::AwsErrorRetryPolicy,
@@ -2269,7 +2301,7 @@ impl CreatePolicyVersionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2277,7 +2309,7 @@ impl CreatePolicyVersionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2319,24 +2351,24 @@ pub mod create_role_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The name of the role to create.</p>
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>The trust relationship policy document that grants an entity permission to assume the
@@ -2362,24 +2394,27 @@ pub mod create_role_input {
         /// </li>
         /// </ul>
         /// <p> Upon success, the response includes the same trust policy in JSON format.</p>
-        pub fn assume_role_policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.assume_role_policy_document = Some(inp.into());
+        pub fn assume_role_policy_document(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.assume_role_policy_document = Some(input.into());
             self
         }
         pub fn set_assume_role_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.assume_role_policy_document = inp;
+            self.assume_role_policy_document = input;
             self
         }
         /// <p>A description of the role.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The maximum session duration (in seconds) that you want to set for the specified role.
@@ -2395,44 +2430,45 @@ pub mod create_role_input {
         /// or the <code>assume-role*</code> CLI operations but does not apply when you use those
         /// operations to create a console URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
         /// roles</a> in the <i>IAM User Guide</i>.</p>
-        pub fn max_session_duration(mut self, inp: i32) -> Self {
-            self.max_session_duration = Some(inp);
+        pub fn max_session_duration(mut self, input: i32) -> Self {
+            self.max_session_duration = Some(input);
             self
         }
-        pub fn set_max_session_duration(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_session_duration = inp;
+        pub fn set_max_session_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_session_duration = input;
             self
         }
         /// <p>The ARN of the policy that is used to set the permissions boundary for the
         /// role.</p>
-        pub fn permissions_boundary(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.permissions_boundary = Some(inp.into());
+        pub fn permissions_boundary(mut self, input: impl Into<std::string::String>) -> Self {
+            self.permissions_boundary = Some(input.into());
             self
         }
         pub fn set_permissions_boundary(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.permissions_boundary = inp;
+            self.permissions_boundary = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateRoleInput`](crate::input::CreateRoleInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateRoleInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateRoleInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateRoleInput {
                 path: self.path,
                 role_name: self.role_name,
@@ -2455,7 +2491,7 @@ impl CreateRoleInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateRole,
             aws_http::AwsErrorRetryPolicy,
@@ -2512,7 +2548,7 @@ impl CreateRoleInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2520,7 +2556,7 @@ impl CreateRoleInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2559,46 +2595,48 @@ pub mod create_saml_provider_input {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
         /// federation</a> in the <i>IAM User Guide</i>
         /// </p>
-        pub fn saml_metadata_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.saml_metadata_document = Some(inp.into());
+        pub fn saml_metadata_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.saml_metadata_document = Some(input.into());
             self
         }
         pub fn set_saml_metadata_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.saml_metadata_document = inp;
+            self.saml_metadata_document = input;
             self
         }
         /// <p>The name of the provider to create.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.name = Some(inp.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
             self
         }
-        pub fn set_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.name = inp;
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateSAMLProviderInput`](crate::input::CreateSAMLProviderInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateSAMLProviderInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateSAMLProviderInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateSAMLProviderInput {
                 saml_metadata_document: self.saml_metadata_document,
                 name: self.name,
@@ -2617,7 +2655,7 @@ impl CreateSAMLProviderInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateSAMLProvider,
             aws_http::AwsErrorRetryPolicy,
@@ -2677,7 +2715,7 @@ impl CreateSAMLProviderInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2685,7 +2723,7 @@ impl CreateSAMLProviderInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2724,24 +2762,24 @@ pub mod create_service_linked_role_input {
         /// that work with IAM</a> in the <i>IAM User Guide</i>. Look for
         /// the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for that
         /// service.</p>
-        pub fn aws_service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.aws_service_name = Some(inp.into());
+        pub fn aws_service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.aws_service_name = Some(input.into());
             self
         }
         pub fn set_aws_service_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.aws_service_name = inp;
+            self.aws_service_name = input;
             self
         }
         /// <p>The description of the role.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p></p>
@@ -2753,19 +2791,24 @@ pub mod create_service_linked_role_input {
         /// <p>Some services do not support the <code>CustomSuffix</code> parameter. If you provide
         /// an optional suffix and the operation fails, try the operation again without the
         /// suffix.</p>
-        pub fn custom_suffix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.custom_suffix = Some(inp.into());
+        pub fn custom_suffix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_suffix = Some(input.into());
             self
         }
-        pub fn set_custom_suffix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.custom_suffix = inp;
+        pub fn set_custom_suffix(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.custom_suffix = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateServiceLinkedRoleInput`](crate::input::CreateServiceLinkedRoleInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateServiceLinkedRoleInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateServiceLinkedRoleInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateServiceLinkedRoleInput {
                 aws_service_name: self.aws_service_name,
                 description: self.description,
@@ -2785,7 +2828,7 @@ impl CreateServiceLinkedRoleInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateServiceLinkedRole,
             aws_http::AwsErrorRetryPolicy,
@@ -2845,7 +2888,7 @@ impl CreateServiceLinkedRoleInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -2853,7 +2896,7 @@ impl CreateServiceLinkedRoleInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -2888,29 +2931,29 @@ pub mod create_service_specific_credential_input {
         /// that they can be used only to access the specified service.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The name of the AWS service that is to be associated with the credentials. The
         /// service you specify here is the only service that can be accessed using these
         /// credentials.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_name = Some(inp.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
             self
         }
-        pub fn set_service_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.service_name = inp;
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateServiceSpecificCredentialInput`](crate::input::CreateServiceSpecificCredentialInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::CreateServiceSpecificCredentialInput,
             smithy_http::operation::BuildError,
         > {
@@ -2932,7 +2975,7 @@ impl CreateServiceSpecificCredentialInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateServiceSpecificCredential,
             aws_http::AwsErrorRetryPolicy,
@@ -2993,7 +3036,7 @@ impl CreateServiceSpecificCredentialInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3001,7 +3044,7 @@ impl CreateServiceSpecificCredentialInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3040,56 +3083,57 @@ pub mod create_user_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The name of the user to create.</p>
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The ARN of the policy that is used to set the permissions boundary for the
         /// user.</p>
-        pub fn permissions_boundary(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.permissions_boundary = Some(inp.into());
+        pub fn permissions_boundary(mut self, input: impl Into<std::string::String>) -> Self {
+            self.permissions_boundary = Some(input.into());
             self
         }
         pub fn set_permissions_boundary(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.permissions_boundary = inp;
+            self.permissions_boundary = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateUserInput`](crate::input::CreateUserInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateUserInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::CreateUserInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::CreateUserInput {
                 path: self.path,
                 user_name: self.user_name,
@@ -3109,7 +3153,7 @@ impl CreateUserInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateUser,
             aws_http::AwsErrorRetryPolicy,
@@ -3166,7 +3210,7 @@ impl CreateUserInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3174,7 +3218,7 @@ impl CreateUserInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3212,47 +3256,49 @@ pub mod create_virtual_mfa_device_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA
         /// device.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn virtual_mfa_device_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.virtual_mfa_device_name = Some(inp.into());
+        pub fn virtual_mfa_device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.virtual_mfa_device_name = Some(input.into());
             self
         }
         pub fn set_virtual_mfa_device_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.virtual_mfa_device_name = inp;
+            self.virtual_mfa_device_name = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateVirtualMFADeviceInput`](crate::input::CreateVirtualMFADeviceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::CreateVirtualMFADeviceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateVirtualMFADeviceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateVirtualMFADeviceInput {
                 path: self.path,
                 virtual_mfa_device_name: self.virtual_mfa_device_name,
@@ -3271,7 +3317,7 @@ impl CreateVirtualMFADeviceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::CreateVirtualMFADevice,
             aws_http::AwsErrorRetryPolicy,
@@ -3331,7 +3377,7 @@ impl CreateVirtualMFADeviceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3339,7 +3385,7 @@ impl CreateVirtualMFADeviceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3372,12 +3418,12 @@ pub mod deactivate_mfa_device_input {
         /// <p>The name of the user whose MFA device you want to deactivate.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices,
@@ -3385,19 +3431,24 @@ pub mod deactivate_mfa_device_input {
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
         /// of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
         /// following characters: =,.@:/-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.serial_number = Some(inp.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.serial_number = Some(input.into());
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.serial_number = inp;
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.serial_number = input;
             self
         }
         /// Consumes the builder and constructs a [`DeactivateMFADeviceInput`](crate::input::DeactivateMFADeviceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeactivateMFADeviceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeactivateMFADeviceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeactivateMFADeviceInput {
                 user_name: self.user_name,
                 serial_number: self.serial_number,
@@ -3415,7 +3466,7 @@ impl DeactivateMFADeviceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeactivateMFADevice,
             aws_http::AwsErrorRetryPolicy,
@@ -3475,7 +3526,7 @@ impl DeactivateMFADeviceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3483,7 +3534,7 @@ impl DeactivateMFADeviceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3516,31 +3567,36 @@ pub mod delete_access_key_input {
         /// <p>The name of the user whose access key pair you want to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The access key ID for the access key ID and secret access key you want to
         /// delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn access_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.access_key_id = Some(inp.into());
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_key_id = Some(input.into());
             self
         }
-        pub fn set_access_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.access_key_id = inp;
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteAccessKeyInput`](crate::input::DeleteAccessKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAccessKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteAccessKeyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteAccessKeyInput {
                 user_name: self.user_name,
                 access_key_id: self.access_key_id,
@@ -3558,7 +3614,7 @@ impl DeleteAccessKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteAccessKey,
             aws_http::AwsErrorRetryPolicy,
@@ -3617,7 +3673,7 @@ impl DeleteAccessKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3625,7 +3681,7 @@ impl DeleteAccessKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3658,19 +3714,24 @@ pub mod delete_account_alias_input {
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
         /// lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have
         /// two dashes in a row.</p>
-        pub fn account_alias(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.account_alias = Some(inp.into());
+        pub fn account_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_alias = Some(input.into());
             self
         }
-        pub fn set_account_alias(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.account_alias = inp;
+        pub fn set_account_alias(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.account_alias = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteAccountAliasInput`](crate::input::DeleteAccountAliasInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteAccountAliasInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteAccountAliasInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteAccountAliasInput {
                 account_alias: self.account_alias,
             })
@@ -3687,7 +3748,7 @@ impl DeleteAccountAliasInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteAccountAlias,
             aws_http::AwsErrorRetryPolicy,
@@ -3747,7 +3808,7 @@ impl DeleteAccountAliasInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3755,7 +3816,7 @@ impl DeleteAccountAliasInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3785,7 +3846,7 @@ pub mod delete_account_password_policy_input {
         /// Consumes the builder and constructs a [`DeleteAccountPasswordPolicyInput`](crate::input::DeleteAccountPasswordPolicyInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteAccountPasswordPolicyInput,
             smithy_http::operation::BuildError,
         > {
@@ -3804,7 +3865,7 @@ impl DeleteAccountPasswordPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteAccountPasswordPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -3865,7 +3926,7 @@ impl DeleteAccountPasswordPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3873,7 +3934,7 @@ impl DeleteAccountPasswordPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -3905,18 +3966,19 @@ pub mod delete_group_input {
         /// <p>The name of the IAM group to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteGroupInput`](crate::input::DeleteGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteGroupInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteGroupInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteGroupInput {
                 group_name: self.group_name,
             })
@@ -3933,7 +3995,7 @@ impl DeleteGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -3990,7 +4052,7 @@ impl DeleteGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -3998,7 +4060,7 @@ impl DeleteGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4032,30 +4094,32 @@ pub mod delete_group_policy_input {
         /// in.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// <p>The name identifying the policy document to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteGroupPolicyInput`](crate::input::DeleteGroupPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteGroupPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteGroupPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteGroupPolicyInput {
                 group_name: self.group_name,
                 policy_name: self.policy_name,
@@ -4073,7 +4137,7 @@ impl DeleteGroupPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteGroupPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -4133,7 +4197,7 @@ impl DeleteGroupPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4141,7 +4205,7 @@ impl DeleteGroupPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4173,22 +4237,24 @@ pub mod delete_instance_profile_input {
         /// <p>The name of the instance profile to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_profile_name = Some(inp.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_profile_name = Some(input.into());
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.instance_profile_name = inp;
+            self.instance_profile_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteInstanceProfileInput`](crate::input::DeleteInstanceProfileInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteInstanceProfileInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteInstanceProfileInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteInstanceProfileInput {
                 instance_profile_name: self.instance_profile_name,
             })
@@ -4205,7 +4271,7 @@ impl DeleteInstanceProfileInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteInstanceProfile,
             aws_http::AwsErrorRetryPolicy,
@@ -4265,7 +4331,7 @@ impl DeleteInstanceProfileInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4273,7 +4339,7 @@ impl DeleteInstanceProfileInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4305,19 +4371,21 @@ pub mod delete_login_profile_input {
         /// <p>The name of the user whose password you want to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteLoginProfileInput`](crate::input::DeleteLoginProfileInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteLoginProfileInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteLoginProfileInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteLoginProfileInput {
                 user_name: self.user_name,
             })
@@ -4334,7 +4402,7 @@ impl DeleteLoginProfileInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteLoginProfile,
             aws_http::AwsErrorRetryPolicy,
@@ -4394,7 +4462,7 @@ impl DeleteLoginProfileInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4402,7 +4470,7 @@ impl DeleteLoginProfileInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4433,21 +4501,24 @@ pub mod delete_open_id_connect_provider_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object to
         /// delete. You can get a list of OpenID Connect provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.open_id_connect_provider_arn = Some(inp.into());
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.open_id_connect_provider_arn = Some(input.into());
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.open_id_connect_provider_arn = inp;
+            self.open_id_connect_provider_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteOpenIDConnectProviderInput`](crate::input::DeleteOpenIDConnectProviderInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteOpenIDConnectProviderInput,
             smithy_http::operation::BuildError,
         > {
@@ -4468,7 +4539,7 @@ impl DeleteOpenIDConnectProviderInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteOpenIDConnectProvider,
             aws_http::AwsErrorRetryPolicy,
@@ -4529,7 +4600,7 @@ impl DeleteOpenIDConnectProviderInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4537,7 +4608,7 @@ impl DeleteOpenIDConnectProviderInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4568,18 +4639,19 @@ pub mod delete_policy_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to delete.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DeletePolicyInput`](crate::input::DeletePolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeletePolicyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeletePolicyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeletePolicyInput {
                 policy_arn: self.policy_arn,
             })
@@ -4596,7 +4668,7 @@ impl DeletePolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeletePolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -4653,7 +4725,7 @@ impl DeletePolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4661,7 +4733,7 @@ impl DeletePolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4694,12 +4766,12 @@ pub mod delete_policy_version_input {
         /// <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to delete a
         /// version.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// <p>The policy version to delete.</p>
@@ -4708,19 +4780,21 @@ pub mod delete_policy_version_input {
         /// followed by a period '.' and a string of letters and digits.</p>
         /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
         /// policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeletePolicyVersionInput`](crate::input::DeletePolicyVersionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeletePolicyVersionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeletePolicyVersionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeletePolicyVersionInput {
                 policy_arn: self.policy_arn,
                 version_id: self.version_id,
@@ -4738,7 +4812,7 @@ impl DeletePolicyVersionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeletePolicyVersion,
             aws_http::AwsErrorRetryPolicy,
@@ -4798,7 +4872,7 @@ impl DeletePolicyVersionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4806,7 +4880,7 @@ impl DeletePolicyVersionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4838,18 +4912,19 @@ pub mod delete_role_input {
         /// <p>The name of the role to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteRoleInput`](crate::input::DeleteRoleInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteRoleInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteRoleInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteRoleInput {
                 role_name: self.role_name,
             })
@@ -4866,7 +4941,7 @@ impl DeleteRoleInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteRole,
             aws_http::AwsErrorRetryPolicy,
@@ -4923,7 +4998,7 @@ impl DeleteRoleInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -4931,7 +5006,7 @@ impl DeleteRoleInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -4962,18 +5037,18 @@ pub mod delete_role_permissions_boundary_input {
     impl Builder {
         /// <p>The name (friendly name, not ARN) of the IAM role from which you want to remove the
         /// permissions boundary.</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteRolePermissionsBoundaryInput`](crate::input::DeleteRolePermissionsBoundaryInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteRolePermissionsBoundaryInput,
             smithy_http::operation::BuildError,
         > {
@@ -4994,7 +5069,7 @@ impl DeleteRolePermissionsBoundaryInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteRolePermissionsBoundary,
             aws_http::AwsErrorRetryPolicy,
@@ -5055,7 +5130,7 @@ impl DeleteRolePermissionsBoundaryInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5063,7 +5138,7 @@ impl DeleteRolePermissionsBoundaryInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5097,30 +5172,32 @@ pub mod delete_role_policy_input {
         /// in.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>The name of the inline policy to delete from the specified IAM role.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteRolePolicyInput`](crate::input::DeleteRolePolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteRolePolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteRolePolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteRolePolicyInput {
                 role_name: self.role_name,
                 policy_name: self.policy_name,
@@ -5138,7 +5215,7 @@ impl DeleteRolePolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteRolePolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -5198,7 +5275,7 @@ impl DeleteRolePolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5206,7 +5283,7 @@ impl DeleteRolePolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5236,22 +5313,24 @@ pub mod delete_saml_provider_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
-        pub fn saml_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.saml_provider_arn = Some(inp.into());
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.saml_provider_arn = Some(input.into());
             self
         }
         pub fn set_saml_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.saml_provider_arn = inp;
+            self.saml_provider_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteSAMLProviderInput`](crate::input::DeleteSAMLProviderInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteSAMLProviderInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteSAMLProviderInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteSAMLProviderInput {
                 saml_provider_arn: self.saml_provider_arn,
             })
@@ -5268,7 +5347,7 @@ impl DeleteSAMLProviderInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteSAMLProvider,
             aws_http::AwsErrorRetryPolicy,
@@ -5328,7 +5407,7 @@ impl DeleteSAMLProviderInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5336,7 +5415,7 @@ impl DeleteSAMLProviderInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5368,22 +5447,24 @@ pub mod delete_server_certificate_input {
         /// <p>The name of the server certificate you want to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.server_certificate_name = Some(inp.into());
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_certificate_name = Some(input.into());
             self
         }
         pub fn set_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.server_certificate_name = inp;
+            self.server_certificate_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteServerCertificateInput`](crate::input::DeleteServerCertificateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteServerCertificateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteServerCertificateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteServerCertificateInput {
                 server_certificate_name: self.server_certificate_name,
             })
@@ -5401,7 +5482,7 @@ impl DeleteServerCertificateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteServerCertificate,
             aws_http::AwsErrorRetryPolicy,
@@ -5461,7 +5542,7 @@ impl DeleteServerCertificateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5469,7 +5550,7 @@ impl DeleteServerCertificateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5499,19 +5580,21 @@ pub mod delete_service_linked_role_input {
     }
     impl Builder {
         /// <p>The name of the service-linked role to be deleted.</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteServiceLinkedRoleInput`](crate::input::DeleteServiceLinkedRoleInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteServiceLinkedRoleInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteServiceLinkedRoleInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteServiceLinkedRoleInput {
                 role_name: self.role_name,
             })
@@ -5529,7 +5612,7 @@ impl DeleteServiceLinkedRoleInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteServiceLinkedRole,
             aws_http::AwsErrorRetryPolicy,
@@ -5589,7 +5672,7 @@ impl DeleteServiceLinkedRoleInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5597,7 +5680,7 @@ impl DeleteServiceLinkedRoleInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5632,12 +5715,12 @@ pub mod delete_service_specific_credential_input {
         /// to call the operation.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The unique identifier of the service-specific credential. You can get this value by
@@ -5646,22 +5729,22 @@ pub mod delete_service_specific_credential_input {
         /// consist of any upper or lowercased letter or digit.</p>
         pub fn service_specific_credential_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.service_specific_credential_id = Some(inp.into());
+            self.service_specific_credential_id = Some(input.into());
             self
         }
         pub fn set_service_specific_credential_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.service_specific_credential_id = inp;
+            self.service_specific_credential_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteServiceSpecificCredentialInput`](crate::input::DeleteServiceSpecificCredentialInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteServiceSpecificCredentialInput,
             smithy_http::operation::BuildError,
         > {
@@ -5683,7 +5766,7 @@ impl DeleteServiceSpecificCredentialInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteServiceSpecificCredential,
             aws_http::AwsErrorRetryPolicy,
@@ -5744,7 +5827,7 @@ impl DeleteServiceSpecificCredentialInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5752,7 +5835,7 @@ impl DeleteServiceSpecificCredentialInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5785,30 +5868,35 @@ pub mod delete_signing_certificate_input {
         /// <p>The name of the user the signing certificate belongs to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The ID of the signing certificate to delete.</p>
         /// <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
         /// characters that can be upper- or lower-cased letters or digits.</p>
-        pub fn certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_id = Some(inp.into());
+        pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_id = Some(input.into());
             self
         }
-        pub fn set_certificate_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.certificate_id = inp;
+        pub fn set_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.certificate_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteSigningCertificateInput`](crate::input::DeleteSigningCertificateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteSigningCertificateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteSigningCertificateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteSigningCertificateInput {
                 user_name: self.user_name,
                 certificate_id: self.certificate_id,
@@ -5827,7 +5915,7 @@ impl DeleteSigningCertificateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteSigningCertificate,
             aws_http::AwsErrorRetryPolicy,
@@ -5887,7 +5975,7 @@ impl DeleteSigningCertificateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -5895,7 +5983,7 @@ impl DeleteSigningCertificateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -5928,33 +6016,35 @@ pub mod delete_ssh_public_key_input {
         /// <p>The name of the IAM user associated with the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The unique identifier for the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn ssh_public_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssh_public_key_id = Some(inp.into());
+        pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssh_public_key_id = Some(input.into());
             self
         }
         pub fn set_ssh_public_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ssh_public_key_id = inp;
+            self.ssh_public_key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteSSHPublicKeyInput`](crate::input::DeleteSSHPublicKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteSSHPublicKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteSSHPublicKeyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteSSHPublicKeyInput {
                 user_name: self.user_name,
                 ssh_public_key_id: self.ssh_public_key_id,
@@ -5972,7 +6062,7 @@ impl DeleteSSHPublicKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteSSHPublicKey,
             aws_http::AwsErrorRetryPolicy,
@@ -6032,7 +6122,7 @@ impl DeleteSSHPublicKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6040,7 +6130,7 @@ impl DeleteSSHPublicKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6072,18 +6162,19 @@ pub mod delete_user_input {
         /// <p>The name of the user to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteUserInput`](crate::input::DeleteUserInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteUserInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteUserInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteUserInput {
                 user_name: self.user_name,
             })
@@ -6100,7 +6191,7 @@ impl DeleteUserInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteUser,
             aws_http::AwsErrorRetryPolicy,
@@ -6157,7 +6248,7 @@ impl DeleteUserInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6165,7 +6256,7 @@ impl DeleteUserInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6196,18 +6287,18 @@ pub mod delete_user_permissions_boundary_input {
     impl Builder {
         /// <p>The name (friendly name, not ARN) of the IAM user from which you want to remove the
         /// permissions boundary.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteUserPermissionsBoundaryInput`](crate::input::DeleteUserPermissionsBoundaryInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::DeleteUserPermissionsBoundaryInput,
             smithy_http::operation::BuildError,
         > {
@@ -6228,7 +6319,7 @@ impl DeleteUserPermissionsBoundaryInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteUserPermissionsBoundary,
             aws_http::AwsErrorRetryPolicy,
@@ -6289,7 +6380,7 @@ impl DeleteUserPermissionsBoundaryInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6297,7 +6388,7 @@ impl DeleteUserPermissionsBoundaryInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6331,30 +6422,32 @@ pub mod delete_user_policy_input {
         /// in.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The name identifying the policy document to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteUserPolicyInput`](crate::input::DeleteUserPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteUserPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteUserPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteUserPolicyInput {
                 user_name: self.user_name,
                 policy_name: self.policy_name,
@@ -6372,7 +6465,7 @@ impl DeleteUserPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteUserPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -6432,7 +6525,7 @@ impl DeleteUserPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6440,7 +6533,7 @@ impl DeleteUserPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6474,19 +6567,24 @@ pub mod delete_virtual_mfa_device_input {
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
         /// of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
         /// following characters: =,.@:/-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.serial_number = Some(inp.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.serial_number = Some(input.into());
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.serial_number = inp;
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.serial_number = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteVirtualMFADeviceInput`](crate::input::DeleteVirtualMFADeviceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteVirtualMFADeviceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteVirtualMFADeviceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteVirtualMFADeviceInput {
                 serial_number: self.serial_number,
             })
@@ -6503,7 +6601,7 @@ impl DeleteVirtualMFADeviceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteVirtualMFADevice,
             aws_http::AwsErrorRetryPolicy,
@@ -6563,7 +6661,7 @@ impl DeleteVirtualMFADeviceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6571,7 +6669,7 @@ impl DeleteVirtualMFADeviceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6604,29 +6702,31 @@ pub mod detach_group_policy_input {
         /// <p>The name (friendly name, not ARN) of the IAM group to detach the policy from.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DetachGroupPolicyInput`](crate::input::DetachGroupPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DetachGroupPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DetachGroupPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DetachGroupPolicyInput {
                 group_name: self.group_name,
                 policy_arn: self.policy_arn,
@@ -6644,7 +6744,7 @@ impl DetachGroupPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DetachGroupPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -6704,7 +6804,7 @@ impl DetachGroupPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6712,7 +6812,7 @@ impl DetachGroupPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6745,29 +6845,31 @@ pub mod detach_role_policy_input {
         /// <p>The name (friendly name, not ARN) of the IAM role to detach the policy from.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DetachRolePolicyInput`](crate::input::DetachRolePolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DetachRolePolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DetachRolePolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DetachRolePolicyInput {
                 role_name: self.role_name,
                 policy_arn: self.policy_arn,
@@ -6785,7 +6887,7 @@ impl DetachRolePolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DetachRolePolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -6845,7 +6947,7 @@ impl DetachRolePolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6853,7 +6955,7 @@ impl DetachRolePolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -6886,29 +6988,31 @@ pub mod detach_user_policy_input {
         /// <p>The name (friendly name, not ARN) of the IAM user to detach the policy from.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`DetachUserPolicyInput`](crate::input::DetachUserPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DetachUserPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DetachUserPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DetachUserPolicyInput {
                 user_name: self.user_name,
                 policy_arn: self.policy_arn,
@@ -6926,7 +7030,7 @@ impl DetachUserPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DetachUserPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -6986,7 +7090,7 @@ impl DetachUserPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -6994,7 +7098,7 @@ impl DetachUserPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7029,12 +7133,12 @@ pub mod enable_mfa_device_input {
         /// <p>The name of the IAM user for whom you want to enable the MFA device.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices,
@@ -7042,12 +7146,15 @@ pub mod enable_mfa_device_input {
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
         /// of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
         /// following characters: =,.@:/-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.serial_number = Some(inp.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.serial_number = Some(input.into());
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.serial_number = inp;
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.serial_number = input;
             self
         }
         /// <p>An authentication code emitted by the device. </p>
@@ -7060,15 +7167,15 @@ pub mod enable_mfa_device_input {
         /// time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
         /// device</a>.</p>
         /// </important>
-        pub fn authentication_code1(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authentication_code1 = Some(inp.into());
+        pub fn authentication_code1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authentication_code1 = Some(input.into());
             self
         }
         pub fn set_authentication_code1(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.authentication_code1 = inp;
+            self.authentication_code1 = input;
             self
         }
         /// <p>A subsequent authentication code emitted by the device.</p>
@@ -7081,22 +7188,24 @@ pub mod enable_mfa_device_input {
         /// time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
         /// device</a>.</p>
         /// </important>
-        pub fn authentication_code2(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authentication_code2 = Some(inp.into());
+        pub fn authentication_code2(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authentication_code2 = Some(input.into());
             self
         }
         pub fn set_authentication_code2(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.authentication_code2 = inp;
+            self.authentication_code2 = input;
             self
         }
         /// Consumes the builder and constructs a [`EnableMFADeviceInput`](crate::input::EnableMFADeviceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::EnableMFADeviceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::EnableMFADeviceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::EnableMFADeviceInput {
                 user_name: self.user_name,
                 serial_number: self.serial_number,
@@ -7116,7 +7225,7 @@ impl EnableMFADeviceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::EnableMFADevice,
             aws_http::AwsErrorRetryPolicy,
@@ -7175,7 +7284,7 @@ impl EnableMFADeviceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7183,7 +7292,7 @@ impl EnableMFADeviceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7213,8 +7322,10 @@ pub mod generate_credential_report_input {
         /// Consumes the builder and constructs a [`GenerateCredentialReportInput`](crate::input::GenerateCredentialReportInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GenerateCredentialReportInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GenerateCredentialReportInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GenerateCredentialReportInput {})
         }
     }
@@ -7230,7 +7341,7 @@ impl GenerateCredentialReportInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GenerateCredentialReport,
             aws_http::AwsErrorRetryPolicy,
@@ -7290,7 +7401,7 @@ impl GenerateCredentialReportInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7298,7 +7409,7 @@ impl GenerateCredentialReportInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7334,33 +7445,33 @@ pub mod generate_organizations_access_report_input {
         /// organization root ID is <code>r-f6g7h8i9j0example</code> and your organization ID is
         /// <code>o-a1b2c3d4e5</code>. Your entity path is
         /// <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</code>.</p>
-        pub fn entity_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.entity_path = Some(inp.into());
+        pub fn entity_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.entity_path = Some(input.into());
             self
         }
-        pub fn set_entity_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.entity_path = inp;
+        pub fn set_entity_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entity_path = input;
             self
         }
         /// <p>The identifier of the AWS Organizations service control policy (SCP). This parameter is
         /// optional.</p>
         /// <p>This ID is used to generate information about when an account principal that is
         /// limited by the SCP attempted to access an AWS service.</p>
-        pub fn organizations_policy_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.organizations_policy_id = Some(inp.into());
+        pub fn organizations_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organizations_policy_id = Some(input.into());
             self
         }
         pub fn set_organizations_policy_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.organizations_policy_id = inp;
+            self.organizations_policy_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GenerateOrganizationsAccessReportInput`](crate::input::GenerateOrganizationsAccessReportInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GenerateOrganizationsAccessReportInput,
             smithy_http::operation::BuildError,
         > {
@@ -7382,7 +7493,7 @@ impl GenerateOrganizationsAccessReportInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GenerateOrganizationsAccessReport,
             aws_http::AwsErrorRetryPolicy,
@@ -7445,7 +7556,7 @@ impl GenerateOrganizationsAccessReportInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7453,7 +7564,7 @@ impl GenerateOrganizationsAccessReportInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7487,12 +7598,12 @@ pub mod generate_service_last_accessed_details_input {
         /// <p>The ARN of the IAM resource (user, group, role, or managed policy) used to generate
         /// information about when the resource was last used in an attempt to access an AWS
         /// service.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
         /// <p>The level of detail that you want to generate. You can specify whether you want to
@@ -7500,21 +7611,24 @@ pub mod generate_service_last_accessed_details_input {
         /// specify service-level granularity, this operation generates only service data. If you
         /// specify action-level granularity, it generates service and action data. If you don't
         /// include this optional parameter, the operation generates service data.</p>
-        pub fn granularity(mut self, inp: crate::model::AccessAdvisorUsageGranularityType) -> Self {
-            self.granularity = Some(inp);
+        pub fn granularity(
+            mut self,
+            input: crate::model::AccessAdvisorUsageGranularityType,
+        ) -> Self {
+            self.granularity = Some(input);
             self
         }
         pub fn set_granularity(
             mut self,
-            inp: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>,
+            input: std::option::Option<crate::model::AccessAdvisorUsageGranularityType>,
         ) -> Self {
-            self.granularity = inp;
+            self.granularity = input;
             self
         }
         /// Consumes the builder and constructs a [`GenerateServiceLastAccessedDetailsInput`](crate::input::GenerateServiceLastAccessedDetailsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GenerateServiceLastAccessedDetailsInput,
             smithy_http::operation::BuildError,
         > {
@@ -7536,7 +7650,7 @@ impl GenerateServiceLastAccessedDetailsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GenerateServiceLastAccessedDetails,
             aws_http::AwsErrorRetryPolicy,
@@ -7599,7 +7713,7 @@ impl GenerateServiceLastAccessedDetailsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7607,7 +7721,7 @@ impl GenerateServiceLastAccessedDetailsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7639,19 +7753,24 @@ pub mod get_access_key_last_used_input {
         /// <p>The identifier of an access key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn access_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.access_key_id = Some(inp.into());
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_key_id = Some(input.into());
             self
         }
-        pub fn set_access_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.access_key_id = inp;
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_key_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAccessKeyLastUsedInput`](crate::input::GetAccessKeyLastUsedInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAccessKeyLastUsedInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetAccessKeyLastUsedInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetAccessKeyLastUsedInput {
                 access_key_id: self.access_key_id,
             })
@@ -7668,7 +7787,7 @@ impl GetAccessKeyLastUsedInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetAccessKeyLastUsed,
             aws_http::AwsErrorRetryPolicy,
@@ -7728,7 +7847,7 @@ impl GetAccessKeyLastUsedInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7736,7 +7855,7 @@ impl GetAccessKeyLastUsedInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7767,17 +7886,17 @@ pub mod get_account_authorization_details_input {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn filter(mut self, inp: impl Into<crate::model::EntityType>) -> Self {
+        pub fn filter(mut self, input: impl Into<crate::model::EntityType>) -> Self {
             let mut v = self.filter.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.filter = Some(v);
             self
         }
         pub fn set_filter(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
+            input: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
         ) -> Self {
-            self.filter = inp;
+            self.filter = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -7788,30 +7907,30 @@ pub mod get_account_authorization_details_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`GetAccountAuthorizationDetailsInput`](crate::input::GetAccountAuthorizationDetailsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetAccountAuthorizationDetailsInput,
             smithy_http::operation::BuildError,
         > {
@@ -7834,7 +7953,7 @@ impl GetAccountAuthorizationDetailsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetAccountAuthorizationDetails,
             aws_http::AwsErrorRetryPolicy,
@@ -7895,7 +8014,7 @@ impl GetAccountAuthorizationDetailsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -7903,7 +8022,7 @@ impl GetAccountAuthorizationDetailsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -7933,8 +8052,10 @@ pub mod get_account_password_policy_input {
         /// Consumes the builder and constructs a [`GetAccountPasswordPolicyInput`](crate::input::GetAccountPasswordPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAccountPasswordPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetAccountPasswordPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetAccountPasswordPolicyInput {})
         }
     }
@@ -7950,7 +8071,7 @@ impl GetAccountPasswordPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetAccountPasswordPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -8010,7 +8131,7 @@ impl GetAccountPasswordPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8018,7 +8139,7 @@ impl GetAccountPasswordPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8048,8 +8169,10 @@ pub mod get_account_summary_input {
         /// Consumes the builder and constructs a [`GetAccountSummaryInput`](crate::input::GetAccountSummaryInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetAccountSummaryInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetAccountSummaryInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetAccountSummaryInput {})
         }
     }
@@ -8064,7 +8187,7 @@ impl GetAccountSummaryInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetAccountSummary,
             aws_http::AwsErrorRetryPolicy,
@@ -8124,7 +8247,7 @@ impl GetAccountSummaryInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8132,7 +8255,7 @@ impl GetAccountSummaryInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8161,23 +8284,23 @@ pub mod get_context_keys_for_custom_policy_input {
         pub(crate) policy_input_list: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        pub fn policy_input_list(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn policy_input_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_input_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policy_input_list = Some(v);
             self
         }
         pub fn set_policy_input_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.policy_input_list = inp;
+            self.policy_input_list = input;
             self
         }
         /// Consumes the builder and constructs a [`GetContextKeysForCustomPolicyInput`](crate::input::GetContextKeysForCustomPolicyInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetContextKeysForCustomPolicyInput,
             smithy_http::operation::BuildError,
         > {
@@ -8198,7 +8321,7 @@ impl GetContextKeysForCustomPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetContextKeysForCustomPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -8259,7 +8382,7 @@ impl GetContextKeysForCustomPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8267,7 +8390,7 @@ impl GetContextKeysForCustomPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8305,34 +8428,34 @@ pub mod get_context_keys_for_principal_policy_input {
         /// in unencoded form here for clarity, but must be URL encoded to be included as a part of
         /// a real HTML request.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_source_arn = Some(inp.into());
+        pub fn policy_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_source_arn = Some(input.into());
             self
         }
         pub fn set_policy_source_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.policy_source_arn = inp;
+            self.policy_source_arn = input;
             self
         }
-        pub fn policy_input_list(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn policy_input_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_input_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policy_input_list = Some(v);
             self
         }
         pub fn set_policy_input_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.policy_input_list = inp;
+            self.policy_input_list = input;
             self
         }
         /// Consumes the builder and constructs a [`GetContextKeysForPrincipalPolicyInput`](crate::input::GetContextKeysForPrincipalPolicyInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetContextKeysForPrincipalPolicyInput,
             smithy_http::operation::BuildError,
         > {
@@ -8354,7 +8477,7 @@ impl GetContextKeysForPrincipalPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetContextKeysForPrincipalPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -8417,7 +8540,7 @@ impl GetContextKeysForPrincipalPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8425,7 +8548,7 @@ impl GetContextKeysForPrincipalPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8455,8 +8578,10 @@ pub mod get_credential_report_input {
         /// Consumes the builder and constructs a [`GetCredentialReportInput`](crate::input::GetCredentialReportInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetCredentialReportInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetCredentialReportInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetCredentialReportInput {})
         }
     }
@@ -8471,7 +8596,7 @@ impl GetCredentialReportInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetCredentialReport,
             aws_http::AwsErrorRetryPolicy,
@@ -8531,7 +8656,7 @@ impl GetCredentialReportInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8539,7 +8664,7 @@ impl GetCredentialReportInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8573,24 +8698,24 @@ pub mod get_group_input {
         /// <p>The name of the group.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -8601,18 +8726,19 @@ pub mod get_group_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`GetGroupInput`](crate::input::GetGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetGroupInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetGroupInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetGroupInput {
                 group_name: self.group_name,
                 marker: self.marker,
@@ -8631,7 +8757,7 @@ impl GetGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -8686,7 +8812,7 @@ impl GetGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8694,7 +8820,7 @@ impl GetGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8727,29 +8853,32 @@ pub mod get_group_policy_input {
         /// <p>The name of the group the policy is associated with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// <p>The name of the policy document to get.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetGroupPolicyInput`](crate::input::GetGroupPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetGroupPolicyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::GetGroupPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetGroupPolicyInput {
                 group_name: self.group_name,
                 policy_name: self.policy_name,
@@ -8767,7 +8896,7 @@ impl GetGroupPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetGroupPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -8826,7 +8955,7 @@ impl GetGroupPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8834,7 +8963,7 @@ impl GetGroupPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8866,22 +8995,24 @@ pub mod get_instance_profile_input {
         /// <p>The name of the instance profile to get information about.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_profile_name = Some(inp.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_profile_name = Some(input.into());
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.instance_profile_name = inp;
+            self.instance_profile_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetInstanceProfileInput`](crate::input::GetInstanceProfileInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetInstanceProfileInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetInstanceProfileInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetInstanceProfileInput {
                 instance_profile_name: self.instance_profile_name,
             })
@@ -8898,7 +9029,7 @@ impl GetInstanceProfileInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetInstanceProfile,
             aws_http::AwsErrorRetryPolicy,
@@ -8958,7 +9089,7 @@ impl GetInstanceProfileInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -8966,7 +9097,7 @@ impl GetInstanceProfileInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -8998,19 +9129,21 @@ pub mod get_login_profile_input {
         /// <p>The name of the user whose login profile you want to retrieve.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetLoginProfileInput`](crate::input::GetLoginProfileInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetLoginProfileInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetLoginProfileInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetLoginProfileInput {
                 user_name: self.user_name,
             })
@@ -9027,7 +9160,7 @@ impl GetLoginProfileInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetLoginProfile,
             aws_http::AwsErrorRetryPolicy,
@@ -9086,7 +9219,7 @@ impl GetLoginProfileInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9094,7 +9227,7 @@ impl GetLoginProfileInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -9126,22 +9259,27 @@ pub mod get_open_id_connect_provider_input {
         /// <p>The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get
         /// information for. You can get a list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.open_id_connect_provider_arn = Some(inp.into());
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.open_id_connect_provider_arn = Some(input.into());
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.open_id_connect_provider_arn = inp;
+            self.open_id_connect_provider_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`GetOpenIDConnectProviderInput`](crate::input::GetOpenIDConnectProviderInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetOpenIDConnectProviderInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetOpenIDConnectProviderInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetOpenIDConnectProviderInput {
                 open_id_connect_provider_arn: self.open_id_connect_provider_arn,
             })
@@ -9159,7 +9297,7 @@ impl GetOpenIDConnectProviderInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetOpenIDConnectProvider,
             aws_http::AwsErrorRetryPolicy,
@@ -9220,7 +9358,7 @@ impl GetOpenIDConnectProviderInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9228,7 +9366,7 @@ impl GetOpenIDConnectProviderInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -9261,12 +9399,12 @@ pub mod get_organizations_access_report_input {
     }
     impl Builder {
         /// <p>The identifier of the request generated by the <a>GenerateOrganizationsAccessReport</a> operation.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.job_id = Some(inp.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
             self
         }
-        pub fn set_job_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.job_id = inp;
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -9277,41 +9415,44 @@ pub mod get_organizations_access_report_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>The key that is used to sort the results. If you choose the namespace key, the results
         /// are returned in alphabetical order. If you choose the time key, the results are sorted
         /// numerically by the date and time.</p>
-        pub fn sort_key(mut self, inp: crate::model::SortKeyType) -> Self {
-            self.sort_key = Some(inp);
+        pub fn sort_key(mut self, input: crate::model::SortKeyType) -> Self {
+            self.sort_key = Some(input);
             self
         }
-        pub fn set_sort_key(mut self, inp: std::option::Option<crate::model::SortKeyType>) -> Self {
-            self.sort_key = inp;
+        pub fn set_sort_key(
+            mut self,
+            input: std::option::Option<crate::model::SortKeyType>,
+        ) -> Self {
+            self.sort_key = input;
             self
         }
         /// Consumes the builder and constructs a [`GetOrganizationsAccessReportInput`](crate::input::GetOrganizationsAccessReportInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetOrganizationsAccessReportInput,
             smithy_http::operation::BuildError,
         > {
@@ -9335,7 +9476,7 @@ impl GetOrganizationsAccessReportInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetOrganizationsAccessReport,
             aws_http::AwsErrorRetryPolicy,
@@ -9396,7 +9537,7 @@ impl GetOrganizationsAccessReportInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9404,7 +9545,7 @@ impl GetOrganizationsAccessReportInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -9436,18 +9577,19 @@ pub mod get_policy_input {
         /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information
         /// about.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`GetPolicyInput`](crate::input::GetPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPolicyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetPolicyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetPolicyInput {
                 policy_arn: self.policy_arn,
             })
@@ -9464,7 +9606,7 @@ impl GetPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -9519,7 +9661,7 @@ impl GetPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9527,7 +9669,7 @@ impl GetPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -9560,31 +9702,33 @@ pub mod get_policy_version_input {
         /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information
         /// about.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// <p>Identifies the policy version to retrieve.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that
         /// consists of the lowercase letter 'v' followed by one or two digits, and optionally
         /// followed by a period '.' and a string of letters and digits.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetPolicyVersionInput`](crate::input::GetPolicyVersionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetPolicyVersionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetPolicyVersionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetPolicyVersionInput {
                 policy_arn: self.policy_arn,
                 version_id: self.version_id,
@@ -9602,7 +9746,7 @@ impl GetPolicyVersionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetPolicyVersion,
             aws_http::AwsErrorRetryPolicy,
@@ -9662,7 +9806,7 @@ impl GetPolicyVersionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9670,7 +9814,7 @@ impl GetPolicyVersionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -9702,18 +9846,19 @@ pub mod get_role_input {
         /// <p>The name of the IAM role to get information about.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRoleInput`](crate::input::GetRoleInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRoleInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetRoleInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetRoleInput {
                 role_name: self.role_name,
             })
@@ -9730,7 +9875,7 @@ impl GetRoleInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<crate::operation::GetRole, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
@@ -9782,7 +9927,7 @@ impl GetRoleInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9790,7 +9935,7 @@ impl GetRoleInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -9823,29 +9968,30 @@ pub mod get_role_policy_input {
         /// <p>The name of the role associated with the policy.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>The name of the policy document to get.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRolePolicyInput`](crate::input::GetRolePolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRolePolicyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetRolePolicyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetRolePolicyInput {
                 role_name: self.role_name,
                 policy_name: self.policy_name,
@@ -9863,7 +10009,7 @@ impl GetRolePolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetRolePolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -9922,7 +10068,7 @@ impl GetRolePolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -9930,7 +10076,7 @@ impl GetRolePolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -9962,22 +10108,24 @@ pub mod get_saml_provider_input {
         /// <p>The Amazon Resource Name (ARN) of the SAML provider resource object in IAM to get
         /// information about.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn saml_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.saml_provider_arn = Some(inp.into());
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.saml_provider_arn = Some(input.into());
             self
         }
         pub fn set_saml_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.saml_provider_arn = inp;
+            self.saml_provider_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSAMLProviderInput`](crate::input::GetSAMLProviderInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSAMLProviderInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetSAMLProviderInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetSAMLProviderInput {
                 saml_provider_arn: self.saml_provider_arn,
             })
@@ -9994,7 +10142,7 @@ impl GetSAMLProviderInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetSAMLProvider,
             aws_http::AwsErrorRetryPolicy,
@@ -10053,7 +10201,7 @@ impl GetSAMLProviderInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10061,7 +10209,7 @@ impl GetSAMLProviderInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10093,22 +10241,24 @@ pub mod get_server_certificate_input {
         /// <p>The name of the server certificate you want to retrieve information about.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.server_certificate_name = Some(inp.into());
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_certificate_name = Some(input.into());
             self
         }
         pub fn set_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.server_certificate_name = inp;
+            self.server_certificate_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetServerCertificateInput`](crate::input::GetServerCertificateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetServerCertificateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetServerCertificateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetServerCertificateInput {
                 server_certificate_name: self.server_certificate_name,
             })
@@ -10125,7 +10275,7 @@ impl GetServerCertificateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetServerCertificate,
             aws_http::AwsErrorRetryPolicy,
@@ -10185,7 +10335,7 @@ impl GetServerCertificateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10193,7 +10343,7 @@ impl GetServerCertificateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10228,12 +10378,12 @@ pub mod get_service_last_accessed_details_input {
         /// returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role
         /// within a session, or by the same user when used to call
         /// <code>GetServiceLastAccessedDetail</code>.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.job_id = Some(inp.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
             self
         }
-        pub fn set_job_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.job_id = inp;
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -10244,30 +10394,30 @@ pub mod get_service_last_accessed_details_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`GetServiceLastAccessedDetailsInput`](crate::input::GetServiceLastAccessedDetailsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetServiceLastAccessedDetailsInput,
             smithy_http::operation::BuildError,
         > {
@@ -10290,7 +10440,7 @@ impl GetServiceLastAccessedDetailsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetServiceLastAccessedDetails,
             aws_http::AwsErrorRetryPolicy,
@@ -10351,7 +10501,7 @@ impl GetServiceLastAccessedDetailsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10359,7 +10509,7 @@ impl GetServiceLastAccessedDetailsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10393,12 +10543,12 @@ pub mod get_service_last_accessed_details_with_entities_input {
     impl Builder {
         /// <p>The ID of the request generated by the <code>GenerateServiceLastAccessedDetails</code>
         /// operation.</p>
-        pub fn job_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.job_id = Some(inp.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.job_id = Some(input.into());
             self
         }
-        pub fn set_job_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.job_id = inp;
+        pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_id = input;
             self
         }
         /// <p>The service namespace for an AWS service. Provide the service namespace to learn
@@ -10409,15 +10559,15 @@ pub mod get_service_last_accessed_details_with_entities_input {
         /// <code>(service prefix: a4b)</code>. For more information about service namespaces,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
         /// service namespaces</a> in the <i>AWS General Reference</i>.</p>
-        pub fn service_namespace(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_namespace = Some(inp.into());
+        pub fn service_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_namespace = Some(input.into());
             self
         }
         pub fn set_service_namespace(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.service_namespace = inp;
+            self.service_namespace = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -10428,30 +10578,30 @@ pub mod get_service_last_accessed_details_with_entities_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`GetServiceLastAccessedDetailsWithEntitiesInput`](crate::input::GetServiceLastAccessedDetailsWithEntitiesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetServiceLastAccessedDetailsWithEntitiesInput,
             smithy_http::operation::BuildError,
         > {
@@ -10478,7 +10628,7 @@ impl GetServiceLastAccessedDetailsWithEntitiesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetServiceLastAccessedDetailsWithEntities,
             aws_http::AwsErrorRetryPolicy,
@@ -10537,7 +10687,7 @@ impl GetServiceLastAccessedDetailsWithEntitiesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10545,7 +10695,7 @@ impl GetServiceLastAccessedDetailsWithEntitiesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10577,21 +10727,21 @@ pub mod get_service_linked_role_deletion_status_input {
     impl Builder {
         /// <p>The deletion task identifier. This identifier is returned by the <a>DeleteServiceLinkedRole</a> operation in the format
         /// <code>task/aws-service-role/<service-principal-name>/<role-name>/<task-uuid></code>.</p>
-        pub fn deletion_task_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.deletion_task_id = Some(inp.into());
+        pub fn deletion_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.deletion_task_id = Some(input.into());
             self
         }
         pub fn set_deletion_task_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.deletion_task_id = inp;
+            self.deletion_task_id = input;
             self
         }
         /// Consumes the builder and constructs a [`GetServiceLinkedRoleDeletionStatusInput`](crate::input::GetServiceLinkedRoleDeletionStatusInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::GetServiceLinkedRoleDeletionStatusInput,
             smithy_http::operation::BuildError,
         > {
@@ -10612,7 +10762,7 @@ impl GetServiceLinkedRoleDeletionStatusInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetServiceLinkedRoleDeletionStatus,
             aws_http::AwsErrorRetryPolicy,
@@ -10675,7 +10825,7 @@ impl GetServiceLinkedRoleDeletionStatusInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10683,7 +10833,7 @@ impl GetServiceLinkedRoleDeletionStatusInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10717,47 +10867,49 @@ pub mod get_ssh_public_key_input {
         /// <p>The name of the IAM user associated with the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The unique identifier for the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn ssh_public_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssh_public_key_id = Some(inp.into());
+        pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssh_public_key_id = Some(input.into());
             self
         }
         pub fn set_ssh_public_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ssh_public_key_id = inp;
+            self.ssh_public_key_id = input;
             self
         }
         /// <p>Specifies the public key encoding format to use in the response. To retrieve the
         /// public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM
         /// format, use <code>PEM</code>.</p>
-        pub fn encoding(mut self, inp: crate::model::EncodingType) -> Self {
-            self.encoding = Some(inp);
+        pub fn encoding(mut self, input: crate::model::EncodingType) -> Self {
+            self.encoding = Some(input);
             self
         }
         pub fn set_encoding(
             mut self,
-            inp: std::option::Option<crate::model::EncodingType>,
+            input: std::option::Option<crate::model::EncodingType>,
         ) -> Self {
-            self.encoding = inp;
+            self.encoding = input;
             self
         }
         /// Consumes the builder and constructs a [`GetSSHPublicKeyInput`](crate::input::GetSSHPublicKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetSSHPublicKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetSSHPublicKeyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetSSHPublicKeyInput {
                 user_name: self.user_name,
                 ssh_public_key_id: self.ssh_public_key_id,
@@ -10776,7 +10928,7 @@ impl GetSSHPublicKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetSSHPublicKey,
             aws_http::AwsErrorRetryPolicy,
@@ -10836,7 +10988,7 @@ impl GetSSHPublicKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10844,7 +10996,7 @@ impl GetSSHPublicKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10877,18 +11029,19 @@ pub mod get_user_input {
         /// <p>This parameter is optional. If it is not included, it defaults to the user making the
         /// request. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetUserInput`](crate::input::GetUserInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetUserInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetUserInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetUserInput {
                 user_name: self.user_name,
             })
@@ -10905,7 +11058,7 @@ impl GetUserInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<crate::operation::GetUser, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
@@ -10957,7 +11110,7 @@ impl GetUserInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -10965,7 +11118,7 @@ impl GetUserInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -10998,29 +11151,30 @@ pub mod get_user_policy_input {
         /// <p>The name of the user who the policy is associated with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The name of the policy document to get.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// Consumes the builder and constructs a [`GetUserPolicyInput`](crate::input::GetUserPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetUserPolicyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetUserPolicyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetUserPolicyInput {
                 user_name: self.user_name,
                 policy_name: self.policy_name,
@@ -11038,7 +11192,7 @@ impl GetUserPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetUserPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -11097,7 +11251,7 @@ impl GetUserPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -11105,7 +11259,7 @@ impl GetUserPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -11139,24 +11293,24 @@ pub mod list_access_keys_input {
         /// <p>The name of the user.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -11167,18 +11321,21 @@ pub mod list_access_keys_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListAccessKeysInput`](crate::input::ListAccessKeysInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAccessKeysInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::ListAccessKeysInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListAccessKeysInput {
                 user_name: self.user_name,
                 marker: self.marker,
@@ -11197,7 +11354,7 @@ impl ListAccessKeysInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListAccessKeys,
             aws_http::AwsErrorRetryPolicy,
@@ -11256,7 +11413,7 @@ impl ListAccessKeysInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -11264,7 +11421,7 @@ impl ListAccessKeysInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -11298,12 +11455,12 @@ pub mod list_account_aliases_input {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -11314,19 +11471,21 @@ pub mod list_account_aliases_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListAccountAliasesInput`](crate::input::ListAccountAliasesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAccountAliasesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListAccountAliasesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListAccountAliasesInput {
                 marker: self.marker,
                 max_items: self.max_items,
@@ -11344,7 +11503,7 @@ impl ListAccountAliasesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListAccountAliases,
             aws_http::AwsErrorRetryPolicy,
@@ -11404,7 +11563,7 @@ impl ListAccountAliasesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -11412,7 +11571,7 @@ impl ListAccountAliasesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -11447,12 +11606,12 @@ pub mod list_attached_group_policies_input {
         /// <p>The name (friendly name, not ARN) of the group to list attached policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
@@ -11461,24 +11620,24 @@ pub mod list_attached_group_policies_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path_prefix = Some(inp.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_prefix = Some(input.into());
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path_prefix = inp;
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path_prefix = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -11489,19 +11648,21 @@ pub mod list_attached_group_policies_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListAttachedGroupPoliciesInput`](crate::input::ListAttachedGroupPoliciesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAttachedGroupPoliciesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListAttachedGroupPoliciesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListAttachedGroupPoliciesInput {
                 group_name: self.group_name,
                 path_prefix: self.path_prefix,
@@ -11522,7 +11683,7 @@ impl ListAttachedGroupPoliciesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListAttachedGroupPolicies,
             aws_http::AwsErrorRetryPolicy,
@@ -11583,7 +11744,7 @@ impl ListAttachedGroupPoliciesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -11591,7 +11752,7 @@ impl ListAttachedGroupPoliciesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -11626,12 +11787,12 @@ pub mod list_attached_role_policies_input {
         /// <p>The name (friendly name, not ARN) of the role to list attached policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
@@ -11640,24 +11801,24 @@ pub mod list_attached_role_policies_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path_prefix = Some(inp.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_prefix = Some(input.into());
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path_prefix = inp;
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path_prefix = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -11668,19 +11829,21 @@ pub mod list_attached_role_policies_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListAttachedRolePoliciesInput`](crate::input::ListAttachedRolePoliciesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAttachedRolePoliciesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListAttachedRolePoliciesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListAttachedRolePoliciesInput {
                 role_name: self.role_name,
                 path_prefix: self.path_prefix,
@@ -11701,7 +11864,7 @@ impl ListAttachedRolePoliciesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListAttachedRolePolicies,
             aws_http::AwsErrorRetryPolicy,
@@ -11761,7 +11924,7 @@ impl ListAttachedRolePoliciesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -11769,7 +11932,7 @@ impl ListAttachedRolePoliciesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -11804,12 +11967,12 @@ pub mod list_attached_user_policies_input {
         /// <p>The name (friendly name, not ARN) of the user to list attached policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
@@ -11818,24 +11981,24 @@ pub mod list_attached_user_policies_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path_prefix = Some(inp.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_prefix = Some(input.into());
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path_prefix = inp;
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path_prefix = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -11846,19 +12009,21 @@ pub mod list_attached_user_policies_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListAttachedUserPoliciesInput`](crate::input::ListAttachedUserPoliciesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListAttachedUserPoliciesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListAttachedUserPoliciesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListAttachedUserPoliciesInput {
                 user_name: self.user_name,
                 path_prefix: self.path_prefix,
@@ -11879,7 +12044,7 @@ impl ListAttachedUserPoliciesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListAttachedUserPolicies,
             aws_http::AwsErrorRetryPolicy,
@@ -11939,7 +12104,7 @@ impl ListAttachedUserPoliciesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -11947,7 +12112,7 @@ impl ListAttachedUserPoliciesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -11984,12 +12149,12 @@ pub mod list_entities_for_policy_input {
         /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
         /// versions.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// <p>The entity type to use for filtering the results.</p>
@@ -11997,15 +12162,15 @@ pub mod list_entities_for_policy_input {
         /// are attached to the specified policy are returned. This parameter is optional. If it is
         /// not included, all attached entities (users, groups, and roles) are returned. The
         /// argument for this parameter must be one of the valid values listed below.</p>
-        pub fn entity_filter(mut self, inp: crate::model::EntityType) -> Self {
-            self.entity_filter = Some(inp);
+        pub fn entity_filter(mut self, input: crate::model::EntityType) -> Self {
+            self.entity_filter = Some(input);
             self
         }
         pub fn set_entity_filter(
             mut self,
-            inp: std::option::Option<crate::model::EntityType>,
+            input: std::option::Option<crate::model::EntityType>,
         ) -> Self {
-            self.entity_filter = inp;
+            self.entity_filter = input;
             self
         }
         /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
@@ -12014,12 +12179,12 @@ pub mod list_entities_for_policy_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path_prefix = Some(inp.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_prefix = Some(input.into());
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path_prefix = inp;
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path_prefix = input;
             self
         }
         /// <p>The policy usage method to use for filtering the results.</p>
@@ -12028,27 +12193,27 @@ pub mod list_entities_for_policy_input {
         /// the policies used to set permissions boundaries, set the value
         /// to <code>PermissionsBoundary</code>.</p>
         /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
-        pub fn policy_usage_filter(mut self, inp: crate::model::PolicyUsageType) -> Self {
-            self.policy_usage_filter = Some(inp);
+        pub fn policy_usage_filter(mut self, input: crate::model::PolicyUsageType) -> Self {
+            self.policy_usage_filter = Some(input);
             self
         }
         pub fn set_policy_usage_filter(
             mut self,
-            inp: std::option::Option<crate::model::PolicyUsageType>,
+            input: std::option::Option<crate::model::PolicyUsageType>,
         ) -> Self {
-            self.policy_usage_filter = inp;
+            self.policy_usage_filter = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -12059,19 +12224,21 @@ pub mod list_entities_for_policy_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListEntitiesForPolicyInput`](crate::input::ListEntitiesForPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListEntitiesForPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListEntitiesForPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListEntitiesForPolicyInput {
                 policy_arn: self.policy_arn,
                 entity_filter: self.entity_filter,
@@ -12093,7 +12260,7 @@ impl ListEntitiesForPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListEntitiesForPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -12153,7 +12320,7 @@ impl ListEntitiesForPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -12161,7 +12328,7 @@ impl ListEntitiesForPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -12195,24 +12362,24 @@ pub mod list_group_policies_input {
         /// <p>The name of the group to list policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -12223,19 +12390,21 @@ pub mod list_group_policies_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListGroupPoliciesInput`](crate::input::ListGroupPoliciesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListGroupPoliciesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListGroupPoliciesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListGroupPoliciesInput {
                 group_name: self.group_name,
                 marker: self.marker,
@@ -12254,7 +12423,7 @@ impl ListGroupPoliciesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListGroupPolicies,
             aws_http::AwsErrorRetryPolicy,
@@ -12314,7 +12483,7 @@ impl ListGroupPoliciesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -12322,7 +12491,7 @@ impl ListGroupPoliciesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -12361,24 +12530,24 @@ pub mod list_groups_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path_prefix = Some(inp.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_prefix = Some(input.into());
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path_prefix = inp;
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path_prefix = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -12389,18 +12558,19 @@ pub mod list_groups_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListGroupsInput`](crate::input::ListGroupsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListGroupsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListGroupsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListGroupsInput {
                 path_prefix: self.path_prefix,
                 marker: self.marker,
@@ -12419,7 +12589,7 @@ impl ListGroupsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListGroups,
             aws_http::AwsErrorRetryPolicy,
@@ -12476,7 +12646,7 @@ impl ListGroupsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -12484,7 +12654,7 @@ impl ListGroupsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -12518,24 +12688,24 @@ pub mod list_groups_for_user_input {
         /// <p>The name of the user to list groups for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -12546,19 +12716,21 @@ pub mod list_groups_for_user_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListGroupsForUserInput`](crate::input::ListGroupsForUserInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListGroupsForUserInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListGroupsForUserInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListGroupsForUserInput {
                 user_name: self.user_name,
                 marker: self.marker,
@@ -12577,7 +12749,7 @@ impl ListGroupsForUserInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListGroupsForUser,
             aws_http::AwsErrorRetryPolicy,
@@ -12637,7 +12809,7 @@ impl ListGroupsForUserInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -12645,7 +12817,7 @@ impl ListGroupsForUserInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -12684,24 +12856,24 @@ pub mod list_instance_profiles_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path_prefix = Some(inp.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_prefix = Some(input.into());
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path_prefix = inp;
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path_prefix = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -12712,19 +12884,21 @@ pub mod list_instance_profiles_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListInstanceProfilesInput`](crate::input::ListInstanceProfilesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListInstanceProfilesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListInstanceProfilesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListInstanceProfilesInput {
                 path_prefix: self.path_prefix,
                 marker: self.marker,
@@ -12743,7 +12917,7 @@ impl ListInstanceProfilesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListInstanceProfiles,
             aws_http::AwsErrorRetryPolicy,
@@ -12803,7 +12977,7 @@ impl ListInstanceProfilesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -12811,7 +12985,7 @@ impl ListInstanceProfilesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -12845,24 +13019,24 @@ pub mod list_instance_profiles_for_role_input {
         /// <p>The name of the role to list instance profiles for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -12873,18 +13047,18 @@ pub mod list_instance_profiles_for_role_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListInstanceProfilesForRoleInput`](crate::input::ListInstanceProfilesForRoleInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListInstanceProfilesForRoleInput,
             smithy_http::operation::BuildError,
         > {
@@ -12907,7 +13081,7 @@ impl ListInstanceProfilesForRoleInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListInstanceProfilesForRole,
             aws_http::AwsErrorRetryPolicy,
@@ -12968,7 +13142,7 @@ impl ListInstanceProfilesForRoleInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -12976,7 +13150,7 @@ impl ListInstanceProfilesForRoleInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -13010,27 +13184,27 @@ pub mod list_instance_profile_tags_input {
         /// <p>The name of the IAM instance profile whose tags you want to see.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_profile_name = Some(inp.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_profile_name = Some(input.into());
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.instance_profile_name = inp;
+            self.instance_profile_name = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>(Optional) Use this only when paginating results to indicate the
@@ -13040,19 +13214,21 @@ pub mod list_instance_profile_tags_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListInstanceProfileTagsInput`](crate::input::ListInstanceProfileTagsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListInstanceProfileTagsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListInstanceProfileTagsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListInstanceProfileTagsInput {
                 instance_profile_name: self.instance_profile_name,
                 marker: self.marker,
@@ -13072,7 +13248,7 @@ impl ListInstanceProfileTagsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListInstanceProfileTags,
             aws_http::AwsErrorRetryPolicy,
@@ -13132,7 +13308,7 @@ impl ListInstanceProfileTagsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -13140,7 +13316,7 @@ impl ListInstanceProfileTagsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -13174,24 +13350,24 @@ pub mod list_mfa_devices_input {
         /// <p>The name of the user whose MFA devices you want to list.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -13202,18 +13378,21 @@ pub mod list_mfa_devices_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListMFADevicesInput`](crate::input::ListMFADevicesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListMFADevicesInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::ListMFADevicesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListMFADevicesInput {
                 user_name: self.user_name,
                 marker: self.marker,
@@ -13232,7 +13411,7 @@ impl ListMFADevicesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListMFADevices,
             aws_http::AwsErrorRetryPolicy,
@@ -13291,7 +13470,7 @@ impl ListMFADevicesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -13299,7 +13478,7 @@ impl ListMFADevicesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -13334,24 +13513,27 @@ pub mod list_mfa_device_tags_input {
         /// For virtual MFA devices, the serial number is the same as the ARN.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.serial_number = Some(inp.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.serial_number = Some(input.into());
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.serial_number = inp;
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.serial_number = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>(Optional) Use this only when paginating results to indicate the
@@ -13361,19 +13543,21 @@ pub mod list_mfa_device_tags_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListMFADeviceTagsInput`](crate::input::ListMFADeviceTagsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListMFADeviceTagsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListMFADeviceTagsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListMFADeviceTagsInput {
                 serial_number: self.serial_number,
                 marker: self.marker,
@@ -13392,7 +13576,7 @@ impl ListMFADeviceTagsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListMFADeviceTags,
             aws_http::AwsErrorRetryPolicy,
@@ -13452,7 +13636,7 @@ impl ListMFADeviceTagsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -13460,7 +13644,7 @@ impl ListMFADeviceTagsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -13490,8 +13674,10 @@ pub mod list_open_id_connect_providers_input {
         /// Consumes the builder and constructs a [`ListOpenIDConnectProvidersInput`](crate::input::ListOpenIDConnectProvidersInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListOpenIDConnectProvidersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListOpenIDConnectProvidersInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListOpenIDConnectProvidersInput {})
         }
     }
@@ -13507,7 +13693,7 @@ impl ListOpenIDConnectProvidersInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListOpenIDConnectProviders,
             aws_http::AwsErrorRetryPolicy,
@@ -13568,7 +13754,7 @@ impl ListOpenIDConnectProvidersInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -13576,7 +13762,7 @@ impl ListOpenIDConnectProvidersInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -13611,27 +13797,30 @@ pub mod list_open_id_connect_provider_tags_input {
         /// see.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.open_id_connect_provider_arn = Some(inp.into());
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.open_id_connect_provider_arn = Some(input.into());
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.open_id_connect_provider_arn = inp;
+            self.open_id_connect_provider_arn = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>(Optional) Use this only when paginating results to indicate the
@@ -13641,18 +13830,18 @@ pub mod list_open_id_connect_provider_tags_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListOpenIDConnectProviderTagsInput`](crate::input::ListOpenIDConnectProviderTagsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListOpenIDConnectProviderTagsInput,
             smithy_http::operation::BuildError,
         > {
@@ -13675,7 +13864,7 @@ impl ListOpenIDConnectProviderTagsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListOpenIDConnectProviderTags,
             aws_http::AwsErrorRetryPolicy,
@@ -13736,7 +13925,7 @@ impl ListOpenIDConnectProviderTagsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -13744,7 +13933,7 @@ impl ListOpenIDConnectProviderTagsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -13784,15 +13973,15 @@ pub mod list_policies_input {
         /// <code>Local</code>.</p>
         /// <p>This parameter is optional. If it is not included, or if it is set to
         /// <code>All</code>, all policies are returned.</p>
-        pub fn scope(mut self, inp: crate::model::PolicyScopeType) -> Self {
-            self.scope = Some(inp);
+        pub fn scope(mut self, input: crate::model::PolicyScopeType) -> Self {
+            self.scope = Some(input);
             self
         }
         pub fn set_scope(
             mut self,
-            inp: std::option::Option<crate::model::PolicyScopeType>,
+            input: std::option::Option<crate::model::PolicyScopeType>,
         ) -> Self {
-            self.scope = inp;
+            self.scope = input;
             self
         }
         /// <p>A flag to filter the results to only the attached policies.</p>
@@ -13800,12 +13989,12 @@ pub mod list_policies_input {
         /// the policies that are attached to an IAM user, group, or role. When
         /// <code>OnlyAttached</code> is <code>false</code>, or when the parameter is not
         /// included, all policies are returned.</p>
-        pub fn only_attached(mut self, inp: bool) -> Self {
-            self.only_attached = Some(inp);
+        pub fn only_attached(mut self, input: bool) -> Self {
+            self.only_attached = Some(input);
             self
         }
-        pub fn set_only_attached(mut self, inp: bool) -> Self {
-            self.only_attached = Some(inp);
+        pub fn set_only_attached(mut self, input: std::option::Option<bool>) -> Self {
+            self.only_attached = input;
             self
         }
         /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
@@ -13813,12 +14002,12 @@ pub mod list_policies_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path_prefix = Some(inp.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_prefix = Some(input.into());
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path_prefix = inp;
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path_prefix = input;
             self
         }
         /// <p>The policy usage method to use for filtering the results.</p>
@@ -13827,27 +14016,27 @@ pub mod list_policies_input {
         /// the policies used to set permissions boundaries, set the value
         /// to <code>PermissionsBoundary</code>.</p>
         /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
-        pub fn policy_usage_filter(mut self, inp: crate::model::PolicyUsageType) -> Self {
-            self.policy_usage_filter = Some(inp);
+        pub fn policy_usage_filter(mut self, input: crate::model::PolicyUsageType) -> Self {
+            self.policy_usage_filter = Some(input);
             self
         }
         pub fn set_policy_usage_filter(
             mut self,
-            inp: std::option::Option<crate::model::PolicyUsageType>,
+            input: std::option::Option<crate::model::PolicyUsageType>,
         ) -> Self {
-            self.policy_usage_filter = inp;
+            self.policy_usage_filter = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -13858,18 +14047,19 @@ pub mod list_policies_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPoliciesInput`](crate::input::ListPoliciesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPoliciesInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListPoliciesInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListPoliciesInput {
                 scope: self.scope,
                 only_attached: self.only_attached.unwrap_or_default(),
@@ -13891,7 +14081,7 @@ impl ListPoliciesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListPolicies,
             aws_http::AwsErrorRetryPolicy,
@@ -13948,7 +14138,7 @@ impl ListPoliciesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -13956,7 +14146,7 @@ impl ListPoliciesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -13991,41 +14181,41 @@ pub mod list_policies_granting_service_access_input {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>The ARN of the IAM identity (user, group, or role) whose policies you want to
         /// list.</p>
-        pub fn arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.arn = Some(inp.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
             self
         }
-        pub fn set_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.arn = inp;
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
             self
         }
-        pub fn service_namespaces(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn service_namespaces(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.service_namespaces.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.service_namespaces = Some(v);
             self
         }
         pub fn set_service_namespaces(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.service_namespaces = inp;
+            self.service_namespaces = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPoliciesGrantingServiceAccessInput`](crate::input::ListPoliciesGrantingServiceAccessInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListPoliciesGrantingServiceAccessInput,
             smithy_http::operation::BuildError,
         > {
@@ -14048,7 +14238,7 @@ impl ListPoliciesGrantingServiceAccessInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListPoliciesGrantingServiceAccess,
             aws_http::AwsErrorRetryPolicy,
@@ -14111,7 +14301,7 @@ impl ListPoliciesGrantingServiceAccessInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -14119,7 +14309,7 @@ impl ListPoliciesGrantingServiceAccessInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -14153,24 +14343,24 @@ pub mod list_policy_tags_input {
         /// <p>The ARN of the IAM customer managed policy whose tags you want to see.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>(Optional) Use this only when paginating results to indicate the
@@ -14180,18 +14370,21 @@ pub mod list_policy_tags_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPolicyTagsInput`](crate::input::ListPolicyTagsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPolicyTagsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::ListPolicyTagsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListPolicyTagsInput {
                 policy_arn: self.policy_arn,
                 marker: self.marker,
@@ -14210,7 +14403,7 @@ impl ListPolicyTagsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListPolicyTags,
             aws_http::AwsErrorRetryPolicy,
@@ -14269,7 +14462,7 @@ impl ListPolicyTagsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -14277,7 +14470,7 @@ impl ListPolicyTagsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -14311,24 +14504,24 @@ pub mod list_policy_versions_input {
         /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
         /// versions.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -14339,19 +14532,21 @@ pub mod list_policy_versions_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListPolicyVersionsInput`](crate::input::ListPolicyVersionsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListPolicyVersionsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListPolicyVersionsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListPolicyVersionsInput {
                 policy_arn: self.policy_arn,
                 marker: self.marker,
@@ -14370,7 +14565,7 @@ impl ListPolicyVersionsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListPolicyVersions,
             aws_http::AwsErrorRetryPolicy,
@@ -14430,7 +14625,7 @@ impl ListPolicyVersionsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -14438,7 +14633,7 @@ impl ListPolicyVersionsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -14472,24 +14667,24 @@ pub mod list_role_policies_input {
         /// <p>The name of the role to list policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -14500,19 +14695,21 @@ pub mod list_role_policies_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListRolePoliciesInput`](crate::input::ListRolePoliciesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRolePoliciesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListRolePoliciesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListRolePoliciesInput {
                 role_name: self.role_name,
                 marker: self.marker,
@@ -14531,7 +14728,7 @@ impl ListRolePoliciesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListRolePolicies,
             aws_http::AwsErrorRetryPolicy,
@@ -14591,7 +14788,7 @@ impl ListRolePoliciesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -14599,7 +14796,7 @@ impl ListRolePoliciesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -14638,24 +14835,24 @@ pub mod list_roles_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path_prefix = Some(inp.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_prefix = Some(input.into());
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path_prefix = inp;
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path_prefix = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -14666,18 +14863,19 @@ pub mod list_roles_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListRolesInput`](crate::input::ListRolesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRolesInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListRolesInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListRolesInput {
                 path_prefix: self.path_prefix,
                 marker: self.marker,
@@ -14696,7 +14894,7 @@ impl ListRolesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListRoles,
             aws_http::AwsErrorRetryPolicy,
@@ -14751,7 +14949,7 @@ impl ListRolesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -14759,7 +14957,7 @@ impl ListRolesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -14793,24 +14991,24 @@ pub mod list_role_tags_input {
         /// <p>The name of the IAM role for which you want to see the list of tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>(Optional) Use this only when paginating results to indicate the
@@ -14820,18 +15018,19 @@ pub mod list_role_tags_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListRoleTagsInput`](crate::input::ListRoleTagsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListRoleTagsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListRoleTagsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListRoleTagsInput {
                 role_name: self.role_name,
                 marker: self.marker,
@@ -14850,7 +15049,7 @@ impl ListRoleTagsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListRoleTags,
             aws_http::AwsErrorRetryPolicy,
@@ -14907,7 +15106,7 @@ impl ListRoleTagsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -14915,7 +15114,7 @@ impl ListRoleTagsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -14945,8 +15144,10 @@ pub mod list_saml_providers_input {
         /// Consumes the builder and constructs a [`ListSAMLProvidersInput`](crate::input::ListSAMLProvidersInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSAMLProvidersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListSAMLProvidersInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListSAMLProvidersInput {})
         }
     }
@@ -14961,7 +15162,7 @@ impl ListSAMLProvidersInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListSAMLProviders,
             aws_http::AwsErrorRetryPolicy,
@@ -15021,7 +15222,7 @@ impl ListSAMLProvidersInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -15029,7 +15230,7 @@ impl ListSAMLProvidersInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -15064,27 +15265,27 @@ pub mod list_saml_provider_tags_input {
         /// you want to see.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn saml_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.saml_provider_arn = Some(inp.into());
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.saml_provider_arn = Some(input.into());
             self
         }
         pub fn set_saml_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.saml_provider_arn = inp;
+            self.saml_provider_arn = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>(Optional) Use this only when paginating results to indicate the
@@ -15094,19 +15295,21 @@ pub mod list_saml_provider_tags_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSAMLProviderTagsInput`](crate::input::ListSAMLProviderTagsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSAMLProviderTagsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListSAMLProviderTagsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListSAMLProviderTagsInput {
                 saml_provider_arn: self.saml_provider_arn,
                 marker: self.marker,
@@ -15125,7 +15328,7 @@ impl ListSAMLProviderTagsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListSAMLProviderTags,
             aws_http::AwsErrorRetryPolicy,
@@ -15185,7 +15388,7 @@ impl ListSAMLProviderTagsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -15193,7 +15396,7 @@ impl ListSAMLProviderTagsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -15232,24 +15435,24 @@ pub mod list_server_certificates_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path_prefix = Some(inp.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_prefix = Some(input.into());
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path_prefix = inp;
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path_prefix = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -15260,19 +15463,21 @@ pub mod list_server_certificates_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListServerCertificatesInput`](crate::input::ListServerCertificatesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListServerCertificatesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListServerCertificatesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListServerCertificatesInput {
                 path_prefix: self.path_prefix,
                 marker: self.marker,
@@ -15291,7 +15496,7 @@ impl ListServerCertificatesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListServerCertificates,
             aws_http::AwsErrorRetryPolicy,
@@ -15351,7 +15556,7 @@ impl ListServerCertificatesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -15359,7 +15564,7 @@ impl ListServerCertificatesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -15393,27 +15598,27 @@ pub mod list_server_certificate_tags_input {
         /// <p>The name of the IAM server certificate whose tags you want to see.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.server_certificate_name = Some(inp.into());
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_certificate_name = Some(input.into());
             self
         }
         pub fn set_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.server_certificate_name = inp;
+            self.server_certificate_name = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>(Optional) Use this only when paginating results to indicate the
@@ -15423,19 +15628,21 @@ pub mod list_server_certificate_tags_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListServerCertificateTagsInput`](crate::input::ListServerCertificateTagsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListServerCertificateTagsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListServerCertificateTagsInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListServerCertificateTagsInput {
                 server_certificate_name: self.server_certificate_name,
                 marker: self.marker,
@@ -15455,7 +15662,7 @@ impl ListServerCertificateTagsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListServerCertificateTags,
             aws_http::AwsErrorRetryPolicy,
@@ -15516,7 +15723,7 @@ impl ListServerCertificateTagsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -15524,7 +15731,7 @@ impl ListServerCertificateTagsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -15559,28 +15766,28 @@ pub mod list_service_specific_credentials_input {
         /// used to call the operation.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>Filters the returned results to only those for the specified AWS service. If not
         /// specified, then AWS returns service-specific credentials for all services.</p>
-        pub fn service_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.service_name = Some(inp.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
             self
         }
-        pub fn set_service_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.service_name = inp;
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
             self
         }
         /// Consumes the builder and constructs a [`ListServiceSpecificCredentialsInput`](crate::input::ListServiceSpecificCredentialsInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ListServiceSpecificCredentialsInput,
             smithy_http::operation::BuildError,
         > {
@@ -15602,7 +15809,7 @@ impl ListServiceSpecificCredentialsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListServiceSpecificCredentials,
             aws_http::AwsErrorRetryPolicy,
@@ -15663,7 +15870,7 @@ impl ListServiceSpecificCredentialsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -15671,7 +15878,7 @@ impl ListServiceSpecificCredentialsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -15705,24 +15912,24 @@ pub mod list_signing_certificates_input {
         /// <p>The name of the IAM user whose signing certificates you want to examine.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -15733,19 +15940,21 @@ pub mod list_signing_certificates_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSigningCertificatesInput`](crate::input::ListSigningCertificatesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSigningCertificatesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListSigningCertificatesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListSigningCertificatesInput {
                 user_name: self.user_name,
                 marker: self.marker,
@@ -15765,7 +15974,7 @@ impl ListSigningCertificatesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListSigningCertificates,
             aws_http::AwsErrorRetryPolicy,
@@ -15825,7 +16034,7 @@ impl ListSigningCertificatesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -15833,7 +16042,7 @@ impl ListSigningCertificatesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -15869,24 +16078,24 @@ pub mod list_ssh_public_keys_input {
         /// used to sign the request.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -15897,19 +16106,21 @@ pub mod list_ssh_public_keys_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListSSHPublicKeysInput`](crate::input::ListSSHPublicKeysInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListSSHPublicKeysInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListSSHPublicKeysInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListSSHPublicKeysInput {
                 user_name: self.user_name,
                 marker: self.marker,
@@ -15928,7 +16139,7 @@ impl ListSSHPublicKeysInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListSSHPublicKeys,
             aws_http::AwsErrorRetryPolicy,
@@ -15988,7 +16199,7 @@ impl ListSSHPublicKeysInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -15996,7 +16207,7 @@ impl ListSSHPublicKeysInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -16030,24 +16241,24 @@ pub mod list_user_policies_input {
         /// <p>The name of the user to list policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -16058,19 +16269,21 @@ pub mod list_user_policies_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListUserPoliciesInput`](crate::input::ListUserPoliciesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListUserPoliciesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListUserPoliciesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListUserPoliciesInput {
                 user_name: self.user_name,
                 marker: self.marker,
@@ -16089,7 +16302,7 @@ impl ListUserPoliciesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListUserPolicies,
             aws_http::AwsErrorRetryPolicy,
@@ -16149,7 +16362,7 @@ impl ListUserPoliciesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -16157,7 +16370,7 @@ impl ListUserPoliciesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -16196,24 +16409,24 @@ pub mod list_users_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path_prefix = Some(inp.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path_prefix = Some(input.into());
             self
         }
-        pub fn set_path_prefix(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path_prefix = inp;
+        pub fn set_path_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path_prefix = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -16224,18 +16437,19 @@ pub mod list_users_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListUsersInput`](crate::input::ListUsersInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListUsersInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListUsersInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListUsersInput {
                 path_prefix: self.path_prefix,
                 marker: self.marker,
@@ -16254,7 +16468,7 @@ impl ListUsersInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListUsers,
             aws_http::AwsErrorRetryPolicy,
@@ -16309,7 +16523,7 @@ impl ListUsersInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -16317,7 +16531,7 @@ impl ListUsersInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -16351,24 +16565,24 @@ pub mod list_user_tags_input {
         /// <p>The name of the IAM user whose tags you want to see.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>(Optional) Use this only when paginating results to indicate the
@@ -16378,18 +16592,19 @@ pub mod list_user_tags_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListUserTagsInput`](crate::input::ListUserTagsInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListUserTagsInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::ListUserTagsInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::ListUserTagsInput {
                 user_name: self.user_name,
                 marker: self.marker,
@@ -16408,7 +16623,7 @@ impl ListUserTagsInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListUserTags,
             aws_http::AwsErrorRetryPolicy,
@@ -16465,7 +16680,7 @@ impl ListUserTagsInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -16473,7 +16688,7 @@ impl ListUserTagsInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -16508,27 +16723,27 @@ pub mod list_virtual_mfa_devices_input {
         /// If you do not specify an <code>AssignmentStatus</code>, the operation defaults to
         /// <code>Any</code>, which lists both assigned and unassigned virtual MFA
         /// devices.,</p>
-        pub fn assignment_status(mut self, inp: crate::model::AssignmentStatusType) -> Self {
-            self.assignment_status = Some(inp);
+        pub fn assignment_status(mut self, input: crate::model::AssignmentStatusType) -> Self {
+            self.assignment_status = Some(input);
             self
         }
         pub fn set_assignment_status(
             mut self,
-            inp: std::option::Option<crate::model::AssignmentStatusType>,
+            input: std::option::Option<crate::model::AssignmentStatusType>,
         ) -> Self {
-            self.assignment_status = inp;
+            self.assignment_status = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -16539,19 +16754,21 @@ pub mod list_virtual_mfa_devices_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// Consumes the builder and constructs a [`ListVirtualMFADevicesInput`](crate::input::ListVirtualMFADevicesInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ListVirtualMFADevicesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListVirtualMFADevicesInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListVirtualMFADevicesInput {
                 assignment_status: self.assignment_status,
                 marker: self.marker,
@@ -16570,7 +16787,7 @@ impl ListVirtualMFADevicesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ListVirtualMFADevices,
             aws_http::AwsErrorRetryPolicy,
@@ -16630,7 +16847,7 @@ impl ListVirtualMFADevicesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -16638,7 +16855,7 @@ impl ListVirtualMFADevicesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -16672,23 +16889,23 @@ pub mod put_group_policy_input {
         /// <p>The name of the group to associate the policy with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-.</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// <p>The name of the policy document.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// <p>The policy document.</p>
@@ -16712,21 +16929,24 @@ pub mod put_group_policy_input {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_document = Some(inp.into());
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
             self
         }
         pub fn set_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.policy_document = inp;
+            self.policy_document = input;
             self
         }
         /// Consumes the builder and constructs a [`PutGroupPolicyInput`](crate::input::PutGroupPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutGroupPolicyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::PutGroupPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutGroupPolicyInput {
                 group_name: self.group_name,
                 policy_name: self.policy_name,
@@ -16745,7 +16965,7 @@ impl PutGroupPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutGroupPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -16804,7 +17024,7 @@ impl PutGroupPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -16812,7 +17032,7 @@ impl PutGroupPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -16844,32 +17064,34 @@ pub mod put_role_permissions_boundary_input {
     impl Builder {
         /// <p>The name (friendly name, not ARN) of the IAM role for which you want to set the
         /// permissions boundary.</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>The ARN of the policy that is used to set the permissions boundary for the
         /// role.</p>
-        pub fn permissions_boundary(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.permissions_boundary = Some(inp.into());
+        pub fn permissions_boundary(mut self, input: impl Into<std::string::String>) -> Self {
+            self.permissions_boundary = Some(input.into());
             self
         }
         pub fn set_permissions_boundary(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.permissions_boundary = inp;
+            self.permissions_boundary = input;
             self
         }
         /// Consumes the builder and constructs a [`PutRolePermissionsBoundaryInput`](crate::input::PutRolePermissionsBoundaryInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutRolePermissionsBoundaryInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutRolePermissionsBoundaryInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutRolePermissionsBoundaryInput {
                 role_name: self.role_name,
                 permissions_boundary: self.permissions_boundary,
@@ -16888,7 +17110,7 @@ impl PutRolePermissionsBoundaryInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutRolePermissionsBoundary,
             aws_http::AwsErrorRetryPolicy,
@@ -16949,7 +17171,7 @@ impl PutRolePermissionsBoundaryInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -16957,7 +17179,7 @@ impl PutRolePermissionsBoundaryInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -16991,23 +17213,23 @@ pub mod put_role_policy_input {
         /// <p>The name of the role to associate the policy with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>The name of the policy document.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// <p>The policy document.</p>
@@ -17031,21 +17253,22 @@ pub mod put_role_policy_input {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_document = Some(inp.into());
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
             self
         }
         pub fn set_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.policy_document = inp;
+            self.policy_document = input;
             self
         }
         /// Consumes the builder and constructs a [`PutRolePolicyInput`](crate::input::PutRolePolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutRolePolicyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::PutRolePolicyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::PutRolePolicyInput {
                 role_name: self.role_name,
                 policy_name: self.policy_name,
@@ -17064,7 +17287,7 @@ impl PutRolePolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutRolePolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -17123,7 +17346,7 @@ impl PutRolePolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -17131,7 +17354,7 @@ impl PutRolePolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -17163,32 +17386,34 @@ pub mod put_user_permissions_boundary_input {
     impl Builder {
         /// <p>The name (friendly name, not ARN) of the IAM user for which you want to set the
         /// permissions boundary.</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The ARN of the policy that is used to set the permissions boundary for the
         /// user.</p>
-        pub fn permissions_boundary(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.permissions_boundary = Some(inp.into());
+        pub fn permissions_boundary(mut self, input: impl Into<std::string::String>) -> Self {
+            self.permissions_boundary = Some(input.into());
             self
         }
         pub fn set_permissions_boundary(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.permissions_boundary = inp;
+            self.permissions_boundary = input;
             self
         }
         /// Consumes the builder and constructs a [`PutUserPermissionsBoundaryInput`](crate::input::PutUserPermissionsBoundaryInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutUserPermissionsBoundaryInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutUserPermissionsBoundaryInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutUserPermissionsBoundaryInput {
                 user_name: self.user_name,
                 permissions_boundary: self.permissions_boundary,
@@ -17207,7 +17432,7 @@ impl PutUserPermissionsBoundaryInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutUserPermissionsBoundary,
             aws_http::AwsErrorRetryPolicy,
@@ -17268,7 +17493,7 @@ impl PutUserPermissionsBoundaryInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -17276,7 +17501,7 @@ impl PutUserPermissionsBoundaryInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -17310,23 +17535,23 @@ pub mod put_user_policy_input {
         /// <p>The name of the user to associate the policy with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The name of the policy document.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_name = Some(inp.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_name = Some(input.into());
             self
         }
-        pub fn set_policy_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = inp;
+        pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_name = input;
             self
         }
         /// <p>The policy document.</p>
@@ -17350,21 +17575,22 @@ pub mod put_user_policy_input {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_document = Some(inp.into());
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
             self
         }
         pub fn set_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.policy_document = inp;
+            self.policy_document = input;
             self
         }
         /// Consumes the builder and constructs a [`PutUserPolicyInput`](crate::input::PutUserPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutUserPolicyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::PutUserPolicyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::PutUserPolicyInput {
                 user_name: self.user_name,
                 policy_name: self.policy_name,
@@ -17383,7 +17609,7 @@ impl PutUserPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutUserPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -17442,7 +17668,7 @@ impl PutUserPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -17450,7 +17676,7 @@ impl PutUserPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -17483,31 +17709,34 @@ pub mod remove_client_id_from_open_id_connect_provider_input {
         /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove the
         /// client ID from. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.open_id_connect_provider_arn = Some(inp.into());
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.open_id_connect_provider_arn = Some(input.into());
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.open_id_connect_provider_arn = inp;
+            self.open_id_connect_provider_arn = input;
             self
         }
         /// <p>The client ID (also known as audience) to remove from the IAM OIDC provider
         /// resource. For more information about client IDs, see <a>CreateOpenIDConnectProvider</a>.</p>
-        pub fn client_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.client_id = Some(inp.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_id = Some(input.into());
             self
         }
-        pub fn set_client_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.client_id = inp;
+        pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_id = input;
             self
         }
         /// Consumes the builder and constructs a [`RemoveClientIDFromOpenIDConnectProviderInput`](crate::input::RemoveClientIDFromOpenIDConnectProviderInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::RemoveClientIDFromOpenIDConnectProviderInput,
             smithy_http::operation::BuildError,
         > {
@@ -17530,7 +17759,7 @@ impl RemoveClientIDFromOpenIDConnectProviderInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RemoveClientIDFromOpenIDConnectProvider,
             aws_http::AwsErrorRetryPolicy,
@@ -17589,7 +17818,7 @@ impl RemoveClientIDFromOpenIDConnectProviderInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -17597,7 +17826,7 @@ impl RemoveClientIDFromOpenIDConnectProviderInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -17631,32 +17860,32 @@ pub mod remove_role_from_instance_profile_input {
         /// <p>The name of the instance profile to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_profile_name = Some(inp.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_profile_name = Some(input.into());
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.instance_profile_name = inp;
+            self.instance_profile_name = input;
             self
         }
         /// <p>The name of the role to remove.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// Consumes the builder and constructs a [`RemoveRoleFromInstanceProfileInput`](crate::input::RemoveRoleFromInstanceProfileInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::RemoveRoleFromInstanceProfileInput,
             smithy_http::operation::BuildError,
         > {
@@ -17678,7 +17907,7 @@ impl RemoveRoleFromInstanceProfileInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RemoveRoleFromInstanceProfile,
             aws_http::AwsErrorRetryPolicy,
@@ -17739,7 +17968,7 @@ impl RemoveRoleFromInstanceProfileInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -17747,7 +17976,7 @@ impl RemoveRoleFromInstanceProfileInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -17780,30 +18009,32 @@ pub mod remove_user_from_group_input {
         /// <p>The name of the group to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// <p>The name of the user to remove.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// Consumes the builder and constructs a [`RemoveUserFromGroupInput`](crate::input::RemoveUserFromGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::RemoveUserFromGroupInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RemoveUserFromGroupInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RemoveUserFromGroupInput {
                 group_name: self.group_name,
                 user_name: self.user_name,
@@ -17821,7 +18052,7 @@ impl RemoveUserFromGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::RemoveUserFromGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -17881,7 +18112,7 @@ impl RemoveUserFromGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -17889,7 +18120,7 @@ impl RemoveUserFromGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -17924,12 +18155,12 @@ pub mod reset_service_specific_credential_input {
         /// to call the operation.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The unique identifier of the service-specific credential.</p>
@@ -17937,22 +18168,22 @@ pub mod reset_service_specific_credential_input {
         /// consist of any upper or lowercased letter or digit.</p>
         pub fn service_specific_credential_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.service_specific_credential_id = Some(inp.into());
+            self.service_specific_credential_id = Some(input.into());
             self
         }
         pub fn set_service_specific_credential_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.service_specific_credential_id = inp;
+            self.service_specific_credential_id = input;
             self
         }
         /// Consumes the builder and constructs a [`ResetServiceSpecificCredentialInput`](crate::input::ResetServiceSpecificCredentialInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::ResetServiceSpecificCredentialInput,
             smithy_http::operation::BuildError,
         > {
@@ -17974,7 +18205,7 @@ impl ResetServiceSpecificCredentialInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ResetServiceSpecificCredential,
             aws_http::AwsErrorRetryPolicy,
@@ -18035,7 +18266,7 @@ impl ResetServiceSpecificCredentialInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -18043,7 +18274,7 @@ impl ResetServiceSpecificCredentialInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -18078,56 +18309,61 @@ pub mod resync_mfa_device_input {
         /// <p>The name of the user whose MFA device you want to resynchronize.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>Serial number that uniquely identifies the MFA device.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.serial_number = Some(inp.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.serial_number = Some(input.into());
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.serial_number = inp;
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.serial_number = input;
             self
         }
         /// <p>An authentication code emitted by the device.</p>
         /// <p>The format for this parameter is a sequence of six digits.</p>
-        pub fn authentication_code1(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authentication_code1 = Some(inp.into());
+        pub fn authentication_code1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authentication_code1 = Some(input.into());
             self
         }
         pub fn set_authentication_code1(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.authentication_code1 = inp;
+            self.authentication_code1 = input;
             self
         }
         /// <p>A subsequent authentication code emitted by the device.</p>
         /// <p>The format for this parameter is a sequence of six digits.</p>
-        pub fn authentication_code2(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.authentication_code2 = Some(inp.into());
+        pub fn authentication_code2(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authentication_code2 = Some(input.into());
             self
         }
         pub fn set_authentication_code2(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.authentication_code2 = inp;
+            self.authentication_code2 = input;
             self
         }
         /// Consumes the builder and constructs a [`ResyncMFADeviceInput`](crate::input::ResyncMFADeviceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::ResyncMFADeviceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ResyncMFADeviceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ResyncMFADeviceInput {
                 user_name: self.user_name,
                 serial_number: self.serial_number,
@@ -18147,7 +18383,7 @@ impl ResyncMFADeviceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::ResyncMFADevice,
             aws_http::AwsErrorRetryPolicy,
@@ -18206,7 +18442,7 @@ impl ResyncMFADeviceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -18214,7 +18450,7 @@ impl ResyncMFADeviceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -18247,30 +18483,32 @@ pub mod set_default_policy_version_input {
         /// <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you want to
         /// set.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
         /// <p>The version of the policy to set as the default (operative) version.</p>
         /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
         /// policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn version_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.version_id = Some(inp.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_id = Some(input.into());
             self
         }
-        pub fn set_version_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.version_id = inp;
+        pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_id = input;
             self
         }
         /// Consumes the builder and constructs a [`SetDefaultPolicyVersionInput`](crate::input::SetDefaultPolicyVersionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SetDefaultPolicyVersionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SetDefaultPolicyVersionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SetDefaultPolicyVersionInput {
                 policy_arn: self.policy_arn,
                 version_id: self.version_id,
@@ -18289,7 +18527,7 @@ impl SetDefaultPolicyVersionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SetDefaultPolicyVersion,
             aws_http::AwsErrorRetryPolicy,
@@ -18349,7 +18587,7 @@ impl SetDefaultPolicyVersionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -18357,7 +18595,7 @@ impl SetDefaultPolicyVersionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -18397,22 +18635,22 @@ pub mod set_security_token_service_preferences_input {
         /// <i>IAM User Guide</i>.</p>
         pub fn global_endpoint_token_version(
             mut self,
-            inp: crate::model::GlobalEndpointTokenVersion,
+            input: crate::model::GlobalEndpointTokenVersion,
         ) -> Self {
-            self.global_endpoint_token_version = Some(inp);
+            self.global_endpoint_token_version = Some(input);
             self
         }
         pub fn set_global_endpoint_token_version(
             mut self,
-            inp: std::option::Option<crate::model::GlobalEndpointTokenVersion>,
+            input: std::option::Option<crate::model::GlobalEndpointTokenVersion>,
         ) -> Self {
-            self.global_endpoint_token_version = inp;
+            self.global_endpoint_token_version = input;
             self
         }
         /// Consumes the builder and constructs a [`SetSecurityTokenServicePreferencesInput`](crate::input::SetSecurityTokenServicePreferencesInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::SetSecurityTokenServicePreferencesInput,
             smithy_http::operation::BuildError,
         > {
@@ -18433,7 +18671,7 @@ impl SetSecurityTokenServicePreferencesInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SetSecurityTokenServicePreferences,
             aws_http::AwsErrorRetryPolicy,
@@ -18496,7 +18734,7 @@ impl SetSecurityTokenServicePreferencesInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -18504,7 +18742,7 @@ impl SetSecurityTokenServicePreferencesInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -18544,61 +18782,61 @@ pub mod simulate_custom_policy_input {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        pub fn policy_input_list(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn policy_input_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_input_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policy_input_list = Some(v);
             self
         }
         pub fn set_policy_input_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.policy_input_list = inp;
+            self.policy_input_list = input;
             self
         }
         pub fn permissions_boundary_policy_input_list(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self
                 .permissions_boundary_policy_input_list
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.permissions_boundary_policy_input_list = Some(v);
             self
         }
         pub fn set_permissions_boundary_policy_input_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.permissions_boundary_policy_input_list = inp;
+            self.permissions_boundary_policy_input_list = input;
             self
         }
-        pub fn action_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn action_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.action_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.action_names = Some(v);
             self
         }
         pub fn set_action_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.action_names = inp;
+            self.action_names = input;
             self
         }
-        pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
         pub fn set_resource_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.resource_arns = inp;
+            self.resource_arns = input;
             self
         }
         /// <p>A resource-based policy to include in the simulation provided as a string. Each
@@ -18620,15 +18858,15 @@ pub mod simulate_custom_policy_input {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn resource_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_policy = Some(inp.into());
+        pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_policy = Some(input.into());
             self
         }
         pub fn set_resource_policy(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.resource_policy = inp;
+            self.resource_policy = input;
             self
         }
         /// <p>An ARN representing the AWS account ID that specifies the owner of any simulated
@@ -18644,12 +18882,15 @@ pub mod simulate_custom_policy_input {
         /// <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For example,
         /// to represent the account with the 112233445566 ID, use the following ARN:
         /// <code>arn:aws:iam::112233445566-ID:root</code>. </p>
-        pub fn resource_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_owner = Some(inp.into());
+        pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_owner = Some(input.into());
             self
         }
-        pub fn set_resource_owner(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_owner = inp;
+        pub fn set_resource_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_owner = input;
             self
         }
         /// <p>The ARN of the IAM user that you want to use as the simulated caller of the API
@@ -18658,25 +18899,25 @@ pub mod simulate_custom_policy_input {
         /// a value to use in evaluating the policy.</p>
         /// <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an
         /// assumed role, federated user, or a service principal.</p>
-        pub fn caller_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.caller_arn = Some(inp.into());
+        pub fn caller_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.caller_arn = Some(input.into());
             self
         }
-        pub fn set_caller_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.caller_arn = inp;
+        pub fn set_caller_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.caller_arn = input;
             self
         }
-        pub fn context_entries(mut self, inp: impl Into<crate::model::ContextEntry>) -> Self {
+        pub fn context_entries(mut self, input: impl Into<crate::model::ContextEntry>) -> Self {
             let mut v = self.context_entries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.context_entries = Some(v);
             self
         }
         pub fn set_context_entries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ContextEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ContextEntry>>,
         ) -> Self {
-            self.context_entries = inp;
+            self.context_entries = input;
             self
         }
         /// <p>Specifies the type of simulation to run. Different API operations that support
@@ -18730,15 +18971,15 @@ pub mod simulate_custom_policy_input {
         /// <p>instance, image, security-group, network-interface, subnet, volume</p>
         /// </li>
         /// </ul>
-        pub fn resource_handling_option(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_handling_option = Some(inp.into());
+        pub fn resource_handling_option(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_handling_option = Some(input.into());
             self
         }
         pub fn set_resource_handling_option(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.resource_handling_option = inp;
+            self.resource_handling_option = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -18749,31 +18990,33 @@ pub mod simulate_custom_policy_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`SimulateCustomPolicyInput`](crate::input::SimulateCustomPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SimulateCustomPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SimulateCustomPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SimulateCustomPolicyInput {
                 policy_input_list: self.policy_input_list,
                 permissions_boundary_policy_input_list: self.permissions_boundary_policy_input_list,
@@ -18800,7 +19043,7 @@ impl SimulateCustomPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SimulateCustomPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -18860,7 +19103,7 @@ impl SimulateCustomPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -18868,7 +19111,7 @@ impl SimulateCustomPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -18915,72 +19158,72 @@ pub mod simulate_principal_policy_input {
         /// simulation also includes all policies that are attached to any groups the user belongs
         /// to.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn policy_source_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_source_arn = Some(inp.into());
+        pub fn policy_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_source_arn = Some(input.into());
             self
         }
         pub fn set_policy_source_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.policy_source_arn = inp;
+            self.policy_source_arn = input;
             self
         }
-        pub fn policy_input_list(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn policy_input_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_input_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.policy_input_list = Some(v);
             self
         }
         pub fn set_policy_input_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.policy_input_list = inp;
+            self.policy_input_list = input;
             self
         }
         pub fn permissions_boundary_policy_input_list(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             let mut v = self
                 .permissions_boundary_policy_input_list
                 .unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.permissions_boundary_policy_input_list = Some(v);
             self
         }
         pub fn set_permissions_boundary_policy_input_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.permissions_boundary_policy_input_list = inp;
+            self.permissions_boundary_policy_input_list = input;
             self
         }
-        pub fn action_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn action_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.action_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.action_names = Some(v);
             self
         }
         pub fn set_action_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.action_names = inp;
+            self.action_names = input;
             self
         }
-        pub fn resource_arns(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.resource_arns = Some(v);
             self
         }
         pub fn set_resource_arns(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.resource_arns = inp;
+            self.resource_arns = input;
             self
         }
         /// <p>A resource-based policy to include in the simulation provided as a string. Each
@@ -19002,15 +19245,15 @@ pub mod simulate_principal_policy_input {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn resource_policy(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_policy = Some(inp.into());
+        pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_policy = Some(input.into());
             self
         }
         pub fn set_resource_policy(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.resource_policy = inp;
+            self.resource_policy = input;
             self
         }
         /// <p>An AWS account ID that specifies the owner of any simulated resource that does not
@@ -19022,12 +19265,15 @@ pub mod simulate_principal_policy_input {
         /// <code>CallerArn</code>. This parameter is required only if you specify a
         /// resource-based policy and account that owns the resource is different from the account
         /// that owns the simulated calling user <code>CallerArn</code>.</p>
-        pub fn resource_owner(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_owner = Some(inp.into());
+        pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_owner = Some(input.into());
             self
         }
-        pub fn set_resource_owner(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.resource_owner = inp;
+        pub fn set_resource_owner(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_owner = input;
             self
         }
         /// <p>The ARN of the IAM user that you want to specify as the simulated caller of the API
@@ -19045,25 +19291,25 @@ pub mod simulate_principal_policy_input {
         /// that the resource-based policy's <code>Principal</code> element has a value to use in
         /// evaluating the policy.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn caller_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.caller_arn = Some(inp.into());
+        pub fn caller_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.caller_arn = Some(input.into());
             self
         }
-        pub fn set_caller_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.caller_arn = inp;
+        pub fn set_caller_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.caller_arn = input;
             self
         }
-        pub fn context_entries(mut self, inp: impl Into<crate::model::ContextEntry>) -> Self {
+        pub fn context_entries(mut self, input: impl Into<crate::model::ContextEntry>) -> Self {
             let mut v = self.context_entries.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.context_entries = Some(v);
             self
         }
         pub fn set_context_entries(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::ContextEntry>>,
+            input: std::option::Option<std::vec::Vec<crate::model::ContextEntry>>,
         ) -> Self {
-            self.context_entries = inp;
+            self.context_entries = input;
             self
         }
         /// <p>Specifies the type of simulation to run. Different API operations that support
@@ -19117,15 +19363,15 @@ pub mod simulate_principal_policy_input {
         /// <p>instance, image, security group, network interface, subnet, volume</p>
         /// </li>
         /// </ul>
-        pub fn resource_handling_option(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.resource_handling_option = Some(inp.into());
+        pub fn resource_handling_option(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_handling_option = Some(input.into());
             self
         }
         pub fn set_resource_handling_option(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.resource_handling_option = inp;
+            self.resource_handling_option = input;
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -19136,31 +19382,33 @@ pub mod simulate_principal_policy_input {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, inp: i32) -> Self {
-            self.max_items = Some(inp);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
             self
         }
-        pub fn set_max_items(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_items = inp;
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
             self
         }
         /// <p>Use this parameter only when paginating results and only after
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.marker = Some(inp.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
             self
         }
-        pub fn set_marker(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.marker = inp;
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
             self
         }
         /// Consumes the builder and constructs a [`SimulatePrincipalPolicyInput`](crate::input::SimulatePrincipalPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::SimulatePrincipalPolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SimulatePrincipalPolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SimulatePrincipalPolicyInput {
                 policy_source_arn: self.policy_source_arn,
                 policy_input_list: self.policy_input_list,
@@ -19189,7 +19437,7 @@ impl SimulatePrincipalPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::SimulatePrincipalPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -19249,7 +19497,7 @@ impl SimulatePrincipalPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -19257,7 +19505,7 @@ impl SimulatePrincipalPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -19290,35 +19538,37 @@ pub mod tag_instance_profile_input {
         /// <p>The name of the IAM instance profile to which you want to add tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_profile_name = Some(inp.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_profile_name = Some(input.into());
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.instance_profile_name = inp;
+            self.instance_profile_name = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TagInstanceProfileInput`](crate::input::TagInstanceProfileInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TagInstanceProfileInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagInstanceProfileInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagInstanceProfileInput {
                 instance_profile_name: self.instance_profile_name,
                 tags: self.tags,
@@ -19336,7 +19586,7 @@ impl TagInstanceProfileInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TagInstanceProfile,
             aws_http::AwsErrorRetryPolicy,
@@ -19396,7 +19646,7 @@ impl TagInstanceProfileInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -19404,7 +19654,7 @@ impl TagInstanceProfileInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -19438,31 +19688,35 @@ pub mod tag_mfa_device_input {
         /// For virtual MFA devices, the serial number is the same as the ARN.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.serial_number = Some(inp.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.serial_number = Some(input.into());
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.serial_number = inp;
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.serial_number = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TagMFADeviceInput`](crate::input::TagMFADeviceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TagMFADeviceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::TagMFADeviceInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::TagMFADeviceInput {
                 serial_number: self.serial_number,
                 tags: self.tags,
@@ -19480,7 +19734,7 @@ impl TagMFADeviceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TagMFADevice,
             aws_http::AwsErrorRetryPolicy,
@@ -19537,7 +19791,7 @@ impl TagMFADeviceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -19545,7 +19799,7 @@ impl TagMFADeviceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -19578,35 +19832,40 @@ pub mod tag_open_id_connect_provider_input {
         /// <p>The ARN of the OIDC identity provider in IAM to which you want to add tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.open_id_connect_provider_arn = Some(inp.into());
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.open_id_connect_provider_arn = Some(input.into());
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.open_id_connect_provider_arn = inp;
+            self.open_id_connect_provider_arn = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TagOpenIDConnectProviderInput`](crate::input::TagOpenIDConnectProviderInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TagOpenIDConnectProviderInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagOpenIDConnectProviderInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagOpenIDConnectProviderInput {
                 open_id_connect_provider_arn: self.open_id_connect_provider_arn,
                 tags: self.tags,
@@ -19625,7 +19884,7 @@ impl TagOpenIDConnectProviderInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TagOpenIDConnectProvider,
             aws_http::AwsErrorRetryPolicy,
@@ -19686,7 +19945,7 @@ impl TagOpenIDConnectProviderInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -19694,7 +19953,7 @@ impl TagOpenIDConnectProviderInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -19727,31 +19986,32 @@ pub mod tag_policy_input {
         /// <p>The ARN of the IAM customer managed policy to which you want to add tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TagPolicyInput`](crate::input::TagPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TagPolicyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::TagPolicyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::TagPolicyInput {
                 policy_arn: self.policy_arn,
                 tags: self.tags,
@@ -19769,7 +20029,7 @@ impl TagPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TagPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -19824,7 +20084,7 @@ impl TagPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -19832,7 +20092,7 @@ impl TagPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -19865,31 +20125,32 @@ pub mod tag_role_input {
         /// <p>The name of the IAM role to which you want to add tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TagRoleInput`](crate::input::TagRoleInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TagRoleInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::TagRoleInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::TagRoleInput {
                 role_name: self.role_name,
                 tags: self.tags,
@@ -19907,7 +20168,7 @@ impl TagRoleInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<crate::operation::TagRole, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
@@ -19959,7 +20220,7 @@ impl TagRoleInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -19967,7 +20228,7 @@ impl TagRoleInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -20000,35 +20261,37 @@ pub mod tag_saml_provider_input {
         /// <p>The ARN of the SAML identity provider in IAM to which you want to add tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn saml_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.saml_provider_arn = Some(inp.into());
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.saml_provider_arn = Some(input.into());
             self
         }
         pub fn set_saml_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.saml_provider_arn = inp;
+            self.saml_provider_arn = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TagSAMLProviderInput`](crate::input::TagSAMLProviderInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TagSAMLProviderInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagSAMLProviderInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagSAMLProviderInput {
                 saml_provider_arn: self.saml_provider_arn,
                 tags: self.tags,
@@ -20046,7 +20309,7 @@ impl TagSAMLProviderInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TagSAMLProvider,
             aws_http::AwsErrorRetryPolicy,
@@ -20105,7 +20368,7 @@ impl TagSAMLProviderInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -20113,7 +20376,7 @@ impl TagSAMLProviderInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -20146,35 +20409,37 @@ pub mod tag_server_certificate_input {
         /// <p>The name of the IAM server certificate to which you want to add tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.server_certificate_name = Some(inp.into());
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_certificate_name = Some(input.into());
             self
         }
         pub fn set_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.server_certificate_name = inp;
+            self.server_certificate_name = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TagServerCertificateInput`](crate::input::TagServerCertificateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TagServerCertificateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagServerCertificateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagServerCertificateInput {
                 server_certificate_name: self.server_certificate_name,
                 tags: self.tags,
@@ -20192,7 +20457,7 @@ impl TagServerCertificateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::TagServerCertificate,
             aws_http::AwsErrorRetryPolicy,
@@ -20252,7 +20517,7 @@ impl TagServerCertificateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -20260,7 +20525,7 @@ impl TagServerCertificateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -20293,31 +20558,32 @@ pub mod tag_user_input {
         /// <p>The name of the IAM user to which you want to add tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`TagUserInput`](crate::input::TagUserInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::TagUserInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::TagUserInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::TagUserInput {
                 user_name: self.user_name,
                 tags: self.tags,
@@ -20335,7 +20601,7 @@ impl TagUserInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<crate::operation::TagUser, aws_http::AwsErrorRetryPolicy>,
         smithy_http::operation::BuildError,
     > {
@@ -20387,7 +20653,7 @@ impl TagUserInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -20395,7 +20661,7 @@ impl TagUserInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -20428,35 +20694,37 @@ pub mod untag_instance_profile_input {
         /// <p>The name of the IAM instance profile from which you want to remove tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn instance_profile_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.instance_profile_name = Some(inp.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_profile_name = Some(input.into());
             self
         }
         pub fn set_instance_profile_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.instance_profile_name = inp;
+            self.instance_profile_name = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`UntagInstanceProfileInput`](crate::input::UntagInstanceProfileInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagInstanceProfileInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagInstanceProfileInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagInstanceProfileInput {
                 instance_profile_name: self.instance_profile_name,
                 tag_keys: self.tag_keys,
@@ -20474,7 +20742,7 @@ impl UntagInstanceProfileInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UntagInstanceProfile,
             aws_http::AwsErrorRetryPolicy,
@@ -20534,7 +20802,7 @@ impl UntagInstanceProfileInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -20542,7 +20810,7 @@ impl UntagInstanceProfileInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -20576,31 +20844,37 @@ pub mod untag_mfa_device_input {
         /// tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn serial_number(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.serial_number = Some(inp.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.serial_number = Some(input.into());
             self
         }
-        pub fn set_serial_number(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.serial_number = inp;
+        pub fn set_serial_number(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.serial_number = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`UntagMFADeviceInput`](crate::input::UntagMFADeviceInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagMFADeviceInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::UntagMFADeviceInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagMFADeviceInput {
                 serial_number: self.serial_number,
                 tag_keys: self.tag_keys,
@@ -20618,7 +20892,7 @@ impl UntagMFADeviceInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UntagMFADevice,
             aws_http::AwsErrorRetryPolicy,
@@ -20677,7 +20951,7 @@ impl UntagMFADeviceInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -20685,7 +20959,7 @@ impl UntagMFADeviceInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -20718,35 +20992,40 @@ pub mod untag_open_id_connect_provider_input {
         /// <p>The ARN of the OIDC provider in IAM from which you want to remove tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.open_id_connect_provider_arn = Some(inp.into());
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.open_id_connect_provider_arn = Some(input.into());
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.open_id_connect_provider_arn = inp;
+            self.open_id_connect_provider_arn = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`UntagOpenIDConnectProviderInput`](crate::input::UntagOpenIDConnectProviderInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagOpenIDConnectProviderInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagOpenIDConnectProviderInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagOpenIDConnectProviderInput {
                 open_id_connect_provider_arn: self.open_id_connect_provider_arn,
                 tag_keys: self.tag_keys,
@@ -20765,7 +21044,7 @@ impl UntagOpenIDConnectProviderInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UntagOpenIDConnectProvider,
             aws_http::AwsErrorRetryPolicy,
@@ -20826,7 +21105,7 @@ impl UntagOpenIDConnectProviderInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -20834,7 +21113,7 @@ impl UntagOpenIDConnectProviderInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -20868,31 +21147,32 @@ pub mod untag_policy_input {
         /// tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn policy_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_arn = Some(inp.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_arn = Some(input.into());
             self
         }
-        pub fn set_policy_arn(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.policy_arn = inp;
+        pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_arn = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`UntagPolicyInput`](crate::input::UntagPolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagPolicyInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UntagPolicyInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UntagPolicyInput {
                 policy_arn: self.policy_arn,
                 tag_keys: self.tag_keys,
@@ -20910,7 +21190,7 @@ impl UntagPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UntagPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -20967,7 +21247,7 @@ impl UntagPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -20975,7 +21255,7 @@ impl UntagPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -21008,31 +21288,32 @@ pub mod untag_role_input {
         /// <p>The name of the IAM role from which you want to remove tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`UntagRoleInput`](crate::input::UntagRoleInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagRoleInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UntagRoleInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UntagRoleInput {
                 role_name: self.role_name,
                 tag_keys: self.tag_keys,
@@ -21050,7 +21331,7 @@ impl UntagRoleInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UntagRole,
             aws_http::AwsErrorRetryPolicy,
@@ -21105,7 +21386,7 @@ impl UntagRoleInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -21113,7 +21394,7 @@ impl UntagRoleInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -21147,35 +21428,37 @@ pub mod untag_saml_provider_input {
         /// tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn saml_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.saml_provider_arn = Some(inp.into());
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.saml_provider_arn = Some(input.into());
             self
         }
         pub fn set_saml_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.saml_provider_arn = inp;
+            self.saml_provider_arn = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`UntagSAMLProviderInput`](crate::input::UntagSAMLProviderInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagSAMLProviderInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagSAMLProviderInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagSAMLProviderInput {
                 saml_provider_arn: self.saml_provider_arn,
                 tag_keys: self.tag_keys,
@@ -21193,7 +21476,7 @@ impl UntagSAMLProviderInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UntagSAMLProvider,
             aws_http::AwsErrorRetryPolicy,
@@ -21253,7 +21536,7 @@ impl UntagSAMLProviderInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -21261,7 +21544,7 @@ impl UntagSAMLProviderInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -21294,35 +21577,37 @@ pub mod untag_server_certificate_input {
         /// <p>The name of the IAM server certificate from which you want to remove tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.server_certificate_name = Some(inp.into());
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_certificate_name = Some(input.into());
             self
         }
         pub fn set_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.server_certificate_name = inp;
+            self.server_certificate_name = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`UntagServerCertificateInput`](crate::input::UntagServerCertificateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagServerCertificateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagServerCertificateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagServerCertificateInput {
                 server_certificate_name: self.server_certificate_name,
                 tag_keys: self.tag_keys,
@@ -21340,7 +21625,7 @@ impl UntagServerCertificateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UntagServerCertificate,
             aws_http::AwsErrorRetryPolicy,
@@ -21400,7 +21685,7 @@ impl UntagServerCertificateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -21408,7 +21693,7 @@ impl UntagServerCertificateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -21441,31 +21726,32 @@ pub mod untag_user_input {
         /// <p>The name of the IAM user from which you want to remove tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: =,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
-        pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
         pub fn set_tag_keys(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.tag_keys = inp;
+            self.tag_keys = input;
             self
         }
         /// Consumes the builder and constructs a [`UntagUserInput`](crate::input::UntagUserInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UntagUserInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UntagUserInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UntagUserInput {
                 user_name: self.user_name,
                 tag_keys: self.tag_keys,
@@ -21483,7 +21769,7 @@ impl UntagUserInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UntagUser,
             aws_http::AwsErrorRetryPolicy,
@@ -21538,7 +21824,7 @@ impl UntagUserInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -21546,7 +21832,7 @@ impl UntagUserInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -21580,41 +21866,46 @@ pub mod update_access_key_input {
         /// <p>The name of the user whose key you want to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The access key ID of the secret access key you want to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn access_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.access_key_id = Some(inp.into());
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_key_id = Some(input.into());
             self
         }
-        pub fn set_access_key_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.access_key_id = inp;
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_key_id = input;
             self
         }
         /// <p> The status you want to assign to the secret access key. <code>Active</code> means
         /// that the key can be used for programmatic calls to AWS, while <code>Inactive</code>
         /// means that the key cannot be used.</p>
-        pub fn status(mut self, inp: crate::model::StatusType) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::StatusType>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateAccessKeyInput`](crate::input::UpdateAccessKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAccessKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateAccessKeyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateAccessKeyInput {
                 user_name: self.user_name,
                 access_key_id: self.access_key_id,
@@ -21633,7 +21924,7 @@ impl UpdateAccessKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateAccessKey,
             aws_http::AwsErrorRetryPolicy,
@@ -21692,7 +21983,7 @@ impl UpdateAccessKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -21700,7 +21991,7 @@ impl UpdateAccessKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -21740,12 +22031,12 @@ pub mod update_account_password_policy_input {
         /// <p>The minimum number of characters allowed in an IAM user password.</p>
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>6</code>.</p>
-        pub fn minimum_password_length(mut self, inp: i32) -> Self {
-            self.minimum_password_length = Some(inp);
+        pub fn minimum_password_length(mut self, input: i32) -> Self {
+            self.minimum_password_length = Some(input);
             self
         }
-        pub fn set_minimum_password_length(mut self, inp: std::option::Option<i32>) -> Self {
-            self.minimum_password_length = inp;
+        pub fn set_minimum_password_length(mut self, input: std::option::Option<i32>) -> Self {
+            self.minimum_password_length = input;
             self
         }
         /// <p>Specifies whether IAM user passwords must contain at least one of the following
@@ -21754,12 +22045,12 @@ pub mod update_account_password_policy_input {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that passwords do not require at least one
         /// symbol character.</p>
-        pub fn require_symbols(mut self, inp: bool) -> Self {
-            self.require_symbols = Some(inp);
+        pub fn require_symbols(mut self, input: bool) -> Self {
+            self.require_symbols = Some(input);
             self
         }
-        pub fn set_require_symbols(mut self, inp: bool) -> Self {
-            self.require_symbols = Some(inp);
+        pub fn set_require_symbols(mut self, input: std::option::Option<bool>) -> Self {
+            self.require_symbols = input;
             self
         }
         /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0
@@ -21767,12 +22058,12 @@ pub mod update_account_password_policy_input {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that passwords do not require at least one
         /// numeric character.</p>
-        pub fn require_numbers(mut self, inp: bool) -> Self {
-            self.require_numbers = Some(inp);
+        pub fn require_numbers(mut self, input: bool) -> Self {
+            self.require_numbers = Some(input);
             self
         }
-        pub fn set_require_numbers(mut self, inp: bool) -> Self {
-            self.require_numbers = Some(inp);
+        pub fn set_require_numbers(mut self, input: std::option::Option<bool>) -> Self {
+            self.require_numbers = input;
             self
         }
         /// <p>Specifies whether IAM user passwords must contain at least one uppercase character
@@ -21780,12 +22071,15 @@ pub mod update_account_password_policy_input {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that passwords do not require at least one
         /// uppercase character.</p>
-        pub fn require_uppercase_characters(mut self, inp: bool) -> Self {
-            self.require_uppercase_characters = Some(inp);
+        pub fn require_uppercase_characters(mut self, input: bool) -> Self {
+            self.require_uppercase_characters = Some(input);
             self
         }
-        pub fn set_require_uppercase_characters(mut self, inp: bool) -> Self {
-            self.require_uppercase_characters = Some(inp);
+        pub fn set_require_uppercase_characters(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.require_uppercase_characters = input;
             self
         }
         /// <p>Specifies whether IAM user passwords must contain at least one lowercase character
@@ -21793,12 +22087,15 @@ pub mod update_account_password_policy_input {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that passwords do not require at least one
         /// lowercase character.</p>
-        pub fn require_lowercase_characters(mut self, inp: bool) -> Self {
-            self.require_lowercase_characters = Some(inp);
+        pub fn require_lowercase_characters(mut self, input: bool) -> Self {
+            self.require_lowercase_characters = Some(input);
             self
         }
-        pub fn set_require_lowercase_characters(mut self, inp: bool) -> Self {
-            self.require_lowercase_characters = Some(inp);
+        pub fn set_require_lowercase_characters(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.require_lowercase_characters = input;
             self
         }
         /// <p> Allows all IAM users in your account to use the AWS Management Console to change their own
@@ -21807,23 +22104,26 @@ pub mod update_account_password_policy_input {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that IAM users in the account do not
         /// automatically have permissions to change their own password.</p>
-        pub fn allow_users_to_change_password(mut self, inp: bool) -> Self {
-            self.allow_users_to_change_password = Some(inp);
+        pub fn allow_users_to_change_password(mut self, input: bool) -> Self {
+            self.allow_users_to_change_password = Some(input);
             self
         }
-        pub fn set_allow_users_to_change_password(mut self, inp: bool) -> Self {
-            self.allow_users_to_change_password = Some(inp);
+        pub fn set_allow_users_to_change_password(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.allow_users_to_change_password = input;
             self
         }
         /// <p>The number of days that an IAM user password is valid.</p>
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>0</code>. The result is that IAM user passwords never expire.</p>
-        pub fn max_password_age(mut self, inp: i32) -> Self {
-            self.max_password_age = Some(inp);
+        pub fn max_password_age(mut self, input: i32) -> Self {
+            self.max_password_age = Some(input);
             self
         }
-        pub fn set_max_password_age(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_password_age = inp;
+        pub fn set_max_password_age(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_password_age = input;
             self
         }
         /// <p>Specifies the number of previous passwords that IAM users are prevented from
@@ -21831,12 +22131,12 @@ pub mod update_account_password_policy_input {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>0</code>. The result is that IAM users are not prevented from reusing
         /// previous passwords.</p>
-        pub fn password_reuse_prevention(mut self, inp: i32) -> Self {
-            self.password_reuse_prevention = Some(inp);
+        pub fn password_reuse_prevention(mut self, input: i32) -> Self {
+            self.password_reuse_prevention = Some(input);
             self
         }
-        pub fn set_password_reuse_prevention(mut self, inp: std::option::Option<i32>) -> Self {
-            self.password_reuse_prevention = inp;
+        pub fn set_password_reuse_prevention(mut self, input: std::option::Option<i32>) -> Self {
+            self.password_reuse_prevention = input;
             self
         }
         /// <p>Prevents IAM users from setting a new password after their password has expired. The
@@ -21844,18 +22144,18 @@ pub mod update_account_password_policy_input {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that IAM users can change their passwords
         /// after they expire and continue to sign in as the user.</p>
-        pub fn hard_expiry(mut self, inp: bool) -> Self {
-            self.hard_expiry = Some(inp);
+        pub fn hard_expiry(mut self, input: bool) -> Self {
+            self.hard_expiry = Some(input);
             self
         }
-        pub fn set_hard_expiry(mut self, inp: std::option::Option<bool>) -> Self {
-            self.hard_expiry = inp;
+        pub fn set_hard_expiry(mut self, input: std::option::Option<bool>) -> Self {
+            self.hard_expiry = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateAccountPasswordPolicyInput`](crate::input::UpdateAccountPasswordPolicyInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::UpdateAccountPasswordPolicyInput,
             smithy_http::operation::BuildError,
         > {
@@ -21886,7 +22186,7 @@ impl UpdateAccountPasswordPolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateAccountPasswordPolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -21947,7 +22247,7 @@ impl UpdateAccountPasswordPolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -21955,7 +22255,7 @@ impl UpdateAccountPasswordPolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -21988,12 +22288,12 @@ pub mod update_assume_role_policy_input {
         /// <p>The name of the role to update with the new policy.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>The policy that grants an entity permission to assume the role.</p>
@@ -22017,22 +22317,24 @@ pub mod update_assume_role_policy_input {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.policy_document = Some(inp.into());
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.policy_document = Some(input.into());
             self
         }
         pub fn set_policy_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.policy_document = inp;
+            self.policy_document = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateAssumeRolePolicyInput`](crate::input::UpdateAssumeRolePolicyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateAssumeRolePolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateAssumeRolePolicyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateAssumeRolePolicyInput {
                 role_name: self.role_name,
                 policy_document: self.policy_document,
@@ -22050,7 +22352,7 @@ impl UpdateAssumeRolePolicyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateAssumeRolePolicy,
             aws_http::AwsErrorRetryPolicy,
@@ -22110,7 +22412,7 @@ impl UpdateAssumeRolePolicyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -22118,7 +22420,7 @@ impl UpdateAssumeRolePolicyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -22153,12 +22455,12 @@ pub mod update_group_input {
         /// the original name.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.group_name = Some(inp.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_name = Some(input.into());
             self
         }
-        pub fn set_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.group_name = inp;
+        pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_name = input;
             self
         }
         /// <p>New path for the IAM group. Only include this if changing the group's path.</p>
@@ -22166,30 +22468,34 @@ pub mod update_group_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn new_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_path = Some(inp.into());
+        pub fn new_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_path = Some(input.into());
             self
         }
-        pub fn set_new_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.new_path = inp;
+        pub fn set_new_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.new_path = input;
             self
         }
         /// <p>New name for the IAM group. Only include this if changing the group's name.</p>
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn new_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_group_name = Some(inp.into());
+        pub fn new_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_group_name = Some(input.into());
             self
         }
-        pub fn set_new_group_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.new_group_name = inp;
+        pub fn set_new_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.new_group_name = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::input::UpdateGroupInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateGroupInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateGroupInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateGroupInput {
                 group_name: self.group_name,
                 new_path: self.new_path,
@@ -22208,7 +22514,7 @@ impl UpdateGroupInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateGroup,
             aws_http::AwsErrorRetryPolicy,
@@ -22265,7 +22571,7 @@ impl UpdateGroupInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -22273,7 +22579,7 @@ impl UpdateGroupInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -22307,12 +22613,12 @@ pub mod update_login_profile_input {
         /// <p>The name of the user whose password you want to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The new password for the specified IAM user.</p>
@@ -22334,29 +22640,31 @@ pub mod update_login_profile_input {
         /// </ul>
         /// <p>However, the format can be further restricted by the account administrator by setting
         /// a password policy on the AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.</p>
-        pub fn password(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.password = Some(inp.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.password = Some(input.into());
             self
         }
-        pub fn set_password(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.password = inp;
+        pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.password = input;
             self
         }
         /// <p>Allows this new password to be used only once by requiring the specified IAM user to
         /// set a new password on next sign-in.</p>
-        pub fn password_reset_required(mut self, inp: bool) -> Self {
-            self.password_reset_required = Some(inp);
+        pub fn password_reset_required(mut self, input: bool) -> Self {
+            self.password_reset_required = Some(input);
             self
         }
-        pub fn set_password_reset_required(mut self, inp: std::option::Option<bool>) -> Self {
-            self.password_reset_required = inp;
+        pub fn set_password_reset_required(mut self, input: std::option::Option<bool>) -> Self {
+            self.password_reset_required = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateLoginProfileInput`](crate::input::UpdateLoginProfileInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateLoginProfileInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateLoginProfileInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateLoginProfileInput {
                 user_name: self.user_name,
                 password: self.password,
@@ -22375,7 +22683,7 @@ impl UpdateLoginProfileInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateLoginProfile,
             aws_http::AwsErrorRetryPolicy,
@@ -22435,7 +22743,7 @@ impl UpdateLoginProfileInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -22443,7 +22751,7 @@ impl UpdateLoginProfileInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -22477,34 +22785,37 @@ pub mod update_open_id_connect_provider_thumbprint_input {
         /// you want to update the thumbprint. You can get a list of OIDC provider ARNs by using the
         /// <a>ListOpenIDConnectProviders</a> operation.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn open_id_connect_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.open_id_connect_provider_arn = Some(inp.into());
+        pub fn open_id_connect_provider_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.open_id_connect_provider_arn = Some(input.into());
             self
         }
         pub fn set_open_id_connect_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.open_id_connect_provider_arn = inp;
+            self.open_id_connect_provider_arn = input;
             self
         }
-        pub fn thumbprint_list(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn thumbprint_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.thumbprint_list.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.thumbprint_list = Some(v);
             self
         }
         pub fn set_thumbprint_list(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.thumbprint_list = inp;
+            self.thumbprint_list = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateOpenIDConnectProviderThumbprintInput`](crate::input::UpdateOpenIDConnectProviderThumbprintInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::UpdateOpenIDConnectProviderThumbprintInput,
             smithy_http::operation::BuildError,
         > {
@@ -22527,7 +22838,7 @@ impl UpdateOpenIDConnectProviderThumbprintInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateOpenIDConnectProviderThumbprint,
             aws_http::AwsErrorRetryPolicy,
@@ -22586,7 +22897,7 @@ impl UpdateOpenIDConnectProviderThumbprintInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -22594,7 +22905,7 @@ impl UpdateOpenIDConnectProviderThumbprintInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -22626,21 +22937,21 @@ pub mod update_role_input {
     }
     impl Builder {
         /// <p>The name of the role that you want to modify.</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>The new description that you want to apply to the specified role.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// <p>The maximum session duration (in seconds) that you want to set for the specified role.
@@ -22656,18 +22967,19 @@ pub mod update_role_input {
         /// or the <code>assume-role*</code> CLI operations but does not apply when you use those
         /// operations to create a console URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
         /// roles</a> in the <i>IAM User Guide</i>.</p>
-        pub fn max_session_duration(mut self, inp: i32) -> Self {
-            self.max_session_duration = Some(inp);
+        pub fn max_session_duration(mut self, input: i32) -> Self {
+            self.max_session_duration = Some(input);
             self
         }
-        pub fn set_max_session_duration(mut self, inp: std::option::Option<i32>) -> Self {
-            self.max_session_duration = inp;
+        pub fn set_max_session_duration(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_session_duration = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateRoleInput`](crate::input::UpdateRoleInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateRoleInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateRoleInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateRoleInput {
                 role_name: self.role_name,
                 description: self.description,
@@ -22686,7 +22998,7 @@ impl UpdateRoleInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateRole,
             aws_http::AwsErrorRetryPolicy,
@@ -22743,7 +23055,7 @@ impl UpdateRoleInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -22751,7 +23063,7 @@ impl UpdateRoleInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -22782,28 +23094,30 @@ pub mod update_role_description_input {
     }
     impl Builder {
         /// <p>The name of the role that you want to modify.</p>
-        pub fn role_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.role_name = Some(inp.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role_name = Some(input.into());
             self
         }
-        pub fn set_role_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.role_name = inp;
+        pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role_name = input;
             self
         }
         /// <p>The new description that you want to apply to the specified role.</p>
-        pub fn description(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.description = Some(inp.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
             self
         }
-        pub fn set_description(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.description = inp;
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateRoleDescriptionInput`](crate::input::UpdateRoleDescriptionInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateRoleDescriptionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateRoleDescriptionInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateRoleDescriptionInput {
                 role_name: self.role_name,
                 description: self.description,
@@ -22821,7 +23135,7 @@ impl UpdateRoleDescriptionInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateRoleDescription,
             aws_http::AwsErrorRetryPolicy,
@@ -22881,7 +23195,7 @@ impl UpdateRoleDescriptionInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -22889,7 +23203,7 @@ impl UpdateRoleDescriptionInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -22924,35 +23238,37 @@ pub mod update_saml_provider_input {
         /// to validate the SAML authentication response (assertions) that are received from the
         /// IdP. You must generate the metadata document using the identity management software that
         /// is used as your organization's IdP.</p>
-        pub fn saml_metadata_document(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.saml_metadata_document = Some(inp.into());
+        pub fn saml_metadata_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.saml_metadata_document = Some(input.into());
             self
         }
         pub fn set_saml_metadata_document(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.saml_metadata_document = inp;
+            self.saml_metadata_document = input;
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SAML provider to update.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn saml_provider_arn(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.saml_provider_arn = Some(inp.into());
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.saml_provider_arn = Some(input.into());
             self
         }
         pub fn set_saml_provider_arn(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.saml_provider_arn = inp;
+            self.saml_provider_arn = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateSAMLProviderInput`](crate::input::UpdateSAMLProviderInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateSAMLProviderInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateSAMLProviderInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateSAMLProviderInput {
                 saml_metadata_document: self.saml_metadata_document,
                 saml_provider_arn: self.saml_provider_arn,
@@ -22970,7 +23286,7 @@ impl UpdateSAMLProviderInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateSAMLProvider,
             aws_http::AwsErrorRetryPolicy,
@@ -23030,7 +23346,7 @@ impl UpdateSAMLProviderInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -23038,7 +23354,7 @@ impl UpdateSAMLProviderInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -23072,15 +23388,15 @@ pub mod update_server_certificate_input {
         /// <p>The name of the server certificate that you want to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.server_certificate_name = Some(inp.into());
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_certificate_name = Some(input.into());
             self
         }
         pub fn set_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.server_certificate_name = inp;
+            self.server_certificate_name = input;
             self
         }
         /// <p>The new path for the server certificate. Include this only if you are updating the
@@ -23089,34 +23405,39 @@ pub mod update_server_certificate_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn new_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_path = Some(inp.into());
+        pub fn new_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_path = Some(input.into());
             self
         }
-        pub fn set_new_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.new_path = inp;
+        pub fn set_new_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.new_path = input;
             self
         }
         /// <p>The new name for the server certificate. Include this only if you are updating the
         /// server certificate's name. The name of the certificate cannot contain any spaces.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn new_server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_server_certificate_name = Some(inp.into());
+        pub fn new_server_certificate_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.new_server_certificate_name = Some(input.into());
             self
         }
         pub fn set_new_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.new_server_certificate_name = inp;
+            self.new_server_certificate_name = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateServerCertificateInput`](crate::input::UpdateServerCertificateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateServerCertificateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateServerCertificateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateServerCertificateInput {
                 server_certificate_name: self.server_certificate_name,
                 new_path: self.new_path,
@@ -23136,7 +23457,7 @@ impl UpdateServerCertificateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateServerCertificate,
             aws_http::AwsErrorRetryPolicy,
@@ -23196,7 +23517,7 @@ impl UpdateServerCertificateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -23204,7 +23525,7 @@ impl UpdateServerCertificateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -23240,12 +23561,12 @@ pub mod update_service_specific_credential_input {
         /// to call the operation.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The unique identifier of the service-specific credential.</p>
@@ -23253,31 +23574,31 @@ pub mod update_service_specific_credential_input {
         /// consist of any upper or lowercased letter or digit.</p>
         pub fn service_specific_credential_id(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.service_specific_credential_id = Some(inp.into());
+            self.service_specific_credential_id = Some(input.into());
             self
         }
         pub fn set_service_specific_credential_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.service_specific_credential_id = inp;
+            self.service_specific_credential_id = input;
             self
         }
         /// <p>The status to be assigned to the service-specific credential.</p>
-        pub fn status(mut self, inp: crate::model::StatusType) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::StatusType>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateServiceSpecificCredentialInput`](crate::input::UpdateServiceSpecificCredentialInput)
         pub fn build(
             self,
-        ) -> Result<
+        ) -> std::result::Result<
             crate::input::UpdateServiceSpecificCredentialInput,
             smithy_http::operation::BuildError,
         > {
@@ -23300,7 +23621,7 @@ impl UpdateServiceSpecificCredentialInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateServiceSpecificCredential,
             aws_http::AwsErrorRetryPolicy,
@@ -23361,7 +23682,7 @@ impl UpdateServiceSpecificCredentialInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -23369,7 +23690,7 @@ impl UpdateServiceSpecificCredentialInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -23403,41 +23724,46 @@ pub mod update_signing_certificate_input {
         /// <p>The name of the IAM user the signing certificate belongs to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The ID of the signing certificate you want to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn certificate_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_id = Some(inp.into());
+        pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_id = Some(input.into());
             self
         }
-        pub fn set_certificate_id(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.certificate_id = inp;
+        pub fn set_certificate_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.certificate_id = input;
             self
         }
         /// <p> The status you want to assign to the certificate. <code>Active</code> means that the
         /// certificate can be used for programmatic calls to AWS <code>Inactive</code> means that
         /// the certificate cannot be used.</p>
-        pub fn status(mut self, inp: crate::model::StatusType) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::StatusType>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateSigningCertificateInput`](crate::input::UpdateSigningCertificateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateSigningCertificateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateSigningCertificateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateSigningCertificateInput {
                 user_name: self.user_name,
                 certificate_id: self.certificate_id,
@@ -23457,7 +23783,7 @@ impl UpdateSigningCertificateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateSigningCertificate,
             aws_http::AwsErrorRetryPolicy,
@@ -23517,7 +23843,7 @@ impl UpdateSigningCertificateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -23525,7 +23851,7 @@ impl UpdateSigningCertificateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -23559,44 +23885,46 @@ pub mod update_ssh_public_key_input {
         /// <p>The name of the IAM user associated with the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The unique identifier for the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn ssh_public_key_id(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssh_public_key_id = Some(inp.into());
+        pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssh_public_key_id = Some(input.into());
             self
         }
         pub fn set_ssh_public_key_id(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ssh_public_key_id = inp;
+            self.ssh_public_key_id = input;
             self
         }
         /// <p>The status to assign to the SSH public key. <code>Active</code> means that the key can
         /// be used for authentication with an AWS CodeCommit repository. <code>Inactive</code> means that
         /// the key cannot be used.</p>
-        pub fn status(mut self, inp: crate::model::StatusType) -> Self {
-            self.status = Some(inp);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.status = Some(input);
             self
         }
-        pub fn set_status(mut self, inp: std::option::Option<crate::model::StatusType>) -> Self {
-            self.status = inp;
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
+            self.status = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateSSHPublicKeyInput`](crate::input::UpdateSSHPublicKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateSSHPublicKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateSSHPublicKeyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateSSHPublicKeyInput {
                 user_name: self.user_name,
                 ssh_public_key_id: self.ssh_public_key_id,
@@ -23615,7 +23943,7 @@ impl UpdateSSHPublicKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateSSHPublicKey,
             aws_http::AwsErrorRetryPolicy,
@@ -23675,7 +24003,7 @@ impl UpdateSSHPublicKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -23683,7 +24011,7 @@ impl UpdateSSHPublicKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -23718,12 +24046,12 @@ pub mod update_user_input {
         /// original user name.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>New path for the IAM user. Include this parameter only if you're changing the user's
@@ -23732,12 +24060,12 @@ pub mod update_user_input {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn new_path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_path = Some(inp.into());
+        pub fn new_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_path = Some(input.into());
             self
         }
-        pub fn set_new_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.new_path = inp;
+        pub fn set_new_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.new_path = input;
             self
         }
         /// <p>New name for the user. Include this parameter only if you're changing the user's
@@ -23745,18 +24073,22 @@ pub mod update_user_input {
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn new_user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.new_user_name = Some(inp.into());
+        pub fn new_user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.new_user_name = Some(input.into());
             self
         }
-        pub fn set_new_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.new_user_name = inp;
+        pub fn set_new_user_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.new_user_name = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateUserInput`](crate::input::UpdateUserInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UpdateUserInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::UpdateUserInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::UpdateUserInput {
                 user_name: self.user_name,
                 new_path: self.new_path,
@@ -23775,7 +24107,7 @@ impl UpdateUserInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UpdateUser,
             aws_http::AwsErrorRetryPolicy,
@@ -23832,7 +24164,7 @@ impl UpdateUserInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -23840,7 +24172,7 @@ impl UpdateUserInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -23887,27 +24219,27 @@ pub mod upload_server_certificate_input {
         /// parameter. The path must begin with <code>/cloudfront</code> and must include a
         /// trailing slash (for example, <code>/cloudfront/test/</code>).</p>
         /// </note>
-        pub fn path(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.path = Some(inp.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.path = Some(input.into());
             self
         }
-        pub fn set_path(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.path = inp;
+        pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.path = input;
             self
         }
         /// <p>The name for the server certificate. Do not include the path in this value. The name
         /// of the certificate cannot contain any spaces.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn server_certificate_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.server_certificate_name = Some(inp.into());
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_certificate_name = Some(input.into());
             self
         }
         pub fn set_server_certificate_name(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.server_certificate_name = inp;
+            self.server_certificate_name = input;
             self
         }
         /// <p>The contents of the public key certificate in PEM-encoded format.</p>
@@ -23927,15 +24259,15 @@ pub mod upload_server_certificate_input {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn certificate_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_body = Some(inp.into());
+        pub fn certificate_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_body = Some(input.into());
             self
         }
         pub fn set_certificate_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_body = inp;
+            self.certificate_body = input;
             self
         }
         /// <p>The contents of the private key in PEM-encoded format.</p>
@@ -23955,12 +24287,12 @@ pub mod upload_server_certificate_input {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn private_key(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.private_key = Some(inp.into());
+        pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.private_key = Some(input.into());
             self
         }
-        pub fn set_private_key(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.private_key = inp;
+        pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.private_key = input;
             self
         }
         /// <p>The contents of the certificate chain. This is typically a concatenation of the
@@ -23981,35 +24313,37 @@ pub mod upload_server_certificate_input {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn certificate_chain(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_chain = Some(inp.into());
+        pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_chain = Some(input.into());
             self
         }
         pub fn set_certificate_chain(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_chain = inp;
+            self.certificate_chain = input;
             self
         }
-        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.tags = Some(v);
             self
         }
         pub fn set_tags(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
-            self.tags = inp;
+            self.tags = input;
             self
         }
         /// Consumes the builder and constructs a [`UploadServerCertificateInput`](crate::input::UploadServerCertificateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UploadServerCertificateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UploadServerCertificateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UploadServerCertificateInput {
                 path: self.path,
                 server_certificate_name: self.server_certificate_name,
@@ -24032,7 +24366,7 @@ impl UploadServerCertificateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UploadServerCertificate,
             aws_http::AwsErrorRetryPolicy,
@@ -24092,7 +24426,7 @@ impl UploadServerCertificateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -24100,7 +24434,7 @@ impl UploadServerCertificateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -24133,12 +24467,12 @@ pub mod upload_signing_certificate_input {
         /// <p>The name of the user the signing certificate is for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The contents of the signing certificate.</p>
@@ -24158,22 +24492,24 @@ pub mod upload_signing_certificate_input {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn certificate_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.certificate_body = Some(inp.into());
+        pub fn certificate_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.certificate_body = Some(input.into());
             self
         }
         pub fn set_certificate_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.certificate_body = inp;
+            self.certificate_body = input;
             self
         }
         /// Consumes the builder and constructs a [`UploadSigningCertificateInput`](crate::input::UploadSigningCertificateInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UploadSigningCertificateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UploadSigningCertificateInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UploadSigningCertificateInput {
                 user_name: self.user_name,
                 certificate_body: self.certificate_body,
@@ -24192,7 +24528,7 @@ impl UploadSigningCertificateInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UploadSigningCertificate,
             aws_http::AwsErrorRetryPolicy,
@@ -24252,7 +24588,7 @@ impl UploadSigningCertificateInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -24260,7 +24596,7 @@ impl UploadSigningCertificateInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)
@@ -24293,12 +24629,12 @@ pub mod upload_ssh_public_key_input {
         /// <p>The name of the IAM user to associate the SSH public key with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.user_name = Some(inp.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_name = Some(input.into());
             self
         }
-        pub fn set_user_name(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.user_name = inp;
+        pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_name = input;
             self
         }
         /// <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.
@@ -24320,22 +24656,24 @@ pub mod upload_ssh_public_key_input {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn ssh_public_key_body(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.ssh_public_key_body = Some(inp.into());
+        pub fn ssh_public_key_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssh_public_key_body = Some(input.into());
             self
         }
         pub fn set_ssh_public_key_body(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.ssh_public_key_body = inp;
+            self.ssh_public_key_body = input;
             self
         }
         /// Consumes the builder and constructs a [`UploadSSHPublicKeyInput`](crate::input::UploadSSHPublicKeyInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::UploadSSHPublicKeyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UploadSSHPublicKeyInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UploadSSHPublicKeyInput {
                 user_name: self.user_name,
                 ssh_public_key_body: self.ssh_public_key_body,
@@ -24353,7 +24691,7 @@ impl UploadSSHPublicKeyInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::UploadSSHPublicKey,
             aws_http::AwsErrorRetryPolicy,
@@ -24413,7 +24751,7 @@ impl UploadSSHPublicKeyInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -24421,7 +24759,7 @@ impl UploadSSHPublicKeyInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/x-www-form-urlencoded");
         self.update_http_builder(builder)

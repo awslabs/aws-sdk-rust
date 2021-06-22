@@ -34,7 +34,7 @@ impl SendCommand {
     fn parse_response(
         &self,
         response: &http::response::Response<bytes::Bytes>,
-    ) -> Result<crate::output::SendCommandOutput, crate::error::SendCommandError> {
+    ) -> std::result::Result<crate::output::SendCommandOutput, crate::error::SendCommandError> {
         if crate::aws_json_errors::is_error(&response) {
             let body = serde_json::from_slice(response.body().as_ref())
                 .unwrap_or_else(|_| serde_json::json!({}));
@@ -101,7 +101,8 @@ impl SendCommand {
     }
 }
 impl smithy_http::response::ParseStrictResponse for SendCommand {
-    type Output = Result<crate::output::SendCommandOutput, crate::error::SendCommandError>;
+    type Output =
+        std::result::Result<crate::output::SendCommandOutput, crate::error::SendCommandError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
         self.parse_response(response)
     }

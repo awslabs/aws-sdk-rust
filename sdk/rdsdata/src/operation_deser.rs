@@ -2,7 +2,10 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_batch_execute_statement_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::BatchExecuteStatementOutput, crate::error::BatchExecuteStatementError> {
+) -> std::result::Result<
+    crate::output::BatchExecuteStatementOutput,
+    crate::error::BatchExecuteStatementError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::BatchExecuteStatementError::unhandled)?;
     let error_code = match generic.code() {
@@ -71,7 +74,10 @@ pub fn parse_batch_execute_statement_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_batch_execute_statement_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::BatchExecuteStatementOutput, crate::error::BatchExecuteStatementError> {
+) -> std::result::Result<
+    crate::output::BatchExecuteStatementOutput,
+    crate::error::BatchExecuteStatementError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::batch_execute_statement_output::Builder::default();
@@ -88,7 +94,8 @@ pub fn parse_batch_execute_statement_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_begin_transaction_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::BeginTransactionOutput, crate::error::BeginTransactionError> {
+) -> std::result::Result<crate::output::BeginTransactionOutput, crate::error::BeginTransactionError>
+{
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::BeginTransactionError::unhandled)?;
     let error_code = match generic.code() {
@@ -157,7 +164,8 @@ pub fn parse_begin_transaction_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_begin_transaction_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::BeginTransactionOutput, crate::error::BeginTransactionError> {
+) -> std::result::Result<crate::output::BeginTransactionOutput, crate::error::BeginTransactionError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::begin_transaction_output::Builder::default();
@@ -172,7 +180,8 @@ pub fn parse_begin_transaction_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_commit_transaction_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CommitTransactionOutput, crate::error::CommitTransactionError> {
+) -> std::result::Result<crate::output::CommitTransactionOutput, crate::error::CommitTransactionError>
+{
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::CommitTransactionError::unhandled)?;
     let error_code = match generic.code() {
@@ -252,7 +261,8 @@ pub fn parse_commit_transaction_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_commit_transaction_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::CommitTransactionOutput, crate::error::CommitTransactionError> {
+) -> std::result::Result<crate::output::CommitTransactionOutput, crate::error::CommitTransactionError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::commit_transaction_output::Builder::default();
@@ -267,7 +277,7 @@ pub fn parse_commit_transaction_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_execute_sql_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ExecuteSqlOutput, crate::error::ExecuteSqlError> {
+) -> std::result::Result<crate::output::ExecuteSqlOutput, crate::error::ExecuteSqlError> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ExecuteSqlError::unhandled)?;
     let error_code = match generic.code() {
@@ -322,7 +332,7 @@ pub fn parse_execute_sql_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_execute_sql_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ExecuteSqlOutput, crate::error::ExecuteSqlError> {
+) -> std::result::Result<crate::output::ExecuteSqlOutput, crate::error::ExecuteSqlError> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::execute_sql_output::Builder::default();
@@ -336,7 +346,8 @@ pub fn parse_execute_sql_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_execute_statement_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ExecuteStatementOutput, crate::error::ExecuteStatementError> {
+) -> std::result::Result<crate::output::ExecuteStatementOutput, crate::error::ExecuteStatementError>
+{
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::ExecuteStatementError::unhandled)?;
     let error_code = match generic.code() {
@@ -405,7 +416,8 @@ pub fn parse_execute_statement_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_execute_statement_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::ExecuteStatementOutput, crate::error::ExecuteStatementError> {
+) -> std::result::Result<crate::output::ExecuteStatementOutput, crate::error::ExecuteStatementError>
+{
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::execute_statement_output::Builder::default();
@@ -420,7 +432,10 @@ pub fn parse_execute_statement_response(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_rollback_transaction_error(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RollbackTransactionOutput, crate::error::RollbackTransactionError> {
+) -> std::result::Result<
+    crate::output::RollbackTransactionOutput,
+    crate::error::RollbackTransactionError,
+> {
     let generic = crate::json_deser::parse_generic_error(&response)
         .map_err(crate::error::RollbackTransactionError::unhandled)?;
     let error_code = match generic.code() {
@@ -500,7 +515,10 @@ pub fn parse_rollback_transaction_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_rollback_transaction_response(
     response: &http::Response<bytes::Bytes>,
-) -> Result<crate::output::RollbackTransactionOutput, crate::error::RollbackTransactionError> {
+) -> std::result::Result<
+    crate::output::RollbackTransactionOutput,
+    crate::error::RollbackTransactionError,
+> {
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::rollback_transaction_output::Builder::default();

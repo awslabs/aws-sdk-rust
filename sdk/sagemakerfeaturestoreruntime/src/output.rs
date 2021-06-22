@@ -50,17 +50,17 @@ pub mod get_record_output {
         pub(crate) record: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
     }
     impl Builder {
-        pub fn record(mut self, inp: impl Into<crate::model::FeatureValue>) -> Self {
+        pub fn record(mut self, input: impl Into<crate::model::FeatureValue>) -> Self {
             let mut v = self.record.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.record = Some(v);
             self
         }
         pub fn set_record(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
         ) -> Self {
-            self.record = inp;
+            self.record = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRecordOutput`](crate::output::GetRecordOutput)
@@ -141,46 +141,49 @@ pub mod batch_get_record_output {
             std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
     }
     impl Builder {
-        pub fn records(mut self, inp: impl Into<crate::model::BatchGetRecordResultDetail>) -> Self {
+        pub fn records(
+            mut self,
+            input: impl Into<crate::model::BatchGetRecordResultDetail>,
+        ) -> Self {
             let mut v = self.records.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.records = Some(v);
             self
         }
         pub fn set_records(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordResultDetail>>,
+            input: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordResultDetail>>,
         ) -> Self {
-            self.records = inp;
+            self.records = input;
             self
         }
-        pub fn errors(mut self, inp: impl Into<crate::model::BatchGetRecordError>) -> Self {
+        pub fn errors(mut self, input: impl Into<crate::model::BatchGetRecordError>) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.errors = Some(v);
             self
         }
         pub fn set_errors(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordError>>,
+            input: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordError>>,
         ) -> Self {
-            self.errors = inp;
+            self.errors = input;
             self
         }
         pub fn unprocessed_identifiers(
             mut self,
-            inp: impl Into<crate::model::BatchGetRecordIdentifier>,
+            input: impl Into<crate::model::BatchGetRecordIdentifier>,
         ) -> Self {
             let mut v = self.unprocessed_identifiers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.unprocessed_identifiers = Some(v);
             self
         }
         pub fn set_unprocessed_identifiers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
+            input: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
         ) -> Self {
-            self.unprocessed_identifiers = inp;
+            self.unprocessed_identifiers = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchGetRecordOutput`](crate::output::BatchGetRecordOutput)

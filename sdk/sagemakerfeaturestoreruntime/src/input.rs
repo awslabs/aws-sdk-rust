@@ -12,24 +12,27 @@ pub mod batch_get_record_input {
     impl Builder {
         pub fn identifiers(
             mut self,
-            inp: impl Into<crate::model::BatchGetRecordIdentifier>,
+            input: impl Into<crate::model::BatchGetRecordIdentifier>,
         ) -> Self {
             let mut v = self.identifiers.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.identifiers = Some(v);
             self
         }
         pub fn set_identifiers(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
+            input: std::option::Option<std::vec::Vec<crate::model::BatchGetRecordIdentifier>>,
         ) -> Self {
-            self.identifiers = inp;
+            self.identifiers = input;
             self
         }
         /// Consumes the builder and constructs a [`BatchGetRecordInput`](crate::input::BatchGetRecordInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::BatchGetRecordInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<
+            crate::input::BatchGetRecordInput,
+            smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::BatchGetRecordInput {
                 identifiers: self.identifiers,
             })
@@ -46,7 +49,7 @@ impl BatchGetRecordInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::BatchGetRecord,
             aws_http::AwsErrorRetryPolicy,
@@ -105,7 +108,7 @@ impl BatchGetRecordInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("POST").uri(uri))
@@ -113,7 +116,7 @@ impl BatchGetRecordInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -145,44 +148,48 @@ pub mod delete_record_input {
     }
     impl Builder {
         /// <p>The name of the feature group to delete the record from. </p>
-        pub fn feature_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.feature_group_name = Some(inp.into());
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_group_name = Some(input.into());
             self
         }
-        pub fn set_feature_group_name(mut self, inp: std::string::String) -> Self {
-            self.feature_group_name = Some(inp);
+        pub fn set_feature_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.feature_group_name = input;
             self
         }
         /// <p>The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in
         /// string format. </p>
         pub fn record_identifier_value_as_string(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.record_identifier_value_as_string = Some(inp.into());
+            self.record_identifier_value_as_string = Some(input.into());
             self
         }
         pub fn set_record_identifier_value_as_string(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.record_identifier_value_as_string = inp;
+            self.record_identifier_value_as_string = input;
             self
         }
         /// <p>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can be
         /// used to query data at a certain point in time.</p>
-        pub fn event_time(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.event_time = Some(inp.into());
+        pub fn event_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_time = Some(input.into());
             self
         }
-        pub fn set_event_time(mut self, inp: std::option::Option<std::string::String>) -> Self {
-            self.event_time = inp;
+        pub fn set_event_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_time = input;
             self
         }
         /// Consumes the builder and constructs a [`DeleteRecordInput`](crate::input::DeleteRecordInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::DeleteRecordInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::DeleteRecordInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::DeleteRecordInput {
                 feature_group_name: self.feature_group_name.unwrap_or_default(),
                 record_identifier_value_as_string: self.record_identifier_value_as_string,
@@ -201,7 +208,7 @@ impl DeleteRecordInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::DeleteRecord,
             aws_http::AwsErrorRetryPolicy,
@@ -275,7 +282,7 @@ impl DeleteRecordInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -284,7 +291,7 @@ impl DeleteRecordInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -316,47 +323,51 @@ pub mod get_record_input {
     }
     impl Builder {
         /// <p>The name of the feature group in which you want to put the records.</p>
-        pub fn feature_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.feature_group_name = Some(inp.into());
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_group_name = Some(input.into());
             self
         }
-        pub fn set_feature_group_name(mut self, inp: std::string::String) -> Self {
-            self.feature_group_name = Some(inp);
+        pub fn set_feature_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.feature_group_name = input;
             self
         }
         /// <p>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies
         /// the record in the <code>FeatureGroup</code>. </p>
         pub fn record_identifier_value_as_string(
             mut self,
-            inp: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.record_identifier_value_as_string = Some(inp.into());
+            self.record_identifier_value_as_string = Some(input.into());
             self
         }
         pub fn set_record_identifier_value_as_string(
             mut self,
-            inp: std::option::Option<std::string::String>,
+            input: std::option::Option<std::string::String>,
         ) -> Self {
-            self.record_identifier_value_as_string = inp;
+            self.record_identifier_value_as_string = input;
             self
         }
-        pub fn feature_names(mut self, inp: impl Into<std::string::String>) -> Self {
+        pub fn feature_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.feature_names.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.feature_names = Some(v);
             self
         }
         pub fn set_feature_names(
             mut self,
-            inp: std::option::Option<std::vec::Vec<std::string::String>>,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
-            self.feature_names = inp;
+            self.feature_names = input;
             self
         }
         /// Consumes the builder and constructs a [`GetRecordInput`](crate::input::GetRecordInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::GetRecordInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::GetRecordInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::GetRecordInput {
                 feature_group_name: self.feature_group_name.unwrap_or_default(),
                 record_identifier_value_as_string: self.record_identifier_value_as_string,
@@ -375,7 +386,7 @@ impl GetRecordInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::GetRecord,
             aws_http::AwsErrorRetryPolicy,
@@ -449,7 +460,7 @@ impl GetRecordInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         self.uri_query(&mut uri);
@@ -458,7 +469,7 @@ impl GetRecordInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
@@ -489,31 +500,35 @@ pub mod put_record_input {
     }
     impl Builder {
         /// <p>The name of the feature group that you want to insert the record into.</p>
-        pub fn feature_group_name(mut self, inp: impl Into<std::string::String>) -> Self {
-            self.feature_group_name = Some(inp.into());
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.feature_group_name = Some(input.into());
             self
         }
-        pub fn set_feature_group_name(mut self, inp: std::string::String) -> Self {
-            self.feature_group_name = Some(inp);
+        pub fn set_feature_group_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.feature_group_name = input;
             self
         }
-        pub fn record(mut self, inp: impl Into<crate::model::FeatureValue>) -> Self {
+        pub fn record(mut self, input: impl Into<crate::model::FeatureValue>) -> Self {
             let mut v = self.record.unwrap_or_default();
-            v.push(inp.into());
+            v.push(input.into());
             self.record = Some(v);
             self
         }
         pub fn set_record(
             mut self,
-            inp: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
+            input: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,
         ) -> Self {
-            self.record = inp;
+            self.record = input;
             self
         }
         /// Consumes the builder and constructs a [`PutRecordInput`](crate::input::PutRecordInput)
         pub fn build(
             self,
-        ) -> Result<crate::input::PutRecordInput, smithy_http::operation::BuildError> {
+        ) -> std::result::Result<crate::input::PutRecordInput, smithy_http::operation::BuildError>
+        {
             Ok(crate::input::PutRecordInput {
                 feature_group_name: self.feature_group_name.unwrap_or_default(),
                 record: self.record,
@@ -531,7 +546,7 @@ impl PutRecordInput {
     pub fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> Result<
+    ) -> std::result::Result<
         smithy_http::operation::Operation<
             crate::operation::PutRecord,
             aws_http::AwsErrorRetryPolicy,
@@ -594,7 +609,7 @@ impl PutRecordInput {
     fn update_http_builder(
         &self,
         builder: http::request::Builder,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let mut uri = String::new();
         self.uri_base(&mut uri);
         Ok(builder.method("PUT").uri(uri))
@@ -602,7 +617,7 @@ impl PutRecordInput {
     #[allow(clippy::unnecessary_wraps)]
     fn request_builder_base(
         &self,
-    ) -> Result<http::request::Builder, smithy_http::operation::BuildError> {
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
         let builder = http::request::Builder::new();
         let builder = builder.header("Content-Type", "application/json");
         self.update_http_builder(builder)
